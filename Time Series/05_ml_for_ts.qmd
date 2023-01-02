@@ -1,0 +1,9 @@
+# ML for Time Series
+* We extract and select features from time series and use the results for building an ML model
+* XGBoost and Random forest models can be used for classification. Random forest is not successful in forecasting. Gradient Boosted models are giving good results in case of forecasting.
+* Clustering of time series - we should use Temporally aware distance metrics for clustering. One such metric is Dynamic Time Warping (DTW). Other distance metrics which are used are 'Frechet distance', 'Pearson correlation' etc.
+* Classification and Forecasting can be combined with clustering in case of any requirement.
+
+# Deep learning for time series
+* Deep learning did not deliver amazing results for forecasting
+* In case of deep learning model assumptions are not required - stationarity etc. In practice, deep learning is not doing a good job of fitting data with a trend, unless architectures are modified to fit the trend. Preprocessing is required

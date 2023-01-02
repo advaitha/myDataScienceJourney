@@ -1,0 +1,15 @@
+# Intro
+
+![Average Treatment Effect and Average Treatment Effect on the treated](/Images/att.png)
+
+![Association Vs ATT](/Images/association_ate.png)
+
+In the above equation the first term is association. If there is no Bias, then association will be causation. Bias is given by how treated and control group differ before the treatment, in case neither of them has received the treatment.
+
+Causal Inference is all about finding clever ways to removing bias and making the treated and untreated comparable so that all the difference we see is only the average treatment effect.
+
+
+## Simson paradox
+* It happens because of unequal weights given to different conditions for different treatments. If we stratify the condition then we will know the causal impact
+
+* Corrleation is not causation becuase correlation = confounding effect + causal effect.

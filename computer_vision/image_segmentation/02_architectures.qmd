@@ -1,0 +1,34 @@
+
+## Architecutures for Image segmentation
+
+### Fully Convolutional Network (FCN)
+
+* This is a typical encoder-decoder architecture.
+* Encoder compresses the information
+* Decoder will upsample and use skip connections to come up with orginial image
+* This image is used for segmentation
+
+![FCN Architecture](/Images/fcn.png)
+[FCN research paper](https://arxiv.org/pdf/1411.4038.pdf)
+
+
+### UNet
+![UNet Architecture](/Images/unet_architecture.png)
+[Unet research paper](https://arxiv.org/pdf/1505.04597.pdf)
+
+
+### PSPNet (Pyramid Scene Parsing Network)
+![PSPNet](/Images/pspnet.png)
+![Feature Pyramid Network](/Images/future_pyramid_networks.png)
+[Research paper](https://arxiv.org/pdf/1612.01105.pdf)
+
+
+### Deeplab
+![Deeplab](/Images/DeepLab.png)
+
+
+### Deeplabv3+
+![Deeplabv3+](/Images/deep_lab_v3png.png)
+![Atorous convolution with Dilation rate](/Images/atorous_convolution_with_dilation.png)
+[Research paper](https://arxiv.org/pdf/1802.02611.pdf)
+[Conditional Random Fields](https://towardsdatascience.com/review-crf-rnn-conditional-random-fields-as-recurrent-neural-networks-semantic-segmentation-a11eb6e40c8c)

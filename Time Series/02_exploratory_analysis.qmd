@@ -1,0 +1,35 @@
+# Exploratory Analysis
+* Often the relationship between data at different points or the change over time that is most informative about how our data behaves
+
+
+
+## Assumptions of time series
+* stationarity
+* Normal distribution of input variables - Boxcox transformation
+
+
+## Stationarity, self-correlation and spurious correlations
+* Does the time series reflect a system that is "stable" or one that is constantly changing
+* Once we have assessed stability (i.e stationarity), we try to determine whether there are internal dynamics in that series i.e self-correlations 
+* when we think we have found certain behavioral dynamics within the system, we need to make sure we are not identifying relationships based on dynamics that do not in any way imply the causal relationships we wish to discover; hence, we must look for spurious correlations.
+
+## Stationarity
+* Many statistical time series models rely on time series being stationary
+* Stationary time series is one that has fairly stable statistics properties over time
+* A stationary time series is one in which a time series measurement reflects a system in a steady state. Mean and variance should remain same and seasonality should not be there for stationarity
+* A simple definition of a stationary process is the following: a process is stationary if for all possible lags, k, the distribution of yt, yt+1,..., yt+k, does not depend on t.
+* Augmented Dickey-Fuller (ADF) test is the most commonly used metric to assess a time series for stationarity. This test posits a null hypothesis that a unit root is present in a time series. Depending on the results of the test, this null hypothesis can be rejected for a specified significance level, meaning the presence of a unit root test can be rejected at a given significance level. (If unit root is present, then the series is non-stationary)
+* A model to help you estimate the mean of a time series with a nonstationary mean and variance, the bias and error in your model will vary over time, at which point the value of your model becomes questionable.
+* Time series can be made stationary with a few simple transformations - Log and a square root transformations are popular. Removing a trend is commonly done by differencing. Sometimes a series must be differenced more than once. However, if you find yourself differencing too much (more than two or three times) it is unlikely that you can fix your stationarity problem with differencing.
+
+
+## Self-correlation
+* Self-correlation of a time series is the idea that a value in a time series at one given point in time may have a correlation to the value at another point in time
+* Autocorrelation Fuction (ACF) - This generalizes self-correlation by not anchoring to a specific point in time. It is the similarity between observations as a function of the time lag between them
+* Partial autocorrelation function (PACF) - The PACF of a time series for a given lag is the partial correlation of the time series with itself at that lag given all the information between the two points in time. PACF shows which data points are informative and which are harmonics of shorter time periods
+
+
+## Spurious correlations
+* Data with an underlying trend is likely to produce spurious correlations
+
+

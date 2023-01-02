@@ -1,0 +1,59 @@
+# Simulating Time Series Data
+* Autoregressive(AR) models
+* Moving Average(MA) models
+* Hierarchical models
+
+### why not linear regression for Time series
+* Assumes data is iid
+* In time series data points are correlated to each other
+
+### Linear regression can be used if the following condition holds:-
+* ![Linear regression for time series](/Images/linear_reg_time_series.png)
+
+## Statistical Methods for Time Series
+
+### Autoregressive Models
+* Future values of a time series are a function of its past values
+* This is the first model people use when they have no information other than the time series itself
+* Regression on past values to predict future values
+* Stationarity is required for AR models
+* Assumption of stationarity - Expected value of the process must be the same at all times
+* weak stationarity - Mean and variance of a process be time invariant
+* The lag which should be considered for modeling can be found manually by looking at PACF plots
+* Auto Arima can be used to find the lag automatically
+* After modelling we should check the ACF of residuals to see if there are any patterns
+* Box Jenkins hypothesis test should be done to see if there is any pattern which is left out by the model
+* Use for short term forecast. In the long term the forecast will be mean value of the data
+
+### MA Models
+* These are not Moving Averages
+* This is like linear regression but we consider errors with respect to lag. Here I think error means difference from the mean.
+* The lag which should be considered for modeling can be found manually by looking at ACF plots
+* Auto Arima can be used to find the lag automatically
+* After modelling we should check the ACF of residuals to see if there are any patterns and model needs to be improved
+* Ljung-Box test hypothesis test should be done to see if there is any pattern which is left out by the model. Null hypothesis means data does not exhibit serial correlation. H1 is data exhibit serial correlation
+* Don't do the forecast for more than number of time lag considered for modelling.
+![MA Time series](/Images/ma_time_series.png)
+![Time series considerations](/Images/time_series_cosiderations.png)
+
+### ARIMA
+* Auto Regressive Integrated Moving Average. 
+* Integrated means differencing. we take difference of a value from its previous time step (I think so), to make the time series stationary. In practice we should not do this more than two times.
+* Both Auto regression and Moving Average are considered for modelling
+* ARIMA(P, D, Q) - P is number of time lags to be considered for AR. D is number of times differencing considered and Q is time lags to be considered for the MA model
+
+
+* SARIMA(Seasonal ARIMA) - Model assumes multiplicative seasonality
+* ARCH, GARCH Family
+    * ARCH - Autoregressive Condition Heteroskedasticity - Variance is not constant. Variance of a process is modeled as an autoregressive process rather than the process itself.
+    
+
+### Advantages Disadvantages of Stats models
+![Advantages](/Images/stats_ts_adv.png)
+![Disadvantages] (/Images/stats_ts_disad.png)
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+project:
+  type: website
+  output-dir: docs
+website:
+  title: "My Datascience Journey"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+  sidebar:
+    title:  "**My Learning Journey**"
+    style:  "floating"
+    search: True
+    backround:  light
+    contents:
+      - section: "**Interpretable_ml**"
+        contents:
+        - Interpretable_ml/theory/01_introduction.qmd
+        - Interpretable_ml/theory/02_linear_regression.qmd
+        - Interpretable_ml/theory/03_logistic_regression.qmd
+        - Interpretable_ml/theory/04_explainable_boosting_machine.qmd
+        - Interpretable_ml/theory/05_GLM_GAM.qmd
+        - Interpretable_ml/theory/06_Decision_tree.qmd
+        - Interpretable_ml/theory/07_rulefit.qmd
+        - Interpretable_ml/theory/08_naive_bayes_and_knn.qmd
+        - Interpretable_ml/theory/09_global_model_agnostic.qmd
+        - Interpretable_ml/theory/10_local_model_agnostic.qmd
+        - Interpretable_ml/theory/11_neural_network.qmd
+        - Interpretable_ml/theory/12_nodegam.qmd
+        - Interpretable_ml/theory/resources.qmd
+        - Interpretable_ml/interpret_ai/notebooks/01_ebm.ipynb  
+      - section: "**Bayesian Analysis**"
+        contents:
+        - bayesian_analysis/Bayesian_analysis.qmd
+        - bayesian_analysis/resources.qmd
+      - section: "**Causal Inference**"
+        contents:
+        - causal_inference/01_intro.qmd
+        - causal_inference/02_randomised_exp.qmd
+        - causal_inference/03_stats_revision.qmd
+        - causal_inference/04_graphical_causal_models.qmd
+        - causal_inference/resources.qmd
+      - section: "**Computer Vision**"
+        contents: 
+        - computer_vision/image_classification/01_convolution.qmd
+        - computer_vision/image_classification/satellite_images_classification.ipynb      
+        - computer_vision/image_segmentation/01_intro.qmd   
+        - computer_vision/image_segmentation/02_architectures.qmd
+      - section: "**Math for AI**"
+        contents:
+        - math_for_ai/theory/01_intro.qmd  
+        - math_for_ai/theory/02_distributions.qmd 
+        - math_for_ai/theory/03_fitting_functions_to_data.qmd    
+        - math_for_ai/theory/04_neural_network.qmd  
+      - section: "**Time Series**"
+        contents:
+        - Time Series/01_overview.qmd  
+        - Time Series/02_exploratory_analysis.qmd 
+        - Time Series/03_stats_models.qmd    
+        - Time Series/04_feature_eng.qmd   
+        - Time Series/04_feature_eng.qmd   
+        - Time Series/05_ml_for_ts.qmd   
+        - Time Series/resources.qmd
+      - section: "**Geograhic Data Processing**"
+        contents:
+        - spatial_data_processing/geographic_data_formats.qmd   
+        - spatial_data_processing/plot_buildings_with_area.ipynb
+        - spatial_data_processing/spatial_analysis.ipynb
+        - spatial_data_processing/crs.ipynb
+        - spatial_data_processing/visualization.ipynb
+        - spatial_data_processing/osm_processing.ipynb 
+        - spatial_data_processing/raster_data_processing.ipynb      
+      - section: "**Machine learning Implementations**"
+        contents:
+        - telecom_churn_prediction/telecom_churn_eda.ipynb      
+        - telecom_churn_prediction/telecom_churn_prediction.ipynb
+      - section: "**Data Quality**"
+        contents:
+        - data_quality/four_steps_to_data_quality.qmd
+        - data_quality/setup_datasource.ipynb
+        - data_quality/generate_expectation.ipynb
+        - data_quality/run_checkpoint.ipynb
+      - section: "**Data Privacy**"
+        contents: 
+        - data_privacy/basic_privacy_approaches.qmd
+        - data_privacy/differential_privacy.qmd  
+      - section: "**Distributed Processing**"
+        contents: 
+        - distributed_processing/fugue_intro.qmd
+        - distributed_processing/fugue_quickstart.ipynb  
+        - distributed_processing/fugue_sql.ipynb     
+      - section: "**About Me**"
+        contents:
+        - about_me/experience.qmd
+        - about_me/project_portfolio.qmd   
+            
+format:
+  html:
+    theme: cerulean
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,71 @@
+# Time Series Introduction
+* Time series analysis often comes down to the question of causality: How did the past influence the future?
+* ![steps to take care](../Images/time_series.png)
+
+### Timestamp troubles
+* what process generated the timestamp, how and when
+* Time zone information
+* Record your own actions and see how they are captured
+* Local or universal time
+
+### Filling missing values
+* Forward fill
+* Moving average of past values - use only the data that occurred before the missing data point
+* Interpolation - Determining the values of missing points based on geometric constraints regarding how we want the overall data to behave
+
+
+### Upsampling and downsampling
+* To match the frequency of different time series data
+* We either increase or decrease the timestamp frequency
+
+#### Downsampling the data
+* The original resolution of the data isn't sensible
+* Match against data at a lower frequency - we can either downsample, take average, weighted mean etc.
+* Selecting out every nth element
+
+#### Upsampling the data
+* convert irregularly sampled time series to a regularly timed one
+* Inputs sampled at different frequencies
+* Knowledge of time series dynamics - Treat as a missing data problem and missing data techniques can be applied.
+
+#### Smoothing data
+* Moving average is used to eliminate measurement spikes, errors of measurement etc.
+
+* **purpose of smoothing**
+* Data preparation - Raw data unsuitable
+* Feature generation
+* Prediction - For many processes prediction is mean, which we get from a smoothed feature
+* Visualization - Add signal to a noisy plot
+
+* Exponential smoothing - All data points are not treated equally
+* More weight to recent data
+* ![Equation for exponential smoothing](/Images/exponential_smoothing.png)
+* ![Doing smoothing with pandas](/Images/smoothing_pandas.png)
+* Exponential smoothing does not perform well in case of data with a long-term trend
+* Holt's method and holt-winters smoothing are two exponential smoothing methods applied to data with a trend or with a trend and a seasonality
+* Kalman filters and LOESS(locally estimated scatter plot smoothing) are other computationally involved methods - These methods leak information from the future - Not appropriate for forecasting
+* Smoothing is a commonly used form of forecasting, and you can use a smoothed time series (without lookahead) as one easy null model when you are testing whether a fancier method is actually producing a successful forecast
+
+## Seasonality
+*  Seasonal time series are time series in which behaviors recur over a fixed period. There can be multiple periodicities reflecting different tempos of seasonality, such as the seasonality of the 24-hour day versus the 12-month calendar season, both of which exhibit strong features in most time series relating to human behavior.
+
+
+## Time Zones 
+* Python libraries to deal with Timezone - datetime, pytz and dateutil
+
+![current time in python](/Images/timezone_python.png)
+
+* Be careful with timezone conversions
+* Dealing with daylight savings can be tricky
+
+
+### Lookahead
+* Processing and cleaning time-related data can be a tedious and detail-oriented process.There is tremendous danger in data cleaning and processing of introducing a lookahead! You should have lookaheads only if they are intentional, and this is rarely appropriate.
+
+
+
+
+
+
+
+

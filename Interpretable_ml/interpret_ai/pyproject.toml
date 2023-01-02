@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "interpret-ai"
+version = "0.1.0"
+description = ""
+authors = ["Thulasiram Gunipati <thulasiram@lomotif.com>"]
+readme = "README.md"
+packages = [{include = "interpret_ai"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+interpret = "^0.2.7"
+pandas = "^1.5.1"
+scikit-learn = "^1.1.3"
+gamchanger = "^0.1.10"
+imodels = "^1.3.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

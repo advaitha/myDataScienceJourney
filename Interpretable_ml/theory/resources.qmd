@@ -1,0 +1,68 @@
+# Resources
+
+### Megasource
+* [Cynthia Rudin page](https://users.cs.duke.edu/~cynthia/code.html)
+
+
+### Package
+![what If tool](https://pair-code.github.io/what-if-tool/learn/)
+
+
+### Video
+* [This looks like that](https://www.youtube.com/watch?v=k3IQnRsl9U4)
+
+
+### PPT
+* [EBM explained](https://people.orie.cornell.edu/mru8/orie4741/lectures/Tutorial4MadeleineUdellClass_2020Dec08_RichCaruana_IntelligibleMLInterpretML_EBMs_75mins.pdf)
+
+
+### Research papers
+* [Stop using blackbox models for high stakes](https://arxiv.org/pdf/1811.10154.pdf)
+* [Neural additive models](https://arxiv.org/pdf/2004.13912.pdf)
+* [underrepresentation](https://arxiv.org/pdf/2011.03395.pdf)
+* [Explainable Neural Networks](https://arxiv.org/pdf/2004.02353.pdf)
+* [ICE](https://arxiv.org/pdf/1309.6392.pdf)
+* [Fooling Lime and shap](https://arxiv.org/pdf/1911.02508.pdf)
+* [Fooling PDP](https://arxiv.org/pdf/2105.12837.pdf)
+* [Fairwashing](https://arxiv.org/pdf/1901.09749.pdf)
+* [GAMchanger](https://dl.acm.org/doi/pdf/10.1145/3534678.3539074)
+- [FIGS](https://arxiv.org/pdf/2201.11931.pdf)
+
+
+
+### Blogs
+* [corels](https://corels.eecs.harvard.edu/corels/)
+* [DiCE](https://www.microsoft.com/en-us/research/project/dice/)
+* [GAMchanger](http://interpret.ml/gam-changer/)
+* [Interpretability for NN- Distill blog](https://distill.pub/2018/building-blocks/)
+* [Feature visualization - Distill](https://distill.pub/2017/feature-visualization/appendix/)
+* 
+
+
+### Tutorials
+* [causal Inference](https://causal-machine-learning.github.io/kdd2021-tutorial/)
+* [InterpretableML](https://github.com/MaartenGr/InterpretableML)
+* [Lot of notebooks](https://github.com/jphall663/interpretable_machine_learning_with_python#enhancing-transparency-in-machine-learning-models-with-python-and-xgboost---notebook)
+* [Tutorial](https://nbviewer.org/github/jphall663/interpretable_machine_learning_with_python/blob/master/xgboost_pdp_ice.ipynb)
+
+
+### Software packages
+* [GAMchanger](https://github.com/interpretml/gam-changer)
+* [slim package](https://github.com/ustunb/slim-python)
+* [pyGAM](https://github.com/dswah/pyGAM)
+* [optimal sparse decision tree](https://github.com/xiyanghu/OSDT)
+* [PyMC](https://www.pymc.io/projects/docs/en/stable/learn.html)
+* [dowhy](https://github.com/py-why/dowhy)
+* [Aletheia](https://github.com/SelfExplainML/Aletheia)
+* [This looks like that](https://github.com/cfchen-duke/ProtoPNet)
+* [RuleFit](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/rulefit.html)
+* [skope rules](https://github.com/scikit-learn-contrib/skope-rules)
+* [GLRM](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glrm.html)
+* [DeepLift](https://github.com/kundajelab/deeplift)
+* [Eli5](https://github.com/TeamHG-Memex/eli5)
+* [lofo](https://github.com/aerdem4/lofo-importance)
+* [Anchor](https://github.com/marcotcr/anchor)
+* [PDP](https://github.com/SauceCat/PDPbox)
+* [conditional Expectation plot](https://github.com/AustinRochford/PyCEbox)
+* [ALE](https://github.com/blent-ai/ALEPython)
+* [DICE](https://github.com/interpretml/DiCE)

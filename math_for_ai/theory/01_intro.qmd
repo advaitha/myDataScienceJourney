@@ -1,0 +1,40 @@
+# Introduction
+* contionous variables 
+    * Probability density function
+
+* Discrete variables 
+    * Probability mass function
+
+* Marginal probability distribution
+    * Getting the probability distribution of a single or multiple variables from the full joint probability distribution of multiple random variables. 
+
+* Joint probability distribution
+    * Probability distribution of two or more variables occuring together
+    * If we fix the value of one of the variable, we get a distribution proportional to conditional probability distribution
+    * Joint probability distribution = marginal probability distribution + conditional probability distribution
+    * Joint probability in case of dependent variables is not separable. we need to store each value for every co-occurance between the variables. (curse of dimensionality)
+
+
+## Conditionl probabilities and Bayes theorem
+### Bayes theorem
+* Estimating conditional probabilities when full joint probability distribution is not known
+
+### Mixtures of distributions
+* Mix probability distributions
+
+### Expectation
+* If the data we care for is not sampled or observed, we speculate on it using the langauge of expectation.
+* Law of large numbers - When sample size goes to infinity, expectation matches the sample mean
+
+### Covariance vs correlation
+* Correlation works on normalized random variables
+* Covariance works on unnormalized random variables
+
+
+
+
+
+
+
+
+

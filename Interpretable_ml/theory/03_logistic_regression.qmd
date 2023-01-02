@@ -1,0 +1,12 @@
+# Logistic Regression
+
+### Interpretation
+* Numerical Feature: If we increase the value of feature by one unit, the estimated odds change by a factor of exp(weight). Final weight = weight * exp(weight)
+* Categorical Feature: One of the value of a feature is reference category. Changing the value of feature from reference category to other category will change estimated odds by a factor of exp(weight)
+* Intercept: When all numeric features are zero and categorical features are at reference category, the extimated odds are exp(bias). Intercept weight is ususally not relevant
+
+### Pros and Cons
+* Same as linear regression
+* Interpretation is more difficult as the interpretation of weights is multiplicative and not additive
+
+

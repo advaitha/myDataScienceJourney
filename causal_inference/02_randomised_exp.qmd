@@ -1,0 +1,5 @@
+# Randomised Experiments
+* Randomised experiments can make bias vanish
+* They tend to be very expensive or plain unethical. Sometimes it is not practical to control the assignment.
+* Randomised experiments are the simplest and most effective way to uncover causal impact. It does this by making the treatment and control groups comparable.
+

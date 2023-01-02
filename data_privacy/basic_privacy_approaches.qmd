@@ -1,0 +1,56 @@
+# Approaches to Data privacy
+
+## Identifying sensitive data
+* Data which could be used separately or in combination with other information to identify a person or small group of persons
+    * Personally Identifiable Information (PII)
+    * Person-Related data
+    * Proprietary and Confidential data
+
+
+### Open source library to Identify PII Information
+[Identifying PII in images and text](https://github.com/microsoft/presidio)
+
+
+### Documenting data for use
+* We can have a classification system for the data.
+* Use classification as an initial step for documentation
+* [Toolkit for documenting Data - Data Cards](https://sites.research.google/datacardsplaybook/)
+* [Framework for documenting Models - Model Cards](https://modelcards.withgoogle.com/about)
+* [Tool for Data Management](https://ckan.org/)
+    * Documenting data Collection
+    * Documenting Data Quality
+    * Documenting Data Security
+    * Documenting Data Privacy
+    * Documenting Data Descriptions
+    * [Documenting Data Statistics](https://github.com/PAIR-code/facets)
+    * Documenting consent
+* Track Data Lineage
+* [Data version control](https://github.com/iterative/dvc)    
+![Lineage and consent tracking pipeline](/Images/data_privacy.png)
+
+
+## Pseudonymization
+* It is a technique that allows us to use "Pseudonyms" instead of real names and data
+
+![pseudonymization approaches](/Images/pseudonymization.png)
+
+![How a linkage attack works](/Images/linkage_attack.png)
+
+* **Linking** is a primary attack vector to determine the identity of an individual.
+
+![Advantages and Disadvantages of Pseudonymization](/Images/pseudo_ad_dis.png)
+
+* If the data will be only used intenally by a small group of individuals who may require privileged access, then pseudonymization might be a good fit for the needs
+
+* Tools for pseudonymization
+    * [KIProtect's Kodex](https://heykodex.com/)
+    * [Format preserving library by Mysto](https://github.com/mysto/python-fpe)
+    * [Microsoft's Presidio](https://github.com/microsoft/presidio)
+    * [Private Input Masked output based on GO](https://github.com/CGI-FR/PIMO)
+
+
+
+
+
+
+

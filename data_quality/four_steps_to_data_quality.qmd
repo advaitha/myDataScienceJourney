@@ -1,0 +1,42 @@
+# Ensuring Data Quality
+
+**Great Expectations** is a python package which helps ensuring data quality in four steps.
+
+* Setup the Data context
+* Connect to data
+* Create Expectations
+* Validate Data
+
+![Follow these four steps](/Images/dq_steps.png)
+
+## Four steps to Data Quality
+In this Demo we will be using **NYC taxi data** to show how we can ensure the quality of data in production. This is an open data set which is updated every month. Each record in the data corresponds to one taxi ride and contains information such as the pick-up and drop-off location, the payment amount, and the number of passengers, among others.
+
+We will be using two CSV files, each with 10,000 row sample of taxi trip records. A sample for **January 2019** and a sample for **February 2019**.
+
+For purposes of this tutorial, we are treating the January 2019 taxi data as our "current" data, and the February 2019 taxi data as "future" data that we have not yet looked at. We will use Great Expectations to build a profile of the January data and then use that profile to check for any unexpected data quality issues in the February data. In a real-life scenario, this would ensure that any problems with the February data would be caught (so it could be dealt with) before the February data is used in a production application!
+
+#### Setup
+
+![](/Images/dq_setup.png)
+
+
+#### Connect
+
+![](/Images/dq_connect.png)
+
+
+#### Generate Expectations from domain knowledge and past data
+
+![](/Images/create_expecatations.png)
+
+[Explore Expecatations](/local_site/validations/data_quality_expectation_demo/__none__/20221223T153852.905930Z/0846100ca27ae7b90ae188a05584f036.html)
+
+
+#### Validate new data using the expectations created
+
+![](/Images/dq_validate.png)
+
+[Explore validations](/local_site/validations/data_quality_expectation_demo/20221223-155521-my-run-name-template/20221223T155521.270103Z/5cb7dc596a55c639f5512b28c8a14a78.html)
+
+

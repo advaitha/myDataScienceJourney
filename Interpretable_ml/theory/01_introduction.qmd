@@ -1,0 +1,162 @@
+# Introduction
+
+* Local explanations can be more accurate than global explanations.
+* Rashomon effect - An event can be explained by various causes
+
+## Properties of good explanations
+* **Explanations are contrastive** - The best explanation is the one that highlights the greatest difference between the object of interest and the reference object. Humans are interested in conterfactual explanations. Instead of knowing the reasons for why their loan was rejected, they would be interested in knowing what changes can be done to secure the loan.
+* **Explanations are selected** - Give only 1 to 3 good reasons even if the world is very complex. Ensemble methods use different combinations of features with different models. It also means that there is more than one selective explanation of why a certain prediction was made.
+* **Explanations are social** - Explanations should be contextualized to the social environment of the ML model and target audience.
+* **Explanations focus on the abnormal** - (Teacher asking question and behaving abnormally as the reason for student failing the course). Any feature which was abnormal and which influenced the prediction should be included in explanation.
+* **Good explanations are consistent with prior beliefs of the explainee** - How can we enforce monotonicity constraints on a feature? (feature can only affect the prediction in one direction)
+* **Good explanations are general and probable** - In the absence of abnormal causes, a general explanation (explain many instances) is considered as a good explanation. 
+
+
+**Transparency is an enabler of  trust**
+
+## What makes ml model interpretable:-
+    * constraints - Sparsity, monotonic, interaction constriants
+    * Additivity of Inputs - Example GAM
+    * Prototypes - Using well understood data points for explaining previously unseen data point
+    * Summarization - variable important measures, surrogate models and other post-hoc approaches
+
+## Approaches for Interpretable models
+* GAM, GA2Ms, penalized regression
+
+### Penalized Regression
+*  Iteratively Reweighted least squares (IRLS) - Minimize the effect of outliers. After first iteration IRLS checks which rows of input data are leadng to large errors. It then reduces the weight of those rows in subsequent iterations
+* L1 Norm peanlty - LASSO - Avoid multiple comparison problemsthat arise in older stepwise feature selection.
+* L2 Norm penalty - Ridge - Stabilize model parameters in the presence of correlation
+ * Link function 
+    * logarthim link function - count data
+    * inverse link function - Ganna distributed output
+* Elatic net 
+    * IRLS, L1, L2 and link functions for various target or error distributions
+##### when to use penalized regression:-
+    * when more features than rows
+    * correlated features
+    * Need transparency
+
+##### SLIM (Super sparse linear integer model)
+* State of the art in penalized regression models
+* Transparent (Highest interpretability)
+
+
+### Causal models
+* Gold standard of interpretability
+* They don't fit to noise as traditional black-box ML models
+
+### Explainable Neural Networks
+* Use the same principles as GAM, EBM with some twists
+* Simple additive combinations of shape functions
+* Back propagation is used to learn optimal combinations of variables to act as inputs to shape functions learned via subnetworks
+* Shape functions are combined in additive fashion with weights to get output of the network
+
+### KNN
+* prototype method
+
+### Rule based Models
+* RuleFit and scope rules are two techniques to find interpretable rules from the training data
+* Certifiable optimal rule lists (CORELS)
+* Scalable Bayesian rule lists
+
+### Sparse Matrix Factorization
+* L1 penalty introduced to matrix factorization
+* We can extract new features from a large matrix of data, where only a few of the original columns have large weights on any new features
+* sparse principal components analysis (SPCA) ???
+* Nonnegative Matrix Factorization (NMF) - Training data only takes positive values
+* Many unsupervised learning techniques are instances of generalized low-rank models
+
+
+## Post-hoc approches (local)
+
+### Counterfactuals
+* What input features value would have to be changed to change the outcome of a model prediction
+
+### Gradient based feature attribution
+* Common in deep learning
+* For image and text data gradients are overlaid on input images to create highly visual explanations depicting where a function exhibits large gradients when creating a prediction for that input.
+* Integrated gradients - ????
+* Layerwise relevance propagation - ???
+* Deeplift - ???
+* Grad-CAM
+
+### Occlusion
+* Remove features from a model prediction and tracking the resulting change in the prediction
+* This method is basis for occlusion and leave-one-feature-out(LOFO) method
+
+
+### Prototypes
+* criticisms are data points that are not represented well by prototypes
+* Prototypes and criticisms are used to generate local explanations
+
+
+### Shapley values
+* Average of all possible sets of inputs that do not include the feature of interest. Different groups of inputs are called coalitions.
+* It takes into account much more information than most other local feature methods
+* Tree SHAP - Exact - Applicable for tree based methods
+* Kernel and Deep SHAP - Approximate
+* Kernel SHAP - model agnostic
+* SHAP is an offset from the average model prediction
+* It does not provide causal or counterfactual explanations
+
+
+## Post-hoc approches (Global)
+### Feature importance
+* Aggreagte of local importance.
+
+### Surrogate models
+* Simple models of complex models
+* Model agnostic
+
+
+##### Decision Tree surrogates (Global)
+* Decision tree is trained on the inputs and predictions of a complex model
+
+##### LIME
+* Local interpretable model-agnostic explanations (LIME)
+* Fitting linear model to the predictions of some small region of a more complex model's predictions
+* Sparse local explanations
+* A locally weighted interpretable surrogate model with a penalty to induce sparsity
+* Challenges
+    * Sampling is a problem for real-time explanation
+    * Generated data may contain out-of-range data leading to unrealistic local feature importance values
+    * Extreme non-linearity and interactions in the selected local region can cause lime to fail completely
+    * Local feature importance values are offsets from the local GLM intercept, and this intercept can sometimes account for the most important local phenomena.
+
+##### Anchors
+* Rule based methods to describe a ml model
+* Special instance of using rule-based models as surrogate models
+* Rule based models have good capacity to learn non-linearities and interactions
+
+
+### Plots of Model performance
+
+##### Partial Dependence and Individual Conditional Expectation (ICE)
+* How predictions change based on the values of one or two input features of interest, while averging out the effects of all oher input features.
+* ICE ??? depict how a model behaves for a single row of data
+* PDP should be paired with ICE plots
+
+##### Accumulated local effect (ALE)
+* Valuable when strong correlations exist in the training data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+# Decision Trees
+
+### Feature Importance
+* The number of splits for which a feature was used and measure how much it has reduced the variance or gini index compared to the parent node. The sum of all importances is scaled to 100.
+
+### Disadvantages
+* Trees fail to deal with linear relationships
+* Slight changes in input can have a big impact on outcome - Lack of smoothness
+* Trees are unstable. A few changes in the training data can create a completely different tree
+* The number of terminal nodes increases quickly with depth

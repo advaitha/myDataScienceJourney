@@ -1,0 +1,7 @@
+# Fugue
+
+**This module is included to show how we can easily port pandas code to a compute engine of our choice (with minimal code changes).**
+
+Fugue provides an easier interface to using distributed compute effectively and accelerates big data projects.Fugue ports Python, Pandas and SQL code to Spark, Dask and Ray
+
+![Benefits of Fugue](/Images/fugue.png)

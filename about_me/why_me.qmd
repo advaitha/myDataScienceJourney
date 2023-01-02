@@ -1,0 +1,66 @@
+# Why me 
+
+![](/Images/photo.jpeg)
+
+
+
+* The International Social Service (ISS) is an international NGO founded in 1924 which assists children and families confronted with complex social problems as a result of migration. **This project was undertaken in collaboration with 30 data scientists around the world.**
+
+![A Goodwill project I did for The International Social Service](/Images/omdena_certificate.png)
+
+
+
+
+
+## Team player & Attitude
+
+![I am a team player](/Images/team_player.png)
+
+* An example - I initiated and built a data discovery platform understanding the difficulties faced by other data scientists in the team
+* I initiated and built a automated system for video moderation and tagging after knowing about the challenges faced by a different team in the company
+
+
+## I compete with myself
+
+* After serving in military for 20 years, I pivoted to a corporate environment and a different industry
+* I love making small upgrades on a daily basis
+
+* ![I upgrade my version everyday](/Images/upgrade_yourself.png)
+
+
+## I am an Extreme learning Machine (This is not a ML algorithm)
+
+![](/Images/learning.png)
+
+
+**Books on ML I read the previous year**
+![Books I read recently](/Images/books_i_read.png)
+
+**Course I am doing currently**
+
+![](/Images/courses.png)
+
+
+## I am a fun loving individual
+
+### This Office is a-maze-ing!
+
+![If you get lost, call HR](/Images/lost.png)
+
+
+## Here I stop
+
+![](/Images/rest_my_case.gif)
+
+
+
+
+
+
+
+
+
+
+
+
+

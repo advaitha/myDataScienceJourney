@@ -1,0 +1,78 @@
+# Graphical Causal Models
+
+* My understanding of conditioning in causality is filtering on a value of the variable.
+![causal tools](/Images/causal_tools.png)
+
+#### Direct path
+![Direct Path](/Images/direct_path.png)
+
+If we are conditioning on the intermediary variable i,e problem solving, then the dependence between causal knowledge and promotion is broken - They become independent.
+
+![Direct Path Rule](/Images/direct_path_rule.png)
+
+
+#### Fork
+In the case of a fork, the dependence flows backward through the arrows, and we have a **Backdoor path**
+
+![Fork](/Images/fork.png)
+
+We can close the backdoor path and shut down dependence by conditioning on the common cause. Two variables that share a common cause are dependent, but independent when we condition on the common cause.
+
+![Fork Rule](/Images/fork_rule.png)
+
+
+#### Collider
+* A collider is when two arrows collide on a single variable. Both the causes share a common effect.
+
+![collider](/Images/collider.png)
+
+Conditioning on the collider opens the dependence path. Not conditioning on it leaves it closed.
+
+![collider rule](/Images/collider_rule.png)
+
+
+* Based on the above, we can have a more general rule. A path is blocked if and only if:
+    * It contains a non-collider that has been conditioned on
+    * It contains a collider and that has not been conditioned on and has no descendants that have been conditioned on
+
+![causality rules](/Images/causality_rules.png)
+
+
+### Descendent 
+
+![Descendent](/Images/causal_models.png)
+
+
+#### Excercises for causal rules
+
+![Excercises](/Images/causal_excercise.png)
+![Answers](/Images/excercise_answers.png)
+
+
+#### Important points
+![Understanding the causal effects](/Images/causal_model.png)
+
+
+### Confounding
+It is caused when the treatment and the outcome share a common cause. If we close all the backdoor paths between the treatment and the outcome, we can identify the causal effect.
+
+![confounding Bias](/Images/confounding.png)
+
+To fix confounding bias, we need to control all common causes of the treatment and the outcome
+
+Sometimes confounders are not measurable. we may have other measured variables that can act as a proxy for the confounder. controlling for them will help lower the bias. Those variables are sometimes referred to as surrogate confounders. Controlling for the surrogate variables is not sufficient to eliminate bias, but it helps
+
+
+### Selection Bias
+Selection bias arises when we control for more variables than we should. It might be the case that the treatment and the potential outcome are marginally independent but become dependent once we condition on a collider.
+
+Selection bias can also happen due to excessive controlling of mediator variables. This excessive controlling could lead to bias even if the treatment was randomly assigned. 
+
+
+Selection bias can often be fixed by simply doing nothing, which is why it is dangerous. Since we are biased toward action, we tend to see ideas that control things as clever when they can be doing more harm than good.
+
+
+
+
+
+

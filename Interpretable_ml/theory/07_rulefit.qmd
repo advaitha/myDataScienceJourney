@@ -1,0 +1,32 @@
+
+# Rulefit 
+
+* Sparse linear models that include automatically detected interaction effects in the form of decision rules
+* New features captures interactions between the features
+* RuleFit automatically generates the interaction features from decision trees
+* The decision rules are binary
+* The feature importance can be calculated at the local and global level
+* Interpretation of feature importance for interactions
+![Feature Importance](/Images/rulefit_feature_importance.png)
+* Bagged ensembles, random forest, adaboost can be used for generating rules 
+
+## Advantages
+* Automatically adds feature interactions
+* Rules are easy to interpret
+* For an individual only a few rules will apply
+
+
+## Disadvantages
+* Many rules may get non-zero weight in the Lasso model
+* Interpretation tricky when we have overlapping rules
+
+
+## Python packages
+* skope-rules (Seems the development stopped 2 years ago)
+* [imodels](https://csinva.io/imodels/)
+
+
+## SOTA Algorithms
+* Fast Interpretable greedy-tree sums (FIGS)
+* Hierarchical shrinkage:post-hoc regularization of tree based methods
+

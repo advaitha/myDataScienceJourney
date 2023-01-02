@@ -1,0 +1,7 @@
+## packages for Time series
+* [statsforecast](https://github.com/Nixtla/statsforecast)
+* [mlforecast](https://github.com/Nixtla/mlforecast)
+* [Neuralforecast](https://github.com/Nixtla/neuralforecast)
+* [Nixtla](https://github.com/Nixtla/nixtla)
+* [Greykite](https://linkedin.github.io/greykite/)
+* [prophet](https://facebook.github.io/prophet/)

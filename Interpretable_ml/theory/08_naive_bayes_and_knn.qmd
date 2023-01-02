@@ -1,0 +1,11 @@
+## Naive Bayes
+* Based on Bayes conditional probabilities
+* Strong assumption of conditional independence of features
+![Naive Bayes](/Images/naive_bayes.png)
+* It is an interpretable model because of the independence of assumption
+
+## K-Nearest Neighbors
+* The tricky part is finding the right K and how to measure the distance between instances
+* There are no parameters to learn, so no interpretability on a modular level
+* No global interpretability
+* Local interpretation depends on the number of features in a data instance. If the features are less then it can give good explanations.

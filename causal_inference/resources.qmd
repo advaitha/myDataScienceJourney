@@ -1,0 +1,26 @@
+[causal Inference Book](https://matheusfacure.github.io/python-causality-handbook/01-Introduction-To-Causality.html)
+
+
+[Brady Neal course website](https://www.bradyneal.com/causal-inference-course)
+
+[Brady Neal causal Book](https://www.bradyneal.com/Introduction_to_Causal_Inference-Dec17_2020-Neal.pdf)
+
+[Brady Neal youtube course](https://www.youtube.com/watch?v=DXBPtpBhGqo&list=PLoazKTcS0RzZ1SUgeOgc6SWt51gfT80N0)
+
+[Joshua Angrist videos](https://www.aeaweb.org/conference/cont-ed/2020-webcasts)
+
+[what If - Book](https://cdn1.sph.harvard.edu/wp-content/uploads/sites/1268/2022/11/hernanrobins_WhatIf_13nov22.pdf)
+
+[what If Python code](https://github.com/jrfiedler/causal_inference_python_code)
+
+[Mixtape - Book](https://mixtape.scunning.com/07-instrumental_variables)
+
+[statistical Rethinking book code in python and pymc](https://github.com/pymc-devs/pymc-resources/tree/main/Rethinking_2)
+
+
+## Packages
+* Causalinference
+* Causallib
+* Causalimpact
+* DoWhy
+* Econml

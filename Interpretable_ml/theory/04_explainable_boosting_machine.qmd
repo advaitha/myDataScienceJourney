@@ -1,0 +1,18 @@
+# Explainable Boosting Machines
+* It is a tree based, cyclic gradient boosting generalized additive model with automatic interaction detection
+* Often accurate as blackbox models
+* Slower to train than other modern algorithms
+* Extremely compact and fast at prediction time
+* For both classification and regression
+
+### References:-
+* [Cornell Paper](https://www.cs.cornell.edu/~yinlou/papers/lou-kdd12.pdf)
+* [Research paper](https://arxiv.org/pdf/1909.09223.pdf)
+* [Interpret Ml](https://interpret.ml/docs/ebm.html)
+
+### Blogs:-
+* [Medium Blog post](https://medium.com/@mariusvadeika/explaining-model-pipelines-with-interpretml-a9214f75400b)
+* [Notebook](https://everdark.github.io/k9/notebooks/ml/model_explain/model_explain.nb.html#7_explainable_boosting_machine)
+
+### Github:-
+* [link](https://github.com/interpretml/interpret)

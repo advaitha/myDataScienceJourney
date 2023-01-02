@@ -1,0 +1,7 @@
+# Resources
+
+* [Bayesian Analysis for Hackers - Book](https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers)
+* [Bayesian Methods for Hackers - Book](http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/)
+*[Bayesian reasoning and ML Book](http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/200620.pdf)
+*[Good Book on Bayesian Modeling in python](https://bayesiancomputationbook.com/welcome.html)
+
