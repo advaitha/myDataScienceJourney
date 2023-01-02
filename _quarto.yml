@@ -92,7 +92,7 @@ website:
         - distributed_processing/fugue_sql.ipynb     
       - section: "**About Me**"
         contents:
-        - about_me/my_experience.qmd
+        - about_me/my_ds_experience.qmd
         - about_me/project_portfolio.qmd   
             
 format:
