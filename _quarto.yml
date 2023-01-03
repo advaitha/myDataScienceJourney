@@ -20,6 +20,7 @@ website:
         - 3D_deep_learning/02_coordination_systems.qmd
         - 3D_deep_learning/03_rendering.qmd
         - 3D_deep_learning/04_fitting_deformable_mesh_to_point.qmd
+        - 3D_deep_learning/05_differentiable_rendering.qmd
         - 3D_deep_learning/resources.qmd
       - section: "**Interpretable_ml**"
         contents:
@@ -99,7 +100,7 @@ website:
         - distributed_processing/fugue_sql.ipynb     
       - section: "**About Me**"
         contents:
-        - about_me/my_ds_experience.qmd
+        - about_me/experience.qmd
         - about_me/project_portfolio.qmd   
             
 format:

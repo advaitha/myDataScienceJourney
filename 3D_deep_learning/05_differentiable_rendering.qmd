@@ -1,1 +1,17 @@
 # Differentiable Rendering
+
+The physical process of image formation is a mapping from 3D models to 2D images.
+
+![The image formation process is a mapping from the 3D models to 2D images](/Images/3D_to_2D.png)
+
+Many 3D computer vision problems are a reversal of image formation. In these problems, we are usually given 2D images and need to estimate the 3D models from the 2D images.
+
+![Many 3D computer vision problems are based on 2D images given to estimate 3D models](/Images/2d_to_3d.png)
+
+we can cast this as an optimization problem. We can minimize the distance between rendered image and the original image. To do this the rendering should be differentiable.
+
+## Making rendering differentiable
+
+![By considering a weighted average of all the relevant mesh faces instead of single mesh face per ray we can make the rendering differentiable](/Images/rendering_diff.png)
+
+

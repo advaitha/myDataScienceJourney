@@ -1,0 +1,5 @@
+ # Experience
+  
+ ![](/Images/photo.jpeg)
+
+ I got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100's of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions.
