@@ -14,6 +14,13 @@ website:
     search: True
     backround:  light
     contents:
+      - section: "**3D Deep Learning"
+        contents:
+        - 3D_deep_learning/01_data_formats.qmd
+        - 3D_deep_learning/02_coordination_systems.qmd
+        - 03_rendering.qmd
+        - 04_fitting_deformable_mesh_to_point.qmd
+        - resources.qmd
       - section: "**Interpretable_ml**"
         contents:
         - Interpretable_ml/theory/01_introduction.qmd
