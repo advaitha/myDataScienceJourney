@@ -137,7 +137,7 @@
     "href": "3D_deep_learning/resources.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Resources\nMega Github resource pytorch3d meshrcnn 3D Deep learning youtube videos Nvidia Kaolin"
+    "text": "Resources\n\nMega Github resource\npytorch3d\nmeshrcnn\n3D Deep learning youtube videos\nNvidia Kaolin"
   },
   {
     "objectID": "3D_deep_learning/01_data_formats.html",
@@ -151,7 +151,7 @@
     "href": "3D_deep_learning/05_differentiable_rendering.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Differentiable Rendering"
+    "text": "The physical process of image formation is a mapping from 3D models to 2D images.\n\n\n\nThe image formation process is a mapping from the 3D models to 2D images\n\n\nMany 3D computer vision problems are a reversal of image formation. In these problems, we are usually given 2D images and need to estimate the 3D models from the 2D images.\n\n\n\nMany 3D computer vision problems are based on 2D images given to estimate 3D models\n\n\nwe can cast this as an optimization problem. We can minimize the distance between rendered image and the original image. To do this the rendering should be differentiable.\n\n\n\n\n\nBy considering a weighted average of all the relevant mesh faces instead of single mesh face per ray we can make the rendering differentiable"
   },
   {
     "objectID": "3D_deep_learning/04_fitting_deformable_mesh_to_point.html",
@@ -165,7 +165,7 @@
     "href": "3D_deep_learning/03_rendering.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "In the example, the world model contains one 3D sphere, which is represented by a mesh model. To form the image of the 3D sphere, for each image pixel, we generate one ray, starting from the camera origin and going through the image pixel. If one ray intersects with one mesh face, then we know the mesh face can project its color to the image pixel. We also need to trace the depth of each intersection because a face with a smaller depth would occlude faces with larger depths.\n\n\n\nRendering\n\n\nRendering usually is divided into two stages * Rasterization * Shading\n\n\nIt is the process of finding relevant geometric objects for each image pixel\n\n\n\nIt is the process of taking the outputs of the rasterization and computing the pixel value for each image pixel.\n\n\nLambertian surfaces are types of objects that are not shiny at all, such as paper, unfinished wood, and unpolished stones.\n\n\n\nLambertian shading model\n\n\nOne basic idea of the Lambertian cosine law is that for Lambertian surfaces, the amplitude of the reflected light does not depend on the viewer’s angle, but only depends on the angle between the surface normal and the direction of the incident light.\n\n\n\nThe Phong lighting model is a frequently used model for these glossy components.\nOne basic principle of the Phong lighting model is that the shiny light component should be strongest in the direction of reflection of the incoming light. The component would become weaker as the angle between the direction of reflection and the viewing angle becomes larger.\n\n\n\nPhong model"
+    "text": "Rendering is the process of projecting 3D physical models into 2D images\nIn the below example, the world model contains one 3D sphere, which is represented by a mesh model. To form the image of the 3D sphere, for each image pixel, we generate one ray, starting from the camera origin and going through the image pixel. If one ray intersects with one mesh face, then we know the mesh face can project its color to the image pixel. We also need to trace the depth of each intersection because a face with a smaller depth would occlude faces with larger depths.\n\n\n\nRendering\n\n\nRendering usually is divided into two stages * Rasterization * Shading\n\n\nIt is the process of finding relevant geometric objects for each image pixel\n\n\n\nIt is the process of taking the outputs of the rasterization and computing the pixel value for each image pixel.\n\n\nLambertian surfaces are types of objects that are not shiny at all, such as paper, unfinished wood, and unpolished stones.\n\n\n\nLambertian shading model\n\n\nOne basic idea of the Lambertian cosine law is that for Lambertian surfaces, the amplitude of the reflected light does not depend on the viewer’s angle, but only depends on the angle between the surface normal and the direction of the incident light.\n\n\n\nThe Phong lighting model is a frequently used model for these glossy components.\nOne basic principle of the Phong lighting model is that the shiny light component should be strongest in the direction of reflection of the incoming light. The component would become weaker as the angle between the direction of reflection and the viewing angle becomes larger.\n\n\n\nPhong model"
   },
   {
     "objectID": "about_me/why_me.html",
@@ -189,11 +189,11 @@
     "text": "# My Data Science Experience\n\nI got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100’s of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions."
   },
   {
-    "objectID": "about_me/my_ds_experience.html",
-    "href": "about_me/my_ds_experience.html",
+    "objectID": "about_me/experience.html",
+    "href": "about_me/experience.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "# My Data Science Experience\n\nI got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100’s of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions."
+    "text": "# Experience\n\nI got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100’s of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions."
   },
   {
     "objectID": "causal_inference/resources.html",
