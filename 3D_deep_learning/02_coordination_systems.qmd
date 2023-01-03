@@ -1,0 +1,30 @@
+# 3D coordination systems
+
+### World coordination system
+The first coordination system we frequently use is called the world coordination system. This coordinate system is a 3D coordination system chosen with respect to all the 3D objects, such that the locations of the 3D objects can be easy to determine. Usually, the axis of the world coordination system does not agree with the object orientation or camera orientation.
+
+
+### Camera view coordination system
+ In PyTorch3D, the camera view coordination system is defined such that the origin is at the projection point of the camera, the x axis points to the left, the y axis points upward, and the z axis points to the front.
+ 
+ ![camera view coordination system in pytorch3d](/Images/pytorch_coord_system.png)
+
+
+### Normalized device coordinate (NDC)
+The normalized device coordinate (NDC) confines the volume that a camera can render. The x coordinate values in the NDC space range from -1 to +1, as do the y coordinate values. The z coordinate values range from znear to zfar, where znear is the nearest depth and zfar is the farthest depth. Any object out of this znear to zfar range would not be rendered by the camera.
+
+### Screen coordinate system
+It is defined in terms of how the rendered images are shown on our screens. The coordinate system contains the x coordinate as the columns of the pixels, the y coordinate as the rows of the pixels, and the z coordinate corresponding to the depth of the object.
+
+
+## Camera Models
+Camera models are to create a correspondence between 2D space and the 3D world. In pytorch3D there are two major camera models
+
+![Pytorch3D camera projections](/Images/camera_projections.png)
+
+### Orthographic camera model
+ The orthographic projections map objects to 2D images, disregarding the object depth. For example, just as shown in the figure, two objects with the same geometric size at different depths would be mapped to 2D images of the same size.
+
+### Perspective Projection
+If an object moved far away from the camera, it would be mapped to a smaller size on the 2D images.
+

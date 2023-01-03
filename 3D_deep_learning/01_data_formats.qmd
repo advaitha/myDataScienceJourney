@@ -1,6 +1,5 @@
 # 3D Deep learning
 
-
 ## Three-dimensional data representation
 * Depth images
 * Point clouds
@@ -31,5 +30,11 @@ Each mesh contains a set of 3D points called vertices. Each mesh also contains a
 
 Meshes also have heterogeneous data issues.
 
+
+### Popular 3D data file formats
+* ply
+* obj
+
 ### Reference
-[Link to Blog post](https://towardsdatascience.com/deep-learning-for-3d-synthesis-2dd57e2001f)
+* [Link to Blog post](https://towardsdatascience.com/deep-learning-for-3d-synthesis-2dd57e2001f)
+* Book - 3D deep learning with python
