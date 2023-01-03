@@ -1,4 +1,4 @@
-# 3D Deep learning
+# 3D Data Formats
 
 ## Three-dimensional data representation
 * Depth images
