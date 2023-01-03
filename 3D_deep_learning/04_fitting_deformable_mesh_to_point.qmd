@@ -1,3 +1,44 @@
 # Fitting Deformable Mesh Models to Raw Point Clouds
 
-Real-world depth cameras, such as LiDAR, time-of-flight cameras, and stereo vision cameras, usually output either depth images or point clouds. These devices do not
+Real-world depth cameras, such as LiDAR, time-of-flight cameras, and stereo vision cameras, usually output either depth images or point clouds. These devices do not give any direct measurements of surfaces. However, in many real-world applications, surface information is sought. 
+
+
+## Formulating an optimization problem
+
+The cost function should be chosen such that it is a good measurement of how similar the point cloud is to the mesh. One such cost function is Chamfer set distance. 
+
+![Chamfer distance](/Images/chamfer_distance.png)
+
+
+For fitting meshes to point clouds, we first randomly sample some points from a mesh model and then optimize the Chamfer distances between the sampled points from the mesh model and the input point cloud. 
+
+
+## Loss functions for regularization
+There may exist multiple mesh models that can be good fits to the same point cloud.These mesh models that are good fits may include some mesh models that are far away from smooth meshes.
+
+Regularization methods:-
+* Mesh laplacian smoothing loss
+* Mesh normal consistency loss
+* Mesh edge loss
+
+### Mesh Laplacian Smoothing loss
+
+![Mesh Laplacian Smoothing loss](/Images/laplacian_smoothing_loss.png)
+
+In the preceding definition, the Laplacian at the i-th vertex is just a sum of differences, where each difference is between the coordinates of the current vertex and those of a neighboring vertex.
+
+The Laplacian is a measurement for smoothness. If the i-th vertex and its neighbors lie all within one plane, then the Laplacian should be zero. 
+
+
+### Mesh Normal Consistency loss
+The mesh normal consistency loss is a loss function for penalizing the distances between adjacent normal vectors on the mesh.
+
+
+### Mesh Edge loss
+* It is sum of all the edge lengths in the mesh. Longer edge lenghts will not capture the fine details of slowly varying surfaces.
+
+![An Example of 3D point cloud of a Pedestrian](/Images/example_cloud_points.png)
+
+![Optimized deformed mesh model. We have far more points than the original input point cloud. All the different losses are weighted](/Images/optimized_deformed_mesh.png)
+
+
