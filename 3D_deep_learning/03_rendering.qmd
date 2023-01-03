@@ -1,7 +1,9 @@
 # 3D Rendering
 
 ## Rendering
-In the example, the world model contains one 3D sphere, which is represented by a mesh model. To form the image of the 3D sphere, for each image pixel, we generate one ray, starting from the camera origin and going through the image pixel. If one ray intersects with one mesh face, then we know the mesh face can project its color to the image pixel. We also need to trace the depth of each intersection because a face with a smaller depth would occlude faces with larger depths.
+Rendering is the process of projecting 3D physical models into 2D images
+
+In the below example, the world model contains one 3D sphere, which is represented by a mesh model. To form the image of the 3D sphere, for each image pixel, we generate one ray, starting from the camera origin and going through the image pixel. If one ray intersects with one mesh face, then we know the mesh face can project its color to the image pixel. We also need to trace the depth of each intersection because a face with a smaller depth would occlude faces with larger depths.
 
 ![Rendering](/Images/rendering.png)
 

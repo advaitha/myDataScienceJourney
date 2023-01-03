@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – intro</title>
+<title>My Datascience Journey – differentiable_rendering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../causal_inference/01_intro.html" class="sidebar-item-text sidebar-link active">Intro</a>
+  <a href="../causal_inference/01_intro.html" class="sidebar-item-text sidebar-link">Intro</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -557,10 +557,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a>
-  <ul class="collapse">
-  <li><a href="#simson-paradox" id="toc-simson-paradox" class="nav-link" data-scroll-target="#simson-paradox">Simson paradox</a></li>
-  </ul></li>
+  <li><a href="#differentiable-rendering" id="toc-differentiable-rendering" class="nav-link active" data-scroll-target="#differentiable-rendering">Differentiable Rendering</a></li>
   </ul>
 </nav>
     </div>
@@ -569,31 +566,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="intro" class="level1">
-<h1>Intro</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/att.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Average Treatment Effect and Average Treatment Effect on the treated</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/association_ate.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Association Vs ATT</figcaption><p></p>
-</figure>
-</div>
-<p>In the above equation the first term is association. If there is no Bias, then association will be causation. Bias is given by how treated and control group differ before the treatment, in case neither of them has received the treatment.</p>
-<p>Causal Inference is all about finding clever ways to removing bias and making the treated and untreated comparable so that all the difference we see is only the average treatment effect.</p>
-<section id="simson-paradox" class="level2">
-<h2 class="anchored" data-anchor-id="simson-paradox">Simson paradox</h2>
-<ul>
-<li><p>It happens because of unequal weights given to different conditions for different treatments. If we stratify the condition then we will know the causal impact</p></li>
-<li><p>Corrleation is not causation becuase correlation = confounding effect + causal effect.</p></li>
-</ul>
+<section id="differentiable-rendering" class="level1">
+<h1>Differentiable Rendering</h1>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

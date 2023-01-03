@@ -147,6 +147,13 @@
     "text": "Depth images\nPoint clouds\nVoxels\nMeshes\n\n\n\nDepth images contain the depth values of a scene in the form of distance from the camera in meters for each pixel in the image frame.\n\n\n\nA Point cloud is a collection of three-dimensional points distributed in a 3D space. Each of these 3D points has a deterministic position denoted by a certain (x, y, z) coordinate along with other attributes like RGB colour values. Unlike depth images, point cloud representation preserves more high-quality geometric information of the three-dimensional space without any discretization.\nPoint clouds do not have grid-like structures, thus convolutions cannot be directly used for them. They are one of the unordered and irregular data types. There are no clear and regular definitions for neighboring points for each point in a point cloud.special types of deep learning models need to be used for processing point clouds, such as PointNet\nAnother issue for point clouds as training data for 3D deep learning is the heterogeneous data issue – that is, for one training dataset, different point clouds may contain different numbers of 3D points.\n\n\n\nA voxel is just a pixel in a three-dimensional space. A voxel is defined by dividing a 3D cube into smaller-sized cubes and each cube is called one voxel.\nVoxel usually use Truncated Signed Distance Functions (TSDFs) to represent 3D surfaces.\nA Signed Distance Function (SDF) can be defined at each voxel as the (signed) distance between the center of the voxel to the closest point on the surface. A positive sign in an SDF indicates that the voxel center is outside an object. The only difference between a TSDF and an SDF is that the values of a TSDF are truncated, such that the values of a TSDF always range from -1 to +1.\n#### Polygon Mesh A Polygon Mesh is a collection of edges, vertices and faces that together defines the shape and volume of a polyhedral object.\nEach mesh contains a set of 3D points called vertices. Each mesh also contains a set of polygons called faces, which are defined on vertices.\nMeshes also have heterogeneous data issues.\n\n\n\n\nply\nobj\n\n\n\n\n\nLink to Blog post\nBook - 3D deep learning with python"
   },
   {
+    "objectID": "3D_deep_learning/05_differentiable_rendering.html",
+    "href": "3D_deep_learning/05_differentiable_rendering.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Differentiable Rendering"
+  },
+  {
     "objectID": "3D_deep_learning/04_fitting_deformable_mesh_to_point.html",
     "href": "3D_deep_learning/04_fitting_deformable_mesh_to_point.html",
     "title": "My Datascience Journey",

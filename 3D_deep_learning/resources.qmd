@@ -1,7 +1,7 @@
 # Resources
 
-[Mega Github resource](https://github.com/timzhang642/3D-Machine-Learning)
-[pytorch3d](https://pytorch3d.org/)
-[meshrcnn](https://github.com/facebookresearch/meshrcnn)
-[3D Deep learning youtube videos](https://www.youtube.com/playlist?list=PL3OV2Akk7XpBPBEw1jekpxDJYIRPEHbUi)
-[Nvidia Kaolin](https://developer.nvidia.com/kaolin)
+* [Mega Github resource](https://github.com/timzhang642/3D-Machine-Learning)
+* [pytorch3d](https://pytorch3d.org/)
+* [meshrcnn](https://github.com/facebookresearch/meshrcnn)
+* [3D Deep learning youtube videos](https://www.youtube.com/playlist?list=PL3OV2Akk7XpBPBEw1jekpxDJYIRPEHbUi)
+* [Nvidia Kaolin](https://developer.nvidia.com/kaolin)
