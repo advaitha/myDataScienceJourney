@@ -1,0 +1,3 @@
+# Fitting Deformable Mesh Models to Raw Point Clouds
+
+Real-world depth cameras, such as LiDAR, time-of-flight cameras, and stereo vision cameras, usually output either depth images or point clouds. These devices do not

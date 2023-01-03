@@ -1,0 +1,35 @@
+# 3D Computer Vision and Geometry
+
+## Rendering
+In the example, the world model contains one 3D sphere, which is represented by a mesh model. To form the image of the 3D sphere, for each image pixel, we generate one ray, starting from the camera origin and going through the image pixel. If one ray intersects with one mesh face, then we know the mesh face can project its color to the image pixel. We also need to trace the depth of each intersection because a face with a smaller depth would occlude faces with larger depths.
+
+![Rendering](/Images/rendering.png)
+
+Rendering usually is divided into two stages
+* Rasterization
+* Shading
+
+### Rasterization
+It is the process of finding relevant geometric objects for each image pixel
+
+### Shading
+It is the process of taking the outputs of the rasterization and computing the pixel value for each image pixel.
+
+#### Lambertian Shading Model
+Lambertian surfaces are types of objects that are not shiny at all, such as paper, unfinished wood, and unpolished stones.
+
+![Lambertian shading model](/Images/lambertian shading modelpng.png)
+
+One basic idea of the Lambertian cosine law is that for Lambertian surfaces, the amplitude of the reflected light does not depend on the viewer’s angle, but only depends on the angle  between the surface normal and the direction of the incident light. 
+
+
+#### Phong lighting Model
+The Phong lighting model is a frequently used model for these glossy components.
+
+One basic principle of the Phong lighting model is that the shiny light component should be strongest in the direction of reflection of the incoming light. The component would become weaker as the angle  between the direction of reflection and the viewing angle becomes larger.
+
+![Phong model](/Images/phong.png)
+
+
+
+
