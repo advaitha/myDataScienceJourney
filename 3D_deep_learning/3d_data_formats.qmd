@@ -1,0 +1,35 @@
+# 3D Deep learning
+
+
+## Three-dimensional data representation
+* Depth images
+* Point clouds
+* Voxels
+* Meshes
+
+#### Depth Images
+Depth images contain the depth values of a scene in the form of distance from the camera in meters for each pixel in the image frame. 
+
+#### Point Cloud
+A Point cloud is a collection of three-dimensional points distributed in a 3D space. Each of these 3D points has a deterministic position denoted by a certain (x, y, z) coordinate along with other attributes like RGB colour values. Unlike depth images, point cloud representation preserves more high-quality geometric information of the three-dimensional space without any discretization.
+
+Point clouds do not have grid-like structures, thus convolutions cannot be directly used for them. They are one of the unordered and irregular data types. There are no clear and regular definitions for neighboring points for each point in a point cloud.special types of deep learning models need to be used for processing point clouds, such as **PointNet**
+
+Another issue for point clouds as training data for 3D deep learning is the heterogeneous data issue – that is, for one training dataset, different point clouds may contain different numbers of 3D points. 
+
+#### Voxel
+ A voxel is just a pixel in a three-dimensional space. A voxel is defined by dividing a 3D cube into smaller-sized cubes and each cube is called one voxel.
+
+ Voxel usually use Truncated Signed Distance Functions (TSDFs) to represent 3D surfaces.
+
+ A Signed Distance Function (SDF) can be defined at each voxel as the (signed) distance between the center of the voxel to the closest point on the surface. A positive sign in an SDF indicates that the voxel center is outside an object. The only difference between a TSDF and an SDF is that the values of a TSDF are truncated, such that the values of a TSDF always range from -1 to +1.
+
+ #### Polygon Mesh
+A Polygon Mesh is a collection of edges, vertices and faces that together defines the shape and volume of a polyhedral object.
+
+Each mesh contains a set of 3D points called vertices. Each mesh also contains a set of polygons called faces, which are defined on vertices.
+
+Meshes also have heterogeneous data issues.
+
+### Reference
+[Link to Blog post](https://towardsdatascience.com/deep-learning-for-3d-synthesis-2dd57e2001f)
