@@ -270,7 +270,7 @@
     "href": "scaled/lti_mindtree.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Databricks and AWS sagemaker - Data lake & MAAS\nML Piplines\nNLP Techniques\nML algorithms\nOperations research\nBI"
+    "text": "What I can highlight\n\nDatabricks and AWS sagemaker - Data lake & MAAS\nML Piplines - Deploying MAAS\nNLP Techniques - Getting summary for a video and using it to find similar videos and using it for search, ISS case study\nML algorithms - Churn prediction modelling, Recommendation system, Content moderation etc\nOperations research - Highlight operations experience - Supply chain managment etc.\nBI - Dashboards for ZEE5\n\nQuestions * what are the projects on which I will be working? * Can you tell me about the role and the team I’ll be working with? * What is the location for this role? * What will be the interview process? what are the timelines for the same? * Can I answer any final questions for you?"
   },
   {
     "objectID": "data_privacy/basic_privacy_approaches.html",
@@ -551,5 +551,12 @@
     "title": "About",
     "section": "",
     "text": "My Notes on Data Science, Machine learning and Artificial Intelligence I am learning from different books, videos, courses and Notebooks. These pages are replication of various source material from which I am learning."
+  },
+  {
+    "objectID": "3D_deep_learning/06_Differentiable_volumetric_rendering.html",
+    "href": "3D_deep_learning/06_Differentiable_volumetric_rendering.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Volumetric rendering is a collection of techniques used to generate a 2D view of discrete 3D data.The projections generated from this method are without any explicit conversion to a geometric representation. Volumetric rendering is typically used when generating surfaces is difficult or can lead to errors. It can also be used when the content (and not just the geometry and surface) of the volume is important. It is typically used for data visualization.\n\n\n\nVolumetric Rendering\n\n\n\n\nTo determine the RGB values at each pixel, a ray is generated from the projection center going through each image pixel of the cameras. We need to check the probability of occupancy or opacity and colors along this ray to determine RGB values for the pixel. Note there are infinitely many points on each such ray. Thus, we need to have a sampling scheme to select a certain number of points along this ray. This sampling operation is called ray sampling.\n\n\n\nwe have densities and colors defined on the nodes of the volume but not on the points on the rays. Thus, we need to have a way to convert densities and colors of volumes to points on rays. This operation is called volume sampling.\nThe points defined in the ray sampling step might not fall exactly on a point. The nodes of the volume grids and points on rays typically have different spatial locations. We need to use an interpolation scheme to interpolate the densities and colors at points of rays from the densities and colors at volumes.\n\n\n\nFrom the densities and colors of the rays, we need to determine the RGB values of each pixel. In this process, we need to compute how many incident lights can arrive at each point along the ray and how many lights are reflected to the image pixel. We call this process ray marching.\n\n\n\nWhile standard volumetric rendering is used to render 2D projections of 3D data, differentiable volume rendering is used to do the opposite: construct 3D data from 2D images.\n\n\nWe will have ground-truth images. From the intial 3D model, 2D images are rendered and compared to the ground truth images. As this process is differentiable, we run an optimization algorithm to get the final resulting volumetric model. This model can be used to render images from new angles.\nwe represent the shape and texture of the object as a parametric function. This function can be used to generate 2D projections. But, given 2D projections (this is typically multiple views of the 3D scene), we can optimize the parameters of these implicit shape and texture functions so that its projections are the multi-view 2D images. This optimization is possible since the rendering process is completely differentiable, and the implicit functions used are also differentiable."
   }
 ]
