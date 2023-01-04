@@ -1,0 +1,28 @@
+# Volumetric Rendering
+
+Volumetric rendering is a collection of techniques used to generate a 2D view of discrete 3D data.The projections generated from this method are without any explicit conversion to a geometric representation. Volumetric rendering is typically used when generating surfaces is difficult or can lead to errors. It can also be used when the content (and not just the geometry and surface) of the volume is important. It is typically used for data visualization.
+
+![Volumetric Rendering](/Images/volumetric_rendering.png)
+
+### Ray Sampling
+To determine the RGB values at each pixel, a ray is generated from the projection center going through each image pixel of the cameras. We need to check the probability of occupancy or opacity and colors along this ray to determine RGB values for the pixel. Note **there are infinitely many points on each such ray. Thus, we need to have a sampling scheme to select a certain number of points along this ray. This sampling operation is called ray sampling.**
+
+
+### Volume Sampling
+
+we have densities and colors defined on the nodes of the volume but not on the points on the rays. Thus, **we need to have a way to convert densities and colors of volumes to points on rays. This operation is called volume sampling.**
+
+The points defined in the ray sampling step might not fall exactly on a point. The nodes of the volume grids and points on rays typically have different spatial locations. We need to use an interpolation scheme to interpolate the densities and colors at points of rays from the densities and colors at volumes.
+
+
+### Ray Marching
+From the densities and colors of the rays, we need to determine the RGB values of each pixel. In this process, we need to compute how many incident lights can arrive at each point along the ray and how many lights are reflected to the image pixel. We call this process ray marching.
+
+
+## Application of Volumetric rendering
+While standard volumetric rendering is used to render 2D projections of 3D data, differentiable volume rendering is used to do the opposite: construct 3D data from 2D images.
+
+### How it works
+We will have ground-truth images. From the intial 3D model, 2D images are rendered and compared to the ground truth images. As this process is differentiable, we run an optimization algorithm to get the final resulting volumetric model. This model can be used to render images from new angles.
+
+we represent the shape and texture of the object as a parametric function. This function can be used to generate 2D projections. But, given 2D projections (this is typically multiple views of the 3D scene), we can optimize the parameters of these implicit shape and texture functions so that its projections are the multi-view 2D images. This optimization is possible since the rendering process is completely differentiable, and the implicit functions used are also differentiable.
