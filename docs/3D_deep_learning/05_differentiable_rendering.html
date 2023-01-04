@@ -143,6 +143,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/05_differentiable_rendering.html" class="sidebar-item-text sidebar-link active">Differentiable Rendering</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../3D_deep_learning/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
@@ -538,7 +543,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about_me/my_ds_experience.html" class="sidebar-item-text sidebar-link">my_ds_experience.html</a>
+  <a href="../about_me/experience.html" class="sidebar-item-text sidebar-link">experience.html</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -557,7 +562,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#differentiable-rendering" id="toc-differentiable-rendering" class="nav-link active" data-scroll-target="#differentiable-rendering">Differentiable Rendering</a></li>
+  <li><a href="#differentiable-rendering" id="toc-differentiable-rendering" class="nav-link active" data-scroll-target="#differentiable-rendering">Differentiable Rendering</a>
+  <ul class="collapse">
+  <li><a href="#making-rendering-differentiable" id="toc-making-rendering-differentiable" class="nav-link" data-scroll-target="#making-rendering-differentiable">Making rendering differentiable</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -568,8 +576,32 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="differentiable-rendering" class="level1">
 <h1>Differentiable Rendering</h1>
+<p>The physical process of image formation is a mapping from 3D models to 2D images.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/3D_to_2D.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The image formation process is a mapping from the 3D models to 2D images</figcaption><p></p>
+</figure>
+</div>
+<p>Many 3D computer vision problems are a reversal of image formation. In these problems, we are usually given 2D images and need to estimate the 3D models from the 2D images.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/2d_to_3d.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Many 3D computer vision problems are based on 2D images given to estimate 3D models</figcaption><p></p>
+</figure>
+</div>
+<p>we can cast this as an optimization problem. We can minimize the distance between rendered image and the original image. To do this the rendering should be differentiable.</p>
+<section id="making-rendering-differentiable" class="level2">
+<h2 class="anchored" data-anchor-id="making-rendering-differentiable">Making rendering differentiable</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/rendering_diff.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">By considering a weighted average of all the relevant mesh faces instead of single mesh face per ray we can make the rendering differentiable</figcaption><p></p>
+</figure>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

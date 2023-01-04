@@ -3,6 +3,9 @@
 ![](/Images/photo.jpeg)
 
 
+## Passionate to Solve Challenges using Data Science
+
+
 
 * The International Social Service (ISS) is an international NGO founded in 1924 which assists children and families confronted with complex social problems as a result of migration. **This project was undertaken in collaboration with 30 data scientists around the world.**
 
@@ -40,12 +43,6 @@
 
 ![](/Images/courses.png)
 
-
-## I am a fun loving individual
-
-### This Office is a-maze-ing!
-
-![If you get lost, call HR](/Images/lost.png)
 
 
 ## Here I stop
