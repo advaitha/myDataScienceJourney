@@ -102,6 +102,7 @@ website:
         contents:
         - about_me/experience.qmd
         - about_me/project_portfolio.qmd   
+        - about_me/why_me.qmd
             
 format:
   html:
