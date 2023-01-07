@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>My Datascience Journey – transformers</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">My Datascience Journey</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>3D Deep Learning</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/01_data_formats.html" class="sidebar-item-text sidebar-link">3D Data Formats</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/02_coordination_systems.html" class="sidebar-item-text sidebar-link">3D coordination systems</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/03_rendering.html" class="sidebar-item-text sidebar-link">3D Rendering</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/04_fitting_deformable_mesh_to_point.html" class="sidebar-item-text sidebar-link">Fitting Deformable Mesh Models to Raw Point Clouds</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/05_differentiable_rendering.html" class="sidebar-item-text sidebar-link">Differentiable Rendering</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/06_nerf.html" class="sidebar-item-text sidebar-link">Neural Radiance Fields (NeRF)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>Interpretable_ml</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/01_introduction.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/02_linear_regression.html" class="sidebar-item-text sidebar-link">Linear regression</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/03_logistic_regression.html" class="sidebar-item-text sidebar-link">Logistic Regression</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/04_explainable_boosting_machine.html" class="sidebar-item-text sidebar-link">Explainable Boosting Machines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/05_GLM_GAM.html" class="sidebar-item-text sidebar-link">Generalized Linear Models (GLM)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/06_Decision_tree.html" class="sidebar-item-text sidebar-link">Decision Trees</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/07_rulefit.html" class="sidebar-item-text sidebar-link">Rulefit</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/08_naive_bayes_and_knn.html" class="sidebar-item-text sidebar-link">Naive Bayes</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/09_global_model_agnostic.html" class="sidebar-item-text sidebar-link">Global Model Agnostic Methods</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/10_local_model_agnostic.html" class="sidebar-item-text sidebar-link">Local Model-Agnostic Methods</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/11_neural_network.html" class="sidebar-item-text sidebar-link">CNN Interpretation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/12_nodegam.html" class="sidebar-item-text sidebar-link">Neural GAMs</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/interpret_ai/notebooks/01_ebm.html" class="sidebar-item-text sidebar-link">Editable Interpretable Models</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><strong>Bayesian Analysis</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bayesian_analysis/Bayesian_analysis.html" class="sidebar-item-text sidebar-link">Bayesian Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bayesian_analysis/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true"><strong>Causal Inference</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/01_intro.html" class="sidebar-item-text sidebar-link">Intro</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/02_randomised_exp.html" class="sidebar-item-text sidebar-link">Randomised Experiments</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/03_stats_revision.html" class="sidebar-item-text sidebar-link">Stats Revisited</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/04_graphical_causal_models.html" class="sidebar-item-text sidebar-link">Graphical Causal Models</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/resources.html" class="sidebar-item-text sidebar-link">Packages</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true"><strong>Computer Vision</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_classification/01_convolution.html" class="sidebar-item-text sidebar-link">Architecture for Image Classification</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_classification/satellite_images_classification.html" class="sidebar-item-text sidebar-link">Images Classification Implementation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_segmentation/01_intro.html" class="sidebar-item-text sidebar-link">Image Segmentation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_segmentation/02_architectures.html" class="sidebar-item-text sidebar-link">Architecutures for Image segmentation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true"><strong>Math for AI</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/01_intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link">Distributions</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/03_fitting_functions_to_data.html" class="sidebar-item-text sidebar-link">Fitting functions to data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/04_neural_network.html" class="sidebar-item-text sidebar-link">Gradient Descent, Activations and Regularisation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true"><strong>Time Series</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/01_overview.html" class="sidebar-item-text sidebar-link">Time Series Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/02_exploratory_analysis.html" class="sidebar-item-text sidebar-link">Exploratory Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/03_stats_models.html" class="sidebar-item-text sidebar-link">Simulating Time Series Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/05_ml_for_ts.html" class="sidebar-item-text sidebar-link">ML for Time Series</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/resources.html" class="sidebar-item-text sidebar-link">packages for Time series</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true"><strong>Geograhic Data Processing</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/geographic_data_formats.html" class="sidebar-item-text sidebar-link">Geographic Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/plot_buildings_with_area.html" class="sidebar-item-text sidebar-link">Visualizing Buildings in a location along with its Area</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/spatial_analysis.html" class="sidebar-item-text sidebar-link">Spatial Analysis using Geopandas</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/crs.html" class="sidebar-item-text sidebar-link">Coordinate Reference Systems (CRS)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/visualization.html" class="sidebar-item-text sidebar-link">Data Visualization using Folium</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/osm_processing.html" class="sidebar-item-text sidebar-link">OpenStreetMap</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/raster_data_processing.html" class="sidebar-item-text sidebar-link">Converting Data from Raster to Tabular (Geometry) format</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true"><strong>Machine learning Implementations</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../telecom_churn_prediction/telecom_churn_eda.html" class="sidebar-item-text sidebar-link">EDA on Telecom Churn Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../telecom_churn_prediction/telecom_churn_prediction.html" class="sidebar-item-text sidebar-link">Telecom Churn Prediction</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true"><strong>Data Quality</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/four_steps_to_data_quality.html" class="sidebar-item-text sidebar-link">Ensuring Data Quality</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/setup_datasource.html" class="sidebar-item-text sidebar-link">Create a new Datasource</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/generate_expectation.html" class="sidebar-item-text sidebar-link">Initialize a new Expectation Suite by profiling a batch of your data.</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/run_checkpoint.html" class="sidebar-item-text sidebar-link">Create Checkpoint</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true"><strong>Data Privacy</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_privacy/basic_privacy_approaches.html" class="sidebar-item-text sidebar-link">Approaches to Data privacy</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_privacy/differential_privacy.html" class="sidebar-item-text sidebar-link">Differential Privacy</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true"><strong>Distributed Processing</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributed_processing/fugue_intro.html" class="sidebar-item-text sidebar-link">Fugue</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributed_processing/fugue_quickstart.html" class="sidebar-item-text sidebar-link">Fugue Quickstart</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributed_processing/fugue_sql.html" class="sidebar-item-text sidebar-link">FugueSQL</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true"><strong>About Me</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about_me/experience.html" class="sidebar-item-text sidebar-link">experience.html</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about_me/project_portfolio.html" class="sidebar-item-text sidebar-link">Project Portfolio</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about_me/why_me.html" class="sidebar-item-text sidebar-link">Why me</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#transformer" id="toc-transformer" class="nav-link active" data-scroll-target="#transformer">Transformer</a>
+  <ul class="collapse">
+  <li><a href="#encoder" id="toc-encoder" class="nav-link" data-scroll-target="#encoder">Encoder</a>
+  <ul class="collapse">
+  <li><a href="#self-attention" id="toc-self-attention" class="nav-link" data-scroll-target="#self-attention">Self-Attention</a></li>
+  <li><a href="#multi-headed-attention" id="toc-multi-headed-attention" class="nav-link" data-scroll-target="#multi-headed-attention">Multi-headed attention</a></li>
+  <li><a href="#positional-encoding" id="toc-positional-encoding" class="nav-link" data-scroll-target="#positional-encoding">Positional Encoding</a></li>
+  <li><a href="#residuals" id="toc-residuals" class="nav-link" data-scroll-target="#residuals">Residuals</a></li>
+  </ul></li>
+  <li><a href="#decoder" id="toc-decoder" class="nav-link" data-scroll-target="#decoder">Decoder</a></li>
+  <li><a href="#final-layer-and-softmax-layer" id="toc-final-layer-and-softmax-layer" class="nav-link" data-scroll-target="#final-layer-and-softmax-layer">Final layer and Softmax Layer</a></li>
+  <li><a href="#reference-" id="toc-reference-" class="nav-link" data-scroll-target="#reference-">Reference:-</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="transformer" class="level1">
+<h1>Transformer</h1>
+<p>The Transformer is a model which uses attention to boost the speed of the training. The transformer lends itself to parallelization.</p>
+<p>The transformers will consist of encoders and decoders.</p>
+<p>An encoder consists two sub-layers self-attention and feed forward neural network. A decoder along with these two sub-layers will also consist of an attention layer between them to focus on relevant parts of the input sentence.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/transformer_encode_decode.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Components of Encoder and Decoder</figcaption><p></p>
+</figure>
+</div>
+<section id="encoder" class="level2">
+<h2 class="anchored" data-anchor-id="encoder">Encoder</h2>
+<p>Embedding happens in the bottom most encoder. The word in each position flows through its own path in the self-attention layer. The feed-forward layer does not have those dependencies and various paths can be executed in parallel.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/encoder.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Processing by an Encoder</figcaption><p></p>
+</figure>
+</div>
+<section id="self-attention" class="level3">
+<h3 class="anchored" data-anchor-id="self-attention">Self-Attention</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/self_attention.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">self attention</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/self_attention_working.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Self attention at a glance</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/last_step_atten.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Steps for calculating self-attention</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/self_matrix.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">self attention in matrix form</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/output.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Self attention in a single formula</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="multi-headed-attention" class="level3">
+<h3 class="anchored" data-anchor-id="multi-headed-attention">Multi-headed attention</h3>
+<p>It expands the model’s ability to focus on different positions.</p>
+<p>It gives the attention layer multiple “representation subspaces”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/multi_headed_atten.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Multi-headed attention</figcaption><p></p>
+</figure>
+</div>
+<p>In the original paper, eight attention heads were used. This way we will end up with eight different Z matrices. The feed-forward layer is not expecting eight matrices – it’s expecting a single matrix (a vector for each word). So we need a way to condense these eight down into a single matrix.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/attention_head.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Concatenating Attention Heads</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/multi_head_rep.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Multiple attention heads focusing on different representations</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="positional-encoding" class="level3">
+<h3 class="anchored" data-anchor-id="positional-encoding">Positional Encoding</h3>
+<p>This will account for the order of the words in the input sequence.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/positional_encoding.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">positional encoding</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="residuals" class="level3">
+<h3 class="anchored" data-anchor-id="residuals">Residuals</h3>
+<p>Each sub-layer in each encoder has a residual connection around it, and is follwed by a layer-normalization step</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/layer_norm.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Residual connection and layer normalization</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/encoder_decoder_2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">2 layer encoder decoder architecture</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="decoder" class="level2">
+<h2 class="anchored" data-anchor-id="decoder">Decoder</h2>
+<p>The encoder start by processing the input sequence. The output of the top encoder is then transformed into a set of attention vectors K and V. These are to be used by each decoder in its “encoder-decoder attention” layer which helps the decoder focus on appropriate places in the input sequence.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/decoder.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Decoder</figcaption><p></p>
+</figure>
+</div>
+<p>The following steps repeat the process until a special symbol is reached indicating the transformer decoder has completed its output. The output of each step is fed to the bottom decoder in the next time step, and the decoders bubble up their decoding results just like the encoders did. And just like we did with the encoder inputs, we embed and add positional encoding to those decoder inputs to indicate the position of each word.</p>
+<p>In the decoder, the self-attention layer is only allowed to attend to earlier positions in the output sequence. This is done by masking future positions (setting them to -inf) before the softmax step in the self-attention calculation.</p>
+<p>The “Encoder-Decoder Attention” layer works just like multiheaded self-attention, except it creates its Queries matrix from the layer below it, and takes the Keys and Values matrix from the output of the encoder stack.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/steps_in_decoding.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Steps in Decoding</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="final-layer-and-softmax-layer" class="level2">
+<h2 class="anchored" data-anchor-id="final-layer-and-softmax-layer">Final layer and Softmax Layer</h2>
+<p>The Linear layer is a simple fully connected neural network that projects the vector produced by the stack of decoders, into a much, much larger vector called a logits vector.</p>
+<p>Let’s assume that our model knows 10,000 unique English words (our model’s “output vocabulary”) that it’s learned from its training dataset. This would make the logits vector 10,000 cells wide – each cell corresponding to the score of a unique word. That is how we interpret the output of the model followed by the Linear layer.</p>
+<p>The softmax layer then turns those scores into probabilities (all positive, all add up to 1.0). The cell with the highest probability is chosen, and the word associated with it is produced as the output for this time step.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/final_layer.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">working of final and softmax layer</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="reference-" class="level2">
+<h2 class="anchored" data-anchor-id="reference-">Reference:-</h2>
+<p><a href="https://jalammar.github.io/illustrated-transformer/">The illustrated Transformer</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
