@@ -1,0 +1,237 @@
+---
+title: "Computer Vision Using Transformers"
+author: "Thulasiram Gunipati<br>Jan 11, 2023"
+format: 
+  revealjs:    
+    theme: solarized
+    preview-links: auto
+    chalkboard: 
+      boardmarker-width: 5
+from: markdown+emoji
+execute:
+  echo: true
+---
+
+## Topics Covered
+
+::: {.incremental}
+- Core concepts 
+- Adapting Attention to vision
+- Comparison with CNNs
+- Use case discussion
+:::
+
+---
+
+## Attention is all you need
+
+---
+
+## Why a new architecture is required?
+
+::: {.incremental}
+- RNN cannot consider long sequence lengths
+- RNNs are not paralleizable 
+:::
+
+---
+
+
+## Attention Transformer Architecture
+
+![](/Images/transformer_architecture.png){height=7in}
+
+---
+
+## Blocks of the Architecture
+
+::: {.incremental}
+- Embedding layer 
+  * Reduce the dimension of word tokens
+  * Projection to latent space
+- Positional Encoding
+  * To track the relative position of the words
+:::
+
+---
+
+## Multi-Head Attention
+
+![](/Images/self_attention_working.png){width=120%}
+
+---
+
+## Multi-Head Attention
+
+
+![](/Images/output.png)
+
+---
+
+
+## Why Multi-Head Attention
+
+::: {.incremental}
+- It expands the models ability to focus on different positions
+- It gives the attention layer multiple "representation subspaces"
+![](/Images/multi_head_rep.png){height=6in}
+:::
+
+---
+
+## Importance of Attention
+
+::: {.incremental}
+- Encoder providing a context to the decoder query by providing keys and values
+- Each position in the encoder can attend to all positions in the previous layer of encoder
+- Each position in decoder attending to all positions in the decoder
+:::
+
+---
+
+
+## Skip connections
+
+::: {.incremental}
+- Skip connection help a word to pay attention to its own position
+- Keep the gradients smooth
+- ![](/Images/skip_connections_gd.png)
+
+:::
+
+---
+
+
+## Steps in Decoder
+
+![](/Images/steps_in_decoding.png)
+
+---
+
+
+
+## Adapting Attention to Vision
+
+---
+
+## Vision Transformer
+
+![ViT Architecture](/Images/vit_arch.png)
+
+---
+
+
+## ViT Vs CNN
+
+::: {.incremental}
+- Inductive Bias and Locality Vs Global
+- Flexibility
+- ViT needs more data to learn where to focus
+- **Specifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs.**
+:::
+
+---
+
+
+## ViT Vs CNN
+
+::: {.incremental}
+- `ViT reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.`
+- ViT are prone to over-fitting due to their flexibility
+- ViT is suitable for Transfer learning
+- ViTs are robust against data corruptions, image occlusions and adversarial attacks
+:::
+
+---
+
+## Use Case Discussion
+
+## Problem Statement
+
+::: {.incremental}
+- Monitoring when the children are in danger of leaving the front yard
+- Predict when it will leave the yard to trigger the alarm
+- We have videos of children playing sports
+:::
+
+---
+
+## Data Collection
+
+::: {.incremental}
+- Brainstorming what needs to be collected
+- Standardizing the definitions
+- Collecting Diversified data - Different yards, balls, walls, seasons etc
+- Labeling the data - Quality Vs Quantity
+- Discussing ambigious cases with labelers and keep improving
+:::
+
+---
+
+
+
+## Modelling
+
+::: {.incremental}
+
+`Using a pre-trained model is both more cost-efficient and leads to better results`
+
+:::
+
+---
+
+## How to select a pre-trained model
+
+::: {.incremental}
+- Spot check all the available pre-trained models (expensive)
+- Select a single pre-trained model based on  
+  * Amount of data used for training
+  * Varied upstream data
+  * Best upstream validation performance    
+* `Cheaper strategy works equally well as the more expensive strategy in the majority of scenarios`
+* [How to train your ViT - Research paper](https://arxiv.org/pdf/2106.10270.pdf)
+:::
+
+---
+
+## Validation
+
+::: {.incremental}
+- False alarms are better than not raising alarm when necessary
+- Recall is more important in this case 
+- Too many false alarms will reduce the customer satisfaction
+- Improve Recall while maintaining Precision at an acceptable level
+:::
+
+---
+
+## Deployment
+
+::: {.incremental}
+- Logic for scene change detection to avoid latencies in inference
+- Deployment using platforms like Ray for effective GPU utilization 
+- Deployment at Edge to meet latency requirements
+- Use AB testing framework to deploy new models
+:::
+
+---
+
+## Continual Learning
+
+::: {.incremental}
+- Continual learning suits deep learning models
+- Incentivize customers to label the data in real time 
+- Update the model parameters in real time
+- Continously monitor the model performance
+:::
+
+---
+
+## Continous Improvement
+
+::: {.incremental}
+- Use production data to analyze and contionously improve the model
+:::
+
+
+
