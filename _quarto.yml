@@ -23,6 +23,15 @@ website:
         - 3D_deep_learning/05_differentiable_rendering.qmd
         - 3D_deep_learning/06_nerf.qmd
         - 3D_deep_learning/resources.qmd
+      - section: "**Transformers**"
+        contents:
+        - transformers/attention_is_all_you_need.qmd
+        - transformers/attention.qmd
+        - transformers/transformers.qmd
+        - transformers/transformers_from_scratch.qmd
+        - transformers/image_worth_16_16.qmd
+        - transformers/vision_transformer.qmd
+        - transformers/how_to_train_ViT.qmd
       - section: "**Interpretable_ml**"
         contents:
         - Interpretable_ml/theory/01_introduction.qmd
