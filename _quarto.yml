@@ -25,6 +25,7 @@ website:
         - 3D_deep_learning/resources.qmd
       - section: "**Transformers**"
         contents:
+        - transformers/Attention_for_vision.qmd
         - transformers/attention_is_all_you_need.qmd
         - transformers/attention.qmd
         - transformers/transformers.qmd
