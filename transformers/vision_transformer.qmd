@@ -33,14 +33,16 @@ Even though many positional embedding schemes were applied, no significant diffe
 Deep learning is all about scale. Indeed, scale is a key component in pushing the state-of-the-art. In this study7 by Zhai et al. from Google Brain Research, **the authors train a slightly modified ViT model with 2 billion parameters, which attains 90.45% top-1 accuracy on ImageNet7. The generalization of this over-parametrized beast is tested on few-shot learning: it reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.**
 
 
-### pyramid vision transformer
+### Advantages of Vision transformer
+* ViTs are robust against data corruptions, image occlusions and adversarial attacks
 
-![Pyramid vision transformer](/Images/pyramid_vision_transformer.png)
 
-To overcome the quadratic complexity of the attention mechanism, Pyramid Vision Transformers (PVTs) employed a variant of self-attention called Spatial-Reduction Attention (SRA), characterized by a spatial reduction of both keys and values. **By applying SRA, the spatial dimensions of the features slowly decrease throughout the model.**
+### Drawbacks of Vision transformer
+**Need More data**   In CNNs the model knows how to focus, we tell them on how much to focus. In case of transformers, the model does not know how to focus. It pays attention to all the patches and learns where to focus during the training process. Due to this they need huge amounts of data.
 
-### Why vision transformer needs more data
-In CNNs the model knows how to focus, we tell them on how much to focus. In case of transformers, the model does not know how to focus. It pays attention to all the patches and learns where to focus during the training process. Due to this they need huge amounts of data.
+**Overfitting to small datasets** Due to their flexibility they are notorious for overfitting on small datasets. A lot of data augmentation would be required to make it work on small datasets.
+
+
 
 
 

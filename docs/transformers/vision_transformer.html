@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – transformers_from_scratch</title>
+<title>My Datascience Journey – vision_transformer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -572,26 +572,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#transformers-from-scratch" id="toc-transformers-from-scratch" class="nav-link active" data-scroll-target="#transformers-from-scratch">Transformers from Scratch</a>
+  <li><a href="#vision-transformers-vit" id="toc-vision-transformers-vit" class="nav-link active" data-scroll-target="#vision-transformers-vit">Vision Transformers (ViT)</a>
   <ul class="collapse">
-  <li><a href="#concepts-for-understanding-transformers" id="toc-concepts-for-understanding-transformers" class="nav-link" data-scroll-target="#concepts-for-understanding-transformers">Concepts for understanding Transformers</a>
+  <li><a href="#steps-in-a-vision-transformer" id="toc-steps-in-a-vision-transformer" class="nav-link" data-scroll-target="#steps-in-a-vision-transformer">Steps in a Vision Transformer</a>
   <ul class="collapse">
-  <li><a href="#matrix-multiplication-as-a-table-lookup" id="toc-matrix-multiplication-as-a-table-lookup" class="nav-link" data-scroll-target="#matrix-multiplication-as-a-table-lookup">Matrix multiplication as a table lookup</a></li>
-  <li><a href="#first-order-sequence-model-and-one-hot-vectors" id="toc-first-order-sequence-model-and-one-hot-vectors" class="nav-link" data-scroll-target="#first-order-sequence-model-and-one-hot-vectors">First order sequence model and one hot vectors</a></li>
-  <li><a href="#masking" id="toc-masking" class="nav-link" data-scroll-target="#masking">Masking</a></li>
+  <li><a href="#learnable-embedding" id="toc-learnable-embedding" class="nav-link" data-scroll-target="#learnable-embedding">Learnable embedding</a></li>
+  <li><a href="#important-details" id="toc-important-details" class="nav-link" data-scroll-target="#important-details">Important Details</a></li>
+  <li><a href="#advantages-of-vision-transformer" id="toc-advantages-of-vision-transformer" class="nav-link" data-scroll-target="#advantages-of-vision-transformer">Advantages of Vision transformer</a></li>
+  <li><a href="#drawbacks-of-vision-transformer" id="toc-drawbacks-of-vision-transformer" class="nav-link" data-scroll-target="#drawbacks-of-vision-transformer">Drawbacks of Vision transformer</a></li>
   </ul></li>
-  <li><a href="#attention-as-matrix-multiplication" id="toc-attention-as-matrix-multiplication" class="nav-link" data-scroll-target="#attention-as-matrix-multiplication">Attention as Matrix Multiplication</a></li>
-  <li><a href="#feed-forward-network" id="toc-feed-forward-network" class="nav-link" data-scroll-target="#feed-forward-network">Feed Forward Network</a>
-  <ul class="collapse">
-  <li><a href="#input-embedding" id="toc-input-embedding" class="nav-link" data-scroll-target="#input-embedding">Input Embedding</a></li>
-  <li><a href="#positional-embedding" id="toc-positional-embedding" class="nav-link" data-scroll-target="#positional-embedding">Positional Embedding</a></li>
-  <li><a href="#de-embeddings-and-softmax" id="toc-de-embeddings-and-softmax" class="nav-link" data-scroll-target="#de-embeddings-and-softmax">De-embeddings and softmax</a></li>
-  <li><a href="#dimensions-of-the-matrices" id="toc-dimensions-of-the-matrices" class="nav-link" data-scroll-target="#dimensions-of-the-matrices">Dimensions of the Matrices</a></li>
-  <li><a href="#purpose-of-skip-connections" id="toc-purpose-of-skip-connections" class="nav-link" data-scroll-target="#purpose-of-skip-connections">Purpose of Skip connections</a></li>
-  <li><a href="#layer-normalization" id="toc-layer-normalization" class="nav-link" data-scroll-target="#layer-normalization">Layer Normalization</a></li>
-  <li><a href="#cross-attention" id="toc-cross-attention" class="nav-link" data-scroll-target="#cross-attention">Cross Attention</a></li>
-  </ul></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  <li><a href="#reference-" id="toc-reference-" class="nav-link" data-scroll-target="#reference-">Reference:-</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -601,178 +591,60 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="transformers-from-scratch" class="level1">
-<h1>Transformers from Scratch</h1>
-<section id="concepts-for-understanding-transformers" class="level2">
-<h2 class="anchored" data-anchor-id="concepts-for-understanding-transformers">Concepts for understanding Transformers</h2>
-<section id="matrix-multiplication-as-a-table-lookup" class="level3">
-<h3 class="anchored" data-anchor-id="matrix-multiplication-as-a-table-lookup">Matrix multiplication as a table lookup</h3>
-<p>The trick to use one-hot vectors to pull out a particular row of a matrix is at the core of how transformers work.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/one_hot_matrix_mult.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrix multiplication with one-hot vectors</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="first-order-sequence-model-and-one-hot-vectors" class="level3">
-<h3 class="anchored" data-anchor-id="first-order-sequence-model-and-one-hot-vectors">First order sequence model and one hot vectors</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/markov_model.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Markov model</figcaption><p></p>
-</figure>
-</div>
-<p>Markov chains can be expressed conveniently in matrix form.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/markov_matrix_form.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Markov chain represented as a matrix form</figcaption><p></p>
-</figure>
-</div>
-<p>Using one-hot vector to pull out the relevant row and shows the probability distribution of what the next word will be.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/one_hot_matrix_prob.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Using one-hot vector ro pull out the transition probabilities associated with given word</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="masking" class="level3">
-<h3 class="anchored" data-anchor-id="masking">Masking</h3>
-<p>The mask has the effect of hiding a lot of the transition matrix (which is not relevant for the word combinations)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/masking.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Masking</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../my_data_science_journey/Images/masking_1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Masking hiding transition matrix</figcaption><p></p>
-</figure>
-</div>
-</section>
-</section>
-<section id="attention-as-matrix-multiplication" class="level2">
-<h2 class="anchored" data-anchor-id="attention-as-matrix-multiplication">Attention as Matrix Multiplication</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/attention.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Attention</figcaption><p></p>
-</figure>
-</div>
-<p>The highlighted piece in the above formula Q represents the feature of interest nad the matrix K represents the collection of masks (which words are important for the given query of interest)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/mask_query.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrix multiplication of query with masks</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="feed-forward-network" class="level2">
-<h2 class="anchored" data-anchor-id="feed-forward-network">Feed Forward Network</h2>
-<p>The following happens in Feed Forward Network * Feature creation matrix multiplication * Transition matrix multiplication * ReLU nonlinearity</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/transition_matrix.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">FFN</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/ffn.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The area in the architecture the above operations happen</figcaption><p></p>
-</figure>
-</div>
-<section id="input-embedding" class="level3">
-<h3 class="anchored" data-anchor-id="input-embedding">Input Embedding</h3>
-<p>Embedding can be learned during training</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/input_embedding.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Input Embedding</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="positional-embedding" class="level3">
-<h3 class="anchored" data-anchor-id="positional-embedding">Positional Embedding</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/positional_encoding.png.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Working of positional Embedding</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="de-embeddings-and-softmax" class="level3">
-<h3 class="anchored" data-anchor-id="de-embeddings-and-softmax">De-embeddings and softmax</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/de-embedding.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Converting the embedding to original vocabulary</figcaption><p></p>
-</figure>
-</div>
-<p>To get the softmax of the value x in a vector, divide the exponential of x, e^x, by the sum of the exponentials of all the values in the vector.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/de-embedding_att.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Deembedding</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="dimensions-of-the-matrices" class="level3">
-<h3 class="anchored" data-anchor-id="dimensions-of-the-matrices">Dimensions of the Matrices</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/transformer_dim.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrix Dimensions</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/multi_head_dim.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrix Dimensions for Multihead attention</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/scaled_dot_product_attention.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Scaled Dot-product attention</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="purpose-of-skip-connections" class="level3">
-<h3 class="anchored" data-anchor-id="purpose-of-skip-connections">Purpose of Skip connections</h3>
+<section id="vision-transformers-vit" class="level1">
+<h1>Vision Transformers (ViT)</h1>
+<p>Transformers cannot process grid-structured data. It needs sequences. We need to convert non-sequential signal to a sequence.</p>
+<section id="steps-in-a-vision-transformer" class="level2">
+<h2 class="anchored" data-anchor-id="steps-in-a-vision-transformer">Steps in a Vision Transformer</h2>
 <ul>
-<li>They help keep the gradient smooth</li>
-<li>The second purpose is specific to Transformers - Preserving the original input sequence. Even with a lot of attention heads, there’s no guarantee that a word will attend to its own position. It’s possible for the attention filter to forget entirely about the most recent word in favor of watching all of the earlier words that might be relevant. A skip connection takes the original word and manually adds it back into the signal, so that there’s no way it can be dropped or forgotten.</li>
+<li>Split an image into patches</li>
+<li>Flatten the patches</li>
+<li>Produce lower-dimensional linear embeddings from the flattened patches</li>
+<li>Add positional embeddings</li>
+<li>Feed the sequence as an input to standard transformer encoder</li>
+<li>Pretrain the model with image labels</li>
+<li>Finetune on the downstream dataset for image classification</li>
 </ul>
+<p>The architecure is the same as the original Attention is all you need paper. The number of blocks is changed.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../Images/skip_connections_gd.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">skip connections</figcaption><p></p>
+<p><img src="../Images/vision_transformer_architecture.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Proposed Architecture for Vision Transformers</figcaption><p></p>
+</figure>
+</div>
+<p>There is no decoder in the architecture.</p>
+<section id="learnable-embedding" class="level3">
+<h3 class="anchored" data-anchor-id="learnable-embedding">Learnable embedding</h3>
+<p>[CLS] embedding begins as a “blank slate” for each sentence in BERT. The final output from [CLS] embedding is used as the input into a classification head during pretraining.Using a “blank slate” token as the sole input to a classification head pushes the transformer to learn to encode a “general representation” of the entire sentence into that embedding. ViT applies the same logic by adding a <strong>learnable embedding</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/learnable_embedding.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Learnable Embedding</figcaption><p></p>
 </figure>
 </div>
 </section>
-<section id="layer-normalization" class="level3">
-<h3 class="anchored" data-anchor-id="layer-normalization">Layer Normalization</h3>
-<p>The values of the matrix are shifted to have a mean of zero and scaled to have standard deviation of one</p>
+<section id="important-details" class="level3">
+<h3 class="anchored" data-anchor-id="important-details">Important Details</h3>
+<p><strong>Specifically, if ViT is trained on datasets with more than 14M (at least :P) images it can approach or beat state-of-the-art CNNs.</strong></p>
+<p><strong>ViT is pretrained on the large dataset and then fine-tuned to small ones. The only modification is to discard the prediction head (MLP head) and attach a new D KD×K linear layer, where K is the number of classes of the small dataset.</strong></p>
+<p>Even though many positional embedding schemes were applied, no significant difference was found. Hence, after the low-dimensional linear projection, a trainable position embedding is added to the patch representations.</p>
+<p>Deep learning is all about scale. Indeed, scale is a key component in pushing the state-of-the-art. In this study7 by Zhai et al.&nbsp;from Google Brain Research, <strong>the authors train a slightly modified ViT model with 2 billion parameters, which attains 90.45% top-1 accuracy on ImageNet7. The generalization of this over-parametrized beast is tested on few-shot learning: it reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.</strong></p>
 </section>
-<section id="cross-attention" class="level3">
-<h3 class="anchored" data-anchor-id="cross-attention">Cross Attention</h3>
-<p>Cross-attention works just like self-attention with the exception that the key matrix K and value matrix V are based on the output of the final encoder layer, rather than the output of the previous decoder layer. The query matrix Q is still calculated from the results of the previous decoder layer. This is the channel by which information from the source sequence makes its way into the target sequence and steers its creation in the right direction. It’s interesting to note that the same embedded source sequence is provided to every layer of the decoder, supporting the notion that successive layers provide redundancy and are all cooperating to perform the same task.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/cross_attention.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">cross attention</figcaption><p></p>
-</figure>
-</div>
+<section id="advantages-of-vision-transformer" class="level3">
+<h3 class="anchored" data-anchor-id="advantages-of-vision-transformer">Advantages of Vision transformer</h3>
+<ul>
+<li>ViTs are robust against data corruptions, image occlusions and adversarial attacks</li>
+</ul>
+</section>
+<section id="drawbacks-of-vision-transformer" class="level3">
+<h3 class="anchored" data-anchor-id="drawbacks-of-vision-transformer">Drawbacks of Vision transformer</h3>
+<p><strong>Need More data</strong> In CNNs the model knows how to focus, we tell them on how much to focus. In case of transformers, the model does not know how to focus. It pays attention to all the patches and learns where to focus during the training process. Due to this they need huge amounts of data.</p>
+<p><strong>Overfitting to small datasets</strong> Due to their flexibility they are notorious for overfitting on small datasets. A lot of data augmentation would be required to make it work on small datasets.</p>
 </section>
 </section>
-<section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
-<p><a href="https://e2eml.school/transformers.html">Brandon Rohrer blog post</a></p>
+<section id="reference-" class="level2">
+<h2 class="anchored" data-anchor-id="reference-">Reference:-</h2>
+<p><a href="https://theaisummer.com/vision-transformer/">AI Summer blog</a> <a href="https://www.pinecone.io/learn/vision-transformers/">Pinecone blog</a></p>
 
 
 </section>

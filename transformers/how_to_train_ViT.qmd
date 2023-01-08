@@ -1,0 +1,44 @@
+# How to Train Your ViT
+
+* Without the translational
+equivariance of CNNs, ViT models are generally found to perform best in settings with large amounts of training data or to require strong AugReg schemes to avoid overfitting
+
+* **Carefully selected regularization and augmentations roughly correspond to a 10x increase in training data size**
+
+
+## AugReg
+* Regularization used - Dropout to intermediate activations of ViT, stochastic depth regularization 
+
+* Data augmentations - Mixup, RandAugment
+
+* Weight decay
+
+
+## Transfer
+* `For most practical purposes, transferring a pre-trained model is both more cost-efficient and leads to better results`
+
+
+### Choosing which pre-trained model to transfer
+* One approach is to run downstream adaptation for all available pre-trained models and then select the best performing model, based on validation score on the downstream task. (expensive)
+* Select a single pre-trained model based on the upstream validation accuracy and then only use this model for adaptation (cheaper)
+* `Cheaper strategy works equally well as the more expensive strategy in the majority of scenarios`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Reference
+[Research Paper](https://arxiv.org/pdf/2106.10270.pdf)
