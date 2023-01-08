@@ -567,18 +567,67 @@
     "text": "contionous variables\n\nProbability density function\n\nDiscrete variables\n\nProbability mass function\n\nMarginal probability distribution\n\nGetting the probability distribution of a single or multiple variables from the full joint probability distribution of multiple random variables.\n\nJoint probability distribution\n\nProbability distribution of two or more variables occuring together\nIf we fix the value of one of the variable, we get a distribution proportional to conditional probability distribution\nJoint probability distribution = marginal probability distribution + conditional probability distribution\nJoint probability in case of dependent variables is not separable. we need to store each value for every co-occurance between the variables. (curse of dimensionality)\n\n\n\n\n\n\n\nEstimating conditional probabilities when full joint probability distribution is not known\n\n\n\n\n\nMix probability distributions\n\n\n\n\n\nIf the data we care for is not sampled or observed, we speculate on it using the langauge of expectation.\nLaw of large numbers - When sample size goes to infinity, expectation matches the sample mean\n\n\n\n\n\nCorrelation works on normalized random variables\nCovariance works on unnormalized random variables"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "My Notes on Data Science, Machine learning and Artificial Intelligence I am learning from different books, videos, courses and Notebooks. These pages are replication of various source material from which I am learning."
-  },
-  {
-    "objectID": "transformers/transformers.html",
-    "href": "transformers/transformers.html",
+    "objectID": "transformers/image_worth_16_16.html",
+    "href": "transformers/image_worth_16_16.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "The Transformer is a model which uses attention to boost the speed of the training. The transformer lends itself to parallelization.\nThe transformers will consist of encoders and decoders.\nAn encoder consists two sub-layers self-attention and feed forward neural network. A decoder along with these two sub-layers will also consist of an attention layer between them to focus on relevant parts of the input sentence.\n\n\n\nComponents of Encoder and Decoder\n\n\n\n\nEmbedding happens in the bottom most encoder. The word in each position flows through its own path in the self-attention layer. The feed-forward layer does not have those dependencies and various paths can be executed in parallel.\n\n\n\nProcessing by an Encoder\n\n\n\n\n\n\n\nself attention\n\n\n\n\n\nSelf attention at a glance\n\n\n\n\n\nSteps for calculating self-attention\n\n\n\n\n\nself attention in matrix form\n\n\n\n\n\nSelf attention in a single formula\n\n\n\n\n\nIt expands the model’s ability to focus on different positions.\nIt gives the attention layer multiple “representation subspaces”\n\n\n\nMulti-headed attention\n\n\nIn the original paper, eight attention heads were used. This way we will end up with eight different Z matrices. The feed-forward layer is not expecting eight matrices – it’s expecting a single matrix (a vector for each word). So we need a way to condense these eight down into a single matrix.\n\n\n\nConcatenating Attention Heads\n\n\n\n\n\nMultiple attention heads focusing on different representations\n\n\n\n\n\nThis will account for the order of the words in the input sequence.\n\n\n\npositional encoding\n\n\n\n\n\nEach sub-layer in each encoder has a residual connection around it, and is follwed by a layer-normalization step\n\n\n\nResidual connection and layer normalization\n\n\n\n\n\n2 layer encoder decoder architecture\n\n\n\n\n\n\nThe encoder start by processing the input sequence. The output of the top encoder is then transformed into a set of attention vectors K and V. These are to be used by each decoder in its “encoder-decoder attention” layer which helps the decoder focus on appropriate places in the input sequence.\n\n\n\nDecoder\n\n\nThe following steps repeat the process until a special symbol is reached indicating the transformer decoder has completed its output. The output of each step is fed to the bottom decoder in the next time step, and the decoders bubble up their decoding results just like the encoders did. And just like we did with the encoder inputs, we embed and add positional encoding to those decoder inputs to indicate the position of each word.\nIn the decoder, the self-attention layer is only allowed to attend to earlier positions in the output sequence. This is done by masking future positions (setting them to -inf) before the softmax step in the self-attention calculation.\nThe “Encoder-Decoder Attention” layer works just like multiheaded self-attention, except it creates its Queries matrix from the layer below it, and takes the Keys and Values matrix from the output of the encoder stack.\n\n\n\nSteps in Decoding\n\n\n\n\n\nThe Linear layer is a simple fully connected neural network that projects the vector produced by the stack of decoders, into a much, much larger vector called a logits vector.\nLet’s assume that our model knows 10,000 unique English words (our model’s “output vocabulary”) that it’s learned from its training dataset. This would make the logits vector 10,000 cells wide – each cell corresponding to the score of a unique word. That is how we interpret the output of the model followed by the Linear layer.\nThe softmax layer then turns those scores into probabilities (all positive, all add up to 1.0). The cell with the highest probability is chosen, and the word associated with it is produced as the output for this time step.\n\n\n\nworking of final and softmax layer\n\n\n\n\n\nThe illustrated Transformer"
+    "text": "Split an image into patches and provide the sequence of linear embeddings of these patches as an input to Transformer.\nImage patches are treated the same way as tokens (words) in an NLP application. We train the model on image classification in supervised fashion.\nTransformers lack some of the inductive biases inherent to CNNs such as translation equivariance and locality and therefore do not generalize well when trained on insufficient amounts of data\nIt is often beneficial to fine-tune at higher resolution than pre-training\nViT performs better when trained on large scale data and transferred to tasks with fewer datapoints\n\n\n\n\nViT Architecture\n\n\n\nThe image patches are flattened and mapped to D dimensions with a trainable linear projection.These are called patch embeddings\nLearnable embedding is prepended to the sequence of embedded patches, whose state at the output of the transformer encoder serves as the image representation.\nLearnable 1D position embeddings are added to patch embeddings to retain positional information\nMLP contains two layers with GELU (Gaussina Error Linear Units) non-linearity\n\n\n\n\nVariants of ViT\n\n\n\nRegularization used - weight decay, dropout and label smoothing\n\nIn the lowest layers some heads attend to most of the image, showing that the ability to integrate information globally is indeed used by the model. The attention distance increases with network depth. Globally, the model attends to image regions that are semantically relevant for classification\n\n\nResearch Paper"
+  },
+  {
+    "objectID": "transformers/ml_for_home_security.html#topics-covered",
+    "href": "transformers/ml_for_home_security.html#topics-covered",
+    "title": "Computer Vision Using Transformers",
+    "section": "Topics Covered",
+    "text": "Topics Covered\n\n\n\nCore concepts of Attention is all you need\nImplementation details\nAdapting Attention to vision\nEvaluation of Transformers to vision\nComparison with CNNs\nUse case discussion"
+  },
+  {
+    "objectID": "transformers/ml_for_home_security.html#why-is-it-required",
+    "href": "transformers/ml_for_home_security.html#why-is-it-required",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why is it required?",
+    "text": "Why is it required?\n\n\n\nGet required images from the videos\nGo for diversified data - Different yards, seasons etc.\nQuality over quantity"
+  },
+  {
+    "objectID": "transformers/ml_for_home_security.html#data-preparation",
+    "href": "transformers/ml_for_home_security.html#data-preparation",
+    "title": "Computer Vision Using Transformers",
+    "section": "Data Preparation",
+    "text": "Data Preparation\n\n\n\nGet required images from the videos\nGo for diversified data - Different yards, seasons etc.\nQuality over quantity"
+  },
+  {
+    "objectID": "transformers/ml_for_home_security.html#data-labeling",
+    "href": "transformers/ml_for_home_security.html#data-labeling",
+    "title": "Computer Vision Using Transformers",
+    "section": "Data Labeling",
+    "text": "Data Labeling\n\n\nRules and standards for the labels\nconsistency in labeling"
+  },
+  {
+    "objectID": "transformers/ml_for_home_security.html#training",
+    "href": "transformers/ml_for_home_security.html#training",
+    "title": "Computer Vision Using Transformers",
+    "section": "Training",
+    "text": "Training\n\n\nTransformers don’t have inductive biases\nTransformers are global and flexible\nTraining Transformers are expensive\nThe way to go is Transfer learning"
+  },
+  {
+    "objectID": "transformers/ml_for_home_security.html#why-transfer-learning",
+    "href": "transformers/ml_for_home_security.html#why-transfer-learning",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why Transfer Learning",
+    "text": "Why Transfer Learning\n\n\nUsing a pre-trained model is both more cost-efficient and leads to better results\nAs pre-trained models use huge amounts of data, Attention mechanism learns where to focus"
+  },
+  {
+    "objectID": "transformers/ml_for_home_security.html#how-to-use-transfer-learning",
+    "href": "transformers/ml_for_home_security.html#how-to-use-transfer-learning",
+    "title": "Computer Vision Using Transformers",
+    "section": "How to use Transfer Learning",
+    "text": "How to use Transfer Learning\n::: {.incremental} - Using a pre-trained model is both more cost-efficient and leads to better results - As pre-trained models use huge amounts of data, Attention mechanism learns where to focus\n\n\ngithub/thulasiram"
+  },
+  {
+    "objectID": "transformers/vision_transformer_architectures.html",
+    "href": "transformers/vision_transformer_architectures.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "pyramid vision transformer\n\n\n\nPyramid vision transformer\n\n\nTo overcome the quadratic complexity of the attention mechanism, Pyramid Vision Transformers (PVTs) employed a variant of self-attention called Spatial-Reduction Attention (SRA), characterized by a spatial reduction of both keys and values. By applying SRA, the spatial dimensions of the features slowly decrease throughout the model."
   },
   {
     "objectID": "transformers/transformers_from_scratch.html",
@@ -595,20 +644,6 @@
     "text": "Attention\nThe context vector was a bottleneck for the RNN models. It made it challenging for models to process long sentences. In RNN models a single hidden state was passed between the encoder and the decoder.\nIn attention models the encoder passes a lot more data to the decoder.Instead of passing the last hidden state of the encoding stage, the encoder passes all the hidden states to the decoder.\nThe decoder will look at the set of hidden states it received. It will give each hidden state a score. Multiply each hidden state by its softmaxed score. This scoring is done at each time step on the decoder side.\nThis is how the deocder works:-\n\nThe attention decoder RNN takes in the embedding of the  token, and an initial decoder hidden state.\nThe RNN processes its inputs, producing an output and a new hidden state vector (h4). The output is discarded. 3.Attention Step: We use the encoder hidden states and the h4 vector to calculate a context vector (C4) for this time step.\nWe concatenate h4 and C4 into one vector.\nWe pass this vector through a feedforward neural network (one trained jointly with the model).\nThe output of the feedforward neural networks indicates the output word of this time step.\nRepeat for the next time steps\n\n\nReference\nJay Alammar Blog post"
   },
   {
-    "objectID": "transformers/image_worth_16_16.html",
-    "href": "transformers/image_worth_16_16.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "Split an image into patches and provide the sequence of linear embeddings of these patches as an input to Transformer.\nImage patches are treated the same way as tokens (words) in an NLP application. We train the model on image classification in supervised fashion.\nTransformers lack some of the inductive biases inherent to CNNs such as translation equivariance and locality and therefore do not generalize well when trained on insufficient amounts of data\nIt is often beneficial to fine-tune at higher resolution than pre-training\nViT performs better when trained on large scale data and transferred to tasks with fewer datapoints\n\n\n\n\nViT Architecture\n\n\n\nThe image patches are flattened and mapped to D dimensions with a trainable linear projection.These are called patch embeddings\nLearnable embedding is prepended to the sequence of embedded patches, whose state at the output of the transformer encoder serves as the image representation.\nLearnable 1D position embeddings are added to patch embeddings to retain positional information\nMLP contains two layers with GELU (Gaussina Error Linear Units) non-linearity\n\n\n\nResearch Paper"
-  },
-  {
-    "objectID": "transformers/vision_transformer_architectures.html",
-    "href": "transformers/vision_transformer_architectures.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "pyramid vision transformer\n\n\n\nPyramid vision transformer\n\n\nTo overcome the quadratic complexity of the attention mechanism, Pyramid Vision Transformers (PVTs) employed a variant of self-attention called Spatial-Reduction Attention (SRA), characterized by a spatial reduction of both keys and values. By applying SRA, the spatial dimensions of the features slowly decrease throughout the model."
-  },
-  {
     "objectID": "transformers/vision_transformer.html",
     "href": "transformers/vision_transformer.html",
     "title": "My Datascience Journey",
@@ -616,11 +651,18 @@
     "text": "Transformers cannot process grid-structured data. It needs sequences. We need to convert non-sequential signal to a sequence.\n\n\n\nSplit an image into patches\nFlatten the patches\nProduce lower-dimensional linear embeddings from the flattened patches\nAdd positional embeddings\nFeed the sequence as an input to standard transformer encoder\nPretrain the model with image labels\nFinetune on the downstream dataset for image classification\n\nThe architecure is the same as the original Attention is all you need paper. The number of blocks is changed.\n\n\n\nProposed Architecture for Vision Transformers\n\n\nThere is no decoder in the architecture.\n\n\n[CLS] embedding begins as a “blank slate” for each sentence in BERT. The final output from [CLS] embedding is used as the input into a classification head during pretraining.Using a “blank slate” token as the sole input to a classification head pushes the transformer to learn to encode a “general representation” of the entire sentence into that embedding. ViT applies the same logic by adding a learnable embedding.\n\n\n\nLearnable Embedding\n\n\n\n\n\nSpecifically, if ViT is trained on datasets with more than 14M (at least :P) images it can approach or beat state-of-the-art CNNs.\nViT is pretrained on the large dataset and then fine-tuned to small ones. The only modification is to discard the prediction head (MLP head) and attach a new D KD×K linear layer, where K is the number of classes of the small dataset.\nEven though many positional embedding schemes were applied, no significant difference was found. Hence, after the low-dimensional linear projection, a trainable position embedding is added to the patch representations.\nDeep learning is all about scale. Indeed, scale is a key component in pushing the state-of-the-art. In this study7 by Zhai et al. from Google Brain Research, the authors train a slightly modified ViT model with 2 billion parameters, which attains 90.45% top-1 accuracy on ImageNet7. The generalization of this over-parametrized beast is tested on few-shot learning: it reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.\n\n\n\n\nViTs are robust against data corruptions, image occlusions and adversarial attacks\n\n\n\n\nNeed More data In CNNs the model knows how to focus, we tell them on how much to focus. In case of transformers, the model does not know how to focus. It pays attention to all the patches and learns where to focus during the training process. Due to this they need huge amounts of data.\nOverfitting to small datasets Due to their flexibility they are notorious for overfitting on small datasets. A lot of data augmentation would be required to make it work on small datasets.\n\n\n\n\nAI Summer blog Pinecone blog"
   },
   {
-    "objectID": "transformers/why_vision_transformers_work.html",
-    "href": "transformers/why_vision_transformers_work.html",
+    "objectID": "transformers/how_to_train_ViT.html",
+    "href": "transformers/how_to_train_ViT.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Why vision transformers work"
+    "text": "Without the translational equivariance of CNNs, ViT models are generally found to perform best in settings with large amounts of training data or to require strong AugReg schemes to avoid overfitting\nCarefully selected regularization and augmentations roughly correspond to a 10x increase in training data size\n\n\n\n\nRegularization used - Dropout to intermediate activations of ViT, stochastic depth regularization\nData augmentations - Mixup, RandAugment\nWeight decay\n\n\n\n\n\nFor most practical purposes, transferring a pre-trained model is both more cost-efficient and leads to better results\n\n\n\n\nOne approach is to run downstream adaptation for all available pre-trained models and then select the best performing model, based on validation score on the downstream task. (expensive)\nSelect a single pre-trained model based on the upstream validation accuracy and then only use this model for adaptation (cheaper)\nCheaper strategy works equally well as the more expensive strategy in the majority of scenarios\n\n\n\n\n\nResearch Paper"
+  },
+  {
+    "objectID": "transformers/transformers.html",
+    "href": "transformers/transformers.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "The Transformer is a model which uses attention to boost the speed of the training. The transformer lends itself to parallelization.\nThe transformers will consist of encoders and decoders.\nAn encoder consists two sub-layers self-attention and feed forward neural network. A decoder along with these two sub-layers will also consist of an attention layer between them to focus on relevant parts of the input sentence.\n\n\n\nComponents of Encoder and Decoder\n\n\n\n\nEmbedding happens in the bottom most encoder. The word in each position flows through its own path in the self-attention layer. The feed-forward layer does not have those dependencies and various paths can be executed in parallel.\n\n\n\nProcessing by an Encoder\n\n\n\n\n\n\n\nself attention\n\n\n\n\n\nSelf attention at a glance\n\n\n\n\n\nSteps for calculating self-attention\n\n\n\n\n\nself attention in matrix form\n\n\n\n\n\nSelf attention in a single formula\n\n\n\n\n\nIt expands the model’s ability to focus on different positions.\nIt gives the attention layer multiple “representation subspaces”\n\n\n\nMulti-headed attention\n\n\nIn the original paper, eight attention heads were used. This way we will end up with eight different Z matrices. The feed-forward layer is not expecting eight matrices – it’s expecting a single matrix (a vector for each word). So we need a way to condense these eight down into a single matrix.\n\n\n\nConcatenating Attention Heads\n\n\n\n\n\nMultiple attention heads focusing on different representations\n\n\n\n\n\nThis will account for the order of the words in the input sequence.\n\n\n\npositional encoding\n\n\n\n\n\nEach sub-layer in each encoder has a residual connection around it, and is follwed by a layer-normalization step\n\n\n\nResidual connection and layer normalization\n\n\n\n\n\n2 layer encoder decoder architecture\n\n\n\n\n\n\nThe encoder start by processing the input sequence. The output of the top encoder is then transformed into a set of attention vectors K and V. These are to be used by each decoder in its “encoder-decoder attention” layer which helps the decoder focus on appropriate places in the input sequence.\n\n\n\nDecoder\n\n\nThe following steps repeat the process until a special symbol is reached indicating the transformer decoder has completed its output. The output of each step is fed to the bottom decoder in the next time step, and the decoders bubble up their decoding results just like the encoders did. And just like we did with the encoder inputs, we embed and add positional encoding to those decoder inputs to indicate the position of each word.\nIn the decoder, the self-attention layer is only allowed to attend to earlier positions in the output sequence. This is done by masking future positions (setting them to -inf) before the softmax step in the self-attention calculation.\nThe “Encoder-Decoder Attention” layer works just like multiheaded self-attention, except it creates its Queries matrix from the layer below it, and takes the Keys and Values matrix from the output of the encoder stack.\n\n\n\nSteps in Decoding\n\n\n\n\n\nThe Linear layer is a simple fully connected neural network that projects the vector produced by the stack of decoders, into a much, much larger vector called a logits vector.\nLet’s assume that our model knows 10,000 unique English words (our model’s “output vocabulary”) that it’s learned from its training dataset. This would make the logits vector 10,000 cells wide – each cell corresponding to the score of a unique word. That is how we interpret the output of the model followed by the Linear layer.\nThe softmax layer then turns those scores into probabilities (all positive, all add up to 1.0). The cell with the highest probability is chosen, and the word associated with it is produced as the output for this time step.\n\n\n\nworking of final and softmax layer\n\n\n\n\n\nThe illustrated Transformer"
   },
   {
     "objectID": "transformers/attention_is_all_you_need.html",
@@ -628,5 +670,12 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Sequential nature of RNN precludes parallelization within training examples which becomes critical at longer sequence lengths.\nTransformer allows for significantly more parallelization\n\n\n\n\nTransformer Architecture\n\n\n\n\n\nEncoder * stack of 6 identical layers * To faciliate residual connections, all sub-layers in the model, as well as the embedding layers, produce outputs of dimension 512.\nDecoder * Stack of 6 indentical layers\n\n\n\n\n8 attention heads are used\n\n\n\n\nAttention and Multi-head Attention\n\n\n\nFor large values of dk, the dot products grow large in magnitude, pushing the softmax function into regions where it has extremely small gradients.To counteract this effect scaling of dot product is done.\n\nMulti-head attention allows the model to jointly attend to information from different representation subspaces at different positions.\n\n\n\n\nIn “encoder-decoder attention” layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input sequence.\nEach position in the encoder can attend to all positions in the previous layer of the encoder.\nSimilarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the decoder up to and including that position.\n\n\n\n\n\nThe input and output dimensions are 512\nThe inner layer has dimensionality of 2048\n\n\n\n\nPositional Embeddings\n\n\nSelf attention could yield more interpretable models"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "My Notes on Data Science, Machine learning and Artificial Intelligence I am learning from different books, videos, courses and Notebooks. These pages are replication of various source material from which I am learning."
   }
 ]
