@@ -1,0 +1,8 @@
+Considerations and pitfalls of attention for your own data
+Advantages and disadvantages of ViT for Images
+ViT Vs CNN
+Classification on Videos
+Validation for video classification other classification metrics
+Scene change detection in videos
+Continual learning - Update model
+Closing the presentation with summary

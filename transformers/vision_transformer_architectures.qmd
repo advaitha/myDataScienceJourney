@@ -3,3 +3,6 @@
 ![Pyramid vision transformer](/Images/pyramid_vision_transformer.png)
 
 To overcome the quadratic complexity of the attention mechanism, Pyramid Vision Transformers (PVTs) employed a variant of self-attention called Spatial-Reduction Attention (SRA), characterized by a spatial reduction of both keys and values. **By applying SRA, the spatial dimensions of the features slowly decrease throughout the model.**
+
+
+### SWIN Transformer
