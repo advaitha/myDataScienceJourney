@@ -126,8 +126,18 @@ execute:
 ::: {.incremental}
 - Inductive Bias and Locality Vs Global
 - Flexibility
-- ViT needs more data to learn where to focus
+- CNN works with less amount of data than ViT
 - **Specifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs.**
+- Transformer models are more memory efficient than ResNet models
+- Transformers can learn meaningful information even in the lowest layers
+:::
+--- 
+
+## ViT Vs CNN
+
+::: {.incremental}
+- Transformer models are more memory efficient than ResNet models
+- Transformers can learn meaningful information even in the lowest layers
 :::
 
 ---
@@ -140,6 +150,39 @@ execute:
 - ViT are prone to over-fitting due to their flexibility
 - ViT is suitable for Transfer learning
 - ViTs are robust against data corruptions, image occlusions and adversarial attacks
+:::
+
+---
+
+## Hybrid Architectures
+
+::: {.incremental}
+- DEtection TRansformer(DETR)
+![](/Images/detr.png)
+:::
+
+---
+
+## Hybrid Architectures
+
+::: {.incremental}
+- CNN is used to extract features
+- CNN features are flattened and combined with positional encodings
+:::
+
+---
+
+## Use ViT in Production?
+
+::: {.incremental}
+- Type of Images & objective
+- Amount of data available
+- Training time available
+- Importance of Interpretability
+- Deployment requirements
+  * latency 
+  * Model size
+  * Inference cost
 :::
 
 ---
