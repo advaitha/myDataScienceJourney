@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – gaps</title>
+<title>My Datascience Journey – object_detection_transformers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -618,16 +618,48 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#object-detection-with-detr" id="toc-object-detection-with-detr" class="nav-link active" data-scroll-target="#object-detection-with-detr">Object Detection with DETR</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<p>Considerations and pitfalls of attention for your own data Advantages and disadvantages of ViT for Images ViT Vs CNN Classification on Videos Validation for video classification other classification metrics Scene change detection in videos Continual learning - Update model Closing the presentation with summary</p>
+<section id="object-detection-with-detr" class="level1">
+<h1>Object Detection with DETR</h1>
+<ul>
+<li><p>Non-maximum supression and anchor generation are not required</p></li>
+<li><p>They don’t require customized layers</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/dert.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">DETR</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p>DETR predicts all objects at once and is trained end-to-end with a set loss function which performs bipartite matching between predicted and ground-truth objects.</p></li>
+<li><p>Performs better on larger objects</p></li>
+<li><p>A segmentation head trained on top of a pre-trained DETR works on Panoptic segmentation</p></li>
+<li><p>No autogression in decoder</p></li>
+<li><p>Use transformers with parallel decoding</p></li>
+<li><p>Directly predicting the set of detections with absolute box prediction</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/detr_arch.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">DETR Architecture</figcaption><p></p>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

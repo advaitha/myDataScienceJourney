@@ -15,10 +15,9 @@ execute:
 ## Topics Covered
 
 ::: {.incremental}
-- Core concepts 
+- Core concepts of Attention is all you need
 - Adapting Attention to vision
-- Comparison with CNNs
-- Use case discussion
+- Use case Implementation
 :::
 
 ---
@@ -30,8 +29,8 @@ execute:
 ## Why a new architecture is required?
 
 ::: {.incremental}
+- RNNs process words sequentially
 - RNN cannot consider long sequence lengths
-- RNNs are not paralleizable 
 :::
 
 ---
@@ -39,7 +38,7 @@ execute:
 
 ## Attention Transformer Architecture
 
-![](/Images/transformer_architecture.png){height=7in}
+![](/Images/transformer_architecture.png){height=6in}
 
 ---
 
@@ -52,6 +51,13 @@ execute:
 - Positional Encoding
   * To track the relative position of the words
 :::
+
+---
+
+
+## Multi-Head Attention
+
+![](/Images/mask_query.png){width=120%}
 
 ---
 
@@ -73,8 +79,8 @@ execute:
 
 ::: {.incremental}
 - It expands the models ability to focus on different positions
-- It gives the attention layer multiple "representation subspaces"
-![](/Images/multi_head_rep.png){height=6in}
+- It gives the attention layer multiple "representation subspaces" <br/>
+![](/Images/multi_head_rep.png){height=4in}
 :::
 
 ---
@@ -128,8 +134,6 @@ execute:
 - Flexibility
 - CNN works with less amount of data than ViT
 - **Specifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs.**
-- Transformer models are more memory efficient than ResNet models
-- Transformers can learn meaningful information even in the lowest layers
 :::
 --- 
 
@@ -137,6 +141,7 @@ execute:
 
 ::: {.incremental}
 - Transformer models are more memory efficient than ResNet models
+- ViT are prone to over-fitting due to their flexibility
 - Transformers can learn meaningful information even in the lowest layers
 :::
 
@@ -147,7 +152,6 @@ execute:
 
 ::: {.incremental}
 - `ViT reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.`
-- ViT are prone to over-fitting due to their flexibility
 - ViT is suitable for Transfer learning
 - ViTs are robust against data corruptions, image occlusions and adversarial attacks
 :::
@@ -157,25 +161,120 @@ execute:
 ## Hybrid Architectures
 
 ::: {.incremental}
+- CNN is used to extract features
+- The extracted features are used by the transformers
+:::
+
+---
+
+
+## Use Case Discussion
+
+---
+
+## Problem Statement
+
+::: {.incremental}
+- Monitoring when the children are in danger of leaving the front yard
+- Predict when childrean are about to leave the yard to trigger the alarm
+- We have videos of children playing sports
+:::
+
+---
+
+
+## Approach
+
+::: {.incremental}
+- Object Detection
+- Train a ML model on the object detection output
+:::
+
+---
+
+## Object Detection with DETR
+
 - DEtection TRansformer(DETR)
 ![](/Images/detr.png)
+
+
+---
+
+## Object Detection with DETR
+
+![](/Images/detr_big_arch.png)
+
+---
+
+## Object Detection with DETR
+
+![](/Images/detr_big_arch.png)
+
+---
+
+## Object Detection with DETR
+
+![](/Images/detr_example.png)
+
+---
+
+
+## Why DETR
+
+::: {.incremental}
+- Hand-crafted anchors not required
+- They don't require customized layers
+- Predict all objects at once
+- Post-processing not required for predicting bounding boxes
+- Attention maps can be used for Interpretation
 :::
 
 ---
 
-## Hybrid Architectures
+
+## Why DETR
+
+![](/Images/detr_atten_map.png)
+
+---
+
+
+## Why DETR
 
 ::: {.incremental}
-- CNN is used to extract features
-- CNN features are flattened and combined with positional encodings
+- What if object detection model doesn't work?
+- A segmentation head can be trained on top of a pre-trained DETR
 :::
 
 ---
 
-## Use ViT in Production?
+## Why DETR
+
+![](/Images/detr_seg.png)
+
+---
+
+
+## Why DETR
+
+![](/Images/detr_seg.png)
+
+---
+
+
+## Why DETR
 
 ::: {.incremental}
-- Type of Images & objective
+- We can get the FPS for processing videos
+- Pre-trained Pytorch models and code available
+:::
+
+---
+
+## Considerations
+
+::: {.incremental}
+- Collect and train the model on low quality images
 - Amount of data available
 - Training time available
 - Importance of Interpretability
@@ -187,22 +286,10 @@ execute:
 
 ---
 
-## Use Case Discussion
-
-## Problem Statement
-
-::: {.incremental}
-- Monitoring when the children are in danger of leaving the front yard
-- Predict when it will leave the yard to trigger the alarm
-- We have videos of children playing sports
-:::
-
----
-
 ## Data Collection
 
 ::: {.incremental}
-- Brainstorming what needs to be collected
+- Brainstorming how data needs to be annotated
 - Standardizing the definitions
 - Collecting Diversified data - Different yards, balls, walls, seasons etc
 - Labeling the data - Quality Vs Quantity
@@ -248,12 +335,22 @@ execute:
 
 ---
 
+## Validation
+
+::: {.incremental}
+- FPS
+- mAP for object detection
+- Recall, Precision and F1 for the classification
+:::
+
+---
+
 ## Deployment
 
 ::: {.incremental}
-- Logic for scene change detection to avoid latencies in inference
+- Frame sampling instead of predicting on all frames?
 - Deployment using platforms like Ray for effective GPU utilization 
-- Deployment at Edge to meet latency requirements
+- Deployment at Edge to meet latency requirements - TensorRT
 - Use AB testing framework to deploy new models
 :::
 
@@ -270,11 +367,23 @@ execute:
 
 ---
 
-## Continous Improvement
+## Tool Suggestion for Monitoring
 
 ::: {.incremental}
-- Use production data to analyze and contionously improve the model
+- Fiftyone <br/br>
+![](/Images/fiftyone_R_CNN.png){height=5in}
 :::
 
+---
+
+## Summary
+
+::: {.incremental}
+- Start simple 
+- Small improvements on regular basis
+- Lookout for new discovery in the field
+- Get Feedback, Iterate, Improve
+- Keep the cycle going
+:::
 
 
