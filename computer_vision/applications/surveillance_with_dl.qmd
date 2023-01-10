@@ -1,0 +1,15 @@
+# Video Feed
+
+Quality is often lowered to maximize storage
+Scalalbe system should be able to intrepret low quality images
+Training should happen on low quality images
+
+
+# Processing power
+Processing on a centralized server
+Processing on the edge - TensorRT
+
+
+
+
+

@@ -14,6 +14,62 @@
     "text": "Bayesian inference is updating your beliefs after considering new evidence.\nWe re-weight our prior beliefs after observing the evience and arrive at posterior probabilities\nAs we gather an infinite amount of evidence, Bayesian results align with frequentist results. For large N, statistical inference is more or less objective. For small N inference is much more unstable, frequentist estimates have more variance and larger confidence intervals.\nBayesian inference preserve the uncertainty that reflects the instability for a small N dataset. \nA good starting point for Bayesian modeling is to think about how the data might have been generated.  \nFor getting the samples from posterior probability Monte Carlo Marko Chain (MCMC) algorithms are used \nIn MCMC only the current location matters (memoryless)\nLaplace Approximations, Variational Bayes methods are also used to approximate the posterior.\nMetropolis sampling is used fElemwiseCategorical for categorical variables.\nA low auto-correlation between posterior samples are preferred\nThinning - If we take every nth sample, we can remove some autocorrelation, with more thinning, the autocorrelation drops quicker. Higher thinning requires more MCMC iterations to achieve the same number of returned samples\nLaw of large numbers - The average of a sequence of random variables from the same distribution converges to the expected value of that distribution. The law of large numbers is only valid as N gets infinitely large:never truly attainable.\nSmall datasets should not be processed using the law of large numbers. We will encounter this problem when try to analyze subset of the data on some specific categories\nIn Bayesian inference are computed using expected values. If we can sample from the posterior distribution directly, we simply need to evaluate averages.If further accuracy is desired, take more samples from the posterior.\nBayesian inference also include loss functions. Instead of returning the average of posterior distribution, we can calculate minimum of the loss function to choose the estimate that minimized the expected loss. Minimum of the expected loss is called ‘Bayes action’\nIn traditional ML it often happens that prediction measure and what frequentist methods are optimizing for are very different. For example in logistic regression trying to optimize cross entropy loss and trying to measure AUC, ROC, Precision etc. On the contrary, Bayes action is equivalent to finding parameters that optimize not parameter accuracy but an arbitary performance measure like loss functions, AUC, ROC, precision / Recall etc.\nPrior selected can be either objective or subjective. Objective prior is following the “principle of indifference” (all values are equally probable). Subjective prior is like adding our belief into the system ex. injecting domain knowledge.\nIf the posterior does not make sense, then it means that the prior may not contain all the information and needs to be updated\nEmpirical Bayes combines frequentist and bayesian inference. Frequentist methods are used to find the prior’s hyperparameters and then proceed with bayesian methods. It was suggested not to use empirical bayes unless you have lots of data \n\n\n\n\nGamma distribution\nWishart distribution - It is a distribution over all positive semi-definite matrices. covariance matrices are positive-definite, hence the Wishart is an appropriate prior for covariance matrices.\nBeta distribution is a generalization of uniform distribution\nA beta prior with binomial observations creates a beta posterior"
   },
   {
+    "objectID": "computer_vision/object_detection/introduction.html#general-framework-for-object-detection",
+    "href": "computer_vision/object_detection/introduction.html#general-framework-for-object-detection",
+    "title": "My Datascience Journey",
+    "section": "General Framework for Object Detection",
+    "text": "General Framework for Object Detection\n\n\nRegion Proposal\n\nThe system looks at the image and proposes RoIs for further analysis. RoIs are regions that the system believes have a high likelihood of containing an object, called the objectness score\n\n\n\nFeature extraction\n\nExtract features from ROI to determine the class of the image.\nTwo predictions are made for each region\n\nBounding box prediction\nClass prediction\n\n\n\n\nNon-Maximum suppression (NMS)\n\nMultiple detections map happen for the same object. NMS is a technique that makes sure the detection algorithm detects each object only once."
+  },
+  {
+    "objectID": "computer_vision/object_detection/introduction.html#object-detector-evaluation-metrics",
+    "href": "computer_vision/object_detection/introduction.html#object-detector-evaluation-metrics",
+    "title": "My Datascience Journey",
+    "section": "Object Detector Evaluation Metrics",
+    "text": "Object Detector Evaluation Metrics\n\nFrames per second (FPS) to measure detection speed - R-CNN operates at 7 FPS, SSD operates at 59 FPS.\nMean average precision (mAP) - It is a percentage from 0 to 100, and higher values are better.\n\n\nIntersection over union (IOU)\n\nIt evaluates the overlap between two bounding boxes - Ground truth bounding box and the predicted bounding box\n\n\nIOU = Area of Intersection / Area of the Union IOU should be greater than a threshold which is tunable according to the problem.\nIf the IOU value is above this threshod, the prediction is considered a True Positive (TP) and if it is below the threshold, it is considered a False Positive (FP)\n\n\nMean Average Precision (mAP)\n\n\n\nsteps to calculate mAP"
+  },
+  {
+    "objectID": "computer_vision/object_detection/introduction.html#region-based-convolutional-neural-networks-r-cnns",
+    "href": "computer_vision/object_detection/introduction.html#region-based-convolutional-neural-networks-r-cnns",
+    "title": "My Datascience Journey",
+    "section": "Region-based convolutional neural networks (R-CNNs)",
+    "text": "Region-based convolutional neural networks (R-CNNs)\n\n\n\n\nselective search along with bottom up segmentation for region proposal\n\n\n\nDraw backs of R-CNN\n\nVery slow\nThree separate modules which does not share computation"
+  },
+  {
+    "objectID": "computer_vision/object_detection/introduction.html#fast-r-cnn",
+    "href": "computer_vision/object_detection/introduction.html#fast-r-cnn",
+    "title": "My Datascience Journey",
+    "section": "Fast R-CNN",
+    "text": "Fast R-CNN\n\nThe loss will be multi-task loss - For predicting the class of the objects and the bounding box.\nThe region proposal is coming from a different model. This slow down the algorithm."
+  },
+  {
+    "objectID": "computer_vision/object_detection/introduction.html#faster-r-cnn",
+    "href": "computer_vision/object_detection/introduction.html#faster-r-cnn",
+    "title": "My Datascience Journey",
+    "section": "Faster R-CNN",
+    "text": "Faster R-CNN\nInstead of using a selective search algorithm on the feature map to identify the region proposals, a region proposal network (RPN) is used to predict the region proposals as part of the training process.\nThe predicted region proposals are then reshaped using an RoI pooling layer and used to classify the image within the proposed region and predict the offset values for the bounding boxes\n\nIn general, single-stage detectors (SSD, yolo) tend to be less accurate than two-stage detectors (R-CNN) but are significantly faster."
+  },
+  {
+    "objectID": "computer_vision/object_detection/introduction.html#single-stage-detector-ssd",
+    "href": "computer_vision/object_detection/introduction.html#single-stage-detector-ssd",
+    "title": "My Datascience Journey",
+    "section": "Single Stage Detector (SSD)",
+    "text": "Single Stage Detector (SSD)\n\n\n\nSSD Architecture"
+  },
+  {
+    "objectID": "computer_vision/object_detection/introduction.html#you-only-look-once-yolo",
+    "href": "computer_vision/object_detection/introduction.html#you-only-look-once-yolo",
+    "title": "My Datascience Journey",
+    "section": "You only look once (YOLO)",
+    "text": "You only look once (YOLO)\n\n\n\nYolo working\n\n\n\n\n\nYolo3 architecture"
+  },
+  {
+    "objectID": "computer_vision/object_detection/introduction.html#summary",
+    "href": "computer_vision/object_detection/introduction.html#summary",
+    "title": "My Datascience Journey",
+    "section": "Summary",
+    "text": "Summary\nImage classification is the task of predicting the type or class of an object in an image.\nObject detection is the task of predicting the location of objects in an image via bounding boxes and the classes of the located objects.\nThe general framework of object detection systems consists of four main components: region proposals, feature extraction and predictions, non-maximum suppression, and evaluation metrics.\nObject detection algorithms are evaluated using two main metrics: frame per second (FPS) to measure the network’s speed, and mean average precision (mAP) to measure the network’s precision.\nThe three most popular object detection systems are the R-CNN family of networks, SSD, and the YOLO family of networks.\nThe R-CNN family of networks has three main variations: R-CNN, Fast R-CNN, and Faster R-CNN. R-CNN and Fast R-CNN use a selective search algorithm to propose RoIs, whereas Faster R-CNN is an end-to-end DL system that uses a region proposal network to propose RoIs.\nThe YOLO family of networks include YOLOv1, YOLOv2 (or YOLO9000), and YOLOv3.\nR-CNN is a multi-stage detector: it separates the process to predict the objectness score of the bounding box and the object class into two different stages.\nSSD and YOLO are single-stage detectors: the image is passed once through the network to predict the objectness score and the object class.\nIn general, single-stage detectors tend to be less accurate than two-stage detectors but are significantly faster."
+  },
+  {
     "objectID": "computer_vision/00_Interesting_links_to_read.html",
     "href": "computer_vision/00_Interesting_links_to_read.html",
     "title": "My Datascience Journey",
@@ -33,6 +89,13 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Different types of segmentation\n\nSemantic segmentation (every pixel is classified)\nInstance segmentation (object level classification)\nPanoptic segmentation (combination of pixel and instance)\n\n\n\n\n\nDifferent segmentation\n\n\n\nAfter convolutions and pooling we will have a lot of feature maps in reduced dimensions. With the help of compressed latent space representation we can do lot of things like classification, upsampling etc \nAuto-encoders\n\n\n\n\nUpsampling from Latent space representation to the original size of the image\nUpsampling happens in decoder\nUpsampling is used for image generation, enhancement, mapping and more\n\nNearest Neighor\nBed of Nails\nBilinear upsampling\nTransposed convolutions\nMax unpooling\n\n\n\n\n\n\n\nNearest Neighbors Upsampling\n\n\n\n\n\n\n\n\nBed of nails\n\n\n\n\n\n\nMost popular\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nnearest_neighbour_out = F.interpolate(input, scale_factor=2, mode='nearest')\n\nbilinear_interp_out = F.interpolate(input, scale_factor=2, mode='bilinear', align_corners=False)\n\n\n\n\nWhen we are decompressing the image, it is difficult for the network to come up with original image size. Lot of information is lost in compression. To help in the process, skip connections exist between encoder and decoder.\n\n\n\n\nskip connections\n\n\n\nThere are two types of skip connections: Additive and concatenating\nResNet is addition\nDenseNet is concatenation\n\n\n\n\nAddition Vs Concat\n\n\nIn segmentation, skip connections are used to pass features from the encoder path to the decoder path in order to recover spatial information lost during downsampling\n\n\n\nskip connection - Gradient Descent\n\n\n * 1x1 convolution is to reduce the number of filters (not sure how it happens)\n\n\n\n1x1 convolutions\n\n\n\n\n\nThe metric used is Intersection over union (i.e Jaccard similarity)\nThe loss function is Focal loss (This is weighted cross entropy loss in addition to ‘gamma’ which will take care of class imbalance)\nDice loss is also used\n\n\n\n\nDifferent types of loss functions"
+  },
+  {
+    "objectID": "computer_vision/applications/surveillance_with_dl.html",
+    "href": "computer_vision/applications/surveillance_with_dl.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Video Feed\nQuality is often lowered to maximize storage Scalalbe system should be able to intrepret low quality images Training should happen on low quality images\n\n\nProcessing power\nProcessing on a centralized server Processing on the edge - TensorRT"
   },
   {
     "objectID": "computer_vision/image_classification/satellite_images_classification.html",
@@ -578,7 +641,7 @@
     "href": "transformers/vision_transformer_architectures.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "pyramid vision transformer\n\n\n\nPyramid vision transformer\n\n\nTo overcome the quadratic complexity of the attention mechanism, Pyramid Vision Transformers (PVTs) employed a variant of self-attention called Spatial-Reduction Attention (SRA), characterized by a spatial reduction of both keys and values. By applying SRA, the spatial dimensions of the features slowly decrease throughout the model."
+    "text": "pyramid vision transformer\n\n\n\nPyramid vision transformer\n\n\nTo overcome the quadratic complexity of the attention mechanism, Pyramid Vision Transformers (PVTs) employed a variant of self-attention called Spatial-Reduction Attention (SRA), characterized by a spatial reduction of both keys and values. By applying SRA, the spatial dimensions of the features slowly decrease throughout the model.\n\n\nSWIN Transformer"
   },
   {
     "objectID": "transformers/transformers_from_scratch.html",
@@ -609,6 +672,20 @@
     "text": "Without the translational equivariance of CNNs, ViT models are generally found to perform best in settings with large amounts of training data or to require strong AugReg schemes to avoid overfitting\nCarefully selected regularization and augmentations roughly correspond to a 10x increase in training data size\n\n\n\n\nRegularization used - Dropout to intermediate activations of ViT, stochastic depth regularization\nData augmentations - Mixup, RandAugment\nWeight decay\n\n\n\n\n\nFor most practical purposes, transferring a pre-trained model is both more cost-efficient and leads to better results\n\n\n\n\nOne approach is to run downstream adaptation for all available pre-trained models and then select the best performing model, based on validation score on the downstream task. (expensive)\nSelect a single pre-trained model based on the upstream validation accuracy and then only use this model for adaptation (cheaper)\nCheaper strategy works equally well as the more expensive strategy in the majority of scenarios\n\n\n\n\n\nResearch Paper"
   },
   {
+    "objectID": "transformers/object_detection_transformers.html",
+    "href": "transformers/object_detection_transformers.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Object Detection with DETR\n\nNon-maximum supression and anchor generation are not required\nThey don’t require customized layers\n\n\n\n\nDETR\n\n\n\nDETR predicts all objects at once and is trained end-to-end with a set loss function which performs bipartite matching between predicted and ground-truth objects.\nPerforms better on larger objects\nA segmentation head trained on top of a pre-trained DETR works on Panoptic segmentation\nNo autogression in decoder\nUse transformers with parallel decoding\nDirectly predicting the set of detections with absolute box prediction\n\n\n\n\nDETR Architecture"
+  },
+  {
+    "objectID": "transformers/gaps.html",
+    "href": "transformers/gaps.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Considerations and pitfalls of attention for your own data Advantages and disadvantages of ViT for Images ViT Vs CNN Classification on Videos Validation for video classification other classification metrics Scene change detection in videos Continual learning - Update model Closing the presentation with summary"
+  },
+  {
     "objectID": "transformers/transformers.html",
     "href": "transformers/transformers.html",
     "title": "My Datascience Journey",
@@ -620,7 +697,7 @@
     "href": "transformers/Attention_for_vision.html#topics-covered",
     "title": "Computer Vision Using Transformers",
     "section": "Topics Covered",
-    "text": "Topics Covered\n\n\nCore concepts\nAdapting Attention to vision\nComparison with CNNs\nUse case discussion"
+    "text": "Topics Covered\n\n\nCore concepts of Attention is all you need\nAdapting Attention to vision\nUse case Implementation"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#attention-is-all-you-need",
@@ -634,7 +711,7 @@
     "href": "transformers/Attention_for_vision.html#why-a-new-architecture-is-required",
     "title": "Computer Vision Using Transformers",
     "section": "Why a new architecture is required?",
-    "text": "Why a new architecture is required?\n\n\nRNN cannot consider long sequence lengths\nRNNs are not paralleizable"
+    "text": "Why a new architecture is required?\n\n\nRNNs process words sequentially\nRNN cannot consider long sequence lengths"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#attention-transformer-architecture",
@@ -660,6 +737,13 @@
   {
     "objectID": "transformers/Attention_for_vision.html#multi-head-attention-1",
     "href": "transformers/Attention_for_vision.html#multi-head-attention-1",
+    "title": "Computer Vision Using Transformers",
+    "section": "Multi-Head Attention",
+    "text": "Multi-Head Attention"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#multi-head-attention-2",
+    "href": "transformers/Attention_for_vision.html#multi-head-attention-2",
     "title": "Computer Vision Using Transformers",
     "section": "Multi-Head Attention",
     "text": "Multi-Head Attention"
@@ -711,14 +795,28 @@
     "href": "transformers/Attention_for_vision.html#vit-vs-cnn",
     "title": "Computer Vision Using Transformers",
     "section": "ViT Vs CNN",
-    "text": "ViT Vs CNN\n\n\nInductive Bias and Locality Vs Global\nFlexibility\nViT needs more data to learn where to focus\nSpecifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs."
+    "text": "ViT Vs CNN\n\n\nInductive Bias and Locality Vs Global\nFlexibility\nCNN works with less amount of data than ViT\nSpecifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs."
   },
   {
     "objectID": "transformers/Attention_for_vision.html#vit-vs-cnn-1",
     "href": "transformers/Attention_for_vision.html#vit-vs-cnn-1",
     "title": "Computer Vision Using Transformers",
     "section": "ViT Vs CNN",
-    "text": "ViT Vs CNN\n\n\nViT reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.\nViT are prone to over-fitting due to their flexibility\nViT is suitable for Transfer learning\nViTs are robust against data corruptions, image occlusions and adversarial attacks"
+    "text": "ViT Vs CNN\n\n\nTransformer models are more memory efficient than ResNet models\nViT are prone to over-fitting due to their flexibility\nTransformers can learn meaningful information even in the lowest layers"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#vit-vs-cnn-2",
+    "href": "transformers/Attention_for_vision.html#vit-vs-cnn-2",
+    "title": "Computer Vision Using Transformers",
+    "section": "ViT Vs CNN",
+    "text": "ViT Vs CNN\n\n\nViT reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.\nViT is suitable for Transfer learning\nViTs are robust against data corruptions, image occlusions and adversarial attacks"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#hybrid-architectures",
+    "href": "transformers/Attention_for_vision.html#hybrid-architectures",
+    "title": "Computer Vision Using Transformers",
+    "section": "Hybrid Architectures",
+    "text": "Hybrid Architectures\n\n\nCNN is used to extract features\nThe extracted features are used by the transformers"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#use-case-discussion",
@@ -732,14 +830,98 @@
     "href": "transformers/Attention_for_vision.html#problem-statement",
     "title": "Computer Vision Using Transformers",
     "section": "Problem Statement",
-    "text": "Problem Statement\n\n\nMonitoring when the children are in danger of leaving the front yard\nPredict when it will leave the yard to trigger the alarm\nWe have videos of children playing sports"
+    "text": "Problem Statement\n\n\nMonitoring when the children are in danger of leaving the front yard\nPredict when childrean are about to leave the yard to trigger the alarm\nWe have videos of children playing sports"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#approach",
+    "href": "transformers/Attention_for_vision.html#approach",
+    "title": "Computer Vision Using Transformers",
+    "section": "Approach",
+    "text": "Approach\n\n\nObject Detection\nTrain a ML model on the object detection output"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#object-detection-with-detr",
+    "href": "transformers/Attention_for_vision.html#object-detection-with-detr",
+    "title": "Computer Vision Using Transformers",
+    "section": "Object Detection with DETR",
+    "text": "Object Detection with DETR\n\nDEtection TRansformer(DETR)"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#object-detection-with-detr-1",
+    "href": "transformers/Attention_for_vision.html#object-detection-with-detr-1",
+    "title": "Computer Vision Using Transformers",
+    "section": "Object Detection with DETR",
+    "text": "Object Detection with DETR"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#object-detection-with-detr-2",
+    "href": "transformers/Attention_for_vision.html#object-detection-with-detr-2",
+    "title": "Computer Vision Using Transformers",
+    "section": "Object Detection with DETR",
+    "text": "Object Detection with DETR"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#object-detection-with-detr-3",
+    "href": "transformers/Attention_for_vision.html#object-detection-with-detr-3",
+    "title": "Computer Vision Using Transformers",
+    "section": "Object Detection with DETR",
+    "text": "Object Detection with DETR"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#why-detr",
+    "href": "transformers/Attention_for_vision.html#why-detr",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why DETR",
+    "text": "Why DETR\n\n\nHand-crafted anchors not required\nThey don’t require customized layers\nPredict all objects at once\nPost-processing not required for predicting bounding boxes\nAttention maps can be used for Interpretation"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#why-detr-1",
+    "href": "transformers/Attention_for_vision.html#why-detr-1",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why DETR",
+    "text": "Why DETR"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#why-detr-2",
+    "href": "transformers/Attention_for_vision.html#why-detr-2",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why DETR",
+    "text": "Why DETR\n\n\nWhat if object detection model doesn’t work?\nA segmentation head can be trained on top of a pre-trained DETR"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#why-detr-3",
+    "href": "transformers/Attention_for_vision.html#why-detr-3",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why DETR",
+    "text": "Why DETR"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#why-detr-4",
+    "href": "transformers/Attention_for_vision.html#why-detr-4",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why DETR",
+    "text": "Why DETR"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#why-detr-5",
+    "href": "transformers/Attention_for_vision.html#why-detr-5",
+    "title": "Computer Vision Using Transformers",
+    "section": "Why DETR",
+    "text": "Why DETR\n\n\nWe can get the FPS for processing videos\nPre-trained Pytorch models and code available"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#considerations",
+    "href": "transformers/Attention_for_vision.html#considerations",
+    "title": "Computer Vision Using Transformers",
+    "section": "Considerations",
+    "text": "Considerations\n\n\nCollect and train the model on low quality images\nAmount of data available\nTraining time available\nImportance of Interpretability\nDeployment requirements\n\nlatency\nModel size\nInference cost"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#data-collection",
     "href": "transformers/Attention_for_vision.html#data-collection",
     "title": "Computer Vision Using Transformers",
     "section": "Data Collection",
-    "text": "Data Collection\n\n\nBrainstorming what needs to be collected\nStandardizing the definitions\nCollecting Diversified data - Different yards, balls, walls, seasons etc\nLabeling the data - Quality Vs Quantity\nDiscussing ambigious cases with labelers and keep improving"
+    "text": "Data Collection\n\n\nBrainstorming how data needs to be annotated\nStandardizing the definitions\nCollecting Diversified data - Different yards, balls, walls, seasons etc\nLabeling the data - Quality Vs Quantity\nDiscussing ambigious cases with labelers and keep improving"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#modelling",
@@ -763,11 +945,18 @@
     "text": "Validation\n\n\nFalse alarms are better than not raising alarm when necessary\nRecall is more important in this case\nToo many false alarms will reduce the customer satisfaction\nImprove Recall while maintaining Precision at an acceptable level"
   },
   {
+    "objectID": "transformers/Attention_for_vision.html#validation-1",
+    "href": "transformers/Attention_for_vision.html#validation-1",
+    "title": "Computer Vision Using Transformers",
+    "section": "Validation",
+    "text": "Validation\n\n\nFPS\nmAP for object detection\nRecall, Precision and F1 for the classification"
+  },
+  {
     "objectID": "transformers/Attention_for_vision.html#deployment",
     "href": "transformers/Attention_for_vision.html#deployment",
     "title": "Computer Vision Using Transformers",
     "section": "Deployment",
-    "text": "Deployment\n\n\nLogic for scene change detection to avoid latencies in inference\nDeployment using platforms like Ray for effective GPU utilization\nDeployment at Edge to meet latency requirements\nUse AB testing framework to deploy new models"
+    "text": "Deployment\n\n\nFrame sampling instead of predicting on all frames?\nDeployment using platforms like Ray for effective GPU utilization\nDeployment at Edge to meet latency requirements - TensorRT\nUse AB testing framework to deploy new models"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#continual-learning",
@@ -777,11 +966,18 @@
     "text": "Continual Learning\n\n\nContinual learning suits deep learning models\nIncentivize customers to label the data in real time\nUpdate the model parameters in real time\nContinously monitor the model performance"
   },
   {
-    "objectID": "transformers/Attention_for_vision.html#continous-improvement",
-    "href": "transformers/Attention_for_vision.html#continous-improvement",
+    "objectID": "transformers/Attention_for_vision.html#tool-suggestion-for-monitoring",
+    "href": "transformers/Attention_for_vision.html#tool-suggestion-for-monitoring",
     "title": "Computer Vision Using Transformers",
-    "section": "Continous Improvement",
-    "text": "Continous Improvement\n\n\nUse production data to analyze and contionously improve the model"
+    "section": "Tool Suggestion for Monitoring",
+    "text": "Tool Suggestion for Monitoring\n\n\nFiftyone"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#summary",
+    "href": "transformers/Attention_for_vision.html#summary",
+    "title": "Computer Vision Using Transformers",
+    "section": "Summary",
+    "text": "Summary\n\n\nStart simple\nSmall improvements on regular basis\nLookout for new discovery in the field\nGet Feedback, Iterate, Improve\nKeep the cycle going"
   },
   {
     "objectID": "transformers/attention_is_all_you_need.html",

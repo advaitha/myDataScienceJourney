@@ -341,10 +341,9 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <h2>Topics Covered</h2>
 <div>
 <ul>
-<li class="fragment">Core concepts</li>
+<li class="fragment">Core concepts of Attention is all you need</li>
 <li class="fragment">Adapting Attention to vision</li>
-<li class="fragment">Comparison with CNNs</li>
-<li class="fragment">Use case discussion</li>
+<li class="fragment">Use case Implementation</li>
 </ul>
 </div>
 </section>
@@ -355,14 +354,14 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <h2>Why a new architecture is required?</h2>
 <div>
 <ul>
+<li class="fragment">RNNs process words sequentially</li>
 <li class="fragment">RNN cannot consider long sequence lengths</li>
-<li class="fragment">RNNs are not paralleizable</li>
 </ul>
 </div>
 </section>
 <section id="attention-transformer-architecture" class="slide level2">
 <h2>Attention Transformer Architecture</h2>
-<p><img data-src="../Images/transformer_architecture.png" style="height:7in"></p>
+<p><img data-src="../Images/transformer_architecture.png" style="height:6in"></p>
 </section>
 <section id="blocks-of-the-architecture" class="slide level2">
 <h2>Blocks of the Architecture</h2>
@@ -383,8 +382,12 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <section id="multi-head-attention" class="slide level2">
 <h2>Multi-Head Attention</h2>
 
-<img data-src="../Images/self_attention_working.png" style="width:120.0%" class="r-stretch"></section>
+<img data-src="../Images/mask_query.png" style="width:120.0%" class="r-stretch"></section>
 <section id="multi-head-attention-1" class="slide level2">
+<h2>Multi-Head Attention</h2>
+
+<img data-src="../Images/self_attention_working.png" style="width:120.0%" class="r-stretch"></section>
+<section id="multi-head-attention-2" class="slide level2">
 <h2>Multi-Head Attention</h2>
 
 <img data-src="../Images/output.png" class="r-stretch"></section>
@@ -393,7 +396,7 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <div>
 <ul>
 <li class="fragment">It expands the models ability to focus on different positions</li>
-<li class="fragment">It gives the attention layer multiple “representation subspaces” <img data-src="../Images/multi_head_rep.png" style="height:6in"></li>
+<li class="fragment">It gives the attention layer multiple “representation subspaces” <br> <img data-src="../Images/multi_head_rep.png" style="height:4in"></li>
 </ul>
 </div>
 </section>
@@ -434,7 +437,7 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <ul>
 <li class="fragment">Inductive Bias and Locality Vs Global</li>
 <li class="fragment">Flexibility</li>
-<li class="fragment">ViT needs more data to learn where to focus</li>
+<li class="fragment">CNN works with less amount of data than ViT</li>
 <li class="fragment"><strong>Specifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs.</strong></li>
 </ul>
 </div>
@@ -443,10 +446,28 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <h2>ViT Vs CNN</h2>
 <div>
 <ul>
-<li class="fragment"><code>ViT reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.</code></li>
+<li class="fragment">Transformer models are more memory efficient than ResNet models</li>
 <li class="fragment">ViT are prone to over-fitting due to their flexibility</li>
+<li class="fragment">Transformers can learn meaningful information even in the lowest layers</li>
+</ul>
+</div>
+</section>
+<section id="vit-vs-cnn-2" class="slide level2">
+<h2>ViT Vs CNN</h2>
+<div>
+<ul>
+<li class="fragment"><code>ViT reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.</code></li>
 <li class="fragment">ViT is suitable for Transfer learning</li>
 <li class="fragment">ViTs are robust against data corruptions, image occlusions and adversarial attacks</li>
+</ul>
+</div>
+</section>
+<section id="hybrid-architectures" class="slide level2">
+<h2>Hybrid Architectures</h2>
+<div>
+<ul>
+<li class="fragment">CNN is used to extract features</li>
+<li class="fragment">The extracted features are used by the transformers</li>
 </ul>
 </div>
 </section>
@@ -458,8 +479,94 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <div>
 <ul>
 <li class="fragment">Monitoring when the children are in danger of leaving the front yard</li>
-<li class="fragment">Predict when it will leave the yard to trigger the alarm</li>
+<li class="fragment">Predict when childrean are about to leave the yard to trigger the alarm</li>
 <li class="fragment">We have videos of children playing sports</li>
+</ul>
+</div>
+</section>
+<section id="approach" class="slide level2">
+<h2>Approach</h2>
+<div>
+<ul>
+<li class="fragment">Object Detection</li>
+<li class="fragment">Train a ML model on the object detection output</li>
+</ul>
+</div>
+</section>
+<section id="object-detection-with-detr" class="slide level2">
+<h2>Object Detection with DETR</h2>
+<ul>
+<li>DEtection TRansformer(DETR) <img data-src="../Images/detr.png"></li>
+</ul>
+</section>
+<section id="object-detection-with-detr-1" class="slide level2">
+<h2>Object Detection with DETR</h2>
+
+<img data-src="../Images/detr_big_arch.png" class="r-stretch"></section>
+<section id="object-detection-with-detr-2" class="slide level2">
+<h2>Object Detection with DETR</h2>
+
+<img data-src="../Images/detr_big_arch.png" class="r-stretch"></section>
+<section id="object-detection-with-detr-3" class="slide level2">
+<h2>Object Detection with DETR</h2>
+
+<img data-src="../Images/detr_example.png" class="r-stretch"></section>
+<section id="why-detr" class="slide level2">
+<h2>Why DETR</h2>
+<div>
+<ul>
+<li class="fragment">Hand-crafted anchors not required</li>
+<li class="fragment">They don’t require customized layers</li>
+<li class="fragment">Predict all objects at once</li>
+<li class="fragment">Post-processing not required for predicting bounding boxes</li>
+<li class="fragment">Attention maps can be used for Interpretation</li>
+</ul>
+</div>
+</section>
+<section id="why-detr-1" class="slide level2">
+<h2>Why DETR</h2>
+
+<img data-src="../Images/detr_atten_map.png" class="r-stretch"></section>
+<section id="why-detr-2" class="slide level2">
+<h2>Why DETR</h2>
+<div>
+<ul>
+<li class="fragment">What if object detection model doesn’t work?</li>
+<li class="fragment">A segmentation head can be trained on top of a pre-trained DETR</li>
+</ul>
+</div>
+</section>
+<section id="why-detr-3" class="slide level2">
+<h2>Why DETR</h2>
+
+<img data-src="../Images/detr_seg.png" class="r-stretch"></section>
+<section id="why-detr-4" class="slide level2">
+<h2>Why DETR</h2>
+
+<img data-src="../Images/detr_seg.png" class="r-stretch"></section>
+<section id="why-detr-5" class="slide level2">
+<h2>Why DETR</h2>
+<div>
+<ul>
+<li class="fragment">We can get the FPS for processing videos</li>
+<li class="fragment">Pre-trained Pytorch models and code available</li>
+</ul>
+</div>
+</section>
+<section id="considerations" class="slide level2">
+<h2>Considerations</h2>
+<div>
+<ul>
+<li class="fragment">Collect and train the model on low quality images</li>
+<li class="fragment">Amount of data available</li>
+<li class="fragment">Training time available</li>
+<li class="fragment">Importance of Interpretability</li>
+<li class="fragment">Deployment requirements
+<ul>
+<li class="fragment">latency</li>
+<li class="fragment">Model size</li>
+<li class="fragment">Inference cost</li>
+</ul></li>
 </ul>
 </div>
 </section>
@@ -467,7 +574,7 @@ Thulasiram Gunipati<br>Jan 11, 2023
 <h2>Data Collection</h2>
 <div>
 <ul>
-<li class="fragment">Brainstorming what needs to be collected</li>
+<li class="fragment">Brainstorming how data needs to be annotated</li>
 <li class="fragment">Standardizing the definitions</li>
 <li class="fragment">Collecting Diversified data - Different yards, balls, walls, seasons etc</li>
 <li class="fragment">Labeling the data - Quality Vs Quantity</li>
@@ -509,13 +616,23 @@ Thulasiram Gunipati<br>Jan 11, 2023
 </ul>
 </div>
 </section>
+<section id="validation-1" class="slide level2">
+<h2>Validation</h2>
+<div>
+<ul>
+<li class="fragment">FPS</li>
+<li class="fragment">mAP for object detection</li>
+<li class="fragment">Recall, Precision and F1 for the classification</li>
+</ul>
+</div>
+</section>
 <section id="deployment" class="slide level2">
 <h2>Deployment</h2>
 <div>
 <ul>
-<li class="fragment">Logic for scene change detection to avoid latencies in inference</li>
+<li class="fragment">Frame sampling instead of predicting on all frames?</li>
 <li class="fragment">Deployment using platforms like Ray for effective GPU utilization</li>
-<li class="fragment">Deployment at Edge to meet latency requirements</li>
+<li class="fragment">Deployment at Edge to meet latency requirements - TensorRT</li>
 <li class="fragment">Use AB testing framework to deploy new models</li>
 </ul>
 </div>
@@ -531,11 +648,23 @@ Thulasiram Gunipati<br>Jan 11, 2023
 </ul>
 </div>
 </section>
-<section id="continous-improvement" class="slide level2">
-<h2>Continous Improvement</h2>
+<section id="tool-suggestion-for-monitoring" class="slide level2">
+<h2>Tool Suggestion for Monitoring</h2>
 <div>
 <ul>
-<li class="fragment">Use production data to analyze and contionously improve the model</li>
+<li class="fragment">Fiftyone <br br=""> <img data-src="../Images/fiftyone_R_CNN.png" style="height:5in"></li>
+</ul>
+</div>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<div>
+<ul>
+<li class="fragment">Start simple</li>
+<li class="fragment">Small improvements on regular basis</li>
+<li class="fragment">Lookout for new discovery in the field</li>
+<li class="fragment">Get Feedback, Iterate, Improve</li>
+<li class="fragment">Keep the cycle going</li>
 </ul>
 </div>
 
