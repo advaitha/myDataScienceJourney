@@ -1,0 +1,49 @@
+
+# AI Use cases for the Insurance Industry
+
+* Vehicle damage assessment
+* Fraud Detection
+* Claims management to ease the process
+
+
+## Vehicle damage assessment
+* Severity of damage
+* Which parts are damaged
+* Does it require repair or replacement
+* Estimating the cost of repair or replacement
+
+![Using AI for claim management](/Images/magicflow.png)
+![AI in various steps of the process](/Images/insurance_valid.png)
+
+## Leasons learnt while Building a Damage assessment system
+* Finding a proper data set
+* Privacy concerns
+* Optimizing performance and cost
+* If possible building 3D models and using them to train classifiers to achieve higher precision
+
+[Altoros Blog post](https://www.altoros.com/blog/automating-car-damage-estimation-for-insurance-with-machine-learning/)
+
+   
+
+
+### Process
+
+![Damage assessment using Object Detection](/Images/damage_assessment_training.png)
+![Severity Classification](/Images/severity_classification.png)
+![Object detection and classification](/Images/combining_prediction.png)
+
+### Challenges in applying AI for Cost estimation
+[Wired article](https://www.wired.com/story/ai-car-repair-shop-owners-not-happy/)
+
+
+### Reference
+[Just Analytics](https://www.justanalytics.com/blog/technical-know-how/accelerate-car-damage-claims-using-computer-vision)
+[Flowmagic](https://www.mantralabsglobal.com/blog/machine-vision-in-motor-insurance/)
+
+
+### Code Implementation
+[Github Repo](https://github.com/shubhi/car-damage-assessment)
+
+
+
+
