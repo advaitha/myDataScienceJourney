@@ -805,6 +805,13 @@
     "text": "Problem Statement\n\n\nMonitoring when the children are in danger of leaving the front yard\nPredict when childrean are about to leave the yard to trigger the alarm\nWe have videos of children playing sports"
   },
   {
+    "objectID": "transformers/Attention_for_vision.html#considerations",
+    "href": "transformers/Attention_for_vision.html#considerations",
+    "title": "Computer Vision Using Transformers",
+    "section": "Considerations",
+    "text": "Considerations\n\n\nCollect and train the model on low quality images\nAmount of data available\nTraining time available\nImportance of Interpretability\nDeployment requirements\n\nlatency\nModel size\nInference cost"
+  },
+  {
     "objectID": "transformers/Attention_for_vision.html#approach",
     "href": "transformers/Attention_for_vision.html#approach",
     "title": "Computer Vision Using Transformers",
@@ -880,13 +887,6 @@
     "title": "Computer Vision Using Transformers",
     "section": "Why DETR",
     "text": "Why DETR\n\n\nWe can get the FPS for processing videos\nPre-trained Pytorch models and code available"
-  },
-  {
-    "objectID": "transformers/Attention_for_vision.html#considerations",
-    "href": "transformers/Attention_for_vision.html#considerations",
-    "title": "Computer Vision Using Transformers",
-    "section": "Considerations",
-    "text": "Considerations\n\n\nCollect and train the model on low quality images\nAmount of data available\nTraining time available\nImportance of Interpretability\nDeployment requirements\n\nlatency\nModel size\nInference cost"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#data-collection",
