@@ -191,6 +191,20 @@ execute:
 
 ---
 
+## Considerations
+
+::: {.incremental}
+- Collect and train the model on low quality images
+- Amount of data available
+- Training time available
+- Importance of Interpretability
+- Deployment requirements
+  * latency 
+  * Model size
+  * Inference cost
+:::
+
+---
 
 ## Approach
 
@@ -280,20 +294,6 @@ execute:
 
 ---
 
-## Considerations
-
-::: {.incremental}
-- Collect and train the model on low quality images
-- Amount of data available
-- Training time available
-- Importance of Interpretability
-- Deployment requirements
-  * latency 
-  * Model size
-  * Inference cost
-:::
-
----
 
 ## Data Collection
 
