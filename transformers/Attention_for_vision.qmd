@@ -15,7 +15,7 @@ execute:
 ## Topics Covered
 
 ::: {.incremental}
-- Core concepts of Attention is all you need
+- Core concepts of `Attention is all you need`
 - Adapting Attention to vision
 - Use case Implementation
 :::
@@ -55,19 +55,19 @@ execute:
 ---
 
 
-## Multi-Head Attention
+## Self Attention
 
-![](/Images/mask_query.png){width=120%}
+![](/Images/attention_5.png)
 
 ---
 
-## Multi-Head Attention
+## Self Attention
 
 ![](/Images/self_attention_working.png){width=120%}
 
 ---
 
-## Multi-Head Attention
+## Self Attention
 
 
 ![](/Images/output.png)
@@ -125,6 +125,15 @@ execute:
 ![ViT Architecture](/Images/vit_arch.png)
 
 ---
+
+## ViT Vs CNN
+
+::: {.incremental}
+- Inductive Bias and Locality Vs Global <br/>
+![](/Images/inductive_bias.png){height=5in}
+:::
+
+--- 
 
 
 ## ViT Vs CNN
