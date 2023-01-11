@@ -595,6 +595,13 @@
     "text": "Split an image into patches and provide the sequence of linear embeddings of these patches as an input to Transformer.\nImage patches are treated the same way as tokens (words) in an NLP application. We train the model on image classification in supervised fashion.\nTransformers lack some of the inductive biases inherent to CNNs such as translation equivariance and locality and therefore do not generalize well when trained on insufficient amounts of data\nIt is often beneficial to fine-tune at higher resolution than pre-training\nViT performs better when trained on large scale data and transferred to tasks with fewer datapoints\n\n\n\n\nViT Architecture\n\n\n\nThe image patches are flattened and mapped to D dimensions with a trainable linear projection.These are called patch embeddings\nLearnable embedding is prepended to the sequence of embedded patches, whose state at the output of the transformer encoder serves as the image representation.\nLearnable 1D position embeddings are added to patch embeddings to retain positional information\nMLP contains two layers with GELU (Gaussina Error Linear Units) non-linearity\n\n\n\n\nVariants of ViT\n\n\n\nRegularization used - weight decay, dropout and label smoothing\n\nIn the lowest layers some heads attend to most of the image, showing that the ability to integrate information globally is indeed used by the model. The attention distance increases with network depth. Globally, the model attends to image regions that are semantically relevant for classification\n\n\nResearch Paper"
   },
   {
+    "objectID": "transformers/data_eff_img_transformer.html",
+    "href": "transformers/data_eff_img_transformer.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "This uses a teacher-student strategy specific to transformers. It relies on a distillation token ensuring that the student learns from the teacher through attention.\n\n\nResearch paper"
+  },
+  {
     "objectID": "transformers/vision_transformer_architectures.html",
     "href": "transformers/vision_transformer_architectures.html",
     "title": "My Datascience Journey",
@@ -686,25 +693,25 @@
     "text": "Blocks of the Architecture\n\n\nEmbedding layer\n\nReduce the dimension of word tokens\nProjection to latent space\n\nPositional Encoding\n\nTo track the relative position of the words"
   },
   {
-    "objectID": "transformers/Attention_for_vision.html#multi-head-attention",
-    "href": "transformers/Attention_for_vision.html#multi-head-attention",
+    "objectID": "transformers/Attention_for_vision.html#self-attention",
+    "href": "transformers/Attention_for_vision.html#self-attention",
     "title": "Computer Vision Using Transformers",
-    "section": "Multi-Head Attention",
-    "text": "Multi-Head Attention"
+    "section": "Self Attention",
+    "text": "Self Attention"
   },
   {
-    "objectID": "transformers/Attention_for_vision.html#multi-head-attention-1",
-    "href": "transformers/Attention_for_vision.html#multi-head-attention-1",
+    "objectID": "transformers/Attention_for_vision.html#self-attention-1",
+    "href": "transformers/Attention_for_vision.html#self-attention-1",
     "title": "Computer Vision Using Transformers",
-    "section": "Multi-Head Attention",
-    "text": "Multi-Head Attention"
+    "section": "Self Attention",
+    "text": "Self Attention"
   },
   {
-    "objectID": "transformers/Attention_for_vision.html#multi-head-attention-2",
-    "href": "transformers/Attention_for_vision.html#multi-head-attention-2",
+    "objectID": "transformers/Attention_for_vision.html#self-attention-2",
+    "href": "transformers/Attention_for_vision.html#self-attention-2",
     "title": "Computer Vision Using Transformers",
-    "section": "Multi-Head Attention",
-    "text": "Multi-Head Attention"
+    "section": "Self Attention",
+    "text": "Self Attention"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#why-multi-head-attention",
@@ -753,18 +760,25 @@
     "href": "transformers/Attention_for_vision.html#vit-vs-cnn",
     "title": "Computer Vision Using Transformers",
     "section": "ViT Vs CNN",
-    "text": "ViT Vs CNN\n\n\nInductive Bias and Locality Vs Global\nFlexibility\nCNN works with less amount of data than ViT\nSpecifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs."
+    "text": "ViT Vs CNN\n\n\nInductive Bias and Locality Vs Global"
   },
   {
     "objectID": "transformers/Attention_for_vision.html#vit-vs-cnn-1",
     "href": "transformers/Attention_for_vision.html#vit-vs-cnn-1",
     "title": "Computer Vision Using Transformers",
     "section": "ViT Vs CNN",
-    "text": "ViT Vs CNN\n\n\nTransformer models are more memory efficient than ResNet models\nViT are prone to over-fitting due to their flexibility\nTransformers can learn meaningful information even in the lowest layers"
+    "text": "ViT Vs CNN\n\n\nInductive Bias and Locality Vs Global\nFlexibility\nCNN works with less amount of data than ViT\nSpecifically, if ViT is trained on datasets with more than 14M (at least) images it can approach or beat state-of-the-art CNNs."
   },
   {
     "objectID": "transformers/Attention_for_vision.html#vit-vs-cnn-2",
     "href": "transformers/Attention_for_vision.html#vit-vs-cnn-2",
+    "title": "Computer Vision Using Transformers",
+    "section": "ViT Vs CNN",
+    "text": "ViT Vs CNN\n\n\nTransformer models are more memory efficient than ResNet models\nViT are prone to over-fitting due to their flexibility\nTransformers can learn meaningful information even in the lowest layers"
+  },
+  {
+    "objectID": "transformers/Attention_for_vision.html#vit-vs-cnn-3",
+    "href": "transformers/Attention_for_vision.html#vit-vs-cnn-3",
     "title": "Computer Vision Using Transformers",
     "section": "ViT Vs CNN",
     "text": "ViT Vs CNN\n\n\nViT reaches 84.86% top-1 accuracy on ImageNet with only 10 examples per class.\nViT is suitable for Transfer learning\nViTs are robust against data corruptions, image occlusions and adversarial attacks"

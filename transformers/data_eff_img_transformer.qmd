@@ -1,0 +1,16 @@
+# Data efficient Image transformers & Distillation through attention
+
+This uses a teacher-student strategy specific to transformers. It relies on a distillation token ensuring that the student learns from the teacher through attention. 
+
+
+
+
+
+
+
+
+
+
+
+## Reference
+[Research paper](https://arxiv.org/pdf/2012.12877.pdf)
