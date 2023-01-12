@@ -687,7 +687,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Node Centrality</strong> measures the node importance in a graph. <strong>Node degree</strong> is the quantity of direct neighbours it has. <strong>clustering coefficient</strong> measures how connected are the node neighbours. <strong>Graphlets degree Vectors</strong> count how many different graphlets are rooted at a given node.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Images/graphlets.png" class="img-fluid figure-img"></p>
+<p><img src="../Images/graphlets.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">2-to-5 node graphlets</figcaption><p></p>
 </figure>
 </div>
@@ -718,7 +718,16 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="walk-based-approaches" class="level2">
 <h2 class="anchored" data-anchor-id="walk-based-approaches">Walk-based approaches</h2>
-<p><img src="../Images/node2vec.png" class="img-fluid" alt="Steps in Node2Vec"> * Node2Vec simulates random walks between nodes of a graph, then processes these walks with skip-gram, to compute embeddings * The drawback of Node2Vec is as the graph changes the embeddings should change. Suitable for a static graph</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/node2vec.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Steps in Node2Vec</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>Node2Vec simulates random walks between nodes of a graph, then processes these walks with skip-gram, to compute embeddings</li>
+<li>The drawback of Node2Vec is as the graph changes the embeddings should change. Suitable for a static graph</li>
+</ul>
 </section>
 <section id="graph-neural-networks" class="level2">
 <h2 class="anchored" data-anchor-id="graph-neural-networks">Graph Neural Networks</h2>

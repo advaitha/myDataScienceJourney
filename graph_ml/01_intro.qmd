@@ -7,7 +7,7 @@
 **clustering coefficient** measures how connected are the node neighbours.
 **Graphlets degree Vectors** count how many different graphlets are rooted at a given node.
 
-![2-to-5 node graphlets](Images/graphlets.png)
+![2-to-5 node graphlets](/Images/graphlets.png)
 
 
 ### Edge level features
@@ -25,7 +25,9 @@
 
 
 ## Walk-based approaches
+
 ![Steps in Node2Vec](/Images/node2vec.png)
+
 * Node2Vec simulates random walks between nodes of a graph, then processes these walks with skip-gram, to compute embeddings
 * The drawback of Node2Vec is as the graph changes the embeddings should change. Suitable for a static graph
 
