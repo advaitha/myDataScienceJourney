@@ -1,0 +1,47 @@
+# Resources 
+
+### Courses
+[Standford course](https://web.stanford.edu/class/cs224w/)
+[Geometric Deep learning youtube course](https://www.youtube.com/playlist?list=PLn2-dEmQeTfSLXW8yXP4q_Ii58wFdxb3C)
+
+
+### Packages
+[pytorch geometric](https://pytorch-geometric.readthedocs.io/en/latest/)
+[Networkx](https://networkx.org/)
+[pygod](https://github.com/pygod-team/pygod)
+[UGFraud](https://pypi.org/project/UGFraud/)
+[igraph](https://igraph.org/)
+[Gephi](https://gephi.org/)
+
+### Blogs
+[Getting started in Graph ML](https://gordicaleksa.medium.com/how-to-get-started-with-graph-machine-learning-afa53f6f963a)
+[Graph Representational learning](https://towardsdatascience.com/graph-representation-learning-dd64106c9763#:~:text=Graph%20models%20are%20pervasive%20for%20describing%20information%20across%20any%20scientific,community%20detection%2C%20and%20many%20others.)
+[Understanding Deepwalk](https://dsgiitr.com/blogs/deepwalk/)
+[Graph CNN](https://dsgiitr.com/blogs/gcn/)
+[Graphsage](https://dsgiitr.com/blogs/graphsage/)
+[CHEBNET](https://dsgiitr.com/blogs/chebnet/)
+[Graph Attention Networks](https://dsgiitr.com/blogs/gat/)
+
+### Datasets
+[Repo of datasets](https://chrsmrrs.github.io/datasets/docs/datasets/)
+
+### Tutorials
+[SNAP node2vec tutorial](http://snap.stanford.edu/index.html)
+[networkx tutorial](https://networkx.org/documentation/stable/tutorial.html)
+
+### Books
+[Graph Representation learning](https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf)
+
+### Github repos
+[pytorch Graph Attention Networks](https://github.com/gordicaleksa/pytorch-GAT)
+[Graph Representational Learning](https://github.com/dsgiitr/graph_nets)
+[List of resources](https://github.com/dair-ai/GNNs-Recipe)
+
+### where to go next
+![List of resources](/Images/graph_resources.png)
+
+
+## Usecases
+### Anamoly detection using graphs
+[Github repo](https://github.com/FelixDJC/Awesome-Graph-Anomaly-Detection)
+[Microcluster-based Detector of Anomalies](https://github.com/Stream-AD/MIDAS)

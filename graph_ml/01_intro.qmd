@@ -1,0 +1,50 @@
+# Graph Machine Learning
+
+### Node level features
+
+**Node Centrality** measures the node importance in a graph.
+**Node degree** is the quantity of direct neighbours it has.
+**clustering coefficient** measures how connected are the node neighbours.
+**Graphlets degree Vectors** count how many different graphlets are rooted at a given node.
+
+![2-to-5 node graphlets](Images/graphlets.png)
+
+
+### Edge level features
+* Shortest distance between two nodes
+* Common neighbours of two nodes
+* Katz index - Number of possible walks up to a certain length between two nodes
+
+
+### Graph level features
+* Graphlet counts
+* Kernel methods measure similarity between graphs through different "bag of nodes" methods (similar to bag of words)
+
+## Graph ML methods
+![Advances in GraphML](/Images/graph_nn.png)
+
+
+## Walk-based approaches
+![Steps in Node2Vec](/Images/node2vec.png)
+* Node2Vec simulates random walks between nodes of a graph, then processes these walks with skip-gram, to compute embeddings
+* The drawback of Node2Vec is as the graph changes the embeddings should change. Suitable for a static graph
+
+## Graph Neural Networks
+
+![](/Images/permutation_invariance.png)
+
+**Graph Convolutional Networks** averages the normalised representation of the neighbours for a node (most GNNs are actually GCNs)
+**Graph Attention Networks** learn to weigh the different neighbours based on their importance (like transformers);
+**GraphSAGE** samples neighbours at different hops before aggregating their information in several steps with max pooling.
+**Graph Isomorphism Networks** aggregates representation by applying an MLP to the sum of the neighbours' node representations.
+
+## Reference
+[Huggingface blog](https://huggingface.co/blog/intro-graphml)
+
+
+
+
+
+
+
+

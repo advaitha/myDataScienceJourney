@@ -1,3 +1,13 @@
+---
+title: "My Project Portfolio"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+---
+
+
 # Project Portfolio
 
 ## Machine Learning Projects
@@ -74,7 +84,7 @@
 
 **Role** 
 
-* As a Data science manager, develop a framework for data integration with partners and automation the pipeline for building look-alike models, segment the customers and send the data for campaigning.
+* As a Data science manager, develop a framework for data integration with partners and automation the pipeline for building look-alike models, segment the customers and send the data for campaigning. 
 
 **Action**  
 
@@ -83,7 +93,7 @@
 
 **Result**
 
-* Creating a framework to automate data ingestion, creation of hundereds of look-alike models and segmenting the customers. Using the framework for integration with different partners. Increasing the campaign revenue by more than 2%
+* Creating a framework to automate data ingestion, creation of hundereds of look-alike models and segmenting the customers and deploying them. Using the framework for integration with different partners. Increasing the campaign revenue by more than 2%. `The complete deployment was automated using Mlops`
 
 **Tools Used**
 
@@ -175,7 +185,7 @@
 
 **Result**
 
-* Achieved more than 50% of organisations data processing requirements and automation
+* `Achieved more than 50% of organisations data processing requirements and automation using Data engineering and MLOps`
 
 **Tools Used**
 
