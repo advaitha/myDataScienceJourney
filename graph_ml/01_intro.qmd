@@ -35,10 +35,10 @@
 
 ![](/Images/permutation_invariance.png)
 
-**Graph Convolutional Networks** averages the normalised representation of the neighbours for a node (most GNNs are actually GCNs)
-**Graph Attention Networks** learn to weigh the different neighbours based on their importance (like transformers);
-**GraphSAGE** samples neighbours at different hops before aggregating their information in several steps with max pooling.
-**Graph Isomorphism Networks** aggregates representation by applying an MLP to the sum of the neighbours' node representations.
+* **Graph Convolutional Networks** averages the normalised representation of the neighbours for a node (most GNNs are actually GCNs) 
+* **Graph Attention Networks** learn to weigh the different neighbours based on their importance (like transformers) 
+* **GraphSAGE** samples neighbours at different hops before aggregating their information in several steps with max pooling. 
+* **Graph Isomorphism Networks** aggregates representation by applying an MLP to the sum of the neighbours' node representations. 
 
 ## Reference
 [Huggingface blog](https://huggingface.co/blog/intro-graphml)
