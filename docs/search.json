@@ -357,6 +357,20 @@
     "text": "Next steps\nAfter you review this initial Expectation Suite in Data Docs you should edit this suite to make finer grained adjustments to the expectations. This can be done by running great_expectations suite edit data_quality_expectation_demo."
   },
   {
+    "objectID": "dsa/quick_sort.html",
+    "href": "dsa/quick_sort.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Quick Sort\n\n# Best and average case scenario is nlogn\n# worst case scenario is O(n**2)\n\ndef quick_sort(sequence):\n    \n    if len(sequence) <= 1: # return sequence if it 1 or less than 1\n        return sequence\n\n    lower = []\n    higher = []\n\n    pivot = sequence.pop() # select the last element as pivot. We can select any element we want.\n\n    # create two arrays which are less than and equal to or higher than pivot\n    for item in sequence:\n        if item < pivot:\n            lower.append(item) \n\n        else:\n            higher.append(item)\n    \n    # use recursion on each lower and higher array for sorting\n    # concatenante the results\n    return quick_sort(lower) + [pivot] + quick_sort(higher)   \n\n\n# Check if the function is working correctly\nquick_sort([5,8,3,9,5,0,9,387,9486,9,4,56])\n\n[0, 3, 4, 5, 5, 8, 9, 9, 9, 56, 387, 9486]"
+  },
+  {
+    "objectID": "dsa/merge_sort.html",
+    "href": "dsa/merge_sort.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "# Time complexity is O(nlogn)\n\ndef merge_sort(sequence):\n    \n    if len(sequence) > 1: # run if the sequence is greater than 1\n\n        left_array = sequence[:len(sequence)//2]\n        right_array = sequence[len(sequence)//2:]\n\n        # Recursively split the array\n        merge_sort(left_array)  \n        merge_sort(right_array)\n\n        # Merge the array\n        i = 0\n        j = 0\n        k = 0\n\n        while i < len(left_array) and j < len(right_array):\n            if left_array[i] < right_array[j]:\n                sequence[k] = left_array[i]\n                i += 1\n\n            else :            \n                sequence[k] = right_array[j]\n                j += 1\n\n            k += 1\n\n        # If the lenght of the left array is greater than right array,\n        # append the elements in left array to the sequence\n        while i < len(left_array):\n            sequence[k] = left_array[i]\n            i += 1\n            k += 1\n\n        \n        # If the lenght of the right array is greater than left array,\n        # append the elements in right array to the sequence\n\n        while j < len(right_array):\n            sequence[k] = right_array[j]\n            j += 1\n            k += 1   \n    \n    return sequence\n\n\n# Check if the function is working correct\narray_test = [5,8,3,9,5,0,9,387,9486,9,4,56]\n\n\nmerge_sort(array_test)\n\n[0, 3, 4, 5, 5, 8, 9, 9, 9, 56, 387, 9486]"
+  },
+  {
     "objectID": "Interpretable_ml/theory/resources.html",
     "href": "Interpretable_ml/theory/resources.html",
     "title": "My Datascience Journey",
