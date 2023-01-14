@@ -125,7 +125,7 @@ website:
       - section: "**About Me**"
         contents:
         - about_me/experience.qmd
-        - about_me/project_portfolio.qmd   
+        - about_me/my_portfolio.qmd         
         - about_me/why_me.qmd
             
 format:
