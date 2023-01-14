@@ -117,7 +117,11 @@ website:
         contents: 
         - distributed_processing/fugue_intro.qmd
         - distributed_processing/fugue_quickstart.ipynb  
-        - distributed_processing/fugue_sql.ipynb     
+        - distributed_processing/fugue_sql.ipynb   
+      - section: "**DSA**"
+        contents: 
+        - dsa/merge_sort.ipynb
+        - dsa/quick_sort.ipynb             
       - section: "**About Me**"
         contents:
         - about_me/experience.qmd
