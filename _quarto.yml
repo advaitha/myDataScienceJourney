@@ -120,8 +120,12 @@ website:
         - distributed_processing/fugue_sql.ipynb   
       - section: "**DSA**"
         contents: 
+        - dsa/insertion_sort.ipynb
+        - dsa/selection_sort.ipynb
+        - dsa/bubble_sort.ipynb
         - dsa/merge_sort.ipynb
-        - dsa/quick_sort.ipynb             
+        - dsa/quick_sort.ipynb            
+        - dsa/Binary_search.ipynb                
       - section: "**About Me**"
         contents:
         - about_me/experience.qmd
