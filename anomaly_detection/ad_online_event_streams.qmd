@@ -1,0 +1,23 @@
+
+# Anomaly Detection using online Event logs
+
+This research paper propose to tackle the online event anomaly detection problem using next activity prediction methods.
+
+`Ml models are used to predict the probabilities of next-activities and consider the events predicted unlikely as anomalies.`
+
+
+## Unsupervised Anomaly Detection
+The models in unsupervised anomaly detection extract information from the data and map input matrix to a feature space. The events from a running case is provided to the classifier which calculates a distance between the running case and training data mapped int the feature space. If the target event sufficiently deviates from the training data, above the anomaly threshold, the event is denoted as anomalous.
+
+![Anomaly detection using unsupervised method](/Images/event_log_unsupervised.png)
+
+
+## Predictive Anomaly Detection (PAD)
+![Anomaly Detection on event logs](/Images/event_log_ml.png)
+
+Random Forest, extreme gradient Boosting, and LSTM were used for training.
+ML models performed better than the deep neural network.
+
+
+## Reference
+[Research Paper](https://arxiv.org/pdf/2203.09619.pdf)

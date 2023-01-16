@@ -1,0 +1,42 @@
+
+# Anomaly detection in dynamic graphs using MIDAS-R
+
+Real world networks are dynamic in nature and are constantly changing.
+
+Contributions of Midas:-
+
+    * Streaming approach
+    * Theoretical Gurantee
+    * Effectiveness
+
+Microcluster based detector of anomalies in Edge streams (MIDAS) performs detections by considering the `temporal nature of the networks` and by considering `micro-clusters instead of individual edges`.
+
+## MIDAS considers Temporal nature
+
+![capturing the temporal characteristics](/Images/graph_structure.png)
+
+Static graphs do not capture the temporal relations.
+
+
+## MIDAS considers micro-clusters instead of individual edges
+
+![Detecting DDOS attack](/Images/parallel_nodes.png)
+
+![Burst in activity](/Images/burst_activity.png)
+
+MIDAS monitors suddenly appearing bursts of activity sharing several nodes or edges that are `close by in spatial locality`
+
+
+## Theoretical guarantees on the false positive probability
+MIDAS can give binary decisions upto a `user defined threshold`.
+
+## MIDAS handle space time complexity using Count-Min-Sketch (CMS)
+
+### References
+* [Towards data science blog post](https://towardsdatascience.com/anomaly-detection-in-dynamic-graphs-using-midas-e4f8d0b1db45)
+* [Github Repo](https://github.com/ritesh99rakesh/pyMIDAS)
+* [Research Paper](https://arxiv.org/pdf/2009.08452.pdf)
+
+
+
+

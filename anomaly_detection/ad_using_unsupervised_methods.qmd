@@ -1,0 +1,130 @@
+
+# Anomaly Detection using Unsupervised methods
+
+![Some anomalies can be detected by Using both unsupervised and supervised methods](/Images/unsup_vs_sup.png)
+
+## Univariate Outlier detection
+
+### Boxplot
+![Boxplot to detect an anomaly](/Images/boxplot.png)
+
+
+### Histogram
+![using a histogram to detect an anomaly](/Images/histogram.png)
+
+
+### Distribution based approach
+![using a distribution based approach to detect an anomaly](/Images/dist_app.png)
+
+### Multimodal distribution
+![Guassian Mixture model](/Images/dist_approach.png)
+
+
+## Multivariate Outlier detection
+![Reason we need to use a multivariate detection methods](/Images/multivariate.png)
+
+### Histogram based outlier score (HBOS)
+![](/Images/hbos.png)
+![HBOS Advantages vs disdavantages](/Images/hbos_ad_disadv.png)
+
+
+## Neighborhood methods
+
+### KNN
+![A is detected as an anomaly but not B](/Images/k-nearest.png)
+
+### Local Outlier Factor (LOF)
+![Using LOF to detect an anomaly](/Images/lof.png)
+
+
+### Connectivity Outlier Factor (COF)
+![Detecting isolated outliers](/Images/cof_out.png)
+
+![Different Neighborhood approaches to use in different situations](/Images/neigh_approaches_comp.png)
+
+![Advantages vs disadvantages of Neighborhood approaches](/Images/neigh_ad_dis.png)
+
+
+## One-class classification 
+
+### One-class SVM
+![One-class SVM](/Images/one_class_svm_2.png)
+
+
+## Clustering
+![Cluster Approach](/Images/cluster_app.png)
+
+### DBSCAN
+![](/Images/dbscan.png)
+![Advantages vs disdavantages of clustering approaches](/Images/clust_ad_dis.png)
+
+
+## Approaches for High-Dimensional Data
+
+` In higher dimensions the similarity between two similar people is decreased and increased for irrelevant people - Curse of dimensionality`
+
+`In high dimensions, distance metrics such as Eculidean distance and neighborhood concept   does not make sense`
+
+### Solutions for Anomaly detection in High-dimensional data
+* Dimensions Reduction Techniques
+    * PCA
+    * Matrix / Tensor Factorization
+    * Autoencoder
+* Angle-based outlier detection
+* Ensemble Approaches
+    * Isolation Forest
+    * Feature Bagging
+
+### PCA
+![](/Images/pca_ad_dis.png)
+
+### Matrix Factorization
+![](/Images/matrix_fact.png)
+![](/Images/adv_dis_mf.png)
+
+### Tensor Factorization
+![Using Tensor Factorization to capture temporal features](/Images/tensor_factorization.png)
+
+![Using Tensor Factorization with other methods to find anomalies](/Images/tf_with_other_methods.png)
+
+![](/Images/tensor_fac_ad_dis.png)
+
+
+### Autoencoder
+
+![Using reconstruction errors to detect anomalies](/Images/autoencoder.png)
+
+![](/Images/auto_ad_disad.png)
+
+### Angle based Outlier detection
+
+![Examine the variance over the angles](/Images/abod.png)
+
+![](/Images//abod_ad_dis.png)
+
+## Ensemble
+
+### Isolation Forest
+
+![Using Average deptth to Isolate Outliers](/Images/iso_Forest.png)
+
+![](/Images/iso_ad_dis.png)
+
+
+### Feature Bagging
+![](/Images/feature_bagging.png)
+
+## Comparison of Various approaches
+
+![](/Images/pop_app.png)
+
+![Benchmarking](/Images/com_app.png)
+![Methods available in pyod packages](/Images/pyod_methods.png)
+
+## Factors to consider for Anomaly detection
+![](/Images/factors_to_consider.png)
+
+
+
+
+
