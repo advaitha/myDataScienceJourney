@@ -14,6 +14,12 @@ website:
     search: True
     backround:  light
     contents:
+      - section: "**Anomaly Detection**"
+        contents:
+        - anomaly_detection/Anomaly_based_IDS.qmd
+        - anomaly_detection/ad_online_event_streams.qmd
+        - anomaly_detection/ad_dynamic_graphs_using_midas.qmd
+        - anomaly_detection/ad_using_unsupervised_methods.qmd
       - section: "**3D Deep Learning**"
         contents:
         - 3D_deep_learning/01_data_formats.qmd
@@ -52,8 +58,7 @@ website:
       - section: "**Graph Machine Learning**"
         contents:
         - graph_ml/01_intro.qmd
-        - graph_ml/02_resources.qmd
-
+        - graph_ml/02_resources.qmd      
       - section: "**Industry Usecases**"
         contents:
         - industry_use_cases/insurance.qmd

@@ -1,0 +1,44 @@
+# Anomaly Based IDS using ML
+Research done on probing attacks in an industrial setting.
+
+## Different types of Intrusion Detection Systems
+![Intrusion Detection Systems](/Images/ids.png)
+
+
+## Machine learning methods for Anomaly Detection
+![Machine Learning Methods for Anomaly Detection](/Images/anomaly_detection.png)
+
+
+## Data capture and processing
+![Data Capture and Processing](/Images/data_capture.png)
+
+
+## Data labelling
+`Snort` and `Suricata` tools were used for data labelling
+![Data Labelling](/Images/data_labels.png)
+
+
+## Feature selection
+![Feature Selection](/Images/genetic_algo.png)
+
+
+## Training methods
+Two ML models were used for training.
+Ensemble method (Bagging) with base classifier as naive Bayes, KNN, Logistic Regression and SVM.
+The flow features were converted to a 32X32 matrix and a CNN model was developed.
+![Image created from the flow features](/Images/cnn_grid_flow.png)
+![CNN architecture model](/Images/cnn_architecture.png)
+
+## Results
+CNN model was performing better than ensemble method. 
+
+## Tradeoff
+The tradeoff between them is the complexity and the training time involved.
+CNN requires more computation resources and is an offline model. 
+
+
+## Reference
+[Anomaly Based Intrusion Detection by Machine Learning: A case study on probing attacks to an institutional network](https://arxiv.org/pdf/2103.16930.pdf)
+
+
+
