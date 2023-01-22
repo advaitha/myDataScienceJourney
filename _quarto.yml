@@ -72,7 +72,14 @@ website:
         - causal_inference/02_randomised_exp.qmd
         - causal_inference/03_stats_revision.qmd
         - causal_inference/04_graphical_causal_models.qmd
-        - causal_inference/resources.qmd      
+        - causal_inference/resources.qmd
+      - section: "**Computer Vision**"
+        contents: 
+        - computer_vision/image_classification/01_convolution.qmd
+        - computer_vision/object_detection/introduction.qmd
+        - computer_vision/image_classification/satellite_images_classification.ipynb      
+        - computer_vision/image_segmentation/01_intro.qmd   
+        - computer_vision/image_segmentation/02_architectures.qmd
       - section: "**NLP**"
         contents: 
         - nlp/instruction_fine_tuned_txt_embedding.qmd
