@@ -72,14 +72,10 @@ website:
         - causal_inference/02_randomised_exp.qmd
         - causal_inference/03_stats_revision.qmd
         - causal_inference/04_graphical_causal_models.qmd
-        - causal_inference/resources.qmd
-      - section: "**Computer Vision**"
+        - causal_inference/resources.qmd      
+      - section: "**NLP**"
         contents: 
-        - computer_vision/image_classification/01_convolution.qmd
-        - computer_vision/object_detection/introduction.qmd
-        - computer_vision/image_classification/satellite_images_classification.ipynb      
-        - computer_vision/image_segmentation/01_intro.qmd   
-        - computer_vision/image_segmentation/02_architectures.qmd
+        - nlp/instruction_fine_tuned_txt_embedding.qmd
       - section: "**Math for AI**"
         contents:
         - math_for_ai/theory/01_intro.qmd  
@@ -136,7 +132,10 @@ website:
         - about_me/experience.qmd
         - about_me/my_portfolio.qmd         
         - about_me/why_me.qmd
-            
+      - section:  "**personal**"
+        contents:
+        - personal/01_EBM.ipynb
+        - personal/Improvements.qmd            
 format:
   html:
     theme: cerulean

@@ -1,0 +1,58 @@
+
+# Graph Anomaly Detection with Deep Learning
+
+## Static Graphs
+
+### Anomalous Nodes
+* Structural anomalies - They consider graph structural information. Abnormal nodes have different connection patterns.
+* Global anomalies - They only consider the node attributes. Nodes with attributes significantly different from other nodes.
+* Community anomalies - Considers both node attributes and graph structural information.
+
+## Traditional approaches
+
+### Anomalous node detection on Plain graphs
+
+#### Statistical approach
+* Using statistical features associated with each node, such as in/out degree, to detect anomalous nodes.
+* Prohibitive cost for assessing the most significant features and do not effectively capture the structural information.
+* Network representation methods such as Deepwalk, Node2Vec and LINE is used to generate node representations. By pairing the conventional anomaly detection techniques such as density or distance based techniques, anomalous nodes can be identified with regard to their distinguishable locations in the embedding space.
+
+#### Network representation based approach
+* These techniques encode the graph structure into an embedded vector space and identify anomalous nodes through further analysis.
+
+
+### Anomalous node detection on Attributed graphs
+
+#### Deep NN based techniques
+* Autoencoder and DNN provide solid basis for learning data representations.
+
+![Autoencoder based anomaly detection](/Images/auto_encoder_ad.png)
+
+#### Graph Convolutional Neural Networks (GCNs)
+
+![GCN anomaly detection](/Images/gcn.png)
+
+
+### Anomalous node detection on Dynamic Graphs
+* In addition to structural information and node attributes,, dynamic graphs also contain rich temporal signals. Some anomalies might appear to be normal in the graph snapshot at each time stamp, and, only when the changes in a graph's structure are considered, do they become noticeable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Reference
+[Research paper](https://arxiv.org/pdf/2106.07178.pdf)

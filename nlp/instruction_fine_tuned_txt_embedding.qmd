@@ -1,0 +1,52 @@
+
+# Instruction Finetuned Text Embeddings
+
+An instruction-finetuned text embedding model that can generate text embeddings tailored to any task (e.g., classification, retrieval, clustering, text evaluation etc.) and domains(e.g,, science, finance etc) by simply providing the task instruction, without any finetuning.
+
+![](/Images/instructor.png)
+
+`Instructor` can calculate domain-specific and task-aware embeddings without any further training. It can be applied to any task for computing fixed-length embeddings of text.
+
+### Architecture
+* Built on single encoder architecture
+* GTR models are used as backbone
+* Given an input text and a task instruction, this model encodes their concatenation, then a fixed sized task specific embedding is generated
+* The model is trained by maximizing the similarity between positive pairs and minimize negative pairs
+
+
+### Dataset
+* 330 datasets with instructions across diverse task categories and domains was constructed. The dataset is known as Multitask Embeddings Data with Instructions (MEDI)
+* Inputs for Instruction
+    * Text type
+    * Task objective
+    * Domain
+
+### Training
+* Instructor is initialized with GTR-Large model and finetune it on MEDI using AdamW optimizer and finetuned for 20k steps
+
+### Evaluation
+* Intructor is evaluated on 70 downstream tasks. Out of 70 evaluation tasks, 66 are unseen during training
+
+![Instruction examples for evaluation dataset](/Images/instruction_evaluatio.png)
+
+### Results
+Instructor significantly outperforms prior state-of-the-art embedding models by an average of 3.4% over the 70 diverse datasets. (This is despite the fact that Instructor has one order of magnitude fewer parameters i.e 335M)
+
+!(As the Instructions become detailed, the performance improves)[/Images/instruction_gtre.png]
+
+![The performance of Instructor increases with model size](/Images/model_sizes_inst.png)
+
+`Instructions mitigate domain shifts`
+
+* Instructor largely inproves the GTR-Large's performance on three unseen domains
+
+![Instructor performance on unseen domain data](/Images/gtr_domain.png)
+
+![T-SNE with and without instruction](/Images/inst_analy.png)
+
+
+### References:-
+* [Instructor Github page](https://instructor-embedding.github.io/)
+* [Research paper](https://arxiv.org/pdf/2212.09741.pdf)
+* [Code](https://github.com/HKUNLP/instructor-embedding)
+* [Instructor model hosted on Huggingface](https://huggingface.co/hkunlp/instructor-base)
