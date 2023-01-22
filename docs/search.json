@@ -280,6 +280,69 @@
     "text": "Graphical Causal Models\n\nMy understanding of conditioning in causality is filtering on a value of the variable. \n\n\nDirect path\n\n\n\nDirect Path\n\n\nIf we are conditioning on the intermediary variable i,e problem solving, then the dependence between causal knowledge and promotion is broken - They become independent.\n\n\n\nDirect Path Rule\n\n\n\n\nFork\nIn the case of a fork, the dependence flows backward through the arrows, and we have a Backdoor path\n\n\n\nFork\n\n\nWe can close the backdoor path and shut down dependence by conditioning on the common cause. Two variables that share a common cause are dependent, but independent when we condition on the common cause.\n\n\n\nFork Rule\n\n\n\n\nCollider\n\nA collider is when two arrows collide on a single variable. Both the causes share a common effect.\n\n\n\n\ncollider\n\n\nConditioning on the collider opens the dependence path. Not conditioning on it leaves it closed.\n\n\n\ncollider rule\n\n\n\nBased on the above, we can have a more general rule. A path is blocked if and only if:\n\nIt contains a non-collider that has been conditioned on\nIt contains a collider and that has not been conditioned on and has no descendants that have been conditioned on\n\n\n\n\n\ncausality rules\n\n\n\n\nDescendent\n\n\n\nDescendent\n\n\n\nExcercises for causal rules\n \n\n\nImportant points\n\n\n\nUnderstanding the causal effects\n\n\n\n\n\nConfounding\nIt is caused when the treatment and the outcome share a common cause. If we close all the backdoor paths between the treatment and the outcome, we can identify the causal effect.\n\n\n\nconfounding Bias\n\n\nTo fix confounding bias, we need to control all common causes of the treatment and the outcome\nSometimes confounders are not measurable. we may have other measured variables that can act as a proxy for the confounder. controlling for them will help lower the bias. Those variables are sometimes referred to as surrogate confounders. Controlling for the surrogate variables is not sufficient to eliminate bias, but it helps\n\n\nSelection Bias\nSelection bias arises when we control for more variables than we should. It might be the case that the treatment and the potential outcome are marginally independent but become dependent once we condition on a collider.\nSelection bias can also happen due to excessive controlling of mediator variables. This excessive controlling could lead to bias even if the treatment was randomly assigned.\nSelection bias can often be fixed by simply doing nothing, which is why it is dangerous. Since we are biased toward action, we tend to see ideas that control things as clever when they can be doing more harm than good."
   },
   {
+    "objectID": "personal/Improvements.html#data-preparation",
+    "href": "personal/Improvements.html#data-preparation",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Data Preparation",
+    "text": "Data Preparation\n\n\nUnderstanding the reasons for anomalies in the data\nWhat does NONE mean in a categorical column - An Example, 66.9% of highest_education column is NONE. Does this mean they are not educated or is data not available?\nWhat does the value [] mean for categorical columns\nCan housing_age be 2011?\nCan n_phones be 12 for a household?\n\n\n\n\n\nPrepare a data dictionary for future use & reference for all the teams"
+  },
+  {
+    "objectID": "personal/Improvements.html#feature-selection",
+    "href": "personal/Improvements.html#feature-selection",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Feature Selection",
+    "text": "Feature Selection\n\n\nExperimenting to decide the number of features\nTalking to domain experts to understand which features are important\nThinking about the trade-off between number of features and data collection\nImpact of using less features on the user behavior and the outcomes"
+  },
+  {
+    "objectID": "personal/Improvements.html#feature-selection-1",
+    "href": "personal/Improvements.html#feature-selection-1",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Feature Selection",
+    "text": "Feature Selection"
+  },
+  {
+    "objectID": "personal/Improvements.html#modelling",
+    "href": "personal/Improvements.html#modelling",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Modelling",
+    "text": "Modelling\n\n\nConsidering poor as negative and not_poor as positive"
+  },
+  {
+    "objectID": "personal/Improvements.html#exclusion-error-reduced-55-when-labels-are-flipped-and-optimization-is-removed",
+    "href": "personal/Improvements.html#exclusion-error-reduced-55-when-labels-are-flipped-and-optimization-is-removed",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Exclusion error reduced 55% when labels are Flipped and optimization is removed",
+    "text": "Exclusion error reduced 55% when labels are Flipped and optimization is removed"
+  },
+  {
+    "objectID": "personal/Improvements.html#exclusion-error-reduced-by-76-when-using-rfe-and-flipping-the-labels",
+    "href": "personal/Improvements.html#exclusion-error-reduced-by-76-when-using-rfe-and-flipping-the-labels",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Exclusion error reduced by 76% when using RFE and flipping the labels",
+    "text": "Exclusion error reduced by 76% when using RFE and flipping the labels\n\n\nThe model is able to correctly predict 2118 households which are poor (⬆️ from 2000)\nThe model wrongly predicted 38 households which are poor as not-poor (exclusion error ⬇️ from 156).\nInclusion error increased from 17 to 41 (⬆️ increase of 41%)\nThe model is able to correctly predict 90 households which are not-poor (⬇️ from 114)"
+  },
+  {
+    "objectID": "personal/Improvements.html#creating-a-interpretable-model",
+    "href": "personal/Improvements.html#creating-a-interpretable-model",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Creating a Interpretable model",
+    "text": "Creating a Interpretable model\n\n\nDemo"
+  },
+  {
+    "objectID": "personal/Improvements.html#exclusion-error-reduced-by-85-using-intrepretable-model",
+    "href": "personal/Improvements.html#exclusion-error-reduced-by-85-using-intrepretable-model",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Exclusion error reduced by 85% using Intrepretable model",
+    "text": "Exclusion error reduced by 85% using Intrepretable model\n\n\nThe model is able to correctly predict 2136 out of 2159 extremely poor households (98.9%)\n\n\n\n\nInclusion error - 55 out of 128 (42.9%)"
+  },
+  {
+    "objectID": "personal/Improvements.html#creating-an-efficient-pipeline-and-deployment",
+    "href": "personal/Improvements.html#creating-an-efficient-pipeline-and-deployment",
+    "title": "Improvements to Poverty Prediction Project",
+    "section": "Creating an efficient pipeline and deployment",
+    "text": "Creating an efficient pipeline and deployment\n\n\nWriting functions\nRemoving Glue code\nUnit testing for the code\nModularization\nParametrization of the code"
+  },
+  {
     "objectID": "telecom_churn_prediction/telecom_churn_prediction.html",
     "href": "telecom_churn_prediction/telecom_churn_prediction.html",
     "title": "My Datascience Journey",
@@ -298,7 +361,7 @@
     "href": "scaled/01_test.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "currentBestTeam = \"\"\n\n\nscores = {currentBestTeam:0}\n\n\nscores\n\n{'': 0}\n\n\n\nscores[currentBestTeam]\n\n0\n\n\n\ncurrentBestTeam = 'python'\n\n\ncurrentBestTeam\n\n'python'\n\n\n\nimport pandas as pd"
+    "text": "currentBestTeam = \"\"\n\n\nscores = {currentBestTeam:0}\n\n\nscores\n\n{'': 0}\n\n\n\nscores[currentBestTeam]\n\n0\n\n\n\ncurrentBestTeam = 'python'\n\n\ncurrentBestTeam\n\n'python'\n\n\n\nimport pandas as pd\n\n\ndef isValidSubsequence(array, sequence):\n    # Write your code here.\n    j = 0\n    for i in range(len(array)):\n        if array[i] == sequence[j]:\n            j+=1\n        if j == len(sequence):\n            return True\n    return False\n\n\narray = [6,1,22,25,-1,8,10]\nsequence = [1,6,-1,10]\n\n\nisValidSubsequence(array, sequence)\n\nFalse"
   },
   {
     "objectID": "data_privacy/basic_privacy_approaches.html",
@@ -560,11 +623,25 @@
     "text": "Real world networks are dynamic in nature and are constantly changing.\nContributions of Midas:-\n* Streaming approach\n* Theoretical Gurantee\n* Effectiveness\nMicrocluster based detector of anomalies in Edge streams (MIDAS) performs detections by considering the temporal nature of the networks and by considering micro-clusters instead of individual edges.\n\n\n\n\n\ncapturing the temporal characteristics\n\n\nStatic graphs do not capture the temporal relations.\n\n\n\n\n\n\nDetecting DDOS attack\n\n\n\n\n\nBurst in activity\n\n\nMIDAS monitors suddenly appearing bursts of activity sharing several nodes or edges that are close by in spatial locality\n\n\n\nMIDAS can give binary decisions upto a user defined threshold.\n\n\n\n\n\n\nTowards data science blog post\nGithub Repo\nResearch Paper"
   },
   {
+    "objectID": "anomaly_detection/anomaly_detection_using_graphs.html",
+    "href": "anomaly_detection/anomaly_detection_using_graphs.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Structural anomalies - They consider graph structural information. Abnormal nodes have different connection patterns.\nGlobal anomalies - They only consider the node attributes. Nodes with attributes significantly different from other nodes.\nCommunity anomalies - Considers both node attributes and graph structural information.\n\n\n\n\n\n\n\n\n\n\nUsing statistical features associated with each node, such as in/out degree, to detect anomalous nodes.\nProhibitive cost for assessing the most significant features and do not effectively capture the structural information.\nNetwork representation methods such as Deepwalk, Node2Vec and LINE is used to generate node representations. By pairing the conventional anomaly detection techniques such as density or distance based techniques, anomalous nodes can be identified with regard to their distinguishable locations in the embedding space.\n\n\n\n\n\nThese techniques encode the graph structure into an embedded vector space and identify anomalous nodes through further analysis.\n\n\n\n\n\n\n\n\nAutoencoder and DNN provide solid basis for learning data representations.\n\n\n\n\nAutoencoder based anomaly detection\n\n\n\n\n\n\n\n\nGCN anomaly detection\n\n\n\n\n\n\n\nIn addition to structural information and node attributes,, dynamic graphs also contain rich temporal signals. Some anomalies might appear to be normal in the graph snapshot at each time stamp, and, only when the changes in a graph’s structure are considered, do they become noticeable.\n\n\n\n\n\nResearch paper"
+  },
+  {
     "objectID": "anomaly_detection/ad_using_unsupervised_methods.html",
     "href": "anomaly_detection/ad_using_unsupervised_methods.html",
     "title": "My Datascience Journey",
     "section": "",
     "text": "Some anomalies can be detected by Using both unsupervised and supervised methods\n\n\n\n\n\n\n\n\n\nBoxplot to detect an anomaly\n\n\n\n\n\n\n\n\nusing a histogram to detect an anomaly\n\n\n\n\n\n\n\n\nusing a distribution based approach to detect an anomaly\n\n\n\n\n\n\n\n\nGuassian Mixture model\n\n\n\n\n\n\n\n\n\nReason we need to use a multivariate detection methods\n\n\n\n\n \n\n\n\n\n\n\n\n\n\nA is detected as an anomaly but not B\n\n\n\n\n\n\n\n\nUsing LOF to detect an anomaly\n\n\n\n\n\n\n\n\nDetecting isolated outliers\n\n\n\n\n\nDifferent Neighborhood approaches to use in different situations\n\n\n\n\n\nAdvantages vs disadvantages of Neighborhood approaches\n\n\n\n\n\n\n\n\n\n\n\nOne-class SVM\n\n\n\n\n\n\n\n\n\nCluster Approach\n\n\n\n\n \n\n\n\n\nIn higher dimensions the similarity between two similar people is decreased and increased for irrelevant people - Curse of dimensionality\nIn high dimensions, distance metrics such as Eculidean distance and neighborhood concept   does not make sense\n\n\n\nDimensions Reduction Techniques\n\nPCA\nMatrix / Tensor Factorization\nAutoencoder\n\nAngle-based outlier detection\nEnsemble Approaches\n\nIsolation Forest\nFeature Bagging\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\nUsing Tensor Factorization to capture temporal features\n\n\n\n\n\nUsing Tensor Factorization with other methods to find anomalies\n\n\n\n\n\n\n\n\n\nUsing reconstruction errors to detect anomalies\n\n\n\n\n\n\n\n\n\nExamine the variance over the angles\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Average deptth to Isolate Outliers"
+  },
+  {
+    "objectID": "nlp/instruction_fine_tuned_txt_embedding.html",
+    "href": "nlp/instruction_fine_tuned_txt_embedding.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Instruction Finetuned Text Embeddings\nAn instruction-finetuned text embedding model that can generate text embeddings tailored to any task (e.g., classification, retrieval, clustering, text evaluation etc.) and domains(e.g,, science, finance etc) by simply providing the task instruction, without any finetuning.\n\nInstructor can calculate domain-specific and task-aware embeddings without any further training. It can be applied to any task for computing fixed-length embeddings of text.\n\nArchitecture\n\nBuilt on single encoder architecture\nGTR models are used as backbone\nGiven an input text and a task instruction, this model encodes their concatenation, then a fixed sized task specific embedding is generated\nThe model is trained by maximizing the similarity between positive pairs and minimize negative pairs\n\n\n\nDataset\n\n330 datasets with instructions across diverse task categories and domains was constructed. The dataset is known as Multitask Embeddings Data with Instructions (MEDI)\nInputs for Instruction\n\nText type\nTask objective\nDomain\n\n\n\n\nTraining\n\nInstructor is initialized with GTR-Large model and finetune it on MEDI using AdamW optimizer and finetuned for 20k steps\n\n\n\nEvaluation\n\nIntructor is evaluated on 70 downstream tasks. Out of 70 evaluation tasks, 66 are unseen during training\n\n\n\n\nInstruction examples for evaluation dataset\n\n\n\n\nResults\nInstructor significantly outperforms prior state-of-the-art embedding models by an average of 3.4% over the 70 diverse datasets. (This is despite the fact that Instructor has one order of magnitude fewer parameters i.e 335M)\n!(As the Instructions become detailed, the performance improves)[/Images/instruction_gtre.png]\n\n\n\nThe performance of Instructor increases with model size\n\n\nInstructions mitigate domain shifts\n\nInstructor largely inproves the GTR-Large’s performance on three unseen domains\n\n\n\n\nInstructor performance on unseen domain data\n\n\n\n\n\nT-SNE with and without instruction\n\n\n\n\nReferences:-\n\nInstructor Github page\nResearch paper\nCode\nInstructor model hosted on Huggingface"
   },
   {
     "objectID": "distributed_processing/fugue_quickstart.html",
@@ -1041,5 +1118,12 @@
     "title": "About",
     "section": "",
     "text": "My Notes on Data Science, Machine learning and Artificial Intelligence I am learning from different books, videos, courses and Notebooks. These pages are replication of various source material from which I am learning."
+  },
+  {
+    "objectID": "research/unknown.html",
+    "href": "research/unknown.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "What is warmup ratio\nsoftmax temperature"
   }
 ]
