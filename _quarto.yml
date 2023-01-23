@@ -138,11 +138,7 @@ website:
         contents:
         - about_me/experience.qmd
         - about_me/my_portfolio.qmd         
-        - about_me/why_me.qmd
-      - section:  "**personal**"
-        contents:
-        - personal/01_EBM.ipynb
-        - personal/Improvements.qmd            
+        - about_me/why_me.qmd          
 format:
   html:
     theme: cerulean
