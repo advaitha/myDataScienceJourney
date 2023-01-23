@@ -32,7 +32,14 @@
     "href": "computer_vision/00_Interesting_links_to_read.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Interesting Links\nReceptive Field\nskip connections\nDice loss - segmentation\ncomputer vision Generative Learning GAN Medical NLP Reinforcement learning Unsupervised learning"
+    "text": "Interesting Links\n\nReceptive Field\nskip connections\nDice loss - segmentation\ncomputer vision\nGenerative Learning\nGAN\nMedical\nNLP\nReinforcement learning\nUnsupervised learning"
+  },
+  {
+    "objectID": "computer_vision/summary_of_research_papers/oneFormer.html",
+    "href": "computer_vision/summary_of_research_papers/oneFormer.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "A multi-task universal image segmentation framework which outperforms existing state-of-the-art on all three segmentation tasks by only training once on a panoptic dataset.\nA task token is introduced in the form of text, to condition the model on the task {panoptic, instance, semantic} in focus, making the architecture task-guided for training and task-dynamic for inference, all with a single model.\nTasks are uniformly sampled {panoptic, instance, semantic} to ensure the model is unbiased in terms of tasks. Motivated by the ability of panoptic data to capture both semantic and instance information,the semantic and instance labels are derived from the corresponding panoptic annotations during training.\n\n\n\n\n\nOneFormer Architecture\n\n\n\nUniformely sample the task [panoptic, instance, semantic]\nTask conditioned architecture\nTask specific labels are derived from the corresponding panoptic annotations\n\n\n\nA set of binary masks are extracted for each category present in the image i.e. task-specific GT label. These set of masks are converted to a list of text. Padding is added to get a constant length, with padded entries representing no-object masks. This padded list is used for computing a query-text contrastive loss\n\n\n\n\nCalculating the ground truth text query for calculating contrastive loss\n\n\n\nThe architecture is conditioned on the task using a task input with the template “the task is {task}”, which is tokenized and mapped to a task token. This task token is used to condition OneFormer on the task.\nA contrastive loss is calculated between the task-conditioned image representation and the ground truth derived text and object binary mask.\n\nBackbone and pixel decoder ImageNet pre-trained backbone is used to extract multi-scale feature representations from the input image. Pixel decoder aids the feature modeling by gradually upsampling the backbone features.\nLosses Four losses are used with different weights for optimization * Contrastive loss on the queries * Classification cross entropy loss for the class predictions. * A combination of cross-entropy and dice loss are calculated for the mask predictions. Bipartite matching is used between set predictions and ground truths to find least cost assignment.\n\n\n\n\n\nEvaluated on Cityscapes, ADE20K and COCO datasets\nPanoptic quality (PQ), Average Precision (AP) and mIoU (mean Intersection over union) is used for panoptic, instance and semantic segmentation\n\nOneFormer sets a new state-of-the-art performance on all three segmentation tasks compared with methods using the standard Swin-L backbone, and improves even more with new ConvNeXt and DiNAT backbones.\n\n\n\nOneFormer Research Paper"
   },
   {
     "objectID": "computer_vision/image_segmentation/02_architectures.html",
@@ -1131,6 +1138,6 @@
     "href": "research/unknown.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "What is warmup ratio\nsoftmax temperature"
+    "text": "What is warmup ratio\nsoftmax temperature\nWhat is dice loss\n\n\nResearch papers to read\nSWIN DETR ConvNeXt DiNAT MSDeformAttn Dilated Neighborbood Attention"
   }
 ]

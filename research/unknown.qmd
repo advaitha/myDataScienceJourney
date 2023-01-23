@@ -1,2 +1,15 @@
 * What is warmup ratio
 * softmax temperature
+* What is dice loss
+
+
+
+
+### Research papers to read
+SWIN
+DETR
+ConvNeXt
+DiNAT
+MSDeformAttn
+[Dilated Neighborbood Attention](https://arxiv.org/pdf/2209.15001.pdf)
+

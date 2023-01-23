@@ -80,6 +80,7 @@ website:
         - computer_vision/image_classification/satellite_images_classification.ipynb      
         - computer_vision/image_segmentation/01_intro.qmd   
         - computer_vision/image_segmentation/02_architectures.qmd
+        - computer_vision/summary_of_research_papers/oneFormer.qmd
       - section: "**NLP**"
         contents: 
         - nlp/instruction_fine_tuned_txt_embedding.qmd
