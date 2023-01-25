@@ -1,4 +1,19 @@
-# Building Conversational bots with RASA
+# Chatbots
+Chatbots are classified into two broad categories: 
+    * Goal oriented dialogs
+    * chitchats
+
+Types of chatbots:-
+* Exact answer or FAQ bot
+* Flow based bot
+* Open-ended bot
+
+
+## A Pipeline for Building Dialog systems
+[](/Images/dialog_system.png)
+
+
+## Building Conversational bots with RASA
 
 RASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots
 
@@ -33,3 +48,7 @@ Neural - Transformers (TED) picks the next best turn based on conversation so fa
 It works better with more high quality data.
 we have to manually Review and annotate the conversations. correct any errors made by the bot and add them to the training data, retrain and redeploy.
 This approach is called `Conversation Driven Development.`
+
+
+## Annotation Framework
+Wrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. `Chatette` is such a framework

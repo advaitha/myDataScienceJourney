@@ -1,2 +1,28 @@
 # Information Extraction
-* 
+
+## Key Phrase Extraction
+Graph algorithms are used in unsupervised fashion. The nodes are weighted according to the frequency of the words and their connection to other words in the text. The top N nodes which are important are returned as key phrases. `textacy` is a package which can be used for key phrase extraction.
+
+## Named Entity Recognition (NER)
+It is a sequence labeling challenge. The context of the surronding words and their POS tags are considered for creating features. `conditional random fields` (CRFs) algorithm is one of the popular choices for training NER.
+BIO scheme is used to annotate the text. B - Beggining, I - Intermediate and O - other. For example, First Name and last Name are B and I respectively.
+`MITIE` is a library to train NER systems.
+`Stanford NER`, `spaCy` and `AllenNLP` have pre-trained NER models.
+
+To customize NER model to a domain or use case, use customized heuristics for the problem domain (using tools such as RegexNER and EntityRuler) or use active learning tools like Prodigy
+
+
+## Named Entity Disambiguation (NED) and Linking
+NER and NED together are known as named entity linking (NEL). NEL needs to go beyond POS tagging and require parsing to identify items like subject, verb and object. It also requires coreference resolution to resolve and link multiple references to the same entity. This is modeled as supervised ML problem. It is common to use off-the-shelf services for NEL.
+
+`DBpedia Spotlight` is a popular tool for entity linking.
+
+## Relationship Extraction
+It is the task of extracting entities and relationshops between them from text documents.
+
+It can be treated as supervised classification. It can be modeled as a two step classification problem
+* If two entities are related
+* If they are related what is the relation between them
+
+## Temporal Information Extraction
+`Duckling` library can be used to extract temporal events. when we run the sentence “Let us meet at 3 p.m. today and decide on what to present at the meeting on Friday” through Duckling. It’s able to map “3 p.m. today” to the correct time on a given day.
