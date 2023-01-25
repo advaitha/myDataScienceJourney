@@ -83,6 +83,9 @@ website:
         - computer_vision/summary_of_research_papers/oneFormer.qmd
       - section: "**NLP**"
         contents: 
+        - nlp/IE.qmd
+        - nlp/chatbot.qmd
+        - nlp/rnn.qmd
         - nlp/instruction_fine_tuned_txt_embedding.qmd
       - section: "**Math for AI**"
         contents:

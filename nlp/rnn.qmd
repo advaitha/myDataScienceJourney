@@ -1,0 +1,17 @@
+# RNN
+
+RNN deals with the problem of having different amounts of input values in a network.
+RNN consists of feedback loops. 
+
+![Feedback loop in RNN](/Images/rnn.png)
+
+In an RNN the weights an biases are shared i.e they are the same.
+The more we unroll a RNN, the more difficult it is to train. This is called the `vanishing / Exploding` gradient problem.
+
+
+## LSTM
+
+LSTM uses two separate paths to make predictions. One path is for long term memories and the other is for short term memory.
+The long term memory does not consist of any weights and biases thus it will not suffer from vanishing/exploding gradients.
+
+![LSTM Cell Architecture](/Images/lstm_cell_arch.png)
