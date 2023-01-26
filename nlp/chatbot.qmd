@@ -1,12 +1,14 @@
 # Chatbots
-Chatbots are classified into two broad categories:- 
-    * Goal oriented dialogs
-    * chitchats
+Chatbots are classified into two broad categories
 
-Types of chatbots:-
-    * Exact answer or FAQ bot
-    * Flow based bot
-    * Open-ended bot
+* Goal oriented dialogs
+* chitchats
+
+Types of chatbots
+
+* Exact answer or FAQ bot
+* Flow based bot
+* Open-ended bot
 
 
 ## A Pipeline for Building Dialog systems
@@ -18,13 +20,12 @@ Types of chatbots:-
 RASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots
 
 There are two mechanisms inside Rasa to drive conversational AI:
-NLU
-Dialog Policy
+
+* NLU
+* Dialog Policy
 
 ## NLU
-It accepts text and turn it into intents and entities.
-
-It can be rule based or based on neural networks
+It accepts text and turn it into intents and entities. It can be rule based or based on neural networks.
 
 ### Rule based
 Using Regular Expressions.
@@ -53,5 +54,5 @@ This approach is called `Conversation Driven Development.`
 ## Annotation Framework
 Wrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. `Chatette` is such a framework
 
-
+## RASA Development Architecture
 ![RASA Architecture](/Images/rasa_architecture.png)

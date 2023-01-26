@@ -84,8 +84,10 @@ website:
       - section: "**NLP**"
         contents: 
         - nlp/IE.qmd
-        - nlp/chatbot.qmd
         - nlp/rnn.qmd
+        - nlp/starspace.qmd
+        - nlp/chatbot.qmd
+        - nlp/algos_for_chatbots.qmd
         - nlp/instruction_fine_tuned_txt_embedding.qmd
       - section: "**Math for AI**"
         contents:

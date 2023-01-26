@@ -12,10 +12,23 @@ The DIET architecture can be customized to a specific domain. The architecture c
 
 
 ## TED Architecture
-TED is used to decide what next action to be taken by the bot given the conversation with the user
+TED is used to decide what next action to be taken by the bot given the conversation with the user.
+
+![Creating Features for TED using Intent, Entity, Slots and Previous actions](/Images/feature_creation.png)
+
+![Training Transformers for next action prediction using features created and action to be taken at that particular time step to calculate loss](/Images/calculating_loss_on_dialogs.png)
+
+![Predicting next action](/Images/predicting_next_action.png)
+
+TED is not trained on sequence of events which happen in the dialog. In dialog lot of context switching will happen. Using Transformers here will be useful because transformers can pay attention to dialog events which occured in the past.
+
+![An example of TED paying attention to past events to decide next action](/Images/example_ted.png)
+
+### Response selection
+![Using DIET backend for response selection](/Images/response_selection.png)
 
 ## Reference
-[Research paper on DIET architecture](https://arxiv.org/pdf/2004.09936.pdf)
-
+* [Research paper on DIET architecture](https://arxiv.org/pdf/2004.09936.pdf)
+* [Research paper on TED architecture](https://arxiv.org/pdf/1910.00486.pdf)
 
 

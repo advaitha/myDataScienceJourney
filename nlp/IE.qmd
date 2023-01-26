@@ -21,6 +21,7 @@ NER and NED together are known as named entity linking (NEL). NEL needs to go be
 It is the task of extracting entities and relationshops between them from text documents.
 
 It can be treated as supervised classification. It can be modeled as a two step classification problem
+
 * If two entities are related
 * If they are related what is the relation between them
 
