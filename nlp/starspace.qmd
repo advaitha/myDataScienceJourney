@@ -1,0 +1,5 @@
+# Starspace
+
+Using Starspace we can train domain specific embeddings.
+
+![Training embedding for a specific domain using documents and their tags](/Images/starspace.png)

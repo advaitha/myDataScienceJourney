@@ -1,4 +1,4 @@
-# RNN
+# RNN & LSTM
 
 RNN deals with the problem of having different amounts of input values in a network.
 RNN consists of feedback loops. 
