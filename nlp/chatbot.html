@@ -463,12 +463,22 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../nlp/rnn.html" class="sidebar-item-text sidebar-link">RNN &amp; LSTM</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/starspace.html" class="sidebar-item-text sidebar-link">Starspace</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../nlp/chatbot.html" class="sidebar-item-text sidebar-link active">Chatbots</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/rnn.html" class="sidebar-item-text sidebar-link">RNN</a>
+  <a href="../nlp/algos_for_chatbots.html" class="sidebar-item-text sidebar-link">Algorithms for Chatbot</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -783,6 +793,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#how-to-make-conversations-work" id="toc-how-to-make-conversations-work" class="nav-link" data-scroll-target="#how-to-make-conversations-work">How to make conversations work</a></li>
   <li><a href="#annotation-framework" id="toc-annotation-framework" class="nav-link" data-scroll-target="#annotation-framework">Annotation Framework</a></li>
+  <li><a href="#rasa-development-architecture" id="toc-rasa-development-architecture" class="nav-link" data-scroll-target="#rasa-development-architecture">RASA Development Architecture</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -794,8 +805,17 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="chatbots" class="level1">
 <h1>Chatbots</h1>
-<p>Chatbots are classified into two broad categories: * Goal oriented dialogs * chitchats</p>
-<p>Types of chatbots:- * Exact answer or FAQ bot * Flow based bot * Open-ended bot</p>
+<p>Chatbots are classified into two broad categories</p>
+<ul>
+<li>Goal oriented dialogs</li>
+<li>chitchats</li>
+</ul>
+<p>Types of chatbots</p>
+<ul>
+<li>Exact answer or FAQ bot</li>
+<li>Flow based bot</li>
+<li>Open-ended bot</li>
+</ul>
 <section id="a-pipeline-for-building-dialog-systems" class="level2">
 <h2 class="anchored" data-anchor-id="a-pipeline-for-building-dialog-systems">A Pipeline for Building Dialog systems</h2>
 <p><a href="../Images/dialog_system.png"></a></p>
@@ -803,12 +823,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="building-conversational-bots-with-rasa" class="level2">
 <h2 class="anchored" data-anchor-id="building-conversational-bots-with-rasa">Building Conversational bots with RASA</h2>
 <p>RASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots</p>
-<p>There are two mechanisms inside Rasa to drive conversational AI: NLU Dialog Policy</p>
+<p>There are two mechanisms inside Rasa to drive conversational AI:</p>
+<ul>
+<li>NLU</li>
+<li>Dialog Policy</li>
+</ul>
 </section>
 <section id="nlu" class="level2">
 <h2 class="anchored" data-anchor-id="nlu">NLU</h2>
-<p>It accepts text and turn it into intents and entities.</p>
-<p>It can be rule based or based on neural networks</p>
+<p>It accepts text and turn it into intents and entities. It can be rule based or based on neural networks.</p>
 <section id="rule-based" class="level3">
 <h3 class="anchored" data-anchor-id="rule-based">Rule based</h3>
 <p>Using Regular Expressions. It Can’t handle things they haven’t seen before.It is more lightweight and require domain knowledge.</p>
@@ -838,6 +861,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="annotation-framework" class="level2">
 <h2 class="anchored" data-anchor-id="annotation-framework">Annotation Framework</h2>
 <p>Wrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. <code>Chatette</code> is such a framework</p>
+</section>
+<section id="rasa-development-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="rasa-development-architecture">RASA Development Architecture</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/rasa_architecture.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">RASA Architecture</figcaption><p></p>
+</figure>
+</div>
 
 
 </section>
