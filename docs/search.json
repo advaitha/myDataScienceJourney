@@ -676,7 +676,7 @@
     "href": "nlp/chatbot.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Chatbots are classified into two broad categories: * Goal oriented dialogs * chitchats\nTypes of chatbots:- * Exact answer or FAQ bot * Flow based bot * Open-ended bot\n\n\n\n\n\n\nRASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots\nThere are two mechanisms inside Rasa to drive conversational AI: NLU Dialog Policy\n\n\n\nIt accepts text and turn it into intents and entities.\nIt can be rule based or based on neural networks\n\n\nUsing Regular Expressions. It Can’t handle things they haven’t seen before.It is more lightweight and require domain knowledge.\n\n\n\nTransformer based model (DIET) that sorts text into intents and entities based on examples it’s been provided. It require more compute and training examples. It is good at handling thins they haven’t seen before.\n\n\n\n\nIt predicts the next action to take. The next action is determinec by current intent and entire conversation so far.\nIt is again based on rules or neural networks.\n\n\nRule based - Traditional method. Can’t handle digressions and are difficult to extend\n\n\n\nNeural - Transformers (TED) picks the next best turn based on conversation so far and all the conversations it’s been trained on.\n\n\n\n\nIt works better with more high quality data. we have to manually Review and annotate the conversations. correct any errors made by the bot and add them to the training data, retrain and redeploy. This approach is called Conversation Driven Development.\n\n\n\nWrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. Chatette is such a framework"
+    "text": "Chatbots are classified into two broad categories:- * Goal oriented dialogs * chitchats\nTypes of chatbots:- * Exact answer or FAQ bot * Flow based bot * Open-ended bot\n\n\n\n\n\n\nRASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots\nThere are two mechanisms inside Rasa to drive conversational AI: NLU Dialog Policy\n\n\n\nIt accepts text and turn it into intents and entities.\nIt can be rule based or based on neural networks\n\n\nUsing Regular Expressions. It Can’t handle things they haven’t seen before.It is more lightweight and require domain knowledge.\n\n\n\nTransformer based model (DIET) that sorts text into intents and entities based on examples it’s been provided. It require more compute and training examples. It is good at handling thins they haven’t seen before.\n\n\n\n\nIt predicts the next action to take. The next action is determinec by current intent and entire conversation so far.\nIt is again based on rules or neural networks.\n\n\nRule based - Traditional method. Can’t handle digressions and are difficult to extend\n\n\n\nNeural - Transformers (TED) picks the next best turn based on conversation so far and all the conversations it’s been trained on.\n\n\n\n\nIt works better with more high quality data. we have to manually Review and annotate the conversations. correct any errors made by the bot and add them to the training data, retrain and redeploy. This approach is called Conversation Driven Development.\n\n\n\nWrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. Chatette is such a framework\n\n\n\nRASA Architecture"
   },
   {
     "objectID": "distributed_processing/fugue_quickstart.html",
@@ -1160,5 +1160,19 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "What is warmup ratio\nsoftmax temperature\nWhat is dice loss\n\n\nResearch papers to read\nSWIN DETR ConvNeXt DiNAT MSDeformAttn Dilated Neighborbood Attention"
+  },
+  {
+    "objectID": "nlp/algos_for_chatbots.html",
+    "href": "nlp/algos_for_chatbots.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Rasa uses Dual Intent and Entity Transformer (DIET) architecture to detect both Intent and Entity using Transformer.\n\n\n\n\n\nDIET Architecture\n\n\n\n\n\nDIET Architecture Clear\n\n\nThe DIET architecture can be customized to the specific domain."
+  },
+  {
+    "objectID": "nlp/starspace.html",
+    "href": "nlp/starspace.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Starspace\nUsing Starspace we can train domain specific embeddings.\n\n\n\nTraining embedding for a specific domain using documents and their tags"
   }
 ]

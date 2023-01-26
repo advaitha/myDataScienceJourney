@@ -1,0 +1,21 @@
+
+# Algorithms for Chatbot
+
+
+## DIET Architecture
+Rasa uses Dual Intent and Entity Transformer (DIET) architecture to detect both Intent and Entity using Transformer.
+
+
+![DIET Architecture](/Images/diet_arch_clear.png.png)
+
+The DIET architecture can be customized to a specific domain. The architecture can be thought of as lego blocks. We can customize and use the blocks we want for our use case. Depending on the accuracy, latency and memory usage of the use case we can decide which components to use.
+
+
+## TED Architecture
+TED is used to decide what next action to be taken by the bot given the conversation with the user
+
+## Reference
+[Research paper on DIET architecture](https://arxiv.org/pdf/2004.09936.pdf)
+
+
+
