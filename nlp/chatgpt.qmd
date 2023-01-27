@@ -1,0 +1,13 @@
+# ChatGPT
+
+## How ChapGPT is Trained
+
+ChapGPT is trained in three main stages
+
+* Generative pretraining
+* Supervised fine-tuning
+* Reinforcement learning from human feedback
+
+## Generative pretraining
+Alignment Problem
+

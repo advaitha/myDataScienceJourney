@@ -1,0 +1,29 @@
+# GPT
+
+## GPT 2
+* Trained on Webtext - 40 GB dataset
+* GPT-2 is built using `only transformer decoder blocks`
+* GPT-2 uses byte pair encoding to create tokens for its vocabulary
+* Few differences between GPT2 and BERT
+    * GPT-2 uses decoder blocks and BERT uses encoder blocks
+    * GPT-2 is a autoregressive model and BERT is not autoregressive. By losing autoregressive, BERT gained the ability to incorporate the context on both sides of a word to gain better results.
+    * GPT-2 uses masked self attention to prevent looking at tokens from the future. BERT does not do that.
+    * GPT-2 is trained as a language generation model (predicting next word) while BERT is trained to use as a backbone in transfer learning for different downstream tasks.
+* The GPT-2 decoder blocks are similar to the original transformer block except that they do not have the second self-attention layer which gets inputs from the encoder blocks.
+* GPT-2 can process 1024 tokens
+* GPT-2 had 12 attention heads
+* We can allow GPT-2 to ramble on its own or we can give it a prompt to have it speak about a certain topic.
+
+
+## GPT 3
+* The architecture is a transformer decoder model.
+* A total of 96 transformer decoder layers.
+* 300 Billion word tokens are used for training.
+* The model consists of 175 Billion parameters.
+* GPT is 2048 tokens wide. This is called its "context window"
+* The difference between GPT2 and GPT3 is the alternating dense and sparse self-attention layers
+
+
+
+## References
+* [Decoder Model](https://arxiv.org/pdf/1801.10198.pdf)

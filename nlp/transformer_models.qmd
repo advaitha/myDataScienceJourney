@@ -1,0 +1,56 @@
+
+# Transformer Family of Models
+
+![](/Images/transformer_models.png)
+
+## The Encoder Family
+
+### DistilBERT
+Uses knowledge distillation during pretraining. Achieves 97% of BERT's performance while using 40% less memory and being 60% faster.
+
+
+### RoBERTa
+It is trained longer, on larger batches with more training data data, and it drops the Next Sentence Prediction (NSP) task. It improve performance compared to the BERT model
+
+### cross-lingual language model (XLM)
+Several pretraining objectives were considered. Autoregressive language modeling from GPT like models, Masked Language Model (MLM) from BERT. In addition they introduced translation language modeling (TLM) which is an extension of MLM to mutiple language inputs.
+
+### XLM-RoBERTa
+Trained on 2.5 TB data, TLM was dropped.
+
+### ALBERT
+The ALBERT model introduced three changes to make the encoder architecture more efficient. First, it decouples the token embedding dimension from the hidden dimension, thus allowing the embedding dimension to be small and thereby saving parameters, especially when the vocabulary gets large. Second, all layers share the same parameters, which decreases the number of effective parameters even further. Finally, the NSP objective is replaced with a sentence-ordering prediction: the model needs to predict whether or not the order of two consecutive sentences was swapped rather than predicting if they belong together at all. These changes make it possible to train even larger models with fewer parameters and reach superior performance on NLU tasks.
+
+### ELECTRA
+One limitation of the standard MLM pretraining objective is that at each training step only the representations of the masked tokens are updated, while the other input tokens are not. To address this issue, ELECTRA uses a two-model approach: the first model (which is typically small) works like a standard masked language model and predicts masked tokens. The second model, called the discriminator, is then tasked to predict which of the tokens in the first model’s output were originally masked. Therefore, the discriminator needs to make a binary classification for every token, which makes training 30 times more efficient. For downstream tasks the discriminator is fine-tuned like a standard BERT model.
+
+
+### DeBERTa
+The DeBERTa model introduces two architectural changes. First, each token is represented as two vectors: one for the content, the other for relative position. By disentangling the tokens’ content from their relative positions, the self-attention layers can better model the dependency of nearby token pairs. On the other hand, the absolute position of a word is also important, especially for decoding. For this reason, an absolute position embedding is added just before the softmax layer of the token decoding head.
+
+
+## Decoder Family
+* GPT
+* GPT-2
+* CTRL (Conditional Transformer Language) The model addresses the issue by adding "control tokens" at the beginning of the sequence. These allow the style of the generated text to be controlled, which allows for diverse generation
+* GPT-3
+* GPT-Neo / GPT-J-6B
+
+## Encoder-Decoder Branch
+
+### T5
+The T5 model unifies all NLU and NLG tasks by converting them into text-to-text tasks. All tasks are framed as sequence-to-sequence tasks, where adopting an encoder-decoder architecture is natural. For text classification problems, for example, this means that the text is used as the encoder input and the decoder has to generate the label as normal text instead of a class.
+
+### BART
+It combines the pretraining procedures of BERT and GPT.The input sequences undergo one of several possible transformations, from simple masking to sentence permutation, token deletion, and document rotation. These modified inputs are passed through the encoder, and the decoder has to reconstruct the original texts.
+
+
+### M2M-100
+First translation model that can translate between any of 100 languages. The model uses prefix tokens (similar to the special [CLS] token) to indicate the source and target language.
+
+
+### BigBird
+This model tackles quadratic memory requirements of the attention mechanism. It uses a sparse form of attention that scales linearly. [4096 tokens considered in BigBird]
+
+## Reference
+* Book - Natural Language Processing with Transformers, second edition
