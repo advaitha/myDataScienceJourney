@@ -473,6 +473,21 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../nlp/transformer_models.html" class="sidebar-item-text sidebar-link">Transformer Family of Models</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/gpt.html" class="sidebar-item-text sidebar-link">GPT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/bert.html" class="sidebar-item-text sidebar-link active">BERT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../nlp/chatbot.html" class="sidebar-item-text sidebar-link">Chatbots</a>
   </div>
 </li>
@@ -773,15 +788,120 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#bert" id="toc-bert" class="nav-link active" data-scroll-target="#bert">BERT</a>
+  <ul class="collapse">
+  <li><a href="#elmo---contextualized-word-embeddings" id="toc-elmo---contextualized-word-embeddings" class="nav-link" data-scroll-target="#elmo---contextualized-word-embeddings">ELMo - Contextualized word-embeddings</a></li>
+  <li><a href="#ulm-fit" id="toc-ulm-fit" class="nav-link" data-scroll-target="#ulm-fit">ULM-FiT</a>
+  <ul class="collapse">
+  <li><a href="#openai-transformer" id="toc-openai-transformer" class="nav-link" data-scroll-target="#openai-transformer">OpenAI Transformer</a></li>
+  </ul></li>
+  <li><a href="#bert-from-decoders-to-encoders" id="toc-bert-from-decoders-to-encoders" class="nav-link" data-scroll-target="#bert-from-decoders-to-encoders">BERT: From Decoders to Encoders</a>
+  <ul class="collapse">
+  <li><a href="#using-bert-for-different-downstream-tasks" id="toc-using-bert-for-different-downstream-tasks" class="nav-link" data-scroll-target="#using-bert-for-different-downstream-tasks">Using BERT for different downstream tasks</a></li>
+  <li><a href="#using-bert-for-feature-extraction" id="toc-using-bert-for-feature-extraction" class="nav-link" data-scroll-target="#using-bert-for-feature-extraction">Using BERT for feature extraction</a></li>
+  </ul></li>
+  <li><a href="#reference-" id="toc-reference-" class="nav-link" data-scroll-target="#reference-">Reference:-</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
+<section id="bert" class="level1">
+<h1>BERT</h1>
+<p>It comes in two model sizes BERT Base and BERT Large.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/bert_model.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">BERT model Sizes</figcaption><p></p>
+</figure>
+</div>
+<p>BERT is a trained transformer Encoder stack.</p>
+<p>They have large feedforward networks (768 and 1024 hidden units) and 12 and 16 attention heads respectively.</p>
+<p>BERT has a [CLS] token which is used for classification. The output from [CLS] will go to a feedforward network along with softmax for classification.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/bert_classify.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Classification with BERT</figcaption><p></p>
+</figure>
+</div>
+<p>BERT builds on clever ideas like ELMo, ULMFiT and Transformers.</p>
+<section id="elmo---contextualized-word-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="elmo---contextualized-word-embeddings">ELMo - Contextualized word-embeddings</h2>
+<p>The embedding for a word will remain the same irrespective of the context. ELMo provides contextualized word-embeddings. ELMo looks at the entire sentence before assigning each word in it an embedding. It uses Bi-directional LSTM (previous word and next words) trained on a specific task to be able to create embeddings.</p>
+<p>ELMo gained its language understanding from being trained to predict the next word in a sequence of words - Language Modeling.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/Bi_directional_model.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">ELMo Bi_directional LSTM Training</figcaption><p></p>
+</figure>
+</div>
+<p>ELMo comes up with the contextualized embedding through grouping together the hidden states (and initial embedding) in a certain way (concatenation followed by weighted summation).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/ELMo_stick.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Concatenation and weighted summation of embedding</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="ulm-fit" class="level2">
+<h2 class="anchored" data-anchor-id="ulm-fit">ULM-FiT</h2>
+<p>ULM-FiT introduced a language model and process to effectively fine-tune that language model for various tasks.</p>
+<section id="openai-transformer" class="level3">
+<h3 class="anchored" data-anchor-id="openai-transformer">OpenAI Transformer</h3>
+<p>It turned out that we don’t need an entire transformer to adopt transfer learning, we can do with just the decoder of the Transformer.</p>
+<p>The model stacked twelve decoder layers. Since there is no encoder in this set up, these decoder layers would not have the encoder-decoder attention sublayer that vanilla transformer decoder layers have. It would still have the self-attention layer, however (masked so it doesn’t peak at future tokens).</p>
+<p><img src="../Images/openAI_transformer.png" class="img-fluid"></p>
+<p>The Transformer was trained on 7000 books to learn long-term dependencies.</p>
+<p>The OpenAI transformer once trained can be used for using it for downstream tasks.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/text_transformations_openAI_transformer.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Using different input transformations to carry out different tasks using OpenAI transformer</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="bert-from-decoders-to-encoders" class="level2">
+<h2 class="anchored" data-anchor-id="bert-from-decoders-to-encoders">BERT: From Decoders to Encoders</h2>
+<p>ELMo’s language model was bi-directional and OpenAI transformer only trains a forward language model.</p>
+<p>BERT randomly masks 15% of the input and predict the missing word. (A language modeling task)</p>
+<p><img src="../Images/Bert_masked_language.png" class="img-fluid"></p>
+<p>BERT also uses two-sentence tasks to handle different tasks.</p>
+<p><img src="../Images/bert_two_sentence.png" class="img-fluid"></p>
+<section id="using-bert-for-different-downstream-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="using-bert-for-different-downstream-tasks">Using BERT for different downstream tasks</h3>
+<p><img src="../Images/bert_classification_tasks.png" class="img-fluid"></p>
+</section>
+<section id="using-bert-for-feature-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="using-bert-for-feature-extraction">Using BERT for feature extraction</h3>
+<p><img src="../Images/bert_feature_ext.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/bert_feat_ext_which_layer.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Which layer weights should be used for feature extraction</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="reference-" class="level2">
+<h2 class="anchored" data-anchor-id="reference-">Reference:-</h2>
+<ul>
+<li><a href="https://jalammar.github.io/illustrated-bert/">J Alammar Blog on BERT</a></li>
+<li><a href="https://colab.research.google.com/drive/1pTuQhug6Dhl9XalKB0zUGf4FIdYFlpcX">Notebook on Fine tuning BERT for classification</a></li>
+<li><a href="https://jalammar.github.io/a-visual-guide-to-using-bert-for-the-first-time/">An Alternative method to using BERT for classification</a></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
