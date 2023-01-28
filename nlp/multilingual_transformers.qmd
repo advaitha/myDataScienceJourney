@@ -1,0 +1,15 @@
+
+# Multilingual Transformers
+
+The corpus used for pretraining consists of documents in many languages. A remarkable feature of this approach is that despite receiving no explicit information to differentiate among the languages, the resulting linguistic representations are able to generalize well across languages for a variety of downstream tasks.
+
+## Multilingual Models
+* mBERT
+* XLM - RoBERTa (XLM- R)
+
+## XLM-R
+* Uses MLM as a pretraining objective, for 100 languages
+* Huge size of the training corpus (2.5 TB data)
+* Uses SentencePiece to tokenize the raw text directly
+* Vocabulary size is 250,000 tokens
+

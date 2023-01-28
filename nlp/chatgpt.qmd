@@ -1,4 +1,6 @@
-# ChatGPT
+# InstructGPT
+
+![](/Images/instructGPT.png)
 
 ## How ChapGPT is Trained
 

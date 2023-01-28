@@ -83,6 +83,7 @@ website:
         - computer_vision/summary_of_research_papers/oneFormer.qmd
       - section: "**NLP**"
         contents: 
+        - nlp/text_preprocessing.qmd
         - nlp/IE.qmd
         - nlp/rnn.qmd
         - nlp/starspace.qmd

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – chatgpt</title>
+<title>My Datascience Journey – ner_transformer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -792,11 +792,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructgpt" id="toc-instructgpt" class="nav-link active" data-scroll-target="#instructgpt">InstructGPT</a>
-  <ul class="collapse">
-  <li><a href="#how-chapgpt-is-trained" id="toc-how-chapgpt-is-trained" class="nav-link" data-scroll-target="#how-chapgpt-is-trained">How ChapGPT is Trained</a></li>
-  <li><a href="#generative-pretraining" id="toc-generative-pretraining" class="nav-link" data-scroll-target="#generative-pretraining">Generative pretraining</a></li>
-  </ul></li>
+  <li><a href="#ner-with-transformers" id="toc-ner-with-transformers" class="nav-link active" data-scroll-target="#ner-with-transformers">NER with Transformers</a></li>
   </ul>
 </nav>
     </div>
@@ -805,24 +801,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="instructgpt" class="level1">
-<h1>InstructGPT</h1>
-<p><img src="../Images/instructGPT.png" class="img-fluid"></p>
-<section id="how-chapgpt-is-trained" class="level2">
-<h2 class="anchored" data-anchor-id="how-chapgpt-is-trained">How ChapGPT is Trained</h2>
-<p>ChapGPT is trained in three main stages</p>
-<ul>
-<li>Generative pretraining</li>
-<li>Supervised fine-tuning</li>
-<li>Reinforcement learning from human feedback</li>
-</ul>
-</section>
-<section id="generative-pretraining" class="level2">
-<h2 class="anchored" data-anchor-id="generative-pretraining">Generative pretraining</h2>
-<p>Alignment Problem</p>
+<section id="ner-with-transformers" class="level1">
+<h1>NER with Transformers</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/token_classification.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">NER as token classification task</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/transformer_classes_for_diff_tasks.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Hugging Face Transformer class</figcaption><p></p>
+</figure>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
