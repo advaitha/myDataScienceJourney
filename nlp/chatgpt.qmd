@@ -6,10 +6,9 @@
 
 ChapGPT is trained in three main stages
 
-* Generative pretraining
-* Supervised fine-tuning
-* Reinforcement learning from human feedback
+* Generative pretraining 
+* Supervised fine-tuning (SFT)
+* Reinforcement learning from human feedback (RLHF)
 
-## Generative pretraining
-Alignment Problem
+
 

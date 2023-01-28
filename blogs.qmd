@@ -1,0 +1,13 @@
+---
+title: "Blogs"
+---
+
+* [Ethics and Bias in Data Science](https://advaitha.github.io/2020/10/07/ethics_part_1.html) 
+* [Mitigating Bias](https://advaitha.github.io/2020/10/09/Ethics-in-datascience-part-2.html)
+* [Go and the challenge to Arificial General Intelligence](https://www.upgrad.com/blog/go-and-the-challenge-to-artificial-general-intelligence/)
+* [Applications of Data science in Netflix](https://www.upgrad.com/blog/applications-of-data-science-and-machine-learning-in-netflix/)
+* [Fighting cancer with Data and Machine Learning](https://www.upgrad.com/blog/big-data-machine-learning-against-cancer/)
+* [Big Data - The backbone of Aadhar](https://www.upgrad.com/blog/the-backbone-of-aadhaar-big-data/)
+* [Converting Business problems to Data Science Problems](https://www.upgrad.com/blog/converting-business-problems-to-data-science-problems/)
+* [How to spot Data lies](https://www.upgrad.com/blog/data-manipulation-how-can-you-spot-data-lies/)
+* [Simpson's Paradox](https://www.upgrad.com/blog/simpsons-paradox/)

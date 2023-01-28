@@ -399,6 +399,13 @@
     "text": "Anonymize is to remove identifying information from data so that original source cannot be known\nPrivacy needs to be understood as a gradient and not a “on” or “off” thing \n\n\n\n\n\n\nHow Differential Privacy works\n\n\nA process A is epsilon-differentially private if for all databases D1 and D2 which differ in only one individual:\n\n\n\nDefinition\n\n\nThis must be true for all possible outputs O. If epsilon is very close to 0, then exponential of epsilon is very close to 1, so the probabilities are very similar. The bigger epsilon is, the more the probabilities can differ.\n\nIt is a rigorous and scientific definition of privacy-sensitive information release - that defines a limit or bounds on the amount of privacy loss you can have when you release information\nThis method focuses on the process rather than the result\nDifferential privacy shifts to thinking about what guarantees a particular algorithm can provide by measuring the information that is being continuously released via the algorithm itself.\nWhy is differential privacy special:-\n\nNo longer need attack modeling\nWe can quantify the privacy loss\nWe can compose multiple mechanisms - We can add the epsilon of multiple queries to arrive at the privacy loss for all the queries together.we can allocate budget for the user queries\n\nSensitivity measures the maximum change in the query result based on change in the underlying dataset.\n\n\n\n\n\n\nFree Udacity course\n\n\n\npython package pydp Tutorials using pydp python package opendp spark package PipelineDP Tensorflow Privacy\n\n\n\nBeautiful book with lot of plots and code\n\n\n\nDifferential Privacy blog by Damien Desfontaines\n\n\n\nMicrosoft session on privacy preserving ML"
   },
   {
+    "objectID": "blogs.html",
+    "href": "blogs.html",
+    "title": "Blogs",
+    "section": "",
+    "text": "Ethics and Bias in Data Science\nMitigating Bias\nGo and the challenge to Arificial General Intelligence\nApplications of Data science in Netflix\nFighting cancer with Data and Machine Learning\nBig Data - The backbone of Aadhar\nConverting Business problems to Data Science Problems\nHow to spot Data lies\nSimpson’s Paradox"
+  },
+  {
     "objectID": "data_quality/setup_datasource.html",
     "href": "data_quality/setup_datasource.html",
     "title": "My Datascience Journey",
@@ -669,7 +676,21 @@
     "href": "nlp/chatgpt.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "ChapGPT is trained in three main stages\n\nGenerative pretraining\nSupervised fine-tuning\nReinforcement learning from human feedback\n\n\n\n\nAlignment Problem"
+    "text": "ChapGPT is trained in three main stages\n\nGenerative pretraining\nSupervised fine-tuning (SFT)\nReinforcement learning from human feedback (RLHF)"
+  },
+  {
+    "objectID": "nlp/multilingual_transformers.html",
+    "href": "nlp/multilingual_transformers.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "The corpus used for pretraining consists of documents in many languages. A remarkable feature of this approach is that despite receiving no explicit information to differentiate among the languages, the resulting linguistic representations are able to generalize well across languages for a variety of downstream tasks.\n\n\n\nmBERT\nXLM - RoBERTa (XLM- R)\n\n\n\n\n\nUses MLM as a pretraining objective, for 100 languages\nHuge size of the training corpus (2.5 TB data)\nUses SentencePiece to tokenize the raw text directly\nVocabulary size is 250,000 tokens"
+  },
+  {
+    "objectID": "nlp/text_preprocessing.html",
+    "href": "nlp/text_preprocessing.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Steps involved in tokenization\n\n\n\n\n\nStripping whitespace\nLowercasing\nUnicode Normalization - There exist various ways to write the same character. Unicode Normalization schemes like NFC, NFD, NFKC and NFKD replace various ways to write the same character with standard forms.\nConverting numbers to characters\nExpanding abbrevations\nRemoving characters like @\nCorrecting spellings\n\n\n\n\n\nSplitting text into words\n\n\n\n\n\nSplit into subwords with Byte-Pair Encoding (BPE)\nTokenizer needs to be trained on the corpus or that has been trained if we are using a pretrained tokenizer.\nThe words are divided into subwords to reduce the size of the vocabulary and try to reduce the number of out-of-vocabulary tokens\nAlgos for subword tokenization are\n\nBPE\nUnigram\nWordPiece\n\n\n\n\n\n\nAdding special tokens at the beginning or end\n\n\n\n\nIt encodes each input text as a sequence of Unicode characters. (useful for handling multilingual corpora)"
   },
   {
     "objectID": "nlp/instruction_fine_tuned_txt_embedding.html",
@@ -677,6 +698,20 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Instruction Finetuned Text Embeddings\nAn instruction-finetuned text embedding model that can generate text embeddings tailored to any task (e.g., classification, retrieval, clustering, text evaluation etc.) and domains(e.g,, science, finance etc) by simply providing the task instruction, without any finetuning.\n\nInstructor can calculate domain-specific and task-aware embeddings without any further training. It can be applied to any task for computing fixed-length embeddings of text.\n\nArchitecture\n\nBuilt on single encoder architecture\nGTR models are used as backbone\nGiven an input text and a task instruction, this model encodes their concatenation, then a fixed sized task specific embedding is generated\nThe model is trained by maximizing the similarity between positive pairs and minimize negative pairs\n\n\n\nDataset\n\n330 datasets with instructions across diverse task categories and domains was constructed. The dataset is known as Multitask Embeddings Data with Instructions (MEDI)\nInputs for Instruction\n\nText type\nTask objective\nDomain\n\n\n\n\nTraining\n\nInstructor is initialized with GTR-Large model and finetune it on MEDI using AdamW optimizer and finetuned for 20k steps\n\n\n\nEvaluation\n\nIntructor is evaluated on 70 downstream tasks. Out of 70 evaluation tasks, 66 are unseen during training\n\n\n\n\nInstruction examples for evaluation dataset\n\n\n\n\nResults\nInstructor significantly outperforms prior state-of-the-art embedding models by an average of 3.4% over the 70 diverse datasets. (This is despite the fact that Instructor has one order of magnitude fewer parameters i.e 335M)\n!(As the Instructions become detailed, the performance improves)[/Images/instruction_gtre.png]\n\n\n\nThe performance of Instructor increases with model size\n\n\nInstructions mitigate domain shifts\n\nInstructor largely inproves the GTR-Large’s performance on three unseen domains\n\n\n\n\nInstructor performance on unseen domain data\n\n\n\n\n\nT-SNE with and without instruction\n\n\n\n\nReferences:-\n\nInstructor Github page\nResearch paper\nCode\nInstructor model hosted on Huggingface"
+  },
+  {
+    "objectID": "nlp/text_summarization.html",
+    "href": "nlp/text_summarization.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Text summarization is of two types abstract and extractive. Abstract summarization will consist of words/sentence which is not in the original text. Extractive summarization will consist of sentences which are part of the original text.\n\n\nTo find a pretraining objective that is closer to summarization than general language modeling, the authors identified, in a very large corpus, sentences containing most of the content of their surronding paragraphs and pretrained the PEGA model to reconstruct these sentences, thereby obtaining a state of the art model for text summarization.\n\n\n\nPEGASUS predicting masked words and sentences\n\n\n\n\n\n\n\nWe look at n-grams, when we compare the generated text with reference text, we count the number of words in the generation that occur in the reference text and divide it by the length of the generated text. (A word is only counted as many times as it occurs in the reference).\nBELU is based on precision and recall is not considered because for generated text there can be multiple reference texts.\nThe above method benefits short sentences over longer ones. To conpensate for that a brevity penalty is used.\n\n\n\nFor summarization high recall is important than just precision. In ROUGE we also check how many n-grams in the reference text also occur in the generated text.\nROUGE is F-1 score with harmonic mean of both precision and recall ROUGE scores"
+  },
+  {
+    "objectID": "nlp/text_generation.html",
+    "href": "nlp/text_generation.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Text Generation"
   },
   {
     "objectID": "nlp/rnn.html",
@@ -691,6 +726,13 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Trained on Webtext - 40 GB dataset\nGPT-2 is built using only transformer decoder blocks\nGPT-2 uses byte pair encoding to create tokens for its vocabulary\nFew differences between GPT2 and BERT\n\nGPT-2 uses decoder blocks and BERT uses encoder blocks\nGPT-2 is a autoregressive model and BERT is not autoregressive. By losing autoregressive, BERT gained the ability to incorporate the context on both sides of a word to gain better results.\nGPT-2 uses masked self attention to prevent looking at tokens from the future. BERT does not do that.\nGPT-2 is trained as a language generation model (predicting next word) while BERT is trained to use as a backbone in transfer learning for different downstream tasks.\n\nThe GPT-2 decoder blocks are similar to the original transformer block except that they do not have the second self-attention layer which gets inputs from the encoder blocks.\nGPT-2 can process 1024 tokens\nGPT-2 had 12 attention heads\nWe can allow GPT-2 to ramble on its own or we can give it a prompt to have it speak about a certain topic.\n\n\n\n\n\nThe architecture is a transformer decoder model.\nA total of 96 transformer decoder layers.\n300 Billion word tokens are used for training.\nThe model consists of 175 Billion parameters.\nGPT is 2048 tokens wide. This is called its “context window”\nThe difference between GPT2 and GPT3 is the alternating dense and sparse self-attention layers\n\n\n\n\n\nDecoder Model"
+  },
+  {
+    "objectID": "nlp/ner_transformer.html",
+    "href": "nlp/ner_transformer.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "NER with Transformers\n\n\n\nNER as token classification task\n\n\n\n\n\nHugging Face Transformer class"
   },
   {
     "objectID": "nlp/bert.html",
@@ -726,6 +768,13 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Chatbots are classified into two broad categories\n\nGoal oriented dialogs\nchitchats\n\nTypes of chatbots\n\nExact answer or FAQ bot\nFlow based bot\nOpen-ended bot\n\n\n\n\n\n\n\nRASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots\nThere are two mechanisms inside Rasa to drive conversational AI:\n\nNLU\nDialog Policy\n\n\n\n\nIt accepts text and turn it into intents and entities. It can be rule based or based on neural networks.\n\n\nUsing Regular Expressions. It Can’t handle things they haven’t seen before.It is more lightweight and require domain knowledge.\n\n\n\nTransformer based model (DIET) that sorts text into intents and entities based on examples it’s been provided. It require more compute and training examples. It is good at handling thins they haven’t seen before.\n\n\n\n\nIt predicts the next action to take. The next action is determinec by current intent and entire conversation so far.\nIt is again based on rules or neural networks.\n\n\nRule based - Traditional method. Can’t handle digressions and are difficult to extend\n\n\n\nNeural - Transformers (TED) picks the next best turn based on conversation so far and all the conversations it’s been trained on.\n\n\n\n\nIt works better with more high quality data. we have to manually Review and annotate the conversations. correct any errors made by the bot and add them to the training data, retrain and redeploy. This approach is called Conversation Driven Development.\n\n\n\nWrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. Chatette is such a framework\n\n\n\n\n\n\nRASA Architecture"
+  },
+  {
+    "objectID": "project_on_poverty_eradication.html",
+    "href": "project_on_poverty_eradication.html",
+    "title": "Poverty Eradication Using Data Science",
+    "section": "",
+    "text": "A Study undertook to predict poverty using Data science and Machine learning"
   },
   {
     "objectID": "distributed_processing/fugue_quickstart.html",
@@ -1209,26 +1258,5 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "What is warmup ratio\nsoftmax temperature\nWhat is dice loss\n\n\nResearch papers to read\nSWIN DETR ConvNeXt DiNAT MSDeformAttn Dilated Neighborbood Attention"
-  },
-  {
-    "objectID": "nlp/text_preprocessing.html",
-    "href": "nlp/text_preprocessing.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "Steps involved in tokenization\n\n\n\n\n\nStripping whitespace\nLowercasing\nUnicode Normalization - There exist various ways to write the same character. Unicode Normalization schemes like NFC, NFD, NFKC and NFKD replace various ways to write the same character with standard forms.\nConverting numbers to characters\nExpanding abbrevations\nRemoving characters like @\nCorrecting spellings\n\n\n\n\n\nSplitting text into words\n\n\n\n\n\nSplit into subwords with Byte-Pair Encoding (BPE)\nTokenizer needs to be trained on the corpus or that has been trained if we are using a pretrained tokenizer.\nThe words are divided into subwords to reduce the size of the vocabulary and try to reduce the number of out-of-vocabulary tokens\nAlgos for subword tokenization are\n\nBPE\nUnigram\nWordPiece\n\n\n\n\n\n\nAdding special tokens at the beginning or end\n\n\n\n\nIt encodes each input text as a sequence of Unicode characters. (useful for handling multilingual corpora)"
-  },
-  {
-    "objectID": "nlp/multilingual_transformers.html",
-    "href": "nlp/multilingual_transformers.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "The corpus used for pretraining consists of documents in many languages. A remarkable feature of this approach is that despite receiving no explicit information to differentiate among the languages, the resulting linguistic representations are able to generalize well across languages for a variety of downstream tasks.\n\n\n\nmBERT\nXLM - RoBERTa (XLM- R)\n\n\n\n\n\nUses MLM as a pretraining objective, for 100 languages\nHuge size of the training corpus (2.5 TB data)\nUses SentencePiece to tokenize the raw text directly\nVocabulary size is 250,000 tokens"
-  },
-  {
-    "objectID": "nlp/ner_transformer.html",
-    "href": "nlp/ner_transformer.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "NER with Transformers\n\n\n\nNER as token classification task\n\n\n\n\n\nHugging Face Transformer class"
   }
 ]
