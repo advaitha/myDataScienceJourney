@@ -8,6 +8,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - project_on_poverty_eradication.qmd
+      - blogs.qmd   
   sidebar:
     title:  "**My Learning Journey**"
     style:  "floating"
@@ -93,6 +95,7 @@ website:
         - nlp/bert.qmd
         - nlp/chatbot.qmd
         - nlp/algos_for_chatbots.qmd
+        - nlp/chatgpt.qmd
         - nlp/instruction_fine_tuned_txt_embedding.qmd        
       - section: "**Math for AI**"
         contents:
