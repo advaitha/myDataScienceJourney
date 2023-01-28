@@ -88,6 +88,7 @@ website:
         - nlp/rnn.qmd
         - nlp/starspace.qmd
         - nlp/transformer_models.qmd
+        - nlp/text_summarization.qmd
         - nlp/gpt.qmd
         - nlp/bert.qmd
         - nlp/chatbot.qmd

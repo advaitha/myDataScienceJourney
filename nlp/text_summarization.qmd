@@ -1,0 +1,28 @@
+# Text Summarization
+
+Text summarization is of two types abstract and extractive. Abstract summarization will consist of words/sentence which is not in the original text. Extractive summarization will consist of sentences which are part of the original text.
+
+## PEGASUS
+To find a pretraining objective that is closer to summarization than general language modeling, the authors identified, in a very large corpus, sentences containing most of the content of their surronding paragraphs and pretrained the PEGA model to reconstruct these sentences, thereby obtaining a state of the art model for text summarization.
+
+![PEGASUS predicting masked words and sentences](/Images/pegasus.png)
+
+
+## Evaluation of Generated text
+
+### BLEU
+We look at n-grams, when we compare the generated text with reference text, we count the number of words in the generation that occur in the reference text and divide it by the length of the generated text. (A word is only counted as many times as it occurs in the reference).
+
+BELU is based on precision and recall is not considered because for generated text there can be multiple reference texts.
+
+The above method benefits short sentences over longer ones. To conpensate for that a `brevity penalty` is used.
+
+### ROUGE
+For summarization high recall is important than just precision. In ROUGE we also check how many n-grams in the reference text also occur in the generated text.
+
+ROUGE is F-1 score with harmonic mean of both precision and recall ROUGE scores
+
+
+
+
+
