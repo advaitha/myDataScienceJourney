@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – chatgpt</title>
+<title>My Datascience Journey – multilingual_transformers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -792,10 +792,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructgpt" id="toc-instructgpt" class="nav-link active" data-scroll-target="#instructgpt">InstructGPT</a>
+  <li><a href="#multilingual-transformers" id="toc-multilingual-transformers" class="nav-link active" data-scroll-target="#multilingual-transformers">Multilingual Transformers</a>
   <ul class="collapse">
-  <li><a href="#how-chapgpt-is-trained" id="toc-how-chapgpt-is-trained" class="nav-link" data-scroll-target="#how-chapgpt-is-trained">How ChapGPT is Trained</a></li>
-  <li><a href="#generative-pretraining" id="toc-generative-pretraining" class="nav-link" data-scroll-target="#generative-pretraining">Generative pretraining</a></li>
+  <li><a href="#multilingual-models" id="toc-multilingual-models" class="nav-link" data-scroll-target="#multilingual-models">Multilingual Models</a></li>
+  <li><a href="#xlm-r" id="toc-xlm-r" class="nav-link" data-scroll-target="#xlm-r">XLM-R</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -805,21 +805,24 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="instructgpt" class="level1">
-<h1>InstructGPT</h1>
-<p><img src="../Images/instructGPT.png" class="img-fluid"></p>
-<section id="how-chapgpt-is-trained" class="level2">
-<h2 class="anchored" data-anchor-id="how-chapgpt-is-trained">How ChapGPT is Trained</h2>
-<p>ChapGPT is trained in three main stages</p>
+<section id="multilingual-transformers" class="level1">
+<h1>Multilingual Transformers</h1>
+<p>The corpus used for pretraining consists of documents in many languages. A remarkable feature of this approach is that despite receiving no explicit information to differentiate among the languages, the resulting linguistic representations are able to generalize well across languages for a variety of downstream tasks.</p>
+<section id="multilingual-models" class="level2">
+<h2 class="anchored" data-anchor-id="multilingual-models">Multilingual Models</h2>
 <ul>
-<li>Generative pretraining</li>
-<li>Supervised fine-tuning</li>
-<li>Reinforcement learning from human feedback</li>
+<li>mBERT</li>
+<li>XLM - RoBERTa (XLM- R)</li>
 </ul>
 </section>
-<section id="generative-pretraining" class="level2">
-<h2 class="anchored" data-anchor-id="generative-pretraining">Generative pretraining</h2>
-<p>Alignment Problem</p>
+<section id="xlm-r" class="level2">
+<h2 class="anchored" data-anchor-id="xlm-r">XLM-R</h2>
+<ul>
+<li>Uses MLM as a pretraining objective, for 100 languages</li>
+<li>Huge size of the training corpus (2.5 TB data)</li>
+<li>Uses SentencePiece to tokenize the raw text directly</li>
+<li>Vocabulary size is 250,000 tokens</li>
+</ul>
 
 
 </section>

@@ -1,0 +1,32 @@
+
+# Text Preprocessing
+
+![Steps involved in tokenization](/Images/text_preprocess.png)
+
+## Normalization
+* Stripping whitespace
+* Lowercasing
+* Unicode Normalization - There exist various ways to write the same character. Unicode Normalization schemes like NFC, NFD, NFKC and NFKD replace various ways to write the same character with standard forms.
+* Converting numbers to characters
+* Expanding abbrevations
+* Removing characters like @
+* Correcting spellings
+
+## Pretokenization
+* Splitting text into words
+
+## Tokenizer model
+* Split into subwords with Byte-Pair Encoding (BPE)
+* Tokenizer needs to be trained on the corpus or that has been trained if we are using a pretrained tokenizer.
+* The words are divided into subwords to reduce the size of the vocabulary and try to reduce the number of out-of-vocabulary tokens
+* Algos for subword tokenization are
+    * BPE
+    * Unigram
+    * WordPiece
+
+## Postprocessing
+* Adding special tokens at the beginning or end  
+
+
+### SentencePiece Tokenizer
+* It encodes each input text as a sequence of Unicode characters. (useful for handling multilingual corpora)

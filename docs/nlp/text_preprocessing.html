@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – chatgpt</title>
+<title>My Datascience Journey – text_preprocessing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -792,10 +792,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#instructgpt" id="toc-instructgpt" class="nav-link active" data-scroll-target="#instructgpt">InstructGPT</a>
+  <li><a href="#text-preprocessing" id="toc-text-preprocessing" class="nav-link active" data-scroll-target="#text-preprocessing">Text Preprocessing</a>
   <ul class="collapse">
-  <li><a href="#how-chapgpt-is-trained" id="toc-how-chapgpt-is-trained" class="nav-link" data-scroll-target="#how-chapgpt-is-trained">How ChapGPT is Trained</a></li>
-  <li><a href="#generative-pretraining" id="toc-generative-pretraining" class="nav-link" data-scroll-target="#generative-pretraining">Generative pretraining</a></li>
+  <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization">Normalization</a></li>
+  <li><a href="#pretokenization" id="toc-pretokenization" class="nav-link" data-scroll-target="#pretokenization">Pretokenization</a></li>
+  <li><a href="#tokenizer-model" id="toc-tokenizer-model" class="nav-link" data-scroll-target="#tokenizer-model">Tokenizer model</a></li>
+  <li><a href="#postprocessing" id="toc-postprocessing" class="nav-link" data-scroll-target="#postprocessing">Postprocessing</a>
+  <ul class="collapse">
+  <li><a href="#sentencepiece-tokenizer" id="toc-sentencepiece-tokenizer" class="nav-link" data-scroll-target="#sentencepiece-tokenizer">SentencePiece Tokenizer</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -805,23 +810,59 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="instructgpt" class="level1">
-<h1>InstructGPT</h1>
-<p><img src="../Images/instructGPT.png" class="img-fluid"></p>
-<section id="how-chapgpt-is-trained" class="level2">
-<h2 class="anchored" data-anchor-id="how-chapgpt-is-trained">How ChapGPT is Trained</h2>
-<p>ChapGPT is trained in three main stages</p>
+<section id="text-preprocessing" class="level1">
+<h1>Text Preprocessing</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/text_preprocess.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Steps involved in tokenization</figcaption><p></p>
+</figure>
+</div>
+<section id="normalization" class="level2">
+<h2 class="anchored" data-anchor-id="normalization">Normalization</h2>
 <ul>
-<li>Generative pretraining</li>
-<li>Supervised fine-tuning</li>
-<li>Reinforcement learning from human feedback</li>
+<li>Stripping whitespace</li>
+<li>Lowercasing</li>
+<li>Unicode Normalization - There exist various ways to write the same character. Unicode Normalization schemes like NFC, NFD, NFKC and NFKD replace various ways to write the same character with standard forms.</li>
+<li>Converting numbers to characters</li>
+<li>Expanding abbrevations</li>
+<li>Removing characters like @</li>
+<li>Correcting spellings</li>
 </ul>
 </section>
-<section id="generative-pretraining" class="level2">
-<h2 class="anchored" data-anchor-id="generative-pretraining">Generative pretraining</h2>
-<p>Alignment Problem</p>
+<section id="pretokenization" class="level2">
+<h2 class="anchored" data-anchor-id="pretokenization">Pretokenization</h2>
+<ul>
+<li>Splitting text into words</li>
+</ul>
+</section>
+<section id="tokenizer-model" class="level2">
+<h2 class="anchored" data-anchor-id="tokenizer-model">Tokenizer model</h2>
+<ul>
+<li>Split into subwords with Byte-Pair Encoding (BPE)</li>
+<li>Tokenizer needs to be trained on the corpus or that has been trained if we are using a pretrained tokenizer.</li>
+<li>The words are divided into subwords to reduce the size of the vocabulary and try to reduce the number of out-of-vocabulary tokens</li>
+<li>Algos for subword tokenization are
+<ul>
+<li>BPE</li>
+<li>Unigram</li>
+<li>WordPiece</li>
+</ul></li>
+</ul>
+</section>
+<section id="postprocessing" class="level2">
+<h2 class="anchored" data-anchor-id="postprocessing">Postprocessing</h2>
+<ul>
+<li>Adding special tokens at the beginning or end</li>
+</ul>
+<section id="sentencepiece-tokenizer" class="level3">
+<h3 class="anchored" data-anchor-id="sentencepiece-tokenizer">SentencePiece Tokenizer</h3>
+<ul>
+<li>It encodes each input text as a sequence of Unicode characters. (useful for handling multilingual corpora)</li>
+</ul>
 
 
+</section>
 </section>
 </section>
 

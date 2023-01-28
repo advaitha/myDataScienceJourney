@@ -1209,5 +1209,26 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "What is warmup ratio\nsoftmax temperature\nWhat is dice loss\n\n\nResearch papers to read\nSWIN DETR ConvNeXt DiNAT MSDeformAttn Dilated Neighborbood Attention"
+  },
+  {
+    "objectID": "nlp/text_preprocessing.html",
+    "href": "nlp/text_preprocessing.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Steps involved in tokenization\n\n\n\n\n\nStripping whitespace\nLowercasing\nUnicode Normalization - There exist various ways to write the same character. Unicode Normalization schemes like NFC, NFD, NFKC and NFKD replace various ways to write the same character with standard forms.\nConverting numbers to characters\nExpanding abbrevations\nRemoving characters like @\nCorrecting spellings\n\n\n\n\n\nSplitting text into words\n\n\n\n\n\nSplit into subwords with Byte-Pair Encoding (BPE)\nTokenizer needs to be trained on the corpus or that has been trained if we are using a pretrained tokenizer.\nThe words are divided into subwords to reduce the size of the vocabulary and try to reduce the number of out-of-vocabulary tokens\nAlgos for subword tokenization are\n\nBPE\nUnigram\nWordPiece\n\n\n\n\n\n\nAdding special tokens at the beginning or end\n\n\n\n\nIt encodes each input text as a sequence of Unicode characters. (useful for handling multilingual corpora)"
+  },
+  {
+    "objectID": "nlp/multilingual_transformers.html",
+    "href": "nlp/multilingual_transformers.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "The corpus used for pretraining consists of documents in many languages. A remarkable feature of this approach is that despite receiving no explicit information to differentiate among the languages, the resulting linguistic representations are able to generalize well across languages for a variety of downstream tasks.\n\n\n\nmBERT\nXLM - RoBERTa (XLM- R)\n\n\n\n\n\nUses MLM as a pretraining objective, for 100 languages\nHuge size of the training corpus (2.5 TB data)\nUses SentencePiece to tokenize the raw text directly\nVocabulary size is 250,000 tokens"
+  },
+  {
+    "objectID": "nlp/ner_transformer.html",
+    "href": "nlp/ner_transformer.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "NER with Transformers\n\n\n\nNER as token classification task\n\n\n\n\n\nHugging Face Transformer class"
   }
 ]
