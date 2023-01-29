@@ -1,5 +1,0 @@
----
-title: "About"
----
-
-My Notes on Data Science, Machine learning and Artificial Intelligence I am learning from different books, videos, courses and Notebooks. These pages are replication of various source material from which I am learning.

@@ -1,5 +1,0 @@
----
-title: "Project"
----
-
-[A Study undertook to eradicate poverty using Data science and Machine learning](https://advaitha.github.io/poverty-eradication-using-ml/)

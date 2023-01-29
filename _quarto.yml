@@ -2,156 +2,162 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "My Datascience Journey"
+  title: "My Datascience Journey"  
+  page-footer: "email: tulasiram.gunipati@gmail.com" 
+  reader-mode: true
   navbar:
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - project.qmd
-      - blogs.qmd   
-  sidebar:
-    title:  "**My Learning Journey**"
-    style:  "floating"
-    search: True
-    backround:  light
-    contents:
-      - section: "**Anomaly Detection**"
-        contents:
-        - anomaly_detection/Anomaly_based_IDS.qmd
-        - anomaly_detection/ad_online_event_streams.qmd
-        - anomaly_detection/ad_dynamic_graphs_using_midas.qmd
-        - anomaly_detection/ad_using_unsupervised_methods.qmd
-      - section: "**3D Deep Learning**"
-        contents:
-        - 3D_deep_learning/01_data_formats.qmd
-        - 3D_deep_learning/02_coordination_systems.qmd
-        - 3D_deep_learning/03_rendering.qmd
-        - 3D_deep_learning/04_fitting_deformable_mesh_to_point.qmd
-        - 3D_deep_learning/05_differentiable_rendering.qmd
-        - 3D_deep_learning/06_nerf.qmd
-        - 3D_deep_learning/resources.qmd
-      - section: "**Transformers**"
-        contents:
-        - transformers/Attention_for_vision.qmd
-        - transformers/attention_is_all_you_need.qmd
-        - transformers/attention.qmd
-        - transformers/transformers.qmd
-        - transformers/transformers_from_scratch.qmd
-        - transformers/image_worth_16_16.qmd
-        - transformers/vision_transformer.qmd
-        - transformers/how_to_train_ViT.qmd
-      - section: "**Interpretable_ml**"
-        contents:
-        - Interpretable_ml/theory/01_introduction.qmd
-        - Interpretable_ml/theory/02_linear_regression.qmd
-        - Interpretable_ml/theory/03_logistic_regression.qmd
-        - Interpretable_ml/theory/04_explainable_boosting_machine.qmd
-        - Interpretable_ml/theory/05_GLM_GAM.qmd
-        - Interpretable_ml/theory/06_Decision_tree.qmd
-        - Interpretable_ml/theory/07_rulefit.qmd
-        - Interpretable_ml/theory/08_naive_bayes_and_knn.qmd
-        - Interpretable_ml/theory/09_global_model_agnostic.qmd
-        - Interpretable_ml/theory/10_local_model_agnostic.qmd
-        - Interpretable_ml/theory/11_neural_network.qmd
-        - Interpretable_ml/theory/12_nodegam.qmd
-        - Interpretable_ml/theory/resources.qmd
-        - Interpretable_ml/interpret_ai/notebooks/01_ebm.ipynb  
-      - section: "**Graph Machine Learning**"
-        contents:
-        - graph_ml/01_intro.qmd
-        - graph_ml/02_resources.qmd      
-      - section: "**Industry Usecases**"
-        contents:
-        - industry_use_cases/insurance.qmd
-      - section: "**Bayesian Analysis**"
-        contents:
-        - bayesian_analysis/Bayesian_analysis.qmd
-        - bayesian_analysis/resources.qmd
-      - section: "**Causal Inference**"
-        contents:
-        - causal_inference/01_intro.qmd
-        - causal_inference/02_randomised_exp.qmd
-        - causal_inference/03_stats_revision.qmd
-        - causal_inference/04_graphical_causal_models.qmd
-        - causal_inference/resources.qmd
-      - section: "**Computer Vision**"
-        contents: 
-        - computer_vision/image_classification/01_convolution.qmd
-        - computer_vision/object_detection/introduction.qmd
-        - computer_vision/image_classification/satellite_images_classification.ipynb      
-        - computer_vision/image_segmentation/01_intro.qmd   
-        - computer_vision/image_segmentation/02_architectures.qmd
-        - computer_vision/summary_of_research_papers/oneFormer.qmd
-      - section: "**NLP**"
-        contents: 
-        - nlp/text_preprocessing.qmd
-        - nlp/IE.qmd
-        - nlp/rnn.qmd
-        - nlp/starspace.qmd
-        - nlp/transformer_models.qmd
-        - nlp/text_summarization.qmd
-        - nlp/gpt.qmd
-        - nlp/bert.qmd
-        - nlp/chatbot.qmd
-        - nlp/algos_for_chatbots.qmd
-        - nlp/chatgpt.qmd
-        - nlp/instruction_fine_tuned_txt_embedding.qmd        
-      - section: "**Math for AI**"
-        contents:
-        - math_for_ai/theory/01_intro.qmd  
-        - math_for_ai/theory/02_distributions.qmd 
-        - math_for_ai/theory/03_fitting_functions_to_data.qmd    
-        - math_for_ai/theory/04_neural_network.qmd  
-      - section: "**Time Series**"
-        contents:
-        - Time Series/01_overview.qmd  
-        - Time Series/02_exploratory_analysis.qmd 
-        - Time Series/03_stats_models.qmd    
-        - Time Series/04_feature_eng.qmd   
-        - Time Series/04_feature_eng.qmd   
-        - Time Series/05_ml_for_ts.qmd   
-        - Time Series/resources.qmd
-      - section: "**Geograhic Data Processing**"
-        contents:
-        - spatial_data_processing/geographic_data_formats.qmd   
-        - spatial_data_processing/plot_buildings_with_area.ipynb
-        - spatial_data_processing/spatial_analysis.ipynb
-        - spatial_data_processing/crs.ipynb
-        - spatial_data_processing/visualization.ipynb
-        - spatial_data_processing/osm_processing.ipynb 
-        - spatial_data_processing/raster_data_processing.ipynb      
-      - section: "**Machine learning Implementations**"
-        contents:
-        - telecom_churn_prediction/telecom_churn_eda.ipynb      
-        - telecom_churn_prediction/telecom_churn_prediction.ipynb
-      - section: "**Data Quality**"
-        contents:
-        - data_quality/four_steps_to_data_quality.qmd
-        - data_quality/setup_datasource.ipynb
-        - data_quality/generate_expectation.ipynb
-        - data_quality/run_checkpoint.ipynb
-      - section: "**Data Privacy**"
-        contents: 
-        - data_privacy/basic_privacy_approaches.qmd
-        - data_privacy/differential_privacy.qmd  
-      - section: "**Distributed Processing**"
-        contents: 
-        - distributed_processing/fugue_intro.qmd
-        - distributed_processing/fugue_quickstart.ipynb  
-        - distributed_processing/fugue_sql.ipynb   
-      - section: "**DSA**"
-        contents: 
-        - dsa/insertion_sort.ipynb
-        - dsa/selection_sort.ipynb
-        - dsa/bubble_sort.ipynb
-        - dsa/merge_sort.ipynb
-        - dsa/quick_sort.ipynb            
-        - dsa/Binary_search.ipynb                
-      - section: "**About Me**"
-        contents:        
-        - about_me/my_portfolio.qmd         
-        - about_me/why_me.qmd          
+      - text: "Home"
+        file: index.qmd
+      - text: "Projects"
+        file: about_me/my_portfolio.qmd
+      - text: "Notes"
+        file: notes.qmd
+      - text: "Study"
+        file: study.qmd
+      - text: "blogs"
+        file: blogs.qmd        
+  sidebar:  
+    - title:  "Notes"
+      style:  "floating"       
+      backround:  light
+      contents:
+        - section: "**Anomaly Detection**"
+          contents:
+          - anomaly_detection/Anomaly_based_IDS.qmd
+          - anomaly_detection/ad_online_event_streams.qmd
+          - anomaly_detection/ad_dynamic_graphs_using_midas.qmd
+          - anomaly_detection/ad_using_unsupervised_methods.qmd
+        - section: "**3D Deep Learning**"
+          contents:
+          - 3D_deep_learning/01_data_formats.qmd
+          - 3D_deep_learning/02_coordination_systems.qmd
+          - 3D_deep_learning/03_rendering.qmd
+          - 3D_deep_learning/04_fitting_deformable_mesh_to_point.qmd
+          - 3D_deep_learning/05_differentiable_rendering.qmd
+          - 3D_deep_learning/06_nerf.qmd
+          - 3D_deep_learning/resources.qmd
+        - section: "**Transformers**"
+          contents:
+          - transformers/Attention_for_vision.qmd
+          - transformers/attention_is_all_you_need.qmd
+          - transformers/attention.qmd
+          - transformers/transformers.qmd
+          - transformers/transformers_from_scratch.qmd
+          - transformers/image_worth_16_16.qmd
+          - transformers/vision_transformer.qmd
+          - transformers/how_to_train_ViT.qmd
+        - section: "**Interpretable_ml**"
+          contents:
+          - Interpretable_ml/theory/01_introduction.qmd
+          - Interpretable_ml/theory/02_linear_regression.qmd
+          - Interpretable_ml/theory/03_logistic_regression.qmd
+          - Interpretable_ml/theory/04_explainable_boosting_machine.qmd
+          - Interpretable_ml/theory/05_GLM_GAM.qmd
+          - Interpretable_ml/theory/06_Decision_tree.qmd
+          - Interpretable_ml/theory/07_rulefit.qmd
+          - Interpretable_ml/theory/08_naive_bayes_and_knn.qmd
+          - Interpretable_ml/theory/09_global_model_agnostic.qmd
+          - Interpretable_ml/theory/10_local_model_agnostic.qmd
+          - Interpretable_ml/theory/11_neural_network.qmd
+          - Interpretable_ml/theory/12_nodegam.qmd
+          - Interpretable_ml/theory/resources.qmd
+          - Interpretable_ml/interpret_ai/notebooks/01_ebm.ipynb  
+        - section: "**Graph Machine Learning**"
+          contents:
+          - graph_ml/01_intro.qmd
+          - graph_ml/02_resources.qmd      
+        - section: "**Industry Usecases**"
+          contents:
+          - industry_use_cases/insurance.qmd
+        - section: "**Bayesian Analysis**"
+          contents:
+          - bayesian_analysis/Bayesian_analysis.qmd
+          - bayesian_analysis/resources.qmd
+        - section: "**Causal Inference**"
+          contents:
+          - causal_inference/01_intro.qmd
+          - causal_inference/02_randomised_exp.qmd
+          - causal_inference/03_stats_revision.qmd
+          - causal_inference/04_graphical_causal_models.qmd
+          - causal_inference/resources.qmd
+        - section: "**Computer Vision**"
+          contents: 
+          - computer_vision/image_classification/01_convolution.qmd
+          - computer_vision/object_detection/introduction.qmd
+          - computer_vision/image_classification/satellite_images_classification.ipynb      
+          - computer_vision/image_segmentation/01_intro.qmd   
+          - computer_vision/image_segmentation/02_architectures.qmd
+          - computer_vision/summary_of_research_papers/oneFormer.qmd
+        - section: "**NLP**"
+          contents: 
+          - nlp/text_preprocessing.qmd
+          - nlp/IE.qmd
+          - nlp/rnn.qmd
+          - nlp/starspace.qmd
+          - nlp/transformer_models.qmd
+          - nlp/text_summarization.qmd
+          - nlp/gpt.qmd
+          - nlp/bert.qmd
+          - nlp/chatbot.qmd
+          - nlp/algos_for_chatbots.qmd
+          - nlp/chatgpt.qmd
+          - nlp/instruction_fine_tuned_txt_embedding.qmd        
+        - section: "**Math for AI**"
+          contents:
+          - math_for_ai/theory/01_intro.qmd  
+          - math_for_ai/theory/02_distributions.qmd 
+          - math_for_ai/theory/03_fitting_functions_to_data.qmd    
+          - math_for_ai/theory/04_neural_network.qmd  
+        - section: "**Time Series**"
+          contents:
+          - Time Series/01_overview.qmd  
+          - Time Series/02_exploratory_analysis.qmd 
+          - Time Series/03_stats_models.qmd    
+          - Time Series/04_feature_eng.qmd   
+          - Time Series/04_feature_eng.qmd   
+          - Time Series/05_ml_for_ts.qmd   
+          - Time Series/resources.qmd
+        - section: "**Geograhic Data Processing**"
+          contents:
+          - spatial_data_processing/geographic_data_formats.qmd   
+          - spatial_data_processing/plot_buildings_with_area.ipynb
+          - spatial_data_processing/spatial_analysis.ipynb
+          - spatial_data_processing/crs.ipynb
+          - spatial_data_processing/visualization.ipynb
+          - spatial_data_processing/osm_processing.ipynb 
+          - spatial_data_processing/raster_data_processing.ipynb      
+        - section: "**Machine learning Implementations**"
+          contents:
+          - telecom_churn_prediction/telecom_churn_eda.ipynb      
+          - telecom_churn_prediction/telecom_churn_prediction.ipynb
+        - section: "**Data Quality**"
+          contents:
+          - data_quality/four_steps_to_data_quality.qmd
+          - data_quality/setup_datasource.ipynb
+          - data_quality/generate_expectation.ipynb
+          - data_quality/run_checkpoint.ipynb
+        - section: "**Data Privacy**"
+          contents: 
+          - data_privacy/basic_privacy_approaches.qmd
+          - data_privacy/differential_privacy.qmd  
+        - section: "**Distributed Processing**"
+          contents: 
+          - distributed_processing/fugue_intro.qmd
+          - distributed_processing/fugue_quickstart.ipynb  
+          - distributed_processing/fugue_sql.ipynb   
+        - section: "**DSA**"
+          contents: 
+          - dsa/insertion_sort.ipynb
+          - dsa/selection_sort.ipynb
+          - dsa/bubble_sort.ipynb
+          - dsa/merge_sort.ipynb
+          - dsa/quick_sort.ipynb            
+          - dsa/Binary_search.ipynb                
+        - section: "**Why Me**"
+          contents:                 
+          - about_me/why_me.qmd          
 format:
   html:
     theme: cerulean
