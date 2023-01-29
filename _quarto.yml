@@ -8,7 +8,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - project_on_poverty_eradication.qmd
+      - project.qmd
       - blogs.qmd   
   sidebar:
     title:  "**My Learning Journey**"

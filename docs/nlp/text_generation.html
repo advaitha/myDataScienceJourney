@@ -89,8 +89,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../project_on_poverty_eradication.html">
- <span class="menu-text">Poverty Eradication Using Data Science</span></a>
+    <a class="nav-link" href="../project.html">
+ <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../blogs.html">
@@ -815,7 +815,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#text-generation" id="toc-text-generation" class="nav-link active" data-scroll-target="#text-generation">Text Generation</a></li>
+  <li><a href="#text-generation" id="toc-text-generation" class="nav-link active" data-scroll-target="#text-generation">Text Generation</a>
+  <ul class="collapse">
+  <li><a href="#beam-search" id="toc-beam-search" class="nav-link" data-scroll-target="#beam-search">Beam Search</a></li>
+  <li><a href="#sampling-methods" id="toc-sampling-methods" class="nav-link" data-scroll-target="#sampling-methods">Sampling methods</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -826,8 +830,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="text-generation" class="level1">
 <h1>Text Generation</h1>
+<section id="beam-search" class="level2">
+<h2 class="anchored" data-anchor-id="beam-search">Beam Search</h2>
+<p>Instead of decoding the token with the highest probability at each step, beam search keeps track of the top-b most probable next tokens, where b is referred to as the number of beams or partial hypotheses. The next set of beams are chosen by considering all possible next-token extensions of the existing set and selecting the b most likely extensions. The process is repeated until we reach the maximum length or an EOS token, and the most likely sequence is selected by ranking the b beams according to their log probabilities.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/beam_search.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Beam Search</figcaption><p></p>
+</figure>
+</div>
+<p>Beam Search with n-gram penalty - A penalty is added to the beam search to avoid repetetion of the text generated. Another alternative is to avoid repetition is to use sampling.</p>
+</section>
+<section id="sampling-methods" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-methods">Sampling methods</h2>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
