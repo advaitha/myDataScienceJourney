@@ -5,7 +5,10 @@
 
 
 
-### Research papers to read
+### Research papers to read and summarize
+[Google MusicLM](https://google-research.github.io/seanet/musiclm/examples/)
+[]
+
 SWIN
 DETR
 ConvNeXt

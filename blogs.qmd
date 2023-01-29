@@ -1,5 +1,6 @@
 ---
 title: "Blogs"
+sidebar: false
 ---
 
 * [Ethics and Bias in Data Science](https://advaitha.github.io/2020/10/07/ethics_part_1.html) 
