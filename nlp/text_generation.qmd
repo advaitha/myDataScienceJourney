@@ -1,2 +1,13 @@
 
 # Text Generation
+
+## Beam Search
+Instead of decoding the token with the highest probability at each step, beam search keeps track of the top-b most probable next tokens, where b is referred to as the number of beams or partial hypotheses. The next set of beams are chosen by considering all possible next-token extensions of the existing set and selecting the b most likely extensions. The process is repeated until we reach the maximum length or an EOS token, and the most likely sequence is selected by ranking the b beams according to their log probabilities.
+
+![Beam Search](/Images/beam_search.png)
+
+Beam Search with n-gram penalty - A penalty is added to the beam search to avoid repetetion of the text generated. Another alternative is to avoid repetition is to use sampling.
+
+## Sampling methods
+
+

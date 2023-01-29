@@ -711,7 +711,7 @@
     "href": "nlp/text_generation.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Text Generation"
+    "text": "Instead of decoding the token with the highest probability at each step, beam search keeps track of the top-b most probable next tokens, where b is referred to as the number of beams or partial hypotheses. The next set of beams are chosen by considering all possible next-token extensions of the existing set and selecting the b most likely extensions. The process is repeated until we reach the maximum length or an EOS token, and the most likely sequence is selected by ranking the b beams according to their log probabilities.\n\n\n\nBeam Search\n\n\nBeam Search with n-gram penalty - A penalty is added to the beam search to avoid repetetion of the text generated. Another alternative is to avoid repetition is to use sampling."
   },
   {
     "objectID": "nlp/rnn.html",
@@ -768,13 +768,6 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Chatbots are classified into two broad categories\n\nGoal oriented dialogs\nchitchats\n\nTypes of chatbots\n\nExact answer or FAQ bot\nFlow based bot\nOpen-ended bot\n\n\n\n\n\n\n\nRASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots\nThere are two mechanisms inside Rasa to drive conversational AI:\n\nNLU\nDialog Policy\n\n\n\n\nIt accepts text and turn it into intents and entities. It can be rule based or based on neural networks.\n\n\nUsing Regular Expressions. It Can’t handle things they haven’t seen before.It is more lightweight and require domain knowledge.\n\n\n\nTransformer based model (DIET) that sorts text into intents and entities based on examples it’s been provided. It require more compute and training examples. It is good at handling thins they haven’t seen before.\n\n\n\n\nIt predicts the next action to take. The next action is determinec by current intent and entire conversation so far.\nIt is again based on rules or neural networks.\n\n\nRule based - Traditional method. Can’t handle digressions and are difficult to extend\n\n\n\nNeural - Transformers (TED) picks the next best turn based on conversation so far and all the conversations it’s been trained on.\n\n\n\n\nIt works better with more high quality data. we have to manually Review and annotate the conversations. correct any errors made by the bot and add them to the training data, retrain and redeploy. This approach is called Conversation Driven Development.\n\n\n\nWrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. Chatette is such a framework\n\n\n\n\n\n\nRASA Architecture"
-  },
-  {
-    "objectID": "project_on_poverty_eradication.html",
-    "href": "project_on_poverty_eradication.html",
-    "title": "Poverty Eradication Using Data Science",
-    "section": "",
-    "text": "A Study undertook to predict poverty using Data science and Machine learning"
   },
   {
     "objectID": "distributed_processing/fugue_quickstart.html",
@@ -873,6 +866,13 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "contionous variables\n\nProbability density function\n\nDiscrete variables\n\nProbability mass function\n\nMarginal probability distribution\n\nGetting the probability distribution of a single or multiple variables from the full joint probability distribution of multiple random variables.\n\nJoint probability distribution\n\nProbability distribution of two or more variables occuring together\nIf we fix the value of one of the variable, we get a distribution proportional to conditional probability distribution\nJoint probability distribution = marginal probability distribution + conditional probability distribution\nJoint probability in case of dependent variables is not separable. we need to store each value for every co-occurance between the variables. (curse of dimensionality)\n\n\n\n\n\n\n\nEstimating conditional probabilities when full joint probability distribution is not known\n\n\n\n\n\nMix probability distributions\n\n\n\n\n\nIf the data we care for is not sampled or observed, we speculate on it using the langauge of expectation.\nLaw of large numbers - When sample size goes to infinity, expectation matches the sample mean\n\n\n\n\n\nCorrelation works on normalized random variables\nCovariance works on unnormalized random variables"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Project",
+    "section": "",
+    "text": "A Study undertook to eradicate poverty using Data science and Machine learning"
   },
   {
     "objectID": "transformers/image_worth_16_16.html",
