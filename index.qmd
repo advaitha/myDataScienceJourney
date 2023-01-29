@@ -3,7 +3,7 @@ title: "Thulasiram Gunipati"
 sidebar: false
 about:
   template: jolla
-  image: /Images/photo.jpeg
+  image: photo.jpeg
   links:
     - icon: twitter
       text: twitter
