@@ -231,20 +231,6 @@
     "text": "The International Social Service (ISS) is an international NGO founded in 1924 which assists children and families confronted with complex social problems as a result of migration. This project was undertaken in collaboration with 30 data scientists around the world.\n\n\n\n\nA Goodwill project I did for The International Social Service\n\n\n\n\n\n\n\n\nI am a team player\n\n\n\nAn example - I initiated and built a data discovery platform understanding the difficulties faced by other data scientists in the team\nI initiated and built a automated system for video moderation and tagging after knowing about the challenges faced by a different team in the company\n\n\n\n\n\nAfter serving in military for 20 years, I pivoted to a corporate environment and a different industry\nI love making small upgrades on a daily basis\n\n\n\nI upgrade my version everyday\n\n\n\n\n\n\n\nBooks on ML I read the previous year \nCourse I am doing currently"
   },
   {
-    "objectID": "about_me/my_experience.html",
-    "href": "about_me/my_experience.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "# My Data Science Experience\n\nI got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100’s of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions."
-  },
-  {
-    "objectID": "about_me/experience.html",
-    "href": "about_me/experience.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "# Experience\n\nI got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100’s of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions."
-  },
-  {
     "objectID": "causal_inference/resources.html",
     "href": "causal_inference/resources.html",
     "title": "My Datascience Journey",
@@ -355,6 +341,27 @@
     "title": "Improvements to Poverty Prediction Project",
     "section": "Creating an efficient pipeline and deployment",
     "text": "Creating an efficient pipeline and deployment\n\n\nWriting functions\nRemoving Glue code\nUnit testing for the code\nModularization\nParametrization of the code"
+  },
+  {
+    "objectID": "personal/about_me.html",
+    "href": "personal/about_me.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "As a seasoned professional with 7 years of experience as a Data Science Manager and Data Scientist, I have a wealth of knowledge and expertise to offer. Throughout my career, I have tackled a wide range of challenging data science projects, including building a recommendation engine for a social media app, developing look-a-like models at scale, implementing computer vision for content moderation and tagging, creating churn prediction models, constructing a data lake, and automating dashboards.\nI possess a deep understanding of various data science topics, including computer vision, natural language processing, interpretable machine learning, causal inference, and probabilistic programming. My passion lies in utilizing my data science and machine learning skills to create tangible value for organizations."
+  },
+  {
+    "objectID": "personal/my_experience.html",
+    "href": "personal/my_experience.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "# My Data Science Experience\n\nI got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100’s of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions."
+  },
+  {
+    "objectID": "personal/experience.html",
+    "href": "personal/experience.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "# Experience\n\nI got 6 years of experience as a Data Science Manager and Data Scientist. In my Data Science career I worked on a variety of data science projects like Building a Recommendation engine for a social media app, building look-a-like models and deploying them on scale (100’s of them) and automating the whole process, Content moderation and tagging using computer vision, building churn prediction models, creating a data lake, building a data discovery platform, automating dashboards etc. I have skills in various data science topics like Computer vision, NLP, Interpretable Machine learning, Causal Inference, Probabilistic Programming, Privacy preserving ML among other things. I love to work with data, derive insights and build models to drive business decisions."
   },
   {
     "objectID": "telecom_churn_prediction/telecom_churn_prediction.html",
@@ -613,7 +620,14 @@
     "href": "index.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "My Notes on Data Science, Machine learning and Artificial Intelligence along with project portfolio."
+    "text": "As a seasoned professional with 7 years of experience as a Data Science Manager and Data Scientist, I have a wealth of knowledge and expertise to offer. Throughout my career, I have tackled a wide range of challenging data science projects, including building a recommendation engine for a social media app, developing look-a-like models at scale, implementing computer vision for content moderation and tagging, creating churn prediction models, constructing a data lake, and automating dashboards.\nI possess a deep understanding of various data science topics, including computer vision, natural language processing, interpretable machine learning, causal inference, and probabilistic programming. My passion lies in utilizing my data science and machine learning skills to create tangible value for organizations."
+  },
+  {
+    "objectID": "index.html#site-information",
+    "href": "index.html#site-information",
+    "title": "My Datascience Journey",
+    "section": "Site Information",
+    "text": "Site Information\nMy Notes on Data Science, Machine learning and Artificial Intelligence along with project portfolio."
   },
   {
     "objectID": "graph_ml/02_resources.html",
