@@ -2,7 +2,15 @@
 title: "My Datascience Journey"
 ---
 
+## About Me
 
+![](/Images/photo.jpeg)
+
+As a seasoned professional with 7 years of experience as a Data Science Manager and Data Scientist, I have a wealth of knowledge and expertise to offer. Throughout my career, I have tackled a wide range of challenging data science projects, including building a recommendation engine for a social media app, developing look-a-like models at scale, implementing computer vision for content moderation and tagging, creating churn prediction models, constructing a data lake, and automating dashboards.
+
+I possess a deep understanding of various data science topics, including computer vision, natural language processing, interpretable machine learning, causal inference, and probabilistic programming. My passion lies in utilizing my data science and machine learning skills to create tangible value for organizations.
+
+## Site Information
 My Notes on Data Science, Machine learning and Artificial Intelligence along with project portfolio.
 
 

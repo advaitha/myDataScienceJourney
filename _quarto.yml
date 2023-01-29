@@ -149,8 +149,7 @@ website:
         - dsa/quick_sort.ipynb            
         - dsa/Binary_search.ipynb                
       - section: "**About Me**"
-        contents:
-        - about_me/experience.qmd
+        contents:        
         - about_me/my_portfolio.qmd         
         - about_me/why_me.qmd          
 format:
