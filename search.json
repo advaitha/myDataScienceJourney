@@ -424,7 +424,7 @@
     "href": "blogs.html",
     "title": "Blogs",
     "section": "",
-    "text": "Ethics and Bias in Data Science\nMitigating Bias\nGo and the challenge to Arificial General Intelligence\nApplications of Data science in Netflix\nFighting cancer with Data and Machine Learning\nBig Data - The backbone of Aadhar\nConverting Business problems to Data Science Problems\nHow to spot Data lies\nSimpson’s Paradox"
+    "text": "Ethics and Bias in Data Science\nMitigating Bias\nWhat is a DMP and how to create it\nGo and the challenge to Arificial General Intelligence\nAnamoly Detection and Interpretability\nML Models: From Jupyter notebook to a database\nData Lakehouse\nDruid - Fast Analytics on Batch and Real-time Data\nApplications of Data science in Netflix\nFighting cancer with Data and Machine Learning\nBig Data - The backbone of Aadhar\nConverting Business problems to Data Science Problems\nHow to spot Data lies\nSimpson’s Paradox"
   },
   {
     "objectID": "data_quality/setup_datasource.html",
