@@ -5,7 +5,12 @@ sidebar: false
 
 * [Ethics and Bias in Data Science](https://advaitha.github.io/2020/10/07/ethics_part_1.html) 
 * [Mitigating Bias](https://advaitha.github.io/2020/10/09/Ethics-in-datascience-part-2.html)
+* [What is a DMP and how to create it](https://www.linkedin.com/pulse/what-dmp-how-create-thulasiram-gunipati/)
 * [Go and the challenge to Arificial General Intelligence](https://www.upgrad.com/blog/go-and-the-challenge-to-artificial-general-intelligence/)
+* [Anamoly Detection and Interpretability](https://www.linkedin.com/pulse/anomaly-detection-interpretability-2020-thulasiram-gunipati/)
+* [ML Models: From Jupyter notebook to a database](https://www.linkedin.com/pulse/ml-models-from-jupyter-notebook-database-thulasiram-gunipati/)
+* [Data Lakehouse](https://www.linkedin.com/pulse/data-lakehouse-powerhouse-future-thulasiram-gunipati/)
+* [Druid - Fast Analytics on Batch and Real-time Data](https://www.linkedin.com/pulse/data-lakehouse-powerhouse-future-thulasiram-gunipati/)
 * [Applications of Data science in Netflix](https://www.upgrad.com/blog/applications-of-data-science-and-machine-learning-in-netflix/)
 * [Fighting cancer with Data and Machine Learning](https://www.upgrad.com/blog/big-data-machine-learning-against-cancer/)
 * [Big Data - The backbone of Aadhar](https://www.upgrad.com/blog/the-backbone-of-aadhaar-big-data/)
