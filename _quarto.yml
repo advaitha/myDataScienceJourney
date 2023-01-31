@@ -101,6 +101,7 @@ website:
           - nlp/gpt.qmd
           - nlp/bert.qmd
           - nlp/chatbot.qmd
+          - nlp/qa.qmd
           - nlp/algos_for_chatbots.qmd
           - nlp/chatgpt.qmd
           - nlp/instruction_fine_tuned_txt_embedding.qmd        
