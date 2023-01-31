@@ -1,0 +1,14 @@
+# Reinforcement Learning from Human Feedback
+
+* Loss functions for ethical, safe?
+* To encode these values into the model
+* ![RHFL for decision making](/Images/rhlf_for_decision_making.png)
+
+* scaler reward
+
+## Proximal Policy Optimization
+* It came in 2017
+
+policy gradient methods 
+
+![PPO](https://www.youtube.com/watch?v=HrapVFNBN64)
