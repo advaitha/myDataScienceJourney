@@ -104,6 +104,7 @@ website:
           - nlp/qa.qmd
           - nlp/algos_for_chatbots.qmd
           - nlp/chatgpt.qmd
+          - nlp/transformers_production.qmd
           - nlp/instruction_fine_tuned_txt_embedding.qmd        
         - section: "**Math for AI**"
           contents:
