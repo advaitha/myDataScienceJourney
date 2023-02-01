@@ -1,0 +1,23 @@
+# Dealing with Few to No Labels
+
+![](/Images/unlabeled_data.png)
+
+## Zero-shot classification
+Adapt a pretrained model for another task without training it.
+
+`text entailment` 
+
+
+unsupervised data augmentation (UDA)
+uncerainty-aware self training (UST)
+
+Multilabel classification can be casted as a one-versus-rest classification tasks.
+
+## Resources
+[scikit-multilearn for working with multi label challenges](http://scikit.ml/)
+
+
+
+
+
+
