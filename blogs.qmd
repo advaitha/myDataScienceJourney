@@ -3,6 +3,7 @@ title: "Blogs"
 sidebar: false
 ---
 
+* [MusicLM: Generating music from text](/nlp/MusicLM.qmd)
 * [Ethics and Bias in Data Science](https://advaitha.github.io/2020/10/07/ethics_part_1.html) 
 * [Mitigating Bias](https://advaitha.github.io/2020/10/09/Ethics-in-datascience-part-2.html)
 * [What is a DMP and how to create it](https://www.linkedin.com/pulse/what-dmp-how-create-thulasiram-gunipati/)
