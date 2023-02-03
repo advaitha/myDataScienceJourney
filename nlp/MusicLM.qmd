@@ -1,5 +1,9 @@
 # MusicLM: Generating Music from Text
 
+![](/Images/musiclm_1.png)
+![](/Images/musiclm_2.png)
+![](/Images/musiclm_3.png)
+
 ## Why MusicLM
 * Generating high-fidelity music from text descriptions
 * Conditional music generation as a hierarchical sequence-to-sequence modeling task and it generates music at 24kHZ that remains consistent over several minutes.
