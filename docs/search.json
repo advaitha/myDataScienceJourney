@@ -847,6 +847,13 @@
     "text": "Chatbots are classified into two broad categories\n\nGoal oriented dialogs\nchitchats\n\nTypes of chatbots\n\nExact answer or FAQ bot\nFlow based bot\nOpen-ended bot\n\n\n\n\n\n\n\nRASA is a Task oriented dialogue system. It is a framework that makes it easier to build custom chatbots\nThere are two mechanisms inside Rasa to drive conversational AI:\n\nNLU\nDialog Policy\n\n\n\n\nIt accepts text and turn it into intents and entities. It can be rule based or based on neural networks.\n\n\nUsing Regular Expressions. It Can’t handle things they haven’t seen before.It is more lightweight and require domain knowledge.\n\n\n\nTransformer based model (DIET) that sorts text into intents and entities based on examples it’s been provided. It require more compute and training examples. It is good at handling thins they haven’t seen before.\n\n\n\n\nIt predicts the next action to take. The next action is determinec by current intent and entire conversation so far.\nIt is again based on rules or neural networks.\n\n\nRule based - Traditional method. Can’t handle digressions and are difficult to extend\n\n\n\nNeural - Transformers (TED) picks the next best turn based on conversation so far and all the conversations it’s been trained on.\n\n\n\n\nIt works better with more high quality data. we have to manually Review and annotate the conversations. correct any errors made by the bot and add them to the training data, retrain and redeploy. This approach is called Conversation Driven Development.\n\n\n\nWrapper frameworks are available for Rasa, which eases the data annotation process to generate large-scale dialog datasets. Chatette is such a framework\n\n\n\n\n\n\nRASA Architecture"
   },
   {
+    "objectID": "create_python_package.html",
+    "href": "create_python_package.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Github repo for the Python Package\nLink to Python Package\nDocumentation for the Python Package\n\n\n\n\nchapter 3 of the book python packages"
+  },
+  {
     "objectID": "distributed_processing/fugue_quickstart.html",
     "href": "distributed_processing/fugue_quickstart.html",
     "title": "My Datascience Journey",
@@ -1328,6 +1335,13 @@
     "title": "Study",
     "section": "",
     "text": "A Study undertook to eradicate poverty using Data science and Machine learning"
+  },
+  {
+    "objectID": "python_packages/create_python_package.html",
+    "href": "python_packages/create_python_package.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Github repo for the Python Package\nLink to Python Package\nDocumentation for the Python Package\n\n\n\n\nchapter 3 of the book python packages"
   },
   {
     "objectID": "research/unknown.html",

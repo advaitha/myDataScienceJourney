@@ -1,0 +1,9 @@
+# Creating Python Packages
+
+* [Github repo for the Python Package](https://github.com/advaitha/pycounts-gthrm)
+* [Link to Python Package](https://pypi.org/project/pycounts-gthrm/)
+* [Documentation for the Python Package](https://pycounts-gthrm.readthedocs.io/)
+
+
+## Reference
+* [chapter 3 of the book `python packages`](https://py-pkgs.org/)

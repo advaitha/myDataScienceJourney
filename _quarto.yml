@@ -17,7 +17,9 @@ website:
       - text: "Study"
         file: study.qmd
       - text: "blogs"
-        file: blogs.qmd        
+        file: blogs.qmd  
+      - text: "Python Package"      
+        file: create_python_package.qmd
   sidebar:  
     - title:  "Notes"
       style:  "floating"       
