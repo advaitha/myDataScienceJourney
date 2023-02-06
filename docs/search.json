@@ -851,7 +851,7 @@
     "href": "create_python_package.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Github repo for the Python Package\nLink to Python Package\nDocumentation for the Python Package\n\n\n\n\nchapter 3 of the book python packages"
+    "text": "Python Package I am currently developing\nThe aim of this package is to reduce the workload of a Data Scientist by providing a simple and easy-to-use APIs for Data Cleaning.\n\nGithub repo for the Python Package I am developing\nLink to Python Package\nDocumentation for the Python Package"
   },
   {
     "objectID": "distributed_processing/fugue_quickstart.html",

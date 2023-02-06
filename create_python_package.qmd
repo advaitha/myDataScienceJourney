@@ -1,9 +1,15 @@
-# Creating Python Packages
+---
+title: "Python Package"
+sidebar: false
+---
 
-* [Github repo for the Python Package](https://github.com/advaitha/pycounts-gthrm)
-* [Link to Python Package](https://pypi.org/project/pycounts-gthrm/)
-* [Documentation for the Python Package](https://pycounts-gthrm.readthedocs.io/)
+# Python Package I am currently developing
+
+`The aim of this package is to reduce the workload of a Data Scientist by providing a simple and easy-to-use APIs for Data Cleaning.`
+
+* [Github repo for the Python Package I am developing](https://github.com/advaitha/cleanml)
+* [Link to Python Package](https://pypi.org/project/cleanml/)
+* [Documentation for the Python Package](https://cleanml.readthedocs.io/)
 
 
-## Reference
-* [chapter 3 of the book `python packages`](https://py-pkgs.org/)
+
