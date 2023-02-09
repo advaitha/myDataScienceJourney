@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>My Datascience Journey – model_evaluation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">My Datascience Journey</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about_me/my_portfolio.html">
+ <span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../notes.html">
+ <span class="menu-text">Notes</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../study.html">
+ <span class="menu-text">Study</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blogs.html">
+ <span class="menu-text">blogs</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../create_python_package.html">
+ <span class="menu-text">Python Package</span></a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+              </div>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"><strong>Data Science Project Lifecycle</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Sampling.html" class="sidebar-item-text sidebar-link">Sampling</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Training_Data.html" class="sidebar-item-text sidebar-link">Training</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Feature_Engineering.html" class="sidebar-item-text sidebar-link">Feature Engineering</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/ML_Algorithms.html" class="sidebar-item-text sidebar-link">ML Algorithms</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/gradient_descent.html" class="sidebar-item-text sidebar-link">Gradient Descent</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Regularization.html" class="sidebar-item-text sidebar-link">Regularization</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Model_Development.html" class="sidebar-item-text sidebar-link">Model Development</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Model_Evaluation.html" class="sidebar-item-text sidebar-link active">Model Offline Evaluation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Monitoring_ML_Models_in_production.html" class="sidebar-item-text sidebar-link">Why ML system fails</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/MLOPS.html" class="sidebar-item-text sidebar-link">MlOps</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ds_lifecycle/Resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"><strong>Anomaly Detection</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../anomaly_detection/Anomaly_based_IDS.html" class="sidebar-item-text sidebar-link">Anomaly Based IDS using ML</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../anomaly_detection/ad_online_event_streams.html" class="sidebar-item-text sidebar-link">Anomaly Detection using online Event logs</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../anomaly_detection/ad_dynamic_graphs_using_midas.html" class="sidebar-item-text sidebar-link">Anomaly detection in dynamic graphs using MIDAS-R</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../anomaly_detection/ad_using_unsupervised_methods.html" class="sidebar-item-text sidebar-link">Anomaly Detection using Unsupervised methods</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><strong>3D Deep Learning</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/01_data_formats.html" class="sidebar-item-text sidebar-link">3D Data Formats</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/02_coordination_systems.html" class="sidebar-item-text sidebar-link">3D coordination systems</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/03_rendering.html" class="sidebar-item-text sidebar-link">3D Rendering</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/04_fitting_deformable_mesh_to_point.html" class="sidebar-item-text sidebar-link">Fitting Deformable Mesh Models to Raw Point Clouds</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/05_differentiable_rendering.html" class="sidebar-item-text sidebar-link">Differentiable Rendering</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/06_nerf.html" class="sidebar-item-text sidebar-link">Neural Radiance Fields (NeRF)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../3D_deep_learning/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true"><strong>Transformers</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/Attention_for_vision.html" class="sidebar-item-text sidebar-link">Computer Vision Using Transformers</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/attention_is_all_you_need.html" class="sidebar-item-text sidebar-link">Attention is all you need</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/attention.html" class="sidebar-item-text sidebar-link">Attention</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/transformers.html" class="sidebar-item-text sidebar-link">Transformer</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/transformers_from_scratch.html" class="sidebar-item-text sidebar-link">Transformers from Scratch</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/image_worth_16_16.html" class="sidebar-item-text sidebar-link">An Image is worth 16X16 Words</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/vision_transformer.html" class="sidebar-item-text sidebar-link">Vision Transformers (ViT)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../transformers/how_to_train_ViT.html" class="sidebar-item-text sidebar-link">How to Train Your ViT</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true"><strong>Interpretable_ml</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/01_introduction.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/02_linear_regression.html" class="sidebar-item-text sidebar-link">Linear regression</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/03_logistic_regression.html" class="sidebar-item-text sidebar-link">Logistic Regression</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/04_explainable_boosting_machine.html" class="sidebar-item-text sidebar-link">Explainable Boosting Machines</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/05_GLM_GAM.html" class="sidebar-item-text sidebar-link">Generalized Linear Models (GLM)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/06_Decision_tree.html" class="sidebar-item-text sidebar-link">Decision Trees</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/07_rulefit.html" class="sidebar-item-text sidebar-link">Rulefit</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/08_naive_bayes_and_knn.html" class="sidebar-item-text sidebar-link">Naive Bayes</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/09_global_model_agnostic.html" class="sidebar-item-text sidebar-link">Global Model Agnostic Methods</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/10_local_model_agnostic.html" class="sidebar-item-text sidebar-link">Local Model-Agnostic Methods</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/11_neural_network.html" class="sidebar-item-text sidebar-link">CNN Interpretation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/12_nodegam.html" class="sidebar-item-text sidebar-link">Neural GAMs</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/theory/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Interpretable_ml/interpret_ai/notebooks/01_ebm.html" class="sidebar-item-text sidebar-link">Editable Interpretable Models</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true"><strong>Graph Machine Learning</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graph_ml/01_intro.html" class="sidebar-item-text sidebar-link">Graph Machine Learning</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graph_ml/02_resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true"><strong>Industry Usecases</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../industry_use_cases/insurance.html" class="sidebar-item-text sidebar-link">AI Use cases for the Insurance Industry</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true"><strong>Bayesian Analysis</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bayesian_analysis/Bayesian_analysis.html" class="sidebar-item-text sidebar-link">Bayesian Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bayesian_analysis/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true"><strong>Causal Inference</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/01_intro.html" class="sidebar-item-text sidebar-link">Intro</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/02_randomised_exp.html" class="sidebar-item-text sidebar-link">Randomised Experiments</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/03_stats_revision.html" class="sidebar-item-text sidebar-link">Stats Revisited</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/04_graphical_causal_models.html" class="sidebar-item-text sidebar-link">Graphical Causal Models</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../causal_inference/resources.html" class="sidebar-item-text sidebar-link">Packages</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true"><strong>Computer Vision</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_classification/01_convolution.html" class="sidebar-item-text sidebar-link">Architecture for Image Classification</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/object_detection/introduction.html" class="sidebar-item-text sidebar-link">Object Detection</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_classification/satellite_images_classification.html" class="sidebar-item-text sidebar-link">Images Classification Implementation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_segmentation/01_intro.html" class="sidebar-item-text sidebar-link">Image Segmentation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/image_segmentation/02_architectures.html" class="sidebar-item-text sidebar-link">Architecutures for Image segmentation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computer_vision/summary_of_research_papers/oneFormer.html" class="sidebar-item-text sidebar-link">OneFormer: One Transformer to rule Universal Image Segmentation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true"><strong>NLP</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/text_preprocessing.html" class="sidebar-item-text sidebar-link">Text Preprocessing</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/IE.html" class="sidebar-item-text sidebar-link">Information Extraction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/rnn.html" class="sidebar-item-text sidebar-link">RNN &amp; LSTM</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/starspace.html" class="sidebar-item-text sidebar-link">Starspace</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/transformer_models.html" class="sidebar-item-text sidebar-link">Transformer Family of Models</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/text_summarization.html" class="sidebar-item-text sidebar-link">Text Summarization</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/gpt.html" class="sidebar-item-text sidebar-link">GPT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/bert.html" class="sidebar-item-text sidebar-link">BERT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/chatbot.html" class="sidebar-item-text sidebar-link">Chatbots</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/qa.html" class="sidebar-item-text sidebar-link">Question Answering (QA)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/algos_for_chatbots.html" class="sidebar-item-text sidebar-link">Algorithms for Chatbot</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/chatgpt.html" class="sidebar-item-text sidebar-link">InstructGPT</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/transformers_production.html" class="sidebar-item-text sidebar-link">Making Transformers efficient in Production</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nlp/instruction_fine_tuned_txt_embedding.html" class="sidebar-item-text sidebar-link">Instruction Finetuned Text Embeddings</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true"><strong>Math for AI</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/01_intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link">Distributions</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/03_fitting_functions_to_data.html" class="sidebar-item-text sidebar-link">Fitting functions to data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../math_for_ai/theory/04_neural_network.html" class="sidebar-item-text sidebar-link">Gradient Descent, Activations and Regularisation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true"><strong>Time Series</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/01_overview.html" class="sidebar-item-text sidebar-link">Time Series Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/02_exploratory_analysis.html" class="sidebar-item-text sidebar-link">Exploratory Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/03_stats_models.html" class="sidebar-item-text sidebar-link">Simulating Time Series Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/05_ml_for_ts.html" class="sidebar-item-text sidebar-link">ML for Time Series</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Time Series/resources.html" class="sidebar-item-text sidebar-link">packages for Time series</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true"><strong>Geograhic Data Processing</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/geographic_data_formats.html" class="sidebar-item-text sidebar-link">Geographic Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/plot_buildings_with_area.html" class="sidebar-item-text sidebar-link">Visualizing Buildings in a location along with its Area</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/spatial_analysis.html" class="sidebar-item-text sidebar-link">Spatial Analysis using Geopandas</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/crs.html" class="sidebar-item-text sidebar-link">Coordinate Reference Systems (CRS)</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/visualization.html" class="sidebar-item-text sidebar-link">Data Visualization using Folium</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/osm_processing.html" class="sidebar-item-text sidebar-link">OpenStreetMap</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../spatial_data_processing/raster_data_processing.html" class="sidebar-item-text sidebar-link">Converting Data from Raster to Tabular (Geometry) format</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true"><strong>Machine learning Implementations</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../telecom_churn_prediction/telecom_churn_eda.html" class="sidebar-item-text sidebar-link">EDA on Telecom Churn Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../telecom_churn_prediction/telecom_churn_prediction.html" class="sidebar-item-text sidebar-link">Telecom Churn Prediction</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true"><strong>Data Quality</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/four_steps_to_data_quality.html" class="sidebar-item-text sidebar-link">Ensuring Data Quality</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/setup_datasource.html" class="sidebar-item-text sidebar-link">Create a new Datasource</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/generate_expectation.html" class="sidebar-item-text sidebar-link">Initialize a new Expectation Suite by profiling a batch of your data.</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_quality/run_checkpoint.html" class="sidebar-item-text sidebar-link">Create Checkpoint</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="true"><strong>Data Privacy</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_privacy/basic_privacy_approaches.html" class="sidebar-item-text sidebar-link">Approaches to Data privacy</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data_privacy/differential_privacy.html" class="sidebar-item-text sidebar-link">Differential Privacy</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="true"><strong>Distributed Processing</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributed_processing/fugue_intro.html" class="sidebar-item-text sidebar-link">Fugue</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributed_processing/fugue_quickstart.html" class="sidebar-item-text sidebar-link">Fugue Quickstart</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../distributed_processing/fugue_sql.html" class="sidebar-item-text sidebar-link">FugueSQL</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" aria-expanded="true"><strong>DSA</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-19" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dsa/insertion_sort.html" class="sidebar-item-text sidebar-link">Insertion Sort</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dsa/selection_sort.html" class="sidebar-item-text sidebar-link">Selection Sort</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dsa/bubble_sort.html" class="sidebar-item-text sidebar-link">Bubble Sort</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dsa/merge_sort.html" class="sidebar-item-text sidebar-link">Merge Sort</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dsa/quick_sort.html" class="sidebar-item-text sidebar-link">Quick Sort</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dsa/Binary_search.html" class="sidebar-item-text sidebar-link">Binary Search</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" aria-expanded="true"><strong>probability</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../probability/Probability.html" class="sidebar-item-text sidebar-link">Probability</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" aria-expanded="true"><strong>Why Me</strong></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-21" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about_me/why_me.html" class="sidebar-item-text sidebar-link">Why me</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#model-offline-evaluation" id="toc-model-offline-evaluation" class="nav-link active" data-scroll-target="#model-offline-evaluation">Model Offline Evaluation</a>
+  <ul class="collapse">
+  <li><a href="#baselines-useful-across-use-cases" id="toc-baselines-useful-across-use-cases" class="nav-link" data-scroll-target="#baselines-useful-across-use-cases">Baselines useful across use cases</a></li>
+  </ul></li>
+  <li><a href="#evaluation-methods-1" id="toc-evaluation-methods-1" class="nav-link" data-scroll-target="#evaluation-methods-1">Evaluation Methods</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="model-offline-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="model-offline-evaluation">Model Offline Evaluation</h2>
+<section id="baselines-useful-across-use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="baselines-useful-across-use-cases">Baselines useful across use cases</h3>
+<ul>
+<li>Random baseline</li>
+<li>Simple heuristic</li>
+<li>Zero rule baseline - Baseline model always predicts the most common class</li>
+<li>Human baseline</li>
+<li>Existing solutions</li>
+</ul>
+<section id="evaluation-methods" class="level4">
+<h4 class="anchored" data-anchor-id="evaluation-methods">Evaluation Methods</h4>
+<ul>
+<li>Perturbation tests
+<ul>
+<li>The production data will be noisy compared to training data. So we can make small changes to your test splits to see how these changes affect your model’s performance.</li>
+</ul></li>
+<li>Invariance tests
+<ul>
+<li>Certain changes to the sensitive inputs shouldn’t lead to changes in the output. changes to race information shouldn’t affect the mortgage outcome. Similarly, changes to applicants’ names shouldn’t affect their resume screening results nor should someone’s gender affect how much they should be paid. If these happen, there are biases in your model, which might render it unusable no matter how good its performance is.</li>
+</ul></li>
+<li>Directional expectation tests
+<ul>
+<li>Certain changes to the inputs should, however, cause predictable changes in outputs. For example, when developing a&nbsp;model to predict housing prices, keeping all the features the same but increasing the lot size shouldn’t decrease the predicted price, and decreasing the square footage shouldn’t increase it. If the outputs change in the opposite expected direction, your model might not be learning the right thing, and you need to investigate it further before deploying it.</li>
+</ul></li>
+<li>Model calibration
+<ul>
+<li>Chapter 6. Model Development and Offline Evaluation In Chapter&nbsp;4, we discussed how to create training data for your model, and in Chapter&nbsp;5, we discussed how to engineer features from that training data. With the initial set of features, we’ll move to the ML algorithm part of ML systems. For me, this has always been the most fun step, as it allows me to play around with different algorithms and techniques, even the latest ones. This is also the first step where I can see all the hard work I’ve put into data and feature engineering transformed into a system whose outputs (predictions) I can use to evaluate the success of my effort.</li>
+</ul></li>
+</ul>
+<p>To build an ML model, we first need to select the ML model to build. There are so many ML algorithms out there, with more actively being developed. This chapter starts with six tips for selecting the best algorithms for your task.</p>
+<p>The section that follows discusses different aspects of model development, such as debugging, experiment tracking and versioning, distributed training, and AutoML.</p>
+<p>Model development is an iterative process. After each iteration, you’ll want to compare your model’s performance against its performance in previous iterations and evaluate how suitable this iteration is for production. The last section of this chapter is dedicated to how to evaluate your model before deploying it to production, covering a range of evaluation techniques including perturbation tests, invariance tests, model calibration, and slide-based evaluation.</p>
+<p>I expect that most readers already have an understanding of common ML algorithms such as linear models, decision trees, k-nearest neighbors, and different types of neural networks. This chapter will discuss techniques surrounding these algorithms but won’t go into details of how they work. Because this chapter deals with ML algorithms, it requires a lot more ML knowledge than other chapters. If you’re not familiar with them, I recommend taking an online course or reading a book on ML algorithms before reading this chapter. Readers wanting a quick refresh on basic ML concepts might find helpful the section “Basic ML Reviews” in the book’s GitHub repository.</p>
+<p>Model Development and Training In this section, we’ll discuss necessary aspects to help you develop and train your model, including how to evaluate different ML models for your problem, creating ensembles of models, experiment tracking and versioning, and distributed training, which is necessary for the scale at which models today are usually trained at. We’ll end this section with the more advanced topic of AutoML—using ML to automatically choose a model best for your problem.</p>
+<p>Evaluating ML Models There are many possible solutions to any given problem. Given a task that can leverage ML in its solution, you might wonder what ML algorithm you should use for it. For example, should you start with logistic regression, an algorithm that you’re already familiar with? Or should you try out a new fancy model that is supposed to be the new state of the art for your problem? A more senior colleague mentioned that gradient-boosted trees have always worked for her for this task in the past—should you listen to her advice?</p>
+<p>If you had unlimited time and compute power, the rational thing to do would be to try all possible solutions and see what is best for you. However, time and compute power are limited resources, and you have to be strategic about what models you select.</p>
+<p>When talking about ML algorithms, many people think in terms of classical ML algorithms versus neural networks. There are a lot of interests and media coverage for neural networks, especially deep learning, which is understandable given that most of the AI progress in the last decade happened due to neural networks getting bigger and deeper.</p>
+<p>These interests and coverage might give off the impression that deep learning is replacing classical ML algorithms. However, even though deep learning is finding more use cases in production, classical ML algorithms are not going away. Many recommender systems still rely on collaborative filtering and matrix factorization. Tree-based algorithms, including gradient-boosted trees, still power many classification tasks with strict latency requirements.</p>
+<p>Even in applications where neural networks are deployed, classic ML algorithms are still being used in tandem. For example, neural networks and decision trees might be used together in an ensemble. A k-means clustering model might be used to extract features to input into a neural network. Vice versa, a pretrained neural network (like BERT or GPT-3) might be used to generate embeddings to input into a logistic regression model.</p>
+<p>When selecting a model for your problem, you don’t choose from every possible model out there, but usually focus on a set of models suitable for your problem. For example, if your boss tells you to build a system to detect toxic tweets, you know that this is a text classification problem—given a piece of text, classify whether it’s toxic or not—and common models for text classification include naive Bayes, logistic regression, recurrent neural networks, and transformer-based models such as BERT, GPT, and their variants.</p>
+<p>If your client wants you to build a system to detect fraudulent transactions, you know that this is the classic abnormality detection problem—fraudulent transactions are abnormalities that you want to detect—and common algorithms for this problem are many, including k-nearest neighbors, isolation forest, clustering, and neural networks.</p>
+<p>Knowledge of common ML tasks and the typical approaches to solve them is essential in this process.</p>
+<p>Different types of algorithms require different numbers of labels as well as different amounts of compute power. Some take longer to train than others, whereas some take longer to make predictions. Non-neural network algorithms tend to be more explainable (e.g., what features contributed the most to an email being classified as spam) than neural networks.</p>
+<p>When considering what model to use, it’s important to consider not only the model’s performance, measured by metrics such as accuracy, F1 score, and log loss, but also its other properties, such as how much data, compute, and time it needs to train, what’s its inference latency, and interpretability. For example, a simple logistic regression model might have lower accuracy than a complex neural network, but it requires less labeled data to start, it’s much faster to train, it’s much easier to deploy, and it’s also much easier to explain why it’s making certain predictions.</p>
+<p>Comparing ML algorithms is out of the scope of this book. No matter how good a comparison is, it will be outdated as soon as new algorithms come out. Back in 2016, LSTM-RNNs were all the rage and the backbone of the architecture seq2seq (Sequence-to-Sequence) that powered many NLP tasks from machine translation to text summarization to text classification. However, just two years later, recurrent architectures were largely replaced by transformer architectures for NLP tasks.</p>
+<p>To understand different algorithms, the best way is to equip yourself with basic ML knowledge and run experiments with the algorithms you’re interested in. To keep up to date with so many new ML techniques and models, I find it helpful to monitor trends at major ML conferences such as NeurIPS, ICLR, and ICML, as well as following researchers whose work has a high signal-to-noise ratio on Twitter.</p>
+<p>Six tips for model selection Without getting into specifics of different algorithms, here are six tips that might help you decide what ML algorithms to work on next.</p>
+<p>Avoid the state-of-the-art trap While helping companies as well as recent graduates get started in ML, I usually have to spend a nontrivial amount of time steering them away from jumping straight into state-of-the-art models. I can see why people want state-of-the-art models. Many believe that these models would be the best solutions for their problems—why try an old solution if you believe that a newer and superior solution exists? Many business leaders also want to use state-of-the-art models because they want to make their businesses appear cutting edge. Developers might also be more excited getting their hands on new models than getting stuck into the same old things over and over again.</p>
+<p>Researchers often only evaluate models in academic settings, which means that a model being state of the art often means that it performs better than existing models on some static datasets. It doesn’t mean that this model will be fast enough or cheap enough for you to implement. It doesn’t even mean that this model will perform better than other models on your data.</p>
+<p>While it’s essential to stay up to date with new technologies and beneficial to evaluate them for your business, the most important thing to do when solving a problem is finding solutions that can solve that problem. If there’s a solution that can solve your problem that is much cheaper and simpler than state-of-the-art models, use the simpler solution.</p>
+<p>Start with the simplest models Zen of Python states that “simple is better than complex,” and this principle is applicable to ML as well. Simplicity serves three purposes. First, simpler models are easier to deploy, and deploying your model early allows you to validate that your prediction pipeline is consistent with your training pipeline. Second, starting with something simple and adding more complex components step-by-step makes it easier to understand your model and debug it. Third, the simplest model serves as a baseline to which you can compare your more complex models.</p>
+<p>Simplest models are not always the same as models with the least effort. For example, pretrained BERT models are complex, but they require little effort to get started with, especially if you use a ready-made implementation like the one in Hugging Face’s Transformer. In this case, it’s not a bad idea to use the complex solution, given that the community around this solution is well developed enough to help you get through any problems you might encounter. However, you might still want to experiment with simpler solutions to ensure that pretrained BERT is indeed better than those simpler solutions for your problem. Pretrained BERT might be low effort to start with, but it can be quite high effort to improve upon. Whereas if you start with a simpler model, there’ll be a lot of room for you to improve upon your model.</p>
+<p>Avoid human biases in selecting models Imagine an engineer on your team is assigned the task of evaluating which model is better for your problem: a gradient-boosted tree or a pretrained BERT model. After two weeks, this engineer announces that the best BERT model outperforms the best gradient-boosted tree by 5%. Your team decides to go with the pretrained BERT model.</p>
+<p>A few months later, however, a seasoned engineer joins your team. She decides to look into gradient-boosted trees again and finds out that this time, the best gradient-boosted tree outperforms the pretrained BERT model you currently have in production. What happened?</p>
+<p>There are a lot of human biases in evaluating models. Part of the process of evaluating an ML architecture is to experiment with different features and different sets of hyperparameters to find the best model of that architecture. If an engineer is more excited about an architecture, they will likely spend a lot more time experimenting with it, which might result in better-performing models for that architecture.</p>
+<p>When comparing different architectures, it’s important to compare them under comparable setups. If you run 100 experiments for an architecture, it’s not fair to only run a couple of experiments for the architecture you’re evaluating it against. You might need to run 100 experiments for the other architecture too.</p>
+<p>Because the performance of a model architecture depends heavily on the context it’s evaluated in—e.g., the task, the training data, the test data, the hyperparameters, etc.—it’s extremely difficult to make claims that a model architecture is better than another architecture. The claim might be true in a context, but unlikely true for all possible contexts.</p>
+<p>Evaluate good performance now versus good performance later The best model now does not always mean the best model two months from now. For example, a tree-based model might work better now because you don’t have a ton of data yet, but two months from now, you might be able to double your amount of training data, and your neural network might perform much better.1</p>
+<p>A simple way to estimate how your model’s performance might change with more data is to use learning curves. A learning curve of a model is a plot of its performance—e.g., training loss, training accuracy, validation accuracy—against the number of training samples it uses, as shown in Figure&nbsp;6-1. The learning curve won’t help you estimate exactly how much performance gain you can get from having more training data, but it can give you a sense of whether you can expect any performance gain at all from more training data.</p>
+<p>Figure 6-1. The learning curves of a naive Bayes model and an SVM model. Source: scikit-learn A situation that I’ve encountered is when a team evaluates a simple neural network against a collaborative filtering model for making recommendations. When evaluating both models offline, the collaborative filtering model outperformed. However, the simple neural network can update itself with each incoming example, whereas the collaborative filtering has to look at all the data to update its underlying matrix. The team decided to deploy both the collaborative filtering model and the simple neural network. They used the collaborative filtering model to make predictions for users, and continually trained the simple neural network in production with new, incoming data. After two weeks, the simple neural network was able to outperform the collaborative filtering model.</p>
+<p>While evaluating models, you might want to take into account their potential for improvements in the near future, and how easy/difficult it is to achieve those improvements.</p>
+<p>Evaluate trade-offs There are many trade-offs you have to make when selecting models. Understanding what’s more important in the performance of your ML system will help you choose the most suitable model.</p>
+<p>One classic example of trade-off is the false positives and false negatives trade-off. Reducing the number of false positives might increase the number of false negatives, and vice versa. In a task where false positives are more dangerous than false negatives, such as fingerprint unlocking (unauthorized people shouldn’t be classified as authorized and given access), you might prefer a model that makes fewer false positives. Similarly, in a task where false negatives are more dangerous than false positives, such as COVID-19 screening (patients with COVID-19 shouldn’t be classified as no COVID-19), you might prefer a model that makes fewer false negatives.</p>
+<p>Another example of trade-off is compute requirement and accuracy—a more complex model might deliver higher accuracy but might require a more powerful machine, such as a GPU instead of a CPU, to generate predictions with acceptable inference latency. Many people also care about the interpretability and performance trade-off. A more complex model can give a better performance, but its results are less interpretable.</p>
+<p>Understand your model’s assumptions The statistician George Box said in 1976 that “all models are wrong, but some are useful.” The real world is intractably complex, and models can only approximate using assumptions. Every single model comes with its own assumptions. Understanding what assumptions a model makes and whether our data satisfies those assumptions can help you evaluate which model works best for your use case.</p>
+<p>Following are some of the common assumptions. It’s not meant to be an exhaustive list, but just a demonstration:</p>
+<p>Prediction assumption Every model that aims to predict an output Y from an input X makes the assumption that it’s possible to predict Y based on X.</p>
+<p>IID Neural networks assume that the examples are independent and identically distributed, which means that all the examples are independently drawn from the same joint distribution.</p>
+<p>Smoothness Every supervised machine learning method assumes that there’s a set of functions that can transform inputs into outputs such that similar inputs are transformed into similar outputs. If an input X produces an output Y, then an input close to X would produce an output proportionally close to Y.</p>
+<p>Tractability Let X be the input and Z be the latent representation of X. Every generative model makes the assumption that it’s tractable to compute the probability P(Z|X).</p>
+<p>Boundaries A linear classifier assumes that decision boundaries are linear.</p>
+<p>Conditional independence A naive Bayes classifier assumes that the attribute values are independent of each other given the class.</p>
+<p>Normally distributed Many statistical methods assume that data is normally distributed.</p>
+<p>Ensembles When considering an ML solution to your problem, you might want to start with a system that contains just one model (the process of selecting one model for your problem was discussed earlier in the chapter). After developing one single model, you might think about how to continue improving its performance. One method that has consistently given a performance boost is to use an ensemble of multiple models instead of just an individual model to make predictions. Each model in the ensemble is called a base learner. For example, for the task of predicting whether an email is SPAM or NOT SPAM, you might have three different models. The final prediction for each email is the majority vote of all three models. So if at least two base learners output SPAM, the email will be classified as SPAM.</p>
+<p>Twenty out of 22 winning solutions on Kaggle competitions in 2021, as of August 2021, use ensembles.2 As of January 2022, 20 top solutions on SQuAD 2.0, the Stanford Question Answering Dataset, are ensembles, as shown in Figure&nbsp;6-2.</p>
+<p>Ensembling methods are less favored in production because ensembles are more complex to deploy and harder to maintain. However, they are still common for tasks where a small performance boost can lead to a huge financial gain, such as predicting click-through rate for ads.</p>
+<p>Figure 6-2. As of January 2022, the top 20 solutions on SQuAD 2.0 are all ensembles We’ll go over an example to give you the intuition of why ensembling works. Imagine you have three email spam classifiers, each with an accuracy of 70%. Assuming that each classifier has an equal probability of making a correct prediction for each email, and that these three classifiers are not correlated, we’ll show that by taking the majority vote of these three classifiers, we can get an accuracy of 78.4%.</p>
+<p>For each email, each classifier has a 70% chance of being correct. The ensemble will be correct if at least two classifiers are correct. Table&nbsp;6-1 shows the probabilities of different possible outcomes of the ensemble given an email. This ensemble will have an accuracy of 0.343 + 0.441 = 0.784, or 78.4%.</p>
+<p>Table 6-1. Possible outcomes of the ensemble that takes the majority vote from three classifiers Outputs of three models Probability Ensemble’s output All three are correct 0.7 * 0.7 * 0.7 = 0.343 Correct Only two are correct (0.7 * 0.7 * 0.3) * 3 = 0.441 Correct Only one is correct (0.3 * 0.3 * 0.7) * 3 = 0.189 Wrong None are correct 0.3 * 0.3 * 0.3 = 0.027 Wrong This calculation only holds if the classifiers in an ensemble are uncorrelated. If all classifiers are perfectly correlated—all three of them make the same prediction for every email—the ensemble will have the same accuracy as each individual classifier. When creating an ensemble, the less correlation there is among base learners, the better the ensemble will be. Therefore, it’s common to choose very different types of models for an ensemble. For example, you might create an ensemble that consists of one transformer model, one recurrent neural network, and one gradient-boosted tree.</p>
+<p>There are three ways to create an ensemble: bagging, boosting, and stacking. In addition to helping boost performance, according to several survey papers, ensemble methods such as boosting and bagging, together with resampling, have shown to help with imbalanced datasets.3 We’ll go over each of these three methods, starting with bagging.</p>
+<p>Bagging Bagging, shortened from bootstrap aggregating, is designed to improve both the training stability and accuracy of ML algorithms.4 It reduces variance and helps to avoid overfitting.</p>
+<p>Given a dataset, instead of training one classifier on the entire dataset, you sample with replacement to create different datasets, called bootstraps, and train a classification or regression model on each of these bootstraps. Sampling with replacement ensures that each bootstrap is created independently from its peers. Figure&nbsp;6-3 shows an illustration of bagging.</p>
+<p>Figure 6-3. Bagging illustration. Source: Adapted from an image by Sirakorn If the problem is classification, the final prediction is decided by the majority vote of all models. For example, if 10 classifiers vote SPAM and 6 models vote NOT SPAM, the final prediction is SPAM.</p>
+<p>If the problem is regression, the final prediction is the average of all models’ predictions.</p>
+<p>Bagging generally improves unstable methods, such as neural networks, classification and regression trees, and subset selection in linear regression. However, it can mildly degrade the performance of stable methods such as k-nearest neighbors.5</p>
+<p>A random forest is an example of bagging. A random forest is a collection of decision trees constructed by both bagging and feature randomness, where each tree can pick only from a random subset of features to use.</p>
+<p>Boosting Boosting is a family of iterative ensemble algorithms that convert weak learners to strong ones. Each learner in this ensemble is trained on the same set of samples, but the samples are weighted differently among iterations. As a result, future weak learners focus more on the examples that previous weak learners misclassified. Figure&nbsp;6-4 shows an illustration of boosting, which involves the steps that follow.</p>
+<p>Figure 6-4. Boosting illustration. Source: Adapted from an image by Sirakorn You start by training the first weak classifier on the original dataset.</p>
+<p>Samples are reweighted based on how well the first classifier classifies them, e.g., misclassified samples are given higher weight.</p>
+<p>Train the second classifier on this reweighted dataset. Your ensemble now consists of the first and the second classifiers.</p>
+<p>Samples are weighted based on how well the ensemble classifies them.</p>
+<p>Train the third classifier on this reweighted dataset. Add the third classifier to the ensemble.</p>
+<p>Repeat for as many iterations as needed.</p>
+<p>Form the final strong classifier as a weighted combination of the existing classifiers—classifiers with smaller training errors have higher weights.</p>
+<p>An example of a boosting algorithm is a gradient boosting machine (GBM), which produces a prediction model typically from weak decision trees. It builds the model in a stage-wise fashion like other boosting methods do, and it generalizes them by allowing optimization of an arbitrary differentiable loss function.</p>
+<p>XGBoost, a variant of GBM, used to be the algorithm of choice for many winning teams of ML competitions.6 It’s been used in a wide range of tasks from classification, ranking, to the discovery of the Higgs Boson.7 However, many teams have been opting for LightGBM, a distributed gradient boosting framework that allows parallel learning, which generally allows faster training on large datasets.</p>
+<p>Stacking Stacking means that you train base learners from the training data then create a meta-learner that combines the outputs of the base learners to output final predictions, as shown in Figure&nbsp;6-5. The meta-learner can be as simple as a heuristic: you take the majority vote (for classification tasks) or the average vote (for regression tasks) from all base learners. It can be another model, such as a logistic regression model or a linear regression model.</p>
+<p>Figure 6-5. A visualization of a stacked ensemble from three base learners For more great advice on how to create an ensemble, refer to the awesome ensemble guide by one of Kaggle’s legendary teams, MLWave.</p>
+<p>Experiment Tracking and Versioning During the model development process, you often have to experiment with many architectures and many different models to choose the best one for your problem. Some models might seem similar to each other and differ in only one hyperparameter—such as one model using a learning rate of 0.003 and another model using a learning rate of 0.002—and yet their performances are dramatically different. It’s important to keep track of all the definitions needed to re-create an experiment and its relevant artifacts. An artifact is a file generated during an experiment—examples of artifacts can be files that show the loss curve, evaluation loss graph, logs, or intermediate results of a model throughout a training process. This enables you to compare different experiments and choose the one best suited for your needs. Comparing different experiments can also help you understand how small changes affect your model’s performance, which, in turn, gives you more visibility into how your model works.</p>
+<p>The process of tracking the progress and results of an experiment is called experiment tracking. The process of logging all the details of an experiment for the purpose of possibly recreating it later or comparing it with other experiments is called versioning. These two go hand in hand with each other. Many tools originally set out to be experiment tracking tools, such as MLflow and Weights &amp; Biases, have grown to incorporate versioning. Many tools originally set out to be versioning tools, such as DVC, have also incorporated experiment tracking.</p>
+<p>Experiment tracking A large part of training an ML model is babysitting the learning processes. Many problems can arise during the training process, including loss not decreasing, overfitting, underfitting, fluctuating weight values, dead neurons, and running out of memory. It’s important to track what’s going on during training not only to detect and address these issues but also to evaluate whether your model is learning anything useful.</p>
+<p>When I just started getting into ML, all I was told to track was loss and speed. Fast-forward several years, and people are tracking so many things that their experiment tracking boards look both beautiful and terrifying at the same time. Following is just a short list of things you might want to consider tracking for each experiment during its training process:</p>
+<p>The loss curve corresponding to the train split and each of the eval splits.</p>
+<p>The model performance metrics that you care about on all nontest splits, such as accuracy, F1, perplexity.</p>
+<p>The log of corresponding sample, prediction, and ground truth label. This comes in handy for ad hoc analytics and sanity check.</p>
+<p>The speed of your model, evaluated by the number of steps per second or, if your data is text, the number of tokens processed per second.</p>
+<p>System performance metrics such as memory usage and CPU/GPU utilization. They’re important to identify bottlenecks and avoid wasting system resources.</p>
+<p>The values over time of any parameter and hyperparameter whose changes can affect your model’s performance, such as the learning rate if you use a learning rate schedule; gradient norms (both globally and per layer), especially if you’re clipping your gradient norms; and weight norm, especially if you’re doing weight decay.</p>
+<p>In theory, it’s not a bad idea to track everything you can. Most of the time, you probably don’t need to look at most of them. But when something does happen, one or more of them might give you clues to understand and/or debug your model. In general, tracking gives you observability into the state of your model.8 However, in practice, due to the limitations of tooling today, it can be overwhelming to track too many things, and tracking less important things can distract you from tracking what is really important.</p>
+<p>Experiment tracking enables comparison across experiments. By observing how a certain change in a component affects the model’s performance, you gain some understanding into what that component does.</p>
+<p>A simple way to track your experiments is to automatically make copies of all the code files needed for an experiment and log all outputs with their timestamps.9 Using third-party experiment tracking tools, however, can give you nice dashboards and allow you to share your experiments with your coworkers.</p>
+<p>Versioning Imagine this scenario. You and your team spent the last few weeks tweaking your model, and one of the runs finally showed promising results. You wanted to use it for more extensive tests, so you tried to replicate it using the set of hyperparameters you’d noted down somewhere, only to find out that the results weren’t quite the same. You remembered that you’d made some changes to the code between that run and the next, so you tried your best to undo the changes from memory because your reckless past self had decided that the change was too minimal to be committed. But you still couldn’t replicate the promising result because there are just too many possible ways to make changes.</p>
+<p>This problem could have been avoided if you versioned your ML experiments. ML systems are part code, part data, so you need to not only version your code but your data as well. Code versioning has more or less become a standard in the industry. However, at this point, data versioning is like flossing. Everyone agrees it’s a good thing to do, but few do it.</p>
+<p>There are a few reasons why data versioning is challenging. One reason is that because data is often much larger than code, we can’t use the same strategy that people usually use to version code to version data.</p>
+<p>For example, code versioning is done by keeping track of all the changes made to a codebase. A change is known as a diff, short for difference. Each change is measured by line-by-line comparison. A line of code is usually short enough for line-by-line comparison to make sense. However, a line of your data, especially if it’s stored in a binary format, can be indefinitely long. Saying that this line of 1,000,000 characters is different from the other line of 1,000,000 characters isn’t going to be that helpful.</p>
+<p>Code versioning tools allow users to revert to a previous version of the codebase by keeping copies of all the old files. However, a dataset used might be so large that duplicating it multiple times might be unfeasible.</p>
+<p>Code versioning tools allow for multiple people to work on the same codebase at the same time by duplicating the codebase on each person’s local machine. However, a dataset might not fit into a local machine.</p>
+<p>Second, there’s still confusion in what exactly constitutes a diff when we version data. Would diffs mean changes in the content of any file in your data repository, only when a file is removed or added, or when the checksum of the whole repository has changed?</p>
+<p>As of 2021, data versioning tools like DVC only register a diff if the checksum of the total directory has changed and if a file is removed or added.</p>
+<p>Another confusion is in how to resolve merge conflicts: if developer 1 uses data version X to train model A and developer 2 uses data version Y to train model B, it doesn’t make sense to merge data versions X and Y to create Z, since there’s no model corresponding with Z.</p>
+<p>Third, if you use user data to train your model, regulations like General Data Protection Regulation (GDPR) might make versioning this data complicated. For example, regulations might mandate that you delete user data if requested, making it legally impossible to recover older versions of your data.</p>
+<p>Aggressive experiment tracking and versioning helps with reproducibility, but it doesn’t ensure reproducibility. The frameworks and hardware you use might introduce nondeterminism to your experiment results,10 making it impossible to replicate the result of an experiment without knowing everything about the environment your experiment runs in.</p>
+<p>The way we have to run so many experiments right now to find the best possible model is the result of us treating ML as a black box. Because we can’t predict which configuration will work best, we have to experiment with multiple configurations. However, I hope that as the field progresses, we’ll gain more understanding into different models and can reason about what model will work best instead of running hundreds or thousands of experiments.</p>
+<p>DEBUGGING ML MODELS Debugging is an inherent part of developing any piece of software. ML models aren’t an exception. Debugging is never fun, and debugging ML models can be especially frustrating for the following three reasons.</p>
+<p>First, ML models fail silently, a topic we’ll cover in depth in Chapter&nbsp;8. The code compiles. The loss decreases as it should. The correct functions are called. The predictions are made, but the predictions are wrong. The developers don’t notice the errors. And worse, users don’t either and use the predictions as if the application was functioning as it should.</p>
+<p>Second, even when you think you’ve found the bug, it can be frustratingly slow to validate whether the bug has been fixed. When debugging a traditional software program, you might be able to make changes to the buggy code and see the result immediately. However, when making changes to an ML model, you might have to retrain the model and wait until it converges to see whether the bug is fixed, which can take hours. In some cases, you can’t even be sure whether the bugs are fixed until the model is deployed to the users.</p>
+<p>Third, debugging ML models is hard because of their cross-functional complexity. There are many components in an ML system: data, labels, features, ML algorithms, code, infrastructure, etc. These different components might be owned by different teams. For example, data is managed by data engineers, labels by subject matter experts, ML algorithms by data scientists, and infrastructure by ML engineers or the ML platform team. When an error occurs, it could be because of any of these components or a combination of them, making it hard to know where to look or who should be looking into it.</p>
+<p>Here are some of the things that might cause an ML model to fail:</p>
+<p>Theoretical constraints As discussed previously, each model comes with its own assumptions about the data and the features it uses. A model might fail because the data it learns from doesn’t conform to its assumptions. For example, you use a linear model for the data whose decision boundaries aren’t linear.</p>
+<p>Poor implementation of model The model might be a good fit for the data, but the bugs are in the implementation of the model. For example, if you use PyTorch, you might have forgotten to stop gradient updates during evaluation when you should. The more components a model has, the more things that can go wrong, and the harder it is to figure out which goes wrong. However, with models being increasingly commoditized and more and more companies using off-the-shelf models, this is becoming less of a problem.</p>
+<p>Poor choice of hyperparameters With the same model, one set of hyperparameters can give you the state-of-the-art result but another set of hyperparameters might cause the model to never converge. The model is a great fit for your data, and its implementation is correct, but a poor set of hyperparameters might render your model useless.</p>
+<p>Data problems There are many things that could go wrong in data collection and preprocessing that might cause your models to perform poorly, such as data samples and labels being incorrectly paired, noisy labels, features normalized using outdated statistics, and more.</p>
+<p>Poor choice of features There might be many possible features for your models to learn from. Too many features might cause your models to overfit to the training data or cause data leakage. Too few features might lack predictive power to allow your models to make good predictions.</p>
+<p>Debugging should be both preventive and curative. You should have healthy practices to minimize the opportunities for bugs to proliferate as well as a procedure for detecting, locating, and fixing bugs. Having the discipline to follow both the best practices and the debugging procedure is crucial in developing, implementing, and deploying ML models.</p>
+<p>There is, unfortunately, still no scientific approach to debugging in ML. However, there have been a number of tried-and-true debugging techniques published by experienced ML engineers and researchers. The following are three of them. Readers interested in learning more might want to check out Andrej Karpathy’s awesome post “A Recipe for Training Neural Networks”.</p>
+<p>Start simple and gradually add more components Start with the simplest model and then slowly add more components to see if it helps or hurts the performance. For example, if you want to build a recurrent neural network (RNN), start with just one level of RNN cell before stacking multiple together or adding more regularization. If you want to use a BERT-like model (Devlin et al.&nbsp;2018), which uses both a masked language model (MLM) and next sentence prediction (NSP) loss, you might want to use only the MLM loss before adding NSP loss.</p>
+<p>Currently, many people start out by cloning an open source implementation of a state-of-the-art model and plugging in their own data. On the off-chance that it works, it’s great. But if it doesn’t, it’s very hard to debug the system because the problem could have been caused by any of the many components in the model.</p>
+<p>Overfit a single batch After you have a simple implementation of your model, try to overfit a small amount of training data and run evaluation on the same data to make sure that it gets to the smallest possible loss. If it’s for image recognition, overfit on 10 images and see if you can get the accuracy to be 100%, or if it’s for machine translation, overfit on 100 sentence pairs and see if you can get to a BLEU score of near 100. If it can’t overfit a small amount of data, there might be something wrong with your implementation.</p>
+<p>Set a random seed There are so many factors that contribute to the randomness of your model: weight initialization, dropout, data shuffling, etc. Randomness makes it hard to compare results across different experiments—you have no idea if the change in performance is due to a change in the model or a different random seed. Setting a random seed ensures consistency between different runs. It also allows you to reproduce errors and other people to reproduce your results.</p>
+<p>Distributed Training As models are getting bigger and more resource-intensive, companies care a lot more about training at scale.11 Expertise in scalability is hard to acquire because it requires having regular access to massive compute resources. Scalability is a topic that merits a series of books. This section covers some notable issues to highlight the challenges of doing ML at scale and provide a scaffold to help you plan the resources for your project accordingly.</p>
+<p>It’s common to train a model using data that doesn’t fit into memory. It’s especially common when dealing with medical data such as CT scans or genome sequences. It can also happen with text data if you work for teams that train large language models (cue OpenAI, Google, NVIDIA, Cohere).</p>
+<p>When your data doesn’t fit into memory, your algorithms for preprocessing (e.g., zero-centering, normalizing, whitening), shuffling, and batching data will need to run out of core and in parallel.12 When a sample of your data is large, e.g., one machine can handle a few samples at a time, you might only be able to work with a small batch size, which leads to instability for gradient descent-based optimization.</p>
+<p>In some cases, a data sample is so large it can’t even fit into memory and you will have to use something like gradient checkpointing, a technique that leverages the memory footprint and compute trade-off to make your system do more computation with less memory. According to the authors of the open source package gradient-checkpointing, “For feed-forward models we were able to fit more than 10x larger models onto our GPU, at only a 20% increase in computation time.”13 Even when a sample fits into memory, using checkpointing can allow you to fit more samples into a batch, which might allow you to train your model faster.</p>
+<p>Data parallelism It’s now the norm to train ML models on multiple machines. The most common parallelization method supported by modern ML frameworks is data parallelism: you split your data on multiple machines, train your model on all of them, and accumulate gradients. This gives rise to a couple of issues.</p>
+<p>A challenging problem is how to accurately and effectively accumulate gradients from different machines. As each machine produces its own gradient, if your model waits for all of them to finish a run—synchronous stochastic gradient descent (SGD)—stragglers will cause the entire system to slow down, wasting time and resources.14 The straggler problem grows with the number of machines, as the more workers, the more likely that at least one worker will run unusually slowly in a given iteration. However, there have been many algorithms that effectively address this problem.15</p>
+<p>If your model updates the weight using the gradient from each machine separately—asynchronous SGD—gradient staleness might become a problem because the gradients from one machine have caused the weights to change before the gradients from another machine have come in.16</p>
+<p>The difference between synchronous SGD and asynchronous SGD is illustrated in Figure&nbsp;6-6.</p>
+<p>Figure 6-6. Synchronous SGD versus asynchronous SGD for data parallelism. Source: Adapted from an image by Jim Dowling17 In theory, asynchronous SGD converges but requires more steps than synchronous SGD. However, in practice, when the number of weights is large, gradient updates tend to be sparse, meaning most gradient updates only modify small fractions of the parameters, and it’s less likely that two gradient updates from different machines will modify the same weights. When gradient updates are sparse, gradient staleness becomes less of a problem and the model converges similarly for both synchronous and asynchronous SGD.18</p>
+<p>Another problem is that spreading your model on multiple machines can cause your batch size to be very big. If a machine processes a batch size of 1,000, then 1,000 machines process a batch size of 1M (OpenAI’s GPT-3 175B uses a batch size of 3.2M in 2020).19 To oversimplify the calculation, if training an epoch on a machine takes 1M steps, training on 1,000 machines might take only 1,000 steps. An intuitive approach is to scale up the learning rate to account for more learning at each step, but we also can’t make the learning rate too big as it will lead to unstable convergence. In practice, increasing the batch size past a certain point yields diminishing returns.20</p>
+<p>Last but not least, with the same model setup, the main worker sometimes uses a lot more resources than other workers. If that’s the case, to make the most use out of all machines, you need to figure out a way to balance out the workload among them. The easiest way, but not the most effective way, is to use a smaller batch size on the main worker and a larger batch size on other workers.</p>
+<p>Model parallelism With data parallelism, each worker has its own copy of the whole model and does all the computation necessary for its copy of the model. Model parallelism is when different components of your model are trained on different machines, as shown in Figure&nbsp;6-7. For example, machine 0 handles the computation for the first two layers while machine 1 handles the next two layers, or some machines can handle the forward pass while several others handle the backward pass.</p>
+<p>Figure 6-7. Data parallelism and model parallelism. Source: Adapted from an image by Jure Leskovec21 Model parallelism can be misleading because in some cases parallelism doesn’t mean that different parts of the model in different machines are executed in parallel. For example, if your model is a massive matrix and the matrix is split into two halves on two machines, then these two halves might be executed in parallel. However, if your model is a neural network and you put the first layer on machine 1 and the second layer on machine 2, and layer 2 needs outputs from layer 1 to execute, then machine 2 has to wait for machine 1 to finish first to run.</p>
+<p>Pipeline parallelism is a clever technique to make different components of a model on different machines run more in parallel. There are multiple variants to this, but the key idea is to break the computation of each machine into multiple parts. When machine 1 finishes the first part of its computation, it passes the result onto machine 2, then continues to the second part, and so on. Machine 2 now can execute its computation on the first part while machine 1 executes its computation on the second part.</p>
+<p>To make this concrete, consider you have four different machines and the first, second, third, and fourth layers are on machine 1, 2, 3, and 4 respectively. With pipeline parallelism, each mini-batch is broken into four micro-batches. Machine 1 computes the first layer on the first micro-batch, then machine 2 computes the second layer on machine 1’s results while machine 1 computes the first layer on the second micro-batch, and so on. Figure&nbsp;6-8 shows what pipeline parallelism looks like on four machines; each machine runs both the forward pass and the backward pass for one component of a neural network.</p>
+<p>Figure 6-8. Pipeline parallelism for a neural network on four machines; each machine runs both the forward pass (F) and the backward pass (B) for one component of the neural network. Source: Adapted from an image by Huang et al.22 Model parallelism and data parallelism aren’t mutually exclusive. Many companies use both methods for better utilization of their hardware, even though the setup to use both methods can require significant engineering effort.</p>
+<p>AutoML There’s a joke that a good ML researcher is someone who will automate themselves out of job, designing an AI algorithm intelligent enough to design itself. It was funny until the TensorFlow Dev Summit 2018, where Jeff Dean took the stage and declared that Google intended on replacing ML expertise with 100 times more computational power, introducing AutoML to the excitement and horror of the community. Instead of paying a group of 100 ML researchers/engineers to fiddle with various models and eventually select a suboptimal one, why not use that money on compute to search for the optimal model? A screenshot from the recording of the event is shown in Figure&nbsp;6-9.</p>
+<p>Figure 6-9. Jeff Dean unveiling Google’s AutoML at TensorFlow Dev Summit 2018 Soft AutoML: Hyperparameter tuning AutoML refers to automating the process of finding ML algorithms to solve real-world problems. One mild form, and the most popular form, of AutoML in production is hyperparameter tuning. A hyperparameter is a parameter supplied by users whose value is used to control the learning process, e.g., learning rate, batch size, number of hidden layers, number of hidden units, dropout probability, β1 and β2 in Adam optimizer, etc. Even quantization—e.g., whether to use 32 bits, 16 bits, or 8 bits to represent a number or a mixture of these representations—can be considered a hyperparameter to tune.23</p>
+<p>With different sets of hyperparameters, the same model can give drastically different performances on the same dataset. Melis et al.&nbsp;showed in their 2018 paper “On the State of the Art of Evaluation in Neural Language Models” that weaker models with well-tuned hyperparameters can outperform stronger, fancier models. The goal of hyperparameter tuning is to find the optimal set of hyperparameters for a given model within a search space—the performance of each set evaluated on a validation set.</p>
+<p>Despite knowing its importance, many still ignore systematic approaches to hyperparameter tuning in favor of a manual, gut-feeling approach. The most popular is arguably graduate student descent (GSD), a technique in which a graduate student fiddles around with the hyperparameters until the model works.24</p>
+<p>However, more and more people are adopting hyperparameter tuning as part of their standard pipelines. Popular ML frameworks either come with built-in utilities or have third-party utilities for hyperparameter tuning—for example, scikit-learn with auto-sklearn,25 TensorFlow with Keras Tuner, and Ray with Tune. Popular methods for hyperparameter tuning include random search,26 grid search, and Bayesian optimization.27 The book AutoML: Methods, Systems, Challenges by the AutoML group at the University of Freiburg dedicates its first chapter (which you can read online for free) to hyperparameter optimization.</p>
+<p>When tuning hyperparameters, keep in mind that a model’s performance might be more sensitive to the change in one hyperparameter than another, and therefore sensitive hyperparameters should be more carefully tuned.</p>
+<p>WARNING It’s crucial to never use your test split to tune hyperparameters. Choose the best set of hyperparameters for a model based on its performance on a validation split, then report the model’s final performance on the test split. If you use your test split to tune hyperparameters, you risk overfitting your model to the test split.</p>
+<p>Hard AutoML: Architecture search and learned optimizer Some teams take hyperparameter tuning to the next level: what if we treat other components of a model or the entire model as hyperparameters. The size of a convolution layer or whether or not to have a skip layer can be considered a hyperparameter. Instead of manually putting a pooling layer after a convolutional layer or ReLu (rectified linear unit) after linear, you give your algorithm these building blocks and let it figure out how to combine them. This area of research is known as architectural search, or neural architecture search (NAS) for neural networks, as it searches for the optimal model architecture.</p>
+<p>A NAS setup consists of three components:</p>
+<p>A search space Defines possible model architectures—i.e., building blocks to choose from and constraints on how they can be combined.</p>
+<p>A performance estimation strategy To evaluate the performance of a candidate architecture without having to train each candidate architecture from scratch until convergence. When we have a large number of candidate architectures, say 1,000, training all of them until convergence can be costly.</p>
+<p>A search strategy To explore the search space. A simple approach is random search—randomly choosing from all possible configurations—which is unpopular because it’s prohibitively expensive even for NAS. Common approaches include reinforcement learning (rewarding the choices that improve the performance estimation) and evolution (adding mutations to an architecture, choosing the best-performing ones, adding mutations to them, and so on).28</p>
+<p>For NAS, the search space is discrete—the final architecture uses only one of the available options for each layer/operation,29 and you have to provide the set of building blocks. The common building blocks are various convolutions of different sizes, linear, various activations, pooling, identity, zero, etc. The set of building blocks varies based on the base architecture, e.g., convolutional neural networks or transformers.</p>
+<p>In a typical ML training process, you have a model and then a learning procedure, an algorithm that helps your model find the set of parameters that minimize a given objective function for a given set of data. The most common learning procedure for neural networks today is gradient descent, which leverages an optimizer to specify how to update a model’s weights given gradient updates.30 Popular optimizers are, as you probably already know, Adam, Momentum, SGD, etc. In theory, you can include optimizers as building blocks in NAS and search for one that works best. In practice, this is difficult to do, since optimizers are sensitive to the setting of their hyperparameters, and the default hyperparameters don’t often work well across architectures.</p>
+<p>This leads to an exciting research direction: what if we replace the functions that specify the update rule with a neural network? How much to update the model’s weights will be calculated by this neural network. This approach results in learned optimizers, as opposed to hand-designed optimizers.</p>
+<p>Since learned optimizers are neural networks, they need to be trained. You can train your learned optimizer on the same dataset you’re training the rest of your neural network on, but this requires you to train an optimizer every time you have a task.</p>
+<p>Another approach is to train a learned optimizer once on a set of existing tasks—using aggregated loss on those tasks as the loss function and existing designed optimizers as the learning rule—and use it for every new task after that. For example, Metz et al.&nbsp;constructed a set of thousands of tasks to train learned optimizers. Their learned optimizer was able to generalize to both new datasets and domains as well as new architectures.31 And the beauty of this approach is that the learned optimizer can then be used to train a better-learned optimizer, an algorithm that improves on itself.</p>
+<p>Whether it’s architecture search or meta-learning learning rules, the up-front training cost is expensive enough that only a handful of companies in the world can afford to pursue them. However, it’s important for people interested in ML in production to be aware of the progress in AutoML for two reasons. First, the resulting architectures and learned optimizers can allow ML algorithms to work off-the-shelf on multiple real-world tasks, saving production time and cost, during both training and inferencing. For example, EfficientNets, a family of models produced by Google’s AutoML team, surpass state-of-the-art accuracy with up to 10x better efficiency.32 Second, they might be able to solve many real-world tasks previously impossible with existing architectures and optimizers.</p>
+<p>FOUR PHASES OF ML MODEL DEVELOPMENT Before we transition to model training, let’s take a look at the four phases of ML model development. Once you’ve decided to explore ML, your strategy depends on which phase of ML adoption you are in. There are four phases of adopting ML. The solutions from a phase can be used as baselines to evaluate the solutions from the next phase:</p>
+<p>Phase 1. Before machine learning If this is your first time trying to make this type of prediction from this type of data, start with non-ML solutions. Your first stab at the problem can be the simplest heuristics. For example, to predict what letter users are going to type next in English, you can show the top three most common English letters, “e,” “t,” and “a,” which might get your accuracy to be 30%.</p>
+<p>Facebook newsfeed was introduced in 2006 without any intelligent algorithms—posts were shown in chronological order, as shown in Figure&nbsp;6-10.33 It wasn’t until 2011 that Facebook started displaying news updates you were most interested in at the top of the feed.</p>
+<p>Figure 6-10. Facebook newsfeed circa 2006. Source: Iveta Ryšavá34 According to Martin Zinkevich in his magnificent “Rules of Machine Learning: Best Practices for ML Engineering”: “If you think that machine learning will give you a 100% boost, then a heuristic will get you 50% of the way there.”35 You might even find that non-ML solutions work fine and you don’t need ML yet.</p>
+<p>Phase 2. Simplest machine learning models For your first ML model, you want to start with a simple algorithm, something that gives you visibility into its working to allow you to validate the usefulness of your problem framing and your data. Logistic regression, gradient-boosted trees, k-nearest neighbors can be great for that. They are also easier to implement and deploy, which allows you to quickly build out a framework from data engineering to development to deployment that you can test out and gain confidence on.</p>
+<p>Phase 3. Optimizing simple models Once you have your ML framework in place, you can focus on optimizing the simple ML models with different objective functions, hyperparameter search, feature engineering, more data, and ensembles.</p>
+<p>Phase 4. Complex models Once you’ve reached the limit of your simple models and your use case demands significant model improvement, experiment with more complex models.</p>
+<p>You’ll also want to experiment to figure out how quickly your model decays in production (e.g., how often it’ll need to be retrained) so that you can build out your infrastructure to support this retraining requirement.36</p>
+<p>Model Offline Evaluation One common but quite difficult question I often encounter when helping companies with their ML strategies is: “How do I know that our ML models are any good?” In one case, a company deployed ML to detect intrusions to 100 surveillance drones, but they had no way of measuring how many intrusions their system failed to detect, and they couldn’t decide if one ML algorithm was better than another for their needs.</p>
+<p>Lacking a clear understanding of how to evaluate your ML systems is not necessarily a reason for your ML project to fail, but it might make it impossible to find the best solution for your need, and make it harder to convince your managers to adopt ML. You might want to partner with the business team to develop metrics for model evaluation that are more relevant to your company’s business.37</p>
+<p>Ideally, the evaluation methods should be the same during both development and production. But in many cases, the ideal is impossible because during development, you have ground truth labels, but in production, you don’t.</p>
+<p>For certain tasks, it’s possible to infer or approximate labels in production based on users’ feedback, as covered in the section “Natural Labels”. For example, for the recommendation task, it’s possible to infer if a recommendation is good by whether users click on it. However, there are many biases associated with this.</p>
+<p>For other tasks, you might not be able to evaluate your model’s performance in production directly and might have to rely on extensive monitoring to detect changes and failures in your ML system’s performance. We’ll cover monitoring in Chapter&nbsp;8.</p>
+<p>Once your model is deployed, you’ll need to continue monitoring and testing your model in production. In this section, we’ll discuss methods to evaluate your model’s performance before it’s deployed. We’ll start with the baselines against which we will evaluate our models. Then we’ll cover some of the common methods to evaluate your model beyond overall accuracy metrics.</p>
+<p>Baselines Someone once told me that her new generative model achieved the FID score of 10.3 on ImageNet.38 I had no idea what this number meant or whether her model would be useful for my problem.</p>
+<p>Another time, I helped a company implement a classification model where the positive class appears 90% of the time. An ML engineer on the team told me, all excited, that their initial model achieved an F1 score of 0.90. I asked him how it was compared to random. He had no idea. It turned out that because for his task the POSITIVE class accounts for 90% of the labels, if his model randomly outputs the positive class 90% of the time, its F1 score would also be around 0.90.39 His model might as well be making predictions at random.40</p>
+<p>Evaluation metrics, by themselves, mean little. When evaluating your model, it’s essential to know the baseline you’re evaluating it against. The exact baselines should vary from one use case to another, but here are the five baselines that might be useful across use cases:</p>
+<p>Random baseline If our model just predicts at random, what’s the expected performance? The predictions are generated at random following a specific distribution, which can be the uniform distribution or the task’s label distribution.</p>
+<p>For example, consider the task that has two labels, NEGATIVE that appears 90% of the time and POSITIVE that appears 10% of the time. Table&nbsp;6-2 shows the F1 and accuracy scores of baseline models making predictions at random. However, as an exercise to see how challenging it is for most people to have an intuition for these values, try to calculate these raw numbers in your head before looking at the table.</p>
+<p>Table 6-2. F1 and accuracy scores of a baseline model predicting at random Random distribution Meaning F1 Accuracy Uniform random Predicting each label with equal probability (50%) 0.167 0.5 Task’s label distribution Predicting NEGATIVE 90% of the time, and POSITIVE 10% of the time 0.1 0.82 Simple heuristic Forget ML. If you just make predictions based on simple heuristics, what performance would you expect? For example, if you want to build a ranking system to rank items on a user’s newsfeed with the goal of getting that user to spend more time on the newsfeed, how much time would a user spend if you just rank all the items in reverse chronological order, showing the latest one first?</p>
+<p>Zero rule baseline The zero rule baseline is a special case of the simple heuristic baseline when your baseline model always predicts the most common class.</p>
+<p>For example, for the task of recommending the app a user is most likely to use next on their phone, the simplest model would be to recommend their most frequently used app. If this simple heuristic can predict the next app accurately 70% of the time, any model you build has to outperform it significantly to justify the added complexity.</p>
+<p>Human baseline In many cases, the goal of ML is to automate what would have been otherwise done by humans, so it’s useful to know how your model performs compared to human experts. For example, if you work on a self-driving system, it’s crucial to measure your system’s progress compared to human drivers, because otherwise you might never be able to convince your users to trust this system. Even if your system isn’t meant to replace human experts and only to aid them in improving their productivity, it’s still important to know in what scenarios this system would be useful to humans.</p>
+<p>Existing solutions In many cases, ML systems are designed to replace existing solutions, which might be business logic with a lot of if/else statements or third-party solutions. It’s crucial to compare your new model to these existing solutions. Your ML model doesn’t always have to be better than existing solutions to be useful. A model whose performance is a little bit inferior can still be useful if it’s much easier or cheaper to use.</p>
+<p>When evaluating a model, it’s important to differentiate between “a good system” and “a useful system.” A good system isn’t necessarily useful, and a bad system isn’t necessarily useless. A self-driving vehicle might be good if it’s a significant improvement from previous self-driving systems, but it might not be useful if it doesn’t perform at least as well as human drivers. In some cases, even if an ML system drives better than an average human, people might still not trust it, which renders it not useful. On the other hand, a system that predicts what word a user will type next on their phone might be considered bad if it’s much worse than a native speaker. However, it might still be useful if its predictions can help users type faster some of the time.</p>
+</section>
+</section>
+</section>
+<section id="evaluation-methods-1" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-methods-1">Evaluation Methods</h2>
+<p>In academic settings, when evaluating ML models, people tend to fixate on their performance metrics. However, in production, we also want our models to be robust, fair, calibrated, and overall make sense. We’ll introduce some evaluation methods that help with measuring these characteristics of a model.</p>
+<p><strong>Perturbation tests</strong> A group of my students wanted to build an app to predict whether someone has COVID-19 through their cough. Their best model worked great on the training data, which consisted of two-second long cough segments collected by hospitals. However, when they deployed it to actual users, this model’s predictions were close to random.</p>
+<p>One of the reasons is that actual users’ coughs contain a lot of noise compared to the coughs collected in hospitals. Users’ recordings might contain background music or nearby chatter. The microphones they use are of varying quality. They might start recording their coughs as soon as recording is enabled or wait for a fraction of a second.</p>
+<p>Ideally, the inputs used to develop your model should be similar to the inputs your model will have to work with in production, but it’s not possible in many cases. This is especially true when data collection is expensive or difficult and the best available data you have access to for training is still very different from your real-world data. The inputs your models have to work with in production are often noisy compared to inputs in development.41 The model that performs best on training data isn’t necessarily the model that performs best on noisy data.</p>
+<p>To get a sense of how well your model might perform with noisy data, you can make small changes to your test splits to see how these changes affect your model’s performance. For the task of predicting whether someone has COVID-19 from their cough, you could randomly add some background noise or randomly clip the testing clips to simulate the variance in your users’ recordings. You might want to choose the model that works best on the perturbed data instead of the one that works best on the clean data.</p>
+<p>The more sensitive your model is to noise, the harder it will be to maintain it, since if your users’ behaviors change just slightly, such as they change their phones, your model’s performance might degrade. It also makes your model susceptible to adversarial attack.</p>
+<p><strong>Invariance tests</strong> A Berkeley study found that between 2008 and 2015, 1.3 million creditworthy Black and Latino applicants had their mortgage applications rejected because of their races.42 When the researchers used the income and credit scores of the rejected applications but deleted the race-identifying features, the applications were accepted.</p>
+<p>Certain changes to the inputs shouldn’t lead to changes in the output. In the preceding case, changes to race information shouldn’t affect the mortgage outcome. Similarly, changes to applicants’ names shouldn’t affect their resume screening results nor should someone’s gender affect how much they should be paid. If these happen, there are biases in your model, which might render it unusable no matter how good its performance is.</p>
+<p>To avoid these biases, one solution is to do the same process that helped the Berkeley researchers discover the biases: keep the inputs the same but change the sensitive information to see if the outputs change. Better, you should exclude the sensitive information from the features used to train the model in the first place.43</p>
+<p><strong>Directional expectation tests</strong> Certain changes to the inputs should, however, cause predictable changes in outputs. For example, when developing a model to predict housing prices, keeping all the features the same but increasing the lot size shouldn’t decrease the predicted price, and decreasing the square footage shouldn’t increase it. If the outputs change in the opposite expected direction, your model might not be learning the right thing, and you need to investigate it further before deploying it.</p>
+<p><strong>Model calibration</strong> Model calibration is a subtle but crucial concept to grasp. Imagine that someone makes a prediction that something will happen with a probability of 70%. What this prediction means is that out of all the times this prediction is made, the predicted outcome matches the actual outcome 70% of the time. If a model predicts that team A will beat team B with a 70% probability, and out of the 1,000 times these two teams play together, team A only wins 60% of the time, then we say that this model isn’t calibrated. A calibrated model should predict that team A wins with a 60% probability.</p>
+<p>To measure a model’s calibration, a simple method is counting: you count the number of times your model outputs the probability&nbsp;<em>X</em>&nbsp;and the frequency&nbsp;<em>Y</em>&nbsp;of that prediction coming true, and plot&nbsp;<em>X</em>&nbsp;against&nbsp;<em>Y</em>. The graph for a perfectly calibrated model will have&nbsp;<em>X</em>&nbsp;equal&nbsp;<em>Y</em>&nbsp;at all data points. In scikit-learn, you can plot the calibration curve of a binary classifier with the method&nbsp;<code>sklearn.calibration.calibration_curve</code>,</p>
+<p>To calibrate your models, a common method is&nbsp;<a href="https://oreil.ly/pQ0TQ">Platt scaling</a>, which is implemented in scikit-learn with&nbsp;<code>sklearn.calibration.CalibratedClassifierCV</code>. Another good open source implementation by Geoff Pleiss can be found on&nbsp;<a href="https://oreil.ly/e1Meh">GitHub</a>. For readers who want to learn more&nbsp;about the importance of model calibration and how to calibrate neural networks, Lee Richardson and Taylor Pospisil have an&nbsp;<a href="https://oreil.ly/wPUkU">excellent blog post</a>&nbsp;based on their work at Google.</p>
+<p><strong>confidence measurement</strong> * Confidence measurement can be considered&nbsp;a way to think about the usefulness threshold for each individual prediction. Indiscriminately showing all a model’s predictions to users, even the predictions that the model is unsure about, can, at best, cause annoyance and make users lose trust in the system * confidence measurement is a metric for each individual sample.</p>
+<p><strong>slice based evaluation</strong> * Slicing means to separate your data into&nbsp;subsets and look at your model’s performance on each subset separately. * To overcome Simpson’s paradox - aggregation can conceal and contradict actual situations</p>
+<p><strong>How to identify critical slices</strong> * Heuristics-based * Error Analysis - Manually go through misclassified&nbsp;examples and find patterns among them * Slice Finder * <a href="https://ieeexplore.ieee.org/abstract/document/8731353">slice Finder: Automated data slicing for model validation</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">email: tulasiram.gunipati@gmail.com</div>
+  </div>
+</footer>
+
+
+
+</body></html>
