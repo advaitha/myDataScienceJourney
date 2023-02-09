@@ -10,3 +10,9 @@
 * [NLP](https://theaisummer.com/topics/natural-language-processing/)
 * [Reinforcement learning](https://theaisummer.com/topics/reinforcement-learning/)
 * [Unsupervised learning](https://theaisummer.com/topics/unsupervised-learning/)
+
+
+## Thumbnail / GIF Generation**
+* https://arxiv.org/abs/1609.01388
+* https://github.com/yahoo/hecate
+* https://huggingface.co/spaces/Gradio-Blocks/Create_GIFs_from_Video

@@ -1,0 +1,44 @@
+# Model Deployment
+
+* Three main modes of prediction
+
+![[Pasted image 20220727132232.png]]
+
+![[Pasted image 20220727132706.png]]
+
+![[Pasted image 20220727133228.png]]
+
+
+### Unifying Batch and streaming pipeline
+
+![[Pasted image 20220727135026.png]]
+
+![[Pasted image 20220727135231.png]]
+
+
+### Model Compression
+* Low rank Factorization
+	* Replace high-dimensional tensors with lower-dimensional tensors Ex - compact convolutional filters	
+* Knowledge distillation
+	* A small model (student) is trained to mimic a larger model or ensemble of models. The advantage of this approach is that it can work regardless of the architectural differences between the teacher and the student networks.
+* Pruning
+	* In neural networks it means either removing the nodes there by altering the architecture. Or keeping the architecture same and driving the non-important parameters to zero.
+* Quantization
+	* Quantization reduces a model’s size by using fewer bits to represent its parameters.
+
+
+
+##### Compiling for Edge devices
+![[Pasted image 20220727155344.png]]
+
+
+#### Model Optimization
+* There are two ways to optimize your ML models: locally and globally. Locally is when you optimize an operator or a set of operators of your model. Globally is when you optimize the entire computation graph end to end.
+* Local optimization techniques
+	* Vectorization 
+	* Parallelization
+	* Loop tiling
+	* Operator fusion
+
+
+![[Pasted image 20220727161527.png]]
