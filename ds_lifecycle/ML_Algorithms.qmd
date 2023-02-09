@@ -4,20 +4,16 @@
 ## Logistic Regression
 * **Ordered logistic regression** in which the outcomes are ordered values
 * Multi-class classification is also called multinomial or sotmax regression.
-	* Reference - https://sebastianraschka.com/pdf/lecture-notes/stat453ss21/L08_logistic__slides.pdf
-	* https://www.youtube.com/watch?v=L0FU8NFpx4E
+	* [Logistic Slides](https://sebastianraschka.com/pdf/lecture-notes/stat453ss21/L08_logistic__slides.pdf)
+	* [youtube video](https://www.youtube.com/watch?v=L0FU8NFpx4E)
 * Logit (log of odds) function takes input values in the range of 0 to 1 and transforms them into values over the entire real-number range
 * Under the logistic model, we assume there is a linear relationship between the weighted inputs and the log-odds
-![[Pasted image 20220629120613.png]]
-* ![[Pasted image 20220629120812.png]]
-
-![[Pasted image 20220629121209.png]]
-
-![[Pasted image 20220629122806.png]]
-
-![[Pasted image 20220629123157.png]]
-
-![[Pasted image 20220629172035.png]]
+![](/Images/Pasted image 20220629120613.png)
+![](/Images/Pasted image 20220629120812.png)
+![](/Images/Pasted image 20220629121209.png)
+![](/Images/Pasted image 20220629122806.png)
+![](/Images/Pasted image 20220629123157.png)
+![](/Images/Pasted image 20220629172035.png)
 
 
 ## Decision Trees
@@ -26,9 +22,8 @@
 * Handle both categorical and continuous data
 * Leaves that contain mixtures of classifications are called Impure
 * **Gini Impurity**, **Entropy** and **Information Gain** are used to measure the impurity of the trees
-* ![[Pasted image 20220622164635.png]]
-
-* ![[Pasted image 20220622164703.png]]
+* ![](/Images/Pasted image 20220622164635.png)
+* ![](/Images/Pasted image 20220622164703.png)
 * The lower the Gini Impurity of a variable, the better it is at prediction
 * In case of continuous variables, we sort the numbers and take the average of the two consequtive numbers. The average will be the threshold which will be used for building the tree. The average number with low gini impurity will be preferred
 

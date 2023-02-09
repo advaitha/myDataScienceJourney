@@ -1,6 +1,7 @@
 # MlOps
 
 Data science specific orchestrators
+
 * Airflow
 * Argo
 * Prefect
@@ -9,4 +10,4 @@ Data science specific orchestrators
 Scheduler is different from Orchestrator
 Scheduler is high level - If schedulers are concerned with _when_ to run jobs and what resources are needed to run those jobs, orchestrators are concerned with _where_ to get those resources. Schedulers deal with job-type abstractions such as DAGs, priority queues, user-level quotas (i.e., the maximum number of instances a user can use at a given time), etc. Orchestrators deal with lower-level abstractions like machines, instances, clusters, service-level grouping, replication, etc. If the orchestrator notices that there are more jobs than the pool of available instances, it can increase the number of instances in the available instance pool.
 
-![[Pasted image 20220728133158.png]]
+![](/Images/Pasted image 20220728133158.png)

@@ -1,10 +1,10 @@
 # Regularization
-#ridge   #lasso  #regularization  
+
 
 ## Ridge Regression
 * L2 regularization or squared 
 * We add penalty term along with SSR to optimize
-![[Pasted image 20220622161414.png]]
+![](/Images/Pasted image 20220622161414.png)
 * Rigde regression does not make slope of any variable to zero
 * If a variable is not very important then it's slope will be closer to zero and its parameter will be shrinked
 * Ridge regression is useful when all the variables in a model are useful 
@@ -16,9 +16,8 @@
 * The value of slope can become zero
 * We can use lasso where unimportant variables are included in the model
 
-![[Pasted image 20220622162012.png]]
+![](/Images/Pasted image 20220622162012.png)
 
 **Use both Lasso and Ridge regression to get best of the both worlds**
 
 * **Elastic Net** combines both types of regularization
-* 

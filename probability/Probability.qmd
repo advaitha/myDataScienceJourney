@@ -10,7 +10,7 @@
 * We can use Venn diagram to draw intersections, mutually exclusive probabilities etc. Venn diagrams can't be used for conditional probabillity or to show dependence
 * We can use tree diagrams to visualize conditional probability and dependence
 * Probability of A given B - P(A | B)
-		![[Pasted image 20220628105951.png]]
+		![](/Images/Pasted image 20220628105951.png)
 
 * If two probabilities are independent then:
 	* P(A|B) = P(A)  because A and B are independent and A does not depend on occurance of B, we can use this expression to check if two events are independent
@@ -23,13 +23,13 @@
 # Bayes Thereom
 * When we are provided information about a conditional probability eg P(A|B) and if we need to find the conditional probability P(B|A) then we should use Bayes theorem
 
-![[Pasted image 20220628112130.png]]
+![](/Images/Pasted image 20220628112130.png)
 
-![[Pasted image 20220628112207.png]]
+![](/Images/Pasted image 20220628112207.png)
 
-![[Pasted image 20220628112349.png]]
+![](/Images/Pasted image 20220628112349.png)
 
-![[Pasted image 20220628112434.png]]
+![](/Images/Pasted image 20220628112434.png)
 
-![[Pasted image 20220628112533.png]]
+![](/Images/Pasted image 20220628112533.png)
 

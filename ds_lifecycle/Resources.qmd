@@ -20,7 +20,7 @@
 * [AI Incident Database](https://incidentdatabase.ai/)
 * [H2o Admissible machine learning](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/admissible.html)
 * [Google responsible AI practices](https://ai.google/responsibilities/responsible-ai-practices/?category=fairness)
-* [IBM AI fairness 360]https://aif360.mybluemix.net/)
+* [IBM AI fairness 360](https://aif360.mybluemix.net/)
 * [AI Now](https://ainowinstitute.org/)
 * [Stitchfix model deployment slide deck](https://stanford-cs329s.github.io/slides/cs329s_12_stefan_model_deploymet_stitch_fix.pdf)
 * [Kubernetes explained](https://www.jeremyjordan.me/kubernetes/)

@@ -2,18 +2,18 @@
 
 * Three main modes of prediction
 
-![[Pasted image 20220727132232.png]]
+![](/Images/Pasted image 20220727132232.png)
 
-![[Pasted image 20220727132706.png]]
+![](/Images/Pasted image 20220727132706.png)
 
-![[Pasted image 20220727133228.png]]
+![](/Images/Pasted image 20220727133228.png)
 
 
 ### Unifying Batch and streaming pipeline
 
-![[Pasted image 20220727135026.png]]
+![](/Images/Pasted image 20220727135026.png)
 
-![[Pasted image 20220727135231.png]]
+![](/Images/Pasted image 20220727135231.png)
 
 
 ### Model Compression
@@ -29,7 +29,7 @@
 
 
 ##### Compiling for Edge devices
-![[Pasted image 20220727155344.png]]
+![](/Images/Pasted image 20220727155344.png)
 
 
 #### Model Optimization
@@ -41,4 +41,4 @@
 	* Operator fusion
 
 
-![[Pasted image 20220727161527.png]]
+![](/Images/Pasted image 20220727161527.png)

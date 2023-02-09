@@ -27,9 +27,9 @@ random.choices(population=[1, 1, 2, 2, 3, 3, 4, 4, 100, 1000],
 ```
 * Reservoir sampling - useful when have to deal with streaming data
 
-![[Pasted image 20220704180126.png]]
+![](/Images/Pasted image 20220704180126.png)
 
-![[Pasted image 20220704180301.png]]
+![](/Images/Pasted image 20220704180301.png)
 
 ## Importance sampling
-![[Pasted image 20220704180812.png]]
+![](/Images/Pasted image 20220704180812.png)
