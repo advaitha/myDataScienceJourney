@@ -85,10 +85,10 @@ Because the performance of a model architecture depends heavily on the context i
 Evaluate good performance now versus good performance later
 The best model now does not always mean the best model two months from now. For example, a tree-based model might work better now because you don’t have a ton of data yet, but two months from now, you might be able to double your amount of training data, and your neural network might perform much better.1
 
-A simple way to estimate how your model’s performance might change with more data is to use learning curves. A learning curve of a model is a plot of its performance—e.g., training loss, training accuracy, validation accuracy—against the number of training samples it uses, as shown in Figure 6-1. The learning curve won’t help you estimate exactly how much performance gain you can get from having more training data, but it can give you a sense of whether you can expect any performance gain at all from more training data.
+A simple way to estimate how your model’s performance might change with more data is to use learning curves. A learning curve of a model is a plot of its performance—e.g., training loss, training accuracy, validation accuracy—against the number of training samples it uses.  The learning curve won’t help you estimate exactly how much performance gain you can get from having more training data, but it can give you a sense of whether you can expect any performance gain at all from more training data.
 
 
-Figure 6-1. The learning curves of a naive Bayes model and an SVM model. Source: scikit-learn
+
 A situation that I’ve encountered is when a team evaluates a simple neural network against a collaborative filtering model for making recommendations. When evaluating both models offline, the collaborative filtering model outperformed. However, the simple neural network can update itself with each incoming example, whereas the collaborative filtering has to look at all the data to update its underlying matrix. The team decided to deploy both the collaborative filtering model and the simple neural network. They used the collaborative filtering model to make predictions for users, and continually trained the simple neural network in production with new, incoming data. After two weeks, the simple neural network was able to outperform the collaborative filtering model.
 
 While evaluating models, you might want to take into account their potential for improvements in the near future, and how easy/difficult it is to achieve those improvements.
@@ -134,12 +134,12 @@ Twenty out of 22 winning solutions on Kaggle competitions in 2021, as of August 
 Ensembling methods are less favored in production because ensembles are more complex to deploy and harder to maintain. However, they are still common for tasks where a small performance boost can lead to a huge financial gain, such as predicting click-through rate for ads.
 
 
-Figure 6-2. As of January 2022, the top 20 solutions on SQuAD 2.0 are all ensembles
+
 We’ll go over an example to give you the intuition of why ensembling works. Imagine you have three email spam classifiers, each with an accuracy of 70%. Assuming that each classifier has an equal probability of making a correct prediction for each email, and that these three classifiers are not correlated, we’ll show that by taking the majority vote of these three classifiers, we can get an accuracy of 78.4%.
 
 For each email, each classifier has a 70% chance of being correct. The ensemble will be correct if at least two classifiers are correct. Table 6-1 shows the probabilities of different possible outcomes of the ensemble given an email. This ensemble will have an accuracy of 0.343 + 0.441 = 0.784, or 78.4%.
 
-Table 6-1. Possible outcomes of the ensemble that takes the majority vote from three classifiers
+
 Outputs of three models	Probability	Ensemble’s output
 All three are correct	0.7 * 0.7 * 0.7 = 0.343	Correct
 Only two are correct	(0.7 * 0.7 * 0.3) * 3 = 0.441	Correct

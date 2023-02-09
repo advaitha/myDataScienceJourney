@@ -10,10 +10,10 @@
 * Edge cases
 * Degenerate feedback loops
 	* we can detect degenerate feedback loops by measuring the popularity diversity of a system's output in recommenders.  Other metrics - Aggregate diversity, average coverage of long-tail items can help measure the diversity of outputs of a recommender system
-	* In 2021, Chia et al. went a step further and proposed the measurement of hit rate against popularity. They first divided items into buckets based on their popularity—e.g., bucket 1 consists of items that have been interacted with less than 100 times, bucket 2 consists of items that have been interacted with more than 100 times but less than 1,000 times, etc. Then they measured the prediction accuracy of a recommender system for each of these buckets. If a recommender system is much better at recommending popular items than recommending less popular items, it likely suffers from popularity bias.[16](https://learning.oreilly.com/library/view/designing-machine-learning/9781098107956/ch08.html#ch01fn265) Once your system is in production and you notice that its predictions become more homogeneous over time, it likely suffers from degenerate feedback loops.
+	* In 2021, Chia et al. went a step further and proposed the measurement of hit rate against popularity. They first divided items into buckets based on their popularity—e.g., bucket 1 consists of items that have been interacted with less than 100 times, bucket 2 consists of items that have been interacted with more than 100 times but less than 1,000 times, etc. Then they measured the prediction accuracy of a recommender system for each of these buckets. If a recommender system is much better at recommending popular items than recommending less popular items, it likely suffers from popularity bias. Once your system is in production and you notice that its predictions become more homogeneous over time, it likely suffers from degenerate feedback loops.
 * Correcting degenerate feedback loops
 	* Introducing randomization in the predictions can reduce homogeneity
-	* Each new video is randomly assigned an initial pool of traffic (which can be up to hundreds of impressions). This pool of traffic is used to evaluate each video’s unbiased quality to determine whether it should be moved to a bigger pool of traffic or be marked as irrelevant.[17](https://learning.oreilly.com/library/view/designing-machine-learning/9781098107956/ch08.html#ch01fn266)
+	* Each new video is randomly assigned an initial pool of traffic (which can be up to hundreds of impressions). This pool of traffic is used to evaluate each video’s unbiased quality to determine whether it should be moved to a bigger pool of traffic or be marked as irrelevant.
 	* To exclude positional bias, we may need to encode the position information using positional features.
 	* During inference, you want to predict whether a user will click on a song regardless of where the song is recommended, so you might want to set the 1st Position feature to be False. Then you look at the model’s predictions for various songs for each user and can choose the order in which to show each song.
 	
@@ -27,14 +27,14 @@
 P(X) - probability density of the input
 P(Y) - probability density of the output
 
-![[Pasted image 20220728100644.png]]
+![](/Images/Pasted image 20220728100644.png)
 
-![[Pasted image 20220728100715.png]]
+![](/Images/Pasted image 20220728100715.png)
 
 
 ##### Covariate Shift
 
-![[Pasted image 20220728101952.png]]
+![](/Images/Pasted image 20220728101952.png)
 
 * During model development, covariate shifts can happen due to biases during the data selection process
 * Covariate shifts can also happen because the training data is artifically altered to make it easier for the model to learn, Ex - oversampling or undersampling the imbalanced datasets
@@ -59,7 +59,7 @@ P(Y) - probability density of the output
 
 [Alibi Detect](https://github.com/SeldonIO/alibi-detect) is an open-source package for drift detection.
 
-![[Pasted image 20220728110347.png]]
+![](/Images/Pasted image 20220728110347.png)
 
 
 ### Monitoring ML Specific Metrics
@@ -72,10 +72,11 @@ P(Y) - probability density of the output
 	* Feature validation: ensuring that features follow an expected schema
 	* Great Expectations and Deequ are open-source packages to do data validation
 
-		![[Pasted image 20220728115034.png]]
+
+![](/Images/Pasted image 20220728115034.png)
 
 * **Monitoring Raw inputs**
 	
 
-Resources:
+## Resources
 Dataset shift in Machine learning by Quinonero-Candela

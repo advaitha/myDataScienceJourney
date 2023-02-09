@@ -16,23 +16,24 @@
 
 ## Ensembles
 #### Bagging
-* Bagging, shortened from _bootstrap aggregating_, is designed to improve both the training stability and accuracy of ML algorithms.[4](https://learning.oreilly.com/library/view/designing-machine-learning/9781098107956/ch06.html#ch01fn153) It reduces variance and helps to avoid overfitting.
+* Bagging, shortened from _bootstrap aggregating_, is designed to improve both the training stability and accuracy of ML algorithms. It reduces variance and helps to avoid overfitting.
 
-![[Pasted image 20220726172015.png]]
+![](/Images/Pasted image 20220726172015.png)
 
 
 #### Boosting
 * Boosting is a family of iterative ensemble algorithms that convert weak learners to strong ones. Each learner in this ensemble is trained on the same set of samples, but the samples are weighted differently among iterations. As a result, future weak learners focus more on the examples that previous weak learners misclassified.
 
-![[Pasted image 20220726172312.png]]
+![](/Images/Pasted image 20220726172312.png)
 
-![[Pasted image 20220726172446.png]]
+![](/Images/Pasted image 20220726172446.png)
 
 #### Stacking
-![[Pasted image 20220726172723.png]]
+![](/Images/Pasted image 20220726172723.png)
 
 
-Reference - [Kaggle Ensembling guide](https://github.com/MLWave/Kaggle-Ensemble-Guide)
+## Reference 
+[Kaggle Ensembling guide](https://github.com/MLWave/Kaggle-Ensemble-Guide)
 
 
 ### Model Debugging
@@ -42,20 +43,20 @@ Reference - [Kaggle Ensembling guide](https://github.com/MLWave/Kaggle-Ensemble-
 
 
 ### Distributed Training
-* Gradient-checkpointing ??
+* Gradient-checkpointing 
 
 ##### Data parallelism
 * Each worker has its own copy of the whole model and does all the computation necessary for its copy of the model
 * Synchronous SGD and Asynchronous SGD - The way in which gradients are combined in parallel training
 
-![[Pasted image 20220727104945.png]]
+![](/Images/Pasted image 20220727104945.png)
 
 ##### Model Parallelism
 *  Model parallelism is when different components of your model are trained on different machines
 
 ##### Pipeline parallelism
 
-![[Pasted image 20220727110217.png]]
+![](/Images/Pasted image 20220727110217.png)
 
 
 ### AutoML

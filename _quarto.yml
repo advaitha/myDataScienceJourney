@@ -24,20 +24,7 @@ website:
     - title:  "Notes"
       style:  "floating"       
       backround:  light
-      contents:
-        - section: "**Data Science Project Lifecycle**"
-          contents:
-          - ds_lifecycle/Sampling.qmd
-          - ds_lifecycle/Training_Data.qmd
-          - ds_lifecycle/Feature_Engineering.qmd
-          - ds_lifecycle/ML_Algorithms.qmd
-          - ds_lifecycle/gradient_descent.qmd
-          - ds_lifecycle/Regularization.qmd
-          - ds_lifecycle/Model_Development.qmd
-          - ds_lifecycle/Model_Evaluation.qmd
-          - ds_lifecycle/Monitoring_ML_Models_in_production.qmd
-          - ds_lifecycle/MLOPS.qmd
-          - ds_lifecycle/Resources.qmd
+      contents:        
         - section: "**Anomaly Detection**"
           contents:
           - anomaly_detection/Anomaly_based_IDS.qmd
@@ -120,7 +107,19 @@ website:
           - nlp/algos_for_chatbots.qmd
           - nlp/chatgpt.qmd
           - nlp/transformers_production.qmd
-          - nlp/instruction_fine_tuned_txt_embedding.qmd        
+          - nlp/instruction_fine_tuned_txt_embedding.qmd     
+        - section: "**Data Science Project Lifecycle**"
+          contents:
+          - ds_lifecycle/Sampling.qmd
+          - ds_lifecycle/Training_Data.qmd
+          - ds_lifecycle/Feature_Engineering.qmd
+          - ds_lifecycle/ML_Algorithms.qmd
+          - ds_lifecycle/gradient_descent.qmd
+          - ds_lifecycle/Regularization.qmd
+          - ds_lifecycle/Model_Development.qmd          
+          - ds_lifecycle/Monitoring_ML_Models_in_production.qmd
+          - ds_lifecycle/MLOPS.qmd
+          - ds_lifecycle/Resources.qmd   
         - section: "**Math for AI**"
           contents:
           - math_for_ai/theory/01_intro.qmd  
