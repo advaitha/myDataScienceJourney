@@ -1,0 +1,76 @@
+# Feature Engineering
+
+* Deep learning is also called feature learning, many features can be automatically learned and extracted
+
+### Missing values
+* Not all types of missing values are equal
+* Missing Not At Random (MNAR) - The values are missing for reasons related to the values themselves - Ex - Income not available for high earners
+* Missing At Random (MAR) - The reason for missing is not due to the value itself, but due to another observed variable - Ex - Age missing for a gender value
+* Missing completely at Random (MCAR) - No pattern in when the value is missing.
+* There is no perfect way to handle missing values. With deletion, you risk losing important information or accentuating biases. With imputation, you risk injecting your own bias into and adding noise to your data, or worse, data leakage
+
+### Scaling
+* A range of [-1,1] work better than the range [0,1]
+* use standardization if the variable might follow normal distribution
+* If there is skew in the distribution, log transformation may work 
+* Scaling is a common source of data leakage
+* Scaling often requires global statistics. If the new data has changed significantly compared to the training, these statistics won't be very useful. Therefore, it’s important to retrain your model often to account for these changes.
+
+
+### Discretization
+* This will rarely help
+* Turning a continuous feature into a discrete feature
+* Histograms can help to choose the values for the categories
+
+
+### Encoding Categorical features
+* Categories change in production - The model will crash if it encounters a brand not seen in training
+* If you are using a category called 'UNKNOWN' in production, this category should also be a part of training
+* People who haven’t worked with data in production tend to assume that categories are _static_, which means the categories don’t change over time. This is true for many categories. For example, age brackets and income brackets are unlikely to change, and you know exactly how many categories there are in advance. Handling these categories is straightforward. You can just give each category a number and you’re done.
+* However, in production, categories change. Imagine you’re building a recommender system to predict what products users might want to buy from Amazon. One of the features you want to use is the product brand. When looking at Amazon’s historical data, you realize that there are a lot of brands. Even back in 2019, there were already over two million brands on Amazon![6](https://learning.oreilly.com/library/view/designing-machine-learning/9781098107956/ch05.html#ch01fn137). The number of brands is overwhelming, but you think: “I can still handle this.” You encode each brand as a number, so now you have two million numbers, from 0 to 1,999,999, corresponding to two million brands. Your model does spectacularly on the historical test set, and you get approval to test it on 1% of today’s traffic. In production, your model crashes because it encounters a brand it hasn’t seen before and therefore can’t encode. New brands join Amazon all the time. To address this, you create a category UNKNOWN with the value of 2,000,000 to catch all the brands your model hasn’t seen during training. Your model doesn’t crash anymore, but your sellers complain that their new brands are not getting any traffic. It’s because your model didn’t see the category UNKNOWN in the train set, so it just doesn’t recommend any product of the UNKNOWN brand. You fix this by encoding only the top 99% most popular brands and encode the bottom 1% brand as UNKNOWN. This way, at least your model knows how to deal with UNKNOWN brands. Your model seems to work fine for about one hour, then the click-through rate on product recommendations plummets. Over the last hour, 20 new brands joined your site; some of them are new luxury brands, some of them are sketchy knockoff brands, some of them are established brands. However, your model treats them all the same way it treats unpopular brands in the training data. This isn’t an extreme example that only happens if you work at Amazon. This problem happens quite a lot. For example, if you want to predict whether a comment is spam, you might want to use the account that posted this comment as a feature, and new accounts are being created all the time. The same goes for new product types, new website domains, new restaurants, new companies, new IP addresses, and so on. If you work with any of them, you’ll have to deal with this problem. One solution to this problem is the _hashing trick_, popularized by the package Vowpal Wabbit developed at Microsoft.[7](https://learning.oreilly.com/library/view/designing-machine-learning/9781098107956/ch05.html#ch01fn138)One solution to this problem is the _hashing trick_, popularized by the package Vowpal Wabbit developed at Microsoft.[7](https://learning.oreilly.com/library/view/designing-machine-learning/9781098107956/ch05.html#ch01fn138) The gist of this trick is that you use a hash function to generate a hashed value of each category. The hashed value will become the index of that category. Because you can specify the hash space, you can fix the number of encoded values for a feature in advance, without having to know how many categories there will be. For example, if you choose a hash space of 18 bits, which corresponds to 218 = 262,144 possible hashed values, all the categories, even the ones that your model has never seen before, will be encoded by an index between 0 and 262,143.One problem with hashed functions is collision: two categories being assigned the same index. However, with many hash functions, the collisions are random; new brands can share an index with any of the existing brands instead of always sharing an index with unpopular brands, which is what happens when we use the preceding UNKNOWN category. The impact of colliding hashed features is, fortunately, not that bad. In research done by Booking.com, even for 50% colliding features, the performance loss is less than 0.5%
+
+
+Reference:
+[4 categorical encoding concepts](https://towardsdatascience.com/4-categorical-encoding-concepts-to-know-for-data-scientists-e144851c6383)
+[Categorical features for high cardinality](https://medium.com/flutter-community/dealing-with-categorical-features-with-high-cardinality-feature-hashing-7c406ff867cb)
+[Categorical encoding in Python](https://pbpython.com/categorical-encoding.html)
+[Kaggle Tutorial](https://www.kaggle.com/code/waydeherman/tutorial-categorical-encoding/notebook)
+
+
+### Feature Crossing
+* Feature crossing is the technique to combine two or more features to generate new features. This technique is useful to model the nonlinear relationships between features. Because feature crossing helps model nonlinear relationships between variables, it’s essential for models that can’t learn or are bad at learning nonlinear relationships, such as linear regression, logistic regression, and tree-based models.
+* It will blow-up the number of features and make the model overfit the data due to high features
+
+
+### Data leakage
+* _Data leakage_ refers to the phenomenon when a form of the label “leaks” into the set of features used for making predictions, and this same information is not available during inference.
+* Causes
+	* Splitting time-correlated data randomly instead of by time. To prevent future information from leaking into the training process and allowing models to cheat during evaluation, split your data by time, instead of splitting randomly, whenever possible
+	* Scaling before splitting - This will leak mean and variance of the test samples into the training process, allowing a model to adjust its predictions for the test samples. To avoid this type of leakage, always split your data first before scaling, then use the statistics from the train split to scale all the splits.
+	* Filling in missing data with statistics from the test split - This type of leakage is similar to the type of leakage caused by scaling, and it can be prevented by using only statistics from the train split to fill in missing values in all the splits.
+	* Poor handling of data duplication before splitting - If you have duplicates or near-duplicates in your data, failing to remove them before splitting your data might cause the same samples to appear in both train and validation/test splits. If you oversample your data, do it after splitting
+
+
+### Group leakage
+* A group of examples have strongly correlated labels but are divided into different splits. For example, a patient might have two lung CT scans that are a week apart, which likely have the same labels on whether they contain signs of lung cancer, but one of them is in the train split and the second is in the test split.
+
+
+### Detecting Data Leakage
+* Measure the predictive power of each feature or a set of features with respect to the target variable (label). If a feature has unusually high correlation, investigate how this feature is generated and whether the correlation makes sense.
+
+### Feature Importance
+* SHAP
+* Built-In feature importance functions of XGBoost
+* [InterpretML](https://github.com/interpretml/interpret) is a great open-source package that leverages feature importance to help understand how a model makes predictions
+
+
+### Best practices for feature engineering
+-   Split data by time into train/valid/test splits instead of doing it randomly.    
+-   If you oversample your data, do it after splitting.    
+-   Scale and normalize your data after splitting to avoid data leakage.    
+-   Use statistics from only the train split, instead of the entire data, to scale your features and handle missing values.    
+-   Understand how your data is generated, collected, and processed. Involve domain experts if possible.    
+-   Keep track of your data’s lineage.    
+-   Understand feature importance to your model.    
+-   Use features that generalize well.    
+-   Remove no longer useful features from your models

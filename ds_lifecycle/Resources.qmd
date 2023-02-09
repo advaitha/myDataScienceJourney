@@ -1,0 +1,31 @@
+# Resources
+
+* [Enjoy algorithms](https://www.enjoyalgorithms.com/machine-learning-courses/)
+* [Generate Images from text](https://parti.research.google/)
+* [code generation models](https://huggingface.co/spaces/codeparrot/code-generation-models)
+* [Dall-e2 explained](https://towardsdatascience.com/dall-e-2-explained-the-promise-and-limitations-of-a-revolutionary-ai-3faf691be220)
+* [open source data labeling platform](https://diffgram.com/main/)
+* [Introduction to ML interviews book](https://huyenchip.com/ml-interviews-book/)
+* [A Recipe for training neural networks](https://karpathy.github.io/2019/04/25/recipe/)
+* [Model calibration](https://www.unofficialgoogledatascience.com/2021/04/why-model-calibration-matters-and-how.html)
+* [Kaggle solutions](https://farid.one/kaggle-solutions/)
+* [XGBoost resources](https://github.com/dmlc/xgboost/tree/master/demo#tutorials)
+* [Hyperparameter tuning using Milano](https://github.com/NVIDIA/Milano)
+* [Chip Huyen's Designing ML System book github repo](https://github.com/chiphuyen/dmls-book)
+*  [Google's rules of ML](https://developers.google.com/machine-learning/guides/rules-of-ml)
+* [Bias of Mortgage](https://www.cbsnews.com/news/mortgage-discrimination-black-and-latino-paying-millions-more-in-interest-study-shows/)
+* [Machine learning systems design slide deck](https://docs.google.com/presentation/d/1cshMKKSX24L0RL7LNzyOkZNQHD7N-Zyff8iffrLIVYM/edit#slide=id.gc0668ccb23_0_0)  #mustcheck
+* [AI Ethics videos by Timnit Gebru](https://sites.google.com/view/fatecv-tutorial/schedule)
+* [AI Ethics videos](https://facctconference.org/2022/acceptedtuts.html)
+* [AI Incident Database](https://incidentdatabase.ai/)
+* [H2o Admissible machine learning](https://docs.h2o.ai/h2o/latest-stable/h2o-docs/admissible.html)
+* [Google responsible AI practices](https://ai.google/responsibilities/responsible-ai-practices/?category=fairness)
+* [IBM AI fairness 360]https://aif360.mybluemix.net/)
+* [AI Now](https://ainowinstitute.org/)
+* [Stitchfix model deployment slide deck](https://stanford-cs329s.github.io/slides/cs329s_12_stefan_model_deploymet_stitch_fix.pdf)
+* [Kubernetes explained](https://www.jeremyjordan.me/kubernetes/)
+* [Trustworthy ML Tutorials](https://www.trustworthyml.org/resources)
+* [Madewithml](https://madewithml.com/)
+* [Python packaging and dependency management](https://python-poetry.org/)
+
+

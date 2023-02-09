@@ -1,0 +1,39 @@
+# ML Algorithms
+
+
+## Logistic Regression
+* **Ordered logistic regression** in which the outcomes are ordered values
+* Multi-class classification is also called multinomial or sotmax regression.
+	* Reference - https://sebastianraschka.com/pdf/lecture-notes/stat453ss21/L08_logistic__slides.pdf
+	* https://www.youtube.com/watch?v=L0FU8NFpx4E
+* Logit (log of odds) function takes input values in the range of 0 to 1 and transforms them into values over the entire real-number range
+* Under the logistic model, we assume there is a linear relationship between the weighted inputs and the log-odds
+![[Pasted image 20220629120613.png]]
+* ![[Pasted image 20220629120812.png]]
+
+![[Pasted image 20220629121209.png]]
+
+![[Pasted image 20220629122806.png]]
+
+![[Pasted image 20220629123157.png]]
+
+![[Pasted image 20220629172035.png]]
+
+
+## Decision Trees
+
+### Classification Trees
+* Handle both categorical and continuous data
+* Leaves that contain mixtures of classifications are called Impure
+* **Gini Impurity**, **Entropy** and **Information Gain** are used to measure the impurity of the trees
+* ![[Pasted image 20220622164635.png]]
+
+* ![[Pasted image 20220622164703.png]]
+* The lower the Gini Impurity of a variable, the better it is at prediction
+* In case of continuous variables, we sort the numbers and take the average of the two consequtive numbers. The average will be the threshold which will be used for building the tree. The average number with low gini impurity will be preferred
+
+
+
+## K-Means Clustering
+* [K-medoids](https://onlinelibrary.wiley.com/doi/abs/10.1002/9780470316801.ch2?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&utm_content=217799082&_hsenc=p2ANqtz--o7eAr9Nm31aisPDXwcRFRVXAKKzyukegxGP2lmdCs7M5vqNGg5385tYof3A6S2W4cXL1TXVvcNeN-l-qSQMFU0wdl67kA0Etzc9L_slF88bRGXDM) use actual data points as centroids rather than mean positions in a given cluster. The medoids are points that minimize the distance to all other points in their cluster. This variation is more interpretable because the centroids are always data points
+* [Fuzzy C-Means Clustering](https://www.tandfonline.com/doi/abs/10.1080/01969727308546046?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&utm_content=217799082&_hsenc=p2ANqtz--o7eAr9Nm31aisPDXwcRFRVXAKKzyukegxGP2lmdCs7M5vqNGg5385tYof3A6S2W4cXL1TXVvcNeN-l-qSQMFU0wdl67kA0Etzc9L_slF88bRGXDM) enables the data points to participate in multiple clusters to varying degrees. It replaces hard cluster assignments with degrees of membership depending on distance from the centroids

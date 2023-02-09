@@ -25,6 +25,19 @@ website:
       style:  "floating"       
       backround:  light
       contents:
+        - section: "**Data Science Project Lifecycle**"
+          contents:
+          - ds_lifecycle/Sampling.qmd
+          - ds_lifecycle/Training_Data.qmd
+          - ds_lifecycle/Feature_Engineering.qmd
+          - ds_lifecycle/ML_Algorithms.qmd
+          - ds_lifecycle/gradient_descent.qmd
+          - ds_lifecycle/Regularization.qmd
+          - ds_lifecycle/Model_Development.qmd
+          - ds_lifecycle/Model_Evaluation.qmd
+          - ds_lifecycle/Monitoring_ML_Models_in_production.qmd
+          - ds_lifecycle/MLOPS.qmd
+          - ds_lifecycle/Resources.qmd
         - section: "**Anomaly Detection**"
           contents:
           - anomaly_detection/Anomaly_based_IDS.qmd
@@ -158,7 +171,10 @@ website:
           - dsa/bubble_sort.ipynb
           - dsa/merge_sort.ipynb
           - dsa/quick_sort.ipynb            
-          - dsa/Binary_search.ipynb                
+          - dsa/Binary_search.ipynb   
+        - section: "**probability**"      
+          contents:
+          - probability/Probability.qmd       
         - section: "**Why Me**"
           contents:                 
           - about_me/why_me.qmd          
