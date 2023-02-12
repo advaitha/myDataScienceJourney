@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – algos_for_chatbots</title>
+<title>My Datascience Journey – resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -256,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  <a href="../transformers/resources.html" class="sidebar-item-text sidebar-link active">Resources</a>
   </div>
 </li>
       </ul>
@@ -531,7 +531,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/algos_for_chatbots.html" class="sidebar-item-text sidebar-link active">Algorithms for Chatbot</a>
+  <a href="../nlp/algos_for_chatbots.html" class="sidebar-item-text sidebar-link">Algorithms for Chatbot</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -905,15 +905,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#algorithms-for-chatbot" id="toc-algorithms-for-chatbot" class="nav-link active" data-scroll-target="#algorithms-for-chatbot">Algorithms for Chatbot</a>
-  <ul class="collapse">
-  <li><a href="#diet-architecture" id="toc-diet-architecture" class="nav-link" data-scroll-target="#diet-architecture">DIET Architecture</a></li>
-  <li><a href="#ted-architecture" id="toc-ted-architecture" class="nav-link" data-scroll-target="#ted-architecture">TED Architecture</a>
-  <ul class="collapse">
-  <li><a href="#response-selection" id="toc-response-selection" class="nav-link" data-scroll-target="#response-selection">Response selection</a></li>
-  </ul></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
-  </ul></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link active" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -922,66 +914,19 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="algorithms-for-chatbot" class="level1">
-<h1>Algorithms for Chatbot</h1>
-<section id="diet-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="diet-architecture">DIET Architecture</h2>
-<p>Rasa uses Dual Intent and Entity Transformer (DIET) architecture to detect both Intent and Entity using Transformer.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/diet_arch_clear.png.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">DIET Architecture</figcaption><p></p>
-</figure>
-</div>
-<p>The DIET architecture can be customized to a specific domain. The architecture can be thought of as lego blocks. We can customize and use the blocks we want for our use case. Depending on the accuracy, latency and memory usage of the use case we can decide which components to use.</p>
-</section>
-<section id="ted-architecture" class="level2">
-<h2 class="anchored" data-anchor-id="ted-architecture">TED Architecture</h2>
-<p>TED is used to decide what next action to be taken by the bot given the conversation with the user.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/feature_creation.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Creating Features for TED using Intent, Entity, Slots and Previous actions</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/calculating_loss_on_dialogs.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Training Transformers for next action prediction using features created and action to be taken at that particular time step to calculate loss</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/predicting_next_action.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Predicting next action</figcaption><p></p>
-</figure>
-</div>
-<p>TED is not trained on sequence of events which happen in the dialog. In dialog lot of context switching will happen. Using Transformers here will be useful because transformers can pay attention to dialog events which occured in the past.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/example_ted.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">An example of TED paying attention to past events to decide next action</figcaption><p></p>
-</figure>
-</div>
-<section id="response-selection" class="level3">
-<h3 class="anchored" data-anchor-id="response-selection">Response selection</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/response_selection.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Using DIET backend for response selection</figcaption><p></p>
-</figure>
-</div>
-</section>
-</section>
-<section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<section id="resources" class="level1">
+<h1>Resources</h1>
 <ul>
-<li><a href="https://arxiv.org/pdf/2004.09936.pdf">Research paper on DIET architecture</a></li>
-<li><a href="https://arxiv.org/pdf/1910.00486.pdf">Research paper on TED architecture</a></li>
+<li><a href="https://nn.labml.ai/transformers/index.html">Code implementation and Explanation of various Transformer Architectures</a></li>
+<li><a href="https://github.com/dair-ai/Transformers-Recipe">Transformer Resources</a></li>
+<li><a href="https://paperswithcode.com/methods/category/transformers">Transformer architectures from Papers with code</a></li>
+<li><a href="http://nlp.seas.harvard.edu/annotated-transformer/">The Annotated Transformer</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/transformer_tutorial.html">Pytorch tutorial on Language Modeling</a></li>
+<li><a href="https://web.stanford.edu/class/cs25/">Stanford course on Transformers</a></li>
+<li><a href="https://www.youtube.com/watch?v=KMY2Knr4iAs">code review of Transformer</a></li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
