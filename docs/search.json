@@ -966,6 +966,20 @@
     "text": "Split an image into patches and provide the sequence of linear embeddings of these patches as an input to Transformer.\nImage patches are treated the same way as tokens (words) in an NLP application. We train the model on image classification in supervised fashion.\nTransformers lack some of the inductive biases inherent to CNNs such as translation equivariance and locality and therefore do not generalize well when trained on insufficient amounts of data\nIt is often beneficial to fine-tune at higher resolution than pre-training\nViT performs better when trained on large scale data and transferred to tasks with fewer datapoints\n\n\n\n\nViT Architecture\n\n\n\nThe image patches are flattened and mapped to D dimensions with a trainable linear projection.These are called patch embeddings\nLearnable embedding is prepended to the sequence of embedded patches, whose state at the output of the transformer encoder serves as the image representation.\nLearnable 1D position embeddings are added to patch embeddings to retain positional information\nMLP contains two layers with GELU (Gaussina Error Linear Units) non-linearity\n\n\n\n\nVariants of ViT\n\n\n\nRegularization used - weight decay, dropout and label smoothing\n\nIn the lowest layers some heads attend to most of the image, showing that the ability to integrate information globally is indeed used by the model. The attention distance increases with network depth. Globally, the model attends to image regions that are semantically relevant for classification\n\n\nResearch Paper"
   },
   {
+    "objectID": "transformers/resources.html",
+    "href": "transformers/resources.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Resources\n\nCode implementation and Explanation of various Transformer Architectures\nTransformer Resources\nTransformer architectures from Papers with code\nThe Annotated Transformer\nPytorch tutorial on Language Modeling\nStanford course on Transformers\ncode review of Transformer"
+  },
+  {
+    "objectID": "transformers/transformers_new.html",
+    "href": "transformers/transformers_new.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Self-attention is permutation-invariant. It is an operation on sets.\n\n\n\n\nSinusoidal positional encoding\nLearned positional encoding\nRelative position encoding\nRotary position encoding\n\n\n\n\nLilian Weng Blog post"
+  },
+  {
     "objectID": "transformers/data_eff_img_transformer.html",
     "href": "transformers/data_eff_img_transformer.html",
     "title": "My Datascience Journey",

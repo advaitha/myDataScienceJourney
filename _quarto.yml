@@ -50,6 +50,7 @@ website:
           - transformers/image_worth_16_16.qmd
           - transformers/vision_transformer.qmd
           - transformers/how_to_train_ViT.qmd
+          - transformers/resources.qmd
         - section: "**Interpretable_ml**"
           contents:
           - Interpretable_ml/theory/01_introduction.qmd
