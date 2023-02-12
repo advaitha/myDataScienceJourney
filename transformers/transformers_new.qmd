@@ -1,0 +1,36 @@
+# The Transformers Family 2.0
+
+
+
+* Self-attention is permutation-invariant. It is an operation on sets.
+
+
+
+
+## Different types of Positional Encoding
+* Sinusoidal positional encoding
+* Learned positional encoding
+* Relative position encoding
+* Rotary position encoding
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Reference
+[Lilian Weng Blog post](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/)

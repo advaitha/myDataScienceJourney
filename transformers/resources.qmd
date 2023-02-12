@@ -1,0 +1,9 @@
+# Resources
+
+* [Code implementation and Explanation of various Transformer Architectures](https://nn.labml.ai/transformers/index.html)
+* [Transformer Resources](https://github.com/dair-ai/Transformers-Recipe)
+* [Transformer architectures from Papers with code](https://paperswithcode.com/methods/category/transformers)
+* [The Annotated Transformer](http://nlp.seas.harvard.edu/annotated-transformer/)
+* [Pytorch tutorial on Language Modeling](https://pytorch.org/tutorials/beginner/transformer_tutorial.html)
+* [Stanford course on Transformers](https://web.stanford.edu/class/cs25/)
+* [code review of Transformer](https://www.youtube.com/watch?v=KMY2Knr4iAs)
