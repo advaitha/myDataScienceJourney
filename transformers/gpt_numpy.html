@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – ie</title>
+<title>My Datascience Journey – gpt_numpy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -486,7 +549,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/IE.html" class="sidebar-item-text sidebar-link active">Information Extraction</a>
+  <a href="../nlp/IE.html" class="sidebar-item-text sidebar-link">Information Extraction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -906,58 +969,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#information-extraction" id="toc-information-extraction" class="nav-link active" data-scroll-target="#information-extraction">Information Extraction</a>
-  <ul class="collapse">
-  <li><a href="#key-phrase-extraction" id="toc-key-phrase-extraction" class="nav-link" data-scroll-target="#key-phrase-extraction">Key Phrase Extraction</a></li>
-  <li><a href="#named-entity-recognition-ner" id="toc-named-entity-recognition-ner" class="nav-link" data-scroll-target="#named-entity-recognition-ner">Named Entity Recognition (NER)</a></li>
-  <li><a href="#named-entity-disambiguation-ned-and-linking" id="toc-named-entity-disambiguation-ned-and-linking" class="nav-link" data-scroll-target="#named-entity-disambiguation-ned-and-linking">Named Entity Disambiguation (NED) and Linking</a></li>
-  <li><a href="#relationship-extraction" id="toc-relationship-extraction" class="nav-link" data-scroll-target="#relationship-extraction">Relationship Extraction</a></li>
-  <li><a href="#temporal-information-extraction" id="toc-temporal-information-extraction" class="nav-link" data-scroll-target="#temporal-information-extraction">Temporal Information Extraction</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<section id="information-extraction" class="level1">
-<h1>Information Extraction</h1>
-<section id="key-phrase-extraction" class="level2">
-<h2 class="anchored" data-anchor-id="key-phrase-extraction">Key Phrase Extraction</h2>
-<p>Graph algorithms are used in unsupervised fashion. The nodes are weighted according to the frequency of the words and their connection to other words in the text. The top N nodes which are important are returned as key phrases. <code>textacy</code> is a package which can be used for key phrase extraction.</p>
-</section>
-<section id="named-entity-recognition-ner" class="level2">
-<h2 class="anchored" data-anchor-id="named-entity-recognition-ner">Named Entity Recognition (NER)</h2>
-<p>It is a sequence labeling challenge. The context of the surronding words and their POS tags are considered for creating features. <code>conditional random fields</code> (CRFs) algorithm is one of the popular choices for training NER. BIO scheme is used to annotate the text. B - Beggining, I - Intermediate and O - other. For example, First Name and last Name are B and I respectively. <code>MITIE</code> is a library to train NER systems. <code>Stanford NER</code>, <code>spaCy</code> and <code>AllenNLP</code> have pre-trained NER models.</p>
-<p>To customize NER model to a domain or use case, use customized heuristics for the problem domain (using tools such as RegexNER and EntityRuler) or use active learning tools like Prodigy</p>
-</section>
-<section id="named-entity-disambiguation-ned-and-linking" class="level2">
-<h2 class="anchored" data-anchor-id="named-entity-disambiguation-ned-and-linking">Named Entity Disambiguation (NED) and Linking</h2>
-<p>NER and NED together are known as named entity linking (NEL). NEL needs to go beyond POS tagging and require parsing to identify items like subject, verb and object. It also requires coreference resolution to resolve and link multiple references to the same entity. This is modeled as supervised ML problem. It is common to use off-the-shelf services for NEL.</p>
-<p><code>DBpedia Spotlight</code> is a popular tool for entity linking.</p>
-</section>
-<section id="relationship-extraction" class="level2">
-<h2 class="anchored" data-anchor-id="relationship-extraction">Relationship Extraction</h2>
-<p>It is the task of extracting entities and relationshops between them from text documents.</p>
-<p>It can be treated as supervised classification. It can be modeled as a two step classification problem</p>
-<ul>
-<li>If two entities are related</li>
-<li>If they are related what is the relation between them</li>
-</ul>
-</section>
-<section id="temporal-information-extraction" class="level2">
-<h2 class="anchored" data-anchor-id="temporal-information-extraction">Temporal Information Extraction</h2>
-<p><code>Duckling</code> library can be used to extract temporal events. when we run the sentence “Let us meet at 3 p.m. today and decide on what to present at the meeting on Friday” through Duckling. It’s able to map “3 p.m. today” to the correct time on a given day.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">### First cell</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
