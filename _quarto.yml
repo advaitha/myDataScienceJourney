@@ -172,6 +172,7 @@ website:
           - dsa/merge_sort.ipynb
           - dsa/quick_sort.ipynb            
           - dsa/Binary_search.ipynb   
+          - dsa/bst.qmd
         - section: "**probability**"      
           contents:
           - probability/Probability.qmd       
