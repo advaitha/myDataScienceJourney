@@ -1,0 +1,30 @@
+# Step by Step Guide for System Design
+
+## Step 1 - Understand the problem and establish design scope (5 mins)
+* Ask as many questions as possible to understand the problem
+    * Clarify the requirements
+    * Prority of the features to build
+    * Focus on non-fuctional requirements like scale and performance
+    * Do rough back of the envelope calculations
+* By the end of this step we should have a clear understanding of the requirements and non fuctional features 
+
+
+## Step 2 - Propose high level design and get buy-in (20 mins)
+* Use Top-down approach 
+* start with API Design and see if the APIs are satisfying the functional requirements. Do not consider APIs which are not aligned to the requirements.
+    * Input parameters
+    * Output responses 
+* Start high-level design once the APIs are finalized.
+* Review if all the features are covered in the high-level design
+
+## Step 3 - Design Deep dive (15 mins)
+* Identify areas with challenges and discuss at least two options with their tradeoffs
+* Pick a solution and discuss 
+
+## Step 4 - Wrap up (5 mins)
+* Summarize the design
+* Focus on the parts which are unique to the situation
+
+
+### Reference
+ByteByteGo youtube channel

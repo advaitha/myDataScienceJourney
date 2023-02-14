@@ -173,6 +173,9 @@ website:
           - dsa/quick_sort.ipynb            
           - dsa/Binary_search.ipynb   
           - dsa/bst.qmd
+        - section: "**System Design**"
+          contents:
+          - system_design/step_by_step.qmd
         - section: "**probability**"      
           contents:
           - probability/Probability.qmd       
