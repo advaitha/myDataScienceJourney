@@ -938,6 +938,13 @@
     "text": "Vehicle damage assessment\nFraud Detection\nClaims management to ease the process\n\n\n\n\nSeverity of damage\nWhich parts are damaged\nDoes it require repair or replacement\nEstimating the cost of repair or replacement\n\n \n\n\n\n\nFinding a proper data set\nPrivacy concerns\nOptimizing performance and cost\nIf possible building 3D models and using them to train classifiers to achieve higher precision\n\nAltoros Blog post\n\n\n  \n\n\n\nWired article\n\n\n\nJust Analytics Flowmagic\n\n\n\nGithub Repo"
   },
   {
+    "objectID": "system_design/step_by_step.html",
+    "href": "system_design/step_by_step.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Ask as many questions as possible to understand the problem\n\nClarify the requirements\nPrority of the features to build\nFocus on non-fuctional requirements like scale and performance\nDo rough back of the envelope calculations\n\nBy the end of this step we should have a clear understanding of the requirements and non fuctional features\n\n\n\n\n\nUse Top-down approach\nstart with API Design and see if the APIs are satisfying the functional requirements. Do not consider APIs which are not aligned to the requirements.\n\nInput parameters\nOutput responses\n\nStart high-level design once the APIs are finalized.\nReview if all the features are covered in the high-level design\n\n\n\n\n\nIdentify areas with challenges and discuss at least two options with their tradeoffs\nPick a solution and discuss\n\n\n\n\n\nSummarize the design\nFocus on the parts which are unique to the situation\n\n\n\nByteByteGo youtube channel"
+  },
+  {
     "objectID": "math_for_ai/theory/04_neural_network.html",
     "href": "math_for_ai/theory/04_neural_network.html",
     "title": "My Datascience Journey",
@@ -977,7 +984,7 @@
     "href": "transformers/resources.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Resources\n\nCode implementation and Explanation of various Transformer Architectures\nTransformer Resources\nTransformer architectures from Papers with code\nThe Annotated Transformer\nPytorch tutorial on Language Modeling\nStanford course on Transformers\ncode review of Transformer"
+    "text": "Resources\n\nCode implementation and Explanation of various Transformer Architectures\nTransformer Resources\nTransformer architectures from Papers with code\nThe Annotated Transformer\nPytorch tutorial on Language Modeling\nStanford course on Transformers\ncode review of Transformer\nGPT in 60 lines of Numpy"
   },
   {
     "objectID": "transformers/transformers_new.html",

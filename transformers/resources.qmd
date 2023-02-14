@@ -7,3 +7,4 @@
 * [Pytorch tutorial on Language Modeling](https://pytorch.org/tutorials/beginner/transformer_tutorial.html)
 * [Stanford course on Transformers](https://web.stanford.edu/class/cs25/)
 * [code review of Transformer](https://www.youtube.com/watch?v=KMY2Knr4iAs)
+* [GPT in 60 lines of Numpy](https://jaykmody.com/blog/gpt-from-scratch/)
