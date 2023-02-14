@@ -938,6 +938,13 @@
     "text": "Vehicle damage assessment\nFraud Detection\nClaims management to ease the process\n\n\n\n\nSeverity of damage\nWhich parts are damaged\nDoes it require repair or replacement\nEstimating the cost of repair or replacement\n\n \n\n\n\n\nFinding a proper data set\nPrivacy concerns\nOptimizing performance and cost\nIf possible building 3D models and using them to train classifiers to achieve higher precision\n\nAltoros Blog post\n\n\n  \n\n\n\nWired article\n\n\n\nJust Analytics Flowmagic\n\n\n\nGithub Repo"
   },
   {
+    "objectID": "system_design/step_by_step.html",
+    "href": "system_design/step_by_step.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Ask as many questions as possible to understand the problem\n\nClarify the requirements\nPrority of the features to build\nFocus on non-fuctional requirements like scale and performance\nDo rough back of the envelope calculations\n\nBy the end of this step we should have a clear understanding of the requirements and non fuctional features\n\n\n\n\n\nUse Top-down approach\nstart with API Design and see if the APIs are satisfying the functional requirements. Do not consider APIs which are not aligned to the requirements.\n\nInput parameters\nOutput responses\n\nStart high-level design once the APIs are finalized.\nReview if all the features are covered in the high-level design\n\n\n\n\n\nIdentify areas with challenges and discuss at least two options with their tradeoffs\nPick a solution and discuss\n\n\n\n\n\nSummarize the design\nFocus on the parts which are unique to the situation\n\n\n\nByteByteGo youtube channel"
+  },
+  {
     "objectID": "math_for_ai/theory/04_neural_network.html",
     "href": "math_for_ai/theory/04_neural_network.html",
     "title": "My Datascience Journey",
@@ -971,13 +978,6 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Split an image into patches and provide the sequence of linear embeddings of these patches as an input to Transformer.\nImage patches are treated the same way as tokens (words) in an NLP application. We train the model on image classification in supervised fashion.\nTransformers lack some of the inductive biases inherent to CNNs such as translation equivariance and locality and therefore do not generalize well when trained on insufficient amounts of data\nIt is often beneficial to fine-tune at higher resolution than pre-training\nViT performs better when trained on large scale data and transferred to tasks with fewer datapoints\n\n\n\n\nViT Architecture\n\n\n\nThe image patches are flattened and mapped to D dimensions with a trainable linear projection.These are called patch embeddings\nLearnable embedding is prepended to the sequence of embedded patches, whose state at the output of the transformer encoder serves as the image representation.\nLearnable 1D position embeddings are added to patch embeddings to retain positional information\nMLP contains two layers with GELU (Gaussina Error Linear Units) non-linearity\n\n\n\n\nVariants of ViT\n\n\n\nRegularization used - weight decay, dropout and label smoothing\n\nIn the lowest layers some heads attend to most of the image, showing that the ability to integrate information globally is indeed used by the model. The attention distance increases with network depth. Globally, the model attends to image regions that are semantically relevant for classification\n\n\nResearch Paper"
-  },
-  {
-    "objectID": "transformers/gpt_numpy.html",
-    "href": "transformers/gpt_numpy.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "### First cell"
   },
   {
     "objectID": "transformers/resources.html",

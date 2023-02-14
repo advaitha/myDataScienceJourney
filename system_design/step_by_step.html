@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – anomaly_based_ids</title>
+<title>My Datascience Journey – step_by_step</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anomaly_detection/Anomaly_based_IDS.html" class="sidebar-item-text sidebar-link active">Anomaly Based IDS using ML</a>
+  <a href="../anomaly_detection/Anomaly_based_IDS.html" class="sidebar-item-text sidebar-link">Anomaly Based IDS using ML</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -881,7 +881,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../system_design/step_by_step.html" class="sidebar-item-text sidebar-link">Step by Step Guide for System Design</a>
+  <a href="../system_design/step_by_step.html" class="sidebar-item-text sidebar-link active">Step by Step Guide for System Design</a>
   </div>
 </li>
       </ul>
@@ -925,17 +925,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#anomaly-based-ids-using-ml" id="toc-anomaly-based-ids-using-ml" class="nav-link active" data-scroll-target="#anomaly-based-ids-using-ml">Anomaly Based IDS using ML</a>
+  <li><a href="#step-by-step-guide-for-system-design" id="toc-step-by-step-guide-for-system-design" class="nav-link active" data-scroll-target="#step-by-step-guide-for-system-design">Step by Step Guide for System Design</a>
   <ul class="collapse">
-  <li><a href="#different-types-of-intrusion-detection-systems" id="toc-different-types-of-intrusion-detection-systems" class="nav-link" data-scroll-target="#different-types-of-intrusion-detection-systems">Different types of Intrusion Detection Systems</a></li>
-  <li><a href="#machine-learning-methods-for-anomaly-detection" id="toc-machine-learning-methods-for-anomaly-detection" class="nav-link" data-scroll-target="#machine-learning-methods-for-anomaly-detection">Machine learning methods for Anomaly Detection</a></li>
-  <li><a href="#data-capture-and-processing" id="toc-data-capture-and-processing" class="nav-link" data-scroll-target="#data-capture-and-processing">Data capture and processing</a></li>
-  <li><a href="#data-labelling" id="toc-data-labelling" class="nav-link" data-scroll-target="#data-labelling">Data labelling</a></li>
-  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection">Feature selection</a></li>
-  <li><a href="#training-methods" id="toc-training-methods" class="nav-link" data-scroll-target="#training-methods">Training methods</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#tradeoff" id="toc-tradeoff" class="nav-link" data-scroll-target="#tradeoff">Tradeoff</a></li>
+  <li><a href="#step-1---understand-the-problem-and-establish-design-scope-5-mins" id="toc-step-1---understand-the-problem-and-establish-design-scope-5-mins" class="nav-link" data-scroll-target="#step-1---understand-the-problem-and-establish-design-scope-5-mins">Step 1 - Understand the problem and establish design scope (5 mins)</a></li>
+  <li><a href="#step-2---propose-high-level-design-and-get-buy-in-20-mins" id="toc-step-2---propose-high-level-design-and-get-buy-in-20-mins" class="nav-link" data-scroll-target="#step-2---propose-high-level-design-and-get-buy-in-20-mins">Step 2 - Propose high level design and get buy-in (20 mins)</a></li>
+  <li><a href="#step-3---design-deep-dive-15-mins" id="toc-step-3---design-deep-dive-15-mins" class="nav-link" data-scroll-target="#step-3---design-deep-dive-15-mins">Step 3 - Design Deep dive (15 mins)</a></li>
+  <li><a href="#step-4---wrap-up-5-mins" id="toc-step-4---wrap-up-5-mins" class="nav-link" data-scroll-target="#step-4---wrap-up-5-mins">Step 4 - Wrap up (5 mins)</a>
+  <ul class="collapse">
   <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -945,66 +943,53 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="anomaly-based-ids-using-ml" class="level1">
-<h1>Anomaly Based IDS using ML</h1>
-<p>Research done on probing attacks in an industrial setting.</p>
-<section id="different-types-of-intrusion-detection-systems" class="level2">
-<h2 class="anchored" data-anchor-id="different-types-of-intrusion-detection-systems">Different types of Intrusion Detection Systems</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/ids.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Intrusion Detection Systems</figcaption><p></p>
-</figure>
-</div>
+<section id="step-by-step-guide-for-system-design" class="level1">
+<h1>Step by Step Guide for System Design</h1>
+<section id="step-1---understand-the-problem-and-establish-design-scope-5-mins" class="level2">
+<h2 class="anchored" data-anchor-id="step-1---understand-the-problem-and-establish-design-scope-5-mins">Step 1 - Understand the problem and establish design scope (5 mins)</h2>
+<ul>
+<li>Ask as many questions as possible to understand the problem
+<ul>
+<li>Clarify the requirements</li>
+<li>Prority of the features to build</li>
+<li>Focus on non-fuctional requirements like scale and performance</li>
+<li>Do rough back of the envelope calculations</li>
+</ul></li>
+<li>By the end of this step we should have a clear understanding of the requirements and non fuctional features</li>
+</ul>
 </section>
-<section id="machine-learning-methods-for-anomaly-detection" class="level2">
-<h2 class="anchored" data-anchor-id="machine-learning-methods-for-anomaly-detection">Machine learning methods for Anomaly Detection</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/anomaly_detection.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Machine Learning Methods for Anomaly Detection</figcaption><p></p>
-</figure>
-</div>
+<section id="step-2---propose-high-level-design-and-get-buy-in-20-mins" class="level2">
+<h2 class="anchored" data-anchor-id="step-2---propose-high-level-design-and-get-buy-in-20-mins">Step 2 - Propose high level design and get buy-in (20 mins)</h2>
+<ul>
+<li>Use Top-down approach</li>
+<li>start with API Design and see if the APIs are satisfying the functional requirements. Do not consider APIs which are not aligned to the requirements.
+<ul>
+<li>Input parameters</li>
+<li>Output responses</li>
+</ul></li>
+<li>Start high-level design once the APIs are finalized.</li>
+<li>Review if all the features are covered in the high-level design</li>
+</ul>
 </section>
-<section id="data-capture-and-processing" class="level2">
-<h2 class="anchored" data-anchor-id="data-capture-and-processing">Data capture and processing</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/data_capture.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Data Capture and Processing</figcaption><p></p>
-</figure>
-</div>
+<section id="step-3---design-deep-dive-15-mins" class="level2">
+<h2 class="anchored" data-anchor-id="step-3---design-deep-dive-15-mins">Step 3 - Design Deep dive (15 mins)</h2>
+<ul>
+<li>Identify areas with challenges and discuss at least two options with their tradeoffs</li>
+<li>Pick a solution and discuss</li>
+</ul>
 </section>
-<section id="data-labelling" class="level2">
-<h2 class="anchored" data-anchor-id="data-labelling">Data labelling</h2>
-<p><code>Snort</code> and <code>Suricata</code> tools were used for data labelling <img src="../Images/data_labels.png" class="img-fluid" alt="Data Labelling"></p>
-</section>
-<section id="feature-selection" class="level2">
-<h2 class="anchored" data-anchor-id="feature-selection">Feature selection</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/genetic_algo.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Feature Selection</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="training-methods" class="level2">
-<h2 class="anchored" data-anchor-id="training-methods">Training methods</h2>
-<p>Two ML models were used for training. Ensemble method (Bagging) with base classifier as naive Bayes, KNN, Logistic Regression and SVM. The flow features were converted to a 32X32 matrix and a CNN model was developed. <img src="../Images/cnn_grid_flow.png" class="img-fluid" alt="Image created from the flow features"> <img src="../Images/cnn_architecture.png" class="img-fluid" alt="CNN architecture model"></p>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>CNN model was performing better than ensemble method.</p>
-</section>
-<section id="tradeoff" class="level2">
-<h2 class="anchored" data-anchor-id="tradeoff">Tradeoff</h2>
-<p>The tradeoff between them is the complexity and the training time involved. CNN requires more computation resources and is an offline model.</p>
-</section>
-<section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
-<p><a href="https://arxiv.org/pdf/2103.16930.pdf">Anomaly Based Intrusion Detection by Machine Learning: A case study on probing attacks to an institutional network</a></p>
+<section id="step-4---wrap-up-5-mins" class="level2">
+<h2 class="anchored" data-anchor-id="step-4---wrap-up-5-mins">Step 4 - Wrap up (5 mins)</h2>
+<ul>
+<li>Summarize the design</li>
+<li>Focus on the parts which are unique to the situation</li>
+</ul>
+<section id="reference" class="level3">
+<h3 class="anchored" data-anchor-id="reference">Reference</h3>
+<p>ByteByteGo youtube channel</p>
 
 
+</section>
 </section>
 </section>
 
