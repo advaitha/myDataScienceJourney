@@ -2,622 +2,630 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/bayesian_analysis/resources.html</loc>
-    <lastmod>2023-02-14T07:46:27.661Z</lastmod>
+    <lastmod>2023-02-15T08:00:31.253Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/bayesian_analysis/Bayesian_analysis.html</loc>
-    <lastmod>2023-02-14T07:46:28.097Z</lastmod>
+    <lastmod>2023-02-15T08:00:31.641Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interesting_packages/01_pandas_coding_assistant.html</loc>
-    <lastmod>2023-02-14T07:46:28.573Z</lastmod>
+    <lastmod>2023-02-15T08:00:31.961Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/object_detection/introduction.html</loc>
-    <lastmod>2023-02-14T07:46:29.097Z</lastmod>
+    <lastmod>2023-02-15T08:00:32.361Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/00_Interesting_links_to_read.html</loc>
-    <lastmod>2023-02-14T07:46:29.565Z</lastmod>
+    <lastmod>2023-02-15T08:00:32.721Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/summary_of_research_papers/oneFormer.html</loc>
-    <lastmod>2023-02-14T07:46:30.013Z</lastmod>
+    <lastmod>2023-02-15T08:00:33.117Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/image_segmentation/02_architectures.html</loc>
-    <lastmod>2023-02-14T07:46:30.449Z</lastmod>
+    <lastmod>2023-02-15T08:00:33.465Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/image_segmentation/01_intro.html</loc>
-    <lastmod>2023-02-14T07:46:30.905Z</lastmod>
+    <lastmod>2023-02-15T08:00:33.837Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/applications/surveillance_with_dl.html</loc>
-    <lastmod>2023-02-14T07:46:31.289Z</lastmod>
+    <lastmod>2023-02-15T08:00:34.193Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/image_classification/satellite_images_classification.html</loc>
-    <lastmod>2023-02-14T07:46:31.817Z</lastmod>
+    <lastmod>2023-02-15T08:00:34.633Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/image_classification/01_convolution.html</loc>
-    <lastmod>2023-02-14T07:46:32.233Z</lastmod>
+    <lastmod>2023-02-15T08:00:35.073Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/computer_vision/image_classification/classification.html</loc>
-    <lastmod>2023-02-14T07:46:32.649Z</lastmod>
+    <lastmod>2023-02-15T08:00:35.449Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/visualization.html</loc>
-    <lastmod>2023-02-14T07:46:34.965Z</lastmod>
+    <lastmod>2023-02-15T08:00:37.225Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/plot_buildings_with_area.html</loc>
-    <lastmod>2023-02-14T07:46:35.565Z</lastmod>
+    <lastmod>2023-02-15T08:00:37.657Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/osm_processing copy.html</loc>
-    <lastmod>2023-02-14T07:46:36.109Z</lastmod>
+    <lastmod>2023-02-15T08:00:38.033Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/spatial_modelling.html</loc>
-    <lastmod>2023-02-14T07:46:36.589Z</lastmod>
+    <lastmod>2023-02-15T08:00:38.441Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/geographic_data_formats.html</loc>
-    <lastmod>2023-02-14T07:46:37.085Z</lastmod>
+    <lastmod>2023-02-15T08:00:38.817Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/osm_processing.html</loc>
-    <lastmod>2023-02-14T07:46:37.577Z</lastmod>
+    <lastmod>2023-02-15T08:00:39.225Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/spatial_analysis.html</loc>
-    <lastmod>2023-02-14T07:46:38.561Z</lastmod>
+    <lastmod>2023-02-15T08:00:39.977Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/crs.html</loc>
-    <lastmod>2023-02-14T07:46:39.013Z</lastmod>
+    <lastmod>2023-02-15T08:00:40.381Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/gee_timelapse.html</loc>
-    <lastmod>2023-02-14T07:46:39.425Z</lastmod>
+    <lastmod>2023-02-15T08:00:40.745Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/spatial_data_processing/raster_data_processing.html</loc>
-    <lastmod>2023-02-14T07:46:39.961Z</lastmod>
+    <lastmod>2023-02-15T08:00:41.177Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/02_coordination_systems.html</loc>
-    <lastmod>2023-02-14T07:46:40.385Z</lastmod>
+    <lastmod>2023-02-15T08:00:41.557Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/resources.html</loc>
-    <lastmod>2023-02-14T07:46:40.785Z</lastmod>
+    <lastmod>2023-02-15T08:00:42.005Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/01_data_formats.html</loc>
-    <lastmod>2023-02-14T07:46:41.205Z</lastmod>
+    <lastmod>2023-02-15T08:00:42.417Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/07_gan_based_image_synthesis.html</loc>
-    <lastmod>2023-02-14T07:46:41.613Z</lastmod>
+    <lastmod>2023-02-15T08:00:42.777Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/06_Differentiable_volumetric_rendering.html</loc>
-    <lastmod>2023-02-14T07:46:42.045Z</lastmod>
+    <lastmod>2023-02-15T08:00:43.129Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/05_differentiable_rendering.html</loc>
-    <lastmod>2023-02-14T07:46:42.457Z</lastmod>
+    <lastmod>2023-02-15T08:00:43.481Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/04_fitting_deformable_mesh_to_point.html</loc>
-    <lastmod>2023-02-14T07:46:42.873Z</lastmod>
+    <lastmod>2023-02-15T08:00:43.857Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/03_rendering.html</loc>
-    <lastmod>2023-02-14T07:46:43.281Z</lastmod>
+    <lastmod>2023-02-15T08:00:44.201Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/3D_deep_learning/06_nerf.html</loc>
-    <lastmod>2023-02-14T07:46:43.729Z</lastmod>
+    <lastmod>2023-02-15T08:00:44.549Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/about_me/my_portfolio.html</loc>
-    <lastmod>2023-02-14T07:46:44.217Z</lastmod>
+    <lastmod>2023-02-15T08:00:44.933Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/about_me/why_me.html</loc>
-    <lastmod>2023-02-14T07:46:44.637Z</lastmod>
+    <lastmod>2023-02-15T08:00:45.333Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/causal_inference/resources.html</loc>
-    <lastmod>2023-02-14T07:46:45.021Z</lastmod>
+    <lastmod>2023-02-15T08:00:45.689Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/causal_inference/03_stats_revision.html</loc>
-    <lastmod>2023-02-14T07:46:45.401Z</lastmod>
+    <lastmod>2023-02-15T08:00:46.061Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/causal_inference/01_intro.html</loc>
-    <lastmod>2023-02-14T07:46:45.809Z</lastmod>
+    <lastmod>2023-02-15T08:00:46.405Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/causal_inference/02_randomised_exp.html</loc>
-    <lastmod>2023-02-14T07:46:46.201Z</lastmod>
+    <lastmod>2023-02-15T08:00:46.777Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/causal_inference/05_potential_outcomes.html</loc>
-    <lastmod>2023-02-14T07:46:46.585Z</lastmod>
+    <lastmod>2023-02-15T08:00:47.121Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/causal_inference/04_graphical_causal_models.html</loc>
-    <lastmod>2023-02-14T07:46:47.025Z</lastmod>
+    <lastmod>2023-02-15T08:00:47.501Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/blogs/rlhf.html</loc>
-    <lastmod>2023-02-14T07:46:47.365Z</lastmod>
+    <lastmod>2023-02-15T08:00:47.841Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/personal/improvements.html</loc>
-    <lastmod>2023-02-14T07:46:47.773Z</lastmod>
+    <lastmod>2023-02-15T08:00:48.245Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/personal/Improvements.html</loc>
-    <lastmod>2023-02-14T07:46:48.113Z</lastmod>
+    <lastmod>2023-02-15T08:00:48.537Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/personal/about_me.html</loc>
-    <lastmod>2023-02-14T07:46:48.509Z</lastmod>
+    <lastmod>2023-02-15T08:00:48.869Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/personal/my_experience.html</loc>
-    <lastmod>2023-02-14T07:46:55.433Z</lastmod>
+    <lastmod>2023-02-15T08:00:55.421Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/personal/experience.html</loc>
-    <lastmod>2023-02-14T07:46:55.821Z</lastmod>
+    <lastmod>2023-02-15T08:00:55.721Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/telecom_churn_prediction/telecom_churn_prediction.html</loc>
-    <lastmod>2023-02-14T07:46:56.597Z</lastmod>
+    <lastmod>2023-02-15T08:00:56.481Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/telecom_churn_prediction/telecom_churn_eda.html</loc>
-    <lastmod>2023-02-14T07:46:59.949Z</lastmod>
+    <lastmod>2023-02-15T08:00:59.473Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/scaled/01_test.html</loc>
-    <lastmod>2023-02-14T07:47:00.405Z</lastmod>
+    <lastmod>2023-02-15T08:00:59.817Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/scaled/blog_post.html</loc>
-    <lastmod>2023-02-14T07:47:00.813Z</lastmod>
+    <lastmod>2023-02-15T08:01:00.161Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/data_privacy/basic_privacy_approaches.html</loc>
-    <lastmod>2023-02-14T07:47:01.245Z</lastmod>
+    <lastmod>2023-02-15T08:01:00.505Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/data_privacy/differential_privacy.html</loc>
-    <lastmod>2023-02-14T07:47:01.689Z</lastmod>
+    <lastmod>2023-02-15T08:01:00.857Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/blogs.html</loc>
-    <lastmod>2023-02-14T07:47:02.085Z</lastmod>
+    <lastmod>2023-02-15T08:01:01.185Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/newsletter/resources.html</loc>
-    <lastmod>2023-02-14T07:47:02.521Z</lastmod>
+    <lastmod>2023-02-15T08:01:01.545Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/data_quality/setup_datasource.html</loc>
-    <lastmod>2023-02-14T07:47:02.969Z</lastmod>
+    <lastmod>2023-02-15T08:01:01.945Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/data_quality/four_steps_to_data_quality.html</loc>
-    <lastmod>2023-02-14T07:47:03.397Z</lastmod>
+    <lastmod>2023-02-15T08:01:02.305Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/data_quality/run_checkpoint.html</loc>
-    <lastmod>2023-02-14T07:47:03.857Z</lastmod>
+    <lastmod>2023-02-15T08:01:02.705Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/data_quality/generate_expectation.html</loc>
-    <lastmod>2023-02-14T07:47:04.349Z</lastmod>
+    <lastmod>2023-02-15T08:01:03.125Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/dsa/selection_sort.html</loc>
-    <lastmod>2023-02-14T07:47:04.741Z</lastmod>
+    <lastmod>2023-02-15T08:01:03.485Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/dsa/quick_sort.html</loc>
-    <lastmod>2023-02-14T07:47:05.161Z</lastmod>
+    <lastmod>2023-02-15T08:01:03.809Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/dsa/bst.html</loc>
-    <lastmod>2023-02-14T07:47:05.601Z</lastmod>
+    <lastmod>2023-02-15T08:01:04.173Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/dsa/bubble_sort.html</loc>
-    <lastmod>2023-02-14T07:47:06.009Z</lastmod>
+    <lastmod>2023-02-15T08:01:04.501Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/dsa/Binary_search.html</loc>
-    <lastmod>2023-02-14T07:47:06.433Z</lastmod>
+    <lastmod>2023-02-15T08:01:04.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://advaitha.github.io/myDataScienceJourney/dsa/find_closest_value_bst.html</loc>
+    <lastmod>2023-02-15T08:01:05.165Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/dsa/merge_sort.html</loc>
-    <lastmod>2023-02-14T07:47:06.853Z</lastmod>
+    <lastmod>2023-02-15T08:01:05.477Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/dsa/insertion_sort.html</loc>
-    <lastmod>2023-02-14T07:47:07.237Z</lastmod>
+    <lastmod>2023-02-15T08:01:05.805Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/resources.html</loc>
-    <lastmod>2023-02-14T07:47:07.673Z</lastmod>
+    <lastmod>2023-02-15T08:01:06.137Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/07_rulefit.html</loc>
-    <lastmod>2023-02-14T07:47:08.081Z</lastmod>
+    <lastmod>2023-02-15T08:01:06.469Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/11_neural_network.html</loc>
-    <lastmod>2023-02-14T07:47:08.525Z</lastmod>
+    <lastmod>2023-02-15T08:01:06.805Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/08_naive_bayes_and_knn.html</loc>
-    <lastmod>2023-02-14T07:47:08.925Z</lastmod>
+    <lastmod>2023-02-15T08:01:07.157Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/01_introduction.html</loc>
-    <lastmod>2023-02-14T07:47:09.409Z</lastmod>
+    <lastmod>2023-02-15T08:01:07.593Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/09_global_model_agnostic.html</loc>
-    <lastmod>2023-02-14T07:47:09.920Z</lastmod>
+    <lastmod>2023-02-15T08:01:08.017Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/12_nodegam.html</loc>
-    <lastmod>2023-02-14T07:47:10.356Z</lastmod>
+    <lastmod>2023-02-15T08:01:08.401Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/10_local_model_agnostic.html</loc>
-    <lastmod>2023-02-14T07:47:10.868Z</lastmod>
+    <lastmod>2023-02-15T08:01:08.837Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/05_GLM_GAM.html</loc>
-    <lastmod>2023-02-14T07:47:11.332Z</lastmod>
+    <lastmod>2023-02-15T08:01:09.229Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/03_logistic_regression.html</loc>
-    <lastmod>2023-02-14T07:47:11.744Z</lastmod>
+    <lastmod>2023-02-15T08:01:09.581Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/04_explainable_boosting_machine.html</loc>
-    <lastmod>2023-02-14T07:47:12.136Z</lastmod>
+    <lastmod>2023-02-15T08:01:09.953Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/06_Decision_tree.html</loc>
-    <lastmod>2023-02-14T07:47:12.548Z</lastmod>
+    <lastmod>2023-02-15T08:01:10.313Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/theory/02_linear_regression.html</loc>
-    <lastmod>2023-02-14T07:47:12.940Z</lastmod>
+    <lastmod>2023-02-15T08:01:10.665Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/interpret_ai/notebooks/01_ebm.html</loc>
-    <lastmod>2023-02-14T07:47:13.900Z</lastmod>
+    <lastmod>2023-02-15T08:01:11.517Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/interpret_ai/notebooks/02_gamchanger.html</loc>
-    <lastmod>2023-02-14T07:47:14.700Z</lastmod>
+    <lastmod>2023-02-15T08:01:12.041Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Interpretable_ml/interpret_ai/notebooks/03_rulefit.html</loc>
-    <lastmod>2023-02-14T07:47:15.268Z</lastmod>
+    <lastmod>2023-02-15T08:01:12.409Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/index.html</loc>
-    <lastmod>2023-02-14T07:47:15.732Z</lastmod>
+    <lastmod>2023-02-15T08:01:12.725Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/graph_ml/02_resources.html</loc>
-    <lastmod>2023-02-14T07:47:16.248Z</lastmod>
+    <lastmod>2023-02-15T08:01:13.073Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/graph_ml/01_intro.html</loc>
-    <lastmod>2023-02-14T07:47:16.732Z</lastmod>
+    <lastmod>2023-02-15T08:01:13.437Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/anomaly_detection/ad_online_event_streams.html</loc>
-    <lastmod>2023-02-14T07:47:17.232Z</lastmod>
+    <lastmod>2023-02-15T08:01:13.769Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/anomaly_detection/Anomaly_based_IDS.html</loc>
-    <lastmod>2023-02-14T07:47:17.720Z</lastmod>
+    <lastmod>2023-02-15T08:01:14.097Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/anomaly_detection/ad_dynamic_graphs_using_midas.html</loc>
-    <lastmod>2023-02-14T07:47:18.172Z</lastmod>
+    <lastmod>2023-02-15T08:01:14.452Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/anomaly_detection/anomaly_detection_using_graphs.html</loc>
-    <lastmod>2023-02-14T07:47:18.588Z</lastmod>
+    <lastmod>2023-02-15T08:01:14.876Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/anomaly_detection/ad_using_unsupervised_methods.html</loc>
-    <lastmod>2023-02-14T07:47:19.100Z</lastmod>
+    <lastmod>2023-02-15T08:01:15.236Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/transformers_production.html</loc>
-    <lastmod>2023-02-14T07:47:19.576Z</lastmod>
+    <lastmod>2023-02-15T08:01:15.648Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/transformer_models.html</loc>
-    <lastmod>2023-02-14T07:47:20.016Z</lastmod>
+    <lastmod>2023-02-15T08:01:15.976Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/chatgpt.html</loc>
-    <lastmod>2023-02-14T07:47:20.592Z</lastmod>
+    <lastmod>2023-02-15T08:01:16.284Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/multilingual_transformers.html</loc>
-    <lastmod>2023-02-14T07:47:20.996Z</lastmod>
+    <lastmod>2023-02-15T08:01:16.648Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/text_preprocessing.html</loc>
-    <lastmod>2023-02-14T07:47:21.368Z</lastmod>
+    <lastmod>2023-02-15T08:01:16.992Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/instruction_fine_tuned_txt_embedding.html</loc>
-    <lastmod>2023-02-14T07:47:21.812Z</lastmod>
+    <lastmod>2023-02-15T08:01:17.356Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/text_summarization.html</loc>
-    <lastmod>2023-02-14T07:47:22.204Z</lastmod>
+    <lastmod>2023-02-15T08:01:17.716Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/text_generation.html</loc>
-    <lastmod>2023-02-14T07:47:22.644Z</lastmod>
+    <lastmod>2023-02-15T08:01:18.084Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/rnn.html</loc>
-    <lastmod>2023-02-14T07:47:23.088Z</lastmod>
+    <lastmod>2023-02-15T08:01:18.452Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/gpt.html</loc>
-    <lastmod>2023-02-14T07:47:23.532Z</lastmod>
+    <lastmod>2023-02-15T08:01:18.792Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/ner_transformer.html</loc>
-    <lastmod>2023-02-14T07:47:23.956Z</lastmod>
+    <lastmod>2023-02-15T08:01:19.156Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/qa.html</loc>
-    <lastmod>2023-02-14T07:47:24.408Z</lastmod>
+    <lastmod>2023-02-15T08:01:19.540Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/MusicLM.html</loc>
-    <lastmod>2023-02-14T07:47:24.836Z</lastmod>
+    <lastmod>2023-02-15T08:01:19.924Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/bert.html</loc>
-    <lastmod>2023-02-14T07:47:25.308Z</lastmod>
+    <lastmod>2023-02-15T08:01:20.356Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/IE.html</loc>
-    <lastmod>2023-02-14T07:47:25.760Z</lastmod>
+    <lastmod>2023-02-15T08:01:20.724Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/dealing_few_labels.html</loc>
-    <lastmod>2023-02-14T07:47:26.184Z</lastmod>
+    <lastmod>2023-02-15T08:01:21.092Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/algos_for_chatbots.html</loc>
-    <lastmod>2023-02-14T07:47:26.648Z</lastmod>
+    <lastmod>2023-02-15T08:01:21.528Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/starspace.html</loc>
-    <lastmod>2023-02-14T07:47:27.076Z</lastmod>
+    <lastmod>2023-02-15T08:01:21.884Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/nlp/chatbot.html</loc>
-    <lastmod>2023-02-14T07:47:27.508Z</lastmod>
+    <lastmod>2023-02-15T08:01:22.292Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/create_python_package.html</loc>
-    <lastmod>2023-02-14T07:47:27.848Z</lastmod>
+    <lastmod>2023-02-15T08:01:22.628Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/distributed_processing/fugue_quickstart.html</loc>
-    <lastmod>2023-02-14T07:47:28.424Z</lastmod>
+    <lastmod>2023-02-15T08:01:23.052Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/distributed_processing/fugue_intro.html</loc>
-    <lastmod>2023-02-14T07:47:28.892Z</lastmod>
+    <lastmod>2023-02-15T08:01:23.404Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/distributed_processing/fugue_sql.html</loc>
-    <lastmod>2023-02-14T07:47:29.380Z</lastmod>
+    <lastmod>2023-02-15T08:01:23.776Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Time Series/resources.html</loc>
-    <lastmod>2023-02-14T07:47:29.876Z</lastmod>
+    <lastmod>2023-02-15T08:01:24.084Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Time Series/03_stats_models.html</loc>
-    <lastmod>2023-02-14T07:47:30.380Z</lastmod>
+    <lastmod>2023-02-15T08:01:24.436Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Time Series/02_exploratory_analysis.html</loc>
-    <lastmod>2023-02-14T07:47:30.808Z</lastmod>
+    <lastmod>2023-02-15T08:01:24.808Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Time Series/01_overview.html</loc>
-    <lastmod>2023-02-14T07:47:31.260Z</lastmod>
+    <lastmod>2023-02-15T08:01:25.196Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Time Series/05_ml_for_ts.html</loc>
-    <lastmod>2023-02-14T07:47:31.656Z</lastmod>
+    <lastmod>2023-02-15T08:01:25.536Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/Time Series/04_feature_eng.html</loc>
-    <lastmod>2023-02-14T07:47:32.116Z</lastmod>
+    <lastmod>2023-02-15T08:01:25.920Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/industry_use_cases/insurance.html</loc>
-    <lastmod>2023-02-14T07:47:32.548Z</lastmod>
+    <lastmod>2023-02-15T08:01:26.288Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/system_design/step_by_step.html</loc>
-    <lastmod>2023-02-14T07:47:33.000Z</lastmod>
+    <lastmod>2023-02-15T08:01:26.696Z</lastmod>
+  </url>
+  <url>
+    <loc>https://advaitha.github.io/myDataScienceJourney/system_design/scaling_to_million_users.html</loc>
+    <lastmod>2023-02-15T08:01:27.072Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/math_for_ai/theory/04_neural_network.html</loc>
-    <lastmod>2023-02-14T07:47:33.484Z</lastmod>
+    <lastmod>2023-02-15T08:01:27.460Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/math_for_ai/theory/02_distributions.html</loc>
-    <lastmod>2023-02-14T07:47:33.980Z</lastmod>
+    <lastmod>2023-02-15T08:01:27.892Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/math_for_ai/theory/05_cnn.html</loc>
-    <lastmod>2023-02-14T07:47:34.416Z</lastmod>
+    <lastmod>2023-02-15T08:01:28.248Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/math_for_ai/theory/03_fitting_functions_to_data.html</loc>
-    <lastmod>2023-02-14T07:47:34.828Z</lastmod>
+    <lastmod>2023-02-15T08:01:28.648Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/math_for_ai/theory/01_intro.html</loc>
-    <lastmod>2023-02-14T07:47:35.228Z</lastmod>
+    <lastmod>2023-02-15T08:01:29.024Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/image_worth_16_16.html</loc>
-    <lastmod>2023-02-14T07:47:35.520Z</lastmod>
+    <lastmod>2023-02-15T08:01:29.368Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/resources.html</loc>
-    <lastmod>2023-02-14T07:47:35.940Z</lastmod>
+    <lastmod>2023-02-15T08:01:29.736Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/transformers_new.html</loc>
-    <lastmod>2023-02-14T07:47:36.344Z</lastmod>
+    <lastmod>2023-02-15T08:01:30.092Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/data_eff_img_transformer.html</loc>
-    <lastmod>2023-02-14T07:47:36.736Z</lastmod>
+    <lastmod>2023-02-15T08:01:30.488Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/vision_transformer_architectures.html</loc>
-    <lastmod>2023-02-14T07:47:37.144Z</lastmod>
+    <lastmod>2023-02-15T08:01:30.840Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/transformers_from_scratch.html</loc>
-    <lastmod>2023-02-14T07:47:37.564Z</lastmod>
+    <lastmod>2023-02-15T08:01:31.236Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/attention.html</loc>
-    <lastmod>2023-02-14T07:47:37.980Z</lastmod>
+    <lastmod>2023-02-15T08:01:31.584Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/vision_transformer.html</loc>
-    <lastmod>2023-02-14T07:47:38.460Z</lastmod>
+    <lastmod>2023-02-15T08:01:32.008Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/how_to_train_ViT.html</loc>
-    <lastmod>2023-02-14T07:47:38.860Z</lastmod>
+    <lastmod>2023-02-15T08:01:32.396Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/object_detection_transformers.html</loc>
-    <lastmod>2023-02-14T07:47:39.260Z</lastmod>
+    <lastmod>2023-02-15T08:01:32.752Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/gaps.html</loc>
-    <lastmod>2023-02-14T07:47:39.628Z</lastmod>
+    <lastmod>2023-02-15T08:01:33.160Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/transformers.html</loc>
-    <lastmod>2023-02-14T07:47:40.040Z</lastmod>
+    <lastmod>2023-02-15T08:01:33.604Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/Attention_for_vision.html</loc>
-    <lastmod>2023-02-14T07:47:40.416Z</lastmod>
+    <lastmod>2023-02-15T08:01:33.980Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/transformers/attention_is_all_you_need.html</loc>
-    <lastmod>2023-02-14T07:47:40.820Z</lastmod>
+    <lastmod>2023-02-15T08:01:34.364Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/probability/Probability.html</loc>
-    <lastmod>2023-02-14T07:47:41.236Z</lastmod>
+    <lastmod>2023-02-15T08:01:34.724Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Feature_Engineering.html</loc>
-    <lastmod>2023-02-14T07:47:41.680Z</lastmod>
+    <lastmod>2023-02-15T08:01:35.132Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Resources.html</loc>
-    <lastmod>2023-02-14T07:47:42.168Z</lastmod>
+    <lastmod>2023-02-15T08:01:35.476Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Model_Evaluation.html</loc>
-    <lastmod>2023-02-14T07:47:43.148Z</lastmod>
+    <lastmod>2023-02-15T08:01:36.472Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Training_Data.html</loc>
-    <lastmod>2023-02-14T07:47:43.556Z</lastmod>
+    <lastmod>2023-02-15T08:01:36.856Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Regularization.html</loc>
-    <lastmod>2023-02-14T07:47:43.972Z</lastmod>
+    <lastmod>2023-02-15T08:01:37.232Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/gradient_descent.html</loc>
-    <lastmod>2023-02-14T07:47:44.404Z</lastmod>
+    <lastmod>2023-02-15T08:01:37.596Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Model_Development.html</loc>
-    <lastmod>2023-02-14T07:47:44.820Z</lastmod>
+    <lastmod>2023-02-15T08:01:38.024Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Sampling.html</loc>
-    <lastmod>2023-02-14T07:47:45.236Z</lastmod>
+    <lastmod>2023-02-15T08:01:38.404Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/MLOPS.html</loc>
-    <lastmod>2023-02-14T07:47:45.612Z</lastmod>
+    <lastmod>2023-02-15T08:01:38.740Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Model_Deployment.html</loc>
-    <lastmod>2023-02-14T07:47:46.008Z</lastmod>
+    <lastmod>2023-02-15T08:01:39.080Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/Monitoring_ML_Models_in_production.html</loc>
-    <lastmod>2023-02-14T07:47:46.440Z</lastmod>
+    <lastmod>2023-02-15T08:01:39.492Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/ds_lifecycle/ML_Algorithms.html</loc>
-    <lastmod>2023-02-14T07:47:46.836Z</lastmod>
+    <lastmod>2023-02-15T08:01:39.852Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/notes.html</loc>
-    <lastmod>2023-02-14T07:47:47.220Z</lastmod>
+    <lastmod>2023-02-15T08:01:40.212Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/study.html</loc>
-    <lastmod>2023-02-14T07:47:47.576Z</lastmod>
+    <lastmod>2023-02-15T08:01:40.544Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/python_packages/create_python_package.html</loc>
-    <lastmod>2023-02-14T07:47:47.988Z</lastmod>
+    <lastmod>2023-02-15T08:01:40.928Z</lastmod>
   </url>
   <url>
     <loc>https://advaitha.github.io/myDataScienceJourney/research/unknown.html</loc>
-    <lastmod>2023-02-14T07:47:48.372Z</lastmod>
+    <lastmod>2023-02-15T08:01:41.312Z</lastmod>
   </url>
 </urlset>

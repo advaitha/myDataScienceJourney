@@ -869,11 +869,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="../dsa/bst.html" class="sidebar-item-text sidebar-link">Binary Search Tree</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dsa/find_closest_value_bst.html" class="sidebar-item-text sidebar-link">Find Closest Value in BST</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" aria-expanded="true">**System Design</a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" aria-expanded="true"><strong>System Design</strong></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-20" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -882,6 +887,11 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../system_design/step_by_step.html" class="sidebar-item-text sidebar-link active">Step by Step Guide for System Design</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../system_design/scaling_to_million_users.html" class="sidebar-item-text sidebar-link">Scaling web services to millions of users</a>
   </div>
 </li>
       </ul>
@@ -951,12 +961,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Ask as many questions as possible to understand the problem
 <ul>
 <li>Clarify the requirements</li>
+<li>Note down the assumptions</li>
 <li>Prority of the features to build</li>
 <li>Focus on non-fuctional requirements like scale and performance</li>
 <li>Do rough back of the envelope calculations</li>
 </ul></li>
 <li>By the end of this step we should have a clear understanding of the requirements and non fuctional features</li>
 </ul>
+<p>Sample questions: * What specific features are we building? * How many users do we have? * How fast the company wants to scale up? * what is the company’s technology stack?</p>
 </section>
 <section id="step-2---propose-high-level-design-and-get-buy-in-20-mins" class="level2">
 <h2 class="anchored" data-anchor-id="step-2---propose-high-level-design-and-get-buy-in-20-mins">Step 2 - Propose high level design and get buy-in (20 mins)</h2>
@@ -983,10 +995,15 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Summarize the design</li>
 <li>Focus on the parts which are unique to the situation</li>
+<li>Discuss how you can make improvements to this design to handle monitoring, tracking metrics or scaling the system etc.</li>
+<li>Other refinements you need if you had more time</li>
 </ul>
 <section id="reference" class="level3">
 <h3 class="anchored" data-anchor-id="reference">Reference</h3>
-<p>ByteByteGo youtube channel</p>
+<ul>
+<li>ByteByteGo youtube channel</li>
+<li><a href="https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews">System Design Book</a></li>
+</ul>
 
 
 </section>
