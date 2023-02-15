@@ -1,0 +1,17 @@
+# Scaling web services to millions of users
+
+![](/Images/2023-02-14_16-38.png)
+
+* Keep web tier stateless
+* Build redundancy at every tier
+* Cache data as much as you can
+* Support mutliple data centers
+* Host static assets in CDN
+* Scale your data tier by sharding
+* Split tiers into individual services
+* Monitor your system and use automation tools
+
+
+## Reference
+[ByteByteGo website](https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users)
+
