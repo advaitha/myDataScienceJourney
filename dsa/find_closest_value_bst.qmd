@@ -1,0 +1,28 @@
+# Find Closest Value in BST
+
+Write a function that takes in a BST and a target integer value and returns the closest value to that target in the BST.
+
+```python
+def findClosestValueInBst(tree, target):
+    # Initiate the closest value to infinity
+    closestValue = float("inf")
+    currentNode = tree
+
+    while currentNode is not None:
+        # If the current node's value is closer to the target value then the closesetValue
+        # then update the closestValue
+        if abs(currentNode.value - target) < abs(target - closestValue):
+            closestValue = currentNode.value
+        
+        if currentNode.value < target:
+            currentNode = currentNode.right
+
+        elif currentNode.value > target:
+            currentNode = currentNode.left
+
+        else:
+            # Break from the loop if currenNode is equal to the target value
+            break
+            
+    return closestValue
+```

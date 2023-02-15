@@ -173,9 +173,11 @@ website:
           - dsa/quick_sort.ipynb            
           - dsa/Binary_search.ipynb   
           - dsa/bst.qmd
+          - dsa/find_closest_value_bst.qmd
         - section: "**System Design**"
           contents:
           - system_design/step_by_step.qmd
+          - system_design/scaling_to_million_users.qmd
         - section: "**probability**"      
           contents:
           - probability/Probability.qmd       

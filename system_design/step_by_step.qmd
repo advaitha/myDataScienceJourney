@@ -3,10 +3,17 @@
 ## Step 1 - Understand the problem and establish design scope (5 mins)
 * Ask as many questions as possible to understand the problem
     * Clarify the requirements
+    * Note down the assumptions
     * Prority of the features to build
     * Focus on non-fuctional requirements like scale and performance
     * Do rough back of the envelope calculations
 * By the end of this step we should have a clear understanding of the requirements and non fuctional features 
+
+Sample questions:
+* What specific features are we building?
+* How many users do we have?
+* How fast the company wants to scale up?
+* what is the company's technology stack?
 
 
 ## Step 2 - Propose high level design and get buy-in (20 mins)
@@ -24,7 +31,10 @@
 ## Step 4 - Wrap up (5 mins)
 * Summarize the design
 * Focus on the parts which are unique to the situation
+* Discuss how you can make improvements to this design to handle monitoring, tracking metrics or scaling the system etc.
+* Other refinements you need if you had more time
 
 
 ### Reference
-ByteByteGo youtube channel
+* ByteByteGo youtube channel
+* [System Design Book](https://bytebytego.com/courses/system-design-interview/a-framework-for-system-design-interviews)

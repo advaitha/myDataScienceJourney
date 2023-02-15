@@ -539,6 +539,13 @@
     "text": "Binary Search\n\nBinary search using Iterative Method\n\n# Time complexity O(log(n)) and space complexity is O(1)\n### Using three pointers - left, right and middle\n### We keep adjusting the three pointers and quit when \n### left pointer crosses the right pointer\n\ndef binarySearch(array, target):\n    left = 0\n    right = len(array) - 1    \n\n    while left <= right:\n        middle = (left+right) // 2\n        potentialMatch = array[middle]\n\n        if target == potentialMatch:\n            return middle\n\n        elif target < potentialMatch:\n            right = middle - 1\n\n        else:\n            left = middle + 1\n\n    return -1\n\n\narray = [0,1,21,33,45,61,71,72,73]\ntarget = 33\n\n\nbinarySearch(array=array,target=target)\n\n3\n\n\n\n\nBinary search using Recursion\n\n# O(log(n)) time complexity ! O(log(n)) space complexity\n\ndef binarySearch(array,target):\n    return binarySearchHelper(array,target,0,len(array)-1)\n\ndef binarySearchHelper(array,target,left,right):\n    if left > right:\n        return -1\n\n    middle = (left+right) // 2\n    potentialMatch = array[middle]\n    if target == potentialMatch:\n        return middle\n    elif target < potentialMatch:\n        return binarySearchHelper(array,target,left,middle-1)\n    else:\n        return binarySearchHelper(array,target,middle+1,right)  \n\n\nbinarySearch(array,target)\n\n3"
   },
   {
+    "objectID": "dsa/find_closest_value_bst.html",
+    "href": "dsa/find_closest_value_bst.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Find Closest Value in BST\nWrite a function that takes in a BST and a target integer value and returns the closest value to that target in the BST.\ndef findClosestValueInBst(tree, target):\n    # Initiate the closest value to infinity\n    closestValue = float(\"inf\")\n    currentNode = tree\n\n    while currentNode is not None:\n        # If the current node's value is closer to the target value then the closesetValue\n        # then update the closestValue\n        if abs(currentNode.value - target) < abs(target - closestValue):\n            closestValue = currentNode.value\n        \n        if currentNode.value < target:\n            currentNode = currentNode.right\n\n        elif currentNode.value > target:\n            currentNode = currentNode.left\n\n        else:\n            # Break from the loop if currenNode is equal to the target value\n            break\n            \n    return closestValue"
+  },
+  {
     "objectID": "dsa/merge_sort.html",
     "href": "dsa/merge_sort.html",
     "title": "My Datascience Journey",
@@ -942,7 +949,14 @@
     "href": "system_design/step_by_step.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Ask as many questions as possible to understand the problem\n\nClarify the requirements\nPrority of the features to build\nFocus on non-fuctional requirements like scale and performance\nDo rough back of the envelope calculations\n\nBy the end of this step we should have a clear understanding of the requirements and non fuctional features\n\n\n\n\n\nUse Top-down approach\nstart with API Design and see if the APIs are satisfying the functional requirements. Do not consider APIs which are not aligned to the requirements.\n\nInput parameters\nOutput responses\n\nStart high-level design once the APIs are finalized.\nReview if all the features are covered in the high-level design\n\n\n\n\n\nIdentify areas with challenges and discuss at least two options with their tradeoffs\nPick a solution and discuss\n\n\n\n\n\nSummarize the design\nFocus on the parts which are unique to the situation\n\n\n\nByteByteGo youtube channel"
+    "text": "Ask as many questions as possible to understand the problem\n\nClarify the requirements\nNote down the assumptions\nPrority of the features to build\nFocus on non-fuctional requirements like scale and performance\nDo rough back of the envelope calculations\n\nBy the end of this step we should have a clear understanding of the requirements and non fuctional features\n\nSample questions: * What specific features are we building? * How many users do we have? * How fast the company wants to scale up? * what is the company’s technology stack?\n\n\n\n\nUse Top-down approach\nstart with API Design and see if the APIs are satisfying the functional requirements. Do not consider APIs which are not aligned to the requirements.\n\nInput parameters\nOutput responses\n\nStart high-level design once the APIs are finalized.\nReview if all the features are covered in the high-level design\n\n\n\n\n\nIdentify areas with challenges and discuss at least two options with their tradeoffs\nPick a solution and discuss\n\n\n\n\n\nSummarize the design\nFocus on the parts which are unique to the situation\nDiscuss how you can make improvements to this design to handle monitoring, tracking metrics or scaling the system etc.\nOther refinements you need if you had more time\n\n\n\n\nByteByteGo youtube channel\nSystem Design Book"
+  },
+  {
+    "objectID": "system_design/scaling_to_million_users.html",
+    "href": "system_design/scaling_to_million_users.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Keep web tier stateless\nBuild redundancy at every tier\nCache data as much as you can\nSupport mutliple data centers\nHost static assets in CDN\nScale your data tier by sharding\nSplit tiers into individual services\nMonitor your system and use automation tools\n\n\n\nByteByteGo website"
   },
   {
     "objectID": "math_for_ai/theory/04_neural_network.html",
