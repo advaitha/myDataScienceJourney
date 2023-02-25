@@ -1,0 +1,12 @@
+# Big Data Architectures
+
+## Lambda Architecture
+![Lambda Architecture](/Images/lambda_architecture.png)
+
+
+## Kappa Architecture
+![Kappa Architecture](/Images/kappa_architecture.png)
+
+
+## IOT Architecture
+![IOT Architecture](/Images/iot_architecture.png)
