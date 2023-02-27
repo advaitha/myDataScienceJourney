@@ -1,0 +1,6 @@
+# MLOPS
+
+## Mlops Architecture
+![MlOps Architecture](/Images/mlops.png)
+
+

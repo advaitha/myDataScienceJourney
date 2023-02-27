@@ -43,7 +43,11 @@ website:
         - section: "**Data Architecture**"
           contents:
           - data_architecture/big_data_architectures.qmd
+          - data_architecture/data_quality.qmd
           - data_architecture/feature_stores.qmd
+          - data_architecture/mlops.qmd
+          - data_architecture/model_deployment.qmd
+          - data_architecture/model_monitoring.qmd
         - section: "**Transformers**"
           contents:
           - transformers/Attention_for_vision.qmd

@@ -9,6 +9,8 @@ Feature store is an interface between models and the data.
 
 ![Feature store](/Images/feature_store.png)
 
+![Feature store 101](/Images/feature_store_101.png)
+
 ![Feature store supporting batch and realtime use cases](/Images/feature_store_2.png)
 
 

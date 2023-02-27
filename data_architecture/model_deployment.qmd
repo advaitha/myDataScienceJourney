@@ -1,0 +1,12 @@
+
+# Model Deployment
+
+## 4 types of model deployment
+
+![](/Images/model_deployment.png)
+
+
+
+## Real time ML Deployment Patterns
+
+![](/Images/real_time_ml_deployment_patterns.png)
