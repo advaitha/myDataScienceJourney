@@ -1,0 +1,22 @@
+# Model Monitoring
+
+## Data Drift 
+* Also called feature drift
+* The population on which the model inference is performed shifts
+
+Examples:-
+
+* Increase exposure to one particular marketing channel which you haven't had enough exposure to before
+* Moving to new markets etc.
+
+
+## Concept Drift
+* The functional relationship between model inputs and outputs change.
+
+Example:-
+
+* Change in housing prices with change in economic situation
+
+## Data and Concept Drift in ML Systems
+
+![Drift in ML](/Images/drift.png)

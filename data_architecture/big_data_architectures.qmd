@@ -8,5 +8,12 @@
 ![Kappa Architecture](/Images/kappa_architecture.png)
 
 
+![Lambda VS Kappa](/Images/lambda_vs_kappa.png)
+
+
 ## IOT Architecture
 ![IOT Architecture](/Images/iot_architecture.png)
+
+
+## Reference:-
+* [Swirlai Post](https://www.linkedin.com/feed/update/urn:li:activity:7033021067023544320/)

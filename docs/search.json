@@ -914,14 +914,35 @@
     "href": "data_architecture/feature_stores.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Feature store is an interface between models and the data.\n\nProductionize new features\nAutomate feature computation, backfills, logging\nShare and reuse feature pipelines across teams\nConsistency between training and serving data\n\n\n\n\nFeature store\n\n\n\n\n\nFeature store supporting batch and realtime use cases\n\n\n\n\n\n\n\nFive main components of a feature store\n\n\n\nServing - Avoid Training-serving skew\n\n\n\n\nServing\n\n\n\nStorage - Offline and online storage. Data lake is extended for offline storage. Online storage use latest feature values for each entity. Redis, DynamoDB or Cassandra is used for online storage.\n\n\n\n\nStorage\n\n\n\nTransformation - Regular processing of new data into feature values. Feature stores both manage and orchestrate data transformations that produce these values, as well as ingest values produced by external systems.\n\n\n\n\nTransformation\n\n\n\nMonitoring - Data quality is tracked by monitoring for drift, training-serving skew etc.\nRegistry - A registry of standardized feature definitions and metadata. It is a common catalog to explore, develop, collaborate and publish new definitions within and across teams.\n\n\n\n\nWhat is a feature store"
+    "text": "Feature store is an interface between models and the data.\n\nProductionize new features\nAutomate feature computation, backfills, logging\nShare and reuse feature pipelines across teams\nConsistency between training and serving data\n\n\n\n\nFeature store\n\n\n\n\n\nFeature store 101\n\n\n\n\n\nFeature store supporting batch and realtime use cases\n\n\n\n\n\n\n\nFive main components of a feature store\n\n\n\nServing - Avoid Training-serving skew\n\n\n\n\nServing\n\n\n\nStorage - Offline and online storage. Data lake is extended for offline storage. Online storage use latest feature values for each entity. Redis, DynamoDB or Cassandra is used for online storage.\n\n\n\n\nStorage\n\n\n\nTransformation - Regular processing of new data into feature values. Feature stores both manage and orchestrate data transformations that produce these values, as well as ingest values produced by external systems.\n\n\n\n\nTransformation\n\n\n\nMonitoring - Data quality is tracked by monitoring for drift, training-serving skew etc.\nRegistry - A registry of standardized feature definitions and metadata. It is a common catalog to explore, develop, collaborate and publish new definitions within and across teams.\n\n\n\n\nWhat is a feature store"
+  },
+  {
+    "objectID": "data_architecture/model_monitoring.html",
+    "href": "data_architecture/model_monitoring.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Also called feature drift\nThe population on which the model inference is performed shifts\n\nExamples:-\n\nIncrease exposure to one particular marketing channel which you haven’t had enough exposure to before\nMoving to new markets etc.\n\n\n\n\n\nThe functional relationship between model inputs and outputs change.\n\nExample:-\n\nChange in housing prices with change in economic situation\n\n\n\n\n\n\n\nDrift in ML"
+  },
+  {
+    "objectID": "data_architecture/mlops.html",
+    "href": "data_architecture/mlops.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "MlOps Architecture"
   },
   {
     "objectID": "data_architecture/big_data_architectures.html",
     "href": "data_architecture/big_data_architectures.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Lambda Architecture\n\n\n\n\n\n\n\n\nKappa Architecture\n\n\n\n\n\n\n\n\nIOT Architecture"
+    "text": "Lambda Architecture\n\n\n\n\n\n\n\n\nKappa Architecture\n\n\n\n\n\nLambda VS Kappa\n\n\n\n\n\n\n\n\nIOT Architecture\n\n\n\n\n\n\nSwirlai Post"
+  },
+  {
+    "objectID": "data_architecture/data_quality.html",
+    "href": "data_architecture/data_quality.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Data Quality for ML"
   },
   {
     "objectID": "Time Series/resources.html",
