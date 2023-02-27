@@ -40,6 +40,10 @@ website:
           - 3D_deep_learning/05_differentiable_rendering.qmd
           - 3D_deep_learning/06_nerf.qmd
           - 3D_deep_learning/resources.qmd
+        - section: "**Data Architecture**"
+          contents:
+          - data_architecture/big_data_architectures.qmd
+          - data_architecture/feature_stores.qmd
         - section: "**Transformers**"
           contents:
           - transformers/Attention_for_vision.qmd

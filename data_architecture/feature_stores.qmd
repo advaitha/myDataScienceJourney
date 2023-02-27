@@ -1,0 +1,40 @@
+# Feature Store
+
+Feature store is an interface between models and the data.
+
+* Productionize new features
+* Automate feature computation, backfills, logging
+* Share and reuse feature pipelines across teams
+* Consistency between training and serving data
+
+![Feature store](/Images/feature_store.png)
+
+![Feature store supporting batch and realtime use cases](/Images/feature_store_2.png)
+
+
+## Five main components of a feature store
+
+
+![Five main components of a feature store](/Images/feature_store_5.png)
+
+1. **Serving** - Avoid Training-serving skew
+
+![Serving](/Images/feature_store_serving.png)
+
+2. **Storage** - Offline and online storage. Data lake is extended for offline storage. Online storage use latest feature values for each entity. Redis, DynamoDB or Cassandra is used for online storage.
+
+![Storage](/Images/fs_storage.png)
+
+3. **Transformation** - Regular processing of new data into feature values. Feature stores both manage and orchestrate data transformations that produce these values, as well as ingest values produced by external systems. 
+
+![Transformation](/Images/fs_transformations.png)
+
+
+4. **Monitoring** - Data quality is tracked by monitoring for drift, training-serving skew etc.
+
+
+5. **Registry** - A registry of standardized feature definitions and metadata. It is a common catalog to explore, develop, collaborate and publish new definitions within and across teams.
+
+
+## Reference
+[What is a feature store](https://www.tecton.ai/blog/what-is-a-feature-store/)
