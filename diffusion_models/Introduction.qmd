@@ -1,1 +1,23 @@
 # Introduction to Diffusion
+
+![How Diffusion Works](/Images/how_diffusion_works.png)
+![Predicting noise in an image](/Images/stable_diffusion_2.png)
+
+## Components of Diffusion
+* Unet - Input is Somewhat a noisy image, and it output the noise
+![Autoencoder](/Images/autoencoder_2.png)
+![Inputs and outputs when using VAE](/Images/inputs_outputs_vae.png)
+
+
+## Conditional Iputs
+
+![Providing Guidance to Diffusion](/Images/guidance_diffusion.png)
+![clip model](/Images/clip_model.png)
+
+## Compute providers
+* Paperspace Gradient
+* Lambda labs
+* Jarvis labs
+
+## Reference
+[Jeremy Howard video](https://www.youtube.com/watch?v=_7rMfsA24Ls)

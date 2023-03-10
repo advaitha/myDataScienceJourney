@@ -1,0 +1,3 @@
+# Best Interveiw Resources
+* [The Data Science Interview Book](https://book.thedatascienceinterviewproject.com/)
+* [The Illustrated Machine Learning](https://illustrated-machine-learning.github.io/)
