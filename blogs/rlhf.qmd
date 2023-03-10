@@ -12,3 +12,6 @@
 policy gradient methods 
 
 ![PPO](https://www.youtube.com/watch?v=HrapVFNBN64)
+
+
+## What are generative models and how does it differ from probabilistic models?

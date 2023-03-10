@@ -1,0 +1,87 @@
+## Computer vision
+* How stable diffusion works
+* How to train stable diffusion on your own data
+* What is textual inversion fine-tuning for stable diffusion
+* Computer vision use case for the construction industry
+* Deep learning architectures for computer vision
+* Transformers for computer vision
+* Transformers Vs Convolutions for computer vision
+* Segmentation architectures for computer vision
+* Image classification architectures for computer vision
+* Object detection architectures for computer vision
+* Generative models for computer vision
+* How reverse image search works
+* How computer vision is used in Insurance sector
+
+
+## NLP
+* How Question Answering NLP systems work
+* How NLP is used for Summarization 
+* HOW Named Entity Recognition Models are trained
+* How Keyword Extraction models are trained using NLP
+* Popular Transformer Architectures for NLP
+* How to use NLP for cleaning social media data
+* How open domain chatbots like chatgpt are trained
+* How Rasa trains their models for intent detection and predicting next action
+* How to create your own LLM powered applications
+
+## Recommendation Systems
+* How Deep Knowledge-aware Networks (DKN) is used for News Recommendation System
+* How Tiktok recommenders work
+* How Neural Collobarative Filtering (NCF) works
+* Alternative Least Square (ALS) for recommender systems
+* Autoencoders for Recommender sytems
+* Building Graph Based Recommender systems
+* Popular architectures for recommender systems
+* What is Matrix Factorization? How is it used in recommendation systems?
+* what are session based recommendation systems and how do they work?
+
+## Data Engineering
+* Data engineering life cycle
+* How to design good data architecture
+* what is a data mesh
+* Data pipeline patterns
+* How to orchestrate your data pipelines
+* Creating datapiplines in Jupyter
+* what is Fugue - Distributed compute engine
+
+
+
+## Python
+* Pandas 2.0 release is expected soon. Blog post on the advantages of Pandas 2.0 
+* Using Python dictionaries effectively
+* Using Decorators for Data Science
+* Generators and Iterators
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Data Science, Machine Learning and Deep Learning Concepts Demystified
+Explaining the Jargon which we come across in our day to day life. For example:-
+* What is Reinforcement Learning with Human Feedback
+* What is label smoothing
+* What is KL divergence
+
+
+
+## Content Publishing
+* How to create your Data Science Portfolio
+* How to create your personal website without any coding skills
+* How to write and maintain your own Data Science blog
