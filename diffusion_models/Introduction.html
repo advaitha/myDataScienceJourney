@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – rlhf</title>
+<title>My Datascience Journey – introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -975,10 +975,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reinforcement-learning-from-human-feedback" id="toc-reinforcement-learning-from-human-feedback" class="nav-link active" data-scroll-target="#reinforcement-learning-from-human-feedback">Reinforcement Learning from Human Feedback</a>
+  <li><a href="#introduction-to-diffusion" id="toc-introduction-to-diffusion" class="nav-link active" data-scroll-target="#introduction-to-diffusion">Introduction to Diffusion</a>
   <ul class="collapse">
-  <li><a href="#proximal-policy-optimization" id="toc-proximal-policy-optimization" class="nav-link" data-scroll-target="#proximal-policy-optimization">Proximal Policy Optimization</a></li>
-  <li><a href="#what-are-generative-models-and-how-does-it-differ-from-probabilistic-models" id="toc-what-are-generative-models-and-how-does-it-differ-from-probabilistic-models" class="nav-link" data-scroll-target="#what-are-generative-models-and-how-does-it-differ-from-probabilistic-models">What are generative models and how does it differ from probabilistic models?</a></li>
+  <li><a href="#components-of-diffusion" id="toc-components-of-diffusion" class="nav-link" data-scroll-target="#components-of-diffusion">Components of Diffusion</a></li>
+  <li><a href="#conditional-iputs" id="toc-conditional-iputs" class="nav-link" data-scroll-target="#conditional-iputs">Conditional Iputs</a></li>
+  <li><a href="#compute-providers" id="toc-compute-providers" class="nav-link" data-scroll-target="#compute-providers">Compute providers</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -988,34 +990,30 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="reinforcement-learning-from-human-feedback" class="level1">
-<h1>Reinforcement Learning from Human Feedback</h1>
+<section id="introduction-to-diffusion" class="level1">
+<h1>Introduction to Diffusion</h1>
+<p><img src="../Images/how_diffusion_works.png" class="img-fluid" alt="How Diffusion Works"> <img src="../Images/stable_diffusion_2.png" class="img-fluid" alt="Predicting noise in an image"></p>
+<section id="components-of-diffusion" class="level2">
+<h2 class="anchored" data-anchor-id="components-of-diffusion">Components of Diffusion</h2>
 <ul>
-<li><p>Loss functions for ethical, safe?</p></li>
-<li><p>To encode these values into the model</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/rhlf_for_decision_making.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">RHFL for decision making</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>scaler reward</p></li>
+<li>Unet - Input is Somewhat a noisy image, and it output the noise <img src="../Images/autoencoder_2.png" class="img-fluid" alt="Autoencoder"> <img src="../Images/inputs_outputs_vae.png" class="img-fluid" alt="Inputs and outputs when using VAE"></li>
 </ul>
-<section id="proximal-policy-optimization" class="level2">
-<h2 class="anchored" data-anchor-id="proximal-policy-optimization">Proximal Policy Optimization</h2>
-<ul>
-<li>It came in 2017</li>
-</ul>
-<p>policy gradient methods</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.youtube.com/watch?v=HrapVFNBN64.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">PPO</figcaption><p></p>
-</figure>
-</div>
 </section>
-<section id="what-are-generative-models-and-how-does-it-differ-from-probabilistic-models" class="level2">
-<h2 class="anchored" data-anchor-id="what-are-generative-models-and-how-does-it-differ-from-probabilistic-models">What are generative models and how does it differ from probabilistic models?</h2>
+<section id="conditional-iputs" class="level2">
+<h2 class="anchored" data-anchor-id="conditional-iputs">Conditional Iputs</h2>
+<p><img src="../Images/guidance_diffusion.png" class="img-fluid" alt="Providing Guidance to Diffusion"> <img src="../Images/clip_model.png" class="img-fluid" alt="clip model"></p>
+</section>
+<section id="compute-providers" class="level2">
+<h2 class="anchored" data-anchor-id="compute-providers">Compute providers</h2>
+<ul>
+<li>Paperspace Gradient</li>
+<li>Lambda labs</li>
+<li>Jarvis labs</li>
+</ul>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<p><a href="https://www.youtube.com/watch?v=_7rMfsA24Ls">Jeremy Howard video</a></p>
 
 
 </section>
