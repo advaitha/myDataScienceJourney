@@ -1,0 +1,35 @@
+# Transformer Architecture
+
+The changes to the transformer architectures can be split into two broad categories:-
+
+* Changes to the internal arrangement of transformer block
+* Changes to the layers that a transformer block is made of
+
+
+## Transformer block changes
+* Decreasing memory footprint and compute
+* Adding connections between transformer blocks
+* Adaptive computation time (Ex - Early stopping)
+* Recurrence or hierarchial structure
+* Neural Architecture Search
+
+![Modifications to the transformer block](/Images/transformer_block_mod.png)
+
+## Transformer sublayer changes
+* changes to the four important parts of a transformer
+    * Positional Encodings
+    * Multi-Head Attention
+    * Residual connection with layer normalization
+    * Position-wise Feed Forward network
+
+The most important being changes to the multi-head attention.
+
+* ![Modifications to the Multi-Head Attention sublayer](/Images/multi_head_mod.png)
+* ![Modifications to the positional encodings sublayer](/Images/positional_encoding_mod.png)
+
+
+
+
+   
+
+

@@ -1650,5 +1650,12 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "What is warmup ratio\nsoftmax temperature\nWhat is dice loss\n\n\nResearch papers to read and summarize\nGoogle MusicLM []\nSWIN DETR ConvNeXt DiNAT MSDeformAttn Dilated Neighborbood Attention"
+  },
+  {
+    "objectID": "transformers/Transformer_architectures.html",
+    "href": "transformers/Transformer_architectures.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "The changes to the transformer architectures can be split into two broad categories:-\n\nChanges to the internal arrangement of transformer block\nChanges to the layers that a transformer block is made of\n\n\n\n\nDecreasing memory footprint and compute\nAdding connections between transformer blocks\nAdaptive computation time (Ex - Early stopping)\nRecurrence or hierarchial structure\nNeural Architecture Search\n\n\n\n\nModifications to the transformer block\n\n\n\n\n\n\nchanges to the four important parts of a transformer\n\nPositional Encodings\nMulti-Head Attention\nResidual connection with layer normalization\nPosition-wise Feed Forward network\n\n\nThe most important being changes to the multi-head attention.\n\n\n\n\nModifications to the Multi-Head Attention sublayer\n\n\n\n\n\nModifications to the positional encodings sublayer"
   }
 ]
