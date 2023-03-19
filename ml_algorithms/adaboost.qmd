@@ -14,7 +14,7 @@
 * Each weak estimator is different from each other and classify the problem in diversely different ways. Reweighting allows AdaBoost to train a different base estimator at each iteration, one that is often different from an estimator trained at the previous iterations. `Adaptive reweighting or updating adaptively, promotes ensemble diversity`
 
 * ![Boosting Iteration 1](/Images/boosting_iter_1.png)
-*![Boosting Iteration 2](/Images/boosting_iteration_2.png)
+* ![Boosting Iteration 2](/Images/boosting_iteration_2.png)
 * ![Boosting Iteration 3](/Images/boosting_iter_3.png)
 * ![Boosting - Ensemble of weak learners](/Images/boosting_final.png)
 
@@ -83,14 +83,35 @@ def fit_boosting(X,y,n_estimators=10):
 `Learning Rate`     It adjusts the contribution of each estimator to the ensemble. (A learning rate of 0.75 decrease the overall contribution of each estimator by a factor of 0.75). In case of outliers, learning rate should be lowered.
 
 * ![Adaboost Learning Rate](/Images/adaboost_lr.png)
-
-* [Adaboost Learning Rate](/Images/adaboost_lr_2.png)
+* ![Adaboost Learning Rate](/Images/adaboost_lr_2.png)
 
 
 #### Early Stopping and Pruning
 * Identifying the least number of base estimators in order to build an effective ensemble is known as early stopping.
 
 ![Adaboost pre-pruning and post-pruning](/Images/adboost_pruning.png)
+
+
+## Summary
+1. AdaBoost, or Adaptive Boosting is a sequential ensemble algorithm that uses weak
+learners as base estimators.
+2. In classification, a weak learner is a simple model that performs only slightly better
+than random guessing, that is 50% accuracy. Decision stumps and shallow decision
+trees are examples of weak learners.
+3. AdaBoost maintains and updates weights over training examples. It uses reweighting
+both to prioritize misclassified examples and to promote ensemble diversity.
+4. AdaBoost is also an additive ensemble in that is makes final predictions through
+weighted additive (linear) combinations of the predictions of its base estimators.
+5. AdaBoost is generally robust to overfitting as it ensembles several weak learners.
+However, it is sensitive to outliers owing to its adaptive reweighting strategy, which
+repeatedly increases the weight of outliers over iterations.
+6. The performance of AdaBoost can be improved by finding a good tradeoff between the
+learning rate and number of base estimators
+7. Cross validation with grid search is commonly deployed to identify the best parameter
+tradeoff between learning rate and number of estimators. 
+8. Under the hood, AdaBoost ultimately optimizes the exponential loss function.
+9. LogitBoost is another boosting algorithm that optimizes the logistic loss function. It
+differs from AdaBoost in two other ways
 
 
 ## Reference
