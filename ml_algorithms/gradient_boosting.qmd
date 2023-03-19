@@ -1,2 +1,6 @@
 # Gradient Boosting
-* 
+
+* In contrast to Adaboost which uses weights as a surrogate for residuals, gradeint boosting uses these residuals directly!
+
+* The framework of gradient boosting can be applied to any loss function, which means that any classification, regression or ranking problem can be “boosted” using weak learners. This flexibility has been a key reason for the emergence and ubiquity of gradient boosting as a state-of-the-art
+ensemble approach. 
