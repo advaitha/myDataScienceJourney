@@ -1,0 +1,33 @@
+# LightGBM
+Developed and released by Microsoft. It Supports parallel and GPU learning.Below are some methods utilized by LighGBM to handle large data sets.
+
+### Using Histogram for optimal splits
+* It is a histogram based gradient boosting approach. This will work reasonably well for medium-sized data sets. Histogram bin construction itself can be slow for very large number of data points or a large number of features.
+
+
+### Gradient-Based One-Side Sampling (GOSS)
+* Data is downsampled smartly using a procedure called Gradient-Based One Side Sampling. Sampling should consists of a healthy balance between examples which are misclassified and examples which are classified correctly
+
+* ![LightGBM GOSS Sampling Method](/Images/lightgbm_sampling.png)
+
+
+### Exclusive Feature Bundling (EFB)
+* Downsampling the features. This will provide improvements in training speed if the feature space is sparse and features are mutually exclusive
+* EFB exploits sparsity and aims to merge mutually exclusive columns into one column to reduce the number of effective features.
+* ![EFB](/Images/lightgbm_efb.png)
+
+### Training Modes in LightGBM
+
+![Training mode in LightGBM](/Images/lightgbm_training_mode.png)
+
+
+
+
+
+
+
+## Read
+* Dropout meets Multiple Additive Regression Trees (DART)
+
+
+
