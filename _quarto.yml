@@ -40,6 +40,10 @@ website:
           - 3D_deep_learning/05_differentiable_rendering.qmd
           - 3D_deep_learning/06_nerf.qmd
           - 3D_deep_learning/resources.qmd
+        - section: "**ML Algorithms**"
+          contents:
+          - ml_algorithms/adaboost.qmd
+          - ml_algorithms/logitboost.qmd
         - section: "**Data Architecture**"
           contents:
           - data_architecture/big_data_architectures.qmd
