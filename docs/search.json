@@ -641,7 +641,7 @@
     "href": "ml_algorithms/gradient_boosting.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Gradient Boosting"
+    "text": "In contrast to Adaboost which uses weights as a surrogate for residuals, gradeint boosting uses these residuals directly!\nThe framework of gradient boosting can be applied to any loss function, which means that any classification, regression or ranking problem can be “boosted” using weak learners. This flexibility has been a key reason for the emergence and ubiquity of gradient boosting as a state-of-the-art ensemble approach.\n\n\n\n• Like AdaBoost, gradient boosting trains a weak learner to fix the mistakes made by the previous weak learner. Adaboost uses example weights to focus learning on misclassified examples, while gradient boosting uses example residuals to do the same. • Like gradient descent, gradient boosting updates the current model with gradient information. Gradient descent uses the negative gradient directly, while gradient boosting trains a weak regressor over the negative residuals to approximate the gradient.\n\n\n\n\nAdaboost Vs Gradient Boosting\n\n\n\n\n\nGradient Descent for Boosting"
   },
   {
     "objectID": "ml_algorithms/adaboost.html",
@@ -1685,5 +1685,12 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "What is warmup ratio\nsoftmax temperature\nWhat is dice loss\n\n\nResearch papers to read and summarize\nGoogle MusicLM []\nSWIN DETR ConvNeXt DiNAT MSDeformAttn Dilated Neighborbood Attention"
+  },
+  {
+    "objectID": "ml_optimization_algorithms/gradient_descent.html",
+    "href": "ml_optimization_algorithms/gradient_descent.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Gradient Descent\n\n\n\nDifferent initializations will cause gradient descent to converge to different local minimizers"
   }
 ]

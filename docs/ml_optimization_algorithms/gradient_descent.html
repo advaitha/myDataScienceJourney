@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – gradient_boosting</title>
+<title>My Datascience Journey – gradient_descent</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1000,10 +1000,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gradient-boosting" id="toc-gradient-boosting" class="nav-link active" data-scroll-target="#gradient-boosting">Gradient Boosting</a>
-  <ul class="collapse">
-  <li><a href="#gradient-boosting-gradient-descent-boosting" id="toc-gradient-boosting-gradient-descent-boosting" class="nav-link" data-scroll-target="#gradient-boosting-gradient-descent-boosting">Gradient Boosting: Gradient Descent + Boosting</a></li>
-  </ul></li>
+  <li><a href="#gradient-descent" id="toc-gradient-descent" class="nav-link active" data-scroll-target="#gradient-descent">Gradient Descent</a></li>
   </ul>
 </nav>
     </div>
@@ -1012,32 +1009,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="gradient-boosting" class="level1">
-<h1>Gradient Boosting</h1>
-<ul>
-<li><p>In contrast to Adaboost which uses weights as a surrogate for residuals, gradeint boosting uses these residuals directly!</p></li>
-<li><p>The framework of gradient boosting can be applied to any loss function, which means that any classification, regression or ranking problem can be “boosted” using weak learners. This flexibility has been a key reason for the emergence and ubiquity of gradient boosting as a state-of-the-art ensemble approach.</p></li>
-</ul>
-<section id="gradient-boosting-gradient-descent-boosting" class="level2">
-<h2 class="anchored" data-anchor-id="gradient-boosting-gradient-descent-boosting">Gradient Boosting: Gradient Descent + Boosting</h2>
-<p>• Like AdaBoost, gradient boosting trains a weak learner to fix the mistakes made by the previous weak learner. Adaboost uses example weights to focus learning on misclassified examples, while gradient boosting uses example residuals to do the same. • Like gradient descent, gradient boosting updates the current model with gradient information. Gradient descent uses the negative gradient directly, while gradient boosting trains a weak regressor over the negative residuals to approximate the gradient.</p>
-<ul>
-<li><div class="quarto-figure quarto-figure-center">
+<section id="gradient-descent" class="level1">
+<h1>Gradient Descent</h1>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../Images/adaboost_vs_gradient_boosting.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Adaboost Vs Gradient Boosting</figcaption><p></p>
+<p><img src="../Images/gradient_descent_local_minima.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Different initializations will cause gradient descent to converge to different local minimizers</figcaption><p></p>
 </figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/gradient_descent_boosting.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Gradient Descent for Boosting</figcaption><p></p>
-</figure>
-</div></li>
-</ul>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
