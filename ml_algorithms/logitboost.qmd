@@ -1,0 +1,7 @@
+# LogitBoost
+
+* Adaboost uses exponential loss. (This exponential loss is used to calculate the weight of each base estimator)
+
+* Adaboost works with predictions and LogitBoost works with prediction probabilties.
+
+* The third key difference is, since AdaBoost works directly with discrete predictions (−1 or 1, for negative and positive examples), it uses any classification algorithm as the base learning algorithm. LogitBoost, instead, works with continuous prediction probabilities. Consequently, it uses any regression algorithm as the base learning algorithm. 
