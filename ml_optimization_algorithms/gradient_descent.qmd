@@ -1,0 +1,4 @@
+# Gradient Descent
+
+![Different initializations will cause gradient descent to converge to different local minimizers](/Images/gradient_descent_local_minima.png)
+

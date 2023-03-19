@@ -4,3 +4,69 @@
 
 * The framework of gradient boosting can be applied to any loss function, which means that any classification, regression or ranking problem can be “boosted” using weak learners. This flexibility has been a key reason for the emergence and ubiquity of gradient boosting as a state-of-the-art
 ensemble approach. 
+
+
+## Gradient Boosting: Gradient Descent + Boosting
+
+• Like AdaBoost, gradient boosting trains a weak learner to fix the mistakes made by the
+previous weak learner. Adaboost uses example weights to focus learning on misclassified
+examples, while gradient boosting uses example residuals to do the same.
+• Like gradient descent, gradient boosting updates the current model with gradient information. Gradient descent uses the negative gradient directly, while gradient boosting
+trains a weak regressor over the negative residuals to approximate the gradient.
+
+* ![Adaboost Vs Gradient Boosting](/Images/adaboost_vs_gradient_boosting.png)
+
+* ![Gradient Descent for Boosting](/Images/gradient_descent_boosting.png)
+
+
+* To adapt gradient boosting to a wide variety of loss functions, it adopts two general procedures:-
+    * Approximate gradients using weak regressors
+    * Compute the model weights using line search 
+
+![Pseudo code Gradient Boosting](/Images/pseudo_code_gradient_boosting.png)
+
+```python
+def fit_gradient_boosting (X,y, n_estimators=10):
+    n_samples, n_features = X.shape
+    n_estimators = 10
+    # Initialize an empty ensemble
+    estimators = []
+    # Predictions of the ensemble on the training set
+    F = np.full((n_samples,),0.0)
+
+    for t in range(n_estimators):
+        # Compute residuals as negative gradients of the squared loss
+        residuals = y - F
+        # Fit regression tree to the examples and residuals
+        h = DecisionTreeRegressor(max_depth=1)
+        h.fit(X,residuals)
+
+        hreg = h.predict(X)
+        # Set up the loss function as a line search problem
+        loss = lambda a: np.linalg.norm(y - (F + a*hreg))**2
+        # Find the best step length using the golden section search
+        step = minimize_scalar(loss,method = 'golden')
+        a = step.x
+        # Update the ensemble predictions
+        F += a*hreg
+        estimators.append((a,h))
+```
+
+For large datasets, GBM is very slow. For large datasets, the number of splits a tree-learner has to consider becomes prohibitively large
+
+### Histogram-based Gradient Boosting
+* 
+
+
+### Gradient Boosting as Gradient Descent
+* GBDT (Gradient Boosting Decision Trees) perform gradient descent in functional space.
+Gradient descent is performed in parameter space.
+
+* In gradient descent we compute the gradient of the loss with respect to the parameters. In gradient boosting, we compute the gradient of the loss with respect to the predictions.
+
+
+## References:-
+* [Understanding Gradient Boosting as a gradient descent](https://nicolas-hug.com/blog/gradient_boosting_descent)
+* [Gradient Boosting code implementation](https://nbviewer.org/github/NicolasHug/nicolashug.github.io/blob/master/assets/gradient_boosting_descent/GradientBoosting.ipynb)
+* [Gradient boosting explained by Jeremy Howard](https://explained.ai/gradient-boosting/)
+
