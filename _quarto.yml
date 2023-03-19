@@ -44,6 +44,7 @@ website:
           contents:
           - ml_algorithms/adaboost.qmd
           - ml_algorithms/logitboost.qmd
+          - ml_algorithms/gradient_boosting.qmd
         - section: "**Data Architecture**"
           contents:
           - data_architecture/big_data_architectures.qmd

@@ -55,6 +55,8 @@ def fit_gradient_boosting (X,y, n_estimators=10):
 For large datasets, GBM is very slow. For large datasets, the number of splits a tree-learner has to consider becomes prohibitively large
 
 ### Histogram-based Gradient Boosting
+* Trading exactness for speed
+* We bin the values of a features to reduce the number of splits considered for evaluating the best split for a node
 * 
 
 
