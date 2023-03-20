@@ -6,4 +6,36 @@ Gradient Descent is first order derivative. `Newton's method` or `Newton Descent
 
 
 ## Newton's method for Minimization
-* 
+* ![Newton's Method vs gradient descent](/Images/newton_descent.png)
+
+* ![Taking second derivative](/Images/second_derivative.png)
+
+
+* ![Newton's Method vs gradient descent](/Images/newton_descent_vs_gd.png)
+
+
+#### Properties of Newton Descent
+* It computes the descent step exactly and does not require a step length
+* It is sensitive to our choice of initial point. Different initializations will lead Newton descent to different local minimizers. 
+* It is a powerful optimization method. It converges to solutions much faster as it takes local second-order derivative information (essentially curvature) into account in constructing descent directions. This comes at a computational cost. With more variables, the second derivative or Hessian becomes difficult to manage, especially as it has to be inverted.
+
+## Newton Boosting: Newton's Method + Boosting
+* AdaBoost identifies and characterizes misclassified examples that need attention by assigning weights to them: badly misclassified examples are assigned higher weights. A weak classifier trained on such weighted examples will focus on them more during learning.
+Gradient boosting characterizes misclassified examples that need attention through residuals. A residual is simply another means to measure the extent of misclassification and is computed as the gradient of the loss function.
+
+* Newton boosting `does both and uses weighted residuals`. The residuals in Newton boosting are caclulated using the gradient of the loss function (the first derivative). The weights are computed using the Hessian of the loss function (the second derivative)
+
+* Newton boosting avoids the expense of computing the gradient or the Hessian by learning a weak estimator
+over the individual gradients and Hessians
+
+* `Newton boosting uses Hessian-weighted residuals, while gradient boosting uses unweighted residuals`
+
+
+#### what does Newton Boosting do?
+
+* ![Newton Boosting for a single example](/Images/newton_boosting.png)
+
+* `Hessians incorporate local curvature information to ensure that training examples that are badly misclassified get higher weights`
+
+### Imp points
+* In boosting algorithms we select the learning rate to help us avoid overfitting (instead of convergence)
