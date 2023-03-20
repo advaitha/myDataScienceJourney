@@ -1,0 +1,9 @@
+# XGBoost
+
+`Newton Boosting` combines advantages of Adaboost and Gradient Boosting. It uses weighted gradients (weighted residuals) to identify the most misclassified examples.
+
+Gradient Descent is first order derivative. `Newton's method` or `Newton Descent` is a second order optimization method. It uses both first and second order derivative information during optimization.
+
+
+## Newton's method for Minimization
+* 
