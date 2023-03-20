@@ -16,18 +16,25 @@ Developed and released by Microsoft. It Supports parallel and GPU learning.Below
 * EFB exploits sparsity and aims to merge mutually exclusive columns into one column to reduce the number of effective features.
 * ![EFB](/Images/lightgbm_efb.png)
 
-### Training Modes in LightGBM
+### Dropout meets Multiple Additive Regression Trees (DART)
+* Similar to Dropout from Deep learning. DART randomly and temporarily drops base estimators from the overall ensemble during gradient fitting iterations to mitigate overfitting. 
 
+
+### Training Modes in LightGBM
 ![Training mode in LightGBM](/Images/lightgbm_training_mode.png)
 
 
 
-
+### LightGBM in Practice
+* `learning_rate`, `shrinkage_rate` and `eta` are different names for learning rate. Only one should be set.
+* Use early_stopping to stop the training if the validation score metric does not improve over the last `early_stopping_rounds`. We can specify the score metric to be used.
 
 
 
 ## Read
 * Dropout meets Multiple Additive Regression Trees (DART)
-
+* DART is slow - why this is the case
+* Evaluating Machine Learning Models by Alice Zheng
+* How GPUs are used to train GBT models - If they are sequential
 
 

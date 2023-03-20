@@ -2,6 +2,8 @@
 
 * In contrast to Adaboost which uses weights as a surrogate for residuals, gradeint boosting uses these residuals directly!
 
+* Adaboost can be applied loss functions which considers weights for the training data. In contrast gradient boosting is a generalized method widely applicable to many loss functions.
+
 * The framework of gradient boosting can be applied to any loss function, which means that any classification, regression or ranking problem can be “boosted” using weak learners. This flexibility has been a key reason for the emergence and ubiquity of gradient boosting as a state-of-the-art
 ensemble approach. 
 
@@ -66,8 +68,60 @@ Gradient descent is performed in parameter space.
 
 * In gradient descent we compute the gradient of the loss with respect to the parameters. In gradient boosting, we compute the gradient of the loss with respect to the predictions.
 
+### Summary
+• Gradient descent is often used to minimize a loss function to train a machine learning model.
+• Residuals, or errors between the true labels and model predictions, can be used to
+characterize correctly classified and poorly classified training examples. This is analogous to
+how Unlike AdaBoost uses weights.
+• Gradient boosting combines gradient descent and boosting to learn a sequential ensemble of
+weak learners.
+• Weak learners in gradient boosting are regression trees that are trained over the residuals of
+the training examples and approximate the gradient.
+• Gradient boosting can be applied to a wide variety of loss functions arising from
+classification, regression or ranking tasks.
+• Histogram-based tree learning trades off exactness for efficiency, allowing us to train
+gradient boosting models very rapidly and scaling up to larger data sets.
+• Learning can be sped up even further by smartly sampling training examples (Gradient OneSide Sampling, GOSS) or smartly bundling features (Exclusive Feature Bundling, EFB).
+• LightGBM is a powerful, publicly available framework for gradient boosting that incorporates
+both GOSS and EFB.
+• As with AdaBoost, we can avoid overfitting in gradient boosting by choosing an effective
+learning rate or via early stopping. LightGBM provides support for both.
+• In addition to a wide variety of loss functions for classification, regression and ranking,
+LightGBM also provides support for incorporation of our own custom, problem-specific loss
+functions for training.
+
+
+## Explanation from Jeremy Howard
+* Additive Modeling - Adding up a bunch of subfunctions to create a composite function that models some data points is called `Additive Modeling`. GBM use additive modeling to gradually nudge an approximate model towards a reallly good model, by adding simple submodels to a composite model
+
+* The weak model learns direction vectors with direction information, not just magnitudes
+
+* The initial model  is trying to learn target y given x, but the weak learners are trying to learn direction vectors given x
+
+* training the weak models on a direction vector that includes the residual magnitude makes the composite model chase outliers. This occurs because mean computations are easily skewed by outliers and our regression tree stumps yield predictions using the mean of the target values in a leaf. For noisy target variables, it makes more sense to focus on the direction of y from the prediction  rather than the magnitude and direction.
+
+* While we train the weak models on the sign vector, the weak models are modified to predict a residual not a sign vector!
+
+* Optimizing sign vector leads to a solution that optimized the model according to mean absolute value (MAE) or l1 loss function. (Better than MSE which is sensitive to outliers)
+
+* Optimizing MAE means, we should use median as the prediction for the initial model.
+
+* MSE optimizing GBMs train trees on residual vectors and MAE GBMs train trees on sign vectors
+
+* The second difference between GBMs is that tree leaves of MSE GBMs predict the average of the residuals. MAE GBM tree leaves predict the median of the residual. `weak models for both GBMs predict residuals given a feature vector for an observtion.`
+
+* Changing the direction vector in a GBM is chasing the negative gradient of a loss function via gradient descent
+
+* Chasing the residual vector in a GBM is chasing the gradient vector of the MSE L2 loss function while performing gradient descent
+
+* Chasing the sign vector in a GBM is chasing the gradient vector of the MAE l1 loss function while performing gradient descent
+
+* `GBM training occurs on two levels, one to train the weak models and one on the overall composite model. It is the overall training of the composite model that performs gradient descent by adding the residual vector (assuming MSE) to get the improved model prediction. Training a NN using gradient descent tweaks model parameters whereas training a GBM tweaks (boost) the model output.
+
+
 
 ## References:-
+* Manning book - `Ensemble Methods for ML`
 * [Understanding Gradient Boosting as a gradient descent](https://nicolas-hug.com/blog/gradient_boosting_descent)
 * [Gradient Boosting code implementation](https://nbviewer.org/github/NicolasHug/nicolashug.github.io/blob/master/assets/gradient_boosting_descent/GradientBoosting.ipynb)
 * [Gradient boosting explained by Jeremy Howard](https://explained.ai/gradient-boosting/)
