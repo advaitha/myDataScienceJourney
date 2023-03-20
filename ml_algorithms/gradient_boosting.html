@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -222,6 +285,21 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ml_algorithms/logitboost.html" class="sidebar-item-text sidebar-link">LogitBoost</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml_algorithms/gradient_boosting.html" class="sidebar-item-text sidebar-link active">Gradient Boosting</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml_algorithms/lightGBM.html" class="sidebar-item-text sidebar-link">LightGBM</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ml_algorithms/xgboost.html" class="sidebar-item-text sidebar-link">XGBoost</a>
   </div>
 </li>
       </ul>
@@ -1000,7 +1078,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gradient-boosting" id="toc-gradient-boosting" class="nav-link active" data-scroll-target="#gradient-boosting">Gradient Boosting</a></li>
+  <li><a href="#gradient-boosting" id="toc-gradient-boosting" class="nav-link active" data-scroll-target="#gradient-boosting">Gradient Boosting</a>
+  <ul class="collapse">
+  <li><a href="#gradient-boosting-gradient-descent-boosting" id="toc-gradient-boosting-gradient-descent-boosting" class="nav-link" data-scroll-target="#gradient-boosting-gradient-descent-boosting">Gradient Boosting: Gradient Descent + Boosting</a>
+  <ul class="collapse">
+  <li><a href="#histogram-based-gradient-boosting" id="toc-histogram-based-gradient-boosting" class="nav-link" data-scroll-target="#histogram-based-gradient-boosting">Histogram-based Gradient Boosting</a></li>
+  <li><a href="#gradient-boosting-as-gradient-descent" id="toc-gradient-boosting-as-gradient-descent" class="nav-link" data-scroll-target="#gradient-boosting-as-gradient-descent">Gradient Boosting as Gradient Descent</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  <li><a href="#explanation-from-jeremy-howard" id="toc-explanation-from-jeremy-howard" class="nav-link" data-scroll-target="#explanation-from-jeremy-howard">Explanation from Jeremy Howard</a></li>
+  <li><a href="#references-" id="toc-references-" class="nav-link" data-scroll-target="#references-">References:-</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1013,10 +1101,125 @@ ul.task-list li input[type="checkbox"] {
 <h1>Gradient Boosting</h1>
 <ul>
 <li><p>In contrast to Adaboost which uses weights as a surrogate for residuals, gradeint boosting uses these residuals directly!</p></li>
+<li><p>Adaboost can be applied loss functions which considers weights for the training data. In contrast gradient boosting is a generalized method widely applicable to many loss functions.</p></li>
 <li><p>The framework of gradient boosting can be applied to any loss function, which means that any classification, regression or ranking problem can be “boosted” using weak learners. This flexibility has been a key reason for the emergence and ubiquity of gradient boosting as a state-of-the-art ensemble approach.</p></li>
+</ul>
+<section id="gradient-boosting-gradient-descent-boosting" class="level2">
+<h2 class="anchored" data-anchor-id="gradient-boosting-gradient-descent-boosting">Gradient Boosting: Gradient Descent + Boosting</h2>
+<p>• Like AdaBoost, gradient boosting trains a weak learner to fix the mistakes made by the previous weak learner. Adaboost uses example weights to focus learning on misclassified examples, while gradient boosting uses example residuals to do the same. • Like gradient descent, gradient boosting updates the current model with gradient information. Gradient descent uses the negative gradient directly, while gradient boosting trains a weak regressor over the negative residuals to approximate the gradient.</p>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/adaboost_vs_gradient_boosting.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Adaboost Vs Gradient Boosting</figcaption><p></p>
+</figure>
+</div></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/gradient_descent_boosting.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Gradient Descent for Boosting</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>To adapt gradient boosting to a wide variety of loss functions, it adopts two general procedures:-</p>
+<ul>
+<li>Approximate gradients using weak regressors</li>
+<li>Compute the model weights using line search</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/pseudo_code_gradient_boosting.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Pseudo code Gradient Boosting</figcaption><p></p>
+</figure>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fit_gradient_boosting (X,y, n_estimators<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    n_samples, n_features <span class="op">=</span> X.shape</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    n_estimators <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initialize an empty ensemble</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    estimators <span class="op">=</span> []</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Predictions of the ensemble on the training set</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    F <span class="op">=</span> np.full((n_samples,),<span class="fl">0.0</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(n_estimators):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Compute residuals as negative gradients of the squared loss</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        residuals <span class="op">=</span> y <span class="op">-</span> F</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Fit regression tree to the examples and residuals</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        h <span class="op">=</span> DecisionTreeRegressor(max_depth<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        h.fit(X,residuals)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        hreg <span class="op">=</span> h.predict(X)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Set up the loss function as a line search problem</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        loss <span class="op">=</span> <span class="kw">lambda</span> a: np.linalg.norm(y <span class="op">-</span> (F <span class="op">+</span> a<span class="op">*</span>hreg))<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Find the best step length using the golden section search</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> minimize_scalar(loss,method <span class="op">=</span> <span class="st">'golden'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> step.x</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Update the ensemble predictions</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        F <span class="op">+=</span> a<span class="op">*</span>hreg</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        estimators.append((a,h))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For large datasets, GBM is very slow. For large datasets, the number of splits a tree-learner has to consider becomes prohibitively large</p>
+<section id="histogram-based-gradient-boosting" class="level3">
+<h3 class="anchored" data-anchor-id="histogram-based-gradient-boosting">Histogram-based Gradient Boosting</h3>
+<ul>
+<li>Trading exactness for speed</li>
+<li>We bin the values of a features to reduce the number of splits considered for evaluating the best split for a node</li>
+<li></li>
+</ul>
+</section>
+<section id="gradient-boosting-as-gradient-descent" class="level3">
+<h3 class="anchored" data-anchor-id="gradient-boosting-as-gradient-descent">Gradient Boosting as Gradient Descent</h3>
+<ul>
+<li><p>GBDT (Gradient Boosting Decision Trees) perform gradient descent in functional space. Gradient descent is performed in parameter space.</p></li>
+<li><p>In gradient descent we compute the gradient of the loss with respect to the parameters. In gradient boosting, we compute the gradient of the loss with respect to the predictions.</p></li>
+</ul>
+</section>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<ul>
+<li>Gradient descent is often used to minimize a loss function to train a machine learning model.</li>
+<li>Residuals, or errors between the true labels and model predictions, can be used to characterize correctly classified and poorly classified training examples. This is analogous to how Unlike AdaBoost uses weights.</li>
+<li>Gradient boosting combines gradient descent and boosting to learn a sequential ensemble of weak learners.</li>
+<li>Weak learners in gradient boosting are regression trees that are trained over the residuals of the training examples and approximate the gradient.</li>
+<li>Gradient boosting can be applied to a wide variety of loss functions arising from classification, regression or ranking tasks.</li>
+<li>Histogram-based tree learning trades off exactness for efficiency, allowing us to train gradient boosting models very rapidly and scaling up to larger data sets.</li>
+<li>Learning can be sped up even further by smartly sampling training examples (Gradient OneSide Sampling, GOSS) or smartly bundling features (Exclusive Feature Bundling, EFB).</li>
+<li>LightGBM is a powerful, publicly available framework for gradient boosting that incorporates both GOSS and EFB.</li>
+<li>As with AdaBoost, we can avoid overfitting in gradient boosting by choosing an effective learning rate or via early stopping. LightGBM provides support for both.</li>
+<li>In addition to a wide variety of loss functions for classification, regression and ranking,LightGBM also provides support for incorporation of our own custom, problem-specific loss functions for training.</li>
+</ul>
+</section>
+</section>
+<section id="explanation-from-jeremy-howard" class="level2">
+<h2 class="anchored" data-anchor-id="explanation-from-jeremy-howard">Explanation from Jeremy Howard</h2>
+<ul>
+<li><p>Additive Modeling - Adding up a bunch of subfunctions to create a composite function that models some data points is called <code>Additive Modeling</code>. GBM use additive modeling to gradually nudge an approximate model towards a reallly good model, by adding simple submodels to a composite model</p></li>
+<li><p>The weak model learns direction vectors with direction information, not just magnitudes</p></li>
+<li><p>The initial model is trying to learn target y given x, but the weak learners are trying to learn direction vectors given x</p></li>
+<li><p>training the weak models on a direction vector that includes the residual magnitude makes the composite model chase outliers. This occurs because mean computations are easily skewed by outliers and our regression tree stumps yield predictions using the mean of the target values in a leaf. For noisy target variables, it makes more sense to focus on the direction of y from the prediction rather than the magnitude and direction.</p></li>
+<li><p>While we train the weak models on the sign vector, the weak models are modified to predict a residual not a sign vector!</p></li>
+<li><p>Optimizing sign vector leads to a solution that optimized the model according to mean absolute value (MAE) or l1 loss function. (Better than MSE which is sensitive to outliers)</p></li>
+<li><p>Optimizing MAE means, we should use median as the prediction for the initial model.</p></li>
+<li><p>MSE optimizing GBMs train trees on residual vectors and MAE GBMs train trees on sign vectors</p></li>
+<li><p>The second difference between GBMs is that tree leaves of MSE GBMs predict the average of the residuals. MAE GBM tree leaves predict the median of the residual. <code>weak models for both GBMs predict residuals given a feature vector for an observtion.</code></p></li>
+<li><p>Changing the direction vector in a GBM is chasing the negative gradient of a loss function via gradient descent</p></li>
+<li><p>Chasing the residual vector in a GBM is chasing the gradient vector of the MSE L2 loss function while performing gradient descent</p></li>
+<li><p>Chasing the sign vector in a GBM is chasing the gradient vector of the MAE l1 loss function while performing gradient descent</p></li>
+<li><p>`GBM training occurs on two levels, one to train the weak models and one on the overall composite model. It is the overall training of the composite model that performs gradient descent by adding the residual vector (assuming MSE) to get the improved model prediction. Training a NN using gradient descent tweaks model parameters whereas training a GBM tweaks (boost) the model output.</p></li>
+<li><p><code>To summarize, in case of MSE loss, residual is equivalent to the gradient of MSE loss and weight for each leaf is equal to the mean of the residuals in that particular leaf</code></p></li>
+</ul>
+</section>
+<section id="references-" class="level2">
+<h2 class="anchored" data-anchor-id="references-">References:-</h2>
+<ul>
+<li>Manning book - <code>Ensemble Methods for ML</code></li>
+<li><a href="https://nicolas-hug.com/blog/gradient_boosting_descent">Understanding Gradient Boosting as a gradient descent</a></li>
+<li><a href="https://nbviewer.org/github/NicolasHug/nicolashug.github.io/blob/master/assets/gradient_boosting_descent/GradientBoosting.ipynb">Gradient Boosting code implementation</a></li>
+<li><a href="https://explained.ai/gradient-boosting/">Gradient boosting explained by Jeremy Howard</a></li>
+<li><a href="https://blog.mlreview.com/gradient-boosting-from-scratch-1e317ae4587d">Gradient Boosting from scratch</a></li>
+<li><a href="https://www.gormanalysis.com/blog/gradient-boosting-explained/">Gradient Boosting Explained</a></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
