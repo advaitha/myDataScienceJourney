@@ -1,1 +1,0 @@
-Sitemap: https://advaitha.github.io/myDataScienceJourney/sitemap.xml

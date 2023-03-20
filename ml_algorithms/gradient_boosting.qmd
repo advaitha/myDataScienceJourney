@@ -69,26 +69,17 @@ Gradient descent is performed in parameter space.
 * In gradient descent we compute the gradient of the loss with respect to the parameters. In gradient boosting, we compute the gradient of the loss with respect to the predictions.
 
 ### Summary
-• Gradient descent is often used to minimize a loss function to train a machine learning model.
-• Residuals, or errors between the true labels and model predictions, can be used to
-characterize correctly classified and poorly classified training examples. This is analogous to
+* Gradient descent is often used to minimize a loss function to train a machine learning model.
+* Residuals, or errors between the true labels and model predictions, can be used to characterize correctly classified and poorly classified training examples. This is analogous to
 how Unlike AdaBoost uses weights.
-• Gradient boosting combines gradient descent and boosting to learn a sequential ensemble of
-weak learners.
-• Weak learners in gradient boosting are regression trees that are trained over the residuals of
-the training examples and approximate the gradient.
-• Gradient boosting can be applied to a wide variety of loss functions arising from
-classification, regression or ranking tasks.
-• Histogram-based tree learning trades off exactness for efficiency, allowing us to train
-gradient boosting models very rapidly and scaling up to larger data sets.
-• Learning can be sped up even further by smartly sampling training examples (Gradient OneSide Sampling, GOSS) or smartly bundling features (Exclusive Feature Bundling, EFB).
-• LightGBM is a powerful, publicly available framework for gradient boosting that incorporates
-both GOSS and EFB.
-• As with AdaBoost, we can avoid overfitting in gradient boosting by choosing an effective
-learning rate or via early stopping. LightGBM provides support for both.
-• In addition to a wide variety of loss functions for classification, regression and ranking,
-LightGBM also provides support for incorporation of our own custom, problem-specific loss
-functions for training.
+* Gradient boosting combines gradient descent and boosting to learn a sequential ensemble of weak learners.
+* Weak learners in gradient boosting are regression trees that are trained over the residuals of the training examples and approximate the gradient.
+* Gradient boosting can be applied to a wide variety of loss functions arising from classification, regression or ranking tasks.
+* Histogram-based tree learning trades off exactness for efficiency, allowing us to train gradient boosting models very rapidly and scaling up to larger data sets.
+* Learning can be sped up even further by smartly sampling training examples (Gradient OneSide Sampling, GOSS) or smartly bundling features (Exclusive Feature Bundling, EFB).
+* LightGBM is a powerful, publicly available framework for gradient boosting that incorporates both GOSS and EFB.
+* As with AdaBoost, we can avoid overfitting in gradient boosting by choosing an effective learning rate or via early stopping. LightGBM provides support for both.
+* In addition to a wide variety of loss functions for classification, regression and ranking,LightGBM also provides support for incorporation of our own custom, problem-specific loss functions for training.
 
 
 ## Explanation from Jeremy Howard
@@ -118,6 +109,7 @@ functions for training.
 
 * `GBM training occurs on two levels, one to train the weak models and one on the overall composite model. It is the overall training of the composite model that performs gradient descent by adding the residual vector (assuming MSE) to get the improved model prediction. Training a NN using gradient descent tweaks model parameters whereas training a GBM tweaks (boost) the model output.
 
+* `To summarize, in case of MSE loss, residual is equivalent to the gradient of MSE loss and weight for each leaf is equal to the mean of the residuals in that particular leaf`
 
 
 ## References:-
@@ -125,4 +117,5 @@ functions for training.
 * [Understanding Gradient Boosting as a gradient descent](https://nicolas-hug.com/blog/gradient_boosting_descent)
 * [Gradient Boosting code implementation](https://nbviewer.org/github/NicolasHug/nicolashug.github.io/blob/master/assets/gradient_boosting_descent/GradientBoosting.ipynb)
 * [Gradient boosting explained by Jeremy Howard](https://explained.ai/gradient-boosting/)
-
+* [Gradient Boosting from scratch](https://blog.mlreview.com/gradient-boosting-from-scratch-1e317ae4587d)
+* [Gradient Boosting Explained](https://www.gormanalysis.com/blog/gradient-boosting-explained/)
