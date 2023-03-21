@@ -1,0 +1,33 @@
+# Dot Product
+
+* Dot product offers a neat way to represent the weighted sum model output
+* The dot product is defined only if the vectors have the same dimensions
+* Sometimes the dot product is also referred to as inner products
+* The product of a matrix (feature matrix) and column vector (weights) is another vector
+
+![Matrix Vector Multiplication](/Images/matrix_vector_multiplication.png)
+
+![Matrix Multiplication](/Images/matrix_multiplication.png)
+
+* Squared magnitude or length or L2-Norm of a vector: dot product of the vector with itself. (dot product of the squared difference between target and prediction)
+
+* `Dot-product between a pair of vectors can be used as a measure of similarity between them.` Similar vectors have larger dot product and dissimilar vectors have near zero dot products.
+
+* `A component of a vector along another vector is yielded by the dot product.` If the vectors point in more or less the same direction their dot products are higher compared to when the vectors are perpendicular to each other. If the vectors point in opposite direction their dot product will be negative
+
+* The dot product can be expressed using the cosine of the angle between the vectors. 
+
+![Expressing dot product using cosine](/Images/cosine.png)
+
+* The dot product between two vectors is also proportional to the lengths of the vectors. If we want the agreement score to be neutral to the vector length, we can use a normalized dot product - between unit length vectors along the same direction. Normalized dot product (cosine similarity) is used for document similarity (we want similarity score to be independent of document length)
+
+![Normalized dot product](/Images/cosine_similarity.png)
+
+* Two vectors are orthogonal if their dot product is zero
+
+
+
+
+
+
+
