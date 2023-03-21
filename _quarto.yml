@@ -47,6 +47,7 @@ website:
           - ml_algorithms/gradient_boosting.qmd
           - ml_algorithms/lightGBM.qmd
           - ml_algorithms/xgboost.qmd
+          - ml_algorithms/catboost.qmd
         - section: "**Data Architecture**"
           contents:
           - data_architecture/big_data_architectures.qmd

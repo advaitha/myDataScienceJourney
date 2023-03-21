@@ -1,0 +1,8 @@
+# Catboost
+
+* CatBoost introduces three major modifications to classical Newton Boosting approach
+    * It is specialized to categorical features
+    * It uses ordered boosting as its underlying approach which allows it to address data leakage and prediction shift
+    * It uses oblivious decision trees as base estimators which often leads to faster training times
+
+* 

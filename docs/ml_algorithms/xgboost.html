@@ -1020,6 +1020,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#newtons-method-for-minimization" id="toc-newtons-method-for-minimization" class="nav-link" data-scroll-target="#newtons-method-for-minimization">Newton’s method for Minimization</a></li>
   <li><a href="#newton-boosting-newtons-method-boosting" id="toc-newton-boosting-newtons-method-boosting" class="nav-link" data-scroll-target="#newton-boosting-newtons-method-boosting">Newton Boosting: Newton’s Method + Boosting</a>
   <ul class="collapse">
+  <li><a href="#xgboost-a-framework-for-newton-boosting" id="toc-xgboost-a-framework-for-newton-boosting" class="nav-link" data-scroll-target="#xgboost-a-framework-for-newton-boosting">XGBoost: A framework for Newton Boosting</a></li>
   <li><a href="#imp-points" id="toc-imp-points" class="nav-link" data-scroll-target="#imp-points">Imp points</a></li>
   </ul></li>
   </ul></li>
@@ -1074,6 +1075,48 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Newton boosting avoids the expense of computing the gradient or the Hessian by learning a weak estimator over the individual gradients and Hessians</p></li>
 <li><p><code>Newton boosting uses Hessian-weighted residuals, while gradient boosting uses unweighted residuals</code></p></li>
 </ul>
+<section id="what-does-newton-boosting-do" class="level4">
+<h4 class="anchored" data-anchor-id="what-does-newton-boosting-do">what does Newton Boosting do?</h4>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/newton_boosting.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Newton Boosting for a single example</figcaption><p></p>
+</figure>
+</div></li>
+<li><p><code>Hessians incorporate local curvature information to ensure that training examples that are badly misclassified get higher weights</code></p></li>
+</ul>
+</section>
+<section id="xgboost-a-framework-for-newton-boosting" class="level3">
+<h3 class="anchored" data-anchor-id="xgboost-a-framework-for-newton-boosting">XGBoost: A framework for Newton Boosting</h3>
+<ul>
+<li>Distributed and parallel processing capabilities</li>
+<li>Newton boosting on regularized loss functions to directly control the complexity of weak learners</li>
+<li>Alogrithmic speedups such as weighted quantile sketch for faster training</li>
+<li>Block based system design that stores data in memory in smaller units called blocks. This allows for parallel learning, better caching, efficient multi-threading</li>
+<li>Support for a lot of loss functions</li>
+</ul>
+<section id="regularized-loss-functions" class="level4">
+<h4 class="anchored" data-anchor-id="regularized-loss-functions">Regularized loss functions</h4>
+<ul>
+<li>XGBoost uses tree based methods to control the complexity of the model.</li>
+<li>Instead of using Gini or Entropy XGBoost uses regularized learning objective</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/xgboost_regularization.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">XGBoost Regularization</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="quantile-based-newton-boosting" class="level4">
+<h4 class="anchored" data-anchor-id="quantile-based-newton-boosting">Quantile based Newton Boosting</h4>
+<ul>
+<li>Find ideal split points using qunatiles in the features</li>
+<li>Instead of using evenly sized bins, XGBoost bins data into feature-dependent buckets.</li>
+</ul>
+</section>
+</section>
 <section id="imp-points" class="level3">
 <h3 class="anchored" data-anchor-id="imp-points">Imp points</h3>
 <ul>
