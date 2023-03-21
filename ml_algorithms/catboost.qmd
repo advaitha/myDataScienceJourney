@@ -42,3 +42,13 @@
 * Oblivious decision trees lead to less split criteria, as opposed to the standard decision tree. This makes them easier and more efficient to learn, which has the effect of speeding up overall training.
 
 * Oblivious trees are balanced and symmetric, making them less complex and less prone to overfitting
+
+
+### Tips to handle Categorical Features
+* use `string similarity` to handle spelling mistakes in categorical features. (String similarity approaches - character based or token based)
+* `dirty-cat` package provides functionality off-the-shelf. Different methods available for handling dirty categories are
+
+*[Methods in Dirty cat](/Images/similarity_encoder.png)
+
+### Reference
+* Manning book - Ensemble methods for Machine learning
