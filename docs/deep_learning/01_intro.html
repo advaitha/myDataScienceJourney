@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – catboost</title>
+<title>My Datascience Journey – intro</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -241,7 +241,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ml_algorithms/catboost.html" class="sidebar-item-text sidebar-link active">Catboost</a>
+  <a href="../ml_algorithms/catboost.html" class="sidebar-item-text sidebar-link">Catboost</a>
   </div>
 </li>
       </ul>
@@ -1020,14 +1020,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#catboost" id="toc-catboost" class="nav-link active" data-scroll-target="#catboost">Catboost</a>
-  <ul class="collapse">
-  <li><a href="#ordered-target-statistics" id="toc-ordered-target-statistics" class="nav-link" data-scroll-target="#ordered-target-statistics">Ordered Target Statistics</a></li>
-  <li><a href="#ordered-boosting" id="toc-ordered-boosting" class="nav-link" data-scroll-target="#ordered-boosting">Ordered Boosting</a></li>
-  <li><a href="#oblivious-decision-trees" id="toc-oblivious-decision-trees" class="nav-link" data-scroll-target="#oblivious-decision-trees">Oblivious Decision Trees</a></li>
-  <li><a href="#tips-to-handle-categorical-features" id="toc-tips-to-handle-categorical-features" class="nav-link" data-scroll-target="#tips-to-handle-categorical-features">Tips to handle Categorical Features</a></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
-  </ul></li>
+  <li><a href="#vectors-matrices-and-tensors" id="toc-vectors-matrices-and-tensors" class="nav-link active" data-scroll-target="#vectors-matrices-and-tensors">Vectors, Matrices and Tensors</a></li>
   </ul>
 </nav>
     </div>
@@ -1036,105 +1029,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="catboost" class="level1">
-<h1>Catboost</h1>
+<section id="vectors-matrices-and-tensors" class="level1">
+<h1>Vectors, Matrices and Tensors</h1>
 <ul>
-<li><p>Catboost is a Newton boosting algorithm</p></li>
-<li><p><code>Newton Boosting + Ordering = CatBoost</code></p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/target_leakage.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Target Leakage</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/distribution_shift.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Prediction Shift</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/hold_one_out_encoding.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Hold out encoding</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/leave_one_out_encoding.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Leave one out encoding does not fully eliminate target leakage and prediction shift issues</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>CatBoost introduces three major modifications to classical Newton Boosting approach</p>
-<ul>
-<li>It is specialized to categorical features</li>
-<li>It uses ordered boosting as its underlying approach which allows it to address data leakage and prediction shift</li>
-<li>It uses <code>oblivious decision trees</code> as base estimators which often leads to faster training times</li>
-</ul></li>
-<li><p>Catboost addresses prediction shift by using permutation for ordering training examples</p></li>
-</ul>
-<section id="ordered-target-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="ordered-target-statistics">Ordered Target Statistics</h3>
-<ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/catboost_ordered_stats.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Ordered Target Statistics</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>One downside to this approach is that training examples that occur early in a randomized sequence are encoded with far fewer examples.</p></li>
-<li><p>To compensate for this in practice and increase robustness, CatBoost maintains several sequences, or “histories” which are, in turn, randomly chosen. This means that CatBoost recomputes target statistics for categorical variables at each iteration</p></li>
-</ul>
-</section>
-<section id="ordered-boosting" class="level3">
-<h3 class="anchored" data-anchor-id="ordered-boosting">Ordered Boosting</h3>
-<ul>
-<li>In addition to issues with encoding features, gradient and Newton boosting both reuse data between iterations, leading to a gradient distribution shift, which ultimately causes a further prediction shift. That is to say, even if we didn’t have categorical features, we would still have a prediction shift problem, which would bias our estimates of model generalization!</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/ordered_boosting.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Ordered Boosting</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="oblivious-decision-trees" class="level3">
-<h3 class="anchored" data-anchor-id="oblivious-decision-trees">Oblivious Decision Trees</h3>
-<ul>
-<li>Oblivious decision trees use the same splitting criterion in all the nodes across an entire level/depth of the tree</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/oblivian_decision_trees.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Oblivious Decision Trees</figcaption><p></p>
-</figure>
-</div>
-<ul>
-<li><p>Oblivious decision trees lead to less split criteria, as opposed to the standard decision tree. This makes them easier and more efficient to learn, which has the effect of speeding up overall training.</p></li>
-<li><p>Oblivious trees are balanced and symmetric, making them less complex and less prone to overfitting</p></li>
-</ul>
-</section>
-<section id="tips-to-handle-categorical-features" class="level3">
-<h3 class="anchored" data-anchor-id="tips-to-handle-categorical-features">Tips to handle Categorical Features</h3>
-<ul>
-<li>use <code>string similarity</code> to handle spelling mistakes in categorical features. (String similarity approaches - character based or token based)</li>
-<li><code>dirty-cat</code> package provides functionality off-the-shelf. Different methods available for handling dirty categories are</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/similarity_encoder.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Methods in Dirty cat</figcaption><p></p>
-</figure>
-</div>
-</section>
-<section id="reference" class="level3">
-<h3 class="anchored" data-anchor-id="reference">Reference</h3>
-<ul>
-<li>Manning book - Ensemble methods for Machine learning</li>
+<li>Dot product offers a neat way to represent the weighted sum model output</li>
+<li>The dot product is defined only if the vectors have the same dimensions</li>
+<li>Sometimes the dot product is also referred to as inner products</li>
+<li>The product of a matrix X and column vector ~w is another vector, denoted X ~w</li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

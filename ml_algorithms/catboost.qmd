@@ -48,7 +48,7 @@
 * use `string similarity` to handle spelling mistakes in categorical features. (String similarity approaches - character based or token based)
 * `dirty-cat` package provides functionality off-the-shelf. Different methods available for handling dirty categories are
 
-*[Methods in Dirty cat](/Images/similarity_encoder.png)
+![Methods in Dirty cat](/Images/similarity_encoder.png)
 
 ### Reference
 * Manning book - Ensemble methods for Machine learning
