@@ -37,5 +37,24 @@ over the individual gradients and Hessians
 
 * `Hessians incorporate local curvature information to ensure that training examples that are badly misclassified get higher weights`
 
+
+### XGBoost: A framework for Newton Boosting
+* Distributed and parallel processing capabilities
+* Newton boosting on regularized loss functions to directly control the complexity of weak learners
+* Alogrithmic speedups such as weighted quantile sketch for faster training
+* Block based system design that stores data in memory in smaller units called blocks. This allows for parallel learning, better caching, efficient multi-threading
+* Support for a lot of loss functions
+
+
+#### Regularized loss functions
+* XGBoost uses tree based methods to control the complexity of the model.
+* Instead of using Gini or Entropy XGBoost uses regularized learning objective
+
+![XGBoost Regularization](/Images/xgboost_regularization.png)
+
+#### Quantile based Newton Boosting
+* Find ideal split points using qunatiles in the features
+* Instead of using evenly sized bins, XGBoost bins data into feature-dependent buckets.
+
 ### Imp points
 * In boosting algorithms we select the learning rate to help us avoid overfitting (instead of convergence)
