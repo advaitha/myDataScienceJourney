@@ -15,7 +15,7 @@
 
 * `A component of a vector along another vector is yielded by the dot product.` If the vectors point in more or less the same direction their dot products are higher compared to when the vectors are perpendicular to each other. If the vectors point in opposite direction their dot product will be negative
 
-* The dot product can be expressed using the cosine of the angle between the vectors. 
+* The dot product can be expressed using the cosine of the angle between the vectors
 
 ![Expressing dot product using cosine](/Images/cosine.png)
 
