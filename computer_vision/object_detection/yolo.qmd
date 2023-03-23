@@ -97,4 +97,5 @@ If the grid cells are small enough, then it will be difficult to have many objec
 
 ### Reference
 * [codebasics youtube video](https://www.youtube.com/watch?v=IfRMV2MY9n0)
-* [v7 labs](https://www.v7labs.com/blog/yolo-object-detection)
+* [v7 lab blog post](https://www.v7labs.com/blog/yolo-object-detection)
+* [Datacamp blog post](https://www.datacamp.com/blog/yolo-object-detection-explained)
