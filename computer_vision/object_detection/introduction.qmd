@@ -1,6 +1,6 @@
 # Object Detection
 
-## Clasiification Vs Detection
+## Classification Vs Detection
 
 ![](/Images/class_vs_detect.png)
 
