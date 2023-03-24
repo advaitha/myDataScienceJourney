@@ -1,34 +1,49 @@
 # CNN Architectures
 
+## AlexNet
+![AlexNet Architecture](/Images/alexnet.png)
 
-## VGG
+
+## VGG Architecture
+* We have lot of parameters in the early convolutional layer and the fully connected layers at the end of the network
+* Future architectures will remove the fully connected layers to reduce the number of parameters
+* ![VGG Architecture with number of parameters](/Images/vgg_architecture.png)
+* ![Different VGG Models with 16 and 19 layers](/Images/vgg_arch.png)
+
+
+
+### why 3x3 convolutional layers are used in VGG
 * ![Three 3x3 convolutional layers stacked together (with non-linearities and a stride of 1) will have a receptive field equivalent to one 7x7 layer](/Images/3x3.png)
-* 3x3 stacked layers will also have lesser parameters than one 7x7 layer
-* 
+* ![Using two 3x3 convolutional layers which is equivalent to using one 5x5 layer will have fewer number of parameters](/Images/3x3_less_parameters.png)
+* ![Using 3x3 conv layers will also reduce the number of Floating Point Operations](/Images/flops_3x3.png)
+* We can use activation functions between the two 3x3 convolutional layers which will provide more non-linearity
+
+## GoogleNet
+* 22 layers with only 5 million parameters
+* 12x less parameters than Alexnet
+* Inception modules are used in the network
+* No fully connected layers
+* ![GoogleNet Architecture](/Images/googlenet.png)
+
+### Inception Module
+* Design of a `network within a network` (local network topology) 
+* Inception modules are stacked on top of each other
+* The presence of multiple convolutional filters in the Inception module will blow the number of parameters and computation required. Bottleneck layers that use 1x1 convolutionals to reduce the depth while preserving spatial dimensions
+* ![Inception Module](/Images/Inception_module.png)
+* ![Applying different filter operations on the input](/Images/inception_filters.png)
+* ![computational complexity of Inception module](/Images/Inception_mod.png)
+* ![Inception layers with 1x1 convolution bottleneck layer](/Images/1x1_inception_layers.png)
+* ![Bottleneck layer reducing the number of operations required in Inception Module](/Images/bottleneck_layer.png)
+
+## ResNet
+* 152 layer model
+* Very deep networks using residual connections
+* Deeper models does not perform better by adding more layers. Deeper layers are hard to optimize.
+* ![Residual blocks used to increase network depth](/Images/resnet.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### References
-[The Aisummer blog post](https://theaisummer.com/cnn-architectures/)
+### Reference
+* [Stanford Slides](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture9.pdf)
+* [youtube video explaining receptive fields](https://www.youtube.com/watch?v=lxpQZRvfnCc)
+* [Michigan CNN Lectures](https://www.youtube.com/watch?v=dJYGatp4SvA&list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r)
+* [The Aisummer blog post](https://theaisummer.com/cnn-architectures/)
