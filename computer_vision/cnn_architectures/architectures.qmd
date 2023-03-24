@@ -1,0 +1,34 @@
+# CNN Architectures
+
+
+## VGG
+* ![Three 3x3 convolutional layers stacked together (with non-linearities and a stride of 1) will have a receptive field equivalent to one 7x7 layer](/Images/3x3.png)
+* 3x3 stacked layers will also have lesser parameters than one 7x7 layer
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### References
+[The Aisummer blog post](https://theaisummer.com/cnn-architectures/)
