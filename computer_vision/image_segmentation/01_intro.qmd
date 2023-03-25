@@ -38,12 +38,16 @@
 
 
 #### Max unpooling
+* In Max unpooling we memorize the position of the pixel with max value during max pooling. During upsampling, we fill the value in the exact position of the pixel with max value
 * ![Max Unpooling](/Images/max_unpooling.png)
 
 
 #### Transposed convolution
+* These is a learnable upsampling method
+* For upsampling the input provides the weight for the filter
 * ![Transposed convolutions](/Images/transposed_convol.png)
-
+* ![Learnable Transposed convolution](/Images/transpose_convolution.png)
+* ![Example of Transpose convolution](/Images/transpose_conv.png)
 
 
 ### Interpolate in pytorch
@@ -70,20 +74,14 @@ bilinear_interp_out = F.interpolate(input, scale_factor=2, mode='bilinear', alig
 **In segmentation, skip connections are used to pass features from the encoder path to the decoder path in order to recover spatial information lost during downsampling**
 
 ![skip connection - Gradient Descent](/Images/skip_connections.png.png)
-
-
 ![Difference between pooling and convolution](/Images/pooling_vs_conv.png)
 * 1x1 convolution is to reduce the number of filters (not sure how it happens)
-
 ![1x1 convolutions](/Images/1x1_conv.png)
 
 
 ### Metrics and loss functions
 * The metric used is Intersection over union (i.e Jaccard similarity)
-
 * The loss function is Focal loss (This is weighted cross entropy loss in addition to 'gamma' which will take care of class imbalance)
-
 * Dice loss is also used
-
 ![Different types of loss functions](/Images/nn_losses.png)
 
