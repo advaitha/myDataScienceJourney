@@ -107,10 +107,7 @@ website:
           - computer_vision/image_classification/01_convolution.qmd
           - computer_vision/cnn_architectures/architectures.qmd
           - computer_vision/object_detection/introduction.qmd
-<<<<<<< HEAD
           - computer_vision/object_detection/localization.qmd
-=======
->>>>>>> refs/remotes/origin/main
           - computer_vision/object_detection/yolo.qmd
           - computer_vision/image_classification/satellite_images_classification.ipynb      
           - computer_vision/image_segmentation/01_intro.qmd   
@@ -187,15 +184,11 @@ website:
           contents: 
           - distributed_processing/fugue_intro.qmd
           - distributed_processing/fugue_quickstart.ipynb  
-<<<<<<< HEAD
           - distributed_processing/fugue_sql.ipynb  
         - section: "**Pytorch**" 
           contents:
           - pytorch/01_introduction.ipynb
           - pytorch/02_continous_xor.ipynb
-=======
-          - distributed_processing/fugue_sql.ipynb   
->>>>>>> refs/remotes/origin/main
         - section: "**DSA**"
           contents: 
           - dsa/insertion_sort.ipynb
