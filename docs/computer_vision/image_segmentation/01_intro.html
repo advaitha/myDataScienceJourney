@@ -619,6 +619,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../computer_vision/image_segmentation/03_intro_2.html" class="sidebar-item-text sidebar-link">Image Segmentation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../computer_vision/image_segmentation/02_architectures.html" class="sidebar-item-text sidebar-link">Architecutures for Image segmentation</a>
   </div>
 </li>
@@ -1172,13 +1177,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="max-unpooling" class="level4">
 <h4 class="anchored" data-anchor-id="max-unpooling">Max unpooling</h4>
 <ul>
+<li>In Max unpooling we memorize the position of the pixel with max value during max pooling. During upsampling, we fill the value in the exact position of the pixel with max value</li>
 <li><img src="../../Images/max_unpooling.png" title="fig:" class="img-fluid" alt="Max Unpooling"></li>
 </ul>
 </section>
 <section id="transposed-convolution" class="level4">
 <h4 class="anchored" data-anchor-id="transposed-convolution">Transposed convolution</h4>
 <ul>
-<li><img src="../../Images/transposed_convol.png" title="fig:" class="img-fluid" alt="Transposed convolutions"></li>
+<li><p>These is a learnable upsampling method</p></li>
+<li><p>For upsampling the input provides the weight for the filter</p></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/transposed_convol.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Transposed convolutions</figcaption><p></p>
+</figure>
+</div></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/transpose_convolution.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Learnable Transposed convolution</figcaption><p></p>
+</figure>
+</div></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/transpose_conv.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Example of Transpose convolution</figcaption><p></p>
+</figure>
+</div></li>
 </ul>
 </section>
 </section>
@@ -1211,32 +1236,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 <p><strong>In segmentation, skip connections are used to pass features from the encoder path to the decoder path in order to recover spatial information lost during downsampling</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/skip_connections.png.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">skip connection - Gradient Descent</figcaption><p></p>
-</figure>
-</div>
-<p><img src="../../Images/pooling_vs_conv.png" class="img-fluid" alt="Difference between pooling and convolution"> * 1x1 convolution is to reduce the number of filters (not sure how it happens)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/1x1_conv.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">1x1 convolutions</figcaption><p></p>
-</figure>
-</div>
+<p><img src="../../Images/skip_connections.png.png" class="img-fluid" alt="skip connection - Gradient Descent"> <img src="../../Images/pooling_vs_conv.png" class="img-fluid" alt="Difference between pooling and convolution"> * 1x1 convolution is to reduce the number of filters (not sure how it happens) <img src="../../Images/1x1_conv.png" class="img-fluid" alt="1x1 convolutions"></p>
 <section id="metrics-and-loss-functions" class="level3">
 <h3 class="anchored" data-anchor-id="metrics-and-loss-functions">Metrics and loss functions</h3>
 <ul>
-<li><p>The metric used is Intersection over union (i.e Jaccard similarity)</p></li>
-<li><p>The loss function is Focal loss (This is weighted cross entropy loss in addition to ‘gamma’ which will take care of class imbalance)</p></li>
-<li><p>Dice loss is also used</p></li>
+<li>The metric used is Intersection over union (i.e Jaccard similarity)</li>
+<li>The loss function is Focal loss (This is weighted cross entropy loss in addition to ‘gamma’ which will take care of class imbalance)</li>
+<li>Dice loss is also used <img src="../../Images/nn_losses.png" class="img-fluid" alt="Different types of loss functions"></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/nn_losses.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Different types of loss functions</figcaption><p></p>
-</figure>
-</div>
 
 
 </section>
