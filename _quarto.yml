@@ -184,7 +184,10 @@ website:
           contents: 
           - distributed_processing/fugue_intro.qmd
           - distributed_processing/fugue_quickstart.ipynb  
-          - distributed_processing/fugue_sql.ipynb   
+          - distributed_processing/fugue_sql.ipynb  
+        - section: "**Pytorch**" 
+          contents:
+          - pytorch/01_introduction.ipynb
         - section: "**DSA**"
           contents: 
           - dsa/insertion_sort.ipynb
