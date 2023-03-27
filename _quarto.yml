@@ -107,6 +107,7 @@ website:
           - computer_vision/image_classification/01_convolution.qmd
           - computer_vision/cnn_architectures/architectures.qmd
           - computer_vision/object_detection/introduction.qmd
+          - computer_vision/object_detection/localization.qmd
           - computer_vision/object_detection/yolo.qmd
           - computer_vision/image_classification/satellite_images_classification.ipynb      
           - computer_vision/image_segmentation/01_intro.qmd   

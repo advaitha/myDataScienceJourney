@@ -1,0 +1,10 @@
+# Image Classification and Localization
+
+* The difference between  localization and detection is that in localization, we know in advance that the image will consist of only one object. We classify and predict the bounding box for the object.
+
+* Bounding box is treated as a regression problem.
+
+![](Images/classification_localization.png)
+
+
+

@@ -1,0 +1,7 @@
+# Object Detection
+* Using sliding window for object detection. choosing the window size is a challenge
+* Region Proposal Netword - use traditional image processing techniques to come up with proposals for objects in the image. This is very fast. Selective search algorithm gives 2000 region proposals in a few seconds on CPU. Use convolutions on the proposed regions
+
+* Detection without proposals
+* ![Anchor Boxes with Grids](/Images/anchor_boxes_yolo.png)
+
