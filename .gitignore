@@ -2,5 +2,9 @@
 /_site/
 /scaled/
 /personal/
+<<<<<<< HEAD
 /newsletter/
 /pytorch_notebooks/
+=======
+/newsletter/
+>>>>>>> refs/remotes/origin/main
