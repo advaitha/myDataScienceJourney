@@ -188,6 +188,7 @@ website:
         - section: "**Pytorch**" 
           contents:
           - pytorch/01_introduction.ipynb
+          - pytorch/02_continous_xor.ipynb
         - section: "**DSA**"
           contents: 
           - dsa/insertion_sort.ipynb
