@@ -3,7 +3,4 @@
 /scaled/
 /personal/
 /newsletter/
-/pytorch/runs/
-/pytorch/Digraph.gv
-/pytorch/Digraph.pdf
-/pytorch/our_model.tar
+/pytorch_notebooks/
