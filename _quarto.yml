@@ -189,6 +189,7 @@ website:
           contents:
           - pytorch/01_introduction.ipynb
           - pytorch/02_continous_xor.ipynb
+          - pytorch/03_activation_functions.ipynb
         - section: "**DSA**"
           contents: 
           - dsa/insertion_sort.ipynb

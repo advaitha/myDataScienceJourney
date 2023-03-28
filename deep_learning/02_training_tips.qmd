@@ -1,0 +1,2 @@
+# Tips to Train Your Model
+* For images, it's a good idea to normalize the pixel values to the range of -1 and 1. It works better than normalizing the pixel values to the range of 0 and 1.
