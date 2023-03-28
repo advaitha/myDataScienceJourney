@@ -21,6 +21,13 @@
     "text": "Coding Assistant for Pandas"
   },
   {
+    "objectID": "computer_vision/object_detection/object_detection_part_2.html",
+    "href": "computer_vision/object_detection/object_detection_part_2.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Image Segmentation"
+  },
+  {
     "objectID": "computer_vision/object_detection/localization.html",
     "href": "computer_vision/object_detection/localization.html",
     "title": "My Datascience Journey",
@@ -250,6 +257,20 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Differentiable volume Rendering will require a lot of storage. This is undesirable if we want to transmit this information over the network.\nNeRF is one of the first techniques to model a 3D scene that requires less disk space and also captures the fine geometry and texture of complex scenes.\n\n\nThe challenge is to synthesize new views of a 3D scene using a small number of available 2D snapshots of the scene. The challenge is to construct complete information about the world given incomplete and noisy information.\n## Radiance Fields Radiance is the intensity of a point in space when viewed in a particular direction. When capturing this information in RGB, the radiance will have three components corresponding to the colors Red, Green, and Blue. The radiance of a point in space can depend on many factors, including the following:\n\nLight sources illuminating that point\nThe existence of a surface (or volume density) that can reflect light at that point\nThe texture properties of the surface\n\n\n\n\nRadiance (r,g,b) at a point (x,y,z) when viewed from certain viewing angles\n\n\nIf we know the radiance of all the points in a scene in all directions then it constitutes a radiance field.\n\n\n\nNeRF uses a neural network to represent a volumetric scene function. This neural network takes a 5-dimensional input. These are the three spatial locations (x, y, z) and two viewing angles (θ, ∅). Its output is the volume density σ at (x, y, z) and the emitted color (r, g, b) of the point (x, y, z) when viewed from the viewing angle (θ, ∅).\nThe model therefore maps any point in the 3D scene and a viewing angle to the volume density and radiance at that point. You can then use this model to synthesize views by querying the 5D coordinates along camera rays and using the volume rendering technique to project the output colors and volume densities into an image.\n\n\n\nNeRF Architecture\n\n\nA single NeRF model is optimized on a set of images from a single scene. Therefore, each model only knows the scene on which it is optimized. NeRF is optimized to generalize unseen viewpoints well for a particular scene."
+  },
+  {
+    "objectID": "pytorch/03_activation_functions.html",
+    "href": "pytorch/03_activation_functions.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Activation Functions\n\nCreating our own activation functions in pytorch\n\nimport torch\nimport torch.nn as nn\nimport torch.nn.functional as F\n\n\nclass ActivationFunction(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.name = self.__class__.__name__\n        self.config = {\"name\":self.name}\n\n\nSigmoid\nSigmoid activation function does not work well in the inner layers. The gradients of the inner layers becomes very small and it is very difficult to update them. The gradients of the outer layers are large compared to the gradients of the inner layers. A high learning rate is suitable for the inner layers and low learning rate would suit the outer layers. Also the gradients are not centered around zero which is not good for a neural network.\n\nclass Sigmoid(ActivationFunction):\n    def forward(self,x):\n        return 1/(1+torch.exp(-x))\n\n\n\n\nTanh\nTanh value range from -1 to 1. The gradients will be centered around zero which is good for the network.\n\nclass Tanh(ActivationFunction):\n    def forward(self,x):\n        x_exp, neg_x_exp = torch.exp(x), torch.exp(-x)\n        return (x_exp - neg_x_exp)/(x_exp + neg_x_exp)\n\n\n\nRELU\nThis activation function replaces the negative values with zero. The gradient of this activation function is either zero or 1 and it will look like a step function. The neurons whose activation is zero will not propogate the gradients and hence will not get updated. They are considered as dead neurons. Two ways to deal with this are to use higher learning rates or use a bias value which will avoid getting zero after activation. (Read about these methods). In practice RELU is the most commonly used activation function.\n\nclass ReLU(ActivationFunction):\n    def forward(self,x):\n        return x * (x > 0).float()\n        # return x.clamp(min=0)\n        # return max(x,0)\n\n\n\nLeaky ReLU\nThis function adds a small value (alpha) when the activation is negative. This will help overcome the dead neuron challenge. However we will have an additional hyperparameter to tune. The gradient instead of 0 and 1 will be alpha and 1.\n\nclass LeakyReLU(ActivationFunction):\n    def __init__(self, alpha=0.01):\n        super().__init__()        \n        self.config['alpha'] = alpha\n\n    def forward(self,x):\n        return torch.where(x > 0, x, x * self.config['alpha'])\n\n\n\nELU\nThe negative values are exponentially reduced.\n\nclass ELU(ActivationFunction):\n    def forward(self,x):\n        return torch.where(x > 0, x, torch.exp(x)-1)\n\n\n\nSwish\nExperimentation was done on alot of datasets and activation functions. In the test, Swish was found to perform very well. For a neural network with many layers, Swish can perform better. This results after activation is not monotonic.\n\nclass Swish(ActivationFunction):\n    def forward(self,x):\n        return x * torch.sigmoid(x)\n\n\n\n\n\nActivation Functions\n\n\n\n\n\nBehaviour of activation functions"
+  },
+  {
+    "objectID": "pytorch/04_optimization.html",
+    "href": "pytorch/04_optimization.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "# Optimization"
   },
   {
     "objectID": "pytorch/01_introduction.html",
@@ -1587,6 +1608,13 @@
     "title": "Notes",
     "section": "",
     "text": "My Notes on Data Science, Machine learning and Artificial Intelligence, I am learning from different books, videos, courses and Notebooks. These pages are summaries, explanations, important points and replication of various source material from which I am learning."
+  },
+  {
+    "objectID": "deep_learning/02_training_tips.html",
+    "href": "deep_learning/02_training_tips.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Tips to Train Your Model\n\nFor images, it’s a good idea to normalize the pixel values to the range of -1 and 1. It works better than normalizing the pixel values to the range of 0 and 1."
   },
   {
     "objectID": "deep_learning/01_intro.html",
