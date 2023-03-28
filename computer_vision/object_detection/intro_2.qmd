@@ -1,7 +1,59 @@
 # Object Detection
 * Using sliding window for object detection. choosing the window size is a challenge
 * Region Proposal Netword - use traditional image processing techniques to come up with proposals for objects in the image. This is very fast. Selective search algorithm gives 2000 region proposals in a few seconds on CPU. Use convolutions on the proposed regions
-
 * Detection without proposals
 * ![Anchor Boxes with Grids](/Images/anchor_boxes_yolo.png)
+
+### R-CNN
+* ![Predicting Bounding boxes from Region Proposal](/Images/R-CNN_transforming_proposal_bb.png)
+* ![Inference Steps](/Images/r-cnn_inference.png)
+* ![Using NMS to remove overlapping bounding boxes](/Images/using_nms_overlap_boxes.png)
+* ![Using NMS to remove overlapping bounding boxes](/Images/nms_overlap.png)
+
+### Fast R-CNN
+* Fast R-CNN flips ROI proposals and covnets used in R-CNN to speed up the process
+* ![Fast R-CNN](/Images/fast_R_cnn.png)
+* ![Using Resnet as backbone for Fast R-CNN](/Images/using_resnet_for_fast_rcnn.png)
+* ROI proposal will crop and resize the feature map. This cropping has to happen in a differential manner. To achieve the same ROI pooling is done.
+* ![ROI pooling will provide the same size features for different sized proposal regions](/Images/roi_pooling.png)
+* Another method for cropping the feature maps is to use `ROI Align` method
+* During inference, 90% of the time is consumed by ROI Proposal which is done on a CPU
+
+### Faster R-CNN
+* ![Learnable Regional Proposal Network (RPN)](/Images/faster_r_cnn.png)
+* RPN Network uses image features and anchor boxes to generate proposals. This network uses K-different anchor boxes at each point.
+* For each anchor box at each point the network classifies if the anchor is an object and also predicts the box transforms.
+* These inputs are provided to the convolutional network by the RPN to predict the class and bounding boxes.
+* ![Working of RPN with Anchor boxes](/Images/anchor_boxes_RPN.png)
+
+### Single-shot Detector (SSD)
+* Using only the RPN network to predict the final categories and bounding box. (Getting rid of the second stage to speed up the process)
+* ![Two stages in Faster R-CNN](/Images/two_stage_faster_r_cnn.png)
+* ![SSD Working](/Images/ssd_working.png)
+
+
+### Evaluating Object Detection Models
+* Average precision provides a balance between precision and recall
+* ![calculating mean Average Precision](/Images/calculating_map.png)
+* ![calculating the Area under the PR curve to get Average Precision](/Images/calculating_map_2.png)
+* ![Average the Average precision for all categories to get Mean Average Precision](/Images/calc_map.png)
+* In practice we calculate the mAP at various thresholds and take the average
+* ![This model is jointly trained on 4 losses](/Images/faster_R_cnn.png) 
+
+### Best practices to use object Detection
+* Choose appropriate backbone
+* Very big models work better
+* Train longer
+* using multiscale backbone: Feature Pyramid Networks
+* Single stage methods have improved
+* Test-time augmentation pushes numbers up
+* Big ensembles, more data, etc. provides better accuracy
+
+
+## References
+* [Michigan youtube videos](https://www.youtube.com/watch?v=TB-fdISzpHQ&list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r&index=15)
+* [Michigan slides for object detection](https://web.eecs.umich.edu/~justincj/slides/eecs498/498_FA2019_lecture15.pdf)
+
+
+
 
