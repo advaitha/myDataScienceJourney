@@ -1,0 +1,25 @@
+# Anchor Boxes
+* Anchor boxes are predetermied. The number of anchor boxes per cell is a hyperparameter which needs to be tuned.
+* The size and aspect ratio of the anchor boxes are decided based on the dataset and the bboxes in the ground truth.
+* Selecting the number, size and aspect ratio is very crucial for the performance of the model. The neural network is very good at predicting small displacements than large displacement. (This prediction is done by predicting the offset for the anchor boxes). Hence selecting the right anchor boxes is crucial.
+*  Latest YOLO models come with Auto anchor mechanism to decide the size and aspect ratio of the anchor boxes automatically
+*  The algorithm for the auto-anchor is as follows:-
+   *  Get bounding box sizes from the train data
+   *  Choose a metric to define the anchor fitness
+   *  Clustering to get an initial guess for the anchors
+   *  Evolve anchors to improve anchor fitness
+
+### Auto-anchor algorithm
+
+* ![Get the bounding box sizes from the resized image according to the model input](/Images/auto_anchor_1.png)
+* ![choose a metric to define the anchor fitness](/Images/auto_anchor_2.png)
+* ![clustering to get an initial guess for the anchors](/Images/auto_anchor_3.png)
+* ![evolve anchors to improve anchor fitness](/Images/auto_anchor_4.png)
+
+
+#### Predicting Bounding boxes from the Anchor box
+![Predicting bbox from anchors](/Images/predicting_bboxes_from_anchors.png)
+
+
+## References
+* Article by Olga Chernytska

@@ -1,4 +1,4 @@
-# Object Detection
+# Object Detection - Part 11
 * Using sliding window for object detection. choosing the window size is a challenge
 * Region Proposal Netword - use traditional image processing techniques to come up with proposals for objects in the image. This is very fast. Selective search algorithm gives 2000 region proposals in a few seconds on CPU. Use convolutions on the proposed regions
 * Detection without proposals
@@ -53,6 +53,7 @@
 ## References
 * [Michigan youtube videos](https://www.youtube.com/watch?v=TB-fdISzpHQ&list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r&index=15)
 * [Michigan slides for object detection](https://web.eecs.umich.edu/~justincj/slides/eecs498/498_FA2019_lecture15.pdf)
+* [Michigan object detection part 2 slides](https://web.eecs.umich.edu/~justincj/slides/eecs498/498_FA2019_lecture16.pdf)
 
 
 

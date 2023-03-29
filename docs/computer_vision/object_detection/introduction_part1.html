@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – intro_2</title>
+<title>My Datascience Journey – introduction_part1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -536,7 +536,17 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../computer_vision/object_detection/introduction.html" class="sidebar-item-text sidebar-link">Object Detection</a>
+  <a href="../../computer_vision/object_detection/introduction_part1.html" class="sidebar-item-text sidebar-link active">Object Detection - Part 1</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computer_vision/object_detection/introduction_part2.html" class="sidebar-item-text sidebar-link">Object Detection - Part 11</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computer_vision/object_detection/anchor_boxes.html" class="sidebar-item-text sidebar-link">Anchor Boxes</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1065,15 +1075,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#object-detection" id="toc-object-detection" class="nav-link active" data-scroll-target="#object-detection">Object Detection</a>
+  <li><a href="#object-detection---part-1" id="toc-object-detection---part-1" class="nav-link active" data-scroll-target="#object-detection---part-1">Object Detection - Part 1</a>
   <ul class="collapse">
-  <li><a href="#r-cnn" id="toc-r-cnn" class="nav-link" data-scroll-target="#r-cnn">R-CNN</a></li>
+  <li><a href="#classification-vs-detection" id="toc-classification-vs-detection" class="nav-link" data-scroll-target="#classification-vs-detection">Classification Vs Detection</a></li>
+  <li><a href="#general-framework-for-object-detection" id="toc-general-framework-for-object-detection" class="nav-link" data-scroll-target="#general-framework-for-object-detection">General Framework for Object Detection</a>
+  <ul class="collapse">
+  <li><a href="#region-proposal" id="toc-region-proposal" class="nav-link" data-scroll-target="#region-proposal">Region Proposal</a></li>
+  <li><a href="#feature-extraction" id="toc-feature-extraction" class="nav-link" data-scroll-target="#feature-extraction">Feature extraction</a></li>
+  <li><a href="#non-maximum-suppression-nms" id="toc-non-maximum-suppression-nms" class="nav-link" data-scroll-target="#non-maximum-suppression-nms">Non-Maximum suppression (NMS)</a></li>
+  </ul></li>
+  <li><a href="#object-detector-evaluation-metrics" id="toc-object-detector-evaluation-metrics" class="nav-link" data-scroll-target="#object-detector-evaluation-metrics">Object Detector Evaluation Metrics</a>
+  <ul class="collapse">
+  <li><a href="#intersection-over-union-iou" id="toc-intersection-over-union-iou" class="nav-link" data-scroll-target="#intersection-over-union-iou">Intersection over union (IOU)</a></li>
+  <li><a href="#mean-average-precision-map" id="toc-mean-average-precision-map" class="nav-link" data-scroll-target="#mean-average-precision-map">Mean Average Precision (mAP)</a></li>
+  </ul></li>
+  <li><a href="#region-based-convolutional-neural-networks-r-cnns" id="toc-region-based-convolutional-neural-networks-r-cnns" class="nav-link" data-scroll-target="#region-based-convolutional-neural-networks-r-cnns">Region-based convolutional neural networks (R-CNNs)</a>
+  <ul class="collapse">
+  <li><a href="#draw-backs-of-r-cnn" id="toc-draw-backs-of-r-cnn" class="nav-link" data-scroll-target="#draw-backs-of-r-cnn">Draw backs of R-CNN</a></li>
+  </ul></li>
   <li><a href="#fast-r-cnn" id="toc-fast-r-cnn" class="nav-link" data-scroll-target="#fast-r-cnn">Fast R-CNN</a></li>
   <li><a href="#faster-r-cnn" id="toc-faster-r-cnn" class="nav-link" data-scroll-target="#faster-r-cnn">Faster R-CNN</a></li>
-  <li><a href="#single-shot-detector-ssd" id="toc-single-shot-detector-ssd" class="nav-link" data-scroll-target="#single-shot-detector-ssd">Single-shot Detector (SSD)</a></li>
-  <li><a href="#evaluating-object-detection-models" id="toc-evaluating-object-detection-models" class="nav-link" data-scroll-target="#evaluating-object-detection-models">Evaluating Object Detection Models</a></li>
-  <li><a href="#best-practices-to-use-object-detection" id="toc-best-practices-to-use-object-detection" class="nav-link" data-scroll-target="#best-practices-to-use-object-detection">Best practices to use object Detection</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#single-stage-detector-ssd" id="toc-single-stage-detector-ssd" class="nav-link" data-scroll-target="#single-stage-detector-ssd">Single Stage Detector (SSD)</a></li>
+  <li><a href="#you-only-look-once-yolo" id="toc-you-only-look-once-yolo" class="nav-link" data-scroll-target="#you-only-look-once-yolo">You only look once (YOLO)</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1083,157 +1107,130 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="object-detection" class="level1">
-<h1>Object Detection</h1>
+<section id="object-detection---part-1" class="level1">
+<h1>Object Detection - Part 1</h1>
+<section id="classification-vs-detection" class="level2">
+<h2 class="anchored" data-anchor-id="classification-vs-detection">Classification Vs Detection</h2>
+<p><img src="../../Images/class_vs_detect.png" class="img-fluid"></p>
+</section>
+<section id="general-framework-for-object-detection" class="level2">
+<h2 class="anchored" data-anchor-id="general-framework-for-object-detection">General Framework for Object Detection</h2>
+<p><img src="../../Images/four_steps_od.png" class="img-fluid"></p>
+<section id="region-proposal" class="level3">
+<h3 class="anchored" data-anchor-id="region-proposal">Region Proposal</h3>
 <ul>
-<li>Using sliding window for object detection. choosing the window size is a challenge</li>
-<li>Region Proposal Netword - use traditional image processing techniques to come up with proposals for objects in the image. This is very fast. Selective search algorithm gives 2000 region proposals in a few seconds on CPU. Use convolutions on the proposed regions</li>
-<li>Detection without proposals</li>
-<li><img src="../../Images/anchor_boxes_yolo.png" title="fig:" class="img-fluid" alt="Anchor Boxes with Grids"></li>
-</ul>
-<section id="r-cnn" class="level3">
-<h3 class="anchored" data-anchor-id="r-cnn">R-CNN</h3>
-<ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/R-CNN_transforming_proposal_bb.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Predicting Bounding boxes from Region Proposal</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/r-cnn_inference.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Inference Steps</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/using_nms_overlap_boxes.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Using NMS to remove overlapping bounding boxes</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/nms_overlap.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Using NMS to remove overlapping bounding boxes</figcaption><p></p>
-</figure>
-</div></li>
+<li>The system looks at the image and proposes RoIs for further analysis. RoIs are regions that the system believes have a high likelihood of containing an object, called the <strong>objectness score</strong></li>
 </ul>
 </section>
-<section id="fast-r-cnn" class="level3">
-<h3 class="anchored" data-anchor-id="fast-r-cnn">Fast R-CNN</h3>
+<section id="feature-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="feature-extraction">Feature extraction</h3>
 <ul>
-<li><p>Fast R-CNN flips ROI proposals and covnets used in R-CNN to speed up the process</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/fast_R_cnn.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Fast R-CNN</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/using_resnet_for_fast_rcnn.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Using Resnet as backbone for Fast R-CNN</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>ROI proposal will crop and resize the feature map. This cropping has to happen in a differential manner. To achieve the same ROI pooling is done.</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/roi_pooling.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">ROI pooling will provide the same size features for different sized proposal regions</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>Another method for cropping the feature maps is to use <code>ROI Align</code> method</p></li>
-<li><p>During inference, 90% of the time is consumed by ROI Proposal which is done on a CPU</p></li>
+<li>Extract features from ROI to determine the class of the image.</li>
+<li>Two predictions are made for each region
+<ul>
+<li>Bounding box prediction</li>
+<li>Class prediction</li>
+</ul></li>
 </ul>
 </section>
-<section id="faster-r-cnn" class="level3">
-<h3 class="anchored" data-anchor-id="faster-r-cnn">Faster R-CNN</h3>
+<section id="non-maximum-suppression-nms" class="level3">
+<h3 class="anchored" data-anchor-id="non-maximum-suppression-nms">Non-Maximum suppression (NMS)</h3>
 <ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/faster_r_cnn.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Learnable Regional Proposal Network (RPN)</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>RPN Network uses image features and anchor boxes to generate proposals. This network uses K-different anchor boxes at each point.</p></li>
-<li><p>For each anchor box at each point the network classifies if the anchor is an object and also predicts the box transforms.</p></li>
-<li><p>These inputs are provided to the convolutional network by the RPN to predict the class and bounding boxes.</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/anchor_boxes_RPN.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Working of RPN with Anchor boxes</figcaption><p></p>
-</figure>
-</div></li>
+<li>Multiple detections map happen for the same object. NMS is a technique that makes sure the detection algorithm detects each object only once.</li>
 </ul>
 </section>
-<section id="single-shot-detector-ssd" class="level3">
-<h3 class="anchored" data-anchor-id="single-shot-detector-ssd">Single-shot Detector (SSD)</h3>
+</section>
+<section id="object-detector-evaluation-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="object-detector-evaluation-metrics">Object Detector Evaluation Metrics</h2>
 <ul>
-<li><p>Using only the RPN network to predict the final categories and bounding box. (Getting rid of the second stage to speed up the process)</p></li>
-<li><div class="quarto-figure quarto-figure-center">
+<li>Frames per second (FPS) to measure detection speed - R-CNN operates at 7 FPS, SSD operates at 59 FPS.</li>
+<li>Mean average precision (mAP) - It is a percentage from 0 to 100, and higher values are better.</li>
+</ul>
+<section id="intersection-over-union-iou" class="level3">
+<h3 class="anchored" data-anchor-id="intersection-over-union-iou">Intersection over union (IOU)</h3>
+<ul>
+<li>It evaluates the overlap between two bounding boxes - Ground truth bounding box and the predicted bounding box</li>
+</ul>
+<p><img src="../../Images/IOU.png" class="img-fluid"></p>
+<p>IOU = Area of Intersection / Area of the Union IOU should be greater than a threshold which is tunable according to the problem.</p>
+<p>If the IOU value is above this threshod, the prediction is considered a True Positive (TP) and if it is below the threshold, it is considered a False Positive (FP)</p>
+</section>
+<section id="mean-average-precision-map" class="level3">
+<h3 class="anchored" data-anchor-id="mean-average-precision-map">Mean Average Precision (mAP)</h3>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../Images/two_stage_faster_r_cnn.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Two stages in Faster R-CNN</figcaption><p></p>
+<p><img src="../../Images/mAP.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">steps to calculate mAP</figcaption><p></p>
 </figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
+</div>
+</section>
+</section>
+<section id="region-based-convolutional-neural-networks-r-cnns" class="level2">
+<h2 class="anchored" data-anchor-id="region-based-convolutional-neural-networks-r-cnns">Region-based convolutional neural networks (R-CNNs)</h2>
+<p><img src="../../Images/r_cnn.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../Images/ssd_working.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">SSD Working</figcaption><p></p>
+<p><img src="../../Images/selective_search.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">selective search along with bottom up segmentation for region proposal</figcaption><p></p>
 </figure>
-</div></li>
+</div>
+<section id="draw-backs-of-r-cnn" class="level3">
+<h3 class="anchored" data-anchor-id="draw-backs-of-r-cnn">Draw backs of R-CNN</h3>
+<ul>
+<li>Very slow</li>
+<li>Three separate modules which does not share computation</li>
 </ul>
 </section>
-<section id="evaluating-object-detection-models" class="level3">
-<h3 class="anchored" data-anchor-id="evaluating-object-detection-models">Evaluating Object Detection Models</h3>
-<ul>
-<li><p>Average precision provides a balance between precision and recall</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/calculating_map.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">calculating mean Average Precision</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/calculating_map_2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">calculating the Area under the PR curve to get Average Precision</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/calc_map.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Average the Average precision for all categories to get Mean Average Precision</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>In practice we calculate the mAP at various thresholds and take the average</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/faster_R_cnn.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">This model is jointly trained on 4 losses</figcaption><p></p>
-</figure>
-</div></li>
-</ul>
 </section>
-<section id="best-practices-to-use-object-detection" class="level3">
-<h3 class="anchored" data-anchor-id="best-practices-to-use-object-detection">Best practices to use object Detection</h3>
-<ul>
-<li>Choose appropriate backbone</li>
-<li>Very big models work better</li>
-<li>Train longer</li>
-<li>using multiscale backbone: Feature Pyramid Networks</li>
-<li>Single stage methods have improved</li>
-<li>Test-time augmentation pushes numbers up</li>
-<li>Big ensembles, more data, etc. provides better accuracy</li>
-</ul>
+<section id="fast-r-cnn" class="level2">
+<h2 class="anchored" data-anchor-id="fast-r-cnn">Fast R-CNN</h2>
+<p><img src="../../Images/Fast_R-CNN.png" class="img-fluid"></p>
+<p>The loss will be multi-task loss - For predicting the class of the objects and the bounding box.</p>
+<p>The region proposal is coming from a different model. This slow down the algorithm.</p>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=TB-fdISzpHQ&amp;list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r&amp;index=15">Michigan youtube videos</a></li>
-<li><a href="https://web.eecs.umich.edu/~justincj/slides/eecs498/498_FA2019_lecture15.pdf">Michigan slides for object detection</a></li>
-</ul>
+<section id="faster-r-cnn" class="level2">
+<h2 class="anchored" data-anchor-id="faster-r-cnn">Faster R-CNN</h2>
+<p>Instead of using a selective search algorithm on the feature map to identify the region proposals, a region proposal network (RPN) is used to predict the region proposals as part of the training process.</p>
+<p>The predicted region proposals are then reshaped using an RoI pooling layer and used to classify the image within the proposed region and predict the offset values for the bounding boxes</p>
+<p><img src="../../Images/Faster_R_CNN.png" class="img-fluid"></p>
+<p><strong>In general, single-stage detectors (SSD, yolo) tend to be less accurate than two-stage detectors (R-CNN) but are significantly faster.</strong></p>
+</section>
+<section id="single-stage-detector-ssd" class="level2">
+<h2 class="anchored" data-anchor-id="single-stage-detector-ssd">Single Stage Detector (SSD)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/ssd_architecture.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">SSD Architecture</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="you-only-look-once-yolo" class="level2">
+<h2 class="anchored" data-anchor-id="you-only-look-once-yolo">You only look once (YOLO)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/yolo.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Yolo working</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/yolo_architecture.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Yolo3 architecture</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>Image classification is the task of predicting the type or class of an object in an image.</p>
+<p>Object detection is the task of predicting the location of objects in an image via bounding boxes and the classes of the located objects.</p>
+<p>The general framework of object detection systems consists of four main components: region proposals, feature extraction and predictions, non-maximum suppression, and evaluation metrics.</p>
+<p>Object detection algorithms are evaluated using two main metrics: frame per second (FPS) to measure the network’s speed, and mean average precision (mAP) to measure the network’s precision.</p>
+<p>The three most popular object detection systems are the R-CNN family of networks, SSD, and the YOLO family of networks.</p>
+<p>The R-CNN family of networks has three main variations: R-CNN, Fast R-CNN, and Faster R-CNN. R-CNN and Fast R-CNN use a selective search algorithm to propose RoIs, whereas Faster R-CNN is an end-to-end DL system that uses a region proposal network to propose RoIs.</p>
+<p>The YOLO family of networks include YOLOv1, YOLOv2 (or YOLO9000), and YOLOv3.</p>
+<p>R-CNN is a multi-stage detector: it separates the process to predict the objectness score of the bounding box and the object class into two different stages.</p>
+<p>SSD and YOLO are single-stage detectors: the image is passed once through the network to predict the objectness score and the object class.</p>
+<p>In general, single-stage detectors tend to be less accurate than two-stage detectors but are significantly faster.</p>
 
 
 </section>

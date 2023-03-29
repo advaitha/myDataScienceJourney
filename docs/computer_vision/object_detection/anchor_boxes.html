@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – optimization</title>
+<title>My Datascience Journey – anchor_boxes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,88 +20,25 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -123,7 +60,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -134,7 +71,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">My Datascience Journey</span>
     </a>
   </div>
@@ -144,27 +81,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link" href="../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about_me/my_portfolio.html">
+    <a class="nav-link" href="../../about_me/my_portfolio.html">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../notes.html">
+    <a class="nav-link" href="../../notes.html">
  <span class="menu-text">Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../study.html">
+    <a class="nav-link" href="../../study.html">
  <span class="menu-text">Study</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blogs.html">
+    <a class="nav-link" href="../../blogs.html">
  <span class="menu-text">blogs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../create_python_package.html">
+    <a class="nav-link" href="../../create_python_package.html">
  <span class="menu-text">Python Package</span></a>
   </li>  
 </ul>
@@ -204,22 +141,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anomaly_detection/Anomaly_based_IDS.html" class="sidebar-item-text sidebar-link">Anomaly Based IDS using ML</a>
+  <a href="../../anomaly_detection/Anomaly_based_IDS.html" class="sidebar-item-text sidebar-link">Anomaly Based IDS using ML</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anomaly_detection/ad_online_event_streams.html" class="sidebar-item-text sidebar-link">Anomaly Detection using online Event logs</a>
+  <a href="../../anomaly_detection/ad_online_event_streams.html" class="sidebar-item-text sidebar-link">Anomaly Detection using online Event logs</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anomaly_detection/ad_dynamic_graphs_using_midas.html" class="sidebar-item-text sidebar-link">Anomaly detection in dynamic graphs using MIDAS-R</a>
+  <a href="../../anomaly_detection/ad_dynamic_graphs_using_midas.html" class="sidebar-item-text sidebar-link">Anomaly detection in dynamic graphs using MIDAS-R</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../anomaly_detection/ad_using_unsupervised_methods.html" class="sidebar-item-text sidebar-link">Anomaly Detection using Unsupervised methods</a>
+  <a href="../../anomaly_detection/ad_using_unsupervised_methods.html" class="sidebar-item-text sidebar-link">Anomaly Detection using Unsupervised methods</a>
   </div>
 </li>
       </ul>
@@ -234,37 +171,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3D_deep_learning/01_data_formats.html" class="sidebar-item-text sidebar-link">3D Data Formats</a>
+  <a href="../../3D_deep_learning/01_data_formats.html" class="sidebar-item-text sidebar-link">3D Data Formats</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3D_deep_learning/02_coordination_systems.html" class="sidebar-item-text sidebar-link">3D coordination systems</a>
+  <a href="../../3D_deep_learning/02_coordination_systems.html" class="sidebar-item-text sidebar-link">3D coordination systems</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3D_deep_learning/03_rendering.html" class="sidebar-item-text sidebar-link">3D Rendering</a>
+  <a href="../../3D_deep_learning/03_rendering.html" class="sidebar-item-text sidebar-link">3D Rendering</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3D_deep_learning/04_fitting_deformable_mesh_to_point.html" class="sidebar-item-text sidebar-link">Fitting Deformable Mesh Models to Raw Point Clouds</a>
+  <a href="../../3D_deep_learning/04_fitting_deformable_mesh_to_point.html" class="sidebar-item-text sidebar-link">Fitting Deformable Mesh Models to Raw Point Clouds</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3D_deep_learning/05_differentiable_rendering.html" class="sidebar-item-text sidebar-link">Differentiable Rendering</a>
+  <a href="../../3D_deep_learning/05_differentiable_rendering.html" class="sidebar-item-text sidebar-link">Differentiable Rendering</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3D_deep_learning/06_nerf.html" class="sidebar-item-text sidebar-link">Neural Radiance Fields (NeRF)</a>
+  <a href="../../3D_deep_learning/06_nerf.html" class="sidebar-item-text sidebar-link">Neural Radiance Fields (NeRF)</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../3D_deep_learning/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  <a href="../../3D_deep_learning/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
       </ul>
@@ -279,32 +216,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ml_algorithms/adaboost.html" class="sidebar-item-text sidebar-link">Boosting</a>
+  <a href="../../ml_algorithms/adaboost.html" class="sidebar-item-text sidebar-link">Boosting</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ml_algorithms/logitboost.html" class="sidebar-item-text sidebar-link">LogitBoost</a>
+  <a href="../../ml_algorithms/logitboost.html" class="sidebar-item-text sidebar-link">LogitBoost</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ml_algorithms/gradient_boosting.html" class="sidebar-item-text sidebar-link">Gradient Boosting</a>
+  <a href="../../ml_algorithms/gradient_boosting.html" class="sidebar-item-text sidebar-link">Gradient Boosting</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ml_algorithms/lightGBM.html" class="sidebar-item-text sidebar-link">LightGBM</a>
+  <a href="../../ml_algorithms/lightGBM.html" class="sidebar-item-text sidebar-link">LightGBM</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ml_algorithms/xgboost.html" class="sidebar-item-text sidebar-link">XGBoost</a>
+  <a href="../../ml_algorithms/xgboost.html" class="sidebar-item-text sidebar-link">XGBoost</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ml_algorithms/catboost.html" class="sidebar-item-text sidebar-link">Catboost</a>
+  <a href="../../ml_algorithms/catboost.html" class="sidebar-item-text sidebar-link">Catboost</a>
   </div>
 </li>
       </ul>
@@ -319,32 +256,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_architecture/big_data_architectures.html" class="sidebar-item-text sidebar-link">Big Data Architectures</a>
+  <a href="../../data_architecture/big_data_architectures.html" class="sidebar-item-text sidebar-link">Big Data Architectures</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_architecture/data_quality.html" class="sidebar-item-text sidebar-link">Data Quality for ML</a>
+  <a href="../../data_architecture/data_quality.html" class="sidebar-item-text sidebar-link">Data Quality for ML</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_architecture/feature_stores.html" class="sidebar-item-text sidebar-link">Feature Store</a>
+  <a href="../../data_architecture/feature_stores.html" class="sidebar-item-text sidebar-link">Feature Store</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_architecture/mlops.html" class="sidebar-item-text sidebar-link">MLOPS</a>
+  <a href="../../data_architecture/mlops.html" class="sidebar-item-text sidebar-link">MLOPS</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_architecture/model_deployment.html" class="sidebar-item-text sidebar-link">Model Deployment</a>
+  <a href="../../data_architecture/model_deployment.html" class="sidebar-item-text sidebar-link">Model Deployment</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_architecture/model_monitoring.html" class="sidebar-item-text sidebar-link">Model Monitoring</a>
+  <a href="../../data_architecture/model_monitoring.html" class="sidebar-item-text sidebar-link">Model Monitoring</a>
   </div>
 </li>
       </ul>
@@ -359,52 +296,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/Attention_for_vision.html" class="sidebar-item-text sidebar-link">Computer Vision Using Transformers</a>
+  <a href="../../transformers/Attention_for_vision.html" class="sidebar-item-text sidebar-link">Computer Vision Using Transformers</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/attention_is_all_you_need.html" class="sidebar-item-text sidebar-link">Attention is all you need</a>
+  <a href="../../transformers/attention_is_all_you_need.html" class="sidebar-item-text sidebar-link">Attention is all you need</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/attention.html" class="sidebar-item-text sidebar-link">Attention</a>
+  <a href="../../transformers/attention.html" class="sidebar-item-text sidebar-link">Attention</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/transformers.html" class="sidebar-item-text sidebar-link">Transformer</a>
+  <a href="../../transformers/transformers.html" class="sidebar-item-text sidebar-link">Transformer</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/BERT.html" class="sidebar-item-text sidebar-link">BERT</a>
+  <a href="../../transformers/BERT.html" class="sidebar-item-text sidebar-link">BERT</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/transformers_from_scratch.html" class="sidebar-item-text sidebar-link">Transformers from Scratch</a>
+  <a href="../../transformers/transformers_from_scratch.html" class="sidebar-item-text sidebar-link">Transformers from Scratch</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/image_worth_16_16.html" class="sidebar-item-text sidebar-link">An Image is worth 16X16 Words</a>
+  <a href="../../transformers/image_worth_16_16.html" class="sidebar-item-text sidebar-link">An Image is worth 16X16 Words</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/vision_transformer.html" class="sidebar-item-text sidebar-link">Vision Transformers (ViT)</a>
+  <a href="../../transformers/vision_transformer.html" class="sidebar-item-text sidebar-link">Vision Transformers (ViT)</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/how_to_train_ViT.html" class="sidebar-item-text sidebar-link">How to Train Your ViT</a>
+  <a href="../../transformers/how_to_train_ViT.html" class="sidebar-item-text sidebar-link">How to Train Your ViT</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../transformers/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  <a href="../../transformers/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
       </ul>
@@ -419,72 +356,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/01_introduction.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="../../Interpretable_ml/theory/01_introduction.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/02_linear_regression.html" class="sidebar-item-text sidebar-link">Linear regression</a>
+  <a href="../../Interpretable_ml/theory/02_linear_regression.html" class="sidebar-item-text sidebar-link">Linear regression</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/03_logistic_regression.html" class="sidebar-item-text sidebar-link">Logistic Regression</a>
+  <a href="../../Interpretable_ml/theory/03_logistic_regression.html" class="sidebar-item-text sidebar-link">Logistic Regression</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/04_explainable_boosting_machine.html" class="sidebar-item-text sidebar-link">Explainable Boosting Machines</a>
+  <a href="../../Interpretable_ml/theory/04_explainable_boosting_machine.html" class="sidebar-item-text sidebar-link">Explainable Boosting Machines</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/05_GLM_GAM.html" class="sidebar-item-text sidebar-link">Generalized Linear Models (GLM)</a>
+  <a href="../../Interpretable_ml/theory/05_GLM_GAM.html" class="sidebar-item-text sidebar-link">Generalized Linear Models (GLM)</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/06_Decision_tree.html" class="sidebar-item-text sidebar-link">Decision Trees</a>
+  <a href="../../Interpretable_ml/theory/06_Decision_tree.html" class="sidebar-item-text sidebar-link">Decision Trees</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/07_rulefit.html" class="sidebar-item-text sidebar-link">Rulefit</a>
+  <a href="../../Interpretable_ml/theory/07_rulefit.html" class="sidebar-item-text sidebar-link">Rulefit</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/08_naive_bayes_and_knn.html" class="sidebar-item-text sidebar-link">Naive Bayes</a>
+  <a href="../../Interpretable_ml/theory/08_naive_bayes_and_knn.html" class="sidebar-item-text sidebar-link">Naive Bayes</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/09_global_model_agnostic.html" class="sidebar-item-text sidebar-link">Global Model Agnostic Methods</a>
+  <a href="../../Interpretable_ml/theory/09_global_model_agnostic.html" class="sidebar-item-text sidebar-link">Global Model Agnostic Methods</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/10_local_model_agnostic.html" class="sidebar-item-text sidebar-link">Local Model-Agnostic Methods</a>
+  <a href="../../Interpretable_ml/theory/10_local_model_agnostic.html" class="sidebar-item-text sidebar-link">Local Model-Agnostic Methods</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/11_neural_network.html" class="sidebar-item-text sidebar-link">CNN Interpretation</a>
+  <a href="../../Interpretable_ml/theory/11_neural_network.html" class="sidebar-item-text sidebar-link">CNN Interpretation</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/12_nodegam.html" class="sidebar-item-text sidebar-link">Neural GAMs</a>
+  <a href="../../Interpretable_ml/theory/12_nodegam.html" class="sidebar-item-text sidebar-link">Neural GAMs</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/theory/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  <a href="../../Interpretable_ml/theory/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Interpretable_ml/interpret_ai/notebooks/01_ebm.html" class="sidebar-item-text sidebar-link">Editable Interpretable Models</a>
+  <a href="../../Interpretable_ml/interpret_ai/notebooks/01_ebm.html" class="sidebar-item-text sidebar-link">Editable Interpretable Models</a>
   </div>
 </li>
       </ul>
@@ -499,12 +436,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../graph_ml/01_intro.html" class="sidebar-item-text sidebar-link">Graph Machine Learning</a>
+  <a href="../../graph_ml/01_intro.html" class="sidebar-item-text sidebar-link">Graph Machine Learning</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../graph_ml/02_resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  <a href="../../graph_ml/02_resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
       </ul>
@@ -519,7 +456,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../industry_use_cases/insurance.html" class="sidebar-item-text sidebar-link">AI Use cases for the Insurance Industry</a>
+  <a href="../../industry_use_cases/insurance.html" class="sidebar-item-text sidebar-link">AI Use cases for the Insurance Industry</a>
   </div>
 </li>
       </ul>
@@ -534,12 +471,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../bayesian_analysis/Bayesian_analysis.html" class="sidebar-item-text sidebar-link">Bayesian Analysis</a>
+  <a href="../../bayesian_analysis/Bayesian_analysis.html" class="sidebar-item-text sidebar-link">Bayesian Analysis</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../bayesian_analysis/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  <a href="../../bayesian_analysis/resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
       </ul>
@@ -554,27 +491,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../causal_inference/01_intro.html" class="sidebar-item-text sidebar-link">Intro</a>
+  <a href="../../causal_inference/01_intro.html" class="sidebar-item-text sidebar-link">Intro</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../causal_inference/02_randomised_exp.html" class="sidebar-item-text sidebar-link">Randomised Experiments</a>
+  <a href="../../causal_inference/02_randomised_exp.html" class="sidebar-item-text sidebar-link">Randomised Experiments</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../causal_inference/03_stats_revision.html" class="sidebar-item-text sidebar-link">Stats Revisited</a>
+  <a href="../../causal_inference/03_stats_revision.html" class="sidebar-item-text sidebar-link">Stats Revisited</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../causal_inference/04_graphical_causal_models.html" class="sidebar-item-text sidebar-link">Graphical Causal Models</a>
+  <a href="../../causal_inference/04_graphical_causal_models.html" class="sidebar-item-text sidebar-link">Graphical Causal Models</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../causal_inference/resources.html" class="sidebar-item-text sidebar-link">Packages</a>
+  <a href="../../causal_inference/resources.html" class="sidebar-item-text sidebar-link">Packages</a>
   </div>
 </li>
       </ul>
@@ -589,52 +526,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/image_classification/01_convolution.html" class="sidebar-item-text sidebar-link">Architecture for Image Classification</a>
+  <a href="../../computer_vision/image_classification/01_convolution.html" class="sidebar-item-text sidebar-link">Architecture for Image Classification</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/cnn_architectures/architectures.html" class="sidebar-item-text sidebar-link">CNN Architectures</a>
+  <a href="../../computer_vision/cnn_architectures/architectures.html" class="sidebar-item-text sidebar-link">CNN Architectures</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/object_detection/introduction.html" class="sidebar-item-text sidebar-link">Object Detection</a>
+  <a href="../../computer_vision/object_detection/introduction_part1.html" class="sidebar-item-text sidebar-link">Object Detection - Part 1</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/object_detection/localization.html" class="sidebar-item-text sidebar-link">Image Classification and Localization</a>
+  <a href="../../computer_vision/object_detection/introduction_part2.html" class="sidebar-item-text sidebar-link">Object Detection - Part 11</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/object_detection/yolo.html" class="sidebar-item-text sidebar-link">You Only Look Once (YOLO)</a>
+  <a href="../../computer_vision/object_detection/anchor_boxes.html" class="sidebar-item-text sidebar-link active">Anchor Boxes</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/image_classification/satellite_images_classification.html" class="sidebar-item-text sidebar-link">Images Classification Implementation</a>
+  <a href="../../computer_vision/object_detection/localization.html" class="sidebar-item-text sidebar-link">Image Classification and Localization</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/image_segmentation/01_intro.html" class="sidebar-item-text sidebar-link">Image Segmentation</a>
+  <a href="../../computer_vision/object_detection/yolo.html" class="sidebar-item-text sidebar-link">You Only Look Once (YOLO)</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/image_segmentation/03_intro_2.html" class="sidebar-item-text sidebar-link">Image Segmentation</a>
+  <a href="../../computer_vision/image_classification/satellite_images_classification.html" class="sidebar-item-text sidebar-link">Images Classification Implementation</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/image_segmentation/02_architectures.html" class="sidebar-item-text sidebar-link">Architecutures for Image segmentation</a>
+  <a href="../../computer_vision/image_segmentation/01_intro.html" class="sidebar-item-text sidebar-link">Image Segmentation</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computer_vision/summary_of_research_papers/oneFormer.html" class="sidebar-item-text sidebar-link">OneFormer: One Transformer to rule Universal Image Segmentation</a>
+  <a href="../../computer_vision/image_segmentation/03_intro_2.html" class="sidebar-item-text sidebar-link">Image Segmentation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computer_vision/image_segmentation/02_architectures.html" class="sidebar-item-text sidebar-link">Architecutures for Image segmentation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../computer_vision/summary_of_research_papers/oneFormer.html" class="sidebar-item-text sidebar-link">OneFormer: One Transformer to rule Universal Image Segmentation</a>
   </div>
 </li>
       </ul>
@@ -649,72 +596,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/text_preprocessing.html" class="sidebar-item-text sidebar-link">Text Preprocessing</a>
+  <a href="../../nlp/text_preprocessing.html" class="sidebar-item-text sidebar-link">Text Preprocessing</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/IE.html" class="sidebar-item-text sidebar-link">Information Extraction</a>
+  <a href="../../nlp/IE.html" class="sidebar-item-text sidebar-link">Information Extraction</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/rnn.html" class="sidebar-item-text sidebar-link">RNN &amp; LSTM</a>
+  <a href="../../nlp/rnn.html" class="sidebar-item-text sidebar-link">RNN &amp; LSTM</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/starspace.html" class="sidebar-item-text sidebar-link">Starspace</a>
+  <a href="../../nlp/starspace.html" class="sidebar-item-text sidebar-link">Starspace</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/transformer_models.html" class="sidebar-item-text sidebar-link">Transformer Family of Models</a>
+  <a href="../../nlp/transformer_models.html" class="sidebar-item-text sidebar-link">Transformer Family of Models</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/text_summarization.html" class="sidebar-item-text sidebar-link">Text Summarization</a>
+  <a href="../../nlp/text_summarization.html" class="sidebar-item-text sidebar-link">Text Summarization</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/gpt.html" class="sidebar-item-text sidebar-link">GPT</a>
+  <a href="../../nlp/gpt.html" class="sidebar-item-text sidebar-link">GPT</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/bert.html" class="sidebar-item-text sidebar-link">BERT</a>
+  <a href="../../nlp/bert.html" class="sidebar-item-text sidebar-link">BERT</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/chatbot.html" class="sidebar-item-text sidebar-link">Chatbots</a>
+  <a href="../../nlp/chatbot.html" class="sidebar-item-text sidebar-link">Chatbots</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/qa.html" class="sidebar-item-text sidebar-link">Question Answering (QA)</a>
+  <a href="../../nlp/qa.html" class="sidebar-item-text sidebar-link">Question Answering (QA)</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/algos_for_chatbots.html" class="sidebar-item-text sidebar-link">Algorithms for Chatbot</a>
+  <a href="../../nlp/algos_for_chatbots.html" class="sidebar-item-text sidebar-link">Algorithms for Chatbot</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/chatgpt.html" class="sidebar-item-text sidebar-link">InstructGPT</a>
+  <a href="../../nlp/chatgpt.html" class="sidebar-item-text sidebar-link">InstructGPT</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/transformers_production.html" class="sidebar-item-text sidebar-link">Making Transformers efficient in Production</a>
+  <a href="../../nlp/transformers_production.html" class="sidebar-item-text sidebar-link">Making Transformers efficient in Production</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nlp/instruction_fine_tuned_txt_embedding.html" class="sidebar-item-text sidebar-link">Instruction Finetuned Text Embeddings</a>
+  <a href="../../nlp/instruction_fine_tuned_txt_embedding.html" class="sidebar-item-text sidebar-link">Instruction Finetuned Text Embeddings</a>
   </div>
 </li>
       </ul>
@@ -729,52 +676,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/Sampling.html" class="sidebar-item-text sidebar-link">Sampling</a>
+  <a href="../../ds_lifecycle/Sampling.html" class="sidebar-item-text sidebar-link">Sampling</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/Training_Data.html" class="sidebar-item-text sidebar-link">Training</a>
+  <a href="../../ds_lifecycle/Training_Data.html" class="sidebar-item-text sidebar-link">Training</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/Feature_Engineering.html" class="sidebar-item-text sidebar-link">Feature Engineering</a>
+  <a href="../../ds_lifecycle/Feature_Engineering.html" class="sidebar-item-text sidebar-link">Feature Engineering</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/ML_Algorithms.html" class="sidebar-item-text sidebar-link">ML Algorithms</a>
+  <a href="../../ds_lifecycle/ML_Algorithms.html" class="sidebar-item-text sidebar-link">ML Algorithms</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/gradient_descent.html" class="sidebar-item-text sidebar-link">Gradient Descent</a>
+  <a href="../../ds_lifecycle/gradient_descent.html" class="sidebar-item-text sidebar-link">Gradient Descent</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/Regularization.html" class="sidebar-item-text sidebar-link">Regularization</a>
+  <a href="../../ds_lifecycle/Regularization.html" class="sidebar-item-text sidebar-link">Regularization</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/Model_Development.html" class="sidebar-item-text sidebar-link">Model Development</a>
+  <a href="../../ds_lifecycle/Model_Development.html" class="sidebar-item-text sidebar-link">Model Development</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/Monitoring_ML_Models_in_production.html" class="sidebar-item-text sidebar-link">Why ML system fails</a>
+  <a href="../../ds_lifecycle/Monitoring_ML_Models_in_production.html" class="sidebar-item-text sidebar-link">Why ML system fails</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/MLOPS.html" class="sidebar-item-text sidebar-link">MlOps</a>
+  <a href="../../ds_lifecycle/MLOPS.html" class="sidebar-item-text sidebar-link">MlOps</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ds_lifecycle/Resources.html" class="sidebar-item-text sidebar-link">Resources</a>
+  <a href="../../ds_lifecycle/Resources.html" class="sidebar-item-text sidebar-link">Resources</a>
   </div>
 </li>
       </ul>
@@ -789,22 +736,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../math_for_ai/theory/01_intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="../../math_for_ai/theory/01_intro.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link">Distributions</a>
+  <a href="../../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link">Distributions</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../math_for_ai/theory/03_fitting_functions_to_data.html" class="sidebar-item-text sidebar-link">Fitting functions to data</a>
+  <a href="../../math_for_ai/theory/03_fitting_functions_to_data.html" class="sidebar-item-text sidebar-link">Fitting functions to data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../math_for_ai/theory/04_neural_network.html" class="sidebar-item-text sidebar-link">Gradient Descent, Activations and Regularisation</a>
+  <a href="../../math_for_ai/theory/04_neural_network.html" class="sidebar-item-text sidebar-link">Gradient Descent, Activations and Regularisation</a>
   </div>
 </li>
       </ul>
@@ -819,37 +766,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Time Series/01_overview.html" class="sidebar-item-text sidebar-link">Time Series Introduction</a>
+  <a href="../../Time Series/01_overview.html" class="sidebar-item-text sidebar-link">Time Series Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Time Series/02_exploratory_analysis.html" class="sidebar-item-text sidebar-link">Exploratory Analysis</a>
+  <a href="../../Time Series/02_exploratory_analysis.html" class="sidebar-item-text sidebar-link">Exploratory Analysis</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Time Series/03_stats_models.html" class="sidebar-item-text sidebar-link">Simulating Time Series Data</a>
+  <a href="../../Time Series/03_stats_models.html" class="sidebar-item-text sidebar-link">Simulating Time Series Data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
+  <a href="../../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
+  <a href="../../Time Series/04_feature_eng.html" class="sidebar-item-text sidebar-link">Feature Engineering for Time Series</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Time Series/05_ml_for_ts.html" class="sidebar-item-text sidebar-link">ML for Time Series</a>
+  <a href="../../Time Series/05_ml_for_ts.html" class="sidebar-item-text sidebar-link">ML for Time Series</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Time Series/resources.html" class="sidebar-item-text sidebar-link">packages for Time series</a>
+  <a href="../../Time Series/resources.html" class="sidebar-item-text sidebar-link">packages for Time series</a>
   </div>
 </li>
       </ul>
@@ -864,37 +811,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../spatial_data_processing/geographic_data_formats.html" class="sidebar-item-text sidebar-link">Geographic Data</a>
+  <a href="../../spatial_data_processing/geographic_data_formats.html" class="sidebar-item-text sidebar-link">Geographic Data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../spatial_data_processing/plot_buildings_with_area.html" class="sidebar-item-text sidebar-link">Visualizing Buildings in a location along with its Area</a>
+  <a href="../../spatial_data_processing/plot_buildings_with_area.html" class="sidebar-item-text sidebar-link">Visualizing Buildings in a location along with its Area</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../spatial_data_processing/spatial_analysis.html" class="sidebar-item-text sidebar-link">Spatial Analysis using Geopandas</a>
+  <a href="../../spatial_data_processing/spatial_analysis.html" class="sidebar-item-text sidebar-link">Spatial Analysis using Geopandas</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../spatial_data_processing/crs.html" class="sidebar-item-text sidebar-link">Coordinate Reference Systems (CRS)</a>
+  <a href="../../spatial_data_processing/crs.html" class="sidebar-item-text sidebar-link">Coordinate Reference Systems (CRS)</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../spatial_data_processing/visualization.html" class="sidebar-item-text sidebar-link">Data Visualization using Folium</a>
+  <a href="../../spatial_data_processing/visualization.html" class="sidebar-item-text sidebar-link">Data Visualization using Folium</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../spatial_data_processing/osm_processing.html" class="sidebar-item-text sidebar-link">OpenStreetMap</a>
+  <a href="../../spatial_data_processing/osm_processing.html" class="sidebar-item-text sidebar-link">OpenStreetMap</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../spatial_data_processing/raster_data_processing.html" class="sidebar-item-text sidebar-link">Converting Data from Raster to Tabular (Geometry) format</a>
+  <a href="../../spatial_data_processing/raster_data_processing.html" class="sidebar-item-text sidebar-link">Converting Data from Raster to Tabular (Geometry) format</a>
   </div>
 </li>
       </ul>
@@ -909,12 +856,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../telecom_churn_prediction/telecom_churn_eda.html" class="sidebar-item-text sidebar-link">EDA on Telecom Churn Data</a>
+  <a href="../../telecom_churn_prediction/telecom_churn_eda.html" class="sidebar-item-text sidebar-link">EDA on Telecom Churn Data</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../telecom_churn_prediction/telecom_churn_prediction.html" class="sidebar-item-text sidebar-link">Telecom Churn Prediction</a>
+  <a href="../../telecom_churn_prediction/telecom_churn_prediction.html" class="sidebar-item-text sidebar-link">Telecom Churn Prediction</a>
   </div>
 </li>
       </ul>
@@ -929,22 +876,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_quality/four_steps_to_data_quality.html" class="sidebar-item-text sidebar-link">Ensuring Data Quality</a>
+  <a href="../../data_quality/four_steps_to_data_quality.html" class="sidebar-item-text sidebar-link">Ensuring Data Quality</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_quality/setup_datasource.html" class="sidebar-item-text sidebar-link">Create a new Datasource</a>
+  <a href="../../data_quality/setup_datasource.html" class="sidebar-item-text sidebar-link">Create a new Datasource</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_quality/generate_expectation.html" class="sidebar-item-text sidebar-link">Initialize a new Expectation Suite by profiling a batch of your data.</a>
+  <a href="../../data_quality/generate_expectation.html" class="sidebar-item-text sidebar-link">Initialize a new Expectation Suite by profiling a batch of your data.</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_quality/run_checkpoint.html" class="sidebar-item-text sidebar-link">Create Checkpoint</a>
+  <a href="../../data_quality/run_checkpoint.html" class="sidebar-item-text sidebar-link">Create Checkpoint</a>
   </div>
 </li>
       </ul>
@@ -959,12 +906,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-19" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_privacy/basic_privacy_approaches.html" class="sidebar-item-text sidebar-link">Approaches to Data privacy</a>
+  <a href="../../data_privacy/basic_privacy_approaches.html" class="sidebar-item-text sidebar-link">Approaches to Data privacy</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_privacy/differential_privacy.html" class="sidebar-item-text sidebar-link">Differential Privacy</a>
+  <a href="../../data_privacy/differential_privacy.html" class="sidebar-item-text sidebar-link">Differential Privacy</a>
   </div>
 </li>
       </ul>
@@ -979,17 +926,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-20" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../distributed_processing/fugue_intro.html" class="sidebar-item-text sidebar-link">Fugue</a>
+  <a href="../../distributed_processing/fugue_intro.html" class="sidebar-item-text sidebar-link">Fugue</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../distributed_processing/fugue_quickstart.html" class="sidebar-item-text sidebar-link">Fugue Quickstart</a>
+  <a href="../../distributed_processing/fugue_quickstart.html" class="sidebar-item-text sidebar-link">Fugue Quickstart</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../distributed_processing/fugue_sql.html" class="sidebar-item-text sidebar-link">FugueSQL</a>
+  <a href="../../distributed_processing/fugue_sql.html" class="sidebar-item-text sidebar-link">FugueSQL</a>
   </div>
 </li>
       </ul>
@@ -1004,17 +951,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-21" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pytorch/01_introduction.html" class="sidebar-item-text sidebar-link">Introduction to PyTorch</a>
+  <a href="../../pytorch/01_introduction.html" class="sidebar-item-text sidebar-link">Introduction to PyTorch</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pytorch/02_continous_xor.html" class="sidebar-item-text sidebar-link">Simple Neural Network in Pytorch</a>
+  <a href="../../pytorch/02_continous_xor.html" class="sidebar-item-text sidebar-link">Simple Neural Network in Pytorch</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pytorch/03_activation_functions.html" class="sidebar-item-text sidebar-link">Activation Functions</a>
+  <a href="../../pytorch/03_activation_functions.html" class="sidebar-item-text sidebar-link">Activation Functions</a>
   </div>
 </li>
       </ul>
@@ -1029,42 +976,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/insertion_sort.html" class="sidebar-item-text sidebar-link">Insertion Sort</a>
+  <a href="../../dsa/insertion_sort.html" class="sidebar-item-text sidebar-link">Insertion Sort</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/selection_sort.html" class="sidebar-item-text sidebar-link">Selection Sort</a>
+  <a href="../../dsa/selection_sort.html" class="sidebar-item-text sidebar-link">Selection Sort</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/bubble_sort.html" class="sidebar-item-text sidebar-link">Bubble Sort</a>
+  <a href="../../dsa/bubble_sort.html" class="sidebar-item-text sidebar-link">Bubble Sort</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/merge_sort.html" class="sidebar-item-text sidebar-link">Merge Sort</a>
+  <a href="../../dsa/merge_sort.html" class="sidebar-item-text sidebar-link">Merge Sort</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/quick_sort.html" class="sidebar-item-text sidebar-link">Quick Sort</a>
+  <a href="../../dsa/quick_sort.html" class="sidebar-item-text sidebar-link">Quick Sort</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/Binary_search.html" class="sidebar-item-text sidebar-link">Binary Search</a>
+  <a href="../../dsa/Binary_search.html" class="sidebar-item-text sidebar-link">Binary Search</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/bst.html" class="sidebar-item-text sidebar-link">Binary Search Tree</a>
+  <a href="../../dsa/bst.html" class="sidebar-item-text sidebar-link">Binary Search Tree</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dsa/find_closest_value_bst.html" class="sidebar-item-text sidebar-link">Find Closest Value in BST</a>
+  <a href="../../dsa/find_closest_value_bst.html" class="sidebar-item-text sidebar-link">Find Closest Value in BST</a>
   </div>
 </li>
       </ul>
@@ -1079,12 +1026,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-23" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../system_design/step_by_step.html" class="sidebar-item-text sidebar-link">Step by Step Guide for System Design</a>
+  <a href="../../system_design/step_by_step.html" class="sidebar-item-text sidebar-link">Step by Step Guide for System Design</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../system_design/scaling_to_million_users.html" class="sidebar-item-text sidebar-link">Scaling web services to millions of users</a>
+  <a href="../../system_design/scaling_to_million_users.html" class="sidebar-item-text sidebar-link">Scaling web services to millions of users</a>
   </div>
 </li>
       </ul>
@@ -1099,7 +1046,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-24" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../probability/Probability.html" class="sidebar-item-text sidebar-link">Probability</a>
+  <a href="../../probability/Probability.html" class="sidebar-item-text sidebar-link">Probability</a>
   </div>
 </li>
       </ul>
@@ -1114,7 +1061,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-25" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../about_me/why_me.html" class="sidebar-item-text sidebar-link">Why me</a>
+  <a href="../../about_me/why_me.html" class="sidebar-item-text sidebar-link">Why me</a>
   </div>
 </li>
       </ul>
@@ -1124,18 +1071,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#anchor-boxes" id="toc-anchor-boxes" class="nav-link active" data-scroll-target="#anchor-boxes">Anchor Boxes</a>
+  <ul class="collapse">
+  <li><a href="#auto-anchor-algorithm" id="toc-auto-anchor-algorithm" class="nav-link" data-scroll-target="#auto-anchor-algorithm">Auto-anchor algorithm</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Optimization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="anchor-boxes" class="level1">
+<h1>Anchor Boxes</h1>
+<ul>
+<li>Anchor boxes are predetermied. The number of anchor boxes per cell is a hyperparameter which needs to be tuned.</li>
+<li>The size and aspect ratio of the anchor boxes are decided based on the dataset and the bboxes in the ground truth.</li>
+<li>Selecting the number, size and aspect ratio is very crucial for the performance of the model. The neural network is very good at predicting small displacements than large displacement. (This prediction is done by predicting the offset for the anchor boxes). Hence selecting the right anchor boxes is crucial.</li>
+<li>Latest YOLO models come with Auto anchor mechanism to decide the size and aspect ratio of the anchor boxes automatically</li>
+<li>The algorithm for the auto-anchor is as follows:-
+<ul>
+<li>Get bounding box sizes from the train data</li>
+<li>Choose a metric to define the anchor fitness</li>
+<li>Clustering to get an initial guess for the anchors</li>
+<li>Evolve anchors to improve anchor fitness</li>
+</ul></li>
+</ul>
+<section id="auto-anchor-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="auto-anchor-algorithm">Auto-anchor algorithm</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/auto_anchor_1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Get the bounding box sizes from the resized image according to the model input</figcaption><p></p>
+</figure>
+</div></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/auto_anchor_2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">choose a metric to define the anchor fitness</figcaption><p></p>
+</figure>
+</div></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/auto_anchor_3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">clustering to get an initial guess for the anchors</figcaption><p></p>
+</figure>
+</div></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/auto_anchor_4.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">evolve anchors to improve anchor fitness</figcaption><p></p>
+</figure>
+</div></li>
+</ul>
+<section id="predicting-bounding-boxes-from-the-anchor-box" class="level4">
+<h4 class="anchored" data-anchor-id="predicting-bounding-boxes-from-the-anchor-box">Predicting Bounding boxes from the Anchor box</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../Images/predicting_bboxes_from_anchors.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Predicting bbox from anchors</figcaption><p></p>
+</figure>
 </div>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Article by Olga Chernytska</li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

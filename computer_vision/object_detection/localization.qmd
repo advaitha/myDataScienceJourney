@@ -4,7 +4,7 @@
 
 * Bounding box is treated as a regression problem.
 
-![](Images/classification_localization.png)
+
 
 
 
