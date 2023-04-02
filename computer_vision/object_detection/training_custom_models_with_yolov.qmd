@@ -1,0 +1,17 @@
+# Training Custom Models with Yolo
+
+* [yolov7 complete guide](https://blog.roboflow.com/yolov7-breakdown/)
+* [Train yolov7 on custom dataset](https://blog.roboflow.com/yolov7-custom-dataset-training-tutorial/)
+* [yolov7 github repo](https://github.com/WongKinYiu/yolov7)
+* [Google colab notebook tutorial to train yolov7 on custom dataset](https://colab.research.google.com/github/roboflow-ai/notebooks/blob/main/notebooks/train-yolov7-object-detection-on-custom-data.ipynb)
+* [Roboflow notebooks for computer vision](https://github.com/roboflow/notebooks)
+* [Torchvision Object detection finetuning tutorial](https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html)
+
+
+## Training a custom detection model using Yolov8
+* This model can do classification, detection and segmentation
+* [Using YOLOv8 to train custom model](https://docs.ultralytics.com/tasks/detect/)
+* [ultralytics docs](https://docs.ultralytics.com/modes/train/)
+
+## Awesome object detection github repo
+![Object Detection github resources](https://github.com/amusi/awesome-object-detection)

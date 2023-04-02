@@ -1,1 +1,2 @@
 # Anchor less object detection
+* NanoDet and CornerNet are anchor free object detection models
