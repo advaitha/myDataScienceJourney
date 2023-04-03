@@ -14,6 +14,7 @@
 * [Gephi](https://gephi.org/)
 
 ### Blogs
+* [Top 10 resources for GNN](https://towardsdatascience.com/top-10-learning-resources-for-graph-neural-networks-f24d4eb2cc2b)
 * [Getting started in Graph ML](https://gordicaleksa.medium.com/how-to-get-started-with-graph-machine-learning-afa53f6f963a)
 * [Graph Representational learning](https://towardsdatascience.com/graph-representation-learning-dd64106c9763#:~:text=Graph%20models%20are%20pervasive%20for%20describing%20information%20across%20any%20scientific,community%20detection%2C%20and%20many%20others.)
 * [Understanding Deepwalk](https://dsgiitr.com/blogs/deepwalk/)
@@ -21,6 +22,7 @@
 * [Graphsage](https://dsgiitr.com/blogs/graphsage/)
 * [CHEBNET](https://dsgiitr.com/blogs/chebnet/)
 * [Graph Attention Networks](https://dsgiitr.com/blogs/gat/)
+* [Neptune AI blog on GNN](https://neptune.ai/blog/graph-neural-networks-libraries-tools-learning-resources)
 
 ### Datasets
 * [Repo of datasets](https://chrsmrrs.github.io/datasets/docs/datasets/)
@@ -31,6 +33,9 @@
 
 ### Books
 * [Graph Representation learning](https://www.cs.mcgill.ca/~wlh/grl_book/files/GRL_Book.pdf)
+* [Network Science](http://networksciencebook.com/chapter/1#networks)
+* [Graph Neural Networks in Action](https://www.manning.com/books/graph-neural-networks-in-action?query=graph%20neural#reviews)
+* [Graph Neural Networks](https://graph-neural-networks.github.io/)
 
 ### Github repos
 * [pytorch Graph Attention Networks](https://github.com/gordicaleksa/pytorch-GAT)

@@ -1,0 +1,5 @@
+# Linear Algebra Resources
+
+## Videos
+* [Khan Academy Videos](https://www.khanacademy.org/math/linear-algebra/alternate-bases)
+
