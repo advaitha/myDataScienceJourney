@@ -92,7 +92,7 @@ website:
           - graph_ml/graph_theory.qmd
         - section: "**Recommender Systems**"
           contents:
-          - recommender_systems/Matrix_Factorization.pdf
+          - recommender_systems/Matrix Factorization.pptx
         - section: "**Industry Usecases**"
           contents:
           - industry_use_cases/insurance.qmd
