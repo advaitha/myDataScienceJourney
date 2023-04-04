@@ -490,6 +490,13 @@
     "text": "MusicLM: Generating music from text\nEthics and Bias in Data Science\nMitigating Bias\nWhat is a DMP and how to create it\nWhy Data Lakes become Data Swamps\nGo and the challenge to Arificial General Intelligence\nAnamoly Detection and Interpretability\nML Models: From Jupyter notebook to a database\nData Lakehouse\nDruid - Fast Analytics on Batch and Real-time Data\nApplications of Data science in Netflix\nFighting cancer with Data and Machine Learning\nBig Data - The backbone of Aadhar\nConverting Business problems to Data Science Problems\nHow to spot Data lies\nSimpson’s Paradox"
   },
   {
+    "objectID": "recommender_systems/matrix_factorization.html",
+    "href": "recommender_systems/matrix_factorization.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Recommendation System Presentations\n\nIntroduction to Recommendation Systems\nIndustrial Use Cases of Recommenders\nChallenges to Recommenders\nEvaluating Recommenders\nAnalytics for Recommenders\nNon-Personalized Recommenders\nBaseline Recommenders\nData for building Recommenders\nCollaborative Filtering\ncontent Filtering\nMatrix Factorization\nNeural Collaborative Filtering\nVariational Autoencoders for Collaborative Filtering\nDKN for News Recommendation\nCase Study - Designing a Recommendation System for a App"
+  },
+  {
     "objectID": "linear_algebra/resources.html",
     "href": "linear_algebra/resources.html",
     "title": "My Datascience Journey",

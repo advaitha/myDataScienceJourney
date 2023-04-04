@@ -1,0 +1,17 @@
+# Recommendation System Presentations
+* [Introduction to Recommendation Systems](/pdfs/Introduction.pdf)
+* [Industrial Use Cases of Recommenders](/pdfs/Industrial_Use_Cases.pdf)
+* [Challenges to Recommenders](/pdfs/Challenges_to_RS.pdf)
+* [Evaluating Recommenders](/pdfs/Evaluating_Recommenders.pdf)
+* [Analytics for Recommenders](/pdfs/Analytics_for_RS.pdf)
+* [Non-Personalized Recommenders](/pdfs/Non_personalized_Recommenders.pdf)
+* [Baseline Recommenders](/pdfs/Baseline_Predictors.pdf)
+* [Data for building Recommenders](/pdfs/Data_for_Building_RS.pdf)
+* [Collaborative Filtering](/pdfs/Collaborative_Filtering.pdf)
+* [content Filtering](/pdfs/Content_Filtering.pdf)
+* [Matrix Factorization](/pdfs/Matrix_Factorization.pdf)
+* [Neural Collaborative Filtering](pdfs/Neural_Collaborative_Filtering.pdf)
+* [Variational Autoencoders for Collaborative Filtering](/pdfs/Variational_Autoencoders_for_Collaborative_Filtering.pdf)
+* [DKN for News Recommendation](/pdfs/DKN_for_News_Recommendation.pdf)
+* [Case Study - Designing a Recommendation System for a App](/pdfs/Healthfeed_recommendations.pdf)
+
