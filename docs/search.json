@@ -777,6 +777,13 @@
     "text": "Standford course\nGeometric Deep learning youtube course\n\n\n\n\n\npytorch geometric\nNetworkx\npygod\nUGFraud\nigraph\nGephi\n\n\n\n\n\nTop 10 resources for GNN\nGetting started in Graph ML\nGraph Representational learning\nUnderstanding Deepwalk\nGraph CNN\nGraphsage\nCHEBNET\nGraph Attention Networks\nNeptune AI blog on GNN\n\n\n\n\n\nRepo of datasets\n\n\n\n\n\nSNAP node2vec tutorial\nnetworkx tutorial\n\n\n\n\n\nGraph Representation learning\nNetwork Science\nGraph Neural Networks in Action\nGraph Neural Networks\n\n\n\n\n\npytorch Graph Attention Networks\nGraph Representational Learning\nList of resources\n\n\n\n\n\n\n\n\n\n\n\n\n\nGithub repo\nMicrocluster-based Detector of Anomalies"
   },
   {
+    "objectID": "graph_ml/graph_theory.html",
+    "href": "graph_ml/graph_theory.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Number of Nodes N, we often call it the size of the network.\nNumber of Links, denoted L, represents the total number of interactions between the nodes.\nThe links of the network can be directed or undirected.\nA network is called directed (or digraph) if all of its links are directed. It is called undirected if all of its links are undirected. some networks simultaneously have directed and undirected links.\n\n\n\n\n\n\n\nDegree represents the number of links it has to other nodes.\nIn an undirected network the total number of links, L, can be expressed as the sum of node degrees.\n\n\nL = 1/2 ∑i=1N ki\n\nThe 1/2 factor corrects for the fact that each link is counted twice.\nFor directed networks, total degree is given by the sum of incoming and outgoing degree\n\n\n\n\nDegress in a directed network\n\n\n\n\n\nLinks in a directed network\n\n\n\n\n\n\n\nAn important property of the network\n\n\n\nAverage Degree for undirected network\n\n\n\n\n\nAverage Degree of a directed network\n\n\n\n\n\n\n\n\n\n\n\n\nThe adjacency matrix of a directed network of N nodes has N rows and N columns. Its elements being:"
+  },
+  {
     "objectID": "graph_ml/01_intro.html",
     "href": "graph_ml/01_intro.html",
     "title": "My Datascience Journey",
@@ -1699,12 +1706,5 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "What is warmup ratio\nsoftmax temperature\nWhat is dice loss\n\n\nResearch papers to read and summarize\nGoogle MusicLM []\nSWIN DETR ConvNeXt DiNAT MSDeformAttn Dilated Neighborbood Attention"
-  },
-  {
-    "objectID": "graph_ml/graph_theory.html",
-    "href": "graph_ml/graph_theory.html",
-    "title": "My Datascience Journey",
-    "section": "",
-    "text": "Number of Nodes N, we often call it the size of the network.\nNumber of Links, denoted L, represents the total number of interactions between the nodes.\nThe links of the network can be directed or undirected.\nA network is called directed (or digraph) if all of its links are directed. It is called undirected if all of its links are undirected. some networks simultaneously have directed and undirected links.\n\n\n\n\n\nDegree represents the number of links it has to other nodes.\nIn an undirected network the total number of links, L, can be expressed as the sum of node degrees.\n\n\nL = 1/2 ∑i=1N ki"
   }
 ]
