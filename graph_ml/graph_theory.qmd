@@ -1,0 +1,42 @@
+# Graph Theory
+
+## Networks and Graphs
+* Number of Nodes N, we often call it the size of the network.
+* Number of Links, denoted L, represents the total number of interactions between the nodes.
+* The links of the network can be directed or undirected.
+* A network is called directed (or digraph) if all of its links are directed. It is called undirected if all of its links are undirected. some networks simultaneously have directed and undirected links.
+
+## Degree, Average Degree and Degree Distribution
+
+### Degree
+* `Degree` represents the number of links it has to other nodes.
+* In an undirected network the total number of links, L, can be expressed as the sum of node degrees.
+
+<p>
+L = 1/2 &sum;<sub>i=1</sub><sup>N</sup> k<sub>i</sub>
+</p>
+
+The 1/2 factor corrects for the fact that each link is counted twice.
+
+For directed networks, total degree is given by the sum of incoming and outgoing degree 
+
+* ![Degress in a directed network](/Images/directed_degree.png)
+
+* ![Links in a directed network](/Images/directed_links.png)
+
+### Average Degree
+* An important property of the network
+
+* ![Average Degree for undirected network](/Images/average_degree.png)
+
+* ![Average Degree of a directed network](Images/directed_avg_degree.png)
+
+
+### Degree distribution
+* ![Degree distribution](/Images/degree_distribution.png)
+
+
+### Adjacency Matrix
+The adjacency matrix of a directed network of N nodes has N rows and N columns. Its elements being:
+
+

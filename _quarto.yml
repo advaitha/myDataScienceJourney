@@ -89,6 +89,10 @@ website:
           contents:
           - graph_ml/01_intro.qmd
           - graph_ml/02_resources.qmd      
+          - graph_ml/graph_theory.qmd
+        - section: "**Recommender Systems**"
+          contents:
+          - recommender_systems/Matrix_Factorization.qmd
         - section: "**Industry Usecases**"
           contents:
           - industry_use_cases/insurance.qmd
