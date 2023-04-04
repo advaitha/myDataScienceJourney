@@ -490,6 +490,13 @@
     "text": "MusicLM: Generating music from text\nEthics and Bias in Data Science\nMitigating Bias\nWhat is a DMP and how to create it\nWhy Data Lakes become Data Swamps\nGo and the challenge to Arificial General Intelligence\nAnamoly Detection and Interpretability\nML Models: From Jupyter notebook to a database\nData Lakehouse\nDruid - Fast Analytics on Batch and Real-time Data\nApplications of Data science in Netflix\nFighting cancer with Data and Machine Learning\nBig Data - The backbone of Aadhar\nConverting Business problems to Data Science Problems\nHow to spot Data lies\nSimpson’s Paradox"
   },
   {
+    "objectID": "recommender_systems/recommender_presentations.html",
+    "href": "recommender_systems/recommender_presentations.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Recommendation System Presentations\n\nIntroduction to Recommendation Systems\nIndustrial Use Cases of Recommenders\nChallenges to Recommenders\nEvaluating Recommenders\nAnalytics for Recommenders\nNon-Personalized Recommenders\nBaseline Recommenders\nData for building Recommenders\nCollaborative Filtering\ncontent Filtering\nMatrix Factorization\nNeural Collaborative Filtering\nVariational Autoencoders for Collaborative Filtering\nDKN for News Recommendation\nCase Study - Designing a Recommendation System for a App"
+  },
+  {
     "objectID": "linear_algebra/resources.html",
     "href": "linear_algebra/resources.html",
     "title": "My Datascience Journey",
@@ -1069,6 +1076,13 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Feature Engineering for Time Series\n\nBy describing a time series not with a series of numbers detailing the step-by-setp outputs of a process but rather by describing it with a set of features, we can access ML methods designed for cross sectional data\nThe features can be computed over the entire time series of as rolling or expanding window functions\n\n\nConsiderations for extracting features from Time series\n\nStationarity\nLength of the time series - features may become unstable as the length of time series increases\nDomain knowledge\nExternal considerations\n\n\n\nCatalog of common features\n\nMean and variance\nMaximum and minimum\nDifference between last and first values\nNumber of local maxima and minima\nSmoothness of the time series\nPeriodicity and autocorrelation of the time series\n\n\n\nPackages for feature generation\n\ntsfresh\nThe following categories of features are computed\n\nDescriptive statistics\nPhysics inspired category of indicators - nonlinearity (C3), complexity(cid_ce), friedrich_coefficients(returns coefficients of a model fitted to describe complex nonlinear motion) etc\nHistory-compressing counts\n\n\n*Cesium. This library also has a web-based GUI for feature generation\n\n\nFeature selection\n\nAutomatic feature selection based on automatic feature generation\nFRESH - feature extraction based on scalable hypothesis tests - Implemented in tsfresh\nRecursive Feature Elimination (RFE) can be used (forward, backward methods)"
+  },
+  {
+    "objectID": "industry_use_cases/ott.html",
+    "href": "industry_use_cases/ott.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Powering OTT With Data Science\n\nUsing Data Science to Power OTT"
   },
   {
     "objectID": "industry_use_cases/insurance.html",
