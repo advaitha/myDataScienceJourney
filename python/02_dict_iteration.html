@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – generate_expectation</title>
+<title>My Datascience Journey – dict_iteration</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -121,10 +121,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -983,7 +979,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data_quality/generate_expectation.html" class="sidebar-item-text sidebar-link active">Initialize a new Expectation Suite by profiling a batch of your data.</a>
+  <a href="../data_quality/generate_expectation.html" class="sidebar-item-text sidebar-link">Initialize a new Expectation Suite by profiling a batch of your data.</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1078,7 +1074,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../python/02_dict_iteration.html" class="sidebar-item-text sidebar-link">Iterating through a dictionary</a>
+  <a href="../python/02_dict_iteration.html" class="sidebar-item-text sidebar-link active">Iterating through a dictionary</a>
   </div>
 </li>
       </ul>
@@ -1192,12 +1188,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#initialize-a-new-expectation-suite-by-profiling-a-batch-of-your-data." id="toc-initialize-a-new-expectation-suite-by-profiling-a-batch-of-your-data." class="nav-link active" data-scroll-target="#initialize-a-new-expectation-suite-by-profiling-a-batch-of-your-data.">Initialize a new Expectation Suite by profiling a batch of your data.</a></li>
-  <li><a href="#select-columns" id="toc-select-columns" class="nav-link" data-scroll-target="#select-columns">Select columns</a></li>
-  <li><a href="#run-the-onboardingdataassistant" id="toc-run-the-onboardingdataassistant" class="nav-link" data-scroll-target="#run-the-onboardingdataassistant">Run the OnboardingDataAssistant</a></li>
-  <li><a href="#save-review-your-new-expectation-suite" id="toc-save-review-your-new-expectation-suite" class="nav-link" data-scroll-target="#save-review-your-new-expectation-suite">Save &amp; review your new Expectation Suite</a>
+  <li><a href="#iterating-through-a-dictionary" id="toc-iterating-through-a-dictionary" class="nav-link active" data-scroll-target="#iterating-through-a-dictionary">Iterating through a dictionary</a>
   <ul class="collapse">
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next steps</a></li>
+  <li><a href="#iterating-the-keys-of-a-dictionary" id="toc-iterating-the-keys-of-a-dictionary" class="nav-link" data-scroll-target="#iterating-the-keys-of-a-dictionary">Iterating the keys of a dictionary</a></li>
+  <li><a href="#iterating-over-keys-and-values" id="toc-iterating-over-keys-and-values" class="nav-link" data-scroll-target="#iterating-over-keys-and-values">Iterating over keys and values</a></li>
+  <li><a href="#dictionary-comprehensions" id="toc-dictionary-comprehensions" class="nav-link" data-scroll-target="#dictionary-comprehensions">Dictionary Comprehensions</a></li>
+  <li><a href="#filtering-using-dictionary-comprehension" id="toc-filtering-using-dictionary-comprehension" class="nav-link" data-scroll-target="#filtering-using-dictionary-comprehension">Filtering using dictionary comprehension</a></li>
+  <li><a href="#sorting-the-dictionary" id="toc-sorting-the-dictionary" class="nav-link" data-scroll-target="#sorting-the-dictionary">Sorting the dictionary</a></li>
+  <li><a href="#using-map-for-iteration" id="toc-using-map-for-iteration" class="nav-link" data-scroll-target="#using-map-for-iteration">Using map() for iteration</a></li>
+  <li><a href="#using-filter-on-dictionaries" id="toc-using-filter-on-dictionaries" class="nav-link" data-scroll-target="#using-filter-on-dictionaries">using filter() on dictionaries</a></li>
+  <li><a href="#using-chainmap-for-iteration" id="toc-using-chainmap-for-iteration" class="nav-link" data-scroll-target="#using-chainmap-for-iteration">Using ChainMap for Iteration</a></li>
+  <li><a href="#using-chain-from-itertools" id="toc-using-chain-from-itertools" class="nav-link" data-scroll-target="#using-chain-from-itertools">Using chain from itertools</a></li>
+  <li><a href="#iterating-using-unpacking-operator" id="toc-iterating-using-unpacking-operator" class="nav-link" data-scroll-target="#iterating-using-unpacking-operator">Iterating using unpacking operator</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1207,523 +1209,352 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="initialize-a-new-expectation-suite-by-profiling-a-batch-of-your-data." class="level1">
-<h1>Initialize a new Expectation Suite by profiling a batch of your data.</h1>
-<p>This process helps you avoid writing lots of boilerplate when authoring suites by allowing you to select columns and other factors that you care about and letting a profiler write some candidate expectations for you to adjust.</p>
-<p><strong>Expectation Suite Name</strong>: <code>data_quality_expectation_demo</code></p>
+<section id="iterating-through-a-dictionary" class="level1">
+<h1>Iterating through a dictionary</h1>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Methods and attributes of dictionaries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>['__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__ior__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__or__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__reversed__',
+ '__ror__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'clear',
+ 'copy',
+ 'fromkeys',
+ 'get',
+ 'items',
+ 'keys',
+ 'pop',
+ 'popitem',
+ 'setdefault',
+ 'update',
+ 'values']</code></pre>
+</div>
+</div>
+<p><strong>iter</strong> in the above output means that the dictionary is iterable and we can use the <code>for loop</code> directly on a dictionary to iterate over the keys.</p>
+<section id="iterating-the-keys-of-a-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="iterating-the-keys-of-a-dictionary">Iterating the keys of a dictionary</h3>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>os.chdir(<span class="st">'/home/thulasiram/personal/going_deep_and_wide/GiveDirectly/gx_tutorials/great_expectations'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ipl_team_cities <span class="op">=</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chennai Super Kings"</span>: <span class="st">"Chennai"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Delhi Capitals"</span>: <span class="st">"Delhi"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Kings XI Punjab"</span>: <span class="st">"Mohali"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Kolkata Knight Riders"</span>: <span class="st">"Kolkata"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mumbai Indians"</span>: <span class="st">"Mumbai"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Rajasthan Royals"</span>: <span class="st">"Jaipur"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Royal Challengers Bangalore"</span>: <span class="st">"Bangalore"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sunrisers Hyderabad"</span>: <span class="st">"Hyderabad"</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> great_expectations <span class="im">as</span> gx</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> great_expectations.jupyter_ux</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> great_expectations.core.batch <span class="im">import</span> BatchRequest</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> great_expectations.checkpoint <span class="im">import</span> SimpleCheckpoint</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> great_expectations.exceptions <span class="im">import</span> DataContextError</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>context <span class="op">=</span> gx.data_context.DataContext()</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>batch_request <span class="op">=</span> {<span class="st">'datasource_name'</span>: <span class="st">'data_quality_demo'</span>, <span class="st">'data_connector_name'</span>: <span class="st">'default_inferred_data_connector_name'</span>, <span class="st">'data_asset_name'</span>: <span class="st">'yellow_tripdata_sample_2019-01.csv'</span>, <span class="st">'limit'</span>: <span class="dv">1000</span>}</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>expectation_suite_name <span class="op">=</span> <span class="st">"data_quality_expectation_demo"</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>validator <span class="op">=</span> context.get_validator(</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    batch_request<span class="op">=</span>BatchRequest(<span class="op">**</span>batch_request),</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    expectation_suite_name<span class="op">=</span>expectation_suite_name</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> [<span class="ss">f'"</span><span class="sc">{</span>column_name<span class="sc">}</span><span class="ss">"'</span> <span class="cf">for</span> column_name <span class="kw">in</span> validator.columns()]</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Columns: </span><span class="sc">{</span><span class="st">', '</span><span class="sc">.</span>join(column_names)<span class="sc">}</span><span class="ss">."</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>validator.head(n_rows<span class="op">=</span><span class="dv">5</span>, fetch_all<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> ipl_team_cities:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>2022-12-23T15:35:54+0530 - INFO - Great Expectations logging enabled at 20 level by JupyterUX module.</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"01108936985d40a3b7aec109fd5f2e47","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Columns: "vendor_id", "pickup_datetime", "dropoff_datetime", "passenger_count", "trip_distance", "rate_code_id", "store_and_fwd_flag", "pickup_location_id", "dropoff_location_id", "payment_type", "fare_amount", "extra", "mta_tax", "tip_amount", "tolls_amount", "improvement_surcharge", "total_amount", "congestion_surcharge".</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"cf09c4745dee45a180473eb2a3ea0cb1","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-
-<div>
-
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>vendor_id</th>
-      <th>pickup_datetime</th>
-      <th>dropoff_datetime</th>
-      <th>passenger_count</th>
-      <th>trip_distance</th>
-      <th>rate_code_id</th>
-      <th>store_and_fwd_flag</th>
-      <th>pickup_location_id</th>
-      <th>dropoff_location_id</th>
-      <th>payment_type</th>
-      <th>fare_amount</th>
-      <th>extra</th>
-      <th>mta_tax</th>
-      <th>tip_amount</th>
-      <th>tolls_amount</th>
-      <th>improvement_surcharge</th>
-      <th>total_amount</th>
-      <th>congestion_surcharge</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>2019-01-15 03:36:12</td>
-      <td>2019-01-15 03:42:19</td>
-      <td>1</td>
-      <td>1.0</td>
-      <td>1</td>
-      <td>N</td>
-      <td>230</td>
-      <td>48</td>
-      <td>1</td>
-      <td>6.5</td>
-      <td>0.5</td>
-      <td>0.5</td>
-      <td>1.95</td>
-      <td>0.0</td>
-      <td>0.3</td>
-      <td>9.75</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
-      <td>2019-01-25 18:20:32</td>
-      <td>2019-01-25 18:26:55</td>
-      <td>1</td>
-      <td>0.8</td>
-      <td>1</td>
-      <td>N</td>
-      <td>112</td>
-      <td>112</td>
-      <td>1</td>
-      <td>6.0</td>
-      <td>1.0</td>
-      <td>0.5</td>
-      <td>1.55</td>
-      <td>0.0</td>
-      <td>0.3</td>
-      <td>9.35</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>1</td>
-      <td>2019-01-05 06:47:31</td>
-      <td>2019-01-05 06:52:19</td>
-      <td>1</td>
-      <td>1.1</td>
-      <td>1</td>
-      <td>N</td>
-      <td>107</td>
-      <td>4</td>
-      <td>2</td>
-      <td>6.0</td>
-      <td>0.0</td>
-      <td>0.5</td>
-      <td>0.00</td>
-      <td>0.0</td>
-      <td>0.3</td>
-      <td>6.80</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>1</td>
-      <td>2019-01-09 15:08:02</td>
-      <td>2019-01-09 15:20:17</td>
-      <td>1</td>
-      <td>2.5</td>
-      <td>1</td>
-      <td>N</td>
-      <td>143</td>
-      <td>158</td>
-      <td>1</td>
-      <td>11.0</td>
-      <td>0.0</td>
-      <td>0.5</td>
-      <td>3.00</td>
-      <td>0.0</td>
-      <td>0.3</td>
-      <td>14.80</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1</td>
-      <td>2019-01-25 18:49:51</td>
-      <td>2019-01-25 18:56:44</td>
-      <td>1</td>
-      <td>0.8</td>
-      <td>1</td>
-      <td>N</td>
-      <td>246</td>
-      <td>90</td>
-      <td>1</td>
-      <td>6.5</td>
-      <td>1.0</td>
-      <td>0.5</td>
-      <td>1.65</td>
-      <td>0.0</td>
-      <td>0.3</td>
-      <td>9.95</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<pre><code>Chennai Super Kings
+Delhi Capitals
+Kings XI Punjab
+Kolkata Knight Riders
+Mumbai Indians
+Rajasthan Royals
+Royal Challengers Bangalore
+Sunrisers Hyderabad</code></pre>
 </div>
 </div>
 </section>
-<section id="select-columns" class="level1">
-<h1>Select columns</h1>
-<p>Select the columns on which you would like to set expectations and those which you would like to ignore.</p>
-<p>Great Expectations will choose which expectations might make sense for a column based on the <strong>data type</strong> and <strong>cardinality</strong> of the data in each selected column.</p>
-<p>Simply comment out columns that are important and should be included. You can select multiple lines and use a Jupyter keyboard shortcut to toggle each line: <strong>Linux/Windows</strong>: <code>Ctrl-/</code>, <strong>macOS</strong>: <code>Cmd-/</code></p>
-<p>Other directives are shown (commented out) as examples of the depth of control possible (see documentation for details).</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exclude_column_names <span class="op">=</span> [</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"vendor_id"</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pickup_datetime"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"dropoff_datetime"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#"passenger_count",</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"trip_distance"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"rate_code_id"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"store_and_fwd_flag"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"pickup_location_id"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"dropoff_location_id"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"payment_type"</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"fare_amount"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"extra"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mta_tax"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tip_amount"</span>,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tolls_amount"</span>,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"improvement_surcharge"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">"total_amount"</span>,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"congestion_surcharge"</span>,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="run-the-onboardingdataassistant" class="level1">
-<h1>Run the OnboardingDataAssistant</h1>
-<p>The suites generated here are <strong>not meant to be production suites</strong> – they are <strong>a starting point to build upon</strong>.</p>
-<p><strong>To get to a production-grade suite, you will definitely want to <a href="https://docs.greatexpectations.io/docs/guides/expectations/create_expectations_overview#editing-a-saved-expectation-suite">edit this suite</a> after this initial step gets you started on the path towards what you want.</strong></p>
-<p>This is highly configurable depending on your goals. You can ignore columns, specify cardinality of categorical columns, configure semantic types for columns, even adjust thresholds and/or different estimator parameters, etc. You can find more information about OnboardingDataAssistant and other DataAssistant components (please see documentation for the complete set of DataAssistant controls) <a href="https://docs.greatexpectations.io/docs/guides/expectations/data_assistants/how_to_create_an_expectation_suite_with_the_onboarding_data_assistant">how to choose and control the behavior of the DataAssistant tailored to your goals</a>.</p>
-<p>Performance considerations: - Latency: We optimized for an explicit “question/answer” design, which means we issue <strong>lots</strong> of queries. Connection latency will impact performance. - Data Volume: Small samples of data will often give you a great starting point for understanding the dataset. Consider configuring a sampled asset and profiling a small number of batches.</p>
+<section id="iterating-over-keys-and-values" class="level3">
+<h3 class="anchored" data-anchor-id="iterating-over-keys-and-values">Iterating over keys and values</h3>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> context.assistants.onboarding.run(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    batch_request<span class="op">=</span>batch_request,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    exclude_column_names<span class="op">=</span>exclude_column_names,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>validator.expectation_suite <span class="op">=</span> result.get_expectation_suite(</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    expectation_suite_name<span class="op">=</span>expectation_suite_name</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># items() is a method which will return a new 'view' of the dictionary items</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If the dictionary changes, the view will reflect the changes</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ipl_team_cities.items()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>dict_items([('Chennai Super Kings', 'Chennai'), ('Delhi Capitals', 'Delhi'), ('Kings XI Punjab', 'Mohali'), ('Kolkata Knight Riders', 'Kolkata'), ('Mumbai Indians', 'Mumbai'), ('Rajasthan Royals', 'Jaipur'), ('Royal Challengers Bangalore', 'Bangalore'), ('Sunrisers Hyderabad', 'Hyderabad')])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># views can be iterated over</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> ipl_team_cities.items():</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code></code></pre>
+<pre><code>('Chennai Super Kings', 'Chennai')
+('Delhi Capitals', 'Delhi')
+('Kings XI Punjab', 'Mohali')
+('Kolkata Knight Riders', 'Kolkata')
+('Mumbai Indians', 'Mumbai')
+('Rajasthan Royals', 'Jaipur')
+('Royal Challengers Bangalore', 'Bangalore')
+('Sunrisers Hyderabad', 'Hyderabad')</code></pre>
 </div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"7356dad7dd784c5894fce55ff3238cce","version_major":2,"version_minor":0}
-</script>
 </div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"b10c19e5005e478baaaaa3fb9ec893e5","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"5ad823011e1a454cbf5abf54e9f657a6","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"2845134dd7014dea82e276afb844fdc0","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"fb9e5e5f3d964d5db6871e1ab44109e8","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"ec569b435d6346ebb70e4e424db4b772","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"a0b79cea2cba4d12a49dd48a4fc09685","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"8c26f1d71faf49e191949444c835960f","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"0685ccd4cb4849fc8c5f945823e5aba1","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"08e598ea63554fc8ade8a5dc28d01290","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"6c40008aebfd4bc3a44058cfac1a88cf","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"93c2b913e3c74bdeac6ac7fad63dbc6d","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"b9499bae7447447190ccdc7631aef77b","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"9f1c89f039564ad69c717e3cc91a4063","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"27a83f93fcdf47d3abdb591b5acb2958","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"474673024cc34a1a838e36cc5cc50197","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"d1950024edd34dc9a5f45d94da713d83","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"0d2558242d7f4e218c3b129c49669327","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"67451162295948deb6eb253a25949db8","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"5deabd2fc8294841aec2b32f8f6ce8bd","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"d4dbcf7cfda54d58a207cfa4c1dbdc8b","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"bb3e6de6dba14fdcb8326bb1f23a9585","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"16afb5a2fc444fe283c71dc6a59c8c61","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"71a4b121fe6d426cb2c4fdae0433d3ef","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"50b743995a5d4eec9ba9fad135c5a0ea","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"47c8296d5f4c46dc9b2794819cfda00f","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"394a5aadf3fc468294fafa14a788c133","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"3a62097ff3454037b1219354ef40ca86","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"12a9286606064ad9af4022280b9ad8ba","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"3950d158c64e474893bc75bcfe5d1eb6","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"f98715627f004348bbaab81eb2ea117d","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"67a132aeae1b4d06a7883e6a445110af","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"12568238894a4bc790b5cd1dcd736fd6","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"bf11f1057935431e995efe2c4bcf1116","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"f7fd6bcf68f24985998663dafe269c22","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"6c513e201aa94668a5bb9923c369936d","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"834db0cdfa9b4427b81fadfb21bc6034","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"32ace3e74ffa4a95a8c449be85991f97","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"6a931e5dd012442ba4e0cae86c778c8e","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"ecd4d686cad54f1eb8e14d36e02a301b","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"33429d704d3b4f3dabf7368840364f71","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"09a9128d008c4cd4919a8409879725eb","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"99f6849a2c68462ebb5100915e115f5f","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"9b1d41acedf84c00b5b6aaf871608f97","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"3a601660bda94e5a84e68736711fcfdb","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"ba566007f79f4052996bfed080c5bd56","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"c5682fe8247e4158a984f0618dedbec6","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"d8d33c9c29b24fa1bef4640d6acdcf22","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"0899207dd274422d8b6006e77b4ef814","version_major":2,"version_minor":0}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"8fff605a43054c1ab8f55853d0f39a7a","version_major":2,"version_minor":0}
-</script>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unpacking the tuple</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> ipl_team_cities.items():</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="st">'-'</span>, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chennai Super Kings - Chennai
+Delhi Capitals - Delhi
+Kings XI Punjab - Mohali
+Kolkata Knight Riders - Kolkata
+Mumbai Indians - Mumbai
+Rajasthan Royals - Jaipur
+Royal Challengers Bangalore - Bangalore
+Sunrisers Hyderabad - Hyderabad</code></pre>
 </div>
 </div>
 </section>
-<section id="save-review-your-new-expectation-suite" class="level1">
-<h1>Save &amp; review your new Expectation Suite</h1>
-<p>Let’s save the draft expectation suite as a JSON file in the <code>great_expectations/expectations</code> directory of your project and rebuild the Data Docs site to make it easy to review your new suite.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(validator.get_expectation_suite(discard_failed_expectations<span class="op">=</span><span class="va">False</span>))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>validator.save_expectation_suite(discard_failed_expectations<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>checkpoint_config <span class="op">=</span> {</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"class_name"</span>: <span class="st">"SimpleCheckpoint"</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"validations"</span>: [</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        {</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"batch_request"</span>: batch_request,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"expectation_suite_name"</span>: expectation_suite_name</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>checkpoint <span class="op">=</span> SimpleCheckpoint(</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"</span><span class="sc">{</span>validator<span class="sc">.</span>active_batch_definition<span class="sc">.</span>data_asset_name<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>expectation_suite_name<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    context,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">**</span>checkpoint_config</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>checkpoint_result <span class="op">=</span> checkpoint.run()</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>context.build_data_docs()</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>validation_result_identifier <span class="op">=</span> checkpoint_result.list_validation_result_identifiers()[<span class="dv">0</span>]</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>context.open_data_docs(resource_identifier<span class="op">=</span>validation_result_identifier)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="dictionary-comprehensions" class="level3">
+<h3 class="anchored" data-anchor-id="dictionary-comprehensions">Dictionary Comprehensions</h3>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>teams <span class="op">=</span> <span class="bu">list</span>(ipl_team_cities.keys())</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cities <span class="op">=</span> <span class="bu">list</span>(ipl_team_cities.values())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next steps</h2>
-<p>After you review this initial Expectation Suite in Data Docs you should edit this suite to make finer grained adjustments to the expectations. This can be done by running <code>great_expectations suite edit data_quality_expectation_demo</code>.</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>teams</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>['Chennai Super Kings',
+ 'Delhi Capitals',
+ 'Kings XI Punjab',
+ 'Kolkata Knight Riders',
+ 'Mumbai Indians',
+ 'Rajasthan Royals',
+ 'Royal Challengers Bangalore',
+ 'Sunrisers Hyderabad']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>new_dict <span class="op">=</span> {key:value <span class="cf">for</span> key, value <span class="kw">in</span> <span class="bu">zip</span>(teams, cities)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>new_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>{'Chennai Super Kings': 'Chennai',
+ 'Delhi Capitals': 'Delhi',
+ 'Kings XI Punjab': 'Mohali',
+ 'Kolkata Knight Riders': 'Kolkata',
+ 'Mumbai Indians': 'Mumbai',
+ 'Rajasthan Royals': 'Jaipur',
+ 'Royal Challengers Bangalore': 'Bangalore',
+ 'Sunrisers Hyderabad': 'Hyderabad'}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension using items() method</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># swapping the keys and values</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>new_dict_2 <span class="op">=</span> {value:key <span class="cf">for</span> key, value <span class="kw">in</span> ipl_team_cities.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>new_dict_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>{'Chennai': 'Chennai Super Kings',
+ 'Delhi': 'Delhi Capitals',
+ 'Mohali': 'Kings XI Punjab',
+ 'Kolkata': 'Kolkata Knight Riders',
+ 'Mumbai': 'Mumbai Indians',
+ 'Jaipur': 'Rajasthan Royals',
+ 'Bangalore': 'Royal Challengers Bangalore',
+ 'Hyderabad': 'Sunrisers Hyderabad'}</code></pre>
+</div>
+</div>
+</section>
+<section id="filtering-using-dictionary-comprehension" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-using-dictionary-comprehension">Filtering using dictionary comprehension</h3>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>new_dict_3 <span class="op">=</span> {key:value <span class="cf">for</span> key, value <span class="kw">in</span> ipl_team_cities.items() <span class="cf">if</span> value <span class="kw">in</span> [<span class="st">'Chennai'</span>, <span class="st">'Delhi'</span>]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>new_dict_3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>{'Chennai Super Kings': 'Chennai', 'Delhi Capitals': 'Delhi'}</code></pre>
+</div>
+</div>
+</section>
+<section id="sorting-the-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-the-dictionary">Sorting the dictionary</h3>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ipl_sorted <span class="op">=</span> {key:ipl_team_cities[key] <span class="cf">for</span> key <span class="kw">in</span> <span class="bu">sorted</span>(ipl_team_cities)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>ipl_sorted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>{'Chennai Super Kings': 'Chennai',
+ 'Delhi Capitals': 'Delhi',
+ 'Kings XI Punjab': 'Mohali',
+ 'Kolkata Knight Riders': 'Kolkata',
+ 'Mumbai Indians': 'Mumbai',
+ 'Rajasthan Royals': 'Jaipur',
+ 'Royal Challengers Bangalore': 'Bangalore',
+ 'Sunrisers Hyderabad': 'Hyderabad'}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sorting by values</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>incomes <span class="op">=</span> {<span class="st">'apple'</span>: <span class="fl">5600.00</span>, <span class="st">'orange'</span>: <span class="fl">3500.00</span>, <span class="st">'banana'</span>: <span class="fl">5000.00</span>}</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> by_value(item):</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> item[<span class="dv">1</span>]</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> <span class="bu">sorted</span>(incomes.items(), key<span class="op">=</span>by_value):</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, <span class="st">'-&gt;'</span>, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>orange -&gt; 3500.0
+banana -&gt; 5000.0
+apple -&gt; 5600.0</code></pre>
+</div>
+</div>
+<p>In the above example, by_value is a key function. It is telling sorted() to sort incomes.items() by the second element of each item, i.e by the value item[1]</p>
+</section>
+<section id="using-map-for-iteration" class="level3">
+<h3 class="anchored" data-anchor-id="using-map-for-iteration">Using map() for iteration</h3>
+<ul>
+<li>Python map() takes a function and an iterable as arguments.</li>
+<li>map() returns a map object whose values are the return values of calling the function on each item of the iterable.</li>
+</ul>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>product_prices <span class="op">=</span> {</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 1'</span>: <span class="fl">10.99</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 2'</span>: <span class="fl">5.99</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 3'</span>: <span class="fl">8.49</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 4'</span>: <span class="fl">12.99</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 5'</span>: <span class="fl">15.99</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 6'</span>: <span class="fl">7.99</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 7'</span>: <span class="fl">6.49</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 8'</span>: <span class="fl">9.99</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 9'</span>: <span class="fl">3.99</span>,</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 10'</span>: <span class="fl">11.49</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> discount(price):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (price[<span class="dv">0</span>],<span class="bu">round</span>(price[<span class="dv">1</span>]<span class="op">*</span><span class="fl">0.9</span>,<span class="dv">2</span>))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>new_product_prices <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">map</span>(discount, product_prices.items()))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>new_product_prices</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>{'Product 1': 9.89,
+ 'Product 2': 5.39,
+ 'Product 3': 7.64,
+ 'Product 4': 11.69,
+ 'Product 5': 14.39,
+ 'Product 6': 7.19,
+ 'Product 7': 5.84,
+ 'Product 8': 8.99,
+ 'Product 9': 3.59,
+ 'Product 10': 10.34}</code></pre>
+</div>
+</div>
+</section>
+<section id="using-filter-on-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="using-filter-on-dictionaries">using filter() on dictionaries</h3>
+<ul>
+<li>filter() takes a function and iterable as arguments</li>
+<li>It returns an iterator from those elements of iterable for which function returns True</li>
+</ul>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> low_price(price):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_product_prices[price] <span class="op">&lt;</span> <span class="fl">6.0</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>low_prices <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(low_price, new_product_prices))</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>low_prices</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>['Product 2', 'Product 7', 'Product 9']</code></pre>
+</div>
+</div>
+</section>
+<section id="using-chainmap-for-iteration" class="level3">
+<h3 class="anchored" data-anchor-id="using-chainmap-for-iteration">Using ChainMap for Iteration</h3>
+<ul>
+<li>ChainMap is a dictionary that allows you to combine multiple dictionaries into one.</li>
+<li>It creates a single view of multiple mappings</li>
+</ul>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> ChainMap</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fruit_prices <span class="op">=</span> {<span class="st">'pear'</span>: <span class="fl">0.35</span>, <span class="st">'mango'</span>:<span class="fl">0.45</span>}</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>veg_prices <span class="op">=</span> {<span class="st">'potato'</span>: <span class="fl">0.20</span>, <span class="st">'tomato'</span>: <span class="fl">0.25</span>}</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>chained_dict <span class="op">=</span> ChainMap(fruit_prices, veg_prices)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>chained_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>ChainMap({'pear': 0.35, 'mango': 0.45}, {'potato': 0.2, 'tomato': 0.25})</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> chained_dict:</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="st">'-&gt;'</span>, chained_dict[key])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>potato -&gt; 0.2
+tomato -&gt; 0.25
+pear -&gt; 0.35
+mango -&gt; 0.45</code></pre>
+</div>
+</div>
+</section>
+<section id="using-chain-from-itertools" class="level3">
+<h3 class="anchored" data-anchor-id="using-chain-from-itertools">Using chain from itertools</h3>
+<ul>
+<li>chain() is similar to ChainMap(). we can combine multiple dictionaries and iterate over them</li>
+</ul>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> chain</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> chain(fruit_prices.items(), veg_prices.items()):</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('pear', 0.35)
+('mango', 0.45)
+('potato', 0.2)
+('tomato', 0.25)</code></pre>
+</div>
+</div>
+</section>
+<section id="iterating-using-unpacking-operator" class="level3">
+<h3 class="anchored" data-anchor-id="iterating-using-unpacking-operator">Iterating using unpacking operator</h3>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using unpacking operator to create single dictionary from multiple dictionaries</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>{<span class="op">**</span>veg_prices, <span class="op">**</span>fruit_prices}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>{'potato': 0.2, 'tomato': 0.25, 'pear': 0.35, 'mango': 0.45}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> {<span class="op">**</span>veg_prices, <span class="op">**</span>fruit_prices}.items():</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, <span class="st">'-&gt;'</span>, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>potato -&gt; 0.2
+tomato -&gt; 0.25
+pear -&gt; 0.35
+mango -&gt; 0.45</code></pre>
+</div>
+</div>
 
 
 </section>
