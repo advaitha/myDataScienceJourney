@@ -96,6 +96,7 @@ website:
         - section: "**Industry Usecases**"
           contents:
           - industry_use_cases/insurance.qmd
+          - industry_use_cases/ott.qmd
         - section: "**Bayesian Analysis**"
           contents:
           - bayesian_analysis/Bayesian_analysis.qmd
