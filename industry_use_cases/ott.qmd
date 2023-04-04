@@ -1,0 +1,2 @@
+# Powering OTT With Data Science
+* [Using Data Science to Power OTT](/pdfs/Powering_ott_with_data_science.pdf)
