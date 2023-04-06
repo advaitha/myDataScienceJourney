@@ -56,6 +56,10 @@ website:
           - data_architecture/mlops.qmd
           - data_architecture/model_deployment.qmd
           - data_architecture/model_monitoring.qmd
+        - section:"**Data Engineering**"
+          contents:
+          - data_engineering/azure/azure_data_lake_storage_gen2.qmd
+          - data_engineering/azure/synapse_analytics.qmd
         - section: "**Transformers**"
           contents:
           - transformers/code_transformers.ipynb

@@ -1,0 +1,14 @@
+# Azure Data Lake Storage Gen2
+* File based storage, in a distributed file system that supports high scalability for massive volumes of data.
+* It combines a file system with a storage platform
+* It builds on Azure blob storage capabilities to optimize it specifically for analytics workload.
+* It can be used for both real-time and batch solutions
+* It supports ACLs and POSIX permissions. Permissions can be set at a directory level or file level
+* It organizes the stored data into a hierarchy of directories and subdirectories, much like a file system
+* Provides data redundancy
+* `Hierarchical namespace` option should be enabled to use Azure Data Lake Storage Gen2`
+
+## Blob Storage Vs Azure Data lake store
+* In Azure Blob storage, you can store large amounts of unstructured ("object") data in a flat namespace within a blob container. Blob names can include "/" characters to organize blobs into virtual "folders", but in terms of blob manageability the blobs are stored as a single-level hierarchy in a flat namespace.
+* Azure Data Lake Storage Gen2 builds on blob storage and optimizes I/O of high-volume data by using a hierarchical namespace that organizes blob data into directories, and stores metadata about each directory and the files within it. This structure allows operations, such as directory renames and deletes, to be performed in a single atomic operation. Flat namespaces, by contrast, require several operations proportionate to the number of objects in the structure. Hierarchical namespaces keep the data organized, which yields better storage and retrieval performance for an analytical use case and lowers the cost of analysis.
+* `If analysis is not needed, then blob storage is a better choice`

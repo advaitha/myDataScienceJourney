@@ -1,0 +1,30 @@
+# Azure Synapse Analytics
+* A centralized service for data storage and processing with an extensible architecture through which linked services enable you to integrate commonly used data stores, processing platforms, and visualization tools.
+
+
+## Capabilities of Azure Synapse Analytics
+* Working with files in a data lake
+* Ingesting and transforming data with pipelines
+* Azure Synapse Analytics includes built-in support for creating, running, and managing pipelines that orchestrate the activities necessary to retrieve data from a range of sources, transform the data as required, and load the resulting transformed data into an analytical store
+* Querying and manipulating data with SQL through two kinds of SQL pool
+  * A built-in serverless pool that is optimized for using relational SQL semantics to query file-based data in a data lake.
+  * Custom dedicated SQL pools that host relational data warehouses.
+* Processing and analyzing data with Apache Spark
+  * Exploring data with Data Explorer
+  * Integration with other Azure data services
+    * Azure Synapse Link enables near-realtime synchronization between operational data in Azure Cosmos DB, Azure SQL Database, SQL Server, and Microsoft Power Platform Dataverse and analytical data storage that can be queried in Azure Synapse Analytics.
+    * Microsoft Power BI
+    * Microsoft Purview (data lineage and catalog of data assets)
+    * Azure ML
+
+## When to use Synapse Analytics
+* Large scale data warehousing
+* Advance analytics
+* Data exploration and discovery
+* Real time analytics
+* Data integration
+* Integrated analytics
+  
+
+
+
