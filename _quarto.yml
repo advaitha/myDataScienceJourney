@@ -206,6 +206,7 @@ website:
           contents:
           - python/01_intro_to_dictionary.ipynb
           - python/02_dict_iteration.ipynb
+          - python/01_pandas_intro.ipynb
         - section: "**DSA**"
           contents: 
           - dsa/insertion_sort.ipynb
