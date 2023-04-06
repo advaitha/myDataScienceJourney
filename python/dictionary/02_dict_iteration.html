@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – distributions</title>
+<title>My Datascience Journey – dict_iteration</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -791,7 +854,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link active">Distributions</a>
+  <a href="../../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link">Distributions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1031,7 +1094,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../python/dictionary/02_dict_iteration.html" class="sidebar-item-text sidebar-link">Iterating through a dictionary</a>
+  <a href="../../python/dictionary/02_dict_iteration.html" class="sidebar-item-text sidebar-link active">Iterating through a dictionary</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1150,10 +1213,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#distributions" id="toc-distributions" class="nav-link active" data-scroll-target="#distributions">Distributions</a>
+  <li><a href="#iterating-through-a-dictionary" id="toc-iterating-through-a-dictionary" class="nav-link active" data-scroll-target="#iterating-through-a-dictionary">Iterating through a dictionary</a>
   <ul class="collapse">
-  <li><a href="#continous-distribution" id="toc-continous-distribution" class="nav-link" data-scroll-target="#continous-distribution">Continous distribution</a></li>
-  <li><a href="#discrete-distribution" id="toc-discrete-distribution" class="nav-link" data-scroll-target="#discrete-distribution">Discrete distribution</a></li>
+  <li><a href="#iterating-the-keys-of-a-dictionary" id="toc-iterating-the-keys-of-a-dictionary" class="nav-link" data-scroll-target="#iterating-the-keys-of-a-dictionary">Iterating the keys of a dictionary</a></li>
+  <li><a href="#iterating-over-keys-and-values" id="toc-iterating-over-keys-and-values" class="nav-link" data-scroll-target="#iterating-over-keys-and-values">Iterating over keys and values</a></li>
+  <li><a href="#dictionary-comprehensions" id="toc-dictionary-comprehensions" class="nav-link" data-scroll-target="#dictionary-comprehensions">Dictionary Comprehensions</a></li>
+  <li><a href="#filtering-using-dictionary-comprehension" id="toc-filtering-using-dictionary-comprehension" class="nav-link" data-scroll-target="#filtering-using-dictionary-comprehension">Filtering using dictionary comprehension</a></li>
+  <li><a href="#sorting-the-dictionary" id="toc-sorting-the-dictionary" class="nav-link" data-scroll-target="#sorting-the-dictionary">Sorting the dictionary</a></li>
+  <li><a href="#using-map-for-iteration" id="toc-using-map-for-iteration" class="nav-link" data-scroll-target="#using-map-for-iteration">Using map() for iteration</a></li>
+  <li><a href="#using-filter-on-dictionaries" id="toc-using-filter-on-dictionaries" class="nav-link" data-scroll-target="#using-filter-on-dictionaries">using filter() on dictionaries</a></li>
+  <li><a href="#using-chainmap-for-iteration" id="toc-using-chainmap-for-iteration" class="nav-link" data-scroll-target="#using-chainmap-for-iteration">Using ChainMap for Iteration</a></li>
+  <li><a href="#using-chain-from-itertools" id="toc-using-chain-from-itertools" class="nav-link" data-scroll-target="#using-chain-from-itertools">Using chain from itertools</a></li>
+  <li><a href="#iterating-using-unpacking-operator" id="toc-iterating-using-unpacking-operator" class="nav-link" data-scroll-target="#iterating-using-unpacking-operator">Iterating using unpacking operator</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1163,168 +1234,354 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="distributions" class="level1">
-<h1>Distributions</h1>
-<section id="continous-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="continous-distribution">Continous distribution</h3>
-<ul>
-<li>Uniform Distribution</li>
-<li>Normal Distribution</li>
-<li>Probability of observing an exact value is zero</li>
-<li>Probability will exist for an interval</li>
-<li>To find the probability of a random variable in an interval, we integrate the probability density function over the interval</li>
-<li>To find the joint probability of two variables between intervals, we double integrate the joint probability density function. For example height between 6.0 and 7.0, weight between 70 and 80 Kgs</li>
-</ul>
-<section id="uniform-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="uniform-distribution">Uniform Distribution</h5>
-<ul>
-<li>The probability density function for uniform distribution is constant</li>
-<li>It is used for generating random numbers from any other probability distribution</li>
-</ul>
-</section>
-<section id="the-exponential-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="the-exponential-distribution">The Exponential Distribution</h5>
-<ul>
-<li>If we happen to know that a certain event occurs at a constant rate , then exponential distribution predicts the waiting time until this event occurs.</li>
-<li>The time until a machine part fails - This is very useful for reliability field <img src="../../Images/exponential.png" class="img-fluid" alt="Exponential function"> <img src="../../Images/expo_lambda.png" class="img-fluid" alt="Exponential for various values of lambda"></li>
-</ul>
-</section>
-<section id="the-weibull-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="the-weibull-distribution">The Weibull Distribution</h5>
-<ul>
-<li>Similar to exponential distribution but it can model rates which occur with increase or decrease with time</li>
-<li>Used in the field of product life times</li>
-<li>A car will not work if the battery fails, or if a fuse in the gearbox burns out. A Weibull distribution provides a good approximation for the lifetime of a car before it stops working, after accounting for its many parts and their weakest link.</li>
-<li>It is controlled by shape, scale and location</li>
-<li>Exponential is a special case of this distribution - constant rate of event occurrence</li>
-</ul>
-</section>
-<section id="the-log-normal-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="the-log-normal-distribution">The Log-normal distribution</h5>
-<ul>
-<li>If we take logarithms of each value provided in this distribution, we get normal distribution.</li>
-<li>This is a good distribution to use when using skewed data with low mean, large variance and assuming only positive values</li>
-<li>Log normal distribution will appear when we take product of many positive sample values</li>
-<li>Parameters - shape, scale and location</li>
-<li>Real world examples
-<ul>
-<li>volume of gas in a petroleum reserve</li>
-<li>The ratio of the price of a security at the end of one day to its price at the end of the day before.</li>
-</ul></li>
-</ul>
-</section>
-<section id="chi-squared-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="chi-squared-distribution">Chi-Squared distribution</h5>
-<ul>
-<li>It is a distribution for the sum of squares of normally distributed independent random variables</li>
-<li>Statistical test associated:-
-<ul>
-<li>The goodness of fit test - How far is our expectation from observations</li>
-<li>Independence and homogeneity of data features test</li>
-</ul></li>
-</ul>
-</section>
-<section id="normal-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="normal-distribution">Normal Distribution</h5>
-<ul>
-<li>The distribution is symmetrical from the mean</li>
-<li>Mean, Median and Mode are the same</li>
-<li>68% of the data within one standard deviation, 95% of the data falls within 2 SD and 99.7% within 3 SDs.</li>
-<li>Central limit theorem - The average of independent random samples from any distribution is normally distributed.</li>
-<li>If you happen to find yourself in a situation where you are uncertain and have no prior knowledge about which distribution to use for your application, the normal distribution is usually a reasonable choice. In fact, among all choices of distributions with the same variance, the normal distribution is the choice with maximum uncertainty, so it does in fact encode the least amount of prior knowledge into your model.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/formula_normal_dist.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Equation</figcaption><p></p>
-</figure>
+<section id="iterating-through-a-dictionary" class="level1">
+<h1>Iterating through a dictionary</h1>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Methods and attributes of dictionaries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>({})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>['__class__',
+ '__class_getitem__',
+ '__contains__',
+ '__delattr__',
+ '__delitem__',
+ '__dir__',
+ '__doc__',
+ '__eq__',
+ '__format__',
+ '__ge__',
+ '__getattribute__',
+ '__getitem__',
+ '__gt__',
+ '__hash__',
+ '__init__',
+ '__init_subclass__',
+ '__ior__',
+ '__iter__',
+ '__le__',
+ '__len__',
+ '__lt__',
+ '__ne__',
+ '__new__',
+ '__or__',
+ '__reduce__',
+ '__reduce_ex__',
+ '__repr__',
+ '__reversed__',
+ '__ror__',
+ '__setattr__',
+ '__setitem__',
+ '__sizeof__',
+ '__str__',
+ '__subclasshook__',
+ 'clear',
+ 'copy',
+ 'fromkeys',
+ 'get',
+ 'items',
+ 'keys',
+ 'pop',
+ 'popitem',
+ 'setdefault',
+ 'update',
+ 'values']</code></pre>
+</div>
+</div>
+<p><strong>iter</strong> in the above output means that the dictionary is iterable and we can use the <code>for loop</code> directly on a dictionary to iterate over the keys.</p>
+<section id="iterating-the-keys-of-a-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="iterating-the-keys-of-a-dictionary">Iterating the keys of a dictionary</h3>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ipl_team_cities <span class="op">=</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Chennai Super Kings"</span>: <span class="st">"Chennai"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Delhi Capitals"</span>: <span class="st">"Delhi"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Kings XI Punjab"</span>: <span class="st">"Mohali"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Kolkata Knight Riders"</span>: <span class="st">"Kolkata"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mumbai Indians"</span>: <span class="st">"Mumbai"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Rajasthan Royals"</span>: <span class="st">"Jaipur"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Royal Challengers Bangalore"</span>: <span class="st">"Bangalore"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sunrisers Hyderabad"</span>: <span class="st">"Hyderabad"</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> ipl_team_cities:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chennai Super Kings
+Delhi Capitals
+Kings XI Punjab
+Kolkata Knight Riders
+Mumbai Indians
+Rajasthan Royals
+Royal Challengers Bangalore
+Sunrisers Hyderabad</code></pre>
+</div>
 </div>
 </section>
-<section id="students-t-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="students-t-distribution">Student’s t-distribution</h5>
-<ul>
-<li>Used when sample size is small and population variance is unknown</li>
-</ul>
-</section>
-<section id="gamma-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="gamma-distribution">Gamma distribution</h5>
-<ul>
-<li>Time until n independent events occur, instead of only one event <img src="../../Images/gamma_dist.png" class="img-fluid" alt="Gamma Distribution"> <img src="../../Images/gamma_dist_image.png" class="img-fluid" alt="Gamma for various params"></li>
-</ul>
-</section>
-<section id="beta-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="beta-distribution">Beta distribution</h5>
-<p><img src="../../Images/beta.png" class="img-fluid" alt="Beta function"> <img src="../../Images/beta_dia.png" class="img-fluid" alt="Beta diagram"> <img src="../../Images/beta_2.png" class="img-fluid" alt="Beta distribution"></p>
-</section>
-</section>
-<section id="discrete-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="discrete-distribution">Discrete distribution</h3>
-<section id="binomial-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="binomial-distribution">Binomial distribution</h5>
-<ul>
-<li>Probability of obtaining a certain number of successess when repeating one experiment,independently, multiple times</li>
-<li>Parameters - n (number of experiments), p - predefined probablity of success</li>
-<li>Real world examples
-<ul>
-<li>Number of patients who will develop side-effects for vaccine</li>
-<li>Number of ad-clicks that will result in a purchase</li>
-<li>Number of customers who will default on monthly credit card payments</li>
-</ul></li>
-</ul>
-<p><img src="../../Images/binominal.png" class="img-fluid" alt="Binomial Distribution"> <img src="../../Images/binomial_distribution.png" class="img-fluid" alt="How Binomial Distribution will look"> * The special case when N=1 corresponds to the Bernoulli distribution * <img src="../../Images/Bernoulli_vs_binomial.png" class="img-fluid" alt="Relation with Bernoulli and Binomial"></p>
-</section>
-<section id="poisson-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="poisson-distribution">Poisson Distribution</h5>
-<ul>
-<li>It will predict the number of rare events that will occur in a given period of time</li>
-<li>parameter - Event occur at a known average rate (lambda)</li>
-<li>Real world examples
-<ul>
-<li>Number of babies born in a given hour</li>
-<li>The number of earthquakes happening within a particular time period</li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/poisson_distribution.png.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">poisson Distribution</figcaption><p></p>
-</figure>
+<section id="iterating-over-keys-and-values" class="level3">
+<h3 class="anchored" data-anchor-id="iterating-over-keys-and-values">Iterating over keys and values</h3>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># items() is a method which will return a new 'view' of the dictionary items</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If the dictionary changes, the view will reflect the changes</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ipl_team_cities.items()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>dict_items([('Chennai Super Kings', 'Chennai'), ('Delhi Capitals', 'Delhi'), ('Kings XI Punjab', 'Mohali'), ('Kolkata Knight Riders', 'Kolkata'), ('Mumbai Indians', 'Mumbai'), ('Rajasthan Royals', 'Jaipur'), ('Royal Challengers Bangalore', 'Bangalore'), ('Sunrisers Hyderabad', 'Hyderabad')])</code></pre>
 </div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/possion_with_different_lambda.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">poisson Distribution with different lambda values</figcaption><p></p>
-</figure>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># views can be iterated over</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> ipl_team_cities.items():</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('Chennai Super Kings', 'Chennai')
+('Delhi Capitals', 'Delhi')
+('Kings XI Punjab', 'Mohali')
+('Kolkata Knight Riders', 'Kolkata')
+('Mumbai Indians', 'Mumbai')
+('Rajasthan Royals', 'Jaipur')
+('Royal Challengers Bangalore', 'Bangalore')
+('Sunrisers Hyderabad', 'Hyderabad')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unpacking the tuple</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> ipl_team_cities.items():</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="st">'-'</span>, value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Chennai Super Kings - Chennai
+Delhi Capitals - Delhi
+Kings XI Punjab - Mohali
+Kolkata Knight Riders - Kolkata
+Mumbai Indians - Mumbai
+Rajasthan Royals - Jaipur
+Royal Challengers Bangalore - Bangalore
+Sunrisers Hyderabad - Hyderabad</code></pre>
+</div>
 </div>
 </section>
-<section id="geometric-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="geometric-distribution">Geometric Distribution</h5>
-<ul>
-<li>It predicts the number of trials needed before we obtain a success when performing independent trials, each with a known probability p for success.</li>
-<li>Parameter - Probability of success</li>
-<li>Number of weeks a company can function without experiencing failure</li>
-</ul>
+<section id="dictionary-comprehensions" class="level3">
+<h3 class="anchored" data-anchor-id="dictionary-comprehensions">Dictionary Comprehensions</h3>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>teams <span class="op">=</span> <span class="bu">list</span>(ipl_team_cities.keys())</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cities <span class="op">=</span> <span class="bu">list</span>(ipl_team_cities.values())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>teams</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>['Chennai Super Kings',
+ 'Delhi Capitals',
+ 'Kings XI Punjab',
+ 'Kolkata Knight Riders',
+ 'Mumbai Indians',
+ 'Rajasthan Royals',
+ 'Royal Challengers Bangalore',
+ 'Sunrisers Hyderabad']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>new_dict <span class="op">=</span> {key:value <span class="cf">for</span> key, value <span class="kw">in</span> <span class="bu">zip</span>(teams, cities)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>new_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>{'Chennai Super Kings': 'Chennai',
+ 'Delhi Capitals': 'Delhi',
+ 'Kings XI Punjab': 'Mohali',
+ 'Kolkata Knight Riders': 'Kolkata',
+ 'Mumbai Indians': 'Mumbai',
+ 'Rajasthan Royals': 'Jaipur',
+ 'Royal Challengers Bangalore': 'Bangalore',
+ 'Sunrisers Hyderabad': 'Hyderabad'}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary comprehension using items() method</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># swapping the keys and values</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>new_dict_2 <span class="op">=</span> {value:key <span class="cf">for</span> key, value <span class="kw">in</span> ipl_team_cities.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>new_dict_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>{'Chennai': 'Chennai Super Kings',
+ 'Delhi': 'Delhi Capitals',
+ 'Mohali': 'Kings XI Punjab',
+ 'Kolkata': 'Kolkata Knight Riders',
+ 'Mumbai': 'Mumbai Indians',
+ 'Jaipur': 'Rajasthan Royals',
+ 'Bangalore': 'Royal Challengers Bangalore',
+ 'Hyderabad': 'Sunrisers Hyderabad'}</code></pre>
+</div>
+</div>
 </section>
-<section id="negative-binomial" class="level5">
-<h5 class="anchored" data-anchor-id="negative-binomial">Negative Binomial</h5>
-<ul>
-<li>Number of independent trails needed to obtain a certain number of successes</li>
-</ul>
+<section id="filtering-using-dictionary-comprehension" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-using-dictionary-comprehension">Filtering using dictionary comprehension</h3>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>new_dict_3 <span class="op">=</span> {key:value <span class="cf">for</span> key, value <span class="kw">in</span> ipl_team_cities.items() <span class="cf">if</span> value <span class="kw">in</span> [<span class="st">'Chennai'</span>, <span class="st">'Delhi'</span>]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>new_dict_3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>{'Chennai Super Kings': 'Chennai', 'Delhi Capitals': 'Delhi'}</code></pre>
+</div>
+</div>
 </section>
-<section id="hypergeometric-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="hypergeometric-distribution">Hypergeometric Distribution</h5>
-<ul>
-<li>Similar to binomial but the trials are not independent</li>
-</ul>
+<section id="sorting-the-dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="sorting-the-dictionary">Sorting the dictionary</h3>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ipl_sorted <span class="op">=</span> {key:ipl_team_cities[key] <span class="cf">for</span> key <span class="kw">in</span> <span class="bu">sorted</span>(ipl_team_cities)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>ipl_sorted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>{'Chennai Super Kings': 'Chennai',
+ 'Delhi Capitals': 'Delhi',
+ 'Kings XI Punjab': 'Mohali',
+ 'Kolkata Knight Riders': 'Kolkata',
+ 'Mumbai Indians': 'Mumbai',
+ 'Rajasthan Royals': 'Jaipur',
+ 'Royal Challengers Bangalore': 'Bangalore',
+ 'Sunrisers Hyderabad': 'Hyderabad'}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sorting by values</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>incomes <span class="op">=</span> {<span class="st">'apple'</span>: <span class="fl">5600.00</span>, <span class="st">'orange'</span>: <span class="fl">3500.00</span>, <span class="st">'banana'</span>: <span class="fl">5000.00</span>}</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> by_value(item):</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> item[<span class="dv">1</span>]</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> <span class="bu">sorted</span>(incomes.items(), key<span class="op">=</span>by_value):</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, <span class="st">'-&gt;'</span>, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>orange -&gt; 3500.0
+banana -&gt; 5000.0
+apple -&gt; 5600.0</code></pre>
+</div>
+</div>
+<p>In the above example, by_value is a key function. It is telling sorted() to sort incomes.items() by the second element of each item, i.e by the value item[1]</p>
 </section>
-<section id="negative-hypergeometric-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="negative-hypergeometric-distribution">Negative Hypergeometric Distribution</h5>
+<section id="using-map-for-iteration" class="level3">
+<h3 class="anchored" data-anchor-id="using-map-for-iteration">Using map() for iteration</h3>
 <ul>
-<li>Number of dependent trails needed before we obtain a certain number of successes</li>
+<li>Python map() takes a function and an iterable as arguments.</li>
+<li>map() returns a map object whose values are the return values of calling the function on each item of the iterable.</li>
 </ul>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>product_prices <span class="op">=</span> {</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 1'</span>: <span class="fl">10.99</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 2'</span>: <span class="fl">5.99</span>,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 3'</span>: <span class="fl">8.49</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 4'</span>: <span class="fl">12.99</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 5'</span>: <span class="fl">15.99</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 6'</span>: <span class="fl">7.99</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 7'</span>: <span class="fl">6.49</span>,</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 8'</span>: <span class="fl">9.99</span>,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 9'</span>: <span class="fl">3.99</span>,</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Product 10'</span>: <span class="fl">11.49</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> discount(price):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (price[<span class="dv">0</span>],<span class="bu">round</span>(price[<span class="dv">1</span>]<span class="op">*</span><span class="fl">0.9</span>,<span class="dv">2</span>))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>new_product_prices <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">map</span>(discount, product_prices.items()))  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>new_product_prices</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>{'Product 1': 9.89,
+ 'Product 2': 5.39,
+ 'Product 3': 7.64,
+ 'Product 4': 11.69,
+ 'Product 5': 14.39,
+ 'Product 6': 7.19,
+ 'Product 7': 5.84,
+ 'Product 8': 8.99,
+ 'Product 9': 3.59,
+ 'Product 10': 10.34}</code></pre>
+</div>
+</div>
+</section>
+<section id="using-filter-on-dictionaries" class="level3">
+<h3 class="anchored" data-anchor-id="using-filter-on-dictionaries">using filter() on dictionaries</h3>
+<ul>
+<li>filter() takes a function and iterable as arguments</li>
+<li>It returns an iterator from those elements of iterable for which function returns True</li>
+</ul>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> low_price(price):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> new_product_prices[price] <span class="op">&lt;</span> <span class="fl">6.0</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>low_prices <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(low_price, new_product_prices))</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>low_prices</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>['Product 2', 'Product 7', 'Product 9']</code></pre>
+</div>
+</div>
+</section>
+<section id="using-chainmap-for-iteration" class="level3">
+<h3 class="anchored" data-anchor-id="using-chainmap-for-iteration">Using ChainMap for Iteration</h3>
+<ul>
+<li>ChainMap is a dictionary that allows you to combine multiple dictionaries into one.</li>
+<li>It creates a single view of multiple mappings</li>
+</ul>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> ChainMap</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fruit_prices <span class="op">=</span> {<span class="st">'pear'</span>: <span class="fl">0.35</span>, <span class="st">'mango'</span>:<span class="fl">0.45</span>}</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>veg_prices <span class="op">=</span> {<span class="st">'potato'</span>: <span class="fl">0.20</span>, <span class="st">'tomato'</span>: <span class="fl">0.25</span>}</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>chained_dict <span class="op">=</span> ChainMap(fruit_prices, veg_prices)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>chained_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>ChainMap({'pear': 0.35, 'mango': 0.45}, {'potato': 0.2, 'tomato': 0.25})</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> chained_dict:</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(key, <span class="st">'-&gt;'</span>, chained_dict[key])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>potato -&gt; 0.2
+tomato -&gt; 0.25
+pear -&gt; 0.35
+mango -&gt; 0.45</code></pre>
+</div>
+</div>
+</section>
+<section id="using-chain-from-itertools" class="level3">
+<h3 class="anchored" data-anchor-id="using-chain-from-itertools">Using chain from itertools</h3>
+<ul>
+<li>chain() is similar to ChainMap(). we can combine multiple dictionaries and iterate over them</li>
+</ul>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itertools <span class="im">import</span> chain</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> chain(fruit_prices.items(), veg_prices.items()):</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('pear', 0.35)
+('mango', 0.45)
+('potato', 0.2)
+('tomato', 0.25)</code></pre>
+</div>
+</div>
+</section>
+<section id="iterating-using-unpacking-operator" class="level3">
+<h3 class="anchored" data-anchor-id="iterating-using-unpacking-operator">Iterating using unpacking operator</h3>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using unpacking operator to create single dictionary from multiple dictionaries</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>{<span class="op">**</span>veg_prices, <span class="op">**</span>fruit_prices}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>{'potato': 0.2, 'tomato': 0.25, 'pear': 0.35, 'mango': 0.45}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, v <span class="kw">in</span> {<span class="op">**</span>veg_prices, <span class="op">**</span>fruit_prices}.items():</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(k, <span class="st">'-&gt;'</span>, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>potato -&gt; 0.2
+tomato -&gt; 0.25
+pear -&gt; 0.35
+mango -&gt; 0.45</code></pre>
+</div>
+</div>
 
 
-</section>
 </section>
 </section>
 
