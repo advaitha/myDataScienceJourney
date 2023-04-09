@@ -116,7 +116,7 @@ website:
           contents: 
           - computer_vision/image_classification/01_convolution.qmd
           - computer_vision/cnn_architectures/architectures.qmd
-          - computer_vision/cnn_architectures/dl_architectures.qmd
+          - computer_vision/cnn_architectures/dl_architectures.ipynb
           - computer_vision/object_detection/introduction_part1.qmd
           - computer_vision/object_detection/introduction_part2.qmd
           - computer_vision/object_detection/anchor_boxes.qmd
