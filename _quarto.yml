@@ -208,7 +208,7 @@ website:
           contents:
           - python/dictionary/01_intro_to_dictionary.ipynb
           - python/dictionary/02_dict_iteration.ipynb
-          - python/json/handling_json.ipynb
+          - python/json/01_handling_json.ipynb
           - python/pandas/01_pandas_intro.ipynb
           - python/pandas/03_pandas_grouping.ipynb
         - section: "**DSA**"
