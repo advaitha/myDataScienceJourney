@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – distributions</title>
+<title>My Datascience Journey – handling_json</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -796,7 +859,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link active">Distributions</a>
+  <a href="../../math_for_ai/theory/02_distributions.html" class="sidebar-item-text sidebar-link">Distributions</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1168,10 +1231,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#distributions" id="toc-distributions" class="nav-link active" data-scroll-target="#distributions">Distributions</a>
+  <li><a href="#handling-json-in-python" id="toc-handling-json-in-python" class="nav-link active" data-scroll-target="#handling-json-in-python">Handling JSON in Python</a>
   <ul class="collapse">
-  <li><a href="#continous-distribution" id="toc-continous-distribution" class="nav-link" data-scroll-target="#continous-distribution">Continous distribution</a></li>
-  <li><a href="#discrete-distribution" id="toc-discrete-distribution" class="nav-link" data-scroll-target="#discrete-distribution">Discrete distribution</a></li>
+  <li><a href="#import-package-and-create-data" id="toc-import-package-and-create-data" class="nav-link" data-scroll-target="#import-package-and-create-data">Import Package and create data</a></li>
+  <li><a href="#write-json-file-to-disk" id="toc-write-json-file-to-disk" class="nav-link" data-scroll-target="#write-json-file-to-disk">Write JSON file to disk</a></li>
+  <li><a href="#reading-json-file" id="toc-reading-json-file" class="nav-link" data-scroll-target="#reading-json-file">Reading JSON file</a></li>
+  <li><a href="#handling-api-requests-which-returns-a-json-object" id="toc-handling-api-requests-which-returns-a-json-object" class="nav-link" data-scroll-target="#handling-api-requests-which-returns-a-json-object">Handling API requests which returns a JSON object</a></li>
+  <li><a href="#manipulating-json" id="toc-manipulating-json" class="nav-link" data-scroll-target="#manipulating-json">Manipulating JSON</a></li>
+  <li><a href="#create-a-json-with-completed-todos-for-each-user" id="toc-create-a-json-with-completed-todos-for-each-user" class="nav-link" data-scroll-target="#create-a-json-with-completed-todos-for-each-user">Create a JSON with completed Todos for each user</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1181,168 +1248,179 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="distributions" class="level1">
-<h1>Distributions</h1>
-<section id="continous-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="continous-distribution">Continous distribution</h3>
+<section id="handling-json-in-python" class="level1">
+<h1>Handling JSON in Python</h1>
 <ul>
-<li>Uniform Distribution</li>
-<li>Normal Distribution</li>
-<li>Probability of observing an exact value is zero</li>
-<li>Probability will exist for an interval</li>
-<li>To find the probability of a random variable in an interval, we integrate the probability density function over the interval</li>
-<li>To find the joint probability of two variables between intervals, we double integrate the joint probability density function. For example height between 6.0 and 7.0, weight between 70 and 80 Kgs</li>
+<li><a href="https://www.json.org/json-en.html">Elements of JSON format</a></li>
+<li>Python supports JSON natively. It comes with built-in packages for encoding and decoding JSON data</li>
+<li>The process of encoding JSON is called serialization - for storing or transmitting across a network</li>
+<li>Deserialization is the process of decoding data</li>
+<li>JSON looks like a python dictionary</li>
+<li>JSON provides two methods - .dump() &amp; .dumps(). If we want to use the serialzed object within the netbook then we should use dumps, which will be a str object</li>
+<li>JSON provides two methods - .load() and .loads(). loads is used to handle python objects without reading it from the file. For example, if we are making a http request, then we can handle the response by using the .loads() methos</li>
 </ul>
-<section id="uniform-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="uniform-distribution">Uniform Distribution</h5>
-<ul>
-<li>The probability density function for uniform distribution is constant</li>
-<li>It is used for generating random numbers from any other probability distribution</li>
-</ul>
-</section>
-<section id="the-exponential-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="the-exponential-distribution">The Exponential Distribution</h5>
-<ul>
-<li>If we happen to know that a certain event occurs at a constant rate , then exponential distribution predicts the waiting time until this event occurs.</li>
-<li>The time until a machine part fails - This is very useful for reliability field <img src="../../Images/exponential.png" class="img-fluid" alt="Exponential function"> <img src="../../Images/expo_lambda.png" class="img-fluid" alt="Exponential for various values of lambda"></li>
-</ul>
-</section>
-<section id="the-weibull-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="the-weibull-distribution">The Weibull Distribution</h5>
-<ul>
-<li>Similar to exponential distribution but it can model rates which occur with increase or decrease with time</li>
-<li>Used in the field of product life times</li>
-<li>A car will not work if the battery fails, or if a fuse in the gearbox burns out. A Weibull distribution provides a good approximation for the lifetime of a car before it stops working, after accounting for its many parts and their weakest link.</li>
-<li>It is controlled by shape, scale and location</li>
-<li>Exponential is a special case of this distribution - constant rate of event occurrence</li>
-</ul>
-</section>
-<section id="the-log-normal-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="the-log-normal-distribution">The Log-normal distribution</h5>
-<ul>
-<li>If we take logarithms of each value provided in this distribution, we get normal distribution.</li>
-<li>This is a good distribution to use when using skewed data with low mean, large variance and assuming only positive values</li>
-<li>Log normal distribution will appear when we take product of many positive sample values</li>
-<li>Parameters - shape, scale and location</li>
-<li>Real world examples
-<ul>
-<li>volume of gas in a petroleum reserve</li>
-<li>The ratio of the price of a security at the end of one day to its price at the end of the day before.</li>
-</ul></li>
-</ul>
-</section>
-<section id="chi-squared-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="chi-squared-distribution">Chi-Squared distribution</h5>
-<ul>
-<li>It is a distribution for the sum of squares of normally distributed independent random variables</li>
-<li>Statistical test associated:-
-<ul>
-<li>The goodness of fit test - How far is our expectation from observations</li>
-<li>Independence and homogeneity of data features test</li>
-</ul></li>
-</ul>
-</section>
-<section id="normal-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="normal-distribution">Normal Distribution</h5>
-<ul>
-<li>The distribution is symmetrical from the mean</li>
-<li>Mean, Median and Mode are the same</li>
-<li>68% of the data within one standard deviation, 95% of the data falls within 2 SD and 99.7% within 3 SDs.</li>
-<li>Central limit theorem - The average of independent random samples from any distribution is normally distributed.</li>
-<li>If you happen to find yourself in a situation where you are uncertain and have no prior knowledge about which distribution to use for your application, the normal distribution is usually a reasonable choice. In fact, among all choices of distributions with the same variance, the normal distribution is the choice with maximum uncertainty, so it does in fact encode the least amount of prior knowledge into your model.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/formula_normal_dist.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Equation</figcaption><p></p>
-</figure>
+<section id="import-package-and-create-data" class="level3">
+<h3 class="anchored" data-anchor-id="import-package-and-create-data">Import Package and create data</h3>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"name"</span>: <span class="st">"John"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"age"</span>: <span class="dv">25</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"city"</span>: <span class="st">"New York"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"interests"</span>: [</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"reading"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"hiking"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cooking"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  ],</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"is_student"</span>: <span class="va">True</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"grades"</span>: {</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"math"</span>: <span class="dv">90</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"english"</span>: <span class="dv">85</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"history"</span>: <span class="dv">95</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="students-t-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="students-t-distribution">Student’s t-distribution</h5>
-<ul>
-<li>Used when sample size is small and population variance is unknown</li>
-</ul>
-</section>
-<section id="gamma-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="gamma-distribution">Gamma distribution</h5>
-<ul>
-<li>Time until n independent events occur, instead of only one event <img src="../../Images/gamma_dist.png" class="img-fluid" alt="Gamma Distribution"> <img src="../../Images/gamma_dist_image.png" class="img-fluid" alt="Gamma for various params"></li>
-</ul>
-</section>
-<section id="beta-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="beta-distribution">Beta distribution</h5>
-<p><img src="../../Images/beta.png" class="img-fluid" alt="Beta function"> <img src="../../Images/beta_dia.png" class="img-fluid" alt="Beta diagram"> <img src="../../Images/beta_2.png" class="img-fluid" alt="Beta distribution"></p>
-</section>
-</section>
-<section id="discrete-distribution" class="level3">
-<h3 class="anchored" data-anchor-id="discrete-distribution">Discrete distribution</h3>
-<section id="binomial-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="binomial-distribution">Binomial distribution</h5>
-<ul>
-<li>Probability of obtaining a certain number of successess when repeating one experiment,independently, multiple times</li>
-<li>Parameters - n (number of experiments), p - predefined probablity of success</li>
-<li>Real world examples
-<ul>
-<li>Number of patients who will develop side-effects for vaccine</li>
-<li>Number of ad-clicks that will result in a purchase</li>
-<li>Number of customers who will default on monthly credit card payments</li>
-</ul></li>
-</ul>
-<p><img src="../../Images/binominal.png" class="img-fluid" alt="Binomial Distribution"> <img src="../../Images/binomial_distribution.png" class="img-fluid" alt="How Binomial Distribution will look"> * The special case when N=1 corresponds to the Bernoulli distribution * <img src="../../Images/Bernoulli_vs_binomial.png" class="img-fluid" alt="Relation with Bernoulli and Binomial"></p>
-</section>
-<section id="poisson-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="poisson-distribution">Poisson Distribution</h5>
-<ul>
-<li>It will predict the number of rare events that will occur in a given period of time</li>
-<li>parameter - Event occur at a known average rate (lambda)</li>
-<li>Real world examples
-<ul>
-<li>Number of babies born in a given hour</li>
-<li>The number of earthquakes happening within a particular time period</li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/poisson_distribution.png.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">poisson Distribution</figcaption><p></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../../Images/possion_with_different_lambda.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">poisson Distribution with different lambda values</figcaption><p></p>
-</figure>
+<section id="write-json-file-to-disk" class="level3">
+<h3 class="anchored" data-anchor-id="write-json-file-to-disk">Write JSON file to disk</h3>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data_file.json"</span>, <span class="st">"w"</span>) <span class="im">as</span> write_file:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    json.dump(data, write_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="geometric-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="geometric-distribution">Geometric Distribution</h5>
-<ul>
-<li>It predicts the number of trials needed before we obtain a success when performing independent trials, each with a known probability p for success.</li>
-<li>Parameter - Probability of success</li>
-<li>Number of weeks a company can function without experiencing failure</li>
-</ul>
+<section id="reading-json-file" class="level3">
+<h3 class="anchored" data-anchor-id="reading-json-file">Reading JSON file</h3>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data_file.json"</span>, <span class="st">"r"</span>) <span class="im">as</span> data_file:</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> json.load(data_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>{'name': 'John',
+ 'age': 25,
+ 'city': 'New York',
+ 'interests': ['reading', 'hiking', 'cooking'],
+ 'is_student': True,
+ 'grades': {'math': 90, 'english': 85, 'history': 95}}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>dict</code></pre>
+</div>
+</div>
 </section>
-<section id="negative-binomial" class="level5">
-<h5 class="anchored" data-anchor-id="negative-binomial">Negative Binomial</h5>
-<ul>
-<li>Number of independent trails needed to obtain a certain number of successes</li>
-</ul>
+<section id="handling-api-requests-which-returns-a-json-object" class="level3">
+<h3 class="anchored" data-anchor-id="handling-api-requests-which-returns-a-json-object">Handling API requests which returns a JSON object</h3>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">"https://jsonplaceholder.typicode.com/todos"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>requests.models.Response</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>str</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We are using loads here instead of load which handles str object</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>todos <span class="op">=</span> json.loads(response.text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(todos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>list</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>todos[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>{'userId': 1, 'id': 1, 'title': 'delectus aut autem', 'completed': False}</code></pre>
+</div>
+</div>
 </section>
-<section id="hypergeometric-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="hypergeometric-distribution">Hypergeometric Distribution</h5>
-<ul>
-<li>Similar to binomial but the trials are not independent</li>
-</ul>
+<section id="manipulating-json" class="level3">
+<h3 class="anchored" data-anchor-id="manipulating-json">Manipulating JSON</h3>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine which users have completed the most tasks</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>todos_for_user <span class="op">=</span> {}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> todo <span class="kw">in</span> todos:</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> todo[<span class="st">"completed"</span>]:</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>            todos_for_user[todo[<span class="st">'userId'</span>]] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">KeyError</span>:</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>            todos_for_user[todo[<span class="st">'userId'</span>]] <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>todos_for_user</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>{1: 11, 2: 8, 3: 7, 4: 6, 5: 12, 6: 6, 7: 9, 8: 11, 9: 8, 10: 12}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a sorted list of userId, complete pairs</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>top_users <span class="op">=</span> <span class="bu">sorted</span>(todos_for_user.items(),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                    key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>top_users</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>[(5, 12),
+ (10, 12),
+ (1, 11),
+ (8, 11),
+ (7, 9),
+ (2, 8),
+ (9, 8),
+ (3, 7),
+ (4, 6),
+ (6, 6)]</code></pre>
+</div>
+</div>
 </section>
-<section id="negative-hypergeometric-distribution" class="level5">
-<h5 class="anchored" data-anchor-id="negative-hypergeometric-distribution">Negative Hypergeometric Distribution</h5>
-<ul>
-<li>Number of dependent trails needed before we obtain a certain number of successes</li>
-</ul>
+<section id="create-a-json-with-completed-todos-for-each-user" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-json-with-completed-todos-for-each-user">Create a JSON with completed Todos for each user</h3>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>users <span class="op">=</span> []</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>max_complete <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> user, num_complete <span class="kw">in</span> top_users:</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> num_complete <span class="op">&lt;</span> max_complete:</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    users.append(<span class="bu">str</span>(user))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(<span class="dv">5</span>) <span class="kw">in</span> users</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> keep(todo):</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    is_complete <span class="op">=</span> todo[<span class="st">"completed"</span>]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    has_max_count <span class="op">=</span> <span class="bu">str</span>(todo[<span class="st">"userId"</span>]) <span class="kw">in</span> users</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> is_complete <span class="kw">and</span> has_max_count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(keep,todos))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
-</section>
 </section>
 </section>
 
