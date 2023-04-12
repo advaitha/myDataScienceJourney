@@ -1,3 +1,33 @@
 # Best Interveiw Resources
 * [The Data Science Interview Book](https://book.thedatascienceinterviewproject.com/)
 * [The Illustrated Machine Learning](https://illustrated-machine-learning.github.io/)
+
+## Questions asked in Interviews
+* How Adaboost works
+* Difference between Adaboost and Gradient Boosting
+* How Catboost handle categorical variables
+* What are the tricks used by lightgbm to handle large datasets
+* what is back propagation
+* what is exploding and vanishing gradients
+* Can we get derivative of RELU at all points? If not how is it overcome in practical applications?
+* How RNN and LSTM works? what are their disadvantages?
+* How transformers work? 
+* Explain how BERT works?
+* why we divide by square root of dimensions in transformers scaled dot product attention?
+* what is label smoothing?
+* How the weights are initialized in deep learning? what different methods are there for weight initialization?
+* What optimization techniques are there for deep learning?
+* Explain how single shot object detection works?
+* what's the advantage of skip connections in Resnet? 
+* How openAI CLIP works?
+* What are Anchor boxes and how are they selected for object detection?
+* L1 and L2 regularization
+* Feature selection methods
+* How embeddings are created for words
+* How to handle quadratic explosion if we want to handle high definition Images using transformer models?
+* Some puzzles on probability, which I dont remember now
+* What is maximum likelihood
+* what is the difference between args and kwargs in python
+* Explain try-except-finally in python
+* what is GIL in python
+* Difference between self and cross attention
