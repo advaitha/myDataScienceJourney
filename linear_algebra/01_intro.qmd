@@ -1,0 +1,25 @@
+# Introduction
+
+* A system can be either `singular` or `non-singular`
+* If the system is redundant or contradictory then it is singular
+* IF the system carries as many pieces of information as sentences then it is a `complete` system, which is called `non-singular`
+* We can measure how redundant a system is using `Rank`
+* ![System of Sentences](/Images/linear_algebra_systems.png)
+
+
+## System of linear equations
+
+* If the system does not carry enough information then it can have infinite solutions
+* ![System without enough information](/Images/infinite_solutions.png)
+* ![System with contradictory information](/Images/contradiction.png)
+* ![Singular and non-singular systems](/Images/system_linear.png)
+* ![System of Equations as lines](/Images/system_of_equation_as_lines.png)
+* The constants does not matter when it comes to determine if the system is singular or non-singular. We can consider the constants as zero to make the equations simpler
+* ![Lines with Zero constants which goes through the origin](/Images/line_through_origin.png)
+
+
+
+
+# Reference
+
+* Coursera's `Linear Algebra for Machine Learning` course

@@ -2,4 +2,5 @@
 
 ## Videos
 * [Khan Academy Videos](https://www.khanacademy.org/math/linear-algebra/alternate-bases)
-
+* [Coursera Linear Algebra course - Free Audit](https://www.coursera.org/learn/machine-learning-linear-algebra/)
+  
