@@ -1,5 +1,4 @@
-# Introduction
-
+# System of Linear Equations
 * A system can be either `singular` or `non-singular`
 * If the system is redundant or contradictory then it is singular
 * IF the system carries as many pieces of information as sentences then it is a `complete` system, which is called `non-singular`
@@ -7,10 +6,7 @@
 * ![System of Sentences](/Images/linear_algebra_systems.png)
 
 
-## System of linear equations
-
-### Singular and non-singular equations
-
+## Singular and non-singular equations
 * If the system does not carry enough information then it can have infinite solutions
 * ![System without enough information](/Images/infinite_solutions.png)
 * ![System with contradictory information](/Images/contradiction.png)
@@ -20,18 +16,22 @@
 * ![Lines with Zero constants which goes through the origin](/Images/line_through_origin.png)
 
 
-### Linear dependence and independence
+## Linear dependence and independence
 * If a row can be obtained from another row, then the second row is `dependent` on the first one. They are `linearly dependent`. Otherwise it is `independent`. The same applies for columns in a matrix
 * ![Linear and non-linear dependency](/Images/linear_dependence.png)
 
 
-### Determinant
+## Determinant
 * If the determinant is zero then the matrix is singular. Otherwise the matrix is non-singular
 * ![Caculating Determinant](/Images/determinant.png)
+* For matrices bigger than 2x2, calculating the determinant is more involved. We need to wrap around and consider all the diagonals. See the picture below for 3x3 matrix
+* ![Caclulating the determinant for 3x3 matrix](/Images/determinant_3x3_2.png)
+* ![Steps in calculating the determinant](/Images/steps_cal_det_3x3.png)
+* Upper Traingular Matrix is a matrix in which all the values below the diagonal is zero. For such a matrix, the determinant is the product of main diagonal because all other multiplication operations will have zero in it. (see the figure below)
+* ![Determinant for upper traingle matrix](/Images/determinant_upper_traingle.png)
 
 
 
-
-# Reference
-
+## Reference
 * Coursera's `Linear Algebra for Machine Learning` course
+* [System of Linear Equations](/pdfs/system_of_linear_equations.pdf)
