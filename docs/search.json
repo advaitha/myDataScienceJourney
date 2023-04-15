@@ -578,7 +578,14 @@
     "href": "linear_algebra/resources.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Khan Academy Videos"
+    "text": "Khan Academy Videos\nCoursera Linear Algebra course - Free Audit"
+  },
+  {
+    "objectID": "linear_algebra/01_intro.html",
+    "href": "linear_algebra/01_intro.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "A system can be either singular or non-singular\nIf the system is redundant or contradictory then it is singular\nIF the system carries as many pieces of information as sentences then it is a complete system, which is called non-singular\nWe can measure how redundant a system is using Rank\n\n\n\n\n\nIf the system does not carry enough information then it can have infinite solutions\n\n\n\nSystem without enough information\n\n\n\n\n\nSystem with contradictory information\n\n\n\n\n\nSingular and non-singular systems\n\n\n\n\n\nSystem of Equations as lines\n\n\nThe constants does not matter when it comes to determine if the system is singular or non-singular. We can consider the constants as zero to make the equations simpler\n\n\n\nLines with Zero constants which goes through the origin\n\n\n\n\n\n\n\nIf a row can be obtained from another row, then the second row is dependent on the first one. They are linearly dependent. Otherwise it is independent. The same applies for columns in a matrix\n\n\n\n\n\n\nIf the determinant is zero then the matrix is singular. Otherwise the matrix is non-singular\n\n\n\nCaculating Determinant\n\n\nFor matrices bigger than 2x2, calculating the determinant is more involved. We need to wrap around and consider all the diagonals. See the picture below for 3x3 matrix\n\n\n\nCaclulating the determinant for 3x3 matrix\n\n\n\n\n\nSteps in calculating the determinant\n\n\nUpper Traingular Matrix is a matrix in which all the values below the diagonal is zero. For such a matrix, the determinant is the product of main diagonal because all other multiplication operations will have zero in it. (see the figure below)\n\n\n\nDeterminant for upper traingle matrix\n\n\n\n\n\n\n\nCoursera’s Linear Algebra for Machine Learning course\nSystem of Linear Equations"
   },
   {
     "objectID": "data_quality/setup_datasource.html",
@@ -1803,7 +1810,7 @@
     "href": "Interview_resources/resources.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Best Interveiw Resources\n\nThe Data Science Interview Book\nThe Illustrated Machine Learning"
+    "text": "The Data Science Interview Book\nThe Illustrated Machine Learning\n\n\n\n\nHow Adaboost works\nDifference between Adaboost and Gradient Boosting\nHow Catboost handle categorical variables\nWhat are the tricks used by lightgbm to handle large datasets\nwhat is back propagation\nwhat is exploding and vanishing gradients\nCan we get derivative of RELU at all points? If not how is it overcome in practical applications?\nHow RNN and LSTM works? what are their disadvantages?\nHow transformers work?\nExplain how BERT works?\nwhy we divide by square root of dimensions in transformers scaled dot product attention?\nwhat is label smoothing?\nHow the weights are initialized in deep learning? what different methods are there for weight initialization?\nWhat optimization techniques are there for deep learning?\nExplain how single shot object detection works?\nwhat’s the advantage of skip connections in Resnet?\nHow openAI CLIP works?\nWhat are Anchor boxes and how are they selected for object detection?\nL1 and L2 regularization\nFeature selection methods\nHow embeddings are created for words\nHow to handle quadratic explosion if we want to handle high definition Images using transformer models?\nSome puzzles on probability, which I dont remember now\nWhat is maximum likelihood\nwhat is the difference between args and kwargs in python\nExplain try-except-finally in python\nwhat is GIL in python\nDifference between self and cross attention"
   },
   {
     "objectID": "research/unknown.html",

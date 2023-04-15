@@ -89,6 +89,10 @@ website:
           - Interpretable_ml/theory/12_nodegam.qmd
           - Interpretable_ml/theory/resources.qmd
           - Interpretable_ml/interpret_ai/notebooks/01_ebm.ipynb  
+        - section: "**Linear Algebra**"
+          contents:
+          - linear_algebra/01_intro.qmd
+          - linear_algebra/resources.qmd
         - section: "**Graph Machine Learning**"
           contents:
           - graph_ml/01_intro.qmd
