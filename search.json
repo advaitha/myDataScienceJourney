@@ -574,6 +574,13 @@
     "text": "Recommendation System Presentations\n\nIntroduction to Recommendation Systems\nIndustrial Use Cases of Recommenders\nChallenges to Recommenders\nEvaluating Recommenders\nAnalytics for Recommenders\nNon-Personalized Recommenders\nBaseline Recommenders\nData for building Recommenders\nCollaborative Filtering\ncontent Filtering\nMatrix Factorization\nNeural Collaborative Filtering\nVariational Autoencoders for Collaborative Filtering\nDKN for News Recommendation\nCase Study - Designing a Recommendation System for a App"
   },
   {
+    "objectID": "linear_algebra/03_vector_algebra.html",
+    "href": "linear_algebra/03_vector_algebra.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Vector Algebra"
+  },
+  {
     "objectID": "linear_algebra/resources.html",
     "href": "linear_algebra/resources.html",
     "title": "My Datascience Journey",
@@ -586,6 +593,13 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "A system can be either singular or non-singular\nIf the system is redundant or contradictory then it is singular\nIF the system carries as many pieces of information as sentences then it is a complete system, which is called non-singular\nWe can measure how redundant a system is using Rank\n\n\n\n\n\nIf the system does not carry enough information then it can have infinite solutions\n\n\n\nSystem without enough information\n\n\n\n\n\nSystem with contradictory information\n\n\n\n\n\nSingular and non-singular systems\n\n\n\n\n\nSystem of Equations as lines\n\n\nThe constants does not matter when it comes to determine if the system is singular or non-singular. We can consider the constants as zero to make the equations simpler\n\n\n\nLines with Zero constants which goes through the origin\n\n\n\n\n\n\n\nIf a row can be obtained from another row, then the second row is dependent on the first one. They are linearly dependent. Otherwise it is independent. The same applies for columns in a matrix\n\n\n\n\n\n\nIf the determinant is zero then the matrix is singular. Otherwise the matrix is non-singular\n\n\n\nCaculating Determinant\n\n\nFor matrices bigger than 2x2, calculating the determinant is more involved. We need to wrap around and consider all the diagonals. See the picture below for 3x3 matrix\n\n\n\nCaclulating the determinant for 3x3 matrix\n\n\n\n\n\nSteps in calculating the determinant\n\n\nUpper Traingular Matrix is a matrix in which all the values below the diagonal is zero. For such a matrix, the determinant is the product of main diagonal because all other multiplication operations will have zero in it. (see the figure below)\n\n\n\nDeterminant for upper traingle matrix\n\n\n\n\n\n\n\nCoursera’s Linear Algebra for Machine Learning course\nSystem of Linear Equations"
+  },
+  {
+    "objectID": "linear_algebra/02_matrix_row_reduction.html",
+    "href": "linear_algebra/02_matrix_row_reduction.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "To solve linear equation using traditional method, we use elimination. Similarly we use row reduction when using matrices to solve linear equations\nRow echelon form\n\n\n\nMatrix row-reduction\n\n\n\n\n\nRow echelon form for singular matrix\n\n\n\n\n\n\n\nRow operations preserve the singularity of the matrix i.e singular matrix will be singular and non-singular matrix will be non-singular after row operations\nrow operations are -\n\nswitching rows\nMultiplying a row by a non-zero scalar\nAdding a row to another row\n\n\n\n\n\n\nIt is a measure of the information that matrix or its corresponding system of linear equations is carrying\nMatrices with reduced rank will take less space for storage\n\n\n\nMatrices with reduced rank to compress the images\n\n\n\n\n\nRank fo a matrix\n\n\nThere is a relationship between Rank of a Matrix and its solution space.\nRank = number of rows in a matrix - Dimension of solution space\nA matrix is non-singular if and only if it has full rank. The number of rows is equal to the rank of the matrix\n\n\n\nRank and Solution space of a Matrix\n\n\n\n\n\nRank of matrices\n\n\n\n\n\n\n\n\n\n\nCalculations to get Row Echelon Form\n\n\nRank of a matrix is the number of 1’s in the diagonal of row echelon form (for the below figure)\n\n\n\nRelation between Row Echelon form, Singularity and Rank\n\n\n\n\n\nRow Echelon for Bigger Matrices\n\n\n\n\n\n\n\n\n\n\nReduced row echelon form is equivalent to the solved system\n\n\n\n\n\nGeneralized form of Reduced row echelon\n\n\n\n\n\nCalculating Reduced row echelon"
   },
   {
     "objectID": "data_quality/setup_datasource.html",
