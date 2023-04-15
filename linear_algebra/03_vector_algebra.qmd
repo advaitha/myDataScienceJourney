@@ -1,1 +1,25 @@
 # Vector Algebra
+
+## Magnitude and direction of a vector
+* ![Magnitude of a vector using L1 and L2 Norm](/Images/l1_and_l2_norm.png)
+* ![Direction of a vector](/Images/l1_and_l2_norm.png)
+
+## Sum and difference of vectors
+* ![Sum of Vectors](/Images/sum_of_vectors.png)
+* ![Difference of Vectors](/Images/difference_of_vectors.png)
+
+
+## Distance between vectors
+* ![Distance between vectors](/Images/distances.png)
+
+
+## Multiplying a vector by a scalar
+* ![Multiplying a vector by a scalar](/Images/multiplying_vector_by_scalar.png)
+
+
+## The dot product
+* ![The dot product](/Images/dot_product.png)
+* L2-norm = sqrt(dot product of a vector with itself)
+* ![Norm of a vector using dot product](/Images/norm_of_vector_using_dot_product.png)
+
+
