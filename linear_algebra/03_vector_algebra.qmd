@@ -22,4 +22,13 @@
 * L2-norm = sqrt(dot product of a vector with itself)
 * ![Norm of a vector using dot product](/Images/norm_of_vector_using_dot_product.png)
 
+## Geometric Dot Product
+* Two vectors are orthogonal if their dot product is zero
+* ![Dot product of Orthogonal vectors](/Images/orthogonal_vectors.png)
+* ![Dot product of two vectors](/Images/dot_product_two_vectors.png)
+* The sign of a dot product of two vectors can be either positive, zero or negative. If the dot product is positive it is because the projection of one vector on to the other is in the same direction. If the dot product is negative then the projection of a vector on the other is in opposite direction
+* ![Sign of a Dot Product](/Images/sign_of_dot_product.png)
+* ![Geometric Dot Product of two vectors](/Images/geometric_dot_product.png)
 
+## Multiplying a matrix with a vector
+* [Matix Vector Multiplication](/Images/matrix_vector_multiplication_2.png)
