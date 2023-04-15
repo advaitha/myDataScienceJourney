@@ -6,5 +6,37 @@
 * ![Matrix row-reduction](/home/thulasiram/personal/my_data_science_journey/Images/row_echelon.png)
 * ![Row echelon form for singular matrix](/Images/row_echelon_singluar.png)
 
-## Row operations that preserve singularity
-  
+## Row operations 
+* Row operations preserve the singularity of the matrix i.e singular matrix will be singular and non-singular matrix will be non-singular after row operations
+* row operations are -
+  * switching rows
+  * Multiplying a row by a non-zero scalar
+  * Adding a row to another row
+
+## The Rank of a Matrix
+* It is a measure of the information that matrix or its corresponding system of linear equations is carrying
+* Matrices with reduced rank will take less space for storage
+* ![Matrices with reduced rank to compress the images](/Images/compressing_images.png)
+* ![Rank fo a matrix](/Images/rank_of_a_matrix.png)
+* There is a relationship between Rank of a Matrix and its solution space.
+* Rank = number of rows in a matrix - Dimension of solution space
+* A matrix is non-singular if and only if it has full rank. The number of rows is equal to the rank of the matrix
+* ![Rank and Solution space of a Matrix](/Images/rank_solution_system.png)
+* ![Rank of matrices](/Images/rank_of_matrix.png)
+
+## Row Echelon Form of a Matrix
+* ![Calculations to get Row Echelon Form](/Images/row_form.png)
+* Rank of a matrix is the number of 1's in the diagonal of row echelon form (for the below figure)
+* ![Relation between Row Echelon form, Singularity and Rank](/Images/relation_between_row_echelon.png)
+* ![Row Echelon for Bigger Matrices](/Images/row_echelon_general.png)
+
+## Reduced Row Echelon Form
+* ![Reduced row echelon form is equivalent to the solved system](/Images/reduced_row_echelon_Form.png)
+* ![Generalized form of Reduced row echelon](/Images/reduced_general_row_echelon.png)
+* ![Calculating Reduced row echelon](/Images/calc_reduced_row_echelon.png)
+
+
+# Reference
+* [Coursera slides](/pdfs/solving_linear_equations.pdf)
+
+
