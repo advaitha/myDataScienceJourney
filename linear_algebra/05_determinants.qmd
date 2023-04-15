@@ -7,4 +7,6 @@
 * ![Rank and dimension of linear transform](/Images/rank_and_dimensions_linear_transform.png)
 
 ## Determinant as an area
-* 
+* ![Determinant as an area](/Images/determinant_as_area.png)
+* For singular matrix the area of determinant is zero
+* ![Determinant of singular and non-singular matrix](/Images/det_sing_non_sing.png)
