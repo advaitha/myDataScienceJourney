@@ -9,6 +9,8 @@
 
 ## System of linear equations
 
+### Singular and non-singular equations
+
 * If the system does not carry enough information then it can have infinite solutions
 * ![System without enough information](/Images/infinite_solutions.png)
 * ![System with contradictory information](/Images/contradiction.png)
@@ -16,6 +18,16 @@
 * ![System of Equations as lines](/Images/system_of_equation_as_lines.png)
 * The constants does not matter when it comes to determine if the system is singular or non-singular. We can consider the constants as zero to make the equations simpler
 * ![Lines with Zero constants which goes through the origin](/Images/line_through_origin.png)
+
+
+### Linear dependence and independence
+* If a row can be obtained from another row, then the second row is `dependent` on the first one. They are `linearly dependent`. Otherwise it is `independent`. The same applies for columns in a matrix
+* ![Linear and non-linear dependency](/Images/linear_dependence.png)
+
+
+### Determinant
+* If the determinant is zero then the matrix is singular. Otherwise the matrix is non-singular
+* ![Caculating Determinant](/Images/determinant.png)
 
 
 
