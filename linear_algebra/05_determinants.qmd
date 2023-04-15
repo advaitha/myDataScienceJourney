@@ -1,0 +1,10 @@
+# Determinants
+
+## Singular and Non-Singular Transformations
+* Linear transformations which are non-singular will cover the entire plane
+* Linear transformations which are Singular will not cover the whole plane
+* ![Singular and Non-Singular Transformations](/Images/singular_non_singular_transformations.png)
+* ![Rank and dimension of linear transform](/Images/rank_and_dimensions_linear_transform.png)
+
+## Determinant as an area
+* 
