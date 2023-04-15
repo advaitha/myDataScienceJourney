@@ -19,3 +19,9 @@
 * ![Identity Matrix](/Images/identity_matrix.png)
 
 ## Matrix Inverse
+* The product of a matrix and its Inverse should be an Identity matrix
+* Inverse Matrix reverses the linear transformation of a matrix
+* ![Matrix Inverse](/Images/matrix_inverse.png)
+* ![Finding Matrix Inverse](/Images/finding_matrix_inverse.png)
+* Non-singular matrices will have inverse and singular matrix will not have inverse
+* ![Matrix with determinant zero will not have inverse](/Images/matrix_inverse_det.png)
