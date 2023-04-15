@@ -1,1 +1,21 @@
 # Linear Transformations
+
+## Matrix - Vector multiplication as a Linear Transformations
+
+*![Matrices as a Linear Transformations](/Images/matrices_as_linear_transforms.png)
+* Basis cover the entire plane
+* ![Matrix vector multiplication as a linear transformation](/Images/linear_transformers.png)
+* To get the matrix from original and transformed vectors, we only need information for two vectors [0,1] and [1,0] (see the image below)
+* ![Getting the matrix back from the original and transformed vectors](/Images/linear_transformers.png)
+
+## Matrix Multiplication
+* We can see matrix product as multiplying two matrix and also as combining two linear transformations into a third linear transformation
+* ![Matrix multiplication as combining linear transformations](/Images/combining_linear_transformations.png)
+* ![Matrices flipped](/Images/matrix_flipped.png)
+
+## Indentiy Matrix
+* It is the matrix when multiplied by any other matrix will give the same matrix
+* Linear transformation by an Identity Matrix will leave the plane intact 
+* ![Identity Matrix](/Images/identity_matrix.png)
+
+## Matrix Inverse
