@@ -1,0 +1,10 @@
+# Solving linear Equations
+
+## Matrix row-reduction
+* To solve linear equation using traditional method, we use elimination. Similarly we use row reduction when using matrices to solve linear equations
+* [Row echelon form](/Images/row_echelon_form.png)
+* ![Matrix row-reduction](/home/thulasiram/personal/my_data_science_journey/Images/row_echelon.png)
+* ![Row echelon form for singular matrix](/Images/row_echelon_singluar.png)
+
+## Row operations that preserve singularity
+  
