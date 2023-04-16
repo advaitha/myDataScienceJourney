@@ -14,3 +14,8 @@
 * ![Minimal Spanning Set](/Images/basis_minimum_set.png)
 * ![Number of elements in the basis is the dimension](/Images/basis_dimensions.png)
   
+
+  ## Eigenbases
+  * Some basis are more useful than others
+  * `Eigenbases` - A special way of linear transformation with respect to a basis that sends a parallelogram to another parallelogram with sides parallel to the original one. The basis is streched in the two directions (in the below case) which is called eigenbasis
+  * <span id="highlighted-line">In the linear transformation, the two vectors in the basis are called Eigenvectors and the streching factor are called Eigenvalues</span>

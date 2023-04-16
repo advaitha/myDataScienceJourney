@@ -1,1 +1,6 @@
 /* css styles */
+#highlighted-line {
+    background-color: yellow;
+    border-radius: 5px;
+    padding: 0.1em 0.25em;
+}

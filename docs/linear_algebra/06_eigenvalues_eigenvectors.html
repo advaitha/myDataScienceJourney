@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – vector_algebra</title>
+<title>My Datascience Journey – eigenvalues_eigenvectors</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -471,7 +471,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear_algebra/03_vector_algebra.html" class="sidebar-item-text sidebar-link active">Vector Algebra</a>
+  <a href="../linear_algebra/03_vector_algebra.html" class="sidebar-item-text sidebar-link">Vector Algebra</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -486,7 +486,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear_algebra/06_eigenvalues_eigenvectors.html" class="sidebar-item-text sidebar-link">Eigenvalues and Eigenvectors</a>
+  <a href="../linear_algebra/06_eigenvalues_eigenvectors.html" class="sidebar-item-text sidebar-link active">Eigenvalues and Eigenvectors</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1215,15 +1215,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#vector-algebra" id="toc-vector-algebra" class="nav-link active" data-scroll-target="#vector-algebra">Vector Algebra</a>
+  <li><a href="#eigenvalues-and-eigenvectors" id="toc-eigenvalues-and-eigenvectors" class="nav-link active" data-scroll-target="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a>
   <ul class="collapse">
-  <li><a href="#magnitude-and-direction-of-a-vector" id="toc-magnitude-and-direction-of-a-vector" class="nav-link" data-scroll-target="#magnitude-and-direction-of-a-vector">Magnitude and direction of a vector</a></li>
-  <li><a href="#sum-and-difference-of-vectors" id="toc-sum-and-difference-of-vectors" class="nav-link" data-scroll-target="#sum-and-difference-of-vectors">Sum and difference of vectors</a></li>
-  <li><a href="#distance-between-vectors" id="toc-distance-between-vectors" class="nav-link" data-scroll-target="#distance-between-vectors">Distance between vectors</a></li>
-  <li><a href="#multiplying-a-vector-by-a-scalar" id="toc-multiplying-a-vector-by-a-scalar" class="nav-link" data-scroll-target="#multiplying-a-vector-by-a-scalar">Multiplying a vector by a scalar</a></li>
-  <li><a href="#the-dot-product" id="toc-the-dot-product" class="nav-link" data-scroll-target="#the-dot-product">The dot product</a></li>
-  <li><a href="#geometric-dot-product" id="toc-geometric-dot-product" class="nav-link" data-scroll-target="#geometric-dot-product">Geometric Dot Product</a></li>
-  <li><a href="#multiplying-a-matrix-with-a-vector" id="toc-multiplying-a-matrix-with-a-vector" class="nav-link" data-scroll-target="#multiplying-a-matrix-with-a-vector">Multiplying a matrix with a vector</a></li>
+  <li><a href="#bases" id="toc-bases" class="nav-link" data-scroll-target="#bases">Bases</a></li>
+  <li><a href="#span" id="toc-span" class="nav-link" data-scroll-target="#span">Span</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1233,107 +1228,57 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="vector-algebra" class="level1">
-<h1>Vector Algebra</h1>
-<section id="magnitude-and-direction-of-a-vector" class="level2">
-<h2 class="anchored" data-anchor-id="magnitude-and-direction-of-a-vector">Magnitude and direction of a vector</h2>
+<section id="eigenvalues-and-eigenvectors" class="level1">
+<h1>Eigenvalues and Eigenvectors</h1>
+<section id="bases" class="level2">
+<h2 class="anchored" data-anchor-id="bases">Bases</h2>
 <ul>
+<li><p><img src="../Images/bases.png" class="img-fluid" alt="Basis"><br>
+</p></li>
+<li><p>The main property of a <code>Basis</code> is that every point in the space can be expressed as a linear combination of elements in the basis</p></li>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../Images/l1_and_l2_norm.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Magnitude of a vector using L1 and L2 Norm</figcaption><p></p>
+<p><img src="../Images/valid_bases.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Valid Basis</figcaption><p></p>
 </figure>
 </div></li>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../Images/l1_and_l2_norm.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Direction of a vector</figcaption><p></p>
+<p><img src="../Images/invalid_basis.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Invalid Basis</figcaption><p></p>
 </figure>
 </div></li>
 </ul>
 </section>
-<section id="sum-and-difference-of-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="sum-and-difference-of-vectors">Sum and difference of vectors</h2>
+<section id="span" class="level2">
+<h2 class="anchored" data-anchor-id="span">Span</h2>
 <ul>
+<li><p>The span of a set of vectors is simply <code>the set of points that can be reached by walking in the direction of these vectors in any combination</code></p></li>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../Images/sum_of_vectors.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sum of Vectors</figcaption><p></p>
+<p><img src="../Images/span.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Span of a vector</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>A basis is a minimal spanning set</p></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/basis_minimum_set.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Minimal Spanning Set</figcaption><p></p>
 </figure>
 </div></li>
 <li><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../Images/difference_of_vectors.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Difference of Vectors</figcaption><p></p>
+<p><img src="../Images/basis_dimensions.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Number of elements in the basis is the dimension</figcaption><p></p>
 </figure>
-</div></li>
-</ul>
-</section>
-<section id="distance-between-vectors" class="level2">
-<h2 class="anchored" data-anchor-id="distance-between-vectors">Distance between vectors</h2>
+</div>
+<h2 id="eigenbases" class="anchored">Eigenbases</h2>
 <ul>
-<li><img src="../Images/distances.png" title="fig:" class="img-fluid" alt="Distance between vectors"></li>
-</ul>
-</section>
-<section id="multiplying-a-vector-by-a-scalar" class="level2">
-<h2 class="anchored" data-anchor-id="multiplying-a-vector-by-a-scalar">Multiplying a vector by a scalar</h2>
-<ul>
-<li><img src="../Images/multiplying_vector_by_scalar.png" title="fig:" class="img-fluid" alt="Multiplying a vector by a scalar"></li>
-</ul>
-</section>
-<section id="the-dot-product" class="level2">
-<h2 class="anchored" data-anchor-id="the-dot-product">The dot product</h2>
-<ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/dot_product.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The dot product</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>L2-norm = sqrt(dot product of a vector with itself)</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/norm_of_vector_using_dot_product.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Norm of a vector using dot product</figcaption><p></p>
-</figure>
-</div></li>
-</ul>
-</section>
-<section id="geometric-dot-product" class="level2">
-<h2 class="anchored" data-anchor-id="geometric-dot-product">Geometric Dot Product</h2>
-<ul>
-<li><p>Two vectors are orthogonal if their dot product is zero</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/orthogonal_vectors.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Dot product of Orthogonal vectors</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/dot_product_two_vectors.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Dot product of two vectors</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>The sign of a dot product of two vectors can be either positive, zero or negative. If the dot product is positive it is because the projection of one vector on to the other is in the same direction. If the dot product is negative then the projection of a vector on the other is in opposite direction</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/sign_of_dot_product.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Sign of a Dot Product</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/geometric_dot_product.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Geometric Dot Product of two vectors</figcaption><p></p>
-</figure>
-</div></li>
-</ul>
-</section>
-<section id="multiplying-a-matrix-with-a-vector" class="level2">
-<h2 class="anchored" data-anchor-id="multiplying-a-matrix-with-a-vector">Multiplying a matrix with a vector</h2>
-<ul>
-<li><a href="../Images/matrix_vector_multiplication_2.png">Matix Vector Multiplication</a></li>
+<li>Some basis are more useful than others</li>
+<li><code>Eigenbases</code> - A special way of linear transformation with respect to a basis that sends a parallelogram to another parallelogram with sides parallel to the original one. The basis is streched in the two directions (in the below case) which is called eigenbasis</li>
+<li><span id="highlighted-line">In the linear transformation, the two vectors in the basis are called <code>eigenvectors</code> and the streching factor are called <code>eigenvalues</code></span></li>
+</ul></li>
 </ul>
 
 
