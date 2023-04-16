@@ -3,4 +3,21 @@
 ## Videos
 * [Khan Academy Videos](https://www.khanacademy.org/math/linear-algebra/alternate-bases)
 * [Coursera Linear Algebra course - Free Audit](https://www.coursera.org/learn/machine-learning-linear-algebra/)
+
+## Jupyter Book
+* [Computational statistics in Python](https://people.duke.edu/~ccc14/sta-663-2017/)
+
+
+## Blogs
+* [Understanding Dot Product](https://tivadardanka.com/blog/how-the-dot-product-measures-similarity)
+* [Mathematical foundations of Probability](https://tivadardanka.com/blog/the-mathematical-foundations-of-probability)
+* [statistical foundation of ML](https://www.tivadardanka.com/blog/the-statistical-foundations-of-machine-learning)
+* [Mathematics of optimization](https://tivadardanka.com/blog/the-mathematics-of-optimization-for-deep-learning)
+* [How t-SNE works](https://tivadardanka.com/blog/how-tsne-works)
+* [Roadmap of Mathematics for ML](https://tivadardanka.com/blog/roadmap-of-mathematics-for-machine-learning)
+* [Why is linear algebra essential in ML](https://tivadardanka.com/blog/linear-algebra-in-machine-learning)
+* [understanding PCA](https://tivadardanka.com/blog/understanding-pca)
+* [Everything about Matrix Factorizations](https://tivadardanka.com/blog/everything-about-matrix-factorizations)
+* [Google Tutorial on Matrix Factorization](https://developers.google.com/machine-learning/recommendation/collaborative/matrix)
+* [Matrix Decomposition](https://medium.com/mlearning-ai/matrix-decomposition-and-algorithms-675339d8f48a)
   
