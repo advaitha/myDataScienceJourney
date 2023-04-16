@@ -17,5 +17,7 @@
 * The determinant of a product of singular and non-singular is zero, so AB will be singular
 
 ## Determinants of Inverses
-
+* The determinant of an inverse matrix is the inverse of the determinant of the matrix
+* ![Determinant of an inverse matrix](/Images/determinant_inverse_matrix.png)
+  
 
