@@ -10,3 +10,12 @@
 * ![Determinant as an area](/Images/determinant_as_area.png)
 * For singular matrix the area of determinant is zero
 * ![Determinant of singular and non-singular matrix](/Images/det_sing_non_sing.png)
+
+## Determinant of a Product
+* det(AB) = det(A)*det(B)
+* ![Determinant of a product](/Images/determinant_of_product.png)
+* The determinant of a product of singular and non-singular is zero, so AB will be singular
+
+## Determinants of Inverses
+
+
