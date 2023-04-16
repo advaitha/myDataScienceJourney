@@ -95,6 +95,7 @@ website:
           - linear_algebra/02_matrix_row_reduction.qmd
           - linear_algebra/03_vector_algebra.qmd
           - linear_algebra/04_linear_transformations.qmd
+          - linear_algebra/05_determinants.qmd
           - linear_algebra/resources.qmd                   
         - section: "**Graph Machine Learning**"
           contents:
