@@ -17,5 +17,28 @@
 
   ## Eigenbases
   * Some basis are more useful than others
+  * ![Eigenbases](/Images/eigenbases.png)
   * `Eigenbases` - A special way of linear transformation with respect to a basis that sends a parallelogram to another parallelogram with sides parallel to the original one. The basis is streched in the two directions (in the below case) which is called eigenbasis
+  * ![Eigenvectors and Eigenvalues](/Images/eigen_vectors_values.png)
   * <span id="highlighted-line">In the linear transformation, the two vectors in the basis are called Eigenvectors and the streching factor are called Eigenvalues</span>
+
+
+## Eigenvalues and Eigenvectors
+
+### Finding Eigenvalues
+* ![Finding Eigenvalues](/Images/finding_eigenvalues.png)
+* ![Finding Eigenvalues using characteristic polynomial](/Images/finding_eigenvalues_2.png)
+
+
+### Finding Eigenvectors
+* ![Finding Eigenvectors using Eigenvalues](/Images/finding_eigen_vectors.png)
+
+
+## Resources to learn more
+* [Eigenvectors and Generalized Eigenspaces](https://www.youtube.com/watch?v=ajXb3N6QEqc)
+* [PCA](https://www.youtube.com/watch?v=g-Hb26agBFg)
+
+
+## Reference
+* [linear Transformations](/pdfs/linear_transformations.pdf)
+* [Eigenvalues and Eigenvectors](/pdfs/eigenvalues_vectores.pdf)
