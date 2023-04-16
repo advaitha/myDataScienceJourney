@@ -1,1 +1,16 @@
 # Eigenvalues and Eigenvectors
+
+## Bases
+* ![Basis](/Images/bases.png)   
+* The main property of a `Basis` is that every point in the space can be expressed as a linear combination of elements in the basis
+* ![Valid Basis](/Images/valid_bases.png)
+* ![Invalid Basis](/Images/invalid_basis.png)
+
+
+## Span
+* The span of a set of vectors is simply `the set of points that can be reached by walking in the direction of these vectors in any combination`
+* ![Span of a vector](/Images/span.png)
+* A basis is a minimal spanning set
+* ![Minimal Spanning Set](/Images/basis_minimum_set.png)
+* ![Number of elements in the basis is the dimension](/Images/basis_dimensions.png)
+  
