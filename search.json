@@ -578,7 +578,7 @@
     "href": "linear_algebra/03_vector_algebra.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Vector Algebra"
+    "text": "Magnitude of a vector using L1 and L2 Norm\n\n\n\n\n\nDirection of a vector\n\n\n\n\n\n\n\n\n\n\nSum of Vectors\n\n\n\n\n\nDifference of Vectors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe dot product\n\n\nL2-norm = sqrt(dot product of a vector with itself)\n\n\n\nNorm of a vector using dot product\n\n\n\n\n\n\n\nTwo vectors are orthogonal if their dot product is zero\n\n\n\nDot product of Orthogonal vectors\n\n\n\n\n\nDot product of two vectors\n\n\nThe sign of a dot product of two vectors can be either positive, zero or negative. If the dot product is positive it is because the projection of one vector on to the other is in the same direction. If the dot product is negative then the projection of a vector on the other is in opposite direction\n\n\n\nSign of a Dot Product\n\n\n\n\n\nGeometric Dot Product of two vectors\n\n\n\n\n\n\n\nMatix Vector Multiplication"
   },
   {
     "objectID": "linear_algebra/resources.html",
@@ -586,6 +586,20 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "Khan Academy Videos\nCoursera Linear Algebra course - Free Audit"
+  },
+  {
+    "objectID": "linear_algebra/06_eigenvalues_eigenvectors.html",
+    "href": "linear_algebra/06_eigenvalues_eigenvectors.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "The main property of a Basis is that every point in the space can be expressed as a linear combination of elements in the basis\n\n\n\nValid Basis\n\n\n\n\n\nInvalid Basis\n\n\n\n\n\n\n\nThe span of a set of vectors is simply the set of points that can be reached by walking in the direction of these vectors in any combination\n\n\n\nSpan of a vector\n\n\nA basis is a minimal spanning set\n\n\n\nMinimal Spanning Set\n\n\n\n\n\nNumber of elements in the basis is the dimension\n\n\n\n\nSome basis are more useful than others\n\n\n\nEigenbases\n\n\nEigenbases - A special way of linear transformation with respect to a basis that sends a parallelogram to another parallelogram with sides parallel to the original one. The basis is streched in the two directions (in the below case) which is called eigenbasis\n\n\n\nEigenvectors and Eigenvalues\n\n\nIn the linear transformation, the two vectors in the basis are called Eigenvectors and the streching factor are called Eigenvalues\n\n\n\n\n\n\n\n\n\n\n\nFinding Eigenvalues\n\n\n\n\n\nFinding Eigenvalues using characteristic polynomial\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEigenvectors and Generalized Eigenspaces\nPCA\n\n\n\n\n\nlinear Transformations\nEigenvalues and Eigenvectors"
+  },
+  {
+    "objectID": "linear_algebra/05_determinants.html",
+    "href": "linear_algebra/05_determinants.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Linear transformations which are non-singular will cover the entire plane\nLinear transformations which are Singular will not cover the whole plane\n\n\n\nSingular and Non-Singular Transformations\n\n\n\n\n\nRank and dimension of linear transform\n\n\n\n\n\n\n\n\n\n\nDeterminant as an area\n\n\nFor singular matrix the area of determinant is zero\n\n\n\nDeterminant of singular and non-singular matrix\n\n\n\n\n\n\n\ndet(AB) = det(A)*det(B)\n\n\n\nDeterminant of a product\n\n\nThe determinant of a product of singular and non-singular is zero, so AB will be singular\n\n\n\n\n\nThe determinant of an inverse matrix is the inverse of the determinant of the matrix"
   },
   {
     "objectID": "linear_algebra/01_intro.html",
@@ -600,6 +614,13 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "To solve linear equation using traditional method, we use elimination. Similarly we use row reduction when using matrices to solve linear equations\nRow echelon form\n\n\n\nMatrix row-reduction\n\n\n\n\n\nRow echelon form for singular matrix\n\n\n\n\n\n\n\nRow operations preserve the singularity of the matrix i.e singular matrix will be singular and non-singular matrix will be non-singular after row operations\nrow operations are -\n\nswitching rows\nMultiplying a row by a non-zero scalar\nAdding a row to another row\n\n\n\n\n\n\nIt is a measure of the information that matrix or its corresponding system of linear equations is carrying\nMatrices with reduced rank will take less space for storage\n\n\n\nMatrices with reduced rank to compress the images\n\n\n\n\n\nRank fo a matrix\n\n\nThere is a relationship between Rank of a Matrix and its solution space.\nRank = number of rows in a matrix - Dimension of solution space\nA matrix is non-singular if and only if it has full rank. The number of rows is equal to the rank of the matrix\n\n\n\nRank and Solution space of a Matrix\n\n\n\n\n\nRank of matrices\n\n\n\n\n\n\n\n\n\n\nCalculations to get Row Echelon Form\n\n\nRank of a matrix is the number of 1’s in the diagonal of row echelon form (for the below figure)\n\n\n\nRelation between Row Echelon form, Singularity and Rank\n\n\n\n\n\nRow Echelon for Bigger Matrices\n\n\n\n\n\n\n\n\n\n\nReduced row echelon form is equivalent to the solved system\n\n\n\n\n\nGeneralized form of Reduced row echelon\n\n\n\n\n\nCalculating Reduced row echelon"
+  },
+  {
+    "objectID": "linear_algebra/04_linear_transformations.html",
+    "href": "linear_algebra/04_linear_transformations.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Basis cover the entire plane *  * To get the matrix from original and transformed vectors, we only need information for two vectors [0,1] and [1,0] (see the image below) * \n\n\n\n\nWe can see matrix product as multiplying two matrix and also as combining two linear transformations into a third linear transformation\n\n\n\nMatrix multiplication as combining linear transformations\n\n\n\n\n\nMatrices flipped\n\n\n\n\n\n\n\nIt is the matrix when multiplied by any other matrix will give the same matrix\nLinear transformation by an Identity Matrix will leave the plane intact\n\n\n\n\n\n\nThe product of a matrix and its Inverse should be an Identity matrix\nInverse Matrix reverses the linear transformation of a matrix\n\n\n\nMatrix Inverse\n\n\n\n\n\nFinding Matrix Inverse\n\n\nNon-singular matrices will have inverse and singular matrix will not have inverse\n\n\n\nMatrix with determinant zero will not have inverse"
   },
   {
     "objectID": "data_quality/setup_datasource.html",
