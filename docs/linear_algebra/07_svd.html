@@ -492,6 +492,11 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../linear_algebra/07_svd.html" class="sidebar-item-text sidebar-link active">Singular Value Decomposition</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../linear_algebra/resources.html" class="sidebar-item-text sidebar-link">Linear Algebra Resources</a>
   </div>
 </li>
@@ -1219,7 +1224,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#singular-value-decomposition" id="toc-singular-value-decomposition" class="nav-link active" data-scroll-target="#singular-value-decomposition">Singular Value Decomposition</a></li>
+  <li><a href="#singular-value-decomposition" id="toc-singular-value-decomposition" class="nav-link active" data-scroll-target="#singular-value-decomposition">Singular Value Decomposition</a>
+  <ul class="collapse">
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1245,8 +1253,14 @@ where U and V are orthogonal matrices, and Σ is a diagonal matrix with the sing
 which is the reconstructed matrix A’. If we use all the singular values in Σ, then A’ will be equal to A, and there will be no loss of information.</li>
 <li>However, if we use only a subset of the singular values (i.e., truncate Σ), then A’ will be a lower-rank approximation of A, and there will be some loss of information. The amount of information loss depends on how many singular values we truncate and how important those singular values are to the overall structure of the data. Therefore, if we use all the singular values in SVD and perform the matrix multiplication, we will get the original matrix without loss of information.</li>
 </ul>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<ul>
+<li>Luis Serrano youtube video on SVD</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
