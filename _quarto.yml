@@ -97,6 +97,7 @@ website:
           - linear_algebra/04_linear_transformations.qmd
           - linear_algebra/05_determinants.qmd
           - linear_algebra/06_eigenvalues_eigenvectors.qmd
+          - linear_algebra/07_svd.qmd
           - linear_algebra/resources.qmd                   
         - section: "**Graph Machine Learning**"
           contents:

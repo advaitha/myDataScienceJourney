@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – resources</title>
+<title>My Datascience Journey – pca</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -491,7 +491,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear_algebra/resources.html" class="sidebar-item-text sidebar-link active">Linear Algebra Resources</a>
+  <a href="../linear_algebra/resources.html" class="sidebar-item-text sidebar-link">Linear Algebra Resources</a>
   </div>
 </li>
       </ul>
@@ -1218,11 +1218,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#linear-algebra-resources" id="toc-linear-algebra-resources" class="nav-link active" data-scroll-target="#linear-algebra-resources">Linear Algebra Resources</a>
+  <li><a href="#pca" id="toc-pca" class="nav-link active" data-scroll-target="#pca">PCA</a>
   <ul class="collapse">
-  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
-  <li><a href="#jupyter-book" id="toc-jupyter-book" class="nav-link" data-scroll-target="#jupyter-book">Jupyter Book</a></li>
-  <li><a href="#blogs" id="toc-blogs" class="nav-link" data-scroll-target="#blogs">Blogs</a></li>
+  <li><a href="#my-understanding-of-pca" id="toc-my-understanding-of-pca" class="nav-link" data-scroll-target="#my-understanding-of-pca">My understanding of PCA</a></li>
+  <li><a href="#important-points" id="toc-important-points" class="nav-link" data-scroll-target="#important-points">Important Points</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1232,35 +1232,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="linear-algebra-resources" class="level1">
-<h1>Linear Algebra Resources</h1>
-<section id="videos" class="level2">
-<h2 class="anchored" data-anchor-id="videos">Videos</h2>
+<section id="pca" class="level1">
+<h1>PCA</h1>
+<section id="my-understanding-of-pca" class="level2">
+<h2 class="anchored" data-anchor-id="my-understanding-of-pca">My understanding of PCA</h2>
 <ul>
-<li><a href="https://www.khanacademy.org/math/linear-algebra/alternate-bases">Khan Academy Videos</a></li>
-<li><a href="https://www.coursera.org/learn/machine-learning-linear-algebra/">Coursera Linear Algebra course - Free Audit</a></li>
+<li>Calcualate the covariance matrix. Covariance matrix will have variance of the features along the diagonal. Other positions will consist of covariance between a pair of features. The resulting covariance matrix will be symmetrical.</li>
+<li>We need to find the eigenvectors and eigenvalues for the covariance matrix.</li>
+<li>Eigenvectors are those vectors whose direction will remain the same after linear transformation. (When we multiply a vector with covariance matrix, the direction of the vector should remain the same)</li>
+<li>Because the covariance matrix is symmetrical, the resulting vectors will be orthogonal to each other.</li>
+<li>Eigenvalues are the strech factors for the eigenvectors. The higher the strech factor, the greater their importance in dimension reduction.</li>
+<li>The goal of PCA is to find a new set of orthogonal variables that capture the maximum variation in the data and then reduce the dimensionality of the data using these principal components.</li>
+<li>The rank of the original data matrix and the rank of the transformed matrix may not be the same. The rank of the transformed matrix is equal to the number of non-zero eigenvalues. PCA does not change the rank of the original data matrix, but it does reduce the dimensionality by keeping only the most important principal components that capture the maximum variance in the data.</li>
 </ul>
 </section>
-<section id="jupyter-book" class="level2">
-<h2 class="anchored" data-anchor-id="jupyter-book">Jupyter Book</h2>
+<section id="important-points" class="level2">
+<h2 class="anchored" data-anchor-id="important-points">Important Points</h2>
 <ul>
-<li><a href="https://people.duke.edu/~ccc14/sta-663-2017/">Computational statistics in Python</a></li>
+<li>If the data is correlated then we can use that information to compress the data. Correlated features imply the presence of redundant information. Having redundant information is suboptimal</li>
+<li>Reshape the data where variables are uncorrelated and ordered according to importance will be more expressive</li>
+<li>Principal components maximize variance. PCA can be thought of as an iterative process that finds directions along which the variance of projected data is maximal.</li>
 </ul>
 </section>
-<section id="blogs" class="level2">
-<h2 class="anchored" data-anchor-id="blogs">Blogs</h2>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li><a href="https://tivadardanka.com/blog/how-the-dot-product-measures-similarity">Understanding Dot Product</a></li>
-<li><a href="https://tivadardanka.com/blog/the-mathematical-foundations-of-probability">Mathematical foundations of Probability</a></li>
-<li><a href="https://www.tivadardanka.com/blog/the-statistical-foundations-of-machine-learning">statistical foundation of ML</a></li>
-<li><a href="https://tivadardanka.com/blog/the-mathematics-of-optimization-for-deep-learning">Mathematics of optimization</a></li>
-<li><a href="https://tivadardanka.com/blog/how-tsne-works">How t-SNE works</a></li>
-<li><a href="https://tivadardanka.com/blog/roadmap-of-mathematics-for-machine-learning">Roadmap of Mathematics for ML</a></li>
-<li><a href="https://tivadardanka.com/blog/linear-algebra-in-machine-learning">Why is linear algebra essential in ML</a></li>
-<li><a href="https://tivadardanka.com/blog/understanding-pca">understanding PCA</a></li>
-<li><a href="https://tivadardanka.com/blog/everything-about-matrix-factorizations">Everything about Matrix Factorizations</a></li>
-<li><a href="https://developers.google.com/machine-learning/recommendation/collaborative/matrix">Google Tutorial on Matrix Factorization</a></li>
-<li><a href="https://medium.com/mlearning-ai/matrix-decomposition-and-algorithms-675339d8f48a">Matrix Decomposition</a></li>
+<li><a href="https://tivadardanka.com/blog/understanding-pca">Understanding PCA</a></li>
 </ul>
 
 

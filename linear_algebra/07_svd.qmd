@@ -1,0 +1,22 @@
+# Singular Value Decomposition
+* Any linear transformation in a 2D space can be achieved through three fundamental operations: rotation, scaling (or stretching), and another rotation. This is known as the "rotation-stretching-rotation" theorem, or the "Singular Value Decomposition" (SVD) theorem.
+* More generally, in an n-dimensional space, a linear transformation can be decomposed into a sequence of at most n rotations, followed by a scaling transformation, and then another sequence of at most n rotations.
+* In SVD, we try to reduce the dimensions of the data by transforming the non-singular matrix with higer rank into matrices of lower rank. (Thereby helping us to drop the redudant data)
+* Specifically, we decompose the original matrix A into three matrices: U, Σ, and V, where U and V are orthogonal matrices, and Σ is a diagonal matrix of singular values. The singular values in Σ provide information about the importance of each dimension or feature in the original data, and they are sorted in decreasing order.
+* By keeping only the top k singular values and their corresponding columns in U and V, we can reduce the dimensionality of the data to k dimensions. This is a form of matrix approximation, where we construct a lower-rank approximation of the original matrix that captures the most important information in the data.
+* The lower-rank approximation consists of the product of the k leading columns of U, the k leading singular values in Σ, and the k leading rows of V. This approximation has lower rank than the original matrix, and it captures most of the variation in the data. By keeping only the top k singular values and vectors, we effectively reduce the dimensionality of the data from the original rank to k, while retaining most of the information.
+* In SVD (Singular Value Decomposition), if we consider all the singular values and perform the matrix multiplication, we will get the original matrix without loss of information. The SVD decomposition of a matrix A is given by:  
+$A = U \Sigma V^T$  
+where U and V are orthogonal matrices, and Σ is a diagonal matrix with the singular values of A on its diagonal. The singular values are arranged in decreasing order.
+* If we multiply U, Σ, and V^T back together, we obtain:  
+$A' = U \Sigma V^T$  
+which is the reconstructed matrix A'. If we use all the singular values in Σ, then A' will be equal to A, and there will be no loss of information.
+* However, if we use only a subset of the singular values (i.e., truncate Σ), then A' will be a lower-rank approximation of A, and there will be some loss of information. The amount of information loss depends on how many singular values we truncate and how important those singular values are to the overall structure of the data. Therefore, if we use all the singular values in SVD and perform the matrix multiplication, we will get the original matrix without loss of information.
+
+## Reference
+* Luis Serrano youtube video on SVD
+
+
+
+
+
