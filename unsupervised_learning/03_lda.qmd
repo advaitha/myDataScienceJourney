@@ -1,11 +1,10 @@
 # Latent Dirichlet Allocation
 
-
-
 ## Blueprint for the LDA Machine
 * ![LDA Blueprint](/Images/lda_blue_print.png)
 * ![Probability of a document](/Images/lda_document_probability.png)
 * ![Probability of a document](/Images/probability_of_a_document_2.png)
+* ![LDA Blueprint with what they are doing](/Images/lda_blueprint_with_what_they_mean.png)
 
 
 ## Dirichlet Allocation
@@ -16,18 +15,36 @@
 * These two Dirichlet distributions are the parameters in the blueprint. We generate different documents by adjusting the points in these two distributions
 * ![Two Dirichlet distributions as knobs in the blueprint](/Images/lda_allocation.png)
 
+## How LDA works
+* ![LDA in action](/Images/lda_working.png)
+* We generate documents by assigning documents to topics and topics to words. The probability of generating the same article as training data will be very low.
+* ![Generating documents with assigning of topics for different documents and assigning topics to different words](/Images/generating_documents.png)
+* ![Comparing the probability of the document generated with the ground-truth](/Images/doc_generation_prob_comparision.png)
+
+## Training LDA
+* The number of topcis is a hyperparameter
+* ![Try to assign topics to documents and topics to words in such a way that they are as monochromatic (belong to a single category) as possible](/Images/words_articles_lda.png)
 
 
+### Gibbs Sampling
+* Gibbs Sampling in the context of LDA is trying to tag the words in the document to be monochromatic (belonging to a single category) and trying to tag the document to be monochromatic
+* ![Gibbs Sampling](/Images/gibbs_sampling.png)
+* ![Ensuring we are considering all the topics are considered in Gibbs sampling](/Images/gibbs_sampling_2.png)
+* ![Assigning to topics to documents based on assigning topics to words](/Images/assigning_topics_to_documents.png)
+* Maximizing the probability of the LDA equation is very difficult. Hence we use Gibbs sampling
+  
+
+### Gibbs sampling explained by chatgpt
+* Gibbs sampling is a statistical algorithm used to generate samples from a probability distribution that might be too complex to calculate directly. It is often used in Bayesian inference, where the goal is to estimate the unknown parameters of a model given some observed data.
+
+* The idea behind Gibbs sampling is to iteratively sample from the conditional distributions of each variable in the model, while holding all other variables fixed. This means that we generate a sample for one variable at a time, based on the values of the other variables in the model.
+
+* The process starts with some initial values for all the variables in the model. Then, for each iteration of the algorithm, we randomly select one of the variables and update its value based on the values of the other variables in the model. We keep doing this for all the variables until we have generated enough samples.
 
 
-
-
-
-
-
-
-
-
+## Exploring Further
+* How the length of the document is treated by LDA
 
 ## Reference
 * [Youtube video on LDA by Luis Serrano](https://www.youtube.com/watch?v=T05t-SqKArY)
+* [Part_2 of the youtube video](https://www.youtube.com/watch?v=BaM1uiCpj_E&list=PLs8w1Cdi-zvZGyT2Rt0ieA0G6xGUqn3Xw&index=6)

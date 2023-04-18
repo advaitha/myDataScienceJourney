@@ -202,6 +202,8 @@ website:
         - section: "**Unsupervised Learning**"
           conents:
           - unsupervised_learning/01_pca.qmd
+          - unsupervised_learning/02_svd.qmd
+          - unsupervised_learning/03_lda.qmd
         - section: "**Data Privacy**"
           contents: 
           - data_privacy/basic_privacy_approaches.qmd
