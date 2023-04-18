@@ -201,7 +201,7 @@ website:
           - data_quality/run_checkpoint.ipynb
         - section: "**Unsupervised Learning**"
           conents:
-          - 01_pca.qmd
+          - unsupervised_learning/01_pca.qmd
         - section: "**Data Privacy**"
           contents: 
           - data_privacy/basic_privacy_approaches.qmd
