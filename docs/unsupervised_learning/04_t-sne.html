@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – svd</title>
+<title>My Datascience Journey – t-sne</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,7 +59,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -491,10 +490,8 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../linear_algebra/07_svd.html" class="sidebar-item-text sidebar-link active">Singular Value Decomposition</a>
-  </div>
-</li>
+  linear_algebra/07_svd.qmd
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear_algebra/resources.html" class="sidebar-item-text sidebar-link">Linear Algebra Resources</a>
@@ -1220,48 +1217,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#singular-value-decomposition" id="toc-singular-value-decomposition" class="nav-link active" data-scroll-target="#singular-value-decomposition">Singular Value Decomposition</a>
-  <ul class="collapse">
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
-<section id="singular-value-decomposition" class="level1">
-<h1>Singular Value Decomposition</h1>
-<ul>
-<li>Any linear transformation in a 2D space can be achieved through three fundamental operations: rotation, scaling (or stretching), and another rotation. This is known as the “rotation-stretching-rotation” theorem, or the “Singular Value Decomposition” (SVD) theorem.</li>
-<li>More generally, in an n-dimensional space, a linear transformation can be decomposed into a sequence of at most n rotations, followed by a scaling transformation, and then another sequence of at most n rotations.</li>
-<li>In SVD, we try to reduce the dimensions of the data by transforming the non-singular matrix with higer rank into matrices of lower rank. (Thereby helping us to drop the redudant data)</li>
-<li>Specifically, we decompose the original matrix A into three matrices: U, Σ, and V, where U and V are orthogonal matrices, and Σ is a diagonal matrix of singular values. The singular values in Σ provide information about the importance of each dimension or feature in the original data, and they are sorted in decreasing order.</li>
-<li>By keeping only the top k singular values and their corresponding columns in U and V, we can reduce the dimensionality of the data to k dimensions. This is a form of matrix approximation, where we construct a lower-rank approximation of the original matrix that captures the most important information in the data.</li>
-<li>The lower-rank approximation consists of the product of the k leading columns of U, the k leading singular values in Σ, and the k leading rows of V. This approximation has lower rank than the original matrix, and it captures most of the variation in the data. By keeping only the top k singular values and vectors, we effectively reduce the dimensionality of the data from the original rank to k, while retaining most of the information.</li>
-<li>In SVD (Singular Value Decomposition), if we consider all the singular values and perform the matrix multiplication, we will get the original matrix without loss of information. The SVD decomposition of a matrix A is given by:<br>
-<span class="math inline">\(A = U \Sigma V^T\)</span><br>
-where U and V are orthogonal matrices, and Σ is a diagonal matrix with the singular values of A on its diagonal. The singular values are arranged in decreasing order.</li>
-<li>If we multiply U, Σ, and V^T back together, we obtain:<br>
-<span class="math inline">\(A' = U \Sigma V^T\)</span><br>
-which is the reconstructed matrix A’. If we use all the singular values in Σ, then A’ will be equal to A, and there will be no loss of information.</li>
-<li>However, if we use only a subset of the singular values (i.e., truncate Σ), then A’ will be a lower-rank approximation of A, and there will be some loss of information. The amount of information loss depends on how many singular values we truncate and how important those singular values are to the overall structure of the data. Therefore, if we use all the singular values in SVD and perform the matrix multiplication, we will get the original matrix without loss of information.</li>
-</ul>
-<section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
-<ul>
-<li>Luis Serrano youtube video on SVD</li>
-</ul>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
