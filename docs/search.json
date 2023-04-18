@@ -865,7 +865,7 @@
     "href": "unsupervised_learning/00_intro.html",
     "title": "My Datascience Journey",
     "section": "",
-    "text": "Dimensionality Reduction\nDimensionality reduction can be categorised as follows:- * unsupervised / supervised (PCA / LDA) * linear / non-linear (PCA / Kernel PCA) * parametric / non-parametric (PCA / MDS)"
+    "text": "Dimensionality Reduction\nDimensionality reduction can be categorised as follows:-\n* unsupervised / supervised (PCA / LDA)\n* linear / non-linear (PCA / Kernel PCA)\n* parametric / non-parametric (PCA / MDS)"
   },
   {
     "objectID": "unsupervised_learning/02_svd.html",
@@ -880,5 +880,19 @@
     "title": "My Datascience Journey",
     "section": "",
     "text": "LDA Blueprint\n\n\n\n\n\nProbability of a document\n\n\n\n\n\nProbability of a document\n\n\n\n\n\nLDA Blueprint with what they are doing\n\n\n\n\n\n\n\nIn this distribution we have a parameter `alpha’. Depending on the values of alpha we will get different distributions.\n\n\n\nDirichlet distributions based on alpha values\n\n\nwe consider two Dirichlet distributions - One which will associate document with topics and the other topics with words\n\n\n\nTwo Dirichlet distributions\n\n\nThese two Dirichlet distributions are the parameters in the blueprint. We generate different documents by adjusting the points in these two distributions\n\n\n\nTwo Dirichlet distributions as knobs in the blueprint\n\n\n\n\n\n\n\n\n\n\nLDA in action\n\n\nWe generate documents by assigning documents to topics and topics to words. The probability of generating the same article as training data will be very low.\n\n\n\nGenerating documents with assigning of topics for different documents and assigning topics to different words\n\n\n\n\n\nComparing the probability of the document generated with the ground-truth\n\n\n\n\n\n\n\nThe number of topcis is a hyperparameter\n\n\n\n\n\nGibbs Sampling in the context of LDA is trying to tag the words in the document to be monochromatic (belonging to a single category) and trying to tag the document to be monochromatic\n\n\n\nGibbs Sampling\n\n\n\n\n\nEnsuring we are considering all the topics are considered in Gibbs sampling\n\n\n\n\n\nAssigning to topics to documents based on assigning topics to words\n\n\nMaximizing the probability of the LDA equation is very difficult. Hence we use Gibbs sampling\n\n\n\n\n\nGibbs sampling is a statistical algorithm used to generate samples from a probability distribution that might be too complex to calculate directly. It is often used in Bayesian inference, where the goal is to estimate the unknown parameters of a model given some observed data.\nThe idea behind Gibbs sampling is to iteratively sample from the conditional distributions of each variable in the model, while holding all other variables fixed. This means that we generate a sample for one variable at a time, based on the values of the other variables in the model.\nThe process starts with some initial values for all the variables in the model. Then, for each iteration of the algorithm, we randomly select one of the variables and update its value based on the values of the other variables in the model. We keep doing this for all the variables until we have generated enough samples.\n\n\n\n\n\n\nHow the length of the document is treated by LDA\n\n\n\n\n\nYoutube video on LDA by Luis Serrano\nPart_2 of the youtube video"
+  },
+  {
+    "objectID": "unsupervised_learning/04_mds.html",
+    "href": "unsupervised_learning/04_mds.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "This is a non-parametric method\nArrange the points in 2D such that the pairwise distance between them are preserved\n\nThe loss function for MDS is reducing the original distance between two points in the dataset and the distance between points after arranging the points in 2D\n\n\n\nMDS Loss function\n\n\nIt is difficult to MDS for large datasets as it considers pairwise distances between all points. (Quadratic complexity for memory)\nIt is hard to scale MDS for large datasets\n\n\n\n\nTrying to preserve distances in high-dimensions in low dimensions is not a good idea (curse of dimensionality)\nAs the number of dimensions increases, the mean of the pairwise distances will also increase and we will not find pairwise distances which are closer to zero\nFor example, in the below image we are trying to fit the data with green distribution to blue distribution (which is difficult)\n\n\n\n\n\n\nTubingen ML Course"
+  },
+  {
+    "objectID": "unsupervised_learning/05_t-sne.html",
+    "href": "unsupervised_learning/05_t-sne.html",
+    "title": "My Datascience Journey",
+    "section": "",
+    "text": "Neighbour Embeddings - Preserve the nearest neighbours instead of preserving distances\n\n\n\n\nLoss function is KL divergence between pairwise similarities in the high-dimensional and in the low-dimensional spaces. Similarities are defined such that they sum to 1\n\n\\(C = ∑i=1n ∑j≠i^n pij log (pij/qij)\\)"
   }
 ]

@@ -1,0 +1,18 @@
+# Multi Dimensional Scaling
+* This is a non-parametric method
+*  Arrange the points in 2D such that the pairwise distance between them are preserved  
+* The loss function for MDS is reducing the original distance between two points in the dataset and the distance between points after arranging the points in 2D
+* ![MDS Loss function](/Images/loss_function_lds.png)
+* It is difficult to MDS for large datasets as it considers pairwise distances between all points. (Quadratic complexity for memory)
+* It is hard to scale MDS for large datasets
+
+## Why MDS does not perform well
+* <span id="highlighted-line">Trying to preserve distances in high-dimensions in low dimensions is not a good idea (curse of dimensionality)</span>
+* As the number of dimensions increases, the mean of the pairwise distances will also increase and we will not find pairwise distances which are closer to zero
+* For example, in the below image we are trying to fit the data with green distribution to blue distribution (which is difficult)
+* ![Pairwise Distances between points in a standard Gaussian](/Images/mds_pairwise_distances.png)
+  
+
+## References
+* [Tubingen ML Course](https://www.youtube.com/watch?v=MnRskV3NY1k)
+

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – intro</title>
+<title>My Datascience Journey – t-sne</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -1009,7 +1010,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unsupervised_learning/00_intro.html" class="sidebar-item-text sidebar-link active">Dimensionality Reduction</a>
+  <a href="../unsupervised_learning/00_intro.html" class="sidebar-item-text sidebar-link">Dimensionality Reduction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1248,7 +1249,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link active" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
+  <li><a href="#t-sne-stochastic-neighbour-embedding" id="toc-t-sne-stochastic-neighbour-embedding" class="nav-link active" data-scroll-target="#t-sne-stochastic-neighbour-embedding">T-SNE (Stochastic Neighbour Embedding)</a>
+  <ul class="collapse">
+  <li><a href="#stochastic-neighbour-embedding" id="toc-stochastic-neighbour-embedding" class="nav-link" data-scroll-target="#stochastic-neighbour-embedding">Stochastic Neighbour Embedding</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1257,14 +1261,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="dimensionality-reduction" class="level1">
-<h1>Dimensionality Reduction</h1>
-<p>Dimensionality reduction can be categorised as follows:-<br>
-* unsupervised / supervised (PCA / LDA)<br>
-* linear / non-linear (PCA / Kernel PCA)<br>
-* parametric / non-parametric (PCA / MDS)</p>
+<section id="t-sne-stochastic-neighbour-embedding" class="level1">
+<h1>T-SNE (Stochastic Neighbour Embedding)</h1>
+<ul>
+<li><code>Neighbour Embeddings</code> - Preserve the nearest neighbours instead of preserving distances</li>
+</ul>
+<section id="stochastic-neighbour-embedding" class="level2">
+<h2 class="anchored" data-anchor-id="stochastic-neighbour-embedding">Stochastic Neighbour Embedding</h2>
+<ul>
+<li>Loss function is KL divergence between pairwise similarities in the high-dimensional and in the low-dimensional spaces. Similarities are defined such that they sum to 1</li>
+</ul>
+<p><span class="math inline">\(C = ∑i=1n ∑j≠i^n pij log (pij/qij)\)</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – intro</title>
+<title>My Datascience Journey – mds</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1009,7 +1009,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-22" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unsupervised_learning/00_intro.html" class="sidebar-item-text sidebar-link active">Dimensionality Reduction</a>
+  <a href="../unsupervised_learning/00_intro.html" class="sidebar-item-text sidebar-link">Dimensionality Reduction</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1248,7 +1248,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link active" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
+  <li><a href="#multi-dimensional-scaling" id="toc-multi-dimensional-scaling" class="nav-link active" data-scroll-target="#multi-dimensional-scaling">Multi Dimensional Scaling</a>
+  <ul class="collapse">
+  <li><a href="#why-mds-does-not-perform-well" id="toc-why-mds-does-not-perform-well" class="nav-link" data-scroll-target="#why-mds-does-not-perform-well">Why MDS does not perform well</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1257,14 +1261,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="dimensionality-reduction" class="level1">
-<h1>Dimensionality Reduction</h1>
-<p>Dimensionality reduction can be categorised as follows:-<br>
-* unsupervised / supervised (PCA / LDA)<br>
-* linear / non-linear (PCA / Kernel PCA)<br>
-* parametric / non-parametric (PCA / MDS)</p>
+<section id="multi-dimensional-scaling" class="level1">
+<h1>Multi Dimensional Scaling</h1>
+<ul>
+<li><p>This is a non-parametric method</p></li>
+<li><p>Arrange the points in 2D such that the pairwise distance between them are preserved<br>
+</p></li>
+<li><p>The loss function for MDS is reducing the original distance between two points in the dataset and the distance between points after arranging the points in 2D</p></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/loss_function_lds.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">MDS Loss function</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>It is difficult to MDS for large datasets as it considers pairwise distances between all points. (Quadratic complexity for memory)</p></li>
+<li><p>It is hard to scale MDS for large datasets</p></li>
+</ul>
+<section id="why-mds-does-not-perform-well" class="level2">
+<h2 class="anchored" data-anchor-id="why-mds-does-not-perform-well">Why MDS does not perform well</h2>
+<ul>
+<li><span id="highlighted-line">Trying to preserve distances in high-dimensions in low dimensions is not a good idea (curse of dimensionality)</span></li>
+<li>As the number of dimensions increases, the mean of the pairwise distances will also increase and we will not find pairwise distances which are closer to zero</li>
+<li>For example, in the below image we are trying to fit the data with green distribution to blue distribution (which is difficult)</li>
+<li><img src="../Images/mds_pairwise_distances.png" title="fig:" class="img-fluid" alt="Pairwise Distances between points in a standard Gaussian"></li>
+</ul>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=MnRskV3NY1k">Tubingen ML Course</a></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

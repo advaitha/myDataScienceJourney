@@ -204,7 +204,9 @@ website:
           - unsupervised_learning/00_intro.qmd
           - unsupervised_learning/01_pca.qmd
           - unsupervised_learning/02_svd.qmd
-          - unsupervised_learning/03_lda.qmd        
+          - unsupervised_learning/03_lda.qmd    
+          - unsupervised_learning/04_mds.qmd
+          - unsupervised_learning/05_t-sne.qmd    
         - section: "**Data Privacy**"
           contents: 
           - data_privacy/basic_privacy_approaches.qmd
