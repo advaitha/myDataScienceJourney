@@ -1,1 +1,33 @@
 # Latent Dirichlet Allocation
+
+
+
+## Blueprint for the LDA Machine
+* ![LDA Blueprint](/Images/lda_blue_print.png)
+* ![Probability of a document](/Images/lda_document_probability.png)
+* ![Probability of a document](/Images/probability_of_a_document_2.png)
+
+
+## Dirichlet Allocation
+* In this distribution we have a parameter `alpha'. Depending on the values of alpha we will get different distributions.
+* ![Dirichlet distributions based on alpha values](/Images/different_dirichlet_distributions.png)
+* we consider two Dirichlet distributions - One which will associate document with topics and the other topics with words
+* ![Two Dirichlet distributions](/Images/two_ditrichlet_dist.png)
+* These two Dirichlet distributions are the parameters in the blueprint. We generate different documents by adjusting the points in these two distributions
+* ![Two Dirichlet distributions as knobs in the blueprint](/Images/lda_allocation.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Reference
+* [Youtube video on LDA by Luis Serrano](https://www.youtube.com/watch?v=T05t-SqKArY)
