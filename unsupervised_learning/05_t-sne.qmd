@@ -7,6 +7,8 @@
 * High price for putting close neighbors in high dimensions far away  
 * If the distance between points high then their similarity is less and vice versa  
 * ![SNE Formula](/Images/sne_formula.png)  
+
+### Chatgpt explanation of SNE formula
 * ![Formula Explanation by Chatgpt](/Images/sne_chatgpt_exp.png)  
 
 ### Calculating High-dimensional Similarity

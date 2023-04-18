@@ -59,7 +59,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -1028,6 +1027,16 @@ ul.task-list li input[type="checkbox"] {
   <a href="../unsupervised_learning/03_lda.html" class="sidebar-item-text sidebar-link">Latent Dirichlet Allocation</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unsupervised_learning/04_mds.html" class="sidebar-item-text sidebar-link">Multi Dimensional Scaling</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../unsupervised_learning/05_t-sne.html" class="sidebar-item-text sidebar-link active">T-SNE (T distributed - Stochastic Neighbour Embedding)</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -1249,9 +1258,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#t-sne-stochastic-neighbour-embedding" id="toc-t-sne-stochastic-neighbour-embedding" class="nav-link active" data-scroll-target="#t-sne-stochastic-neighbour-embedding">T-SNE (Stochastic Neighbour Embedding)</a>
+  <li><a href="#t-sne-t-distributed---stochastic-neighbour-embedding" id="toc-t-sne-t-distributed---stochastic-neighbour-embedding" class="nav-link active" data-scroll-target="#t-sne-t-distributed---stochastic-neighbour-embedding">T-SNE (T distributed - Stochastic Neighbour Embedding)</a>
   <ul class="collapse">
-  <li><a href="#stochastic-neighbour-embedding" id="toc-stochastic-neighbour-embedding" class="nav-link" data-scroll-target="#stochastic-neighbour-embedding">Stochastic Neighbour Embedding</a></li>
+  <li><a href="#stochastic-neighbour-embedding" id="toc-stochastic-neighbour-embedding" class="nav-link" data-scroll-target="#stochastic-neighbour-embedding">Stochastic Neighbour Embedding</a>
+  <ul class="collapse">
+  <li><a href="#calculating-high-dimensional-similarity" id="toc-calculating-high-dimensional-similarity" class="nav-link" data-scroll-target="#calculating-high-dimensional-similarity">Calculating High-dimensional Similarity</a></li>
+  <li><a href="#calculating-low-dimensional-similarity" id="toc-calculating-low-dimensional-similarity" class="nav-link" data-scroll-target="#calculating-low-dimensional-similarity">Calculating low-dimensional Similarity</a></li>
+  </ul></li>
+  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a></li>
+  <li><a href="#early-exaggeration" id="toc-early-exaggeration" class="nav-link" data-scroll-target="#early-exaggeration">Early exaggeration</a></li>
+  <li><a href="#speeding-up-t-sne" id="toc-speeding-up-t-sne" class="nav-link" data-scroll-target="#speeding-up-t-sne">Speeding up T-SNE</a>
+  <ul class="collapse">
+  <li><a href="#attractive-forces" id="toc-attractive-forces" class="nav-link" data-scroll-target="#attractive-forces">Attractive Forces</a></li>
+  <li><a href="#repulsive-forces" id="toc-repulsive-forces" class="nav-link" data-scroll-target="#repulsive-forces">Repulsive forces</a></li>
+  </ul></li>
+  <li><a href="#hyperparameters-of-t-sne" id="toc-hyperparameters-of-t-sne" class="nav-link" data-scroll-target="#hyperparameters-of-t-sne">Hyperparameters of t-SNE</a>
+  <ul class="collapse">
+  <li><a href="#perplexity" id="toc-perplexity" class="nav-link" data-scroll-target="#perplexity">Perplexity</a></li>
+  <li><a href="#kernal" id="toc-kernal" class="nav-link" data-scroll-target="#kernal">Kernal</a></li>
+  <li><a href="#role-of-initialization" id="toc-role-of-initialization" class="nav-link" data-scroll-target="#role-of-initialization">Role of initialization</a></li>
+  <li><a href="#exaggeration" id="toc-exaggeration" class="nav-link" data-scroll-target="#exaggeration">Exaggeration</a></li>
+  </ul></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1261,17 +1289,133 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="t-sne-stochastic-neighbour-embedding" class="level1">
-<h1>T-SNE (Stochastic Neighbour Embedding)</h1>
+<section id="t-sne-t-distributed---stochastic-neighbour-embedding" class="level1">
+<h1>T-SNE (T distributed - Stochastic Neighbour Embedding)</h1>
 <ul>
 <li><code>Neighbour Embeddings</code> - Preserve the nearest neighbours instead of preserving distances</li>
 </ul>
 <section id="stochastic-neighbour-embedding" class="level2">
 <h2 class="anchored" data-anchor-id="stochastic-neighbour-embedding">Stochastic Neighbour Embedding</h2>
 <ul>
-<li>Loss function is KL divergence between pairwise similarities in the high-dimensional and in the low-dimensional spaces. Similarities are defined such that they sum to 1</li>
+<li>Loss function is KL divergence between pairwise similarities in the high-dimensional and in the low-dimensional spaces. Similarities are defined such that they sum to 1<br>
+</li>
+<li>High price for putting close neighbors in high dimensions far away<br>
+</li>
+<li>If the distance between points high then their similarity is less and vice versa<br>
+</li>
+<li><img src="../Images/sne_formula.png" class="img-fluid" alt="SNE Formula"><br>
+</li>
+<li><img src="../Images/sne_chatgpt_exp.png" title="fig:" class="img-fluid" alt="Formula Explanation by Chatgpt"></li>
 </ul>
-<p><span class="math inline">\(C = ∑i=1n ∑j≠i^n pij log (pij/qij)\)</span></p>
+<section id="calculating-high-dimensional-similarity" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-high-dimensional-similarity">Calculating High-dimensional Similarity</h3>
+<ul>
+<li><img src="../Images/high_dimensional_similarity.png" class="img-fluid" alt="High-dimensional Similarity"><br>
+</li>
+<li>Kernel width by default is chosen such that 30 values are large and others should be zero (perplexity - 30)</li>
+</ul>
+</section>
+<section id="calculating-low-dimensional-similarity" class="level3">
+<h3 class="anchored" data-anchor-id="calculating-low-dimensional-similarity">Calculating low-dimensional Similarity</h3>
+<ul>
+<li><img src="../Images/low_dim_similarity.png" title="fig:" class="img-fluid" alt="Low-dimensional Similarity"></li>
+</ul>
+</section>
+</section>
+<section id="optimization" class="level2">
+<h2 class="anchored" data-anchor-id="optimization">Optimization</h2>
+<ul>
+<li>we can use Gradient Descent for optimizing the loss</li>
+<li><code>This works as a many body simulation: close neighbors attract each other while all points repulse each other</code><br>
+</li>
+<li><img src="../Images/t-sne_gradient_descent.png" title="fig:" class="img-fluid" alt="Gradient Descent"></li>
+</ul>
+</section>
+<section id="early-exaggeration" class="level2">
+<h2 class="anchored" data-anchor-id="early-exaggeration">Early exaggeration</h2>
+<ul>
+<li>During the early stages of iteration to keep the similar points together, the attractive forces between nearby points are amplified, making them more dominant than the repulsive forces between distant points. (if this is not done, then it was observed that the quality of the output is not good)</li>
+<li>After a few steps, early exaggeration is turned off, then repulsion will expand the clusters</li>
+</ul>
+</section>
+<section id="speeding-up-t-sne" class="level2">
+<h2 class="anchored" data-anchor-id="speeding-up-t-sne">Speeding up T-SNE</h2>
+<ul>
+<li>Vanilla T-SNE is quadratic complexity</li>
+<li>To speed up we need to take care of Attractive and repulsive forces</li>
+</ul>
+<section id="attractive-forces" class="level3">
+<h3 class="anchored" data-anchor-id="attractive-forces">Attractive Forces</h3>
+<ul>
+<li>Use a small number of non-zero affinities i.e.&nbsp;sparse k-nearest neighbour (KNN) graph.</li>
+<li>Using approximate KNN</li>
+</ul>
+</section>
+<section id="repulsive-forces" class="level3">
+<h3 class="anchored" data-anchor-id="repulsive-forces">Repulsive forces</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/barnes_hut.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">We replace a grid of points by its representative point</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>Using approximate repulsive forces</p></li>
+<li><p>Barnes-Hut t-SNE O(nlog(n))</p></li>
+<li><p>FFT-accelerated interpolation based t-SNE - O(n)</p></li>
+<li><p>Noise contrastive estimation / negative sampling - O(n)</p></li>
+</ul>
+</section>
+</section>
+<section id="hyperparameters-of-t-sne" class="level2">
+<h2 class="anchored" data-anchor-id="hyperparameters-of-t-sne">Hyperparameters of t-SNE</h2>
+<section id="perplexity" class="level3">
+<h3 class="anchored" data-anchor-id="perplexity">Perplexity</h3>
+<ul>
+<li><p><code>Perplexity</code> is the ‘effective’ number of neighbors considered for similarity. Default is 30</p></li>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/perplexity.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">t-SNE with different perplexities</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>Much smaller values of perplexity is not useful</p></li>
+<li><p>Much larger values are computationally prohibitive</p></li>
+</ul>
+</section>
+<section id="kernal" class="level3">
+<h3 class="anchored" data-anchor-id="kernal">Kernal</h3>
+<ul>
+<li>Kernel - Heavy tailed kernel provide more fain grained cluster results</li>
+<li>t-SNE uses Cauchy kernel (distribution with heavier tails)</li>
+</ul>
+</section>
+<section id="role-of-initialization" class="level3">
+<h3 class="anchored" data-anchor-id="role-of-initialization">Role of initialization</h3>
+<ul>
+<li>t-SNE preserves local structure (neighbours) but often struggle to preserve global structure. The loss function has many local minima and intialization can play a large role</li>
+<li>We can use PCA as initialization for t-SNE</li>
+</ul>
+</section>
+<section id="exaggeration" class="level3">
+<h3 class="anchored" data-anchor-id="exaggeration">Exaggeration</h3>
+<ul>
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../Images/attraction_repulsion_spectrum.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Attraction-repulsion spectrum</figcaption><p></p>
+</figure>
+</div></li>
+<li><p>If the Exaggeration is very high then the white space between clusters is reduced</p></li>
+<li><p>If the Exaggeration is not there then the points in a cluster will end up in different places due to repulsion</p></li>
+</ul>
+</section>
+</section>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=MnRskV3NY1k">youtube video</a></li>
+</ul>
 
 
 </section>
