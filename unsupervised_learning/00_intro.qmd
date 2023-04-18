@@ -1,0 +1,7 @@
+# Dimensionality Reduction
+
+Dimensionality reduction can be categorised as follows:-
+* unsupervised / supervised (PCA / LDA)
+* linear / non-linear (PCA / Kernel PCA)
+* parametric / non-parametric (PCA / MDS)
+
