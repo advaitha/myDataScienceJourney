@@ -1,0 +1,16 @@
+# PCA
+* If the data is correlated then we can use that information to compress the data
+* 
+
+
+
+
+
+
+
+
+
+
+
+## References
+* [Understanding PCA](https://tivadardanka.com/blog/understanding-pca)
