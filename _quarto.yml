@@ -199,7 +199,7 @@ website:
           - data_quality/setup_datasource.ipynb
           - data_quality/generate_expectation.ipynb
           - data_quality/run_checkpoint.ipynb
-        - section: "**Unsupervised Learning**"
+        - section: "**Unsupervised ML**"
           conents:
           - unsupervised_learning/01_pca.qmd
           - unsupervised_learning/02_svd.qmd
