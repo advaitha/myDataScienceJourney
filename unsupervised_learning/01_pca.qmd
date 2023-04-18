@@ -1,0 +1,20 @@
+# PCA
+
+## My understanding of PCA
+* Calcualate the covariance matrix. Covariance matrix will have variance of the features along the diagonal. Other positions will consist of covariance between a pair of features. The resulting covariance matrix will be symmetrical.
+* We need to find the eigenvectors and eigenvalues for the covariance matrix. 
+* Eigenvectors are those vectors whose direction will remain the same after linear transformation. (When we multiply a vector with covariance matrix, the direction of the vector should remain the same)
+* Because the covariance matrix is symmetrical, the resulting vectors will be orthogonal to each other. 
+* Eigenvalues are the strech factors for the eigenvectors. The higher the strech factor, the greater their importance in dimension reduction.
+* The goal of PCA is to find a new set of orthogonal variables that capture the maximum variation in the data and then reduce the dimensionality of the data using these principal components.
+* The rank of the original data matrix and the rank of the transformed matrix may not be the same. The rank of the transformed matrix is equal to the number of non-zero eigenvalues. PCA does not change the rank of the original data matrix, but it does reduce the dimensionality by keeping only the most important principal components that capture the maximum variance in the data.
+
+
+## Important Points
+* If the data is correlated then we can use that information to compress the data. Correlated features imply the presence of redundant information. Having redundant information is suboptimal
+* Reshape the data where variables are uncorrelated and ordered according to importance will be more expressive 
+* Principal components maximize variance. PCA can be thought of as an iterative process that finds directions along which the variance of projected data is maximal.
+  
+
+## References
+* [Understanding PCA](https://tivadardanka.com/blog/understanding-pca)
