@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – t-sne</title>
+<title>My Datascience Journey – spark_installation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -1034,7 +1097,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../unsupervised_learning/05_t-sne.html" class="sidebar-item-text sidebar-link active">T-SNE (T distributed - Stochastic Neighbour Embedding)</a>
+  <a href="../unsupervised_learning/05_t-sne.html" class="sidebar-item-text sidebar-link">T-SNE (T distributed - Stochastic Neighbour Embedding)</a>
   </div>
 </li>
       </ul>
@@ -1258,29 +1321,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#t-sne-t-distributed---stochastic-neighbour-embedding" id="toc-t-sne-t-distributed---stochastic-neighbour-embedding" class="nav-link active" data-scroll-target="#t-sne-t-distributed---stochastic-neighbour-embedding">T-SNE (T distributed - Stochastic Neighbour Embedding)</a>
+  <li><a href="#installing-spark" id="toc-installing-spark" class="nav-link active" data-scroll-target="#installing-spark">Installing Spark</a>
   <ul class="collapse">
-  <li><a href="#stochastic-neighbour-embedding" id="toc-stochastic-neighbour-embedding" class="nav-link" data-scroll-target="#stochastic-neighbour-embedding">Stochastic Neighbour Embedding</a>
+  <li><a href="#downloading-apache-spark" id="toc-downloading-apache-spark" class="nav-link" data-scroll-target="#downloading-apache-spark">Downloading Apache Spark</a>
   <ul class="collapse">
-  <li><a href="#chatgpt-explanation-of-sne-formula" id="toc-chatgpt-explanation-of-sne-formula" class="nav-link" data-scroll-target="#chatgpt-explanation-of-sne-formula">Chatgpt explanation of SNE formula</a></li>
-  <li><a href="#calculating-high-dimensional-similarity" id="toc-calculating-high-dimensional-similarity" class="nav-link" data-scroll-target="#calculating-high-dimensional-similarity">Calculating High-dimensional Similarity</a></li>
-  <li><a href="#calculating-low-dimensional-similarity" id="toc-calculating-low-dimensional-similarity" class="nav-link" data-scroll-target="#calculating-low-dimensional-similarity">Calculating low-dimensional Similarity</a></li>
+  <li><a href="#steps-for-installing-java-and-setting-java_home" id="toc-steps-for-installing-java-and-setting-java_home" class="nav-link" data-scroll-target="#steps-for-installing-java-and-setting-java_home">Steps for Installing Java and Setting JAVA_HOME</a></li>
+  <li><a href="#steps-for-setting-up-spark" id="toc-steps-for-setting-up-spark" class="nav-link" data-scroll-target="#steps-for-setting-up-spark">Steps for setting up Spark</a></li>
   </ul></li>
-  <li><a href="#optimization" id="toc-optimization" class="nav-link" data-scroll-target="#optimization">Optimization</a></li>
-  <li><a href="#early-exaggeration" id="toc-early-exaggeration" class="nav-link" data-scroll-target="#early-exaggeration">Early exaggeration</a></li>
-  <li><a href="#speeding-up-t-sne" id="toc-speeding-up-t-sne" class="nav-link" data-scroll-target="#speeding-up-t-sne">Speeding up T-SNE</a>
-  <ul class="collapse">
-  <li><a href="#attractive-forces" id="toc-attractive-forces" class="nav-link" data-scroll-target="#attractive-forces">Attractive Forces</a></li>
-  <li><a href="#repulsive-forces" id="toc-repulsive-forces" class="nav-link" data-scroll-target="#repulsive-forces">Repulsive forces</a></li>
-  </ul></li>
-  <li><a href="#hyperparameters-of-t-sne" id="toc-hyperparameters-of-t-sne" class="nav-link" data-scroll-target="#hyperparameters-of-t-sne">Hyperparameters of t-SNE</a>
-  <ul class="collapse">
-  <li><a href="#perplexity" id="toc-perplexity" class="nav-link" data-scroll-target="#perplexity">Perplexity</a></li>
-  <li><a href="#kernal" id="toc-kernal" class="nav-link" data-scroll-target="#kernal">Kernal</a></li>
-  <li><a href="#role-of-initialization" id="toc-role-of-initialization" class="nav-link" data-scroll-target="#role-of-initialization">Role of initialization</a></li>
-  <li><a href="#exaggeration" id="toc-exaggeration" class="nav-link" data-scroll-target="#exaggeration">Exaggeration</a></li>
-  </ul></li>
-  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1290,139 +1337,102 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="t-sne-t-distributed---stochastic-neighbour-embedding" class="level1">
-<h1>T-SNE (T distributed - Stochastic Neighbour Embedding)</h1>
+<section id="installing-spark" class="level1">
+<h1>Installing Spark</h1>
+<p>We will install spark in local mode, where all the processing is done on a single machine.<br>
+This is useful for quick iterative development.<br>
+Spark shell supports scala, Python and R.</p>
+<p><code>If you want to only install pyspark and not other dependencies, then you can use install pyspark using pip.</code></p>
+<section id="downloading-apache-spark" class="level2">
+<h2 class="anchored" data-anchor-id="downloading-apache-spark">Downloading Apache Spark</h2>
 <ul>
-<li><code>Neighbour Embeddings</code> - Preserve the nearest neighbours instead of preserving distances</li>
-</ul>
-<section id="stochastic-neighbour-embedding" class="level2">
-<h2 class="anchored" data-anchor-id="stochastic-neighbour-embedding">Stochastic Neighbour Embedding</h2>
-<ul>
-<li>Loss function is KL divergence between pairwise similarities in the high-dimensional and in the low-dimensional spaces. Similarities are defined such that they sum to 1<br>
+<li><a href="https://learning.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch02.html">Spark Download Page</a><br>
 </li>
-<li>High price for putting close neighbors in high dimensions far away<br>
+<li>Select “Pre-built for Apache Hadoop 3.3 and later”<br>
 </li>
-<li>If the distance between points high then their similarity is less and vice versa<br>
+<li>Download Spark<br>
+<img src="../Images/installing_spark.png" class="img-fluid" alt="Downloading Spark"><br>
 </li>
-<li><img src="../Images/sne_formula.png" title="fig:" class="img-fluid" alt="SNE Formula"></li>
-</ul>
-<section id="chatgpt-explanation-of-sne-formula" class="level3">
-<h3 class="anchored" data-anchor-id="chatgpt-explanation-of-sne-formula">Chatgpt explanation of SNE formula</h3>
-<ul>
-<li><img src="../Images/sne_chatgpt_exp.png" title="fig:" class="img-fluid" alt="Formula Explanation by Chatgpt"></li>
-</ul>
-</section>
-<section id="calculating-high-dimensional-similarity" class="level3">
-<h3 class="anchored" data-anchor-id="calculating-high-dimensional-similarity">Calculating High-dimensional Similarity</h3>
-<ul>
-<li><img src="../Images/high_dimensional_similarity.png" class="img-fluid" alt="High-dimensional Similarity"><br>
+<li>Java 8 or above needs to be installed on your machine<br>
 </li>
-<li>Kernel width by default is chosen such that 30 values are large and others should be zero (perplexity - 30)</li>
-</ul>
-</section>
-<section id="calculating-low-dimensional-similarity" class="level3">
-<h3 class="anchored" data-anchor-id="calculating-low-dimensional-similarity">Calculating low-dimensional Similarity</h3>
-<ul>
-<li><img src="../Images/low_dim_similarity.png" title="fig:" class="img-fluid" alt="Low-dimensional Similarity"></li>
-</ul>
-</section>
-</section>
-<section id="optimization" class="level2">
-<h2 class="anchored" data-anchor-id="optimization">Optimization</h2>
-<ul>
-<li>we can use Gradient Descent for optimizing the loss</li>
-<li><code>This works as a many body simulation: close neighbors attract each other while all points repulse each other</code><br>
+<li><a href="https://www.oracle.com/java/technologies/downloads/#java11">Java Download Link</a><br>
 </li>
-<li><img src="../Images/t-sne_gradient_descent.png" title="fig:" class="img-fluid" alt="Gradient Descent"></li>
+<li>Download <code>bin.tar.gz</code> file<br>
+</li>
+<li>Set the <code>JAVA_HOME</code> environment variable</li>
 </ul>
-</section>
-<section id="early-exaggeration" class="level2">
-<h2 class="anchored" data-anchor-id="early-exaggeration">Early exaggeration</h2>
+<section id="steps-for-installing-java-and-setting-java_home" class="level3">
+<h3 class="anchored" data-anchor-id="steps-for-installing-java-and-setting-java_home">Steps for Installing Java and Setting JAVA_HOME</h3>
 <ul>
-<li>During the early stages of iteration to keep the similar points together, the attractive forces between nearby points are amplified, making them more dominant than the repulsive forces between distant points. (if this is not done, then it was observed that the quality of the output is not good)</li>
-<li>After a few steps, early exaggeration is turned off, then repulsion will expand the clusters</li>
+<li>Create a directory where you want to Install Java</li>
+<li>CD to the directory</li>
+<li>Move the Java tar file downloaded to the directory created</li>
+<li>UNzip the files downloaded</li>
+<li>Remove the gz file if you want to save space</li>
+<li>Set the JAVA_HOME environment variable - Provide the path where Java files are stored</li>
+<li>Save the changes made to the bashrc file and the bash profile</li>
+<li>check if the JAVA_HOME<code>is set correctly by running</code>echo $JAVA_HOME` - This should return the path of the directory where Java files are stored</li>
 </ul>
-</section>
-<section id="speeding-up-t-sne" class="level2">
-<h2 class="anchored" data-anchor-id="speeding-up-t-sne">Speeding up T-SNE</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> /usr/java</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /usr/java</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> /home/thulasiram/Downloads/jdk-11.0.19_linux-aarch64_bin.tar.gz .</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> zxvf jdk-11.0.19_linux-aarch64_bin.tar.gz </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> jdk-11.0.19_linux-aarch64_bin.tar.gz</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">JAVA_HOME</span><span class="op">=</span><span class="st">'/usr/java/jdk-11.0.19'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$JAVA_HOME</span>/bin:<span class="va">$PATH</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Vanilla T-SNE is quadratic complexity</li>
-<li>To speed up we need to take care of Attractive and repulsive forces</li>
+<li><a href="https://www.java.com/en/download/help/linux_x64_install.html#download">Instructions to download and Install Java</a></li>
 </ul>
-<section id="attractive-forces" class="level3">
-<h3 class="anchored" data-anchor-id="attractive-forces">Attractive Forces</h3>
+</section>
+<section id="steps-for-setting-up-spark" class="level3">
+<h3 class="anchored" data-anchor-id="steps-for-setting-up-spark">Steps for setting up Spark</h3>
 <ul>
-<li>Use a small number of non-zero affinities i.e.&nbsp;sparse k-nearest neighbour (KNN) graph.</li>
-<li>Using approximate KNN</li>
+<li>Extract the spark files downloaded</li>
+<li>CD to the extracted folder</li>
 </ul>
-</section>
-<section id="repulsive-forces" class="level3">
-<h3 class="anchored" data-anchor-id="repulsive-forces">Repulsive forces</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span>  Downloads/spark-3.4.0-bin-hadoop3.tgz</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> spark-3.4.0-bin-hadoop3</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="activate-pyspark-shell" class="level4">
+<h4 class="anchored" data-anchor-id="activate-pyspark-shell">Activate Pyspark Shell</h4>
 <ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/barnes_hut.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">We replace a grid of points by its representative point</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>Using approximate repulsive forces</p></li>
-<li><p>Barnes-Hut t-SNE O(nlog(n))</p></li>
-<li><p>FFT-accelerated interpolation based t-SNE - O(n)</p></li>
-<li><p>Noise contrastive estimation / negative sampling - O(n)</p></li>
+<li>To use pyspark shell create a python environment</li>
+<li>Activate the python environment</li>
+<li>Type <code>pyspark</code> at the command line to activate pyspark shell</li>
 </ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> spark_learn python==3.10</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate spark_learn</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyspark</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pyspark</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">spark.version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>strings <span class="op">=</span> spark.read.text(<span class="st">"../README.md"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>strings.show(<span class="dv">10</span>,truncate<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="hyperparameters-of-t-sne" class="level2">
-<h2 class="anchored" data-anchor-id="hyperparameters-of-t-sne">Hyperparameters of t-SNE</h2>
-<section id="perplexity" class="level3">
-<h3 class="anchored" data-anchor-id="perplexity">Perplexity</h3>
+<section id="activate-spark-shell" class="level4">
+<h4 class="anchored" data-anchor-id="activate-spark-shell">Activate spark-shell</h4>
 <ul>
-<li><p><code>Perplexity</code> is the ‘effective’ number of neighbors considered for similarity. Default is 30</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/perplexity.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">t-SNE with different perplexities</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>Much smaller values of perplexity is not useful</p></li>
-<li><p>Much larger values are computationally prohibitive</p></li>
+<li>To start a spark shell with Scala</li>
+<li>CD to the bin directory</li>
+<li>Type <code>spark-shell</code></li>
 </ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> bin</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spark-Shell</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">spark.version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="kernal" class="level3">
-<h3 class="anchored" data-anchor-id="kernal">Kernal</h3>
+<section id="activate-spark-sql" class="level4">
+<h4 class="anchored" data-anchor-id="activate-spark-sql">Activate spark-sql</h4>
 <ul>
-<li>Kernel - Heavy tailed kernel provide more fain grained cluster results</li>
-<li>t-SNE uses Cauchy kernel (distribution with heavier tails)</li>
+<li>To start a spark shell with SQL</li>
+<li>CD to the bin directory</li>
+<li>Type <code>spark-sql</code></li>
 </ul>
-</section>
-<section id="role-of-initialization" class="level3">
-<h3 class="anchored" data-anchor-id="role-of-initialization">Role of initialization</h3>
-<ul>
-<li>t-SNE preserves local structure (neighbours) but often struggle to preserve global structure. The loss function has many local minima and intialization can play a large role</li>
-<li>We can use PCA as initialization for t-SNE</li>
-</ul>
-</section>
-<section id="exaggeration" class="level3">
-<h3 class="anchored" data-anchor-id="exaggeration">Exaggeration</h3>
-<ul>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/attraction_repulsion_spectrum.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Attraction-repulsion spectrum</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>If the Exaggeration is very high then the white space between clusters is reduced</p></li>
-<li><p>If the Exaggeration is not there then the points in a cluster will end up in different places due to repulsion</p></li>
-</ul>
-</section>
-</section>
-<section id="reference" class="level2">
-<h2 class="anchored" data-anchor-id="reference">Reference</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=MnRskV3NY1k">youtube video</a></li>
-</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> bin </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spark-sql</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
+</section>
 </section>
 </section>
 

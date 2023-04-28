@@ -245,7 +245,10 @@ website:
           - system_design/scaling_to_million_users.qmd
         - section: "**probability**"      
           contents:
-          - probability/Probability.qmd       
+          - probability/Probability.qmd   
+        - section: "**pyspark**"
+          contents:
+          - pyspark/00_spark_installation.qmd    
         - section: "**Why Me**"
           contents:                 
           - about_me/why_me.qmd          

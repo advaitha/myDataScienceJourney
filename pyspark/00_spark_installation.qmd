@@ -1,0 +1,87 @@
+# Installing Spark
+We will install spark in local mode, where all the processing is done on a single machine.  
+This is useful for quick iterative development.  
+Spark shell supports scala, Python and R.  
+
+`If you want to only install pyspark and not other dependencies, then you can use install pyspark using pip.`
+
+## Downloading Apache Spark
+* [Spark Download Page](https://learning.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch02.html)  
+* Select "Pre-built for Apache Hadoop 3.3 and later"  
+* Download Spark  
+![Downloading Spark](/Images/installing_spark.png)  
+* Java 8 or above needs to be installed on your machine  
+* [Java Download Link](https://www.oracle.com/java/technologies/downloads/#java11)  
+* Download `bin.tar.gz` file  
+* Set the `JAVA_HOME` environment variable  
+
+### Steps for Installing Java and Setting JAVA_HOME
+* Create a directory where you want to Install Java
+* CD to the directory
+* Move the Java tar file downloaded to the directory created
+* UNzip the files downloaded
+* Remove the gz file if you want to save space
+* Set the JAVA_HOME environment variable - Provide the path where Java files are stored
+* Save the changes made to the bashrc file and the bash profile
+* check if the JAVA_HOME` is set correctly by running `echo $JAVA_HOME` - This should return the path of the directory where Java files are stored
+
+```bash
+mkdir /usr/java
+cd /usr/java
+mv /home/thulasiram/Downloads/jdk-11.0.19_linux-aarch64_bin.tar.gz .
+tar zxvf jdk-11.0.19_linux-aarch64_bin.tar.gz 
+rm jdk-11.0.19_linux-aarch64_bin.tar.gz
+export JAVA_HOME='/usr/java/jdk-11.0.19'
+export PATH=$JAVA_HOME/bin:$PATH
+source ~/.bashrc
+```
+* [Instructions to download and Install Java](https://www.java.com/en/download/help/linux_x64_install.html#download)
+
+### Steps for setting up Spark
+* Extract the spark files downloaded
+* CD to the extracted folder
+
+```bash
+tar -xf  Downloads/spark-3.4.0-bin-hadoop3.tgz
+cd spark-3.4.0-bin-hadoop3
+ls
+```
+
+#### Activate Pyspark Shell
+* To use pyspark shell create a python environment
+* Activate the python environment
+* Type `pyspark` at the command line to activate pyspark shell
+
+```bash
+conda create -n spark_learn python==3.10
+conda activate spark_learn
+pip install pyspark
+pyspark
+spark.version
+```
+
+```python
+strings = spark.read.text("../README.md")
+strings.show(10,truncate=False)
+```
+
+#### Activate spark-shell
+* To start a spark shell with Scala
+* CD to the bin directory
+* Type `spark-shell` 
+
+```bash
+cd bin
+spark-Shell
+spark.version
+```
+
+#### Activate spark-sql
+* To start a spark shell with SQL
+* CD to the bin directory
+* Type `spark-sql`
+
+```bash
+cd bin 
+spark-sql
+```
