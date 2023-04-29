@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – to_do</title>
+<title>My Datascience Journey – pandas_on_spark</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -58,6 +121,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -1254,7 +1320,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pyspark/02_pandas_on_spark.html" class="sidebar-item-text sidebar-link">Pandas API on Spark</a>
+  <a href="../pyspark/02_pandas_on_spark.html" class="sidebar-item-text sidebar-link active">Pandas API on Spark</a>
   </div>
 </li>
       </ul>
@@ -1283,9 +1349,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#personal-todo-list" id="toc-personal-todo-list" class="nav-link active" data-scroll-target="#personal-todo-list">Personal Todo List</a>
+  <li><a href="#pandas-api-on-spark" id="toc-pandas-api-on-spark" class="nav-link active" data-scroll-target="#pandas-api-on-spark">Pandas API on Spark</a>
   <ul class="collapse">
-  <li><a href="#second-priority" id="toc-second-priority" class="nav-link" data-scroll-target="#second-priority">Second Priority</a></li>
+  <li><a href="#creating-a-pandas-on-spark-dataframe" id="toc-creating-a-pandas-on-spark-dataframe" class="nav-link" data-scroll-target="#creating-a-pandas-on-spark-dataframe">Creating a Pandas-on-Spark DataFrame</a></li>
+  <li><a href="#create-a-pandas-on-spark-df-from-pandas-df" id="toc-create-a-pandas-on-spark-df-from-pandas-df" class="nav-link" data-scroll-target="#create-a-pandas-on-spark-df-from-pandas-df">Create a pandas-on-spark df from Pandas Df</a></li>
+  <li><a href="#creating-a-pandas-on-spark-dataframe-from-a-spark-dataframe" id="toc-creating-a-pandas-on-spark-dataframe-from-a-spark-dataframe" class="nav-link" data-scroll-target="#creating-a-pandas-on-spark-dataframe-from-a-spark-dataframe">Creating a pandas-on-spark DataFrame from a Spark DataFrame</a></li>
+  <li><a href="#treating-missing-values" id="toc-treating-missing-values" class="nav-link" data-scroll-target="#treating-missing-values">Treating Missing Values</a></li>
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping">Grouping</a></li>
+  <li><a href="#saving-data" id="toc-saving-data" class="nav-link" data-scroll-target="#saving-data">Saving data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1295,34 +1366,1301 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="personal-todo-list" class="level1">
-<h1>Personal Todo List</h1>
+<section id="pandas-api-on-spark" class="level1">
+<h1>Pandas API on Spark</h1>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pyspark.pandas <span class="im">as</span> ps</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>spark <span class="op">=</span> SparkSession.builder.getOrCreate()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enabling pyarrow will speed up the operations</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># spark.conf.set("spark.sql.execution.arrow.pyspark.enabled", "false")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="creating-a-pandas-on-spark-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-pandas-on-spark-dataframe">Creating a Pandas-on-Spark DataFrame</h3>
 <ul>
-<li>Fast.ai deep learning from scratch course</li>
-<li>University of Amsterdam Notebooks and course</li>
-<li>Stanford transformers videos</li>
-<li>Sabestien Rakschika - Deep learning videos from lightning ai</li>
-<li>Statistical Rethinking - Reading the book</li>
-<li>Neural Networks from Scratch book</li>
-<li>Network science book</li>
-<li>Networks online book</li>
-<li>Learn data engineering course</li>
-<li>Algoexpert.io completing the code puzzles</li>
-<li>Series of blog post on a topic which you are learning</li>
-<li>Computer vision - Segmentation complete understanding</li>
-<li>Diffusion in Computer vision</li>
-<li>Generative AI</li>
-<li>Linear Algebra Tivadar danka</li>
-<li>Linear algebra udemy course</li>
-<li>Docker and Kubernetes udemy course</li>
-<li>Probability and statistics in-depth understanding</li>
+<li>Ensure that pandas version is below 2.0.0</li>
+<li>If this is not working then disable arrow optimization and see if it works</li>
 </ul>
-<section id="second-priority" class="level2">
-<h2 class="anchored" data-anchor-id="second-priority">Second Priority</h2>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>psdf <span class="op">=</span> ps.DataFrame(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        {<span class="st">'Name'</span>: [<span class="st">'John'</span>, <span class="st">'Jane'</span>, <span class="st">'Bob'</span>, <span class="st">'Emily'</span>],</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Age'</span>: [<span class="dv">32</span>, <span class="dv">28</span>, <span class="dv">45</span>, <span class="dv">38</span>],</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Salary'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>, <span class="dv">80000</span>]},</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        index <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(psdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>pyspark.pandas.frame.DataFrame</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>psdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>                                                                                </code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>John</td>
+      <td>32</td>
+      <td>50000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Jane</td>
+      <td>28</td>
+      <td>60000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Bob</td>
+      <td>45</td>
+      <td>70000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Emily</td>
+      <td>38</td>
+      <td>80000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-pandas-on-spark-df-from-pandas-df" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-pandas-on-spark-df-from-pandas-df">Create a pandas-on-spark df from Pandas Df</h3>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> pd.date_range(<span class="st">'20130101'</span>, periods<span class="op">=</span><span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
+               '2013-01-05', '2013-01-06', '2013-01-07', '2013-01-08',
+               '2013-01-09', '2013-01-10', '2013-01-11', '2013-01-12'],
+              dtype='datetime64[ns]', freq='D')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> pd.DataFrame(np.random.randn(<span class="dv">12</span>, <span class="dv">4</span>), index<span class="op">=</span>dates, columns<span class="op">=</span><span class="bu">list</span>(<span class="st">'ABCD'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2013-01-01</th>
+      <td>0.504450</td>
+      <td>-0.647873</td>
+      <td>0.501804</td>
+      <td>1.529663</td>
+    </tr>
+    <tr>
+      <th>2013-01-02</th>
+      <td>1.017610</td>
+      <td>0.576785</td>
+      <td>0.852659</td>
+      <td>0.958808</td>
+    </tr>
+    <tr>
+      <th>2013-01-03</th>
+      <td>0.491779</td>
+      <td>0.221775</td>
+      <td>0.393922</td>
+      <td>-0.408026</td>
+    </tr>
+    <tr>
+      <th>2013-01-04</th>
+      <td>-1.445449</td>
+      <td>-1.336367</td>
+      <td>1.300324</td>
+      <td>-0.837560</td>
+    </tr>
+    <tr>
+      <th>2013-01-05</th>
+      <td>0.514641</td>
+      <td>0.338978</td>
+      <td>0.469635</td>
+      <td>-1.078154</td>
+    </tr>
+    <tr>
+      <th>2013-01-06</th>
+      <td>-0.587010</td>
+      <td>0.230809</td>
+      <td>0.594970</td>
+      <td>0.737837</td>
+    </tr>
+    <tr>
+      <th>2013-01-07</th>
+      <td>-1.088185</td>
+      <td>-1.151821</td>
+      <td>-0.649112</td>
+      <td>0.252638</td>
+    </tr>
+    <tr>
+      <th>2013-01-08</th>
+      <td>-0.741795</td>
+      <td>-0.505476</td>
+      <td>0.901358</td>
+      <td>-0.883953</td>
+    </tr>
+    <tr>
+      <th>2013-01-09</th>
+      <td>0.174919</td>
+      <td>1.079475</td>
+      <td>-0.324199</td>
+      <td>0.580551</td>
+    </tr>
+    <tr>
+      <th>2013-01-10</th>
+      <td>-0.554698</td>
+      <td>0.717864</td>
+      <td>0.246687</td>
+      <td>0.468863</td>
+    </tr>
+    <tr>
+      <th>2013-01-11</th>
+      <td>0.080391</td>
+      <td>0.991928</td>
+      <td>-0.895202</td>
+      <td>-0.377923</td>
+    </tr>
+    <tr>
+      <th>2013-01-12</th>
+      <td>0.925349</td>
+      <td>-3.217782</td>
+      <td>0.121457</td>
+      <td>0.379868</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>psdf <span class="op">=</span> ps.from_pandas(pdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(psdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>pyspark.pandas.frame.DataFrame</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-a-pandas-on-spark-dataframe-from-a-spark-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-pandas-on-spark-dataframe-from-a-spark-dataframe">Creating a pandas-on-spark DataFrame from a Spark DataFrame</h3>
 <ul>
-<li>Fluent python</li>
-<li></li>
+<li><code>pandas-on-spark behaves the same as a pandas dataframe</code></li>
+<li><code>Spark DataFrames are different from pandas-on-spark dataframe</code></li>
+<li>We can create a pandas-on-spark dataframe from spark dataframe</li>
 </ul>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sdf <span class="op">=</span> spark.createDataFrame(pdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(sdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>pyspark.sql.dataframe.DataFrame</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sdf.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-------------------+-------------------+-------------------+--------------------+
+|                  A|                  B|                  C|                   D|
++-------------------+-------------------+-------------------+--------------------+
+| 0.5044503970719988|-0.6478725002220486| 0.5018039867740487|  1.5296631312371947|
+| 1.0176100017752658| 0.5767848285691982| 0.8526593238367942|  0.9588083914653783|
+| 0.4917793190647551|0.22177470182967668|0.39392215574863115|-0.40802597968113213|
+| -1.445449391380651|-1.3363673281973991|   1.30032389460604| -0.8375597718269587|
+| 0.5146410948195219| 0.3389783463920524|0.46963549095271956| -1.0781543404783653|
+|-0.5870101238455766|  0.230808796563566| 0.5949702674680807|  0.7378368815369615|
+| -1.088185073708579| -1.151821497439794| -0.649112008379282| 0.25263810007989795|
+|-0.7417945676129846|-0.5054756939534057| 0.9013577759531805| -0.8839527075280547|
+|0.17491903257936225| 1.0794753492705051|-0.3241985395622288|  0.5805514330010838|
+|-0.5546977314810425| 0.7178640983371047| 0.2466873044383975|  0.4688628451924725|
+| 0.0803905150857272| 0.9919277671837536|-0.8952023471182896| -0.3779230216457262|
+| 0.9253487378066081| -3.217781511915491|0.12145734870229986|   0.379868166502288|
++-------------------+-------------------+-------------------+--------------------+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>psdf <span class="op">=</span> sdf.pandas_api()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>psdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.504450</td>
+      <td>-0.647873</td>
+      <td>0.501804</td>
+      <td>1.529663</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.017610</td>
+      <td>0.576785</td>
+      <td>0.852659</td>
+      <td>0.958808</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.491779</td>
+      <td>0.221775</td>
+      <td>0.393922</td>
+      <td>-0.408026</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-1.445449</td>
+      <td>-1.336367</td>
+      <td>1.300324</td>
+      <td>-0.837560</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.514641</td>
+      <td>0.338978</td>
+      <td>0.469635</td>
+      <td>-1.078154</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.587010</td>
+      <td>0.230809</td>
+      <td>0.594970</td>
+      <td>0.737837</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-1.088185</td>
+      <td>-1.151821</td>
+      <td>-0.649112</td>
+      <td>0.252638</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.741795</td>
+      <td>-0.505476</td>
+      <td>0.901358</td>
+      <td>-0.883953</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.174919</td>
+      <td>1.079475</td>
+      <td>-0.324199</td>
+      <td>0.580551</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.554698</td>
+      <td>0.717864</td>
+      <td>0.246687</td>
+      <td>0.468863</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.080391</td>
+      <td>0.991928</td>
+      <td>-0.895202</td>
+      <td>-0.377923</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.925349</td>
+      <td>-3.217782</td>
+      <td>0.121457</td>
+      <td>0.379868</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(psdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>pyspark.pandas.frame.DataFrame</code></pre>
+</div>
+</div>
+<section id="performing-common-pandas-operations-on-pandas-on-spark-df" class="level4">
+<h4 class="anchored" data-anchor-id="performing-common-pandas-operations-on-pandas-on-spark-df">Performing common pandas operations on pandas-on-spark DF</h4>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>psdf.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>12.000000</td>
+      <td>12.000000</td>
+      <td>12.000000</td>
+      <td>12.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>-0.059000</td>
+      <td>-0.225142</td>
+      <td>0.292859</td>
+      <td>0.110218</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.804773</td>
+      <td>1.233923</td>
+      <td>0.645692</td>
+      <td>0.818947</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-1.445449</td>
+      <td>-3.217782</td>
+      <td>-0.895202</td>
+      <td>-1.078154</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>-0.741795</td>
+      <td>-1.151821</td>
+      <td>-0.324199</td>
+      <td>-0.837560</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.080391</td>
+      <td>0.221775</td>
+      <td>0.393922</td>
+      <td>0.252638</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.504450</td>
+      <td>0.576785</td>
+      <td>0.594970</td>
+      <td>0.580551</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>1.017610</td>
+      <td>1.079475</td>
+      <td>1.300324</td>
+      <td>1.529663</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>psdf.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pyspark.pandas.frame.DataFrame'&gt;
+Int64Index: 12 entries, 0 to 11
+Data columns (total 4 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   A       12 non-null     float64
+ 1   B       12 non-null     float64
+ 2   C       12 non-null     float64
+ 3   D       12 non-null     float64
+dtypes: float64(4)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>psdf.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>A    float64
+B    float64
+C    float64
+D    float64
+dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>psdf.tail(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>-0.741795</td>
+      <td>-0.505476</td>
+      <td>0.901358</td>
+      <td>-0.883953</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.174919</td>
+      <td>1.079475</td>
+      <td>-0.324199</td>
+      <td>0.580551</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.554698</td>
+      <td>0.717864</td>
+      <td>0.246687</td>
+      <td>0.468863</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.080391</td>
+      <td>0.991928</td>
+      <td>-0.895202</td>
+      <td>-0.377923</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.925349</td>
+      <td>-3.217782</td>
+      <td>0.121457</td>
+      <td>0.379868</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>psdf.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>Int64Index([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], dtype='int64')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>psdf.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>Index(['A', 'B', 'C', 'D'], dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>psdf.to_numpy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>array([[ 0.5044504 , -0.6478725 ,  0.50180399,  1.52966313],
+       [ 1.01761   ,  0.57678483,  0.85265932,  0.95880839],
+       [ 0.49177932,  0.2217747 ,  0.39392216, -0.40802598],
+       [-1.44544939, -1.33636733,  1.30032389, -0.83755977],
+       [ 0.51464109,  0.33897835,  0.46963549, -1.07815434],
+       [-0.58701012,  0.2308088 ,  0.59497027,  0.73783688],
+       [-1.08818507, -1.1518215 , -0.64911201,  0.2526381 ],
+       [-0.74179457, -0.50547569,  0.90135778, -0.88395271],
+       [ 0.17491903,  1.07947535, -0.32419854,  0.58055143],
+       [-0.55469773,  0.7178641 ,  0.2466873 ,  0.46886285],
+       [ 0.08039052,  0.99192777, -0.89520235, -0.37792302],
+       [ 0.92534874, -3.21778151,  0.12145735,  0.37986817]])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>psdf.sort_index(ascending<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>0.925349</td>
+      <td>-3.217782</td>
+      <td>0.121457</td>
+      <td>0.379868</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.080391</td>
+      <td>0.991928</td>
+      <td>-0.895202</td>
+      <td>-0.377923</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.554698</td>
+      <td>0.717864</td>
+      <td>0.246687</td>
+      <td>0.468863</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.174919</td>
+      <td>1.079475</td>
+      <td>-0.324199</td>
+      <td>0.580551</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.741795</td>
+      <td>-0.505476</td>
+      <td>0.901358</td>
+      <td>-0.883953</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-1.088185</td>
+      <td>-1.151821</td>
+      <td>-0.649112</td>
+      <td>0.252638</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.587010</td>
+      <td>0.230809</td>
+      <td>0.594970</td>
+      <td>0.737837</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.514641</td>
+      <td>0.338978</td>
+      <td>0.469635</td>
+      <td>-1.078154</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-1.445449</td>
+      <td>-1.336367</td>
+      <td>1.300324</td>
+      <td>-0.837560</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.491779</td>
+      <td>0.221775</td>
+      <td>0.393922</td>
+      <td>-0.408026</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.017610</td>
+      <td>0.576785</td>
+      <td>0.852659</td>
+      <td>0.958808</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0.504450</td>
+      <td>-0.647873</td>
+      <td>0.501804</td>
+      <td>1.529663</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>psdf.sort_values(by<span class="op">=</span><span class="st">'D'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>0.514641</td>
+      <td>0.338978</td>
+      <td>0.469635</td>
+      <td>-1.078154</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.741795</td>
+      <td>-0.505476</td>
+      <td>0.901358</td>
+      <td>-0.883953</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-1.445449</td>
+      <td>-1.336367</td>
+      <td>1.300324</td>
+      <td>-0.837560</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.491779</td>
+      <td>0.221775</td>
+      <td>0.393922</td>
+      <td>-0.408026</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.080391</td>
+      <td>0.991928</td>
+      <td>-0.895202</td>
+      <td>-0.377923</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-1.088185</td>
+      <td>-1.151821</td>
+      <td>-0.649112</td>
+      <td>0.252638</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.925349</td>
+      <td>-3.217782</td>
+      <td>0.121457</td>
+      <td>0.379868</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.554698</td>
+      <td>0.717864</td>
+      <td>0.246687</td>
+      <td>0.468863</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.174919</td>
+      <td>1.079475</td>
+      <td>-0.324199</td>
+      <td>0.580551</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.587010</td>
+      <td>0.230809</td>
+      <td>0.594970</td>
+      <td>0.737837</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.017610</td>
+      <td>0.576785</td>
+      <td>0.852659</td>
+      <td>0.958808</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>0.504450</td>
+      <td>-0.647873</td>
+      <td>0.501804</td>
+      <td>1.529663</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="treating-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="treating-missing-values">Treating Missing Values</h3>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, np.nan],</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'B'</span>: [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'C'</span>: [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>NaN</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>psdf <span class="op">=</span> ps.from_pandas(pdf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>psdf.dropna(how<span class="op">=</span><span class="st">'any'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>psdf.fillna(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="43">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="grouping" class="level3">
+<h3 class="anchored" data-anchor-id="grouping">Grouping</h3>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;javascript&quot;}" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> ps.DataFrame({<span class="st">'A'</span>: [<span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'foo'</span>, <span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'foo'</span>, <span class="st">'bar'</span>],</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'B'</span>: [<span class="st">'one'</span>, <span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'three'</span>, <span class="st">'two'</span>, <span class="st">'two'</span>, <span class="st">'one'</span>, <span class="st">'three'</span>, <span class="st">'two'</span>, <span class="st">'two'</span>, <span class="st">'one'</span>, <span class="st">'three'</span>, <span class="st">'one'</span>, <span class="st">'three'</span>, <span class="st">'two'</span>],</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'C'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>],</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">'D'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>, <span class="dv">110</span>, <span class="dv">120</span>, <span class="dv">130</span>, <span class="dv">140</span>, <span class="dv">150</span>]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-vscode="{&quot;languageId&quot;:&quot;javascript&quot;}" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="46">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>foo</td>
+      <td>one</td>
+      <td>1</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>bar</td>
+      <td>one</td>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>foo</td>
+      <td>two</td>
+      <td>3</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bar</td>
+      <td>three</td>
+      <td>4</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>foo</td>
+      <td>two</td>
+      <td>5</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>bar</td>
+      <td>two</td>
+      <td>6</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>foo</td>
+      <td>one</td>
+      <td>7</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>8</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>bar</td>
+      <td>two</td>
+      <td>9</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>foo</td>
+      <td>two</td>
+      <td>10</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>bar</td>
+      <td>one</td>
+      <td>11</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>12</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>bar</td>
+      <td>one</td>
+      <td>13</td>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>14</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>bar</td>
+      <td>two</td>
+      <td>15</td>
+      <td>150</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>data.groupby(<span class="st">'B'</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>one</th>
+      <td>6.8</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>8.0</td>
+      <td>80.0</td>
+    </tr>
+    <tr>
+      <th>three</th>
+      <td>9.5</td>
+      <td>95.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>data.groupby([<span class="st">'A'</span>, <span class="st">'B'</span>]).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>foo</th>
+      <th>one</th>
+      <td>4.000000</td>
+      <td>40.000000</td>
+    </tr>
+    <tr>
+      <th>bar</th>
+      <th>one</th>
+      <td>8.666667</td>
+      <td>86.666667</td>
+    </tr>
+    <tr>
+      <th>foo</th>
+      <th>two</th>
+      <td>6.000000</td>
+      <td>60.000000</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>three</th>
+      <td>4.000000</td>
+      <td>40.000000</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>10.000000</td>
+      <td>100.000000</td>
+    </tr>
+    <tr>
+      <th>foo</th>
+      <th>three</th>
+      <td>11.333333</td>
+      <td>113.333333</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="saving-data" class="level3">
+<h3 class="anchored" data-anchor-id="saving-data">Saving data</h3>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>data.to_csv(<span class="st">'output.csv'</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>ps.read_csv(<span class="st">'output.csv'</span>).head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>12</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>14</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>8</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>foo</td>
+      <td>two</td>
+      <td>10</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>bar</td>
+      <td>three</td>
+      <td>4</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>data.to_parquet(<span class="st">'output.parquet'</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>ps.read_parquet(<span class="st">'output.parquet'</span>).head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 95.00% for 8 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 84.44% for 9 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 76.00% for 10 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 69.09% for 11 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 63.33% for 12 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 58.46% for 13 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 54.29% for 14 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 50.67% for 15 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 47.50% for 16 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 50.67% for 15 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 54.29% for 14 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 58.46% for 13 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 63.33% for 12 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 69.09% for 11 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 76.00% for 10 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 84.44% for 9 writers
+23/04/29 13:23:00 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+Scaling row group sizes to 95.00% for 8 writers</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="54">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>12</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>bar</td>
+      <td>three</td>
+      <td>4</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>14</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>foo</td>
+      <td>three</td>
+      <td>8</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>foo</td>
+      <td>two</td>
+      <td>10</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
 
 
 </section>
