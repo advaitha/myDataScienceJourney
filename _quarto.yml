@@ -248,7 +248,8 @@ website:
           - probability/Probability.qmd   
         - section: "**pyspark**"
           contents:
-          - pyspark/00_spark_installation.qmd    
+          - pyspark/00_spark_installation.qmd 
+          - pyspark/01_dataframe_api.ipynb   
         - section: "**Why Me**"
           contents:                 
           - about_me/why_me.qmd          

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – spark_installation</title>
+<title>My Datascience Journey – dataframe_api</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -1307,7 +1307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-30" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pyspark/00_spark_installation.html" class="sidebar-item-text sidebar-link active">Installing Spark</a>
+  <a href="../pyspark/00_spark_installation.html" class="sidebar-item-text sidebar-link">Installing Spark</a>
   </div>
 </li>
       </ul>
@@ -1336,13 +1336,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#installing-spark" id="toc-installing-spark" class="nav-link active" data-scroll-target="#installing-spark">Installing Spark</a>
+  <li><a href="#hands-on-introduction-to-dataframe-api" id="toc-hands-on-introduction-to-dataframe-api" class="nav-link active" data-scroll-target="#hands-on-introduction-to-dataframe-api">Hands-on Introduction to DataFrame API</a>
   <ul class="collapse">
-  <li><a href="#downloading-apache-spark" id="toc-downloading-apache-spark" class="nav-link" data-scroll-target="#downloading-apache-spark">Downloading Apache Spark</a>
-  <ul class="collapse">
-  <li><a href="#steps-for-installing-java-and-setting-java_home" id="toc-steps-for-installing-java-and-setting-java_home" class="nav-link" data-scroll-target="#steps-for-installing-java-and-setting-java_home">Steps for Installing Java and Setting JAVA_HOME</a></li>
-  <li><a href="#steps-for-setting-up-spark" id="toc-steps-for-setting-up-spark" class="nav-link" data-scroll-target="#steps-for-setting-up-spark">Steps for setting up Spark</a></li>
-  </ul></li>
+  <li><a href="#dataframe-api" id="toc-dataframe-api" class="nav-link" data-scroll-target="#dataframe-api">DataFrame API</a></li>
+  <li><a href="#schemas-and-creating-dataframes" id="toc-schemas-and-creating-dataframes" class="nav-link" data-scroll-target="#schemas-and-creating-dataframes">Schemas and Creating DataFrames</a></li>
+  <li><a href="#method-1-to-define-a-schema" id="toc-method-1-to-define-a-schema" class="nav-link" data-scroll-target="#method-1-to-define-a-schema">Method-1 to define a Schema</a></li>
+  <li><a href="#viewing-data" id="toc-viewing-data" class="nav-link" data-scroll-target="#viewing-data">Viewing Data</a></li>
+  <li><a href="#checking-the-schema" id="toc-checking-the-schema" class="nav-link" data-scroll-target="#checking-the-schema">Checking the Schema</a></li>
+  <li><a href="#method-2-to-define-a-schema" id="toc-method-2-to-define-a-schema" class="nav-link" data-scroll-target="#method-2-to-define-a-schema">Method-2 to define a schema</a></li>
+  <li><a href="#summary-of-the-dataframe" id="toc-summary-of-the-dataframe" class="nav-link" data-scroll-target="#summary-of-the-dataframe">Summary of the DataFrame</a></li>
+  <li><a href="#convert-pyspark-dataframe-to-a-pandas-dataframe" id="toc-convert-pyspark-dataframe-to-a-pandas-dataframe" class="nav-link" data-scroll-target="#convert-pyspark-dataframe-to-a-pandas-dataframe">Convert pyspark dataframe to a pandas dataframe</a></li>
+  <li><a href="#selecting-and-accessing-data" id="toc-selecting-and-accessing-data" class="nav-link" data-scroll-target="#selecting-and-accessing-data">Selecting and Accessing Data</a></li>
+  <li><a href="#applying-a-function" id="toc-applying-a-function" class="nav-link" data-scroll-target="#applying-a-function">Applying a Function</a></li>
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping">Grouping</a></li>
+  <li><a href="#saving-the-data" id="toc-saving-the-data" class="nav-link" data-scroll-target="#saving-the-data">Saving the data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1352,105 +1359,473 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="installing-spark" class="level1">
-<h1>Installing Spark</h1>
-<p>We will install spark in local mode, where all the processing is done on a single machine.<br>
-This is useful for quick iterative development.<br>
-Spark shell supports scala, Python and R.</p>
-<p><code>If you want to only install pyspark and not other dependencies, then you can use install pyspark using pip.</code></p>
-<section id="downloading-apache-spark" class="level2">
-<h2 class="anchored" data-anchor-id="downloading-apache-spark">Downloading Apache Spark</h2>
+<section id="hands-on-introduction-to-dataframe-api" class="level1">
+<h1>Hands-on Introduction to DataFrame API</h1>
 <ul>
-<li><a href="https://learning.oreilly.com/library/view/learning-spark-2nd/9781492050032/ch02.html">Spark Download Page</a><br>
-</li>
-<li>Select “Pre-built for Apache Hadoop 3.3 and later”<br>
-</li>
-<li>Download Spark<br>
-</li>
-<li><img src="../Images/installing_spark.png" class="img-fluid" alt="Downnloading Spark"><br>
-</li>
-<li>Java 8 or above needs to be installed on your machine<br>
-</li>
-<li><a href="https://www.oracle.com/java/technologies/downloads/#java11">Java Download Link</a><br>
-</li>
-<li>Download <code>bin.tar.gz</code> file<br>
-</li>
-<li>Set the <code>JAVA_HOME</code> environment variable</li>
+<li>DataFrames are lazily evaluated</li>
+<li>They are implemented on top of RDDs</li>
+<li>Spark will not process the data on calling the <code>transformation</code>, it will start processing when an <code>action</code> is called</li>
+<li>Spark application starts with initializing a <code>SparkSession</code></li>
+<li>In the case of a pyspark shell, the shell automatically creates the session in the variable <code>spark</code> for users</li>
 </ul>
-<section id="steps-for-installing-java-and-setting-java_home" class="level3">
-<h3 class="anchored" data-anchor-id="steps-for-installing-java-and-setting-java_home">Steps for Installing Java and Setting JAVA_HOME</h3>
+<div class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> avg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>spark <span class="op">=</span> (SparkSession</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    .builder</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    .appName(<span class="st">"FirstProgram"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    .getOrCreate())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ul>
-<li>Create a directory where you want to Install Java</li>
-<li>CD to the directory</li>
-<li>Move the Java tar file downloaded to the directory created</li>
-<li>UNzip the files downloaded</li>
-<li>Remove the gz file if you want to save space</li>
-<li>Set the JAVA_HOME environment variable - Provide the path where Java files are stored</li>
-<li>Save the changes made to the bashrc file and the bash profile</li>
-<li>check if the JAVA_HOME<code>is set correctly by running</code>echo $JAVA_HOME` - This should return the path of the directory where Java files are stored</li>
+<li>A pyspark DataFrame can be created via <code>pyspark.sql.SparkSession.createDataFrame</code> by passing a list of lists, tuples, dictionaries, pyspark.sql.Rows,Pandas DataFrame and an RDD</li>
+<li><code>pyspark.sql.SparkSession.createDataFrame</code> takes schema argument. If schema is not provided, then pyspark infers the schema from the data</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> /usr/java</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /usr/java</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> /home/thulasiram/Downloads/jdk-11.0.19_linux-aarch64_bin.tar.gz .</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> zxvf jdk-11.0.19_linux-aarch64_bin.tar.gz </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> jdk-11.0.19_linux-aarch64_bin.tar.gz</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">JAVA_HOME</span><span class="op">=</span><span class="st">'/usr/java/jdk-11.0.19'</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$JAVA_HOME</span>/bin:<span class="va">$PATH</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> spark.createDataFrame([(<span class="st">"Amar"</span>,<span class="dv">21</span>),(<span class="st">"Akbar"</span>,<span class="dv">25</span>),(<span class="st">"John"</span>,<span class="dv">28</span>),(<span class="st">"Harika"</span>,<span class="dv">32</span>),(<span class="st">"Amar"</span>,<span class="dv">35</span>),(<span class="st">"Akbar"</span>,<span class="dv">40</span>)],</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                             [<span class="st">"name"</span>,<span class="st">"age"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+------+---+
+|  name|age|
++------+---+
+|  Amar| 21|
+| Akbar| 25|
+|  John| 28|
+|Harika| 32|
+|  Amar| 35|
+| Akbar| 40|
++------+---+
+</code></pre>
+</div>
+</div>
+<section id="dataframe-api" class="level3">
+<h3 class="anchored" data-anchor-id="dataframe-api">DataFrame API</h3>
+<p><a href="https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/data_types.html">Spark Python Data Types</a></p>
+</section>
+<section id="schemas-and-creating-dataframes" class="level3">
+<h3 class="anchored" data-anchor-id="schemas-and-creating-dataframes">Schemas and Creating DataFrames</h3>
 <ul>
-<li><a href="https://www.java.com/en/download/help/linux_x64_install.html#download">Instructions to download and Install Java</a></li>
+<li>Spark can infer the schema from the data</li>
+<li>If the dataset is large, it will be a overhead for spark to read a portion of the file and ascertain the datatype. This will be expensive and time-consuming</li>
+<li>It is a good practice to define the schema upfront</li>
 </ul>
 </section>
-<section id="steps-for-setting-up-spark" class="level3">
-<h3 class="anchored" data-anchor-id="steps-for-setting-up-spark">Steps for setting up Spark</h3>
-<ul>
-<li>Extract the spark files downloaded</li>
-<li>CD to the extracted folder</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span>  Downloads/spark-3.4.0-bin-hadoop3.tgz</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> spark-3.4.0-bin-hadoop3</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="activate-pyspark-shell" class="level4">
-<h4 class="anchored" data-anchor-id="activate-pyspark-shell">Activate Pyspark Shell</h4>
-<ul>
-<li>To use pyspark shell create a python environment</li>
-<li>Activate the python environment</li>
-<li>Type <code>pyspark</code> at the command line to activate pyspark shell</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> spark_learn python==3.10</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate spark_learn</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyspark</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyspark[sql]</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyspark[pandas_on_spark] plotly</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pyspark[connect]</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pyspark</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">spark.version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>strings <span class="op">=</span> spark.read.text(<span class="st">"../README.md"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>strings.show(<span class="dv">10</span>,truncate<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="method-1-to-define-a-schema" class="level3">
+<h3 class="anchored" data-anchor-id="method-1-to-define-a-schema">Method-1 to define a Schema</h3>
+<div class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>author_info <span class="op">=</span> [(<span class="st">"John"</span>, <span class="st">"Doe"</span>, <span class="st">"The Great Gatsby"</span>, <span class="fl">1000.00</span>, <span class="dv">5</span>),</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Jane"</span>, <span class="st">"Smith"</span>, <span class="st">"To Kill a Mockingbird"</span>, <span class="fl">1200.05</span>, <span class="dv">3</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Bob"</span>, <span class="st">"Johnson"</span>, <span class="st">"Pride and Prejudice"</span>, <span class="fl">800.05</span>, <span class="dv">4</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Alice"</span>, <span class="st">"Davis"</span>, <span class="st">"The Catcher in the Rye"</span>, <span class="fl">900.00</span>, <span class="dv">2</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Charlie"</span>, <span class="st">"Brown"</span>, <span class="st">"Moby-Dick"</span>, <span class="fl">700.30</span>, <span class="dv">6</span>),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Emily"</span>, <span class="st">"Wilson"</span>, <span class="st">"Wuthering Heights"</span>, <span class="fl">1100.05</span>, <span class="dv">1</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Frank"</span>, <span class="st">"Garcia"</span>, <span class="st">"1984"</span>, <span class="fl">1300.06</span>, <span class="dv">7</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Grace"</span>, <span class="st">"Martinez"</span>, <span class="st">"The Odyssey"</span>, <span class="fl">600.00</span>, <span class="dv">3</span>),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Henry"</span>, <span class="st">"Anderson"</span>, <span class="st">"War and Peace"</span>, <span class="fl">1400.75</span>, <span class="dv">8</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        (<span class="st">"Isabella"</span>, <span class="st">"Taylor"</span>, <span class="st">"The Divine Comedy"</span>, <span class="fl">500.00</span>, <span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.types <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>schema <span class="op">=</span> StructType(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    [StructField(<span class="st">"name"</span>, StringType(), <span class="va">False</span>),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>     StructField(<span class="st">"surname"</span>, StringType(), <span class="va">False</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>     StructField(<span class="st">"book"</span>, StringType(), <span class="va">False</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>     StructField(<span class="st">"price"</span>, FloatType(), <span class="va">False</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>     StructField(<span class="st">"rating"</span>, IntegerType(), <span class="va">False</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>     ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>author_data <span class="op">=</span> spark.createDataFrame(author_info,schema)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="activate-spark-shell" class="level4">
-<h4 class="anchored" data-anchor-id="activate-spark-shell">Activate spark-shell</h4>
-<ul>
-<li>To start a spark shell with Scala</li>
-<li>CD to the bin directory</li>
-<li>Type <code>spark-shell</code></li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> bin</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spark-Shell</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">spark.version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="viewing-data" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-data">Viewing Data</h3>
+<div class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>author_data.show(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-----+-------+--------------------+-------+------+
+| name|surname|                book|  price|rating|
++-----+-------+--------------------+-------+------+
+| John|    Doe|    The Great Gatsby| 1000.0|     5|
+| Jane|  Smith|To Kill a Mocking...|1200.05|     3|
+|  Bob|Johnson| Pride and Prejudice| 800.05|     4|
+|Alice|  Davis|The Catcher in th...|  900.0|     2|
++-----+-------+--------------------+-------+------+
+only showing top 4 rows
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>author_data.show(<span class="dv">2</span>,vertical<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-RECORD 0-----------------------
+ name    | John                 
+ surname | Doe                  
+ book    | The Great Gatsby     
+ price   | 1000.0               
+ rating  | 5                    
+-RECORD 1-----------------------
+ name    | Jane                 
+ surname | Smith                
+ book    | To Kill a Mocking... 
+ price   | 1200.05              
+ rating  | 3                    
+only showing top 2 rows
+</code></pre>
+</div>
+</div>
 </section>
-<section id="activate-spark-sql" class="level4">
-<h4 class="anchored" data-anchor-id="activate-spark-sql">Activate spark-sql</h4>
+<section id="checking-the-schema" class="level3">
+<h3 class="anchored" data-anchor-id="checking-the-schema">Checking the Schema</h3>
+<div class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>author_data.printSchema()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>root
+ |-- name: string (nullable = false)
+ |-- surname: string (nullable = false)
+ |-- book: string (nullable = false)
+ |-- price: float (nullable = false)
+ |-- rating: integer (nullable = false)
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>author_data.schema</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<pre><code>StructType([StructField('name', StringType(), False), StructField('surname', StringType(), False), StructField('book', StringType(), False), StructField('price', FloatType(), False), StructField('rating', IntegerType(), False)])</code></pre>
+</div>
+</div>
+</section>
+<section id="method-2-to-define-a-schema" class="level3">
+<h3 class="anchored" data-anchor-id="method-2-to-define-a-schema">Method-2 to define a schema</h3>
+<div class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>schema_2 <span class="op">=</span> <span class="st">"name STRING, surname STRING, book STRING, price FLOAT, rating INT"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>author_data_2 <span class="op">=</span> spark.createDataFrame(author_info,schema_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>author_data_2.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+--------+--------+--------------------+-------+------+
+|    name| surname|                book|  price|rating|
++--------+--------+--------------------+-------+------+
+|    John|     Doe|    The Great Gatsby| 1000.0|     5|
+|    Jane|   Smith|To Kill a Mocking...|1200.05|     3|
+|     Bob| Johnson| Pride and Prejudice| 800.05|     4|
+|   Alice|   Davis|The Catcher in th...|  900.0|     2|
+| Charlie|   Brown|           Moby-Dick|  700.3|     6|
+|   Emily|  Wilson|   Wuthering Heights|1100.05|     1|
+|   Frank|  Garcia|                1984|1300.06|     7|
+|   Grace|Martinez|         The Odyssey|  600.0|     3|
+|   Henry|Anderson|       War and Peace|1400.75|     8|
+|Isabella|  Taylor|   The Divine Comedy|  500.0|     2|
++--------+--------+--------------------+-------+------+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>author_data_2.printSchema()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>root
+ |-- name: string (nullable = true)
+ |-- surname: string (nullable = true)
+ |-- book: string (nullable = true)
+ |-- price: float (nullable = true)
+ |-- rating: integer (nullable = true)
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the column names of the pyspark DataFrame</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>author_data.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="83">
+<pre><code>['name', 'surname', 'book', 'price', 'rating']</code></pre>
+</div>
+</div>
+</section>
+<section id="summary-of-the-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-the-dataframe">Summary of the DataFrame</h3>
+<div class="cell" data-execution_count="87">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>(author_data.select(<span class="st">"price"</span>,<span class="st">"rating"</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>            .describe()</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>            .show())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-------+-----------------+-----------------+
+|summary|            price|           rating|
++-------+-----------------+-----------------+
+|  count|               10|               10|
+|   mean|950.1260131835937|              4.1|
+| stddev|302.8737534314304|2.330951164939612|
+|    min|            500.0|                1|
+|    max|          1400.75|                8|
++-------+-----------------+-----------------+
+</code></pre>
+</div>
+</div>
+<p><code>DataFrame.collect()</code> collects the data on the driver (equivaluent to local data in python). If the dataset is large and if it cannot be accomodated on the driver, it will throw a <code>out-of-memory</code> error.</p>
+<div class="cell" data-execution_count="88">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avoid using collect() method</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>author_data.collect()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="88">
+<pre><code>[Row(name='John', surname='Doe', book='The Great Gatsby', price=1000.0, rating=5),
+ Row(name='Jane', surname='Smith', book='To Kill a Mockingbird', price=1200.050048828125, rating=3),
+ Row(name='Bob', surname='Johnson', book='Pride and Prejudice', price=800.0499877929688, rating=4),
+ Row(name='Alice', surname='Davis', book='The Catcher in the Rye', price=900.0, rating=2),
+ Row(name='Charlie', surname='Brown', book='Moby-Dick', price=700.2999877929688, rating=6),
+ Row(name='Emily', surname='Wilson', book='Wuthering Heights', price=1100.050048828125, rating=1),
+ Row(name='Frank', surname='Garcia', book='1984', price=1300.06005859375, rating=7),
+ Row(name='Grace', surname='Martinez', book='The Odyssey', price=600.0, rating=3),
+ Row(name='Henry', surname='Anderson', book='War and Peace', price=1400.75, rating=8),
+ Row(name='Isabella', surname='Taylor', book='The Divine Comedy', price=500.0, rating=2)]</code></pre>
+</div>
+</div>
+<p>To avoid <code>out-of-memory</code> error use <code>DataFrame.take()</code> or <code>DataFrame.tail()</code> methods</p>
+<div class="cell" data-execution_count="89">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>author_data.take(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="89">
+<pre><code>[Row(name='John', surname='Doe', book='The Great Gatsby', price=1000.0, rating=5)]</code></pre>
+</div>
+</div>
+</section>
+<section id="convert-pyspark-dataframe-to-a-pandas-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="convert-pyspark-dataframe-to-a-pandas-dataframe">Convert pyspark dataframe to a pandas dataframe</h3>
+<div class="cell" data-execution_count="90">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>pandas_df <span class="op">=</span> author_data.toPandas()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="91">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(pandas_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="91">
+<pre><code>pandas.core.frame.DataFrame</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="92">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(author_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="92">
+<pre><code>pyspark.sql.dataframe.DataFrame</code></pre>
+</div>
+</div>
+</section>
+<section id="selecting-and-accessing-data" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-and-accessing-data">Selecting and Accessing Data</h3>
+<div class="cell" data-execution_count="93">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> column</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> upper</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="94">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>author_data.select(<span class="st">"book"</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+--------------------+
+|                book|
++--------------------+
+|    The Great Gatsby|
+|To Kill a Mocking...|
+| Pride and Prejudice|
+|The Catcher in th...|
+|           Moby-Dick|
+|   Wuthering Heights|
+|                1984|
+|         The Odyssey|
+|       War and Peace|
+|   The Divine Comedy|
++--------------------+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="95">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a new column from existing column</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>author_data.withColumn(<span class="st">'upper_title'</span>, upper(author_data.book)).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+--------+--------+--------------------+-------+------+--------------------+
+|    name| surname|                book|  price|rating|         upper_title|
++--------+--------+--------------------+-------+------+--------------------+
+|    John|     Doe|    The Great Gatsby| 1000.0|     5|    THE GREAT GATSBY|
+|    Jane|   Smith|To Kill a Mocking...|1200.05|     3|TO KILL A MOCKING...|
+|     Bob| Johnson| Pride and Prejudice| 800.05|     4| PRIDE AND PREJUDICE|
+|   Alice|   Davis|The Catcher in th...|  900.0|     2|THE CATCHER IN TH...|
+| Charlie|   Brown|           Moby-Dick|  700.3|     6|           MOBY-DICK|
+|   Emily|  Wilson|   Wuthering Heights|1100.05|     1|   WUTHERING HEIGHTS|
+|   Frank|  Garcia|                1984|1300.06|     7|                1984|
+|   Grace|Martinez|         The Odyssey|  600.0|     3|         THE ODYSSEY|
+|   Henry|Anderson|       War and Peace|1400.75|     8|       WAR AND PEACE|
+|Isabella|  Taylor|   The Divine Comedy|  500.0|     2|   THE DIVINE COMEDY|
++--------+--------+--------------------+-------+------+--------------------+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="96">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering the data</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>author_data.<span class="bu">filter</span>(author_data.price <span class="op">&gt;</span> <span class="dv">1000</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-----+--------+--------------------+-------+------+
+| name| surname|                book|  price|rating|
++-----+--------+--------------------+-------+------+
+| Jane|   Smith|To Kill a Mocking...|1200.05|     3|
+|Emily|  Wilson|   Wuthering Heights|1100.05|     1|
+|Frank|  Garcia|                1984|1300.06|     7|
+|Henry|Anderson|       War and Peace|1400.75|     8|
++-----+--------+--------------------+-------+------+
+</code></pre>
+</div>
+</div>
+</section>
+<section id="applying-a-function" class="level3">
+<h3 class="anchored" data-anchor-id="applying-a-function">Applying a Function</h3>
 <ul>
-<li>To start a spark shell with SQL</li>
-<li>CD to the bin directory</li>
-<li>Type <code>spark-sql</code></li>
+<li>pyspark supports User Defined Functions (UDFs)</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> bin </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">spark-sql</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="98">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> pandas_udf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>@pandas_udf('long')</code> is a decorator used to define a Pandas UDF (User-Defined Function) in PySpark. The <code>'long'</code> argument specifies the return type of the UDF. In this case, it indicates that the UDF returns a value of type <code>long</code>, which is an alias for <code>bigint</code> in PySpark.</p>
+<p>Pandas UDFs allow you to use Pandas functions in PySpark and can provide significant performance improvements over regular UDFs. The return type must be specified when defining a Pandas UDF so that PySpark can correctly handle the data returned by the function.</p>
+<div class="cell" data-execution_count="99">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="at">@pandas_udf</span>(<span class="st">'long'</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pandas_multiply_ten(series: pd.Series) <span class="op">-&gt;</span> pd.Series:</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> series<span class="op">*</span><span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="100">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>author_data.select(author_data.price,pandas_multiply_ten(author_data.price)).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>                                                                                </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-------+--------------------------+
+|  price|pandas_multiply_ten(price)|
++-------+--------------------------+
+| 1000.0|                     10000|
+|1200.05|                     12000|
+| 800.05|                      8000|
+|  900.0|                      9000|
+|  700.3|                      7003|
+|1100.05|                     11000|
+|1300.06|                     13000|
+|  600.0|                      6000|
+|1400.75|                     14007|
+|  500.0|                      5000|
++-------+--------------------------+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="101">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>price_df <span class="op">=</span> author_data.select(author_data.price,pandas_multiply_ten(author_data.price))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="102">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(price_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="102">
+<pre><code>pyspark.sql.dataframe.DataFrame</code></pre>
+</div>
+</div>
+</section>
+<section id="grouping" class="level3">
+<h3 class="anchored" data-anchor-id="grouping">Grouping</h3>
+<div class="cell" data-execution_count="104">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"A"</span>, <span class="dv">1</span>, <span class="dv">100</span>),</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"B"</span>, <span class="dv">2</span>, <span class="dv">200</span>),</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"A"</span>, <span class="dv">3</span>, <span class="dv">300</span>),</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"B"</span>, <span class="dv">4</span>, <span class="dv">400</span>),</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    (<span class="st">"C"</span>, <span class="dv">5</span>, <span class="dv">500</span>)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="105">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> spark.createDataFrame(data,[<span class="st">"key"</span>, <span class="st">"value1"</span>, <span class="st">"value2"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="106">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---+------+------+
+|key|value1|value2|
++---+------+------+
+|  A|     1|   100|
+|  B|     2|   200|
+|  A|     3|   300|
+|  B|     4|   400|
+|  C|     5|   500|
++---+------+------+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="107">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'key'</span>).avg().show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---+-----------+-----------+
+|key|avg(value1)|avg(value2)|
++---+-----------+-----------+
+|  A|        2.0|      200.0|
+|  B|        3.0|      300.0|
+|  C|        5.0|      500.0|
++---+-----------+-----------+
+</code></pre>
+</div>
+</div>
+</section>
+<section id="saving-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="saving-the-data">Saving the data</h3>
+<section id="save-in-csv-format" class="level4">
+<h4 class="anchored" data-anchor-id="save-in-csv-format">Save in CSV Format</h4>
+<div class="cell" data-execution_count="108">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>df.write.csv(<span class="st">'output.csv'</span>,header<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>spark.read.csv(<span class="st">'output.csv'</span>,header<span class="op">=</span><span class="va">True</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---+------+------+
+|key|value1|value2|
++---+------+------+
+|  B|     4|   400|
+|  A|     3|   300|
+|  B|     2|   200|
+|  A|     1|   100|
+|  C|     5|   500|
++---+------+------+
+</code></pre>
+</div>
+</div>
+</section>
+<section id="save-in-parquet-format" class="level4">
+<h4 class="anchored" data-anchor-id="save-in-parquet-format">Save in Parquet Format</h4>
+<div class="cell" data-execution_count="111">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>df.write.parquet(<span class="st">'output.parquet'</span>)</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>spark.read.parquet(<span class="st">'output.parquet'</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---+------+------+
+|key|value1|value2|
++---+------+------+
+|  A|     1|   100|
+|  B|     4|   400|
+|  A|     3|   300|
+|  B|     2|   200|
+|  C|     5|   500|
++---+------+------+
+</code></pre>
+</div>
+</div>
+</section>
+<section id="save-in-orc-format" class="level4">
+<h4 class="anchored" data-anchor-id="save-in-orc-format">Save in ORC format</h4>
+<div class="cell" data-execution_count="113">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>df.write.orc(<span class="st">'output.orc'</span>)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>spark.read.orc(<span class="st">'output.orc'</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---+------+------+
+|key|value1|value2|
++---+------+------+
+|  C|     5|   500|
+|  B|     2|   200|
+|  B|     4|   400|
+|  A|     3|   300|
+|  A|     1|   100|
++---+------+------+
+</code></pre>
+</div>
+</div>
 
 
-</section>
 </section>
 </section>
 </section>
