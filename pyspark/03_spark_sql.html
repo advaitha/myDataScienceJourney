@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Datascience Journey – linear_transformations</title>
+<title>My Datascience Journey – spark_sql</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -476,7 +539,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear_algebra/04_linear_transformations.html" class="sidebar-item-text sidebar-link active">Linear Transformations</a>
+  <a href="../linear_algebra/04_linear_transformations.html" class="sidebar-item-text sidebar-link">Linear Transformations</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1259,7 +1322,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pyspark/03_spark_sql.html" class="sidebar-item-text sidebar-link">Spark SQL</a>
+  <a href="../pyspark/03_spark_sql.html" class="sidebar-item-text sidebar-link active">Spark SQL</a>
   </div>
 </li>
       </ul>
@@ -1288,12 +1351,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#linear-transformations" id="toc-linear-transformations" class="nav-link active" data-scroll-target="#linear-transformations">Linear Transformations</a>
+  <li><a href="#spark-sql" id="toc-spark-sql" class="nav-link active" data-scroll-target="#spark-sql">Spark SQL</a>
   <ul class="collapse">
-  <li><a href="#matrix---vector-multiplication-as-a-linear-transformations" id="toc-matrix---vector-multiplication-as-a-linear-transformations" class="nav-link" data-scroll-target="#matrix---vector-multiplication-as-a-linear-transformations">Matrix - Vector multiplication as a Linear Transformations</a></li>
-  <li><a href="#matrix-multiplication" id="toc-matrix-multiplication" class="nav-link" data-scroll-target="#matrix-multiplication">Matrix Multiplication</a></li>
-  <li><a href="#indentiy-matrix" id="toc-indentiy-matrix" class="nav-link" data-scroll-target="#indentiy-matrix">Indentiy Matrix</a></li>
-  <li><a href="#matrix-inverse" id="toc-matrix-inverse" class="nav-link" data-scroll-target="#matrix-inverse">Matrix Inverse</a></li>
+  <li><a href="#using-spark-sql" id="toc-using-spark-sql" class="nav-link" data-scroll-target="#using-spark-sql">Using Spark SQL</a>
+  <ul class="collapse">
+  <li><a href="#managed-vs-unmanaged-tables" id="toc-managed-vs-unmanaged-tables" class="nav-link" data-scroll-target="#managed-vs-unmanaged-tables">Managed Vs Unmanaged Tables</a></li>
+  <li><a href="#creating-unmanaged-table" id="toc-creating-unmanaged-table" class="nav-link" data-scroll-target="#creating-unmanaged-table">Creating Unmanaged table</a></li>
+  <li><a href="#creating-views" id="toc-creating-views" class="nav-link" data-scroll-target="#creating-views">Creating Views</a></li>
+  <li><a href="#dropping-views" id="toc-dropping-views" class="nav-link" data-scroll-target="#dropping-views">Dropping Views</a></li>
+  <li><a href="#viewing-the-metadata" id="toc-viewing-the-metadata" class="nav-link" data-scroll-target="#viewing-the-metadata">Viewing the Metadata</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -1303,65 +1371,315 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="linear-transformations" class="level1">
-<h1>Linear Transformations</h1>
-<section id="matrix---vector-multiplication-as-a-linear-transformations" class="level2">
-<h2 class="anchored" data-anchor-id="matrix---vector-multiplication-as-a-linear-transformations">Matrix - Vector multiplication as a Linear Transformations</h2>
-<p><em><img src="../Images/matrices_as_linear_transforms.png" class="img-fluid" alt="Matrices as a Linear Transformations"> </em> Basis cover the entire plane * <img src="../Images/linear_transformers.png" class="img-fluid" alt="Matrix vector multiplication as a linear transformation"> * To get the matrix from original and transformed vectors, we only need information for two vectors [0,1] and [1,0] (see the image below) * <img src="../Images/linear_transformers.png" class="img-fluid" alt="Getting the matrix back from the original and transformed vectors"></p>
-</section>
-<section id="matrix-multiplication" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-multiplication">Matrix Multiplication</h2>
+<section id="spark-sql" class="level1">
+<h1>Spark SQL</h1>
+<p>Spark SQL:<br>
+* Spark SQL is the engine on which structured API’s are built * Can read and write data in a variety of formats * Can query data using JDBC/ODBC connectors * Provides a programmatic interface to interact with structured data stored as tables or views in a database from a spark application<br>
+* Provides an interactive shell to write sql queries</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../home/thulasiram/personal/data_engineering/Images/spark-sql.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Spark SQL</figcaption><p></p>
+</figure>
+</div>
+<section id="using-spark-sql" class="level2">
+<h2 class="anchored" data-anchor-id="using-spark-sql">Using Spark SQL</h2>
 <ul>
-<li><p>We can see matrix product as multiplying two matrix and also as combining two linear transformations into a third linear transformation</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/combining_linear_transformations.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrix multiplication as combining linear transformations</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/matrix_flipped.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrices flipped</figcaption><p></p>
-</figure>
-</div></li>
+<li>use <code>sql()</code> method on <code>SparkSession</code> instance</li>
+<li><code>spark.sql("select * from table")</code></li>
+<li>The output of spark.sql will be a DataFrame</li>
 </ul>
-</section>
-<section id="indentiy-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="indentiy-matrix">Indentiy Matrix</h2>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>spark <span class="op">=</span> (SparkSession</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         .builder         </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         .getOrCreate())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23/05/06 09:24:46 WARN Utils: Your hostname, thulasiram resolves to a loopback address: 127.0.1.1; using 192.168.0.105 instead (on interface wlp0s20f3)
+23/05/06 09:24:46 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23/05/06 09:24:47 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>path_to_data <span class="op">=</span> <span class="st">'/home/thulasiram/personal/data_engineering/data/car_data.csv'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> (spark.read.<span class="bu">format</span>(<span class="st">"csv"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>      .option(<span class="st">"inferSchema"</span>, <span class="st">"true"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>      .option(<span class="st">"header"</span>, <span class="st">"true"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>      .load(path_to_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.show(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23/05/06 09:24:58 WARN CSVHeaderChecker: CSV header does not conform to the schema.
+ Header: , make, fuel_type, aspiration, num_of_doors, body_style, drive_wheels, engine_location, wheel_base, length, width, height, curb_weight, engine_type, num_of_cylinders, engine_size, fuel_system, compression_ratio, horsepower, peak_rpm, city_mpg, highway_mpg, price
+ Schema: _c0, make, fuel_type, aspiration, num_of_doors, body_style, drive_wheels, engine_location, wheel_base, length, width, height, curb_weight, engine_type, num_of_cylinders, engine_size, fuel_system, compression_ratio, horsepower, peak_rpm, city_mpg, highway_mpg, price
+Expected: _c0 but found: 
+CSV file: file:///home/thulasiram/personal/data_engineering/data/car_data.csv
++---+-----------+---------+----------+------------+-----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+|_c0|       make|fuel_type|aspiration|num_of_doors| body_style|drive_wheels|engine_location|wheel_base|length|width|height|curb_weight|engine_type|num_of_cylinders|engine_size|fuel_system|compression_ratio|horsepower|peak_rpm|city_mpg|highway_mpg|price|
++---+-----------+---------+----------+------------+-----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+|  1|alfa-romero|      gas|       std|         two|convertible|         rwd|          front|      88.6| 168.8| 64.1|  48.8|       2548|       dohc|            four|        130|       mpfi|              9.0|       111|    5000|      21|         27|13495|
+|  2|alfa-romero|      gas|       std|         two|convertible|         rwd|          front|      88.6| 168.8| 64.1|  48.8|       2548|       dohc|            four|        130|       mpfi|              9.0|       111|    5000|      21|         27|16500|
+|  3|alfa-romero|      gas|       std|         two|  hatchback|         rwd|          front|      94.5| 171.2| 65.5|  52.4|       2823|       ohcv|             six|        152|       mpfi|              9.0|       154|    5000|      19|         26|16500|
+|  4|       audi|      gas|       std|        four|      sedan|         fwd|          front|      99.8| 176.6| 66.2|  54.3|       2337|        ohc|            four|        109|       mpfi|             10.0|       102|    5500|      24|         30|13950|
+|  5|       audi|      gas|       std|        four|      sedan|         4wd|          front|      99.4| 176.6| 66.4|  54.3|       2824|        ohc|            five|        136|       mpfi|              8.0|       115|    5500|      18|         22|17450|
++---+-----------+---------+----------+------------+-----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+only showing top 5 rows
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.createGlobalTempView(<span class="st">"cars_tbl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tables <span class="op">=</span> spark.catalog.listTables(<span class="st">"global_temp"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> table <span class="kw">in</span> tables:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(table.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cars_tbl</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""SELECT make, fuel_type, body_style</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="st">            FROM global_temp.cars_tbl</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="st">            limit 5"""</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-----------+---------+-----------+
+|       make|fuel_type| body_style|
++-----------+---------+-----------+
+|alfa-romero|      gas|convertible|
+|alfa-romero|      gas|convertible|
+|alfa-romero|      gas|  hatchback|
+|       audi|      gas|      sedan|
+|       audi|      gas|      sedan|
++-----------+---------+-----------+
+</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""SELECT body_style, count(*) as body_style_count</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="st">            FROM global_temp.cars_tbl</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">            group by body_style</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st">            order by body_style_count desc"""</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+-----------+----------------+
+| body_style|body_style_count|
++-----------+----------------+
+|      sedan|              96|
+|  hatchback|              70|
+|      wagon|              25|
+|    hardtop|               8|
+|convertible|               6|
++-----------+----------------+
+</code></pre>
+</div>
+</div>
 <ul>
-<li>It is the matrix when multiplied by any other matrix will give the same matrix</li>
-<li>Linear transformation by an Identity Matrix will leave the plane intact</li>
-<li><img src="../Images/identity_matrix.png" title="fig:" class="img-fluid" alt="Identity Matrix"></li>
+<li>Using <code>createGlobalTempView()</code> method, the table is registered as a global temporary view</li>
+<li>Global temporary views are tied to a database called <code>global_temp</code></li>
+<li>These are cross-session which means that we can access the global temporary view from any SparkSession within the same application</li>
 </ul>
-</section>
-<section id="matrix-inverse" class="level2">
-<h2 class="anchored" data-anchor-id="matrix-inverse">Matrix Inverse</h2>
+<section id="managed-vs-unmanaged-tables" class="level3">
+<h3 class="anchored" data-anchor-id="managed-vs-unmanaged-tables">Managed Vs Unmanaged Tables</h3>
 <ul>
-<li><p>The product of a matrix and its Inverse should be an Identity matrix</p></li>
-<li><p>Inverse Matrix reverses the linear transformation of a matrix</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/matrix_inverse.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrix Inverse</figcaption><p></p>
-</figure>
-</div></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/finding_matrix_inverse.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Finding Matrix Inverse</figcaption><p></p>
-</figure>
-</div></li>
-<li><p>Non-singular matrices will have inverse and singular matrix will not have inverse</p></li>
-<li><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../Images/matrix_inverse_det.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Matrix with determinant zero will not have inverse</figcaption><p></p>
-</figure>
-</div></li>
+<li>For managed table, Spark manages both Metadata and data in the file store</li>
+<li>For an unmanaged table, spark only manages the metadata (we need to manage the data ourselves)</li>
+<li>Managed table - ‘DROP TABLE table_name’ deletes both the metadata and the data</li>
+<li>Unmanaged table - ‘DROP TABLE IF EXISTS table_name’ deletes only the metadata</li>
+</ul>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"CREATE DATABASE cars"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"USE cars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>DataFrame[]</code></pre>
+</div>
+</div>
+<section id="creating-a-managed-table" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-managed-table">Creating a Managed table</h4>
+<section id="using-sql" class="level5">
+<h5 class="anchored" data-anchor-id="using-sql">Using SQL</h5>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>spark.conf.<span class="bu">set</span>(<span class="st">'spark.sql.legacy.createHiveTableByDefault'</span>, <span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"CREATE TABLE managed_cars (make STRING, fuel_type STRING,body_style STRING, wheel_base FLOAT, length FLOAT, width FLOAT, height FLOAT)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>DataFrame[]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>spark.catalog.listTables()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>[Table(name='managed_cars', database='cars', description=None, tableType='MANAGED', isTemporary=False)]</code></pre>
+</div>
+</div>
+</section>
+<section id="using-dataframe-api" class="level5">
+<h5 class="anchored" data-anchor-id="using-dataframe-api">Using DataFrame API</h5>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df.write.saveAsTable(<span class="st">"managed_df_api_cars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23/05/06 09:52:54 WARN CSVHeaderChecker: CSV header does not conform to the schema.
+ Header: , make, fuel_type, aspiration, num_of_doors, body_style, drive_wheels, engine_location, wheel_base, length, width, height, curb_weight, engine_type, num_of_cylinders, engine_size, fuel_system, compression_ratio, horsepower, peak_rpm, city_mpg, highway_mpg, price
+ Schema: _c0, make, fuel_type, aspiration, num_of_doors, body_style, drive_wheels, engine_location, wheel_base, length, width, height, curb_weight, engine_type, num_of_cylinders, engine_size, fuel_system, compression_ratio, horsepower, peak_rpm, city_mpg, highway_mpg, price
+Expected: _c0 but found: 
+CSV file: file:///home/thulasiram/personal/data_engineering/data/car_data.csv</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"select * from managed_df_api_cars limit 3"</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---+-----------+---------+----------+------------+-----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+|_c0|       make|fuel_type|aspiration|num_of_doors| body_style|drive_wheels|engine_location|wheel_base|length|width|height|curb_weight|engine_type|num_of_cylinders|engine_size|fuel_system|compression_ratio|horsepower|peak_rpm|city_mpg|highway_mpg|price|
++---+-----------+---------+----------+------------+-----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+|  1|alfa-romero|      gas|       std|         two|convertible|         rwd|          front|      88.6| 168.8| 64.1|  48.8|       2548|       dohc|            four|        130|       mpfi|              9.0|       111|    5000|      21|         27|13495|
+|  2|alfa-romero|      gas|       std|         two|convertible|         rwd|          front|      88.6| 168.8| 64.1|  48.8|       2548|       dohc|            four|        130|       mpfi|              9.0|       111|    5000|      21|         27|16500|
+|  3|alfa-romero|      gas|       std|         two|  hatchback|         rwd|          front|      94.5| 171.2| 65.5|  52.4|       2823|       ohcv|             six|        152|       mpfi|              9.0|       154|    5000|      19|         26|16500|
++---+-----------+---------+----------+------------+-----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="creating-unmanaged-table" class="level3">
+<h3 class="anchored" data-anchor-id="creating-unmanaged-table">Creating Unmanaged table</h3>
+<ul>
+<li>we can create unmanaged tables from our own data sources which is accessible to our spark application</li>
+</ul>
+<section id="creating-table-from-a-csv-file-using-sql" class="level5">
+<h5 class="anchored" data-anchor-id="creating-table-from-a-csv-file-using-sql">Creating table from a CSV file using SQL</h5>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""CREATE TABLE unmanaged_cars (make STRING, fuel_type STRING,body_style STRING, wheel_base FLOAT, length FLOAT, width FLOAT, height FLOAT)</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="st">        USING csv OPTIONS(PATH '/home/thulasiram/personal/data_engineering/data/car_data.csv')"""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>DataFrame[]</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-table-with-dataframe-api" class="level5">
+<h5 class="anchored" data-anchor-id="creating-table-with-dataframe-api">Creating table with DataFrame API</h5>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>(df</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a> .write</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a> .option(<span class="st">"path"</span>, <span class="st">"/home/thulasiram/personal/data_engineering/data/unmanaged_car_data.csv"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a> .saveAsTable(<span class="st">"unmanaged_df_api_cars"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23/05/06 10:02:01 WARN CSVHeaderChecker: CSV header does not conform to the schema.
+ Header: , make, fuel_type, aspiration, num_of_doors, body_style, drive_wheels, engine_location, wheel_base, length, width, height, curb_weight, engine_type, num_of_cylinders, engine_size, fuel_system, compression_ratio, horsepower, peak_rpm, city_mpg, highway_mpg, price
+ Schema: _c0, make, fuel_type, aspiration, num_of_doors, body_style, drive_wheels, engine_location, wheel_base, length, width, height, curb_weight, engine_type, num_of_cylinders, engine_size, fuel_system, compression_ratio, horsepower, peak_rpm, city_mpg, highway_mpg, price
+Expected: _c0 but found: 
+CSV file: file:///home/thulasiram/personal/data_engineering/data/car_data.csv</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="creating-views" class="level3">
+<h3 class="anchored" data-anchor-id="creating-views">Creating Views</h3>
+<ul>
+<li>We can create views on top of existing tables</li>
+<li>It can be global (visible across all sparkSession on a cluter) or session based</li>
+<li>Views disappear after sparkSession is closed</li>
+</ul>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df_hatchback <span class="op">=</span> spark.sql(<span class="st">"SELECT * FROM managed_df_api_cars WHERE body_style = 'hatchback'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a temporary and global temporary view</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>df_hatchback.createOrReplaceGlobalTempView(<span class="st">"cars_tbl_hatchback_gtemp_view"</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df_hatchback.createOrReplaceTempView(<span class="st">"cars_tbl_hatchback_temp_view"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"SELECT * FROM global_temp.cars_tbl_hatchback_gtemp_view limit 5"</span>).show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>+---+-----------+---------+----------+------------+----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+|_c0|       make|fuel_type|aspiration|num_of_doors|body_style|drive_wheels|engine_location|wheel_base|length|width|height|curb_weight|engine_type|num_of_cylinders|engine_size|fuel_system|compression_ratio|horsepower|peak_rpm|city_mpg|highway_mpg|price|
++---+-----------+---------+----------+------------+----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+|  3|alfa-romero|      gas|       std|         two| hatchback|         rwd|          front|      94.5| 171.2| 65.5|  52.4|       2823|       ohcv|             six|        152|       mpfi|              9.0|       154|    5000|      19|         26|16500|
+| 10|       audi|      gas|     turbo|         two| hatchback|         4wd|          front|      99.5| 178.2| 67.9|  52.0|       3053|        ohc|            five|        131|       mpfi|              7.0|       160|    5500|      16|         22|    ?|
+| 19|  chevrolet|      gas|       std|         two| hatchback|         fwd|          front|      88.4| 141.1| 60.3|  53.2|       1488|          l|           three|         61|       2bbl|              9.5|        48|    5100|      47|         53| 5151|
+| 20|  chevrolet|      gas|       std|         two| hatchback|         fwd|          front|      94.5| 155.9| 63.6|  52.0|       1874|        ohc|            four|         90|       2bbl|              9.6|        70|    5400|      38|         43| 6295|
+| 22|      dodge|      gas|       std|         two| hatchback|         fwd|          front|      93.7| 157.3| 63.8|  50.8|       1876|        ohc|            four|         90|       2bbl|             9.41|        68|    5500|      37|         41| 5572|
++---+-----------+---------+----------+------------+----------+------------+---------------+----------+------+-----+------+-----------+-----------+----------------+-----------+-----------+-----------------+----------+--------+--------+-----------+-----+
+</code></pre>
+</div>
+</div>
+</section>
+<section id="dropping-views" class="level3">
+<h3 class="anchored" data-anchor-id="dropping-views">Dropping Views</h3>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>spark.catalog.dropGlobalTempView(<span class="st">"cars_tbl_hatchback_gtemp_view"</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>spark.catalog.dropTempView(<span class="st">"cars_tbl_hatchback_temp_view"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="viewing-the-metadata" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-the-metadata">Viewing the Metadata</h3>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>spark.catalog.listDatabases()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>[Database(name='cars', description='', locationUri='file:/home/thulasiram/personal/data_engineering/spark/pyspark/spark-warehouse/cars.db'),
+ Database(name='default', description='default database', locationUri='file:/home/thulasiram/personal/data_engineering/spark/pyspark/spark-warehouse')]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>spark.catalog.listTables()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<pre><code>[Table(name='managed_cars', database='cars', description=None, tableType='MANAGED', isTemporary=False),
+ Table(name='managed_df_api_cars', database='cars', description=None, tableType='MANAGED', isTemporary=False),
+ Table(name='unmanaged_cars', database='cars', description=None, tableType='EXTERNAL', isTemporary=False),
+ Table(name='unmanaged_df_api_cars', database='cars', description=None, tableType='EXTERNAL', isTemporary=False)]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>spark.catalog.listColumns(<span class="st">"managed_df_api_cars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>[Column(name='_c0', description=None, dataType='int', nullable=True, isPartition=False, isBucket=False),
+ Column(name='make', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='fuel_type', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='aspiration', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='num_of_doors', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='body_style', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='drive_wheels', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='engine_location', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='wheel_base', description=None, dataType='double', nullable=True, isPartition=False, isBucket=False),
+ Column(name='length', description=None, dataType='double', nullable=True, isPartition=False, isBucket=False),
+ Column(name='width', description=None, dataType='double', nullable=True, isPartition=False, isBucket=False),
+ Column(name='height', description=None, dataType='double', nullable=True, isPartition=False, isBucket=False),
+ Column(name='curb_weight', description=None, dataType='int', nullable=True, isPartition=False, isBucket=False),
+ Column(name='engine_type', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='num_of_cylinders', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='engine_size', description=None, dataType='int', nullable=True, isPartition=False, isBucket=False),
+ Column(name='fuel_system', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='compression_ratio', description=None, dataType='double', nullable=True, isPartition=False, isBucket=False),
+ Column(name='horsepower', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='peak_rpm', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False),
+ Column(name='city_mpg', description=None, dataType='int', nullable=True, isPartition=False, isBucket=False),
+ Column(name='highway_mpg', description=None, dataType='int', nullable=True, isPartition=False, isBucket=False),
+ Column(name='price', description=None, dataType='string', nullable=True, isPartition=False, isBucket=False)]</code></pre>
+</div>
+</div>
+</section>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary">Summary</h3>
+<ul>
+<li>Create managed and unmanaged tables using spark SQL and DataFrame API</li>
+<li>use <code>spark.sql</code> to issue queries on spark sql tables or views</li>
+<li>use <code>catalog</code> to inspect the metadata</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
