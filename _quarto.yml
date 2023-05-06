@@ -251,6 +251,7 @@ website:
           - pyspark/00_spark_installation.qmd 
           - pyspark/01_dataframe_api.ipynb   
           - pyspark/02_pandas_on_spark.ipynb
+          - pyspark/03_spark_sql.ipynb
         - section: "**Why Me**"
           contents:                 
           - about_me/why_me.qmd          
