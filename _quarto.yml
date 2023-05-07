@@ -252,6 +252,9 @@ website:
           - pyspark/01_dataframe_api.ipynb   
           - pyspark/02_pandas_on_spark.ipynb
           - pyspark/03_spark_sql.ipynb
+          - pyspark/04_tuning_spark.ipynb
+          - pyspark/05_spark_joins.ipynb
+          - pyspark/06_data_lakes.ipynb
         - section: "**Why Me**"
           contents:                 
           - about_me/why_me.qmd          
